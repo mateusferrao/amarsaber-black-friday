@@ -74,16 +74,33 @@ Redirect 301 /black-friday-guia-de-protocolos-clinicos/ https://bf.amarsaber.com
 > O redirect 301 preserva os parâmetros UTM? O `Redirect` do Apache **mantém** a query string
 > (`?utm_source=...`), então o rastreamento das campanhas continua funcionando.
 
-## Passo 5 — Pixels
+## Passo 5 — Pixels (via Google Tag Manager)
 
-A página nova já tem os mesmos IDs: GTM `GTM-5RPFTJ7G` (dispara o pixel da Meta), GA4 `G-XYC0M24PJN`
-e TikTok `CT0D2HJC77UB52N3D5TG`. Depois do domínio ativo:
+A página nova carrega só o GTM `GTM-5RPFTJ7G`, o mesmo do WordPress. Regras atuais do container
+(lidas do GTM publicado):
 
-- **Meta (Gerenciador de Eventos):** se o domínio verificado for só `amarsaber.com.br`, o subdomínio já
-  está coberto. Teste com a extensão **Meta Pixel Helper**.
-- **GTM:** se algum gatilho filtra por `Page Hostname equals amarsaber.com.br`, troque para
-  `contains amarsaber.com.br`.
+| Tag no GTM | Dispara quando | Na página nova |
+|---|---|---|
+| GA4 `G-XYC0M24PJN` | Todas as páginas | ✅ Funciona em qualquer endereço |
+| TikTok `CT0D2HJC77UB52N3D5TG` | Todas as páginas | ✅ Funciona em qualquer endereço |
+| Meta Pixel `1701576724241276` (HTML) | Page Path **contém** `/black-friday-guia-de-protocolos-clinicos/` | ❌ caminho mudou |
+| Meta Pixel `1701576724241276` (template) | Page Path **igual a** `/` | ✅ em `https://bf.amarsaber.com.br/` |
+
+Ou seja: **no endereço provisório `mateusferrao.github.io/agente-lancamento/` o Pixel da Meta não
+dispara**; no subdomínio (página na raiz `/`) ele dispara sozinho pela regra "Page Path = /".
+
+Recomendado (deixa explícito e evita surpresa):
+1. GTM → **Acionadores → Novo** → *Visualização de página* → *Algumas* →
+   `Page Hostname` **igual a** `bf.amarsaber.com.br`.
+2. Adicione esse acionador à tag do Pixel da Meta → **Enviar / Publicar**.
+3. Teste com a extensão **Meta Pixel Helper** e com o **Modo de visualização** do GTM.
+
+- **Meta (Gerenciador de Eventos):** se o domínio verificado for `amarsaber.com.br`, o subdomínio já
+  está coberto.
 - **GA4:** nada a fazer; o subdomínio aparece em *Hostname*.
+
+> Os scripts diretos de GA4 e TikTok que o WordPress injetava por plugin **não** foram copiados:
+> o GTM já dispara os dois, e manter ambos duplicaria os eventos.
 
 ---
 

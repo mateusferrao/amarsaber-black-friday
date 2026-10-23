@@ -24,9 +24,10 @@ DOMINIO-HOSTGATOR.md  ← passo a passo do domínio
 | Vídeo do YouTube                 | `index.html` → `data-youtube="ID_DO_VIDEO"`                           |
 | Cores                            | `assets/css/style.css` → bloco `:root` no topo                        |
 | Trocar uma imagem                | Substitua o arquivo em `assets/img/` mantendo o mesmo nome            |
-| Pixels (GTM, GA4, TikTok)        | `index.html` → bloco `RASTREAMENTO` no `<head>`                       |
+| Pixels / tags                    | No **Google Tag Manager** (`GTM-5RPFTJ7G`), não no código             |
 
-O pixel da Meta (Facebook) é disparado pelo Google Tag Manager (`GTM-5RPFTJ7G`), igual ao WordPress.
+A página só carrega o GTM. Ele dispara GA4, TikTok e Pixel da Meta — veja as regras em
+`DOMINIO-HOSTGATOR.md`, Passo 5.
 
 ## Testar no computador
 
