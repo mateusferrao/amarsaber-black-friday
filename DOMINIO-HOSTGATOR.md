@@ -5,7 +5,7 @@
 - `amarsaber.com.br` usa os nameservers da HostGator (`ns994` / `ns995.hostgator.com.br`).
 - O domínio raiz aponta pro servidor da HostGator (`162.241.203.66`), onde roda **o WordPress inteiro**
   (home, termos, política de privacidade, outras páginas).
-- A página nova já está no ar em: **https://mateusferrao.github.io/agente-lancamento/**
+- A página nova está no ar em **https://black.amarsaber.com.br** (repositório `mateusferrao/amarsaber-black-friday`).
 
 ## Qual endereço usar?
 
@@ -26,7 +26,7 @@ Escolhido: **opção A — `black.amarsaber.com.br`**.
 4. Clique em **+ Adicionar registro** e escolha **CNAME**:
    - **Nome:** `black.amarsaber.com.br.`
    - **TTL:** `14400` (ou o padrão)
-   - **Registro / Destino:** `mateusferrao.github.io`   ← sem `https://`, sem `/agente-lancamento`
+   - **Registro / Destino:** `mateusferrao.github.io`   ← sem `https://`, sem `/amarsaber-black-friday`
 5. **Salvar**.
 
 > ⚠️ Se já existir um subdomínio `black` criado em **cPanel → Domínios/Subdomínios**, apague-o lá antes.
@@ -37,7 +37,7 @@ Escolhido: **opção A — `black.amarsaber.com.br`**.
 ✅ **Já feito:** custom domain `black.amarsaber.com.br` configurado e arquivo `CNAME` no repositório
 (não apague esse arquivo). Falta só:
 
-1. Abra https://github.com/mateusferrao/agente-lancamento/settings/pages
+1. Abra https://github.com/mateusferrao/amarsaber-black-friday/settings/pages
 2. Confira que **Custom domain** mostra `black.amarsaber.com.br`.
 3. Espere o check **"DNS check successful"** (de 5 min a algumas horas, depende da propagação).
 4. Marque **Enforce HTTPS** (fica disponível depois que o certificado é emitido, ~15 min a 1 h).
@@ -88,7 +88,7 @@ A página nova carrega só o GTM `GTM-5RPFTJ7G`, o mesmo do WordPress. Regras at
 | Meta Pixel `1701576724241276` (HTML) | Page Path **contém** `/black-friday-guia-de-protocolos-clinicos/` | ❌ caminho mudou |
 | Meta Pixel `1701576724241276` (template) | Page Path **igual a** `/` | ✅ em `https://black.amarsaber.com.br/` |
 
-Ou seja: **no endereço provisório `mateusferrao.github.io/agente-lancamento/` o Pixel da Meta não
+Ou seja: **no endereço provisório `mateusferrao.github.io/amarsaber-black-friday/` o Pixel da Meta não
 dispara**; no subdomínio (página na raiz `/`) ele dispara sozinho pela regra "Page Path = /".
 
 Recomendado (deixa explícito e evita surpresa):
