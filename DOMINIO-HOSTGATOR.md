@@ -11,10 +11,10 @@
 
 | Opção | Endereço exemplo | WordPress continua? | Recomendo |
 |---|---|---|---|
-| **A. Subdomínio** | `bf.amarsaber.com.br` (ou `protocolos.`, `oferta.`…) | Sim, nada muda nele | ✅ **Sim** |
+| **A. Subdomínio** | `black.amarsaber.com.br` | Sim, nada muda nele | ✅ **Sim** |
 | B. Domínio inteiro | `amarsaber.com.br` | **Não** — o site todo sai do ar e passa a ser só esta página | Só se for abandonar o WordPress |
 
-Abaixo, a opção A. Troque `bf` pelo nome que escolher.
+Escolhido: **opção A — `black.amarsaber.com.br`**.
 
 ---
 
@@ -24,30 +24,32 @@ Abaixo, a opção A. Troque `bf` pelo nome que escolher.
 2. No cPanel, abra **Zone Editor** (Editor de Zona DNS).
 3. Na linha do `amarsaber.com.br`, clique em **Gerenciar** (Manage).
 4. Clique em **+ Adicionar registro** e escolha **CNAME**:
-   - **Nome:** `bf.amarsaber.com.br.`
+   - **Nome:** `black.amarsaber.com.br.`
    - **TTL:** `14400` (ou o padrão)
    - **Registro / Destino:** `mateusferrao.github.io`   ← sem `https://`, sem `/agente-lancamento`
 5. **Salvar**.
 
-> ⚠️ Se já existir um subdomínio `bf` criado em **cPanel → Domínios/Subdomínios**, apague-o lá antes.
+> ⚠️ Se já existir um subdomínio `black` criado em **cPanel → Domínios/Subdomínios**, apague-o lá antes.
 > Ele cria um registro **A** que conflita com o CNAME.
 
 ## Passo 2 — Configurar o domínio no GitHub
 
+✅ **Já feito:** custom domain `black.amarsaber.com.br` configurado e arquivo `CNAME` no repositório
+(não apague esse arquivo). Falta só:
+
 1. Abra https://github.com/mateusferrao/agente-lancamento/settings/pages
-2. Em **Custom domain**, digite `bf.amarsaber.com.br` → **Save**.
-   (O GitHub cria um arquivo `CNAME` no repositório — não apague.)
+2. Confira que **Custom domain** mostra `black.amarsaber.com.br`.
 3. Espere o check **"DNS check successful"** (de 5 min a algumas horas, depende da propagação).
 4. Marque **Enforce HTTPS** (fica disponível depois que o certificado é emitido, ~15 min a 1 h).
 
 ## Passo 3 — Testar
 
-- Abra `https://bf.amarsaber.com.br` → deve mostrar a página nova com cadeado.
+- Abra `https://black.amarsaber.com.br` → deve mostrar a página nova com cadeado.
 - Teste no celular (4G, fora do Wi-Fi) pra fugir do cache.
 - Confira no terminal (opcional):
 
 ```bash
-nslookup bf.amarsaber.com.br
+nslookup black.amarsaber.com.br
 ```
 
 Deve responder `canonical name = mateusferrao.github.io`.
@@ -61,14 +63,14 @@ Escolha **um** jeito:
 1. WordPress → **Plugins → Adicionar novo** → instale **Redirection** (by John Godley).
 2. **Ferramentas → Redirection → Adicionar novo**:
    - URL de origem: `/black-friday-guia-de-protocolos-clinicos/`
-   - URL de destino: `https://bf.amarsaber.com.br/`
+   - URL de destino: `https://black.amarsaber.com.br/`
    - Tipo: **301**
 3. Salve. A página antiga no Elementor pode ficar como rascunho.
 
 **Jeito .htaccess (cPanel → Gerenciador de Arquivos → `public_html/.htaccess`)**, na primeira linha:
 
 ```
-Redirect 301 /black-friday-guia-de-protocolos-clinicos/ https://bf.amarsaber.com.br/
+Redirect 301 /black-friday-guia-de-protocolos-clinicos/ https://black.amarsaber.com.br/
 ```
 
 > O redirect 301 preserva os parâmetros UTM? O `Redirect` do Apache **mantém** a query string
@@ -84,14 +86,14 @@ A página nova carrega só o GTM `GTM-5RPFTJ7G`, o mesmo do WordPress. Regras at
 | GA4 `G-XYC0M24PJN` | Todas as páginas | ✅ Funciona em qualquer endereço |
 | TikTok `CT0D2HJC77UB52N3D5TG` | Todas as páginas | ✅ Funciona em qualquer endereço |
 | Meta Pixel `1701576724241276` (HTML) | Page Path **contém** `/black-friday-guia-de-protocolos-clinicos/` | ❌ caminho mudou |
-| Meta Pixel `1701576724241276` (template) | Page Path **igual a** `/` | ✅ em `https://bf.amarsaber.com.br/` |
+| Meta Pixel `1701576724241276` (template) | Page Path **igual a** `/` | ✅ em `https://black.amarsaber.com.br/` |
 
 Ou seja: **no endereço provisório `mateusferrao.github.io/agente-lancamento/` o Pixel da Meta não
 dispara**; no subdomínio (página na raiz `/`) ele dispara sozinho pela regra "Page Path = /".
 
 Recomendado (deixa explícito e evita surpresa):
 1. GTM → **Acionadores → Novo** → *Visualização de página* → *Algumas* →
-   `Page Hostname` **igual a** `bf.amarsaber.com.br`.
+   `Page Hostname` **igual a** `black.amarsaber.com.br`.
 2. Adicione esse acionador à tag do Pixel da Meta → **Enviar / Publicar**.
 3. Teste com a extensão **Meta Pixel Helper** e com o **Modo de visualização** do GTM.
 
