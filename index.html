@@ -23,17 +23,14 @@
   <link rel="stylesheet" href="assets/css/style.css">
 
   <!-- ===== RASTREAMENTO =====
-       O Google Tag Manager (GTM-5RPFTJ7G) já carrega GA4 (G-XYC0M24PJN), TikTok (CT0D2HJC77UB52N3D5TG)
-       e o Pixel da Meta (1701576724241276). Novos pixels: adicione no GTM, não aqui. -->
-  <!-- Google Tag Manager -->
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5RPFTJ7G');
-  </script>
+       IDs, eventos e regras ficam em assets/js/tracking.js (Meta Pixel, PostHog, Microsoft Clarity).
+       Eventos do checkout (InitiateCheckout, AddPaymentInfo, Purchase) são enviados pela Yampi. -->
+  <script src="assets/js/tracking.js" defer></script>
+  <!-- UTMify: propaga utm_* e fbclid até o checkout. Script do painel UTMify (Integrações → UTMs → "Outra"). -->
+  <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck data-utmify-prevent-subids async defer></script>
 </head>
 <body>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5RPFTJ7G" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1393732806282634&ev=PageView&noscript=1"></noscript>
 
   <!-- ===== FAIXA FIXA DO TOPO ===== -->
   <div class="topbar">
@@ -47,7 +44,7 @@
         <img class="hero__logo" src="assets/img/logo-amarsaber.png" width="254" height="152" alt="Amar Saber">
         <h1 class="hero__title">A ferramenta definitiva para otimizar sua rotina clínica e aumentar sua confiança no atendimento!</h1>
         <p class="hero__lead">O Guia de Protocolos Amar Saber foi desenvolvido com base em 15 anos de experiência da Dra. Maria Paula e sua equipe. Ele é um recurso completo que contém as principais patologias, emergências e protocolos da clínica de pequenos que o veterinário clínico geral encontra no dia a dia.</p>
-        <div><a class="btn" href="#proxima-secao">QUERO O GUIA DE PROTOCOLOS</a></div>
+        <div><a class="btn" href="#secao-oferta" data-cta="hero">QUERO O GUIA DE PROTOCOLOS</a></div>
       </div>
       <div class="hero__spacer"></div>
     </div>
@@ -87,12 +84,12 @@
           </div>
         </div>
 
-        <div class="center only-desktop"><a class="btn" href="#secao-tres">QUERO O GUIA DE PROTOCOLOS AGORA!</a></div>
+        <div class="center only-desktop"><a class="btn" href="#secao-oferta" data-cta="para-quem">QUERO O GUIA DE PROTOCOLOS AGORA!</a></div>
       </div>
 
       <div class="para-quem__col">
         <img class="para-quem__mockup" src="assets/img/mockup-guia.webp" width="655" height="600" alt="Guia de Protocolos Amar Saber">
-        <div class="center only-mobile"><a class="btn btn--tight" href="#secao-oferta">QUERO O GUIA DE PROTOCOLOS AGORA!</a></div>
+        <div class="center only-mobile"><a class="btn btn--tight" href="#secao-oferta" data-cta="para-quem-mobile">QUERO O GUIA DE PROTOCOLOS AGORA!</a></div>
       </div>
     </div>
   </section>
@@ -193,7 +190,7 @@
       </div>
 
       <p class="provas__more">e muito mais...</p>
-      <div class="center"><a class="btn" href="#secao-oferta">Quero o Guia de Protocolos agora!</a></div>
+      <div class="center"><a class="btn" href="#secao-oferta" data-cta="provas">Quero o Guia de Protocolos agora!</a></div>
       <p class="provas__whats">WhatsApp Amar Saber: <a href="https://api.whatsapp.com/send?phone=553190822333">(31) 9 9082-2333</a></p>
     </div>
   </section>

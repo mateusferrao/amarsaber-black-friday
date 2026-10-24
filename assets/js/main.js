@@ -6,6 +6,7 @@
   document.querySelectorAll('.video[data-youtube]').forEach(function (video) {
     var cover = video.querySelector('.video__cover');
     cover.addEventListener('click', function () {
+      if (window.track) window.track('video_play');
       var iframe = document.createElement('iframe');
       iframe.src = 'https://www.youtube.com/embed/' + video.dataset.youtube + '?autoplay=1&rel=0&controls=1';
       iframe.title = 'Vídeo do Guia de Protocolos';

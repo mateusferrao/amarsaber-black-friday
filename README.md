@@ -10,6 +10,7 @@ hospedada no GitHub Pages. Sem build, sem dependências: editou, deu push, está
 index.html            ← todo o conteúdo (textos, links, preços)
 assets/css/style.css  ← visual (cores no topo do arquivo, em :root)
 assets/js/main.js     ← vídeo, FAQ, carrosséis do mobile, lightbox
+assets/js/tracking.js ← rastreamento (Meta Pixel, PostHog, Clarity) — IDs em CONFIG no topo
 assets/img/           ← imagens
 DOMINIO-HOSTGATOR.md  ← passo a passo do domínio
 ```
@@ -24,10 +25,27 @@ DOMINIO-HOSTGATOR.md  ← passo a passo do domínio
 | Vídeo do YouTube                 | `index.html` → `data-youtube="ID_DO_VIDEO"`                           |
 | Cores                            | `assets/css/style.css` → bloco `:root` no topo                        |
 | Trocar uma imagem                | Substitua o arquivo em `assets/img/` mantendo o mesmo nome            |
-| Pixels / tags                    | No **Google Tag Manager** (`GTM-5RPFTJ7G`), não no código             |
+| Pixels / IDs / valor da oferta   | `assets/js/tracking.js` → objeto `CONFIG` no topo                     |
 
-A página só carrega o GTM. Ele dispara GA4, TikTok e Pixel da Meta — veja as regras em
-`DOMINIO-HOSTGATOR.md`, Passo 5.
+## Rastreamento
+
+A página carrega Meta Pixel (`1393732806282634` + `1701576724241276`, só navegador), PostHog,
+Microsoft Clarity e o script de UTMs da UTMify. Sem GTM, GA4 ou TikTok.
+
+| Evento | Quando | Meta | PostHog / Clarity |
+|---|---|---|---|
+| PageView | abre a página | `PageView` | `$pageview` (automático) |
+| Viu a oferta | seção de preço aparece na tela | `ViewContent` (R$ 497) | `offer_viewed` |
+| Clicou comprar | botão da oferta (vai pra Yampi) | `ClickCheckout` (personalizado) | `checkout_click` |
+| WhatsApp | clique no link do WhatsApp | `Contact` | `whatsapp_click` |
+| CTA | botões que levam até a oferta | — | `cta_click` (`posicao`) |
+| Engajamento | play no vídeo, scroll 25/50/75/100%, FAQ | — | `video_play`, `scroll_depth`, `faq_open` |
+
+- **Checkout:** InitiateCheckout, AddPaymentInfo e Purchase são enviados pela **Yampi** (navegador + API
+  de Conversões). Por isso o clique na LP é `ClickCheckout`, e não InitiateCheckout: evita contar em dobro.
+- **UTMs:** o script da UTMify guarda as `utm_*` e o `fbclid` e cola no link da Yampi. A venda paga chega
+  na UTMify pelo webhook da Yampi, com as UTMs (ROAS real).
+- **Gravações e heatmap:** Clarity. O PostHog fica com eventos e funis (gravação desligada).
 
 ## Testar no computador
 
