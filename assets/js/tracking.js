@@ -1,4 +1,5 @@
 // Rastreamento da LP: Meta Pixel (só navegador), PostHog (eventos/funil) e Microsoft Clarity (gravações/heatmap).
+// Nomes de evento seguem o padrão Automato: português, prefixo lp_ (iguais em todos os clientes).
 // Para trocar IDs ou dados da oferta, edite apenas CONFIG.
 // Eventos do checkout (InitiateCheckout, AddPaymentInfo, Purchase) NÃO são enviados aqui: a Yampi envia
 // (navegador + API de Conversões). Por isso o clique pro checkout é o evento personalizado ClickCheckout.
@@ -8,7 +9,7 @@
   var CONFIG = {
     metaPixels: ['1393732806282634', '1701576724241276'],
     posthog: { key: 'phc_w7v3y2rN3kkwfEbV8n7wVzoAzYEU7pNMBJWGpvWTaB9R', host: 'https://us.i.posthog.com' },
-    clarityId: 'z2wy9ky01r',
+    clarityId: 'z2xmncb9r0',
     product: { id: 'guia-protocolos', name: 'Guia de Protocolos Clínicos', value: 497, currency: 'BRL' },
     checkoutHost: 'seguro.amarsaberstore.com.br',
     offerSection: '#secao-oferta'
@@ -16,8 +17,6 @@
 
   // ---------- Meta Pixel ----------
   !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-  // Sem isso o pixel manda um PageView extra a cada clique nos CTAs (a âncora #secao-oferta muda a URL).
-  fbq.disablePushState = true;
   CONFIG.metaPixels.forEach(function (id) {
     fbq('set', 'autoConfig', false, id); // sem eventos automáticos (SubscribedButtonClick etc.)
     fbq('init', id);
@@ -81,7 +80,7 @@
       if (!entries.some(function (entry) { return entry.isIntersecting; })) return;
       offerObserver.disconnect();
       metaTrack('ViewContent', productParams);
-      capture('offer_viewed', { value: CONFIG.product.value });
+      capture('lp_oferta_vista', { valor: CONFIG.product.value });
     }, { threshold: 0.3 });
     offerObserver.observe(offer);
   }
@@ -94,12 +93,12 @@
 
     if (href.indexOf(CONFIG.checkoutHost) !== -1) {
       metaTrack('ClickCheckout', productParams, true);
-      capture('checkout_click', { value: CONFIG.product.value });
+      capture('lp_checkout', { valor: CONFIG.product.value });
     } else if (href.indexOf('whatsapp') !== -1) {
       metaTrack('Contact');
-      capture('whatsapp_click');
+      capture('whatsapp_clique');
     } else if (link.dataset.cta) {
-      capture('cta_click', { posicao: link.dataset.cta });
+      capture('lp_cta_clique', { posicao: link.dataset.cta });
     }
   });
 
@@ -114,7 +113,7 @@
     marks.forEach(function (mark) {
       if (reached[mark] || percent < (mark === 100 ? 98 : mark)) return;
       reached[mark] = true;
-      capture('scroll_depth', { percent: mark });
+      capture('lp_scroll', { percentual: mark });
     });
   }
   window.addEventListener('scroll', function () {
@@ -124,7 +123,7 @@
   // ---------- FAQ aberto ----------
   document.querySelectorAll('.faq details').forEach(function (item) {
     item.addEventListener('toggle', function () {
-      if (item.open) capture('faq_open', { pergunta: item.querySelector('summary').textContent.trim() });
+      if (item.open) capture('lp_faq_aberto', { pergunta: item.querySelector('summary').textContent.trim() });
     });
   });
 })();

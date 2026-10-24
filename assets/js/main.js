@@ -6,7 +6,7 @@
   document.querySelectorAll('.video[data-youtube]').forEach(function (video) {
     var cover = video.querySelector('.video__cover');
     cover.addEventListener('click', function () {
-      if (window.track) window.track('video_play');
+      if (window.track) window.track('lp_video_play');
       var iframe = document.createElement('iframe');
       iframe.src = 'https://www.youtube.com/embed/' + video.dataset.youtube + '?autoplay=1&rel=0&controls=1';
       iframe.title = 'Vídeo do Guia de Protocolos';
@@ -14,6 +14,17 @@
       iframe.allowFullscreen = true;
       video.replaceChild(iframe, cover);
     });
+  });
+
+  // ---------- Âncoras: rola até a seção sem mudar a URL ----------
+  // Trocar o #hash faz o Pixel da Meta enviar um PageView extra.
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest('a[href^="#"]');
+    if (!link) return;
+    var target = document.querySelector(link.getAttribute('href'));
+    if (!target) return;
+    e.preventDefault();
+    target.scrollIntoView({ behavior: 'smooth' });
   });
 
   // ---------- FAQ: só uma pergunta aberta por vez ----------

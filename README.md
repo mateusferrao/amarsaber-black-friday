@@ -35,17 +35,19 @@ Microsoft Clarity e o script de UTMs da UTMify. Sem GTM, GA4 ou TikTok.
 | Evento | Quando | Meta | PostHog / Clarity |
 |---|---|---|---|
 | PageView | abre a página | `PageView` | `$pageview` (automático) |
-| Viu a oferta | seção de preço aparece na tela | `ViewContent` (R$ 497) | `offer_viewed` |
-| Clicou comprar | botão da oferta (vai pra Yampi) | `ClickCheckout` (personalizado) | `checkout_click` |
-| WhatsApp | clique no link do WhatsApp | `Contact` | `whatsapp_click` |
-| CTA | botões que levam até a oferta | — | `cta_click` (`posicao`) |
-| Engajamento | play no vídeo, scroll 25/50/75/100%, FAQ | — | `video_play`, `scroll_depth`, `faq_open` |
+| Viu a oferta | seção de preço aparece na tela | `ViewContent` (R$ 497) | `lp_oferta_vista` |
+| Clicou comprar | botão da oferta (vai pra Yampi) | `ClickCheckout` (personalizado) | `lp_checkout` |
+| WhatsApp | clique no link do WhatsApp | `Contact` | `whatsapp_clique` |
+| CTA | botões que levam até a oferta | — | `lp_cta_clique` (`posicao`) |
+| Engajamento | play no vídeo, scroll 25/50/75/100%, FAQ | — | `lp_video_play`, `lp_scroll` (`percentual`), `lp_faq_aberto` (`pergunta`) |
 
 - **Checkout:** InitiateCheckout, AddPaymentInfo e Purchase são enviados pela **Yampi** (navegador + API
   de Conversões). Por isso o clique na LP é `ClickCheckout`, e não InitiateCheckout: evita contar em dobro.
 - **UTMs:** o script da UTMify guarda as `utm_*` e o `fbclid` e cola no link da Yampi. A venda paga chega
   na UTMify pelo webhook da Yampi, com as UTMs (ROAS real).
-- **Gravações e heatmap:** Clarity. O PostHog fica com eventos e funis (gravação desligada).
+- **Gravações e heatmap:** Clarity (projeto `z2xmncb9r0`, conta Automato). O PostHog (projeto do cliente) fica com eventos e funis, sem gravação.
+- **Nomes de evento:** padrão Automato — português, prefixo `lp_`, iguais em todos os clientes.
+- **Âncoras:** os CTAs rolam até a oferta sem mudar a URL (`#`), senão o Pixel da Meta envia PageView duplicado.
 
 ## Testar no computador
 
