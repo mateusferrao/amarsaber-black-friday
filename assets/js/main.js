@@ -6,9 +6,9 @@
   document.querySelectorAll('.video[data-youtube]').forEach(function (video) {
     var cover = video.querySelector('.video__cover');
     cover.addEventListener('click', function () {
-      if (window.track) window.track('lp_video_play');
       var iframe = document.createElement('iframe');
-      iframe.src = 'https://www.youtube.com/embed/' + video.dataset.youtube + '?autoplay=1&rel=0&controls=1';
+      // enablejsapi: tracking.js mede quanto do vídeo foi assistido.
+      iframe.src = 'https://www.youtube.com/embed/' + video.dataset.youtube + '?autoplay=1&rel=0&controls=1&enablejsapi=1&origin=' + encodeURIComponent(location.origin);
       iframe.title = 'Vídeo do Guia de Protocolos';
       iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
       iframe.allowFullscreen = true;
