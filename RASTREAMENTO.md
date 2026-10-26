@@ -102,6 +102,36 @@ personalizados servem para públicos e diagnóstico, não para otimizar.
 `etapa_max = clicou_checkout` · `etapa_max = viu_oferta` (viu e não clicou) · `canal = meta_ads` ·
 heatmap da página separado desktop × mobile.
 
+## Captura "Acesso antecipado" (`/acesso-antecipado/`)
+
+Mesmos pixels, PostHog, Clarity e UTMify da LP, e o mesmo `tracking.js`. Como é o mesmo domínio, a origem
+guardada (`as_origem`), o `?interno=1` e o `distinct_id` do PostHog valem nas duas páginas: dá para seguir
+a pessoa da captura até o clique no checkout.
+
+| Etapa | Evento PostHog / Clarity | Quando | Propriedades | Meta (os 2 pixels) |
+|---|---|---|---|---|
+| chegada | `$pageview` | abriu a captura ou o obrigado | — | `PageView` |
+| engajamento | `lp_secao_vista` | seção 1 s no meio da tela | `secao` (hero, para-quem, dra, sumario) | — |
+| engajamento | `lp_engajado` | 30 s com a aba visível | `segundos` | `EngagedVisit` |
+| intenção | `lp_cta_clique` | botão que sobe até o formulário | `posicao` (dra, sumario) | — |
+| intenção | `lp_form_inicio` | 1º clique num campo | — | — |
+| intenção | `lp_form_erro` | tentou enviar com erro (1 evento por campo) | `campo` (nome, email, whatsapp), `motivo` (vazio, curto, formato, ddd) | — |
+| conversão | `lp_lead` + identify (e-mail) | o n8n confirmou o recebimento | `repetido` | `Lead` (navegador + servidor, mesmo `eventID`) |
+| conversão | `lp_lead_falha` | n8n fora do ar (2 tentativas) | `motivo`, `nome`, `email`, `whatsapp` | — |
+| conversão | `lp_grupo_clique` | botão do grupo no obrigado | — | `GroupClick` (personalizado) |
+
+- **Lead na Meta:** só depois do OK do n8n, nunca no clique. Vai com advanced matching (e-mail, telefone,
+  nome, `external_id` = distinct_id do PostHog) e, pelo n8n, também pela API de Conversões, com o mesmo
+  `event_id` (a Meta deduplica). O mesmo e-mail no mesmo navegador não gera um segundo `Lead`.
+- **Testar a API de Conversões:** abrir `/acesso-antecipado/?test_event_code=TESTxxxx` (código da aba
+  "Testar eventos" do Gerenciador de Eventos) e enviar o formulário.
+- **Clarity:** `etapa_max` = `engajou` → `iniciou_form` → `virou_lead` (captura) e `clicou_grupo` (obrigado).
+- **Planilha:** uma linha por envio, com Canal, Campanha/Conjunto/Anúncio (nome e ID), utm_* brutos,
+  fbclid, Repetido, Interno (`?interno=1`), Página, distinct_id e event_id.
+- **Otimizar campanha de captura:** em `Lead`. Públicos: `Lead` nos últimos 30 dias (excluir de captura,
+  incluir no remarketing da Black); `GroupClick` = clicou para entrar no grupo; captura vista sem `Lead` = remarketing
+  de captura.
+
 ## Limites conhecidos
 
 - PostHog grátis: 1 milhão de eventos/mês e **para de gravar ao estourar**. Com autocapture desligado,

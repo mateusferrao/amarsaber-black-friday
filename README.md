@@ -12,6 +12,12 @@ assets/css/style.css  ← visual (cores no topo do arquivo, em :root)
 assets/js/main.js     ← vídeo, FAQ, carrosséis do mobile, lightbox
 assets/js/tracking.js ← rastreamento (Meta Pixel, PostHog, Clarity) — IDs em CONFIG no topo
 assets/img/           ← imagens
+
+acesso-antecipado/index.html          ← captura do Grupo VIP (formulário)
+acesso-antecipado/obrigado/index.html ← "falta um passo" + botão do grupo
+assets/css/captura.css                ← visual das 2 páginas da captura
+assets/js/captura.js                  ← formulário: validação, envio ao n8n, evento Lead
+assets/img/captura/                   ← imagens só da captura
 RASTREAMENTO.md       ← dicionário de eventos, UTMs e como usar os dados
 DOMINIO-HOSTGATOR.md  ← passo a passo do domínio
 ```
@@ -27,6 +33,20 @@ DOMINIO-HOSTGATOR.md  ← passo a passo do domínio
 | Cores                            | `assets/css/style.css` → bloco `:root` no topo                        |
 | Trocar uma imagem                | Substitua o arquivo em `assets/img/` mantendo o mesmo nome            |
 | Pixels / IDs / valor da oferta   | `assets/js/tracking.js` → objeto `CONFIG` no topo                     |
+| Link do grupo VIP do WhatsApp    | `acesso-antecipado/obrigado/index.html` → `href` do botão com `data-grupo` |
+| Textos e data da captura         | `acesso-antecipado/index.html` (título, nota do 10/11)                |
+| Endereço do webhook (n8n)        | `assets/js/captura.js` → `CONFIG.webhook`                             |
+
+## Captura "Acesso antecipado" (`/acesso-antecipado/`)
+
+Migração de `amarsaber.com.br/` (formulário do Grupo VIP) e da página `amar-saber-confirmacao/`.
+O formulário envia o lead para o n8n (fluxo **AS · Acesso antecipado Black → Google Sheets + CAPI**),
+que grava na planilha **Leads · Acesso antecipado Black – Amar Saber** (aba `Leads`) e manda o `Lead`
+à API de Conversões da Meta. Depois do envio a pessoa vai para `/acesso-antecipado/obrigado/`.
+Se o n8n não responder, a pessoa segue para o grupo mesmo assim e o lead fica no PostHog
+(`lp_lead_falha`, com nome, e-mail e WhatsApp).
+
+A LP de vendas (`/`) está com `noindex` até a abertura pública: o link sai primeiro no grupo em 10/11.
 
 ## Rastreamento
 

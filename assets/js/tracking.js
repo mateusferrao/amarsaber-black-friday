@@ -29,7 +29,13 @@
   // ?interno=1 desliga todo o rastreamento neste navegador (equipe e cliente olhando a página). ?interno=0 religa.
   if (params.get('interno') === '1') save('as_interno', true);
   if (params.get('interno') === '0') drop('as_interno');
-  if (load('as_interno')) { window.track = function () {}; return; }
+  if (load('as_interno')) {
+    var noop = function () {};
+    window.track = noop;
+    // captura.js ainda envia o lead para a planilha (marcado como interno), sem eventos.
+    window.asTracking = { interno: true, capture: noop, metaTrack: noop, reachStage: noop, origem: {}, eventId: function (n) { return n; }, pixels: [] };
+    return;
+  }
 
   // ---------- Meta Pixel ----------
   !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
@@ -137,8 +143,9 @@
   }
 
   // Meta: eventID em todo evento (deduplica se o mesmo evento também chegar por servidor).
-  function metaTrack(name, params, custom) {
-    fbq(custom ? 'trackCustom' : 'track', name, params || {}, { eventID: eventId(name) });
+  // id: passe o mesmo event_id enviado à API de Conversões (Lead da captura).
+  function metaTrack(name, params, custom, id) {
+    fbq(custom ? 'trackCustom' : 'track', name, params || {}, { eventID: id || eventId(name) });
   }
 
   // PostHog + Clarity. etapa = categoria do evento no funil (engajamento → intencao).
@@ -149,7 +156,8 @@
   window.track = capture;
 
   // Tag "etapa_max" no Clarity: filtra gravações por até onde a pessoa chegou.
-  var STAGES = ['engajou', 'viu_oferta', 'clicou_checkout'];
+  // Cada página pode ter as suas etapas em <body data-etapas="a,b,c">; sem o atributo, as da LP.
+  var STAGES = (document.body.dataset.etapas || 'engajou,viu_oferta,clicou_checkout').split(',');
   var stageReached = -1;
   function reachStage(stage) {
     var i = STAGES.indexOf(stage);
@@ -182,7 +190,7 @@
         dwellTimers.set(section, setTimeout(function () {
           sectionObserver.unobserve(section);
           capture('lp_secao_vista', {
-            secao: section.className.split(' ')[0],
+            secao: section.dataset.secao || section.className.split(' ')[0],
             ordem: Array.prototype.indexOf.call(sections, section) + 1,
             etapa: 'engajamento'
           });
@@ -293,6 +301,12 @@
       capture('lp_checkout', { valor: CONFIG.product.value, segundos_na_pagina: secondsOnPage(), etapa: 'intencao' }, { send_instantly: true });
       reachStage('clicou_checkout');
       clarity('upgrade', 'clicou_checkout');
+    } else if (link.hasAttribute('data-grupo')) {
+      // Botão do grupo VIP (página de obrigado da captura).
+      metaTrack('GroupClick', {}, true);
+      capture('lp_grupo_clique', { etapa: 'conversao' }, { send_instantly: true });
+      reachStage('clicou_grupo');
+      clarity('upgrade', 'clicou_grupo');
     } else if (href.indexOf('whatsapp') !== -1) {
       metaTrack('Contact');
       capture('whatsapp_clique', { etapa: 'intencao' }, { send_instantly: true });
@@ -300,6 +314,12 @@
       capture('lp_cta_clique', { posicao: link.dataset.cta, etapa: 'intencao' });
     }
   });
+
+  // Usado por captura.js (formulário de lead).
+  window.asTracking = {
+    capture: capture, metaTrack: metaTrack, reachStage: reachStage,
+    origem: origem, eventId: eventId, pixels: CONFIG.metaPixels
+  };
 
   // ---------- FAQ aberto ----------
   document.querySelectorAll('.faq details').forEach(function (item) {
