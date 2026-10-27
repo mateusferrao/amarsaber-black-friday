@@ -1,10 +1,13 @@
-// Downsell: na primeira tentativa de sair da LP (botão voltar) ou na volta do checkout da Yampi,
+// Downsell: na primeira tentativa de sair da LP ou do teste (botão voltar) ou na volta do checkout da Yampi,
 // leva para /oferta-especial/. Acontece uma vez por aba (sessionStorage). Detalhes: RASTREAMENTO.md.
+// <body data-voltar="manual">: o voltar só é interceptado depois de window.asVoltar.arm() (o teste chama no
+// resultado, para quem ainda não viu a oferta não cair no downsell). <body data-origem="teste">: vai na URL
+// do downsell, para a recusa voltar à oferta de onde a pessoa veio.
 (function () {
   'use strict';
 
   var CONFIG = {
-    destino: 'oferta-especial/',
+    destino: '/oferta-especial/',
     checkoutHost: 'seguro.amarsaberstore.com.br',
     checkoutMinutos: 60   // volta do checkout depois disso não conta
   };
@@ -23,22 +26,33 @@
     document.documentElement.classList.add('as-saindo');
     var query = new URLSearchParams(location.search); // utm_* seguem junto
     query.set('de', from);
+    if (document.body.dataset.origem) query.set('origem', document.body.dataset.origem);
     // replace: o voltar a partir do downsell sai do site em vez de cair na LP de novo.
     location.replace(new URL(CONFIG.destino + '?' + query.toString(), location.href).href);
   }
 
-  // ---------- Botão voltar na LP ----------
+  // ---------- Botão voltar ----------
   // O Chrome ignora entradas de histórico criadas sem gesto do usuário, por isso a entrada extra
-  // só é criada no primeiro toque, clique ou tecla.
+  // só é criada depois do primeiro toque, clique ou tecla.
+  var GESTURES = ['pointerdown', 'touchstart', 'keydown'];
+  var allowed = document.body.dataset.voltar !== 'manual';
   var armed = false;
   function arm() {
-    if (armed || get(SHOWN)) return;
+    if (armed || !allowed || get(SHOWN)) return;
     armed = true;
+    GESTURES.forEach(function (type) { window.removeEventListener(type, arm, true); });
     history.pushState({ asVoltar: 1 }, '', location.href);
   }
-  ['pointerdown', 'touchstart', 'keydown'].forEach(function (type) {
-    window.addEventListener(type, arm, { once: true, passive: true, capture: true });
+  GESTURES.forEach(function (type) {
+    window.addEventListener(type, arm, { passive: true, capture: true });
   });
+  window.asVoltar = {
+    arm: function () {
+      allowed = true;
+      var activation = navigator.userActivation;
+      if (!activation || activation.hasBeenActive) arm(); // sem gesto ainda: arma no primeiro toque
+    }
+  };
   window.addEventListener('popstate', function () {
     if (armed) goToDownsell('voltar');
   });

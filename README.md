@@ -21,9 +21,13 @@ assets/img/captura/                   ← imagens só da captura
 
 oferta-especial/index.html   ← downsell (curso Atendimento Extraordinário + comunidade, R$ 187)
 compra-confirmada/index.html ← obrigado da compra (redirect da Yampi)
-assets/js/voltar.js          ← na LP: leva ao downsell no 1º voltar ou na volta do checkout (1x por aba)
+assets/js/voltar.js          ← LP e teste: leva ao downsell no 1º voltar ou na volta do checkout (1x por aba)
 assets/js/downsell.js        ← eventos do downsell (vista e recusa)
 assets/js/compra.js          ← evento da compra confirmada
+
+teste/index.html             ← teste de 7 perguntas, alternativa à LP (resultado + oferta na mesma página)
+assets/js/teste.js           ← perguntas, pontuação, nome + WhatsApp (n8n), resultado e eventos
+assets/css/teste.css         ← visual das telas do teste (o resto vem de style.css)
 RASTREAMENTO.md       ← dicionário de eventos, UTMs e como usar os dados
 DOMINIO-HOSTGATOR.md  ← passo a passo do domínio
 ```
@@ -44,6 +48,8 @@ DOMINIO-HOSTGATOR.md  ← passo a passo do domínio
 | Endereço do webhook (n8n)        | `assets/js/captura.js` → `CONFIG.webhook`                             |
 | Preço, parcelas e link do downsell | `oferta-especial/index.html` (`ds-price` = 12x, `ds-cash` = à vista, botão `ds-btn`) e `data-produto-valor` no `<body>` |
 | Tempo da "volta do checkout"     | `assets/js/voltar.js` → `CONFIG.checkoutMinutos`                      |
+| Perguntas, pontos e textos do resultado do teste | `assets/js/teste.js` → `QUESTIONS` e `RESULTS`             |
+| Oferta, provas e FAQ do teste    | `teste/index.html` (mesmos preços e link de checkout da LP: mude nos dois) |
 
 ## Captura "Acesso antecipado" (`/acesso-antecipado/`)
 
@@ -63,6 +69,14 @@ para `/oferta-especial/`: curso Atendimento Extraordinário + 3 meses de comunid
 R$ 187. O botão de recusa leva de volta à oferta da LP. A Yampi deve redirecionar o pós-compra (depois do
 upsell nativo) para `https://black.amarsaber.com.br/compra-confirmada/`. As duas páginas têm `noindex`.
 Detalhes e eventos: [RASTREAMENTO.md](RASTREAMENTO.md#downsell-e-obrigado-da-compra).
+
+## Teste (`/teste/`)
+
+Alternativa à LP para rodar tráfego em paralelo: 7 perguntas, nome + WhatsApp para liberar o resultado
+(n8n **AS · Teste Black → Google Sheets + CAPI** → aba **Leads - Quiz** + Lead na API de Conversões),
+resultado pela dor principal (plantão → Guia, consulta → curso, sozinho → comunidade) e a oferta da Black
+logo abaixo, com o downsell no voltar. `noindex`. Eventos e onde a pessoa parou:
+[RASTREAMENTO.md](RASTREAMENTO.md#teste-teste-alternativa-à-lp).
 
 ## Rastreamento
 

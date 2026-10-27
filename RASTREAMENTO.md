@@ -134,7 +134,7 @@ a pessoa da captura até o clique no checkout.
 
 ## Downsell e obrigado da compra
 
-### Quando o downsell aparece (`assets/js/voltar.js`, só na LP)
+### Quando o downsell aparece (`assets/js/voltar.js`, na LP e no teste)
 
 Uma vez por aba (`sessionStorage`, chave `as_downsell`), na primeira destas situações:
 
@@ -158,10 +158,10 @@ Yampi direto, sem passar pela LP. Todo link de divulgação deve apontar para a 
 | Página | Etapa | Evento PostHog / Clarity | Quando | Propriedades | Meta (os 2 pixels) |
 |---|---|---|---|---|---|
 | downsell | chegada | `$pageview` | abriu `/oferta-especial/` | — | `PageView` |
-| downsell | intenção | `lp_downsell_vista` | ao abrir | `de` (voltar, checkout, direto), `valor` 187 | `DownsellView` (personalizado, R$ 187) |
+| downsell | intenção | `lp_downsell_vista` | ao abrir | `de` (voltar, checkout, direto), `origem` (lp, teste), `valor` 187 | `DownsellView` (personalizado, R$ 187) |
 | downsell | engajamento | `lp_secao_vista` | oferta 1 s no meio da tela | `secao` = downsell | — |
 | downsell | intenção | `lp_downsell_checkout` | botão do checkout do downsell | `valor`, `segundos_na_pagina` | `DownsellCheckout` (personalizado, R$ 187) |
-| downsell | intenção | `lp_downsell_recusa` | "Não, quero perder essa oportunidade" (volta à oferta da LP) | `de` | — |
+| downsell | intenção | `lp_downsell_recusa` | "Não, quero perder essa oportunidade" (volta à oferta de onde veio: LP ou teste) | `de`, `origem` | — |
 | obrigado | compra | `lp_compra_confirmada` | abriu `/compra-confirmada/` (redirect da Yampi) | parâmetros que a Yampi mandar na URL, como `yampi_<nome>`, sem e-mail, nome, telefone, CPF ou endereço | só `PageView` |
 | obrigado | intenção | `whatsapp_clique` | botão do WhatsApp | — | `Contact` |
 
@@ -175,6 +175,51 @@ Yampi direto, sem passar pela LP. Todo link de divulgação deve apontar para a 
 - **Funil no PostHog:** `lp_checkout` → `lp_downsell_vista` (`de` = checkout) → `lp_downsell_checkout`
   mostra quantos desistentes do checkout o downsell recupera. A venda confirmada fica na UTMify.
 - **Públicos na Meta:** `DownsellView` sem `Purchase` = viu as duas ofertas e não comprou.
+
+## Teste (`/teste/`), alternativa à LP
+
+Mesmos pixels, PostHog, Clarity e UTMify da LP (o mesmo `tracking.js`). 7 perguntas (2 de perfil e 5 situações),
+liberação com nome + WhatsApp, resultado pela dor principal e a oferta da Black na mesma página. Tráfego
+separado por campanha: a comparação teste × LP sai das UTMs (`utm_campaign`), pelo **custo por compra**.
+
+### Jornada e onde a pessoa parou
+
+| Etapa | Evento PostHog / Clarity | Quando | Propriedades | Meta (os 2 pixels) |
+|---|---|---|---|---|
+| chegada | `$pageview` | abriu `/teste/` | — | `PageView` |
+| engajamento | `lp_teste_pergunta_vista` | cada pergunta na tela (1 a 7) | `pergunta`, `pergunta_id`, `revisita` (voltou nela), `respondidas`, `segundos_no_teste` | — |
+| engajamento | `lp_teste_inicio` | 1ª resposta | — | `QuizStart` (personalizado) |
+| engajamento | `lp_teste_resposta` | cada resposta | `pergunta`, `pergunta_id`, `resposta_id`, `resposta`, `pontos_plantao/consulta/sozinho`, `segundos_na_pergunta`, `segundos_no_teste` | — |
+| engajamento | `lp_teste_voltar` | voltou uma pergunta (botão Voltar ou voltar do celular) | `de_pergunta`, `para_pergunta` | — |
+| intenção | `lp_teste_gate_vista` | tela de nome + WhatsApp | `segundos_no_teste` | `QuizGate` (personalizado) |
+| intenção | `lp_form_inicio` / `lp_form_erro` | 1º clique num campo / erro ao enviar | `origem` = teste; `campo`, `motivo` | — |
+| conversão | `lp_lead` + identify (`wa_55…`) | o n8n confirmou o recebimento | `origem` = teste, `dor`, `repetido`, `segundos_no_teste` | `Lead` (navegador + servidor, mesmo `eventID`, `content_name` Teste Black Friday, `content_category` = dor) |
+| conversão | `lp_lead_falha` | n8n fora do ar (2 tentativas); a pessoa vê o resultado mesmo assim | `motivo`, `nome`, `whatsapp`, `dor` | — |
+| intenção | `lp_teste_resultado` | resultado na tela (também ao voltar com o resultado salvo) | `dor` (plantao, consulta, sozinho), `pontos_*`, `respostas` (ids), `salvo`, `teste_perfil_tempo`, `teste_perfil_local` | — |
+| intenção | `lp_oferta_vista`, `lp_checkout`, `lp_secao_vista` | iguais aos da LP | — | `ViewContent` (497), `ClickCheckout` |
+| engajamento | `lp_teste_refazer` | "Refazer o teste" | — | — |
+
+- **Onde parou:** `teste_etapa` (`pergunta_1`…`pergunta_7`, `liberacao`, `resultado`, `oferta`, `checkout`) e
+  `teste_respondidas` vão em **todo evento da sessão**, inclusive no `$pageleave` automático. No PostHog:
+  `$pageleave` com `$pathname = /teste/`, quebrado por `teste_etapa`, mostra quantos saíram em cada tela.
+- **Funil:** `lp_teste_pergunta_vista` (pergunta 1) → … (pergunta 7) → `lp_teste_gate_vista` → `lp_lead` →
+  `lp_teste_resultado` → `lp_oferta_vista` → `lp_checkout`. `segundos_na_pergunta` alto indica pergunta confusa.
+- **Dor e perfil depois do resultado:** `teste_dor`, `teste_perfil_tempo`, `teste_perfil_local` ficam registrados
+  (super propriedades): oferta, checkout e downsell saem com a dor, para comparar conversão por resultado.
+- **Clarity:** tags `teste_etapa`, `teste_dor`, `teste_perfil_*`; `etapa_max` = `iniciou_teste` → `metade_teste`
+  → `virou_lead` → `viu_resultado` → `viu_oferta` → `clicou_checkout`.
+- **Planilha:** n8n **AS · Teste Black → Google Sheets + CAPI** (webhook `as-black-teste`), aba
+  **Leads - Quiz**: Data, Nome, WhatsApp, Link_WhatsApp, Dor, Pontos, Perfil, Respostas (texto das 7), origem
+  (Canal, Campanha/Conjunto/Anúncio com IDs, utm_*, fbclid), Repetido, Interno, Página, distinct_id, event_id.
+- **Lead uma vez:** o mesmo WhatsApp no mesmo navegador não gera um 2º `Lead` (refazer o teste grava outra linha
+  com Repetido = sim). Quem volta ao `/teste/` vê o resultado salvo, sem pedir os dados de novo.
+- **Downsell:** só depois do resultado (voltar) ou na volta do checkout; a recusa volta à oferta do teste.
+  Voltar durante as perguntas mostra a pergunta anterior.
+- **Públicos na Meta:** `QuizStart` sem `QuizGate` = começou e desistiu; `QuizGate` sem `Lead` = respondeu tudo e
+  não deixou contato; `Lead` (content_name Teste Black Friday) sem `Purchase` = remarketing por dor
+  (`content_category`). Campanhas do teste otimizam em `Purchase`, não em `Lead`.
+- **Testar a API de Conversões:** `/teste/?test_event_code=TESTxxxx`. A equipe usa `?interno=1`: a linha vai para a
+  planilha com Interno = sim e nada vai para a Meta.
 
 ## Limites conhecidos
 
