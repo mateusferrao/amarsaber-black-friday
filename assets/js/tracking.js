@@ -33,7 +33,7 @@
     var noop = function () {};
     window.track = noop;
     // captura.js ainda envia o lead para a planilha (marcado como interno), sem eventos.
-    window.asTracking = { interno: true, capture: noop, metaTrack: noop, reachStage: noop, origem: {}, eventId: function (n) { return n; }, pixels: [] };
+    window.asTracking = { interno: true, capture: noop, metaTrack: noop, reachStage: noop, origem: {}, eventId: function (n) { return n; }, pixels: [], product: {}, productParams: {} };
     return;
   }
 
@@ -166,12 +166,20 @@
     clarity('set', 'etapa_max', stage);
   }
 
-  var productParams = {
-    content_name: CONFIG.product.name,
-    content_ids: [CONFIG.product.id],
-    content_type: 'product',
-    value: CONFIG.product.value,
+  // Produto da página: o da LP (CONFIG) ou o declarado no <body> (ex.: downsell em /oferta-especial/).
+  var page = document.body.dataset;
+  var product = {
+    id: page.produtoId || CONFIG.product.id,
+    name: page.produtoNome || CONFIG.product.name,
+    value: page.produtoValor ? Number(page.produtoValor) : CONFIG.product.value,
     currency: CONFIG.product.currency
+  };
+  var productParams = {
+    content_name: product.name,
+    content_ids: [product.id],
+    content_type: 'product',
+    value: product.value,
+    currency: product.currency
   };
 
   // ---------- PageView ----------
@@ -207,7 +215,7 @@
       if (!entries.some(function (entry) { return entry.isIntersecting; })) return;
       offerObserver.disconnect();
       metaTrack('ViewContent', productParams);
-      capture('lp_oferta_vista', { valor: CONFIG.product.value, segundos_ate_oferta: secondsOnPage(), etapa: 'intencao' });
+      capture('lp_oferta_vista', { valor: product.value, segundos_ate_oferta: secondsOnPage(), etapa: 'intencao' });
       reachStage('viu_oferta');
       clarity('upgrade', 'viu_oferta'); // garante a gravação dessa sessão mesmo com amostragem
     }, { threshold: 0.3 });
@@ -296,11 +304,13 @@
     var href = link.getAttribute('href') || '';
 
     if (href.indexOf(CONFIG.checkoutHost) !== -1) {
-      metaTrack('ClickCheckout', productParams, true);
+      // Nomes por página: na LP ClickCheckout / lp_checkout; no downsell, os do <body>.
+      var checkoutStage = page.etapaCheckout || 'clicou_checkout';
+      metaTrack(page.eventoCheckout || 'ClickCheckout', productParams, true);
       // send_instantly: a página vai sair para a Yampi, não espera o lote.
-      capture('lp_checkout', { valor: CONFIG.product.value, segundos_na_pagina: secondsOnPage(), etapa: 'intencao' }, { send_instantly: true });
-      reachStage('clicou_checkout');
-      clarity('upgrade', 'clicou_checkout');
+      capture(page.eventoCheckoutPh || 'lp_checkout', { valor: product.value, segundos_na_pagina: secondsOnPage(), etapa: 'intencao' }, { send_instantly: true });
+      reachStage(checkoutStage);
+      clarity('upgrade', checkoutStage);
     } else if (link.hasAttribute('data-grupo')) {
       // Botão do grupo VIP (página de obrigado da captura).
       metaTrack('GroupClick', {}, true);
@@ -318,7 +328,8 @@
   // Usado por captura.js (formulário de lead).
   window.asTracking = {
     capture: capture, metaTrack: metaTrack, reachStage: reachStage,
-    origem: origem, eventId: eventId, pixels: CONFIG.metaPixels
+    origem: origem, eventId: eventId, pixels: CONFIG.metaPixels,
+    product: product, productParams: productParams
   };
 
   // ---------- FAQ aberto ----------

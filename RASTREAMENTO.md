@@ -132,12 +132,54 @@ a pessoa da captura até o clique no checkout.
   incluir no remarketing da Black); `GroupClick` = clicou para entrar no grupo; captura vista sem `Lead` = remarketing
   de captura.
 
+## Downsell e obrigado da compra
+
+### Quando o downsell aparece (`assets/js/voltar.js`, só na LP)
+
+Uma vez por aba (`sessionStorage`, chave `as_downsell`), na primeira destas situações:
+
+1. **Voltar na LP:** depois do primeiro toque, clique ou tecla na página, o botão voltar leva a
+   `/oferta-especial/?…&de=voltar`. O Chrome ignora o histórico criado sem gesto do usuário, então quem só
+   rolou a página e voltou sai normalmente.
+2. **Volta do checkout:** clicou no link da Yampi pela LP e voltou em até 60 min → `/oferta-especial/?…&de=checkout`.
+
+A troca é por `location.replace`: o voltar a partir do downsell sai do site, sem cair na LP de novo.
+As `utm_*` e o `fbclid` seguem na URL, então UTMify, origem (`as_origem`) e `distinct_id` continuam os mesmos.
+Sem `sessionStorage` (navegador que bloqueia), a LP não intercepta nada. `?interno=1` não envia eventos,
+mas o redirecionamento funciona igual, para a equipe testar.
+
+**Não funciona:** no Instagram do iPhone (não há voltar, o X fecha o navegador) e para quem abre o link da
+Yampi direto, sem passar pela LP. Todo link de divulgação deve apontar para a LP.
+
+### Eventos
+
+| Página | Etapa | Evento PostHog / Clarity | Quando | Propriedades | Meta (os 2 pixels) |
+|---|---|---|---|---|---|
+| downsell | chegada | `$pageview` | abriu `/oferta-especial/` | — | `PageView` |
+| downsell | intenção | `lp_downsell_vista` | ao abrir | `de` (voltar, checkout, direto), `valor` 187 | `DownsellView` (personalizado, R$ 187) |
+| downsell | engajamento | `lp_secao_vista` | oferta 1 s no meio da tela | `secao` = downsell | — |
+| downsell | intenção | `lp_downsell_checkout` | botão do checkout do downsell | `valor`, `segundos_na_pagina` | `DownsellCheckout` (personalizado, R$ 187) |
+| downsell | intenção | `lp_downsell_recusa` | "Não, quero perder essa oportunidade" (volta à oferta da LP) | `de` | — |
+| obrigado | compra | `lp_compra_confirmada` | abriu `/compra-confirmada/` (redirect da Yampi) | parâmetros que a Yampi mandar na URL, como `yampi_<nome>`, sem e-mail, nome, telefone, CPF ou endereço | só `PageView` |
+| obrigado | intenção | `whatsapp_clique` | botão do WhatsApp | — | `Contact` |
+
+- **Produto por página:** o `<body>` do downsell declara `data-produto-id`, `data-produto-nome`,
+  `data-produto-valor` e os nomes do evento de checkout. O `tracking.js` usa esses valores no lugar do
+  `CONFIG` (R$ 497) só naquela página.
+- **Purchase:** continua só pela Yampi (navegador + API de Conversões), para a oferta principal, o upsell e
+  o downsell. O obrigado não dispara `Purchase` para não contar em dobro.
+- **Clarity:** `etapa_max` = `viu_downsell` → `clicou_downsell` (downsell) e `comprou` (obrigado), com `upgrade`
+  da gravação nas duas.
+- **Funil no PostHog:** `lp_checkout` → `lp_downsell_vista` (`de` = checkout) → `lp_downsell_checkout`
+  mostra quantos desistentes do checkout o downsell recupera. A venda confirmada fica na UTMify.
+- **Públicos na Meta:** `DownsellView` sem `Purchase` = viu as duas ofertas e não comprou.
+
 ## Limites conhecidos
 
 - PostHog grátis: 1 milhão de eventos/mês e **para de gravar ao estourar**. Com autocapture desligado,
   cada visita gera ~6–15 eventos (≈ 70–150 mil visitas/mês).
 - Bloqueadores de anúncio cortam Meta, PostHog e Clarity no navegador (10–30% do público, mais no desktop).
   A compra continua chegando na Meta pela API de Conversões da Yampi e na UTMify pelo webhook.
-- PostHog termina no clique pro checkout; compra só na UTMify e na Meta.
+- PostHog termina no clique pro checkout; a compra fica na UTMify e na Meta. `lp_compra_confirmada` só aparece se a Yampi redirecionar para `/compra-confirmada/`.
 - A UTMify guarda cada `utm_*` separado: se a pessoa vem de um anúncio e depois de um link com menos
   parâmetros, o link do checkout pode misturar campos das duas visitas.

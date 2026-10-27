@@ -18,6 +18,12 @@ acesso-antecipado/obrigado/index.html ← "falta um passo" + botão do grupo
 assets/css/captura.css                ← visual das 2 páginas da captura
 assets/js/captura.js                  ← formulário: validação, envio ao n8n, evento Lead
 assets/img/captura/                   ← imagens só da captura
+
+oferta-especial/index.html   ← downsell (curso Atendimento Extraordinário + comunidade, R$ 187)
+compra-confirmada/index.html ← obrigado da compra (redirect da Yampi)
+assets/js/voltar.js          ← na LP: leva ao downsell no 1º voltar ou na volta do checkout (1x por aba)
+assets/js/downsell.js        ← eventos do downsell (vista e recusa)
+assets/js/compra.js          ← evento da compra confirmada
 RASTREAMENTO.md       ← dicionário de eventos, UTMs e como usar os dados
 DOMINIO-HOSTGATOR.md  ← passo a passo do domínio
 ```
@@ -36,6 +42,8 @@ DOMINIO-HOSTGATOR.md  ← passo a passo do domínio
 | Link do grupo VIP do WhatsApp    | `acesso-antecipado/obrigado/index.html` → `href` do botão com `data-grupo` |
 | Textos e data da captura         | `acesso-antecipado/index.html` (título, nota do 10/11)                |
 | Endereço do webhook (n8n)        | `assets/js/captura.js` → `CONFIG.webhook`                             |
+| Preço, parcelas e link do downsell | `oferta-especial/index.html` (`ds-price`, `ds-parcelas`, botão `ds-btn`) e `data-produto-valor` no `<body>` |
+| Tempo da "volta do checkout"     | `assets/js/voltar.js` → `CONFIG.checkoutMinutos`                      |
 
 ## Captura "Acesso antecipado" (`/acesso-antecipado/`)
 
@@ -47,6 +55,14 @@ Se o n8n não responder, a pessoa segue para o grupo mesmo assim e o lead fica n
 (`lp_lead_falha`, com nome, e-mail e WhatsApp).
 
 A LP de vendas (`/`) está com `noindex` até a abertura pública: o link sai primeiro no grupo em 10/11.
+
+## Downsell e obrigado da compra
+
+Quem aperta voltar na LP (depois de tocar na página) ou volta do checkout da Yampi vai, **uma vez por aba**,
+para `/oferta-especial/`: curso Atendimento Extraordinário + 3 meses de comunidade, de R$ 440,70 por
+R$ 187. O botão de recusa leva de volta à oferta da LP. A Yampi deve redirecionar o pós-compra (depois do
+upsell nativo) para `https://black.amarsaber.com.br/compra-confirmada/`. As duas páginas têm `noindex`.
+Detalhes e eventos: [RASTREAMENTO.md](RASTREAMENTO.md#downsell-e-obrigado-da-compra).
 
 ## Rastreamento
 
