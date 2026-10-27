@@ -414,6 +414,7 @@ strong, b { font-weight: 700; }
 }
 .oferta__price span { font-size: 50%; }
 .oferta__cash { font-size: 27.2px; line-height: 15px; letter-spacing: -3.7px; }
+.oferta__stock { font-size: 16px; font-weight: 700; line-height: 22px; color: #fff; }
 .oferta__note { font-size: 16px; line-height: 20px; color: #fdbcbc; }
 .oferta__book { width: 380px; }
 .oferta__book:hover { animation: hang 2s ease-in-out infinite alternate; }
@@ -501,6 +502,7 @@ strong, b { font-weight: 700; }
   .oferta__but    { margin-top: 12px; }
   .oferta__price  { margin-top: 20px; }
   .oferta__cash   { margin-top: -16px; line-height: 51px; }
+  .oferta__stock  { margin-top: 18px; }
   .oferta__note   { margin-top: 1px; }
   .oferta .center { margin-top: 34px; }
   .oferta__book   { margin-top: 20px; }
@@ -576,6 +578,7 @@ strong, b { font-weight: 700; }
   .oferta__but    { margin-top: 16px; width: 312px; font-size: 12.09px; line-height: 1.5; }
   .oferta__price  { margin: 15px 0 -10px; font-size: 60.45px; line-height: 70px; }
   .oferta__cash   { font-size: 20.28px; line-height: 1.4; letter-spacing: -1.5px; }
+  .oferta__stock  { margin-top: 14px; font-size: 14px; line-height: 20px; }
   .oferta__note   { margin-top: 16px; }
   .oferta .center { margin-top: 16px; }
   .oferta__book   { margin-top: 20px; width: 370px; }
