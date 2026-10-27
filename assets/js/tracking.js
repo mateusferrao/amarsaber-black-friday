@@ -29,7 +29,9 @@
   // ?interno=1 desliga todo o rastreamento neste navegador (equipe e cliente olhando a página). ?interno=0 religa.
   if (params.get('interno') === '1') save('as_interno', true);
   if (params.get('interno') === '0') drop('as_interno');
-  if (load('as_interno')) {
+  // A LP também fica muda quando o voltar.js já está levando a pessoa ao downsell (volta do checkout
+  // com a página recarregada): sem isso, PageView e ViewContent contariam duas vezes.
+  if (load('as_interno') || document.documentElement.classList.contains('as-saindo')) {
     var noop = function () {};
     window.track = noop;
     // captura.js ainda envia o lead para a planilha (marcado como interno), sem eventos.

@@ -144,6 +144,8 @@ Uma vez por aba (`sessionStorage`, chave `as_downsell`), na primeira destas situ
 2. **Volta do checkout:** clicou no link da Yampi pela LP e voltou em até 60 min → `/oferta-especial/?…&de=checkout`.
 
 A troca é por `location.replace`: o voltar a partir do downsell sai do site, sem cair na LP de novo.
+Na volta do checkout, se o navegador recarregar a LP, ela vai direto ao downsell sem enviar eventos
+(sem PageView nem ViewContent repetidos); se restaurar da memória, não há envio novo de qualquer forma.
 As `utm_*` e o `fbclid` seguem na URL, então UTMify, origem (`as_origem`) e `distinct_id` continuam os mesmos.
 Sem `sessionStorage` (navegador que bloqueia), a LP não intercepta nada. `?interno=1` não envia eventos,
 mas o redirecionamento funciona igual, para a equipe testar.

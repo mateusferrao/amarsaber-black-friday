@@ -49,9 +49,12 @@
     if (!link || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || link.target === '_blank') return;
     set(CHECKOUT, String(Date.now()));
   });
-  // pageshow cobre as duas voltas: página restaurada da memória (bfcache) e página recarregada.
-  window.addEventListener('pageshow', function () {
+  function checkoutReturn() {
     var clickedAt = Number(get(CHECKOUT));
     if (clickedAt && Date.now() - clickedAt < CONFIG.checkoutMinutos * 60000) goToDownsell('checkout');
-  });
+  }
+  // Página recarregada na volta: decide já, antes do tracking.js (carregado depois), que não envia nada
+  // se a LP está saindo. Página restaurada da memória (bfcache): pageshow, sem reenviar eventos.
+  checkoutReturn();
+  window.addEventListener('pageshow', function (e) { if (e.persisted) checkoutReturn(); });
 })();

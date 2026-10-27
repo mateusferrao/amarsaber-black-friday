@@ -26,9 +26,10 @@
   <!-- ===== RASTREAMENTO =====
        IDs, eventos e regras ficam em assets/js/tracking.js (Meta Pixel, PostHog, Microsoft Clarity).
        Eventos do checkout (InitiateCheckout, AddPaymentInfo, Purchase) são enviados pela Yampi. -->
-  <script src="assets/js/tracking.js" defer></script>
-  <!-- Downsell: 1ª tentativa de sair (voltar) ou volta do checkout leva a /oferta-especial/ (1x por aba) -->
+  <!-- Downsell: 1ª tentativa de sair (voltar) ou volta do checkout leva a /oferta-especial/ (1x por aba).
+       Fica antes do tracking.js: na volta do checkout a LP sai sem enviar PageView/ViewContent de novo. -->
   <script src="assets/js/voltar.js" defer></script>
+  <script src="assets/js/tracking.js" defer></script>
   <!-- UTMify: propaga utm_* e fbclid até o checkout. Script do painel UTMify (Integrações → UTMs → "Outra"). -->
   <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck data-utmify-prevent-subids async defer></script>
 </head>
