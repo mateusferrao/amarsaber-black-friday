@@ -23,12 +23,12 @@ Todo evento do PostHog leva a propriedade `etapa` e todas as propriedades de ori
 |---|---|---|---|---|
 | chegada | `$pageview` (automático) | abriu a página | — | `PageView` |
 | chegada | `$pageleave` (automático) | saiu | tempo e % máx. de rolagem | — |
-| engajamento | `lp_secao_vista` | seção ficou 1 s no meio da tela | `secao` (hero, para-quem, o-que-e, autoras, provas, oferta, faq), `ordem` 1–7 | — |
+| engajamento | `lp_secao_vista` | seção ficou 1 s no meio da tela | `secao` (hero, para-quem, o-que-e, autoras, provas, bonus, oferta, faq), `ordem` 1–8 | — |
 | engajamento | `lp_engajado` | 30 s com a aba visível | `segundos` | `EngagedVisit` (personalizado) |
 | engajamento | `lp_video_play` | clicou na capa do vídeo | — | `VideoPlay` (personalizado) |
 | engajamento | `lp_video_progresso` | assistiu 25/50/75/95% (vídeo de 13 min) | `percentual` | `VideoProgress` {percentual} |
 | engajamento | `lp_faq_aberto` | abriu pergunta do FAQ | `pergunta` | — |
-| intenção | `lp_cta_clique` | botão que rola até a oferta | `posicao` (hero, para-quem, para-quem-mobile, provas) | — |
+| intenção | `lp_cta_clique` | botão que rola até a oferta | `posicao` (hero, para-quem, para-quem-mobile, provas, bonus) | — |
 | intenção | `lp_oferta_vista` | 30% da seção de preço na tela | `valor`, `segundos_ate_oferta` | `ViewContent` (R$ 497) |
 | intenção | `whatsapp_clique` | link do WhatsApp | — | `Contact` |
 | intenção | `lp_checkout` | botão da oferta (vai pra Yampi) | `valor`, `segundos_na_pagina` | `ClickCheckout` (personalizado) |
