@@ -172,7 +172,7 @@ Urgência usada (confirmada pelo usuário): prazo de 30/11 23h59, quando a ofert
 - Corpo: Oi, [nome]. Aqui é a Maria Paula, da Amar Saber. Vi que o seu pedido do Guia de Protocolos ficou pela
   metade. Guardei tudo no carrinho. Na Black Friday, o pedido inclui o Guia de Protocolos Clínicos impresso, o curso
   completo Atendimento Extraordinário e 3 meses na Comunidade Amar Saber no WhatsApp, por 12x de R$ 50,57 ou R$ 497 à
-  vista. Se alguma coisa travou no pagamento, responda este e-mail ou chame a gente no WhatsApp (31) 9 9082-2333.
+  vista. Se alguma coisa travou no pagamento, responda este e-mail ou chame a gente no WhatsApp (31) 9 5349-5052.
 - CTA: **Terminar meu pedido**
 
 **E2 · 2 h**

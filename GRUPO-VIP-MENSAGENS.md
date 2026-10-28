@@ -8,7 +8,7 @@ Regras:
   Amar Saber e a condição (R$ 1.137,70 por R$ 497). As dicas abaixo são verdadeiras e não revelam o conteúdo.
 - Não mandar o link da LP antes de 10/11 às 20h: ela mostra os bônus.
 - O link do Instagram da live vai no grupo (mensagens 4, 5 e 6). Trocar `[@INSTAGRAM]` pelo perfil.
-- Grupo só de avisos: só os administradores enviam. Dúvidas vão para o WhatsApp (31) 9 9082-2333.
+- Grupo só de avisos: só os administradores enviam. Dúvidas vão para o WhatsApp (31) 9 5349-5052.
 
 | # | Quando | Mensagem |
 |---|---|---|
@@ -35,7 +35,7 @@ A ordem dos presentes e o roteiro da live estão em `LIVE-ROTEIRO.md`.
 > Em 10/11, terça, às 20h, eu abro ao vivo no Instagram três presentes e a maior condição que o Guia de Protocolos
 > já teve. O link da Black sai aqui no grupo no mesmo momento, antes do público.
 >
-> Este grupo é só de avisos, para não lotar o seu celular. Dúvidas: (31) 9 9082-2333.
+> Este grupo é só de avisos, para não lotar o seu celular. Dúvidas: (31) 9 5349-5052.
 >
 > Dra. Maria Paula · Amar Saber
 
