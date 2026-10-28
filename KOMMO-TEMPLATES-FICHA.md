@@ -345,6 +345,13 @@ O n8n decide **qual** template sai e **quando**. O Kommo só envia, para a conve
 **Onde:** Configurações → **Salesbot** (ou Automações → Salesbot) → **+ Criar bot** → **Criar do zero**. Em cada
 bot: dê o nome no topo, monte os passos com **Adicionar próximo passo** e clique **Salvar**. Na janela "Condição de execução", clique **Cancelar**; no aviso "Seu bot nunca será executado sem um gatilho", clique **Salvar**. Não adicione gatilho.
 
+**Canal, em todo passo Enviar mensagem:** em **Canais**, marque só o **WhatsApp Business da (31) 9 5349-5052**, não
+"Todos". A conta tem também uma conexão WA Lite, que não manda botões; com "Todos", o editor avisa que a mensagem sai
+sem botões.
+
+**Sinônimos (opcional):** no botão **Quero o link**, use **+ sinônimo** para `quero`, `link` e `manda o link`. Quem
+digitar em vez de tocar também cai no ramo.
+
 **Ordem:** primeiro os 6 bots de resposta (parte A), depois os 15 de template (parte B). O passo **Iniciar Salesbot**
 só lista bots que já existem.
 
