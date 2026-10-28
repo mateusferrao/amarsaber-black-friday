@@ -240,3 +240,30 @@
     });
   });
 })();
+
+// Contador até a live (data fixa no atributo data-contador). Depois do horário, mostra o aviso e não reinicia.
+(function () {
+  'use strict';
+  var box = document.querySelector('[data-contador]');
+  if (!box) return;
+  var fim = new Date(box.getAttribute('data-contador')).getTime();
+  var cel = {};
+  ['dias', 'horas', 'min', 'seg'].forEach(function (k) { cel[k] = box.querySelector('[data-unidade="' + k + '"]'); });
+  var dois = function (n) { return (n < 10 ? '0' : '') + n; };
+  var timer;
+  function tick() {
+    var s = Math.max(0, Math.floor((fim - Date.now()) / 1000));
+    cel.dias.textContent = dois(Math.floor(s / 86400));
+    cel.horas.textContent = dois(Math.floor(s % 86400 / 3600));
+    cel.min.textContent = dois(Math.floor(s % 3600 / 60));
+    cel.seg.textContent = dois(s % 60);
+    if (!s) {
+      clearInterval(timer);
+      box.querySelector('.cap-contador__grade').hidden = true;
+      box.querySelector('.cap-contador__rotulo').hidden = true;
+      box.querySelector('.cap-contador__fim').hidden = false;
+    }
+  }
+  tick();
+  timer = setInterval(tick, 1000);
+})();

@@ -67,7 +67,8 @@ a { color: inherit; text-decoration: none; }
   gap: 20px;
 }
 .cap-hero__logo { width: 254px; margin-top: 18px; }
-.cap-hero__title { font-size: 28px; font-weight: 700; line-height: 32px; color: var(--pink-title); }
+.cap-hero__kicker { font-size: 13px; font-weight: 700; letter-spacing: 2.4px; text-transform: uppercase; color: var(--pink); }
+.cap-hero__title { margin-top: -12px; font-size: 34px; font-weight: 700; line-height: 38px; color: var(--pink-title); }
 .cap-hero__lead { font-size: 15px; font-weight: 500; line-height: 22px; }
 
 .cap-form__head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
@@ -104,7 +105,98 @@ a { color: inherit; text-decoration: none; }
 .cap-hero__note { margin-top: -6px; font-size: 12px; line-height: 15px; }
 
 /* =========================================================
-   2. PARA QUEM É (compacta: 3 cards lado a lado no desktop)
+   2. O QUE ESTÁ GUARDADO (presentes trancados até a live)
+   ========================================================= */
+.cap-presentes { padding: 64px 0 56px; background: radial-gradient(ellipse at 50% 30%, #3d0631 0%, var(--bg-dark) 70%); text-align: center; }
+.cap-presentes__kicker { font-size: 13px; font-weight: 700; letter-spacing: 2.4px; text-transform: uppercase; color: var(--pink); }
+.cap-presentes__title { margin-top: 10px; font-size: 40px; font-weight: 700; line-height: 1.1; }
+.cap-presentes__lead { max-width: 560px; margin: 14px auto 0; font-size: 17px; line-height: 25px; color: var(--cream); }
+
+.cap-cofre {
+  display: flex; align-items: center; gap: 24px;
+  max-width: 900px; margin: 36px auto 0; padding: 24px 28px;
+  text-align: left;
+  background: rgba(252, 36, 148, .07);
+  border: 1px solid var(--card-border);
+  border-radius: 18px;
+  box-shadow: 0 0 40px rgba(252, 36, 148, .18);
+}
+.cap-cofre__icone {
+  flex: none; display: flex; align-items: center; justify-content: center;
+  width: 64px; height: 64px; border-radius: 50%;
+  background: var(--pink); box-shadow: 0 0 0 8px rgba(252, 36, 148, .15);
+}
+.cap-cofre__icone svg { width: 26px; height: 26px; fill: #fff; }
+.cap-cofre__texto { flex: 1; }
+.cap-cofre__rotulo { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--pink); }
+.cap-cofre__valor { margin-top: 4px; font-size: 26px; font-weight: 700; line-height: 1.15; }
+.cap-cofre__nota { margin-top: 6px; font-size: 14px; line-height: 20px; color: var(--cream); }
+.cap-cofre__btn { flex: none; padding: 18px 28px; font-size: 15px; letter-spacing: 1.6px; }
+
+.cap-presentes__lista {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 220px)); justify-content: center; gap: 28px;
+  margin: 44px 0 0; padding: 0; list-style: none;
+}
+.cap-presente__caixa { width: 100%; max-width: 200px; margin: 0 auto; display: block; overflow: visible; }
+.cap-presente__corpo { fill: #3a0630; stroke: var(--card-border); stroke-width: 1.5; }
+.cap-presente__tampa { fill: #4c0a3f; stroke: var(--card-border); stroke-width: 1.5; }
+.cap-presente__fita, .cap-presente__laco, .cap-presente__no { fill: var(--pink); }
+.cap-presente__selo { fill: var(--bg-dark); stroke: var(--pink); stroke-width: 2; }
+.cap-presente__q { font-family: var(--font); font-size: 34px; font-weight: 700; fill: #fff; }
+.cap-presente__laco { transform-origin: 100px 40px; animation: laco 3.2s ease-in-out infinite; }
+.cap-presente:nth-child(2) .cap-presente__laco { animation-delay: .4s; }
+.cap-presente:nth-child(3) .cap-presente__laco { animation-delay: .8s; }
+@keyframes laco { 0%, 100% { transform: rotate(0); } 50% { transform: rotate(-5deg) scale(1.04); } }
+.cap-presente__nome { margin-top: 14px; font-size: 18px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+.cap-presente__quando { margin-top: 2px; font-size: 12px; font-weight: 600; letter-spacing: 1.4px; text-transform: uppercase; color: var(--pink); }
+
+.cap-contador { margin-top: 44px; }
+.cap-contador__rotulo { font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--cream); }
+.cap-contador__grade { display: flex; justify-content: center; gap: 12px; margin-top: 12px; }
+.cap-contador__grade span {
+  display: flex; flex-direction: column; align-items: center;
+  min-width: 78px; padding: 12px 8px;
+  font-size: 11px; letter-spacing: 1.4px; text-transform: uppercase; color: var(--cream);
+  border: 1px solid var(--card-border); border-radius: 10px;
+}
+.cap-contador__grade b { font-size: 32px; font-weight: 700; line-height: 1.1; color: #fff; font-variant-numeric: tabular-nums; }
+.cap-contador [hidden] { display: none; }
+.cap-contador__fim { margin-top: 12px; font-size: 18px; font-weight: 700; color: var(--pink); }
+
+/* =========================================================
+   3. COMO PARTICIPAR
+   ========================================================= */
+.cap-passos { padding: 24px 0 64px; text-align: center; }
+.cap-passos__title { font-size: 34px; font-weight: 700; line-height: 1.1; color: var(--pink); }
+.cap-passos__lista {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+  margin: 32px 0 0; padding: 0; list-style: none; counter-reset: passo; text-align: left;
+}
+.cap-passos__lista li {
+  counter-increment: passo;
+  display: flex; flex-direction: column; gap: 6px;
+  padding: 24px 22px;
+  border: 1px solid var(--card-border); border-radius: 7px;
+}
+.cap-passos__lista li::before { content: "0" counter(passo); font-size: 30px; font-weight: 700; line-height: 1; color: var(--pink); }
+.cap-passos__lista b { font-size: 18px; font-weight: 600; }
+.cap-passos__lista span { font-size: 14px; line-height: 20px; color: var(--cream); }
+.cap-passos__btn { margin-top: 28px; padding: 16px 24px; font-size: 16px; letter-spacing: 1.6px; }
+
+/* =========================================================
+   7. PERGUNTAS
+   ========================================================= */
+.cap-faq { padding: 56px 0 24px; }
+.cap-faq__title { font-size: 32px; font-weight: 700; color: var(--pink); text-align: center; }
+.cap-faq__lista { max-width: 760px; margin: 24px auto 0; }
+.cap-faq__lista div { padding: 18px 0; border-bottom: 1px dashed rgba(255, 255, 255, .25); }
+.cap-faq__lista dt { font-size: 17px; font-weight: 600; }
+.cap-faq__lista dd { margin: 6px 0 0; font-size: 15px; line-height: 22px; color: var(--cream); }
+
+@media (prefers-reduced-motion: reduce) { .cap-presente__laco { animation: none; } }
+
+/* =========================================================
+   4. PARA QUEM É (compacta: 3 cards lado a lado no desktop)
    ========================================================= */
 .cap-para-quem {
   position: relative;
@@ -149,7 +241,7 @@ a { color: inherit; text-decoration: none; }
 .cap-card__text { font-size: 14px; line-height: 20px; color: var(--cream); }
 
 /* =========================================================
-   3. QUEM É A DRA.
+   5. QUEM É A DRA.
    ========================================================= */
 .cap-dra { padding: 24px 0 36px; }
 .cap-dra__inner { display: flex; align-items: center; gap: 36px; }
@@ -162,7 +254,7 @@ a { color: inherit; text-decoration: none; }
 .cap-dra__btn { margin-top: 20px; padding: 16px 24px; font-size: 16px; letter-spacing: .2px; }
 
 /* =========================================================
-   4. O QUE VOCÊ VAI ENCONTRAR (seção rosa + divisor inclinado)
+   6. O QUE VOCÊ VAI ENCONTRAR (seção rosa + divisor inclinado)
    ========================================================= */
 .cap-sumario { position: relative; margin-top: 36px; background: var(--pink); overflow: hidden; }
 .cap-sumario__shape {
@@ -287,6 +379,7 @@ a { color: inherit; text-decoration: none; }
   .cap-card { flex-direction: row; align-items: flex-start; gap: 20px; }
   .cap-card__icon { flex: none; }
   .cap-dra__img { padding-left: 0; }
+  .cap-passos__lista { grid-template-columns: 1fr; max-width: 640px; margin-left: auto; margin-right: auto; }
   .cap-dra__text { font-size: 17px; line-height: 24px; }
   .cap-gallery { width: calc(100% - 40px); margin: 22px 20px 0; grid-template-columns: repeat(2, 1fr); gap: 10px; }
 }
@@ -301,13 +394,35 @@ a { color: inherit; text-decoration: none; }
   .cap-hero__inner { padding: 0 16px 40px; }
   .cap-hero__content { width: 100%; padding: 0; text-align: center; align-items: center; }
   .cap-hero__logo { width: 216px; margin-top: 445px; }
-  .cap-hero__title { font-size: 19px; line-height: 1.1; }
+  .cap-hero__title { margin-top: -10px; font-size: 26px; line-height: 1.1; }
+  .cap-hero__kicker { font-size: 12px; letter-spacing: 1.8px; }
   .cap-hero__lead { font-size: 14px; }
   .cap-form__head { width: 100%; text-align: left; }
   .cap-form__head h2 { font-size: 19px; }
   .cap-form { width: 100%; text-align: left; }
   .cap-form__btn { font-size: 13px; padding: 18px 16px; }
   .cap-hero__note { text-align: left; margin-top: 0; }
+
+  .cap-presentes { padding: 44px 0 40px; }
+  .cap-presentes__title { font-size: 28px; }
+  .cap-presentes__lead { font-size: 15px; line-height: 22px; }
+  .cap-cofre { flex-direction: column; text-align: center; gap: 16px; padding: 22px 18px; margin-top: 28px; }
+  .cap-cofre__valor { font-size: 22px; }
+  .cap-cofre__btn { width: 100%; }
+  .cap-presentes__lista { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 32px; }
+  .cap-presente__nome { margin-top: 8px; font-size: 13px; letter-spacing: .4px; }
+  .cap-presente__quando { font-size: 9.5px; letter-spacing: .6px; }
+  .cap-contador { margin-top: 32px; }
+  .cap-contador__grade { gap: 8px; }
+  .cap-contador__grade span { min-width: 0; flex: 1; max-width: 76px; padding: 10px 4px; font-size: 10px; }
+  .cap-contador__grade b { font-size: 26px; }
+  .cap-passos { padding: 8px 0 44px; }
+  .cap-passos__title { font-size: 26px; }
+  .cap-passos__lista { gap: 12px; margin-top: 24px; }
+  .cap-passos__lista li { padding: 18px 16px; }
+  .cap-passos__btn { width: 100%; font-size: 14px; letter-spacing: .8px; }
+  .cap-faq { padding: 40px 0 16px; }
+  .cap-faq__title { font-size: 26px; }
 
   .cap-para-quem { padding: 40px 0 44px; }
   .cap-para-quem__title { margin-bottom: 24px; font-size: 25px; }

@@ -44,7 +44,8 @@ DOMINIO-HOSTGATOR.md  ← passo a passo do domínio
 | Trocar uma imagem                | Substitua o arquivo em `assets/img/` mantendo o mesmo nome            |
 | Pixels / IDs / valor da oferta   | `assets/js/tracking.js` → objeto `CONFIG` no topo                     |
 | Link do grupo VIP do WhatsApp    | `acesso-antecipado/obrigado/index.html` → `href` do botão com `data-grupo` |
-| Textos e data da captura         | `acesso-antecipado/index.html` (título, nota do 10/11)                |
+| Textos e data da captura         | `acesso-antecipado/index.html` (título, live de 10/11 20h, presentes) |
+| Fim do contador da live          | `acesso-antecipado/index.html` → atributo `data-contador`             |
 | Endereço do webhook (n8n)        | `assets/js/captura.js` → `CONFIG.webhook`                             |
 | Preço, parcelas e link do downsell | `oferta-especial/index.html` (`ds-price` = 12x, `ds-cash` = à vista, botão `ds-btn`) e `data-produto-valor` no `<body>` |
 | Tempo da "volta do checkout"     | `assets/js/voltar.js` → `CONFIG.checkoutMinutos`                      |
