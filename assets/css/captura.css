@@ -466,15 +466,11 @@ html.cap-sem-rolagem, html.cap-sem-rolagem body { overflow: hidden; }
 /* =========================================================
    DOWNSELL (/oferta-especial/)
    ========================================================= */
-.ds-faixa {
-  padding: 11px 10px 10px;
-  background: #f70000;
-  font-size: 15px; font-weight: 700; line-height: 22px;
-  text-align: center; text-transform: uppercase;
-}
 .ds-oferta__inner { display: flex; flex-direction: column; align-items: center; max-width: 760px; padding-top: 40px; padding-bottom: 56px; text-align: center; }
 .ds-logo { width: 180px; }
-.ds-title { margin-top: 28px; font-size: 34px; font-weight: 700; line-height: 1.15; color: var(--pink); }
+.ds-title { margin-top: 28px; font-family: var(--display); font-weight: 400; font-size: 56px; line-height: 1; letter-spacing: .5px; text-transform: uppercase; color: #fff; }
+.ds-title .cap-contorno { display: block; -webkit-text-stroke-width: 2px; }
+.ds-sub { margin-top: 14px; font-size: 22px; font-weight: 600; line-height: 1.3; color: var(--pink); }
 .ds-lead { margin-top: 18px; font-size: 17px; line-height: 26px; }
 .ds-list { width: 100%; margin: 28px 0 0; padding: 0; list-style: none; text-align: left; }
 .ds-list li { padding: 12px 0; border-bottom: 1px dashed rgba(255, 255, 255, .25); font-size: 16px; line-height: 24px; }
@@ -496,6 +492,17 @@ html.cap-sem-rolagem, html.cap-sem-rolagem body { overflow: hidden; }
 .ok-step { padding: 24px 22px; background: var(--bg-dark); border: 1px solid var(--card-border); border-radius: 7px; }
 .ok-step h2 { margin-bottom: 8px; font-size: 18px; font-weight: 600; color: var(--pink); }
 .ok-step p { font-size: 15px; line-height: 22px; color: var(--cream); }
+.ok-pill { align-self: center; margin-top: 28px; }
+.ok-title { margin-top: 20px; font-family: var(--display); font-weight: 400; font-size: 64px; line-height: 1; letter-spacing: .5px; text-transform: uppercase; color: #fff; }
+.ok-title .cap-contorno { display: block; -webkit-text-stroke-width: 2px; }
+/* Indicação: link com UTM pronto para o WhatsApp, sem cupom */
+.ok-indica { width: 100%; max-width: 860px; margin-bottom: 16px; text-align: center; border-color: var(--pink); }
+.ok-indica__btn {
+  display: inline-block; margin-top: 14px; padding: 14px 22px;
+  font-size: 13px; font-weight: 600; letter-spacing: .6px;
+  border: 1px solid #fff; border-radius: 12px; transition: background .2s;
+}
+.ok-indica__btn:hover, .ok-indica__btn:focus-visible { background: rgba(255, 255, 255, .1); }
 
 /* =========================================================
    TABLET (até 1024px)
@@ -614,10 +621,12 @@ html.cap-sem-rolagem, html.cap-sem-rolagem body { overflow: hidden; }
   .cap-obrigado__text { font-size: 15px; }
   .cap-obrigado__btn { width: 100%; padding: 18px 16px; font-size: 14px; letter-spacing: .8px; }
 
-  .ds-faixa { font-size: 13px; }
   .ds-oferta__inner { padding-top: 28px; padding-bottom: 40px; }
   .ds-logo { width: 140px; }
-  .ds-title { font-size: 24px; }
+  .ds-title { font-size: 44px; }
+  .ds-sub { font-size: 18px; }
+  .ok-title { font-size: 50px; }
+  .ok-indica__btn { display: block; }
   .ds-lead { font-size: 15px; line-height: 23px; }
   .ds-list li { font-size: 14.5px; line-height: 22px; }
   .ds-but { font-size: 15px; line-height: 22px; }

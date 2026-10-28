@@ -65,6 +65,8 @@ leva impressas as 5 ou 6 mais pedidas, e elas são respondidas na live.
 - [ ] Decidir sobre o noindex da LP (`index.html`). Ele está ligado "até a abertura pública": tirar em 10/11 se for
       para a LP aparecer no Google.
 - [ ] Na hora: um celular só para ler os comentários e outro para o grupo.
+- [ ] Conferir a LP no link da mensagem 7: a pílula do hero tem que dizer "Você veio da live".
+- [ ] Antes de 27/11, ver a reta final da LP com `?previa=1&data=2026-11-28&interno=1` (contadores no lugar do selo).
 
 ## Depois da live
 - **Gravação:** deixar salva no perfil. Quem não assistiu recebe a mensagem 8 do grupo (11/11, 10h).

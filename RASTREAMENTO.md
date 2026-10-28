@@ -23,12 +23,12 @@ Todo evento do PostHog leva a propriedade `etapa` e todas as propriedades de ori
 |---|---|---|---|---|
 | chegada | `$pageview` (automático) | abriu a página | — | `PageView` |
 | chegada | `$pageleave` (automático) | saiu | tempo e % máx. de rolagem | — |
-| engajamento | `lp_secao_vista` | seção ficou 1 s no meio da tela | `secao` (hero, para-quem, o-que-e, autoras, provas, bonus, oferta, faq), `ordem` 1–8 | — |
+| engajamento | `lp_secao_vista` | seção ficou 1 s no meio da tela | `secao` (hero, dores, o-que-e, provas, autoras, oferta, faq, fechamento), `ordem` 1–8 | — |
 | engajamento | `lp_engajado` | 30 s com a aba visível | `segundos` | `EngagedVisit` (personalizado) |
 | engajamento | `lp_video_play` | clicou na capa do vídeo | — | `VideoPlay` (personalizado) |
 | engajamento | `lp_video_progresso` | assistiu 25/50/75/95% (vídeo de 13 min) | `percentual` | `VideoProgress` {percentual} |
 | engajamento | `lp_faq_aberto` | abriu pergunta do FAQ | `pergunta` | — |
-| intenção | `lp_cta_clique` | botão que rola até a oferta | `posicao` (hero, para-quem, para-quem-mobile, provas, bonus) | — |
+| intenção | `lp_cta_clique` | botão que rola até a oferta | `posicao` (hero, dores, provas, fechamento, barra = barra fixa do celular) | — |
 | intenção | `lp_oferta_vista` | 30% da seção de preço na tela | `valor`, `segundos_ate_oferta` | `ViewContent` (R$ 497) |
 | intenção | `whatsapp_clique` | link do WhatsApp | — | `Contact` |
 | intenção | `lp_checkout` | botão da oferta (vai pra Yampi) | `valor`, `segundos_na_pagina` | `ClickCheckout` (personalizado) |
@@ -38,6 +38,13 @@ Todo evento do PostHog leva a propriedade `etapa` e todas as propriedades de ori
 | compra | — (UTMify) | **pedido pago** | — | — |
 
 Todo evento da Meta leva `eventID` (deduplica se o mesmo evento chegar também por servidor).
+
+**Quem veio da live:** com `utm_medium=grupo_vip` ou `stories`, ou `utm_campaign` com `live`, o `venda.js` muda a
+pílula do hero ("Você veio da live…") e registra `origem_live: true` na sessão do PostHog: vai em todo evento
+daquela visita. Filtre `lp_checkout` por `origem_live` para comparar a conversão de quem veio da live.
+
+**Reta final (`assets/js/venda.js`):** até 26/11 a LP mostra o selo "lote limitado"; de 27/11, 00h, os contadores
+até 30/11, 23h59. Para ver outra data: `?previa=1&data=2026-11-28&interno=1` (sem `previa=1`, `data` é ignorado).
 
 ## Origem do visitante (propriedades em todo evento do PostHog e tags no Clarity)
 
@@ -65,6 +72,7 @@ Clarity recebe ainda a tag `etapa_max` (`engajou` → `viu_oferta` → `clicou_c
 | Instagram — bio | `?utm_source=instagram&utm_medium=bio&utm_campaign=bf` |
 | Instagram — stories | `?utm_source=instagram&utm_medium=stories&utm_campaign=bf&utm_content=AAAA-MM-DD` |
 | WhatsApp — lista/grupo | `?utm_source=whatsapp&utm_medium=lista&utm_campaign=bf&utm_content=disparo-1` |
+| Indicação (botão da compra confirmada) | `?utm_source=indicacao&utm_medium=whatsapp&utm_campaign=compra_confirmada` |
 | E-mail | `?utm_source=email&utm_medium=newsletter&utm_campaign=bf&utm_content=email-1` |
 | Teste (não entra nos relatórios) | `?utm_source=teste-qualquer-coisa` |
 
@@ -168,6 +176,7 @@ Yampi direto, sem passar pela LP. Todo link de divulgação deve apontar para a 
 | downsell | intenção | `lp_downsell_recusa` | "Não, quero perder essa oportunidade" (volta à oferta de onde veio: LP ou teste) | `de`, `origem` | — |
 | obrigado | compra | `lp_compra_confirmada` | abriu `/compra-confirmada/` (redirect da Yampi) | parâmetros que a Yampi mandar na URL, como `yampi_<nome>`, sem e-mail, nome, telefone, CPF ou endereço | só `PageView` |
 | obrigado | intenção | `whatsapp_clique` | botão do WhatsApp | — | `Contact` |
+| obrigado | indicação | `lp_indicacao_clique` | "Mandar para um colega no WhatsApp" (mensagem pronta com o link de indicação, sem cupom) | — | — (não conta como `Contact`) |
 
 - **Produto por página:** o `<body>` do downsell declara `data-produto-id`, `data-produto-nome`,
   `data-produto-valor` e os nomes do evento de checkout. O `tracking.js` usa esses valores no lugar do

@@ -1,0 +1,178 @@
+/* =========================================================
+   Amar Saber — Página de vendas (raiz): componentes da Black
+   Carregado depois do style.css, que o /teste/ também usa: aqui só entram
+   peças novas (prefixo vd-) e os ajustes da LP. Não mexer no style.css.
+   ========================================================= */
+:root {
+  --display: "Anton", "Impact", "Arial Narrow", sans-serif;
+  --cream: #fdebdf;
+  --card-border: #fd4ba89e;
+  --amarelo: #ffd23f;
+}
+[hidden] { display: none !important; }
+
+.vd-anton { font-family: var(--display); font-weight: 400; text-transform: uppercase; letter-spacing: .5px; }
+/* Palavra em contorno (sem suporte a stroke, fica rosa cheia) */
+.vd-contorno { color: var(--pink); }
+@supports (-webkit-text-stroke: 1px #000) {
+  .vd-contorno { color: transparent; -webkit-text-stroke: 2px var(--pink); }
+}
+
+/* ---------- Faixa rolando (no lugar da .topbar) ---------- */
+.vd-faixa { position: sticky; top: 0; z-index: 40; overflow: hidden; white-space: nowrap; background: var(--pink); color: var(--bg-dark); }
+.vd-faixa__trilha { display: inline-flex; animation: vd-faixa 36s linear infinite; }
+.vd-faixa__grupo { display: inline-flex; }
+.vd-faixa__grupo span {
+  display: inline-flex; align-items: center; gap: 22px; padding: 9px 0 9px 22px;
+  font-family: var(--display); font-size: 15px; letter-spacing: 2px; text-transform: uppercase;
+}
+.vd-faixa__grupo span::after { content: ""; width: 7px; height: 7px; background: var(--bg-dark); transform: rotate(45deg); }
+@keyframes vd-faixa { to { transform: translateX(-50%); } }
+
+/* ---------- Pílula (vira "você veio da live" pela UTM) ---------- */
+.vd-pill {
+  display: inline-flex; align-items: center; gap: 10px; align-self: flex-start;
+  padding: 8px 16px; border: 1px solid var(--card-border); border-radius: 100px;
+  background: rgba(252, 36, 148, .1); color: #fff;
+  font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+}
+.vd-pill__dot { flex: none; width: 8px; height: 8px; border-radius: 50%; background: #ff3b30; animation: vd-pulso 1.6s infinite; }
+.vd-pill.is-live { background: var(--pink); border-color: var(--pink); color: var(--bg-dark); }
+.vd-pill.is-live .vd-pill__dot { background: var(--bg-dark); animation: none; }
+@keyframes vd-pulso {
+  0% { box-shadow: 0 0 0 0 rgba(255, 59, 48, .6); }
+  70% { box-shadow: 0 0 0 10px rgba(255, 59, 48, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 59, 48, 0); }
+}
+
+/* ---------- Hero ---------- */
+.hero__title.vd-anton { font-size: clamp(46px, 6.4vw, 76px); line-height: 1.04; color: #fff; }
+.hero__title span { display: block; }
+.vd-itens { display: flex; flex-wrap: wrap; gap: 6px; }
+.vd-itens li {
+  padding: 5px 10px; border: 1px solid var(--card-border); border-radius: 6px;
+  background: rgba(252, 36, 148, .16); color: #fff;
+  font-size: 11px; font-weight: 600; letter-spacing: .5px; list-style: none;
+}
+.vd-itens { margin: 0; padding: 0; }
+.vd-hero__foto { display: none; }
+
+/* Selo "lote limitado" (até a reta final) */
+.vd-lote { display: flex; align-items: center; gap: 12px; font-size: 13px; font-weight: 600; line-height: 18px; color: var(--cream); }
+.vd-lote b, .vd-selo {
+  flex: none; padding: 5px 12px; border: 2px solid var(--amarelo); border-radius: 6px; color: var(--amarelo);
+  font-family: var(--display); font-weight: 400; font-size: 17px; letter-spacing: 2.5px; text-transform: uppercase;
+  transform: rotate(-4deg);
+}
+.vd-lote--centro { justify-content: center; }
+
+/* Prova em número */
+.vd-prova { display: flex; align-items: center; gap: 10px; font-size: 13px; line-height: 17px; color: var(--cream); }
+.vd-prova b { font-family: var(--display); font-weight: 400; font-size: 30px; letter-spacing: .5px; color: var(--pink); }
+.vd-prova--rosa { justify-content: center; font-size: 15px; color: #fff; }
+.vd-prova--rosa b { color: var(--bg-dark); }
+
+/* ---------- Contador (só na reta final) ---------- */
+.vd-contador__rotulo { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--cream); }
+.vd-contador__grade { display: flex; gap: 8px; margin-top: 8px; }
+.vd-contador__grade span {
+  display: flex; flex-direction: column; align-items: center; min-width: 62px; padding: 8px 6px;
+  font-size: 10px; letter-spacing: 1.4px; text-transform: uppercase; color: var(--cream);
+  border: 1px solid var(--card-border); border-radius: 10px; background: rgba(34, 0, 27, .6);
+}
+.vd-contador__grade b { font-family: var(--display); font-weight: 400; font-size: 26px; line-height: 1.1; color: #fff; font-variant-numeric: tabular-nums; }
+.vd-contador__fim { font-size: 16px; font-weight: 700; color: var(--pink); }
+.vd-contador--centro { text-align: center; }
+.vd-contador--centro .vd-contador__grade { justify-content: center; }
+
+/* ---------- 2. Dores → soluções ---------- */
+.vd-dores { padding: 56px 16px 64px; color: #fff; background: radial-gradient(ellipse at 50% 0%, #3d0631 0%, var(--bg-dark) 65%); }
+.vd-kicker { font-size: 13px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--pink); text-align: center; }
+.vd-h2 { margin-top: 10px; font-size: clamp(38px, 5vw, 60px); line-height: 1.02; text-align: center; color: #fff; }
+.vd-dores__lista { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 1100px; margin: 32px auto 0; padding: 0; list-style: none; }
+.vd-dor { display: flex; flex-direction: column; overflow: hidden; border: 1px solid var(--card-border); border-radius: 18px; background: rgba(255, 255, 255, .03); }
+.vd-dor__dor { padding: 20px 20px 18px; }
+.vd-dor__tag { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--pink); }
+.vd-dor__texto { margin-top: 8px; font-size: 17px; font-weight: 600; line-height: 24px; }
+.vd-dor__sol { flex: 1; padding: 18px 20px 20px; background: linear-gradient(180deg, #700e41 0%, #4a0730 100%); }
+.vd-dor__item { display: inline-block; padding: 4px 10px; border-radius: 6px; background: var(--pink); color: var(--bg-dark); font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+.vd-dor__sol p { margin-top: 10px; font-size: 14px; line-height: 21px; color: var(--cream); }
+.vd-centro { display: flex; justify-content: center; margin-top: 32px; }
+
+/* ---------- 3. O que tem no Guia ---------- */
+.o-que-e .vd-h2 { margin-top: 0; }
+.o-que-e .gallery--sumario { width: 100%; margin-top: 8px; }
+
+/* ---------- 6. Autoras (curta) ---------- */
+.autoras__inner { padding-bottom: 32px; }
+
+/* ---------- 7. Oferta ---------- */
+.oferta__title.vd-anton { font-size: clamp(40px, 5vw, 60px); line-height: .98; }
+.oferta .vd-selo { width: auto; align-self: center; margin-top: 4px; font-size: 20px; letter-spacing: 3px; }
+.oferta .vd-contador { margin-top: 4px; }
+.vd-oferta__urg { font-size: 13px; font-weight: 600; color: var(--amarelo); }
+.vd-oferta__pag { font-size: 13px; line-height: 19px; color: var(--cream); }
+
+/* ---------- 9. Fechamento ---------- */
+.vd-fechamento { padding: 56px 16px 72px; text-align: center; color: #fff; background: radial-gradient(ellipse at 50% 60%, #3d0631 0%, var(--bg-dark) 70%); }
+.vd-fechamento__title { font-size: clamp(46px, 7vw, 84px); line-height: .98; }
+.vd-fechamento__title span { display: block; }
+.vd-fechamento__lead { max-width: 560px; margin: 16px auto 0; font-size: 15px; line-height: 22px; color: var(--cream); }
+.vd-fechamento .vd-lote, .vd-fechamento .vd-contador { margin-top: 24px; }
+
+/* ---------- Barra fixa (só celular) ---------- */
+.vd-barra { display: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .vd-faixa__trilha, .vd-pill__dot { animation: none; }
+}
+
+/* ---------- Tablet ---------- */
+@media (max-width: 1024px) {
+  .vd-dores__lista { grid-template-columns: 1fr; max-width: 560px; }
+}
+
+/* ---------- Mobile (até 767px) ---------- */
+@media (max-width: 767px) {
+  body { padding-bottom: 72px; }
+
+  .hero { min-height: 0; padding: 28px 16px 0; overflow: hidden; background: radial-gradient(ellipse at 50% 30%, #4a0a3c 0%, var(--bg-dark) 70%); }
+  .hero__inner { padding-bottom: 0; }
+  .hero__spacer { display: none; }
+  .hero__logo { width: 140px; }
+  .hero__title.vd-anton { font-size: 58px; }
+  .vd-pill { align-self: center; }
+  .vd-itens, .vd-lote, .vd-prova { justify-content: center; }
+  .vd-lote, .vd-prova { text-align: left; }
+  .vd-contador__grade { justify-content: center; }
+  .vd-contador__grade span { flex: 1; max-width: 76px; min-width: 0; }
+  .hero .btn, .vd-dores .btn, .vd-fechamento .btn { width: 100%; }
+  .vd-hero__foto {
+    display: block; width: calc(100% + 32px); max-width: none; margin: 4px -16px 0;
+    -webkit-mask: linear-gradient(180deg, #000 72%, transparent); mask: linear-gradient(180deg, #000 72%, transparent);
+  }
+
+  .vd-dores { padding: 44px 16px 48px; }
+  .vd-h2 { font-size: 40px; }
+  .o-que-e__text { line-height: 22px; }
+
+  .oferta .vd-selo { margin-top: 16px; }
+  .oferta .vd-contador { margin-top: 16px; }
+  .vd-oferta__urg { margin-top: 10px; }
+  .vd-oferta__pag { margin-top: 10px; }
+
+  .vd-fechamento { padding: 44px 16px 56px; }
+
+  .vd-barra {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 50;
+    display: flex; align-items: center; justify-content: space-between; gap: 10px;
+    padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+    color: #fff; background: rgba(34, 0, 27, .94); border-top: 1px solid var(--card-border);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    transition: transform .35s, opacity .35s;
+  }
+  .vd-barra.is-oculta { transform: translateY(110%); opacity: 0; pointer-events: none; }
+  .vd-barra__tempo { font-size: 11px; font-weight: 600; letter-spacing: .8px; line-height: 1.3; text-transform: uppercase; white-space: nowrap; }
+  .vd-barra__tempo b { display: block; font-family: var(--display); font-weight: 400; font-size: 17px; letter-spacing: .5px; }
+  .vd-barra .btn { flex: none; padding: 12px 14px; font-size: 12px; border-radius: 10px; }
+}

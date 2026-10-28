@@ -16,4 +16,12 @@
   T.capture('lp_compra_confirmada', props, { send_instantly: true });
   T.reachStage('comprou');
   if (window.clarity) clarity('upgrade', 'comprou');
+
+  // Indicação: o link do WhatsApp tem "whatsapp" na URL, e o tracking.js contaria como Contact (falar com
+  // a Amar). stopPropagation segura o clique aqui, e ele vira só lp_indicacao_clique.
+  var indica = document.querySelector('[data-indicacao]');
+  if (indica) indica.addEventListener('click', function (e) {
+    e.stopPropagation();
+    T.capture('lp_indicacao_clique', { etapa: 'indicacao' }, { send_instantly: true });
+  });
 })();
