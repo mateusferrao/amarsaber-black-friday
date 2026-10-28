@@ -345,6 +345,9 @@ O n8n decide **qual** template sai e **quando**. O Kommo só envia, para a conve
 **Onde:** Configurações → **Salesbot** (ou Automações → Salesbot) → **+ Criar bot** → **Criar do zero**. Em cada
 bot: dê o nome no topo, monte os passos com **Adicionar próximo passo** e clique **Salvar**. Na janela "Condição de execução", clique **Cancelar**; no aviso "Seu bot nunca será executado sem um gatilho", clique **Salvar**. Não adicione gatilho.
 
+**Confira na lista de Salesbots que a coluna Gatilhos dos bots AS está vazia.** Se aparecer "Qualquer nova
+conversa", o bot roda em toda conversa nova da conta: abra o bot, clique no gatilho no quadro **Gatilhos** e apague.
+
 **Canal, em todo passo Enviar mensagem:** em **Canais**, marque só o **WhatsApp Business da (31) 9 5349-5052**, não
 "Todos". A conta tem também uma conexão WA Lite, que não manda botões; com "Todos", o editor avisa que a mensagem sai
 sem botões.
@@ -398,6 +401,9 @@ Nome: `AS · <nome do template>` (ex.: `AS · as_resultado_plantao`). Monte um, 
 de bots para os outros. Em cada cópia, troque só o nome e o template.
 
 1. **Enviar mensagem** → canal **WhatsApp da (31) 9 5349-5052** → **Modelo** (template) → o template de mesmo nome.
+   Os templates aprovados guardam só `{{1}}` e `{{2}}`, sem ligação com o lead. No passo do bot, preencha a variável
+   **{{1}}** com o campo **as_nome** (`{{lead.cf.881487}}`) e, só no `as_triagem`, a **{{2}}** com o campo **as_dias**
+   (`{{lead.cf.881493}}`). O `as_prova` não tem variável.
 2. Os botões do template viram ramos embaixo da mensagem. Se não virarem, adicione **+ Botão de ação** com o texto
    exato de cada botão.
 3. Ramos:
