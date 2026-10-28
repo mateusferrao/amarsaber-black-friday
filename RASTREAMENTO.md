@@ -39,9 +39,9 @@ Todo evento do PostHog leva a propriedade `etapa` e todas as propriedades de ori
 
 Todo evento da Meta leva `eventID` (deduplica se o mesmo evento chegar também por servidor).
 
-**Quem veio da live:** com `utm_medium=grupo_vip` ou `stories`, ou `utm_campaign` com `live`, o `venda.js` muda a
-pílula do hero ("Você veio da live…") e registra `origem_live: true` na sessão do PostHog: vai em todo evento
-daquela visita. Filtre `lp_checkout` por `origem_live` para comparar a conversão de quem veio da live.
+**Quem veio da live ou do grupo:** com `utm_medium=grupo_vip` ou `stories`, ou `utm_campaign` com `live`, o
+`venda.js` muda a pílula do hero ("Você veio da live…" com `stories` ou campanha `live`; "Você veio do Grupo VIP…"
+nos outros links do grupo) e registra `origem_live: true` na sessão do PostHog: vai em todo evento daquela visita. Filtre `lp_checkout` por `origem_live` para comparar a conversão de quem veio da live.
 
 **Reta final (`assets/js/venda.js`):** até 26/11 a LP mostra o selo "lote limitado"; de 27/11, 00h, os contadores
 até 30/11, 23h59. Para ver outra data: `?previa=1&data=2026-11-28&interno=1` (sem `previa=1`, `data` é ignorado).
@@ -246,6 +246,31 @@ separado por campanha: a comparação teste × LP sai das UTMs (`utm_campaign`),
   (`content_category`). Campanhas do teste otimizam em `Purchase`, não em `Lead`.
 - **Testar a API de Conversões:** `/teste/?test_event_code=TESTxxxx`. A equipe usa `?interno=1`: a linha vai para a
   planilha com Interno = sim e nada vai para a Meta.
+
+## Grupos VIP (SendFlow)
+
+- **Campanha:** "Black 2026 · Grupo VIP" no SendFlow (tipo lançamento com transbordo). Grupos "Grupo VIP Amar
+  Saber · Black 2026 #1", #2, #3…, com até 500 pessoas, só admins falam, 1 grupo por pessoa e grupos de reserva (margem 3)
+  já criados. Foto `assets/img/grupo-vip.jpg`; nome, foto, descrição e os 6 admins valem para todo grupo novo.
+- **Link de rodízio:** `https://sndflw.com/i/amarsaber-black-vip`, no botão `data-grupo` do obrigado. Manda para o
+  grupo com vaga. O clique continua gerando `lp_grupo_clique` e `GroupClick`.
+- **Teste:** campanha separada "Teste BF" (grupo "Grupo Teste BF Amar Saber", sem criação de grupos). Toda mensagem
+  vai primeiro para lá.
+- **Mensagens:** roteiro, horários e UTMs em `GRUPO-VIP-MENSAGENS.md` (`utm_medium=grupo_vip`, `utm_campaign` por
+  fase e `utm_content` por mensagem).
+- **Métricas:** n8n **AS · Grupos SendFlow → Sheets**, todo dia às 7h05 (horário de Brasília), lendo a SendAPI
+  (`https://sendapi.sendflow.pro`, credencial "SendFlow SendAPI" no n8n). Grava o dia anterior em 3 abas da
+  planilha de leads:
+
+  | Aba | O que tem |
+  |---|---|
+  | **Grupos** | uma linha por dia: cliques no link, entradas, saídas, saldo, mensagens enviadas, destinatários, receberam, leram, % leitura |
+  | **Grupos · Mensagens** | uma linha por mensagem enviada: começo do texto, destinatários, receberam, leram, ouviram (áudio), % leitura |
+  | **Grupos · Não entrou** | quem se cadastrou (aba Leads - Grupo WhatsApp) há mais de 2 h e não está em nenhum grupo, para a equipe chamar no privado. Colunas "Contato feito" e "Observação" são da equipe. Quando a pessoa entra depois, "Entrou no grupo" vira "sim" |
+
+  O cruzamento é pelo WhatsApp (DDD + 8 últimos dígitos) e ignora quem tem Interno = sim. Entradas e cliques do
+  SendFlow só contam a partir de 28/10, quando a campanha foi criada: as 236 pessoas importadas com o Grupo #1 não
+  aparecem como entrada.
 
 ## Limites conhecidos
 

@@ -70,7 +70,9 @@
     var pill = document.querySelector('[data-pill]');
     if (pill) {
       pill.classList.add('is-live');
-      pill.lastChild.textContent = 'Você veio da live: a condição está aqui embaixo ↓';
+      // Links do Caso do dia e da reta final (utm_campaign sem "live") vêm do grupo, não da live.
+      var daLive = medium === 'stories' || campaign.indexOf('live') !== -1;
+      pill.lastChild.textContent = (daLive ? 'Você veio da live' : 'Você veio do Grupo VIP') + ': a condição está aqui embaixo ↓';
     }
     // origem_live em todos os eventos desta visita (PostHog), para comparar a conversão de quem veio da live.
     if (window.posthog && window.asTracking && !window.asTracking.interno) posthog.register_for_session({ origem_live: true });
