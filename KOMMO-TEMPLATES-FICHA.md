@@ -298,7 +298,7 @@ R$ 187 à vista ou 12x de R$ 19,03, só até 30/11.
 - **Rodapé:** (vazio)
 - **Botões (resposta rápida):** Quero o link · Tenho uma dúvida
 
-## Respostas do Salesbot "AS · Respostas" (texto livre, sem aprovação)
+## Respostas dos Salesbots (texto livre, sem aprovação: vão dentro das 24 h depois do toque)
 
 **R1 · Tocou em "Quero o link"**
 
@@ -330,34 +330,105 @@ Para quem está começando, o Guia é uma base de conduta para a rotina, com ori
 ```
 Botões: Quero o link · Tenho uma dúvida
 
-**R5 · Tocou em "Tenho uma dúvida" ou escreveu qualquer outra coisa**
+**R5 · Tocou em "Tenho uma dúvida"** (quem escreve outra coisa não recebe texto: vai direto para o atendimento)
 
 ```
 Pode mandar a sua dúvida aqui. A equipe responde em seguida.
 ```
 
 
-## Salesbots no Kommo
-O n8n decide **qual** template sai e **quando**; o Kommo só envia, para a conversa ficar no histórico do lead.
+## Salesbots no Kommo: passo a passo
+O n8n decide **qual** template sai e **quando**. O Kommo só envia, para a conversa ficar no histórico do lead. São
+**21 bots, nenhum com gatilho**: o n8n roda os 15 de template pela API, e eles chamam os 6 de resposta com o passo
+**Iniciar Salesbot**.
 
-**1. Um bot por template (15 bots).** Nome: `AS · <nome do template>` (ex.: `AS · as_triagem`). Um passo só:
-**Enviar mensagem → Modelo de WhatsApp → o template de mesmo nome**, pelo WhatsApp da (31) 9 5349-5052. Não precisa
-de gatilho: o n8n roda o bot no lead pela API. Depois de criar, me avise: eu leio os IDs pela API e preencho o n8n.
+**Onde:** Configurações → **Salesbot** (ou Automações → Salesbot) → **+ Criar bot** → **Criar do zero**. Em cada
+bot: dê o nome no topo, monte os passos com **Adicionar próximo passo** e clique **Salvar**. Não adicione gatilho.
 
-**2. O bot `AS · Respostas`.** Gatilho: **mensagem recebida** nas etapas *Em recuperação* e *Pediu o link* do funil
-*Recuperação Black*. Condição pelo texto da mensagem:
+**Ordem:** primeiro os 6 bots de resposta (parte A), depois os 15 de template (parte B). O passo **Iniciar Salesbot**
+só lista bots que já existem.
 
-| Mensagem do cliente | O bot faz |
-|---|---|
-| Quero o link | R1 (com o campo as_link) → webhook `acao=link` → mover para *Pediu o link* |
-| Preço | R2 → webhook `acao=preco` |
-| Entrega | R3 → webhook `acao=entrega` |
-| Se serve pra mim | R4 → webhook `acao=serve` |
-| qualquer outra coisa (inclui "Tenho uma dúvida") | R5 → webhook `acao=atendimento` → mover para *Em atendimento* → parar o bot |
+**Endereço do webhook** (passo **Ação → Enviar webhook**), igual em todos e com a `acao` trocada:
+`https://n8n.automato.pro/webhook/as-black-kommo?chave=<CHAVE>&acao=<acao>`. A `<CHAVE>` está no nó "Ler evento" do
+fluxo `AS · Recuperação Black` e não fica no repositório. O n8n acha o lead pelo id que o Kommo manda junto.
 
-Webhook (passo **Enviar webhook** do Salesbot): `https://n8n.automato.pro/webhook/as-black-kommo?chave=<CHAVE>&acao=<acao>`,
-um por ação. A chave está no nó "Ler evento" do fluxo `AS · Recuperação Black` (ela não fica no repositório). O n8n acha o
-lead pelo id que o Kommo manda no webhook.
+### A. Os 6 bots de resposta
 
-**3. n8n.** Criar a credencial **Kommo API** (Header Auth/Custom: `Authorization: Bearer <token de longa duração>`) e
-escolher nos 5 nós HTTP do `AS · Kommo enviar`.
+**A1 · `AS · Atendimento`.** A pessoa quer falar com a equipe. O bot para a sequência e passa o lead para o time.
+1. **Ação → Enviar webhook** → `…&acao=atendimento`
+2. **Ação → Alterar etapa do lead** → funil *Recuperação Black* → *Em atendimento*
+3. (opcional) **Ação → Adicionar tarefa** → "Responder dúvida da Black" → para hoje → responsável do atendimento
+
+**A2 · `AS · Dúvida`.** A pessoa tocou em "Tenho uma dúvida".
+1. **Enviar mensagem** → texto **R5**
+2. **Iniciar Salesbot** → `AS · Atendimento`
+
+**A3 · `AS · Link`.** A pessoa tocou em "Quero o link".
+1. **Ação → Enviar webhook** → `…&acao=link`
+2. **Enviar mensagem** → texto **R1**. No lugar do link, insira o campo do lead **as_link** (`{{lead.cf.881489}}`).
+3. **Ação → Alterar etapa do lead** → *Recuperação Black* → *Pediu o link*
+
+**A4 · `AS · Preço`.** Vem do botão "Preço" da triagem. O n8n agenda a alternativa de R$ 187 para 48 h depois.
+1. **Ação → Enviar webhook** → `…&acao=preco`
+2. **Enviar mensagem** → texto **R2** → **+ Resposta rápida**: `Quero o link`
+3. Nos ramos que aparecem embaixo da mensagem:
+   - **Quero o link** → **Iniciar Salesbot** → `AS · Link`
+   - **Outra resposta** → **Iniciar Salesbot** → `AS · Atendimento`
+
+**A5 · `AS · Entrega`.** Vem do botão "Entrega" da triagem.
+1. **Ação → Enviar webhook** → `…&acao=entrega`
+2. **Enviar mensagem** → texto **R3** → **+ Resposta rápida**: `Quero o link` e `Tenho uma dúvida`
+3. Ramos:
+   - **Quero o link** → `AS · Link`
+   - **Tenho uma dúvida** → `AS · Dúvida`
+   - **Outra resposta** → `AS · Atendimento`
+
+**A6 · `AS · Serve`.** Vem do botão "Se serve pra mim" da triagem. É igual ao A5, com `…&acao=serve` e o texto
+**R4**.
+
+### B. Os 15 bots de template
+Nome: `AS · <nome do template>` (ex.: `AS · as_resultado_plantao`). Monte um, confira, e use **Duplicar** na lista
+de bots para os outros. Em cada cópia, troque só o nome e o template.
+
+1. **Enviar mensagem** → canal **WhatsApp da (31) 9 5349-5052** → **Modelo** (template) → o template de mesmo nome.
+2. Os botões do template viram ramos embaixo da mensagem. Se não virarem, adicione **+ Resposta rápida** com o texto
+   exato de cada botão.
+3. Ramos:
+   - **Quero o link** → **Iniciar Salesbot** → `AS · Link`
+   - **Tenho uma dúvida** → **Iniciar Salesbot** → `AS · Dúvida`
+   - **Outra resposta** → **Iniciar Salesbot** → `AS · Atendimento`
+4. Não ligue **Sem resposta**. Assim o bot fica esperando o toque até o próximo template, que o n8n manda dias depois.
+5. Se aparecer o ramo **Falha ao enviar mensagem**, deixe vazio: o n8n registra o erro pelo retorno da API.
+
+**Exceção: `AS · as_triagem`.** Os ramos são outros:
+- **Preço** → `AS · Preço`
+- **Entrega** → `AS · Entrega`
+- **Se serve pra mim** → `AS · Serve`
+- **Outra resposta** → `AS · Atendimento`
+
+| # | Bot | Template | Ramos |
+|---|---|---|---|
+| 1 | `AS · as_resultado_plantao` | as_resultado_plantao | Link · Dúvida · Atendimento |
+| 2 | `AS · as_resultado_consulta` | as_resultado_consulta | Link · Dúvida · Atendimento |
+| 3 | `AS · as_resultado_sozinho` | as_resultado_sozinho | Link · Dúvida · Atendimento |
+| 4 | `AS · as_dor_plantao` | as_dor_plantao | Link · Dúvida · Atendimento |
+| 5 | `AS · as_dor_consulta` | as_dor_consulta | Link · Dúvida · Atendimento |
+| 6 | `AS · as_dor_sozinho` | as_dor_sozinho | Link · Dúvida · Atendimento |
+| 7 | `AS · as_prova` | as_prova | Link · Dúvida · Atendimento |
+| 8 | `AS · as_triagem` | as_triagem | Preço · Entrega · Serve · Atendimento |
+| 9 | `AS · as_checkout_15min` | as_checkout_15min | Link · Dúvida · Atendimento |
+| 10 | `AS · as_pix_expirou` | as_pix_expirou | Link · Dúvida · Atendimento |
+| 11 | `AS · as_cartao_recusado` | as_cartao_recusado | Link · Dúvida · Atendimento |
+| 12 | `AS · as_reta_3dias` | as_reta_3dias | Link · Dúvida · Atendimento |
+| 13 | `AS · as_ultimo_dia` | as_ultimo_dia | Link · Dúvida · Atendimento |
+| 14 | `AS · as_ultimas_horas` | as_ultimas_horas | Link · Dúvida · Atendimento |
+| 15 | `AS · as_alternativa` | as_alternativa | Link · Dúvida · Atendimento |
+
+O Kommo só deixa escolher o template depois que a Meta aprova. Dá para criar os 6 bots de resposta agora e os 15 de
+template à medida que os templates forem aprovados.
+
+### C. Depois dos bots
+- Me avise: eu leio os IDs dos 15 bots de template pela API (`/api/v4/bots`) e preencho o BOTS no n8n.
+- **n8n:** criar a credencial **Kommo API** (Header Auth/Custom: `Authorization: Bearer <token de longa duração>`) e
+  escolher nos 5 nós HTTP do `AS · Kommo enviar`.
+- No teste, confiro no n8n o formato do webhook que o Kommo manda e se o lead é achado.

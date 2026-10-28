@@ -147,8 +147,8 @@ R$ 187 da `/oferta-especial/`), no lugar de `as_alt_plantao`, `as_alt_consulta` 
 - **R4 · Se serve pra mim**: "Para quem está começando, o Guia é uma base de conduta para a rotina, com orientações
   diretas. Para quem já atende, ele vira a consulta rápida no meio do plantão e o padrão para treinar a equipe."
   [Quero o link] [Tenho uma dúvida]
-- **R5 · Tenho uma dúvida / Outra dúvida / texto livre**: "Pode mandar a sua dúvida aqui. A equipe responde em
-  seguida." → pausa e vai para o atendimento.
+- **R5 · Tenho uma dúvida**: "Pode mandar a sua dúvida aqui. A equipe responde em seguida." → pausa e vai para o
+  atendimento. Quem escreve qualquer outra coisa não recebe texto: pausa e vai direto para o atendimento.
 
 ## E-mails da Yampi (carrinho abandonado; [nome] e o botão são as variáveis da Yampi)
 **E1 · 30 min**
@@ -194,7 +194,9 @@ R$ 187 da `/oferta-especial/`), no lugar de `as_alt_plantao`, `as_alt_consulta` 
 2. ~~Yampi: webhook para `as-black-yampi`~~ (feito pela API em 28/10).
 3. ~~n8n: conta, funil, etapa e campos no "Config do Kommo"; alternativa única~~ (feito em 28/10).
 4. **Kommo (usuário):** cadastrar os 15 templates de `KOMMO-TEMPLATES-FICHA.md` e enviar para aprovação; criar os 15
-   Salesbots `AS · <template>` e o `AS · Respostas` (passo a passo na ficha).
+   Salesbots `AS · <template>` e os 6 de resposta (`AS · Atendimento`, `AS · Dúvida`, `AS · Link`, `AS · Preço`,
+   `AS · Entrega`, `AS · Serve`). O passo a passo está na ficha. Os de resposta vêm primeiro e nenhum bot tem
+   gatilho.
 5. **n8n (usuário):** criar a credencial "Kommo API" e escolher nos nós HTTP do `AS · Kommo enviar`. Eu preencho os IDs
    dos Salesbots.
 6. **Teste:** `TELEFONE_TESTE` + `TESTE_RAPIDO`, um lead em cada fluxo e um toque em cada botão; depois
@@ -206,7 +208,7 @@ R$ 187 da `/oferta-especial/`), no lugar de `as_alt_plantao`, `as_alt_consulta` 
   atendimento 113503596) e campos do lead `as_nome` 881487, `as_link` 881489, `as_dor` 881491, `as_dias` 881493.
 - **Yampi:** webhook "AS · Recuperação Black (n8n)" ativo (cart.reminder, order.paid, order.status.updated,
   transaction.payment.refused) apontando para `as-black-yampi`.
-- **n8n:** `AS · Kommo enviar` com conta, funil, etapa e campos preenchidos; faltam os IDs dos 15 Salesbots e a
+- **n8n:** `AS · Kommo enviar` com conta, funil, etapa e campos preenchidos; faltam os IDs dos 15 Salesbots de template e a
   credencial "Kommo API". `AS · Recuperação Black` com a alternativa única e a entrada do Kommo pelo id do lead;
   envio desligado (`ENVIO_ATIVO = false`) até os templates serem aprovados e o teste passar.
-- **Falta (usuário):** cadastrar os 15 templates e enviar para aprovação; criar os Salesbots; criar a credencial.
+- **Falta (usuário):** cadastrar os 15 templates e enviar para aprovação; criar os 21 Salesbots; criar a credencial.
