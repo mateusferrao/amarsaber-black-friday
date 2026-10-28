@@ -219,3 +219,12 @@ Urgência usada (confirmada pelo usuário): prazo de 30/11 23h59, quando a ofert
 5. **n8n `AS · Recuperação Black`:** testar com `TELEFONE_TESTE` e `TESTE_RAPIDO`; depois `ENVIO_ATIVO = true` e
    publicar.
 6. **E-mails da Yampi:** cadastrar os 4 e desligar em 30/11 às 23h59.
+
+### Estado atual (28/10)
+- `AS · Recuperação Black` (n8n 2ul2dmhhVyHCQPYe) e `AS · Kommo enviar` (exqe8KfQqIZGETyH) estão publicados, com o
+  envio desligado (`ENVIO_ATIVO = false`). A fila `AS · Fila de recuperação` já recebe os leads do teste: o
+  `AS · Teste Black` avisa a recuperação a cada lead (nó "Avisar recuperação"; internos não entram).
+- Quem entrou na fila há mais de 24 h quando o envio for ligado pula a 1ª mensagem (resultado, checkout, Pix ou
+  cartão) e entra no passo seguinte.
+- Linhas de teste na fila: telefones 55319000000xx (ids 1 a 3), já fora da sequência (status `comprou` ou
+  `atendimento`).
