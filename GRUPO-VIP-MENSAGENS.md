@@ -37,6 +37,62 @@ manda no privado, pelo WhatsApp de dúvidas (31) 9 5349-5052, uma vez por pessoa
 >
 > Para entrar: https://sndflw.com/i/amarsaber-black-vip
 
+## Agendado no SendFlow (28/10)
+Tudo da tabela do calendário está agendado na campanha "Black 2026 · Grupo VIP", inclusive os casos ainda sem
+validação. Fora do agendamento:
+- **A5 (vídeo) e A6 (áudio):** entram quando a Dra. mandar os arquivos;
+- **6, 6a, 6b e 7:** templates "Live 10/11 · …" no painel, para o Mateus disparar na live.
+
+Se a Dra. mudar um texto, corrigir aqui e editar ou recriar a ação correspondente:
+
+| Mensagem | Ação no SendFlow |
+|---|---|
+| A1 | `qkLxU9GUwIt98mUHNGzw` |
+| A2 | `QsS9kbSo7Oa0CJAXKFNG` |
+| A3 | `8DLm70xruo2Po31G3Lbz` |
+| 1 | `ixFXa9om1ussq8YmJKew` |
+| A4 | `0ogzsDKp7XSVJoC5mGi3` |
+| 2 | `oRm0HcjOnRiMJAYMxbhO` |
+| 3b | `bNgZpbKGe3ALNXE9TN2A` |
+| 3 | `Qwzcnzc47cLV7v5peUVU` |
+| L0 | `EXjX1wXtY3bWpLi60XVT` |
+| 4 | `kX7jwXrr82KSgQGupy9Q` |
+| 5 | `jC6oXuqR7OQzmqWW9BdW` |
+| 8 | `ZR23Fy6ZMqy1R9l8fmc4` |
+| C | `ydiyawtpel0iWkFLiSVx` |
+| caso01 12h | `6NberdYiwp4Nk9dbgC67` |
+| caso01 19h30 | `RJpVu5Un5Yv8dlXXQI5s` |
+| caso02 12h | `P8tbpIaXUFWiEIePxWjX` |
+| caso02 19h30 | `oMT77dXXAeA1Sq7boouZ` |
+| caso03 12h | `D2msApkoQVkk5yQ6SMgt` |
+| caso03 19h30 | `TiZ2D6IRlcGJYbQyTIg3` |
+| caso04 12h | `fHr8YbRCdFPMcyimwLyV` |
+| caso04 19h30 | `CQSOeuamBMFLOj07a5Oq` |
+| caso05 12h | `FvqXu2SVTWB5UCka8dMU` |
+| caso05 19h30 | `qNmhDxnelYJQBza1nfCl` |
+| caso06 12h | `U4bvNCFXolakhfDyz93V` |
+| caso06 19h30 | `xBN2D6CX8m2s48RLmarr` |
+| caso07 12h | `K30gKD4By8vNVsObDIAA` |
+| caso07 19h30 | `cc8n16pDw2v02Ra1jefh` |
+| caso08 12h | `v4DO2wttzuMc4fSUCe9p` |
+| caso08 19h30 | `9rTA8tO624W738lFOWKa` |
+| caso09 12h | `OWDW1w1HfJosGTSf5G6M` |
+| caso09 19h30 | `DaWqg6eKBD3eTbU6CJfo` |
+| caso10 12h | `1XmDrUJSsAS74p2G46NA` |
+| caso10 19h30 | `c9f2vRBcGePRo2yq4S3w` |
+| p1 | `tyAapSAhuXbtX1oFr8HS` |
+| p2 | `zDyjJV04YG48N7gmdmZL` |
+| p3 | `K0hRp8H6oNymsnRub1T9` |
+| p4 | `ZczZU5qvU9id0CDYsYNk` |
+| p5 | `7sHt7SVUfZ5j4Nf4GGmy` |
+| r2711 | `odddwgPBID3AQaa7cM0g` |
+| r2811 | `wkvmE7QJ85YCy9TBiZHj` |
+| r2911 | `wMQFeSKP4u5yfYCuU5zq` |
+| r3011a | `gMTxlqOjQacpldn0mqWd` |
+| r3011b | `odD54aogJwLK5Y2XCSqZ` |
+| r3011c | `aoHlwWFtaRhkGJSfbBaA` |
+| E | `A7LrKVosvsZiuGVgNL7o` |
+
 ## Links e UTM
 Todo link da LP leva `utm_source=whatsapp&utm_medium=grupo_vip`, mais:
 
@@ -193,8 +249,10 @@ assistir ao vivo (os casos reais) e um pedido: tocar em "Vou" no evento do grupo
 ## 3b · seg 09/11, 12h · perguntas para a live
 > Amanhã, na live, vou responder as dúvidas de vocês.
 >
-> Abri uma caixinha de perguntas nos meus stories: https://www.instagram.com/mariapaulaferrarivet/. Manda lá o que você quer que eu responda, sobre o
-> Guia, sobre a Black ou sobre um caso da sua rotina. As mais pedidas entram na live.
+> Abri uma caixinha de perguntas nos meus stories. Manda lá o que você quer que eu responda, sobre o Guia, sobre a
+> Black ou sobre um caso da sua rotina. As mais pedidas entram na live.
+>
+> https://www.instagram.com/mariapaulaferrarivet/
 
 > Nota: abrir a caixinha nos stories antes de enviar esta mensagem.
 
