@@ -343,7 +343,7 @@ O n8n decide **qual** template sai e **quando**. O Kommo só envia, para a conve
 **Iniciar Salesbot**.
 
 **Onde:** Configurações → **Salesbot** (ou Automações → Salesbot) → **+ Criar bot** → **Criar do zero**. Em cada
-bot: dê o nome no topo, monte os passos com **Adicionar próximo passo** e clique **Salvar**. Não adicione gatilho.
+bot: dê o nome no topo, monte os passos com **Adicionar próximo passo** e clique **Salvar**. Na janela "Condição de execução", clique **Cancelar**; no aviso "Seu bot nunca será executado sem um gatilho", clique **Salvar**. Não adicione gatilho.
 
 **Ordem:** primeiro os 6 bots de resposta (parte A), depois os 15 de template (parte B). O passo **Iniciar Salesbot**
 só lista bots que já existem.
@@ -370,14 +370,14 @@ fluxo `AS · Recuperação Black` e não fica no repositório. O n8n acha o lead
 
 **A4 · `AS · Preço`.** Vem do botão "Preço" da triagem. O n8n agenda a alternativa de R$ 187 para 48 h depois.
 1. **Ação → Enviar webhook** → `…&acao=preco`
-2. **Enviar mensagem** → texto **R2** → **+ Resposta rápida**: `Quero o link`
+2. **Enviar mensagem** → texto **R2** → **+ Botão de ação**: `Quero o link`
 3. Nos ramos que aparecem embaixo da mensagem:
    - **Quero o link** → **Iniciar Salesbot** → `AS · Link`
    - **Outra resposta** → **Iniciar Salesbot** → `AS · Atendimento`
 
 **A5 · `AS · Entrega`.** Vem do botão "Entrega" da triagem.
 1. **Ação → Enviar webhook** → `…&acao=entrega`
-2. **Enviar mensagem** → texto **R3** → **+ Resposta rápida**: `Quero o link` e `Tenho uma dúvida`
+2. **Enviar mensagem** → texto **R3** → **+ Botão de ação**: `Quero o link` e `Tenho uma dúvida`
 3. Ramos:
    - **Quero o link** → `AS · Link`
    - **Tenho uma dúvida** → `AS · Dúvida`
@@ -391,7 +391,7 @@ Nome: `AS · <nome do template>` (ex.: `AS · as_resultado_plantao`). Monte um, 
 de bots para os outros. Em cada cópia, troque só o nome e o template.
 
 1. **Enviar mensagem** → canal **WhatsApp da (31) 9 5349-5052** → **Modelo** (template) → o template de mesmo nome.
-2. Os botões do template viram ramos embaixo da mensagem. Se não virarem, adicione **+ Resposta rápida** com o texto
+2. Os botões do template viram ramos embaixo da mensagem. Se não virarem, adicione **+ Botão de ação** com o texto
    exato de cada botão.
 3. Ramos:
    - **Quero o link** → **Iniciar Salesbot** → `AS · Link`
