@@ -45,7 +45,7 @@ Na UTMify e no PostHog, o `utm_content` mostra quais casos e quais dias trazem v
 
 | Fase | Quando | # | Mensagem | Formato |
 |---|---|---|---|---|
-| Aquecimento | qua 28/10, 19h30 | A1 | Boas-vindas | texto |
+| Aquecimento | qui 29/10, 19h30 | A1 | Boas-vindas | texto |
 | | sáb 31/10, 12h | A2 | Caso #0 · estado epilético | texto + enquete |
 | | dom 01/11, 19h30 | A3 | Resposta do Caso #0 | imagem + texto |
 | | ter 03/11, 19h | 1 | D-7 + 1ª dica | texto + evento |
@@ -94,17 +94,21 @@ A ordem dos presentes e o roteiro da live estão em `LIVE-ROTEIRO.md`.
 # Fase 1 · Aquecimento (28/10 a 09/11)
 
 ## 0 · Descrição dos grupos
-Vai na descrição fixa de todos os grupos (campo do SendFlow), para quem entra em qualquer dia.
-> Bem-vindo ao Grupo VIP da Black Friday do Guia de Protocolos.
+Vai na descrição fixa de todos os grupos (campo do SendFlow), para quem entra em qualquer dia. Este é o texto que
+está na campanha:
+> Bem-vindo ao Grupo VIP da Black Friday do Guia de Protocolos · Volume 3.
 >
-> Em 10/11, terça, às 20h, eu abro ao vivo no Instagram três presentes e a maior condição que o Guia de Protocolos
-> já teve. O link da Black sai aqui no grupo no mesmo momento, antes do público.
+> 📅 10/11, terça, às 20h: a Dra. Maria Paula abre ao vivo, no Instagram da Amar Saber, três presentes e a maior
+> condição que o Guia de Protocolos já teve. O link da Black sai aqui no grupo no mesmo momento, antes do público.
 >
-> Este grupo é só de avisos, para não lotar o seu celular. Dúvidas: WhatsApp (31) 9 5349-5052.
+> Até lá, a Dra. manda por aqui casos da rotina e bastidores. Este grupo é só de avisos, para não lotar o seu
+> celular.
+>
+> Dúvidas: WhatsApp (31) 9 5349-5052
 >
 > Dra. Maria Paula · Amar Saber
 
-## A1 · qua 28/10, 19h30 · boas-vindas *(agendada)*
+## A1 · qui 29/10, 19h30 · boas-vindas *(adiada de 28/10: o número operador caiu; reagendar depois de reconectar)*
 > Oi, aqui é a Maria Paula. Que bom ter você no Grupo VIP da Black do Guia de Protocolos.
 >
 > Funciona assim: em 10/11, terça, às 20h, eu entro ao vivo no Instagram e abro três presentes. Um deles é a maior
