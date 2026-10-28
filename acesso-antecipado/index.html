@@ -41,7 +41,7 @@
   </div>
 
   <!-- ===== 1. HERO + FORMULÁRIO ===== -->
-  <section class="cap-hero" id="form-guia" data-secao="hero">
+  <section class="cap-hero" id="topo" data-secao="hero">
     <div class="cap-container cap-hero__inner">
       <div class="cap-hero__content">
         <img class="cap-hero__logo" src="../assets/img/logo-amarsaber.png" width="254" height="152" alt="Amar Saber">
@@ -60,35 +60,7 @@
           <p class="cap-contador__fim" data-fim role="status" hidden>A live começou: o link da Black Friday está no grupo.</p>
         </div>
 
-        <div class="cap-form__head">
-          <h2>Preencha abaixo com as suas informações:</h2>
-          <svg viewBox="0 0 512 512" aria-hidden="true"><path d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zM212 140v116h-70.9c-10.7 0-16.1 13-8.5 20.5l114.9 114.3c4.7 4.7 12.2 4.7 16.9 0l114.9-114.3c7.6-7.6 2.2-20.5-8.5-20.5H300V140c0-6.6-5.4-12-12-12h-64c-6.6 0-12 5.4-12 12z"/></svg>
-        </div>
-
-        <!-- Envio, validação e eventos: assets/js/captura.js -->
-        <form class="cap-form" id="form-lead" novalidate>
-          <div class="cap-field">
-            <label class="sr-only" for="lead-nome">Seu nome</label>
-            <input id="lead-nome" name="nome" type="text" placeholder="Seu nome:" autocomplete="name" maxlength="80" required>
-            <p class="cap-field__msg" aria-live="polite"></p>
-          </div>
-          <div class="cap-field">
-            <label class="sr-only" for="lead-email">Seu melhor e-mail</label>
-            <input id="lead-email" name="email" type="email" placeholder="Seu melhor e-mail:" autocomplete="email" inputmode="email" maxlength="120" required>
-            <p class="cap-field__msg" aria-live="polite"></p>
-          </div>
-          <div class="cap-field">
-            <label class="sr-only" for="lead-whatsapp">Seu WhatsApp com DDD</label>
-            <input id="lead-whatsapp" name="whatsapp" type="tel" placeholder="Seu WhatsApp com DDD:" autocomplete="tel-national" inputmode="tel" maxlength="20" required>
-            <p class="cap-field__msg" aria-live="polite"></p>
-          </div>
-          <!-- Armadilha para robôs: pessoas não veem este campo -->
-          <div class="cap-hp" aria-hidden="true">
-            <label for="lead-site">Site</label>
-            <input id="lead-site" name="website" type="text" tabindex="-1" autocomplete="off">
-          </div>
-          <button class="btn cap-form__btn" type="submit">QUERO ENTRAR NO GRUPO VIP E ABRIR OS PRESENTES</button>
-        </form>
+        <a class="btn cap-hero__btn" href="#form-guia" data-cta="hero">QUERO A CHAVE DOS PRESENTES</a>
 
         <p class="cap-hero__note">Grupo gratuito. A live é no Instagram da Amar Saber, e o link da Black Friday sai no grupo no mesmo momento, antes do público. Na última campanha o estoque esgotou rápido: quem está no grupo tem a primeira chance.</p>
       </div>
@@ -303,6 +275,38 @@
   <div class="cap-barra is-oculta" data-contador="2026-11-10T20:00:00-03:00">
     <p class="cap-barra__tempo"><span class="cap-pill__dot" aria-hidden="true"></span><span data-antes>Live em <b data-curto>--</b></span><span data-fim hidden>Ao vivo agora</span></p>
     <a class="btn cap-barra__btn" href="#form-guia" data-cta="barra">ENTRAR NO GRUPO VIP</a>
+  </div>
+
+  <!-- ===== FORMULÁRIO NA GAVETA =====
+       Todos os botões com href="#form-guia" abrem a gaveta (assets/js/captura.js). Sem JS, abre pelo :target. -->
+  <div class="cap-gaveta" id="form-guia" role="dialog" aria-modal="true" aria-labelledby="gaveta-titulo">
+    <a class="cap-gaveta__fundo" href="#topo" tabindex="-1" aria-hidden="true"></a>
+    <div class="cap-gaveta__caixa">
+      <a class="cap-gaveta__fechar" href="#topo" aria-label="Fechar">&times;</a>
+      <p class="cap-pill"><span class="cap-pill__dot" aria-hidden="true"></span>Ao vivo · 10/11, 20h</p>
+      <h2 class="cap-gaveta__titulo" id="gaveta-titulo">Pegue a sua chave</h2>
+      <p class="cap-gaveta__texto">Entre no Grupo VIP do WhatsApp: é lá que chegam o lembrete da live e o link da Black Friday, antes do público.</p>
+      <!-- Envio, validação e eventos: assets/js/captura.js -->
+      <form class="cap-form" id="form-lead" novalidate>
+        <div class="cap-field">
+          <label class="sr-only" for="lead-nome">Seu nome</label>
+          <input id="lead-nome" name="nome" type="text" placeholder="Seu nome:" autocomplete="name" maxlength="80" required>
+          <p class="cap-field__msg" aria-live="polite"></p>
+        </div>
+        <div class="cap-field">
+          <label class="sr-only" for="lead-whatsapp">Seu WhatsApp com DDD</label>
+          <input id="lead-whatsapp" name="whatsapp" type="tel" placeholder="Seu WhatsApp com DDD:" autocomplete="tel-national" inputmode="tel" maxlength="20" required>
+          <p class="cap-field__msg" aria-live="polite"></p>
+        </div>
+        <!-- Armadilha para robôs: pessoas não veem este campo -->
+        <div class="cap-hp" aria-hidden="true">
+          <label for="lead-site">Site</label>
+          <input id="lead-site" name="website" type="text" tabindex="-1" autocomplete="off">
+        </div>
+        <button class="btn cap-form__btn" type="submit">QUERO ENTRAR NO GRUPO VIP</button>
+      </form>
+      <p class="cap-gaveta__nota">Grupo gratuito, só de avisos.</p>
+    </div>
   </div>
 
   <!-- ===== RODAPÉ ===== -->

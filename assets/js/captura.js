@@ -18,9 +18,9 @@
   var T = window.asTracking || { capture: noop, metaTrack: noop, reachStage: noop, origem: {}, pixels: [],
     eventId: function (n) { return n + '_' + Date.now().toString(36); } };
 
+  // Só nome e WhatsApp: o grupo e a recuperação funcionam pelo telefone.
   var fields = {
     nome: form.elements.nome,
-    email: form.elements.email,
     whatsapp: form.elements.whatsapp
   };
   var button = form.querySelector('button[type="submit"]');
@@ -56,29 +56,12 @@
   var DDDS = ('11 12 13 14 15 16 17 18 19 21 22 24 27 28 31 32 33 34 35 37 38 41 42 43 44 45 46 47 48 49 ' +
     '51 53 54 55 61 62 63 64 65 66 67 68 69 71 73 74 75 77 79 81 82 83 84 85 86 87 88 89 91 92 93 94 95 96 97 98 99').split(' ');
 
-  // Domínios digitados errado com frequência → sugestão (não bloqueia o envio).
-  var DOMAIN_FIX = {
-    'gmial.com': 'gmail.com', 'gmai.com': 'gmail.com', 'gmal.com': 'gmail.com', 'gamil.com': 'gmail.com',
-    'gmail.co': 'gmail.com', 'gmail.con': 'gmail.com', 'gmail.com.br': 'gmail.com', 'gmaill.com': 'gmail.com',
-    'hotmal.com': 'hotmail.com', 'hotmial.com': 'hotmail.com', 'hotmai.com': 'hotmail.com',
-    'hotmail.co': 'hotmail.com', 'hotmail.con': 'hotmail.com', 'hotnail.com': 'hotmail.com',
-    'outlok.com': 'outlook.com', 'outlook.co': 'outlook.com', 'outloo.com': 'outlook.com',
-    'yaho.com': 'yahoo.com', 'yahoo.co': 'yahoo.com', 'yahoo.com.b': 'yahoo.com.br',
-    'icloud.co': 'icloud.com', 'iclod.com': 'icloud.com'
-  };
-
   // Cada regra devolve [motivo, mensagem] quando inválido, ou null.
   var RULES = {
     nome: function (v) {
       v = v.trim();
       if (!v) return ['vazio', 'Digite seu nome.'];
       if ((v.match(/\p{L}/gu) || []).length < 2) return ['curto', 'Digite seu nome completo.'];
-      return null;
-    },
-    email: function (v) {
-      v = v.trim();
-      if (!v) return ['vazio', 'Digite seu e-mail.'];
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)) return ['formato', 'Confira o e-mail: falta algo como @gmail.com.'];
       return null;
     },
     whatsapp: function (v) {
@@ -101,27 +84,10 @@
     msg.textContent = text || '';
   }
 
-  function emailHint(input) {
-    var v = input.value.trim().toLowerCase();
-    var at = v.lastIndexOf('@');
-    var fixed = at > 0 && DOMAIN_FIX[v.slice(at + 1)];
-    if (!fixed) return;
-    var suggestion = v.slice(0, at + 1) + fixed;
-    var msg = fieldBox(input).querySelector('.cap-field__msg');
-    setMessage(input, 'Você quis dizer ', true);
-    var b = document.createElement('button');
-    b.type = 'button';
-    b.textContent = suggestion;
-    b.addEventListener('click', function () { input.value = suggestion; setMessage(input, ''); });
-    msg.appendChild(b);
-    msg.appendChild(document.createTextNode('?'));
-  }
-
   function check(name) {
     var input = fields[name];
     var error = RULES[name](input.value);
     setMessage(input, error ? error[1] : '');
-    if (!error && name === 'email') emailHint(input);
     return error;
   }
 
@@ -187,12 +153,11 @@
     if (form.elements.website.value) { goToThankYou(); return; }
 
     var nome = fields.nome.value.trim().replace(/\s+/g, ' ');
-    var email = fields.email.value.trim().toLowerCase();
     var whatsapp = nationalDigits(fields.whatsapp.value);
     var eventId = T.eventId('Lead');
     var distinctId = (window.posthog && posthog.get_distinct_id && posthog.get_distinct_id()) || '';
     var sent = load('as_lead') || [];
-    var repeated = sent.indexOf(email) !== -1;
+    var repeated = sent.indexOf(whatsapp) !== -1;
 
     var params = new URLSearchParams(location.search);
     var fbclid = params.get('fbclid') || '';
@@ -200,7 +165,7 @@
 
     var payload = Object.assign({}, T.origem, {
       nome: nome,
-      email: email,
+      email: '',
       whatsapp: whatsapp,
       event_id: eventId,
       repetido: repeated,
@@ -221,20 +186,21 @@
     postWithRetry(payload).then(function () {
       if (!repeated) {
         // Advanced matching: a Meta faz o hash no navegador.
-        var userData = { em: email, ph: '55' + whatsapp, fn: nome.split(' ')[0].toLowerCase() };
+        var userData = { ph: '55' + whatsapp, fn: nome.split(' ')[0].toLowerCase() };
         if (distinctId) userData.external_id = distinctId;
         T.pixels.forEach(function (id) { if (window.fbq) fbq('init', id, userData); });
         T.metaTrack('Lead', { content_name: CONFIG.contentName }, false, eventId);
-        sent.push(email);
+        sent.push(whatsapp);
         save('as_lead', sent);
       }
-      if (window.posthog && posthog.identify) posthog.identify(email, { email: email, nome: nome, whatsapp: whatsapp });
+      // Mesmo id do teste (/teste/): a pessoa é a mesma no PostHog pelas duas entradas.
+      if (window.posthog && posthog.identify) posthog.identify('wa_55' + whatsapp, { nome: nome, whatsapp: whatsapp });
       T.capture('lp_lead', { repetido: repeated, etapa: 'conversao' }, { send_instantly: true });
       T.reachStage('virou_lead');
       if (window.clarity) clarity('upgrade', 'virou_lead');
     }, function (err) {
       // n8n fora do ar: a pessoa segue para o grupo e o lead fica no PostHog para recuperar.
-      T.capture('lp_lead_falha', { motivo: err.message, nome: nome, email: email, whatsapp: whatsapp, etapa: 'conversao' }, { send_instantly: true });
+      T.capture('lp_lead_falha', { motivo: err.message, nome: nome, whatsapp: whatsapp, etapa: 'conversao' }, { send_instantly: true });
     }).then(function () {
       setTimeout(goToThankYou, 400); // dá tempo do pixel e do PostHog saírem
     });
@@ -290,13 +256,66 @@
   });
 })();
 
-// Barra fixa do celular: só aparece depois que a pessoa passa do hero (onde estão o título e o formulário).
+// Gaveta do formulário: todo link para #form-guia abre a gaveta (no celular sobe de baixo; no desktop é uma janela).
+// Fecha no X, no fundo, no Esc e no "voltar" do celular. Evento lp_form_aberto com a posição do botão.
+(function () {
+  'use strict';
+  var gaveta = document.getElementById('form-guia');
+  if (!gaveta) return;
+  var primeiro = gaveta.querySelector('input:not([tabindex="-1"])');
+  var aberta = false;
+  var origem = null;
+
+  function abrir(posicao, quem) {
+    if (aberta) return;
+    aberta = true;
+    origem = quem || null;
+    gaveta.classList.add('is-aberta');
+    document.documentElement.classList.add('cap-sem-rolagem');
+    try { history.pushState({ gaveta: true }, ''); } catch (e) {}
+    if (window.asTracking) window.asTracking.capture('lp_form_aberto', { posicao: posicao || '', etapa: 'intencao' });
+    setTimeout(function () { if (primeiro) primeiro.focus({ preventScroll: true }); }, 60);
+  }
+  function fechar(doHistorico) {
+    if (!aberta) return;
+    aberta = false;
+    gaveta.classList.remove('is-aberta');
+    document.documentElement.classList.remove('cap-sem-rolagem');
+    if (!doHistorico) { try { if (history.state && history.state.gaveta) history.back(); } catch (e) {} }
+    if (origem && origem.focus) origem.focus({ preventScroll: true });
+  }
+
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest && e.target.closest('a[href="#form-guia"]');
+    if (link) { e.preventDefault(); abrir(link.getAttribute('data-cta'), link); return; }
+    var sair = e.target.closest && e.target.closest('.cap-gaveta__fechar, .cap-gaveta__fundo');
+    if (sair) { e.preventDefault(); fechar(); }
+  });
+  document.addEventListener('keydown', function (e) {
+    if (!aberta) return;
+    if (e.key === 'Escape') { fechar(); return; }
+    if (e.key !== 'Tab') return;
+    // Mantém o Tab dentro da gaveta
+    var focaveis = [].slice.call(gaveta.querySelectorAll('a[href]:not([tabindex="-1"]), button, input:not([tabindex="-1"])'));
+    var ini = focaveis[0], fim = focaveis[focaveis.length - 1];
+    if (e.shiftKey && document.activeElement === ini) { e.preventDefault(); fim.focus(); }
+    else if (!e.shiftKey && document.activeElement === fim) { e.preventDefault(); ini.focus(); }
+  });
+  window.addEventListener('popstate', function () { fechar(true); });
+  // Chegou com #form-guia na URL (ex.: link de anúncio): abre já
+  if (location.hash === '#form-guia') {
+    try { history.replaceState(null, '', location.pathname + location.search); } catch (e) {}
+    abrir('url');
+  }
+})();
+
+// Barra fixa do celular: só aparece depois que a pessoa passa do hero.
 (function () {
   'use strict';
   var barra = document.querySelector('.cap-barra');
-  var form = document.getElementById('form-guia');
-  if (!barra || !form || !('IntersectionObserver' in window)) return;
+  var hero = document.getElementById('topo');
+  if (!barra || !hero || !('IntersectionObserver' in window)) return;
   new IntersectionObserver(function (entries) {
     barra.classList.toggle('is-oculta', entries[0].isIntersecting);
-  }).observe(form);
+  }).observe(hero);
 })();

@@ -114,16 +114,19 @@ a pessoa da captura até o clique no checkout.
 | engajamento | `lp_secao_vista` | seção 1 s no meio da tela | `secao` (hero, presentes, como-participar, para-quem, dra, sumario, perguntas, fechamento) | — |
 | engajamento | `lp_engajado` | 30 s com a aba visível | `segundos` | `EngagedVisit` |
 | engajamento | `lp_presente_espiar` | passou o mouse ou tocou numa caixa de presente (1 vez por caixa) | `presente` (1, 2, 3) | — |
-| intenção | `lp_cta_clique` | botão que sobe até o formulário | `posicao` (presentes, passos, dra, sumario, fechamento, barra) | — |
+| intenção | `lp_cta_clique` | botão que abre o formulário | `posicao` (hero, presentes, passos, dra, sumario, fechamento, barra) | — |
+| intenção | `lp_form_aberto` | a gaveta do formulário abriu | `posicao` (o mesmo do botão; `url` se chegou com `#form-guia`) | — |
 | intenção | `lp_form_inicio` | 1º clique num campo | — | — |
-| intenção | `lp_form_erro` | tentou enviar com erro (1 evento por campo) | `campo` (nome, email, whatsapp), `motivo` (vazio, curto, formato, ddd) | — |
-| conversão | `lp_lead` + identify (e-mail) | o n8n confirmou o recebimento | `repetido` | `Lead` (navegador + servidor, mesmo `eventID`) |
-| conversão | `lp_lead_falha` | n8n fora do ar (2 tentativas) | `motivo`, `nome`, `email`, `whatsapp` | — |
+| intenção | `lp_form_erro` | tentou enviar com erro (1 evento por campo) | `campo` (nome, whatsapp), `motivo` (vazio, curto, formato, ddd) | — |
+| conversão | `lp_lead` + identify (`wa_55` + WhatsApp, o mesmo id do /teste/) | o n8n confirmou o recebimento | `repetido` | `Lead` (navegador + servidor, mesmo `eventID`) |
+| conversão | `lp_lead_falha` | n8n fora do ar (2 tentativas) | `motivo`, `nome`, `whatsapp` | — |
 | conversão | `lp_grupo_clique` | botão do grupo no obrigado | — | `GroupClick` (personalizado) |
 
-- **Lead na Meta:** só depois do OK do n8n, nunca no clique. Vai com advanced matching (e-mail, telefone,
-  nome, `external_id` = distinct_id do PostHog) e, pelo n8n, também pela API de Conversões, com o mesmo
-  `event_id` (a Meta deduplica). O mesmo e-mail no mesmo navegador não gera um segundo `Lead`.
+- **Formulário:** só nome e WhatsApp (desde 28/10), dentro de uma gaveta que abre em todos os botões
+  (`href="#form-guia"`). O funil fica `lp_cta_clique` → `lp_form_aberto` → `lp_form_inicio` → `lp_lead`.
+- **Lead na Meta:** só depois do OK do n8n, nunca no clique. Vai com advanced matching (telefone, nome,
+  `external_id` = distinct_id do PostHog) e, pelo n8n, também pela API de Conversões, com o mesmo
+  `event_id` (a Meta deduplica). O mesmo WhatsApp no mesmo navegador não gera um segundo `Lead`.
 - **Testar a API de Conversões:** abrir `/acesso-antecipado/?test_event_code=TESTxxxx` (código da aba
   "Testar eventos" do Gerenciador de Eventos) e enviar o formulário.
 - **Clarity:** `etapa_max` = `engajou` → `iniciou_form` → `virou_lead` (captura) e `clicou_grupo` (obrigado).

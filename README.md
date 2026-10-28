@@ -59,7 +59,7 @@ O formulário envia o lead para o n8n (fluxo **AS · Acesso antecipado Black →
 que grava na planilha **Leads · Acesso antecipado Black – Amar Saber** (aba `Leads`) e manda o `Lead`
 à API de Conversões da Meta. Depois do envio a pessoa vai para `/acesso-antecipado/obrigado/`.
 Se o n8n não responder, a pessoa segue para o grupo mesmo assim e o lead fica no PostHog
-(`lp_lead_falha`, com nome, e-mail e WhatsApp).
+(`lp_lead_falha`, com nome e WhatsApp).
 
 A LP de vendas (`/`) está com `noindex` até a abertura pública: o link sai primeiro no grupo em 10/11.
 
