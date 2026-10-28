@@ -8,7 +8,8 @@ Regras:
 - Os 3 presentes são reais e só são abertos na live: o curso Atendimento Extraordinário, 3 meses de Comunidade
   Amar Saber e a condição (R$ 1.137,70 por R$ 497). As dicas são verdadeiras e não revelam o conteúdo.
 - Não mandar o link da LP antes de 10/11 às 20h: ela mostra os bônus.
-- O link do Instagram da live vai no grupo (mensagens 4, 5 e 6). Trocar `[@INSTAGRAM]` pelo perfil.
+- O link do Instagram da live vai no grupo (3b, 4, 5, 6, 6a e 6b). [NEED: o @ do Instagram da Amar Saber, para trocar
+  `[@INSTAGRAM]` antes de agendar a 3b.]
 - Grupo só de avisos: só os administradores enviam. Dúvidas vão para o WhatsApp (31) 9 5349-5052.
 - O produto da Black é o **Guia de Protocolos · Volume 3**. Quem tem o Volume 2 já recebeu as atualizações em PDF.
 - **Caso do dia:** só agenda no SendFlow o caso que a Dra. validou no `CASOS-DO-DIA-VALIDACAO.docx`. Os textos aqui
@@ -28,6 +29,14 @@ Regras:
 - **Métricas:** o fluxo n8n "AS · Grupos SendFlow → Sheets" grava todo dia às 7h05 as entradas, saídas e a leitura de
   cada mensagem do dia anterior (abas "Grupos" e "Grupos · Mensagens") e a lista de quem se cadastrou e não entrou
   (aba "Grupos · Não entrou", para contato manual).
+
+## Contato manual com quem não entrou no grupo
+A aba "Grupos · Não entrou" lista, todo dia às 7h05, quem se cadastrou há mais de 2 h e não está no grupo. A equipe
+manda no privado, pelo WhatsApp de dúvidas (31) 9 5349-5052, uma vez por pessoa, e marca "Contato feito":
+> Oi, [NOME]! Aqui é da Amar Saber. Vi que você se cadastrou para a Black do Guia de Protocolos, mas ainda não entrou
+> no Grupo VIP. É por lá que a Dra. Maria Paula manda o link da live de 10/11, às 20h, e a condição antes do público.
+>
+> Para entrar: https://sndflw.com/i/amarsaber-black-vip
 
 ## Links e UTM
 Todo link da LP leva `utm_source=whatsapp&utm_medium=grupo_vip`, mais:
@@ -118,6 +127,9 @@ está na campanha:
 > meio-dia.
 
 ## A2 · sáb 31/10, 12h · Caso #0 *(aguardando validação da Dra. até 30/10)*
+A A1 promete "a primeira chega sábado, ao meio-dia". Se a Dra. não validar o Caso #0 até sexta, a A4 (enquete) sai no
+sábado ao meio-dia no lugar dela, e o Caso #0 vai para quinta, 05/11, 12h, com a resposta às 19h30.
+
 > 🩺 *Caso do dia*
 >
 > Labrador, 6 anos, chega nos braços do tutor convulsionando. Ele conta que a crise começou em casa há uns 5 minutos
@@ -147,7 +159,7 @@ Volume 3, ela entra no lugar.]
 > Falta uma semana.
 >
 > Terça que vem, 10/11, às 20h, eu entro ao vivo no Instagram para abrir os três presentes da Black do Guia de
-> Protocolos. Ninguém da equipe fora daqui sabe a condição.
+> Protocolos. A condição só aparece lá, e o link chega aqui antes de todo mundo.
 >
 > Primeira dica: um dos presentes tem a ver com a conversa com o tutor, aquela hora em que ele diz "vou pensar" e
 > o animal vai embora sem tratar.
@@ -156,7 +168,6 @@ Volume 3, ela entra no lugar.]
 
 Logo depois, o evento do WhatsApp: "Live da Black · Guia de Protocolos", 10/11, 20h, com o link do Instagram.
 
-> Nota: tirar a frase "Ninguém da equipe fora daqui sabe a condição" se ela não for verdade.
 
 ## A4 · qui 05/11, 12h · enquete
 > Quero preparar a live pensando em vocês. Hoje, o que mais te trava na rotina?
@@ -217,6 +228,8 @@ Logo depois, o mesmo evento do WhatsApp da mensagem 1.
 >
 > Ativa o lembrete do Instagram para não perder. Às 20h os presentes são abertos, e o link da Black chega aqui.
 
+> Nota: o lembrete só existe se a live estiver agendada no Instagram. Agendar até 09/11.
+
 ## 5 · 19h50 · 10 min antes · @todos
 > Daqui a 10 minutos eu entro ao vivo: [@INSTAGRAM]
 >
@@ -235,14 +248,15 @@ Logo depois, o mesmo evento do WhatsApp da mensagem 1.
 > 🎁 Presente 02 aberto: 3 meses na Comunidade Amar Saber no WhatsApp, comigo e com a equipe, para você levar o caso
 > que te travou.
 >
-> O último presente é a condição, e o link sai aqui daqui a pouco: [@INSTAGRAM]
+> O último presente é a condição, e o link chega aqui no grupo em instantes: [@INSTAGRAM]
 
 ## 7 · ~20h21 · quando a Dra. abre o Presente 03 · @todos · manual
 > Os presentes estão abertos. A Black Friday do Guia de Protocolos começou para vocês:
 >
 > 🎁 Presente 01: o curso completo Atendimento Extraordinário
 > 🎁 Presente 02: 3 meses na Comunidade Amar Saber no WhatsApp, comigo e com a equipe
-> 🎁 Presente 03: a condição. São R$ 1.137,70 por R$ 497 à vista ou 12x de R$ 50,57
+> 🎁 Presente 03: a condição. Guia de Protocolos · Volume 3, curso e comunidade: R$ 1.137,70 por R$ 497 à vista ou
+> 12x de R$ 50,57
 >
 > Link (com o cupom já aplicado):
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=live_1011
@@ -255,11 +269,11 @@ Logo depois, o mesmo evento do WhatsApp da mensagem 1.
 
 ## 8 · qua 11/11, 10h · para quem não viu
 > Para quem não conseguiu ver a live ontem: os três presentes foram o curso Atendimento Extraordinário, 3 meses de
-> comunidade e o Guia de Protocolos por R$ 497 (de R$ 1.137,70), em até 12x de R$ 50,57.
+> comunidade e o Guia de Protocolos · Volume 3 por R$ 497 (de R$ 1.137,70), em até 12x de R$ 50,57.
 >
 > O link está aqui: https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=pos_live_1111
 >
-> Ainda dá tempo de não perder: a condição vai até 30/11, mas o lote é limitado.
+> A condição vai até 30/11, às 23h59, enquanto o lote durar.
 
 ## C · qui 12/11, 10h · para quem já comprou
 Ninguém sai do grupo depois de comprar. Esta é a única mensagem só para eles.
@@ -586,12 +600,13 @@ Imagem: `assets/img/depoimento-3.jpg`.
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_reta&utm_content=r3011a
 
 ## r3011b · seg 30/11, 19h · faltam 5 horas · @todos
-> Faltam 5 horas para a Black do Guia de Protocolos acabar.
+> Faltam 5 horas para a Black do Guia de Protocolos acabar: Guia · Volume 3, curso Atendimento Extraordinário e 3
+> meses de comunidade por R$ 497 ou 12x de R$ 50,57.
 >
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_reta&utm_content=r3011b
 
 ## r3011c · seg 30/11, 23h · última hora · @todos
-> Última hora. À meia-noite a condição sai do ar.
+> Última hora. Às 23h59 a condição da Black sai do ar.
 >
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_reta&utm_content=r3011c
 
@@ -600,7 +615,7 @@ Imagem: `assets/img/depoimento-3.jpg`.
 # Fase 5 · Encerramento
 
 ## E · ter 01/12, 10h · a condição acabou
-> A Black do Guia de Protocolos acabou ontem, à meia-noite. Obrigada a cada um que esteve aqui, votou nos casos e
+> A Black do Guia de Protocolos acabou ontem, às 23h59. Obrigada a cada um que esteve aqui, votou nos casos e
 > assistiu à live.
 >
 > Para quem garantiu o Guia: bom plantão com ele. 💗
