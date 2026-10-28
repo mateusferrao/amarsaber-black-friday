@@ -46,7 +46,7 @@
 }
 
 /* ---------- Hero ---------- */
-.hero__title.vd-anton { font-size: clamp(46px, 6.4vw, 76px); line-height: 1.04; color: #fff; }
+.hero__title.vd-anton { font-size: clamp(46px, 6.4vw, 76px); line-height: 1.12; color: #fff; }
 .hero__title span { display: block; }
 .vd-itens { display: flex; flex-wrap: wrap; gap: 6px; }
 .vd-itens li {
@@ -122,6 +122,7 @@
 
 /* ---------- Barra fixa (só celular) ---------- */
 .vd-barra { display: none; }
+.vd-barra.vd-barra--espera { display: none !important; } /* /teste/: até o resultado */
 
 @media (prefers-reduced-motion: reduce) {
   .vd-faixa__trilha, .vd-pill__dot { animation: none; }

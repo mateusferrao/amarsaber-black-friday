@@ -52,7 +52,8 @@
 
   // ---------- Barra fixa do celular ----------
   // Aparece depois que o hero sai da tela e some enquanto a oferta está visível (o botão dela já está ali).
-  var hero = document.querySelector('.hero');
+  // No /teste/, <body data-barra-apos="#resultado">: o resultado faz o papel do hero.
+  var hero = document.querySelector(document.body.dataset.barraApos || '.hero');
   var oferta = document.getElementById('secao-oferta');
   if (barra && hero && oferta && 'IntersectionObserver' in window) {
     var heroVisivel = true, ofertaVisivel = false;

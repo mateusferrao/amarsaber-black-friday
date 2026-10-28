@@ -19,9 +19,11 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Space+Grotesk:wght@600&family=Roboto:wght@400;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Sora:wght@300;400;500;600;700&family=Space+Grotesk:wght@600&family=Roboto:wght@400;600&display=swap">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../assets/css/teste.css">
+  <!-- Faixa, selo de lote, contador da reta final e barra fixa: os mesmos componentes da LP -->
+  <link rel="stylesheet" href="../assets/css/venda.css">
 
   <!-- ===== RASTREAMENTO =====
        tracking.js: Meta Pixel, PostHog, Clarity (o mesmo da LP). teste.js: perguntas, lead e resultado.
@@ -30,16 +32,22 @@
   <script src="../assets/js/voltar.js" defer></script>
   <script src="../assets/js/tracking.js" defer></script>
   <script src="../assets/js/teste.js" defer></script>
+  <!-- Reta final e contadores (datas em venda.js). A barra fixa só aparece depois do resultado. -->
+  <script src="../assets/js/venda.js" defer></script>
   <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck data-utmify-prevent-subids async defer></script>
 </head>
 <body data-etapas="iniciou_teste,metade_teste,virou_lead,viu_resultado,viu_oferta,clicou_checkout"
       data-voltar="manual"
-      data-origem="teste">
+      data-origem="teste"
+      data-barra-apos="#resultado">
   <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1393732806282634&ev=PageView&noscript=1"></noscript>
 
-  <!-- ===== FAIXA FIXA DO TOPO ===== -->
-  <div class="topbar">
-    <p>Black Friday: lote limitado</p>
+  <!-- ===== FAIXA ROLANDO (fica fixa no topo) ===== -->
+  <div class="vd-faixa" role="note" aria-label="Black Friday até 30/11. Guia, curso e comunidade. Lote limitado.">
+    <div class="vd-faixa__trilha" aria-hidden="true">
+      <div class="vd-faixa__grupo"><span>Black Friday</span><span>Até 30/11</span><span>Guia + curso + comunidade</span><span>Lote limitado</span><span>Não perca</span><span>Black Friday</span><span>Até 30/11</span><span>Guia + curso + comunidade</span><span>Lote limitado</span><span>Não perca</span></div>
+      <div class="vd-faixa__grupo"><span>Black Friday</span><span>Até 30/11</span><span>Guia + curso + comunidade</span><span>Lote limitado</span><span>Não perca</span><span>Black Friday</span><span>Até 30/11</span><span>Guia + curso + comunidade</span><span>Lote limitado</span><span>Não perca</span></div>
+    </div>
   </div>
 
   <!-- ===== 1. PERGUNTAS ===== -->
@@ -48,8 +56,8 @@
       <header class="teste__intro" id="teste-intro">
         <img class="teste__logo" src="../assets/img/logo-amarsaber.png" width="254" height="152" alt="Amar Saber">
         <p class="teste__eyebrow">Teste para veterinários de pequenos animais</p>
-        <h1 class="teste__title">Em que parte do atendimento você mais trava? Descubra em 7 perguntas</h1>
-        <p class="teste__sub">São 7 perguntas, cerca de 90 segundos. Um teste da Amar Saber, da Dra. Maria Paula Ferrari (mais de 15 anos de clínica de pequenos animais).</p>
+        <h1 class="teste__title vd-anton">Em que parte do atendimento <span class="vd-contorno">você mais trava?</span></h1>
+        <p class="teste__sub">Descubra em 7 perguntas, cerca de 90 segundos. Um teste da Amar Saber, da Dra. Maria Paula Ferrari (mais de 15 anos de clínica de pequenos animais).</p>
       </header>
 
       <div class="teste__card" id="teste-card">
@@ -98,7 +106,7 @@
   <section class="teste resultado" id="resultado" data-secao="resultado" hidden>
     <div class="teste__inner resultado__inner">
       <p class="teste__eyebrow">Seu resultado</p>
-      <h2 class="resultado__title" data-r="titulo"></h2>
+      <h2 class="resultado__title vd-anton" data-r="titulo"></h2>
       <div class="resultado__texto" data-r="texto"></div>
       <p class="resultado__perfil" data-r="perfil"></p>
       <div class="center"><a class="btn" href="#secao-oferta" data-cta="resultado" data-r="botao">VER A CONDIÇÃO DA BLACK</a></div>
@@ -110,24 +118,34 @@
   <section class="oferta" id="secao-oferta" data-secao="oferta" hidden>
     <div class="container oferta__inner">
       <div class="oferta__col">
-        <p class="oferta__kicker">Não perca a condição exclusiva de Black Friday!</p>
-        <h2 class="oferta__title" data-r="oferta-titulo">Adquira já o Guia de Protocolos<span class="rosa"> e receba o curso completo Atendimento Extraordinário</span></h2>
+        <p class="oferta__kicker">Não perca a condição exclusiva de Black Friday</p>
+        <h2 class="oferta__title vd-anton" data-r="oferta-titulo">Tudo isso <span class="rosa">na Black</span></h2>
 
         <ul class="oferta__list">
           <li data-item="guia">Guia de Protocolos Clínicos | <b class="red">R$ 697,00</b></li>
           <li data-item="curso">Curso completo Atendimento Extraordinário | <b class="red">R$&nbsp;297,00</b></li>
-          <li data-item="comunidade">Comunidade no WhatsApp com a Dra. Maria Paula e equipe | <b class="red">R$&nbsp;143,70</b></li>
+          <li data-item="comunidade">3 meses na Comunidade com a Dra. Maria Paula e equipe | <b class="red">R$&nbsp;143,70</b></li>
         </ul>
 
         <p class="oferta__total">Valor total <span class="red">R$1.137,70</span></p>
-        <p class="oferta__but">Mas com o valor <strong>EXCLUSIVO DE BLACK FRIDAY</strong>, você paga apenas</p>
+        <p class="oferta__but">Na <strong>BLACK FRIDAY</strong>, você paga</p>
         <p class="oferta__price"><span>12x</span>R$50,57</p>
         <p class="oferta__cash">ou R$497,00 à vista</p>
-        <p class="oferta__stock">Este lote de Black Friday é limitado. O estoque esgota rápido.</p>
-        <p class="oferta__note">Após a confirmação do pagamento, pedimos até 10 dias úteis para envio do produto.</p>
+        <p class="vd-selo">Lote limitado</p>
+        <p class="oferta__stock">Na última campanha o estoque esgotou. Este lote também é limitado.</p>
+
+        <div class="vd-contador vd-contador--centro" data-reta data-contador hidden>
+          <p class="vd-contador__rotulo" data-antes>A condição termina em</p>
+          <div class="vd-contador__grade" data-antes>
+            <span><b data-unidade="dias">00</b>dias</span><span><b data-unidade="horas">00</b>horas</span><span><b data-unidade="min">00</b>min</span><span><b data-unidade="seg">00</b>seg</span>
+          </div>
+          <p class="vd-contador__fim" data-fim role="status" hidden>A condição de Black Friday terminou.</p>
+        </div>
 
         <!-- Link do checkout (o mesmo da LP) -->
-        <div class="center"><a class="btn" href="https://seguro.amarsaberstore.com.br/r/LUIR27AS3L?promocode=BLACKAMARSABER" data-r="checkout">QUERO O GUIA DE PROTOCOLOS</a></div>
+        <div class="center"><a class="btn" href="https://seguro.amarsaberstore.com.br/r/LUIR27AS3L?promocode=BLACKAMARSABER" data-r="checkout">GARANTIR O MEU GUIA</a></div>
+        <p class="vd-oferta__urg">Não perca: a condição vai até 30/11, às 23h59.</p>
+        <p class="vd-oferta__pag">Pix, boleto ou cartão em até 12x. O Guia impresso sai em até 10 dias úteis após o pagamento.</p>
 
         <img class="oferta__book" src="../assets/img/livro-oferta.png" width="380" height="380" alt="Guia de Protocolos" loading="lazy">
       </div>
@@ -183,12 +201,18 @@
     </div>
   </section>
 
-  <!-- ===== 7. BOTÃO FINAL ===== -->
-  <section class="teste-final" data-secao="final" hidden>
-    <div class="container teste-final__inner">
-      <p class="teste-final__text">Condição de Black Friday: 12x R$50,57 ou R$497,00 à vista.</p>
-      <div class="center"><a class="btn" href="https://seguro.amarsaberstore.com.br/r/LUIR27AS3L?promocode=BLACKAMARSABER" data-r="checkout">QUERO O GUIA DE PROTOCOLOS</a></div>
+  <!-- ===== 7. FECHAMENTO (como o da LP, com o botão do checkout) ===== -->
+  <section class="teste-final vd-fechamento" data-secao="final" hidden>
+    <h2 class="vd-fechamento__title vd-anton"><span>Não deixe</span> <span class="vd-contorno">essa passar.</span></h2>
+    <p class="vd-fechamento__lead">Guia impresso, curso completo e 3 meses de comunidade por 12x de R$ 50,57 ou R$ 497 à vista, até 30/11, às 23h59, ou até o lote acabar.</p>
+    <p class="vd-lote vd-lote--centro" data-antes-reta><b>Lote limitado</b>Na última campanha o estoque esgotou.</p>
+    <div class="vd-contador vd-contador--centro" data-reta data-contador hidden>
+      <div class="vd-contador__grade" data-antes>
+        <span><b data-unidade="dias">00</b>dias</span><span><b data-unidade="horas">00</b>horas</span><span><b data-unidade="min">00</b>min</span><span><b data-unidade="seg">00</b>seg</span>
+      </div>
+      <p class="vd-contador__fim" data-fim role="status" hidden>A condição de Black Friday terminou.</p>
     </div>
+    <div class="vd-centro"><a class="btn" href="https://seguro.amarsaberstore.com.br/r/LUIR27AS3L?promocode=BLACKAMARSABER" data-r="checkout">GARANTIR O MEU GUIA</a></div>
   </section>
 
   <!-- ===== RODAPÉ ===== -->
@@ -201,6 +225,15 @@
       </nav>
     </div>
   </footer>
+
+  <!-- ===== BARRA FIXA (celular): só depois do resultado (teste.js tira vd-barra--espera); some na oferta ===== -->
+  <div class="vd-barra vd-barra--espera is-oculta" data-contador>
+    <p class="vd-barra__tempo">
+      <span data-antes-reta>Lote limitado<b>Black até 30/11</b></span>
+      <span data-reta hidden>A Black termina em<b data-curto>--</b></span>
+    </p>
+    <a class="btn" href="#secao-oferta" data-cta="barra">VER A CONDIÇÃO</a>
+  </div>
 
   <script src="../assets/js/main.js"></script>
 </body>

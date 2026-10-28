@@ -449,8 +449,9 @@
   var RESULTS = {
     plantao: {
       titulo: 'Seu ponto mais sensível é o plantão',
-      botao: 'QUERO O GUIA DE PROTOCOLOS',
+      botao: 'GARANTIR O MEU GUIA',
       ordem: ['guia', 'curso', 'comunidade'],
+      tituloOferta: 'O Guia <span class="rosa">para o plantão</span>',
       texto: function (p) {
         var first;
         if (!p.plantao && !p.consulta && !p.sozinho) {
@@ -471,8 +472,9 @@
     },
     consulta: {
       titulo: 'Seu ponto mais sensível é a conversa com o tutor',
-      botao: 'QUERO O GUIA COM O CURSO',
+      botao: 'GARANTIR O GUIA + CURSO',
       ordem: ['curso', 'guia', 'comunidade'],
+      tituloOferta: 'O Guia + <span class="rosa">a consulta que o tutor aceita</span>',
       texto: function () {
         var tutor = option('tutor');
         var first;
@@ -491,9 +493,9 @@
     },
     sozinho: {
       titulo: 'Seu ponto mais sensível é decidir os casos difíceis sozinho',
-      botao: 'QUERO O GUIA COM A COMUNIDADE',
+      botao: 'GARANTIR O GUIA + COMUNIDADE',
       ordem: ['comunidade', 'guia', 'curso'],
-      tituloOferta: 'Adquira já o Guia de Protocolos<span class="rosa"> e receba 3 meses na Comunidade Amar Saber</span>',
+      tituloOferta: 'O Guia + <span class="rosa">quem confere com você</span>',
       texto: function () {
         var first = !safe('duvida')
           ? 'Quando um caso te deixa em dúvida, você respondeu ' + quote('duvida') + '.'
@@ -537,6 +539,9 @@
     save(CONFIG.saved, { answers: answers, dor: dor, pontos: p, salvo_em: Date.now() });
     show('resultado');
     setStage('resultado');
+    // Barra fixa do celular (venda.js): só a partir do resultado.
+    var barra = document.querySelector('.vd-barra');
+    if (barra) barra.classList.remove('vd-barra--espera');
 
     if (fromSaved) {
       history.replaceState({ teste: 'resultado', pos: 0 }, '', location.href);

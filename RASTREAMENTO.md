@@ -235,6 +235,10 @@ separado por campanha: a comparação teste × LP sai das UTMs (`utm_campaign`),
   (Canal, Campanha/Conjunto/Anúncio com IDs, utm_*, fbclid), Repetido, Interno, Página, distinct_id, event_id.
 - **Lead uma vez:** o mesmo WhatsApp no mesmo navegador não gera um 2º `Lead` (refazer o teste grava outra linha
   com Repetido = sim). Quem volta ao `/teste/` vê o resultado salvo, sem pedir os dados de novo.
+- **Oferta pela dor:** o título da oferta e os botões do checkout mudam com o resultado (plantão: "O Guia para o
+  plantão" / GARANTIR O MEU GUIA; consulta: "O Guia + a consulta que o tutor aceita" / GARANTIR O GUIA + CURSO;
+  sozinho: "O Guia + quem confere com você" / GARANTIR O GUIA + COMUNIDADE). Selo de lote, reta final e barra
+  fixa são os da LP (`venda.js`); a barra só aparece depois do resultado (`lp_cta_clique` com `posicao` = barra).
 - **Downsell:** só depois do resultado (voltar) ou na volta do checkout; a recusa volta à oferta do teste.
   Voltar durante as perguntas mostra a pergunta anterior.
 - **Públicos na Meta:** `QuizStart` sem `QuizGate` = começou e desistiu; `QuizGate` sem `Lead` = respondeu tudo e
