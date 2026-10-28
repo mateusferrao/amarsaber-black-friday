@@ -11,7 +11,8 @@ quiz. Cada caso termina abrindo o presente que resolve aquela dor:
 
 A condição (Presente 03) vem por último, junto com o link.
 
-- **Duração:** 45 a 50 min.
+- **Duração:** 30 min (dá para estender as perguntas se as vendas estiverem saindo). Não menos de 25 min: muita gente
+  entra nos primeiros 10 min, e a condição não deve sair antes de o Guia aparecer no caso do plantão.
 - **Pessoas:**
   - Dra. Maria Paula;
   - co-host na câmera (convidada da live), que conduz, lê comentários e faz as perguntas;
@@ -22,16 +23,15 @@ A condição (Presente 03) vem por último, junto com o link.
 
 | Min | Bloco | O que acontece | Bastidor |
 |---|---|---|---|
-| 0–5 | Abertura | Espera a sala encher com uma conversa leve (de onde as pessoas estão assistindo, há quanto tempo atendem). Promessa: "hoje eu abro três presentes e a maior condição que o Guia já teve. O link sai no Grupo VIP e nos stories, porque a live não deixa colocar link." | Mensagem 6 no grupo ("Estamos ao vivo") |
-| 5–12 | **Caso 1 · Consulta** | O tutor que disse "vou pensar" e foi embora sem tratar. A Dra. mostra o que mudou na conversa (anamnese que conduz, explicar o exame físico, apresentar o tratamento). | — |
-| ~12 | 🎁 **Presente 01** | Abre a 1ª caixa: o curso completo Atendimento Extraordinário. "É o passo a passo da consulta que a gente usa na Amar." | Mensagem 6a no grupo |
-| 12–22 | **Caso 2 · Plantão** | Uma emergência de madrugada, resolvida com o Guia aberto na câmera: onde está a conduta, a dose e o cálculo de fluido. A câmera mostra a página. É aqui que o Guia se prova. | Comentário fixado: "O link sai no Grupo VIP quando o 3º presente abrir" |
-| ~22 | Recapitulação | Co-host: "Para quem chegou agora: já abrimos o Presente 01, que é…, e vimos o Guia num caso de plantão. Faltam dois." | — |
-| 22–30 | **Caso 3 · Decidiu sozinho** | Um caso complexo em que conferir a conduta com alguém mudou o desfecho. | — |
-| ~30 | 🎁 **Presente 02** | Abre a 2ª caixa: 3 meses na Comunidade Amar Saber, comigo e com a equipe. "É onde você leva o caso que te travou." | Mensagem 6b no grupo |
-| ~33 | 🎁 **Presente 03 + link** | Abre a 3ª caixa: a condição. Guia impresso + curso + comunidade, que somam R$ 1.137,70, por R$ 497 à vista ou 12x de R$ 50,57. "O link chegou agora no Grupo VIP e está nos meus stories." Lote limitado, até 30/11. | **Mensagem 7 no grupo** + story com link + link na bio |
-| 33–45 | Perguntas | A co-host lê as perguntas recolhidas antes (preço, entrega, se serve) e as dos comentários. A cada ~5 min: "o link está no grupo e nos stories." | Responde no direct quem pedir o link |
-| 45–50 | Fechamento | Resumo dos 3 presentes, o prazo (30/11, 23h59, lote limitado) e o link de novo. | — |
+| 0–3 | Abertura | Promessa: "hoje eu abro três presentes e a maior condição que o Guia já teve. O link sai no Grupo VIP e nos stories, porque a live não deixa colocar link." | Mensagem 6 no grupo ("Estamos ao vivo") |
+| 3–8 | **Caso 1 · Consulta** | O tutor que disse "vou pensar" e foi embora sem tratar: só o antes e depois da conversa. | — |
+| ~8 | 🎁 **Presente 01** | Abre a 1ª caixa: o curso completo Atendimento Extraordinário. "É o passo a passo da consulta que a gente usa na Amar." | Mensagem 6a no grupo |
+| 8–15 | **Caso 2 · Plantão** | Uma emergência de madrugada, resolvida com o Guia aberto na câmera: onde está a conduta, a dose e o fluido. Termina com a recapitulação da co-host para quem chegou agora. | Comentário fixado: "O link sai no Grupo VIP quando o 3º presente abrir" |
+| 15–20 | **Caso 3 · Decidiu sozinho** | Um caso complexo em que conferir a conduta com alguém mudou o desfecho. | — |
+| ~20 | 🎁 **Presente 02** | Abre a 2ª caixa: 3 meses na Comunidade Amar Saber, comigo e com a equipe. | Mensagem 6b no grupo |
+| ~21 | 🎁 **Presente 03 + link** | Abre a 3ª caixa: a condição. Guia impresso + curso + comunidade, que somam R$ 1.137,70, por R$ 497 à vista ou 12x de R$ 50,57. "O link chegou agora no Grupo VIP e está nos meus stories." Lote limitado, até 30/11. | **Mensagem 7 no grupo** + story com link + link na bio |
+| 21–28 | Perguntas da caixinha | A co-host lê as 5 ou 6 perguntas mais pedidas na caixinha dos stories e uma ou outra dos comentários. Repete onde está o link. | Responde no direct quem pedir o link |
+| 28–30 | Fechamento | Resumo dos 3 presentes, o prazo (30/11, 23h59, lote limitado) e o link de novo. Se as vendas estiverem saindo, estende as perguntas. | — |
 
 ## Falas que não podem faltar
 - **Na abertura e a cada recapitulação:** "a live não deixa colocar link: ele está no Grupo VIP e nos stories".
@@ -51,8 +51,8 @@ A condição (Presente 03) vem por último, junto com o link.
 | Serve para mim? | Para quem está começando, é uma base de conduta. Para quem já atende, é a consulta rápida no meio do plantão e o padrão para treinar a equipe. |
 | Comprei antes, tenho direito? | [NEED: o que a Amar oferece para quem já tem o Guia] |
 
-Antes da live, recolher as perguntas pela caixinha dos stories e pela mensagem 3b do grupo (09/11, 12h). A co-host
-leva as 5 mais comuns impressas.
+Antes da live, abrir a **caixinha de perguntas nos stories** em 09/11 (o grupo é avisado na mensagem 3b). A co-host
+leva impressas as 5 ou 6 mais pedidas, e elas são respondidas na live.
 
 ## Checklist (10/11)
 - [ ] Testar a live com convidada (co-host) no Instagram em 09/11, no mesmo celular e na mesma internet.
@@ -60,7 +60,7 @@ leva as 5 mais comuns impressas.
 - [ ] Deixar o Guia marcado na página do caso de plantão.
 - [ ] Montar as 3 caixas com os cartões dos presentes, na ordem certa.
 - [ ] Preparar o story com link (LP com `utm_source=instagram&utm_medium=stories&utm_campaign=live_1011`) e colocar o
-      link na bio, prontos para publicar no minuto ~33.
+      link na bio, prontos para publicar no minuto ~21.
 - [ ] Deixar a mensagem 7 do grupo copiada no celular do bastidor.
 - [ ] Decidir sobre o noindex da LP (`index.html`). Ele está ligado "até a abertura pública": tirar em 10/11 se for
       para a LP aparecer no Google.
