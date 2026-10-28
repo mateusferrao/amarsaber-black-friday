@@ -43,7 +43,7 @@ DOMINIO-HOSTGATOR.md  ← passo a passo do domínio
 | Cores                            | `assets/css/style.css` → bloco `:root` no topo                        |
 | Trocar uma imagem                | Substitua o arquivo em `assets/img/` mantendo o mesmo nome            |
 | Pixels / IDs / valor da oferta   | `assets/js/tracking.js` → objeto `CONFIG` no topo                     |
-| Link do grupo VIP do WhatsApp    | `acesso-antecipado/obrigado/index.html` → `href` do botão com `data-grupo` |
+| Link do grupo VIP do WhatsApp    | `acesso-antecipado/obrigado/index.html` → `href` do botão com `data-grupo` (link de rodízio do SendFlow: `sndflw.com/i/amarsaber-black-vip`) |
 | Textos e data da captura         | `acesso-antecipado/index.html` (título, live de 10/11 20h, presentes) |
 | Fim do contador da live          | `acesso-antecipado/index.html` → atributo `data-contador`             |
 | Endereço do webhook (n8n)        | `assets/js/captura.js` → `CONFIG.webhook`                             |
