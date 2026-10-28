@@ -16,7 +16,7 @@ Regras:
 - Fim de semana igual a dia útil. A leitura de 31/10–01/11 e 07–08/11 (aba "Grupos · Mensagens") diz se muda.
 
 ## Como operar no SendFlow
-- **Teste antes:** toda mensagem nova vai primeiro para a campanha "Teste BF" (grupo "Grupo Teste BF Amar Saber") e é
+- **Teste antes:** toda mensagem nova vai primeiro para a campanha "Teste BF" (grupo de teste, com o operador 93618-8016 como admin) e é
   conferida no celular. Só depois vai para a campanha "Black 2026 · Grupo VIP", para todos os grupos.
 - **Agendadas:** saem pela campanha inteira (todas as contas da campanha), no horário de Brasília da tabela.
 - **Manuais (dia da live):** a 6, a 6a, a 6b e a 7 ficam prontas como template e o Mateus dispara pelo painel quando a
@@ -108,7 +108,7 @@ está na campanha:
 >
 > Dra. Maria Paula · Amar Saber
 
-## A1 · qui 29/10, 19h30 · boas-vindas *(adiada de 28/10: o número operador caiu; reagendar depois de reconectar)*
+## A1 · qui 29/10, 19h30 · boas-vindas *(agendada; adiada de 28/10 porque o número operador caiu)*
 > Oi, aqui é a Maria Paula. Que bom ter você no Grupo VIP da Black do Guia de Protocolos.
 >
 > Funciona assim: em 10/11, terça, às 20h, eu entro ao vivo no Instagram e abro três presentes. Um deles é a maior
