@@ -18,7 +18,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Roboto:wght@400;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Sora:wght@300;400;500;600;700&family=Roboto:wght@400;600&display=swap">
   <link rel="stylesheet" href="../assets/css/captura.css">
 
   <!-- ===== RASTREAMENTO =====
@@ -32,14 +32,33 @@
 <body data-etapas="engajou,iniciou_form,virou_lead">
   <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1393732806282634&ev=PageView&noscript=1"></noscript>
 
+  <!-- Faixa da live (trilha duplicada para o loop não ter emenda) -->
+  <div class="cap-faixa" role="note" aria-label="Black Friday ao vivo em 10/11, às 20h. Lote limitado.">
+    <div class="cap-faixa__trilha" aria-hidden="true">
+      <div class="cap-faixa__grupo"><span>Black Friday ao vivo</span><span>10/11 · 20h</span><span>3 presentes embrulhados</span><span>Lote limitado</span><span>Não perca a abertura</span><span>Black Friday ao vivo</span><span>10/11 · 20h</span><span>3 presentes embrulhados</span><span>Lote limitado</span><span>Não perca a abertura</span></div>
+      <div class="cap-faixa__grupo"><span>Black Friday ao vivo</span><span>10/11 · 20h</span><span>3 presentes embrulhados</span><span>Lote limitado</span><span>Não perca a abertura</span><span>Black Friday ao vivo</span><span>10/11 · 20h</span><span>3 presentes embrulhados</span><span>Lote limitado</span><span>Não perca a abertura</span></div>
+    </div>
+  </div>
+
   <!-- ===== 1. HERO + FORMULÁRIO ===== -->
   <section class="cap-hero" id="form-guia" data-secao="hero">
     <div class="cap-container cap-hero__inner">
       <div class="cap-hero__content">
         <img class="cap-hero__logo" src="../assets/img/logo-amarsaber.png" width="254" height="152" alt="Amar Saber">
-        <p class="cap-hero__kicker">Black Friday ao vivo · 10/11, 20h</p>
-        <h1 class="cap-hero__title">Tem presente embrulhado na Black do Guia de Protocolos.</h1>
-        <p class="cap-hero__lead">Três presentes e a maior condição que o Guia já teve, trancados até a live da Dra. Maria Paula, em 10/11 às 20h. Quem está no Grupo VIP recebe o lembrete e o link antes de todo mundo.</p>
+        <p class="cap-pill"><span class="cap-pill__dot" aria-hidden="true"></span>Ao vivo · 10/11, 20h · Instagram</p>
+        <h1 class="cap-hero__title"><span>Tem <em>presente</em></span> <span class="cap-contorno">embrulhado.</span></h1>
+        <p class="cap-hero__lead">Três presentes e a maior condição que o Guia de Protocolos já teve, trancados até a live da Dra. Maria Paula, em 10/11 às 20h. Quem está no Grupo VIP recebe o lembrete e o link antes de todo mundo.</p>
+
+        <div class="cap-contador cap-contador--hero" data-contador="2026-11-10T20:00:00-03:00">
+          <p class="cap-contador__rotulo" data-antes>Faltam para a live</p>
+          <div class="cap-contador__grade" data-antes>
+          <span><b data-unidade="dias">--</b>dias</span>
+          <span><b data-unidade="horas">--</b>horas</span>
+          <span><b data-unidade="min">--</b>min</span>
+          <span><b data-unidade="seg">--</b>seg</span>
+          </div>
+          <p class="cap-contador__fim" data-fim role="status" hidden>A live começou: o link da Black Friday está no grupo.</p>
+        </div>
 
         <div class="cap-form__head">
           <h2>Preencha abaixo com as suas informações:</h2>
@@ -71,7 +90,7 @@
           <button class="btn cap-form__btn" type="submit">QUERO ENTRAR NO GRUPO VIP E ABRIR OS PRESENTES</button>
         </form>
 
-        <p class="cap-hero__note">Grupo gratuito. A live é no Instagram da Amar Saber, e o link da Black Friday sai no grupo no mesmo momento, antes do público. Na última campanha o estoque esgotou rápido: quem está no grupo compra primeiro.</p>
+        <p class="cap-hero__note">Grupo gratuito. A live é no Instagram da Amar Saber, e o link da Black Friday sai no grupo no mesmo momento, antes do público. Na última campanha o estoque esgotou rápido: quem está no grupo tem a primeira chance.</p>
       </div>
     </div>
   </section>
@@ -89,7 +108,8 @@
         <span class="cap-cofre__icone"><svg viewBox="0 0 448 512" aria-hidden="true"><path d="M144 144v48h160v-48a80 80 0 0 0-160 0zm-64 48v-48a144 144 0 0 1 288 0v48h16c35.3 0 64 28.7 64 64v192c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V256c0-35.3 28.7-64 64-64h16zm144 80a32 32 0 0 0-16 59.7V376a16 16 0 0 0 32 0v-44.3A32 32 0 0 0 224 272z"/></svg></span>
         <div class="cap-cofre__texto">
           <p class="cap-cofre__rotulo">A condição da Black Friday</p>
-          <p class="cap-cofre__valor">A maior que o Guia já teve</p>
+          <p class="cap-cofre__preco" role="img" aria-label="Preço revelado na live">R$<i></i><i></i><i></i></p>
+          <p class="cap-cofre__valor">A maior condição que o Guia já teve</p>
           <p class="cap-cofre__nota">Trancada até 10/11, 20h. O Grupo VIP recebe o aviso antes de todo mundo.</p>
         </div>
         <a class="btn cap-cofre__btn" href="#form-guia" data-cta="presentes">QUERO A CHAVE</a>
@@ -97,55 +117,73 @@
 
       <ul class="cap-presentes__lista">
           <li class="cap-presente">
-            <svg class="cap-presente__caixa" viewBox="0 0 200 190" aria-hidden="true">
-              <path class="cap-presente__laco" d="M100 40c-10-26-44-34-48-14-3 15 26 18 48 14zM100 40c10-26 44-34 48-14 3 15-26 18-48 14z"/>
-              <rect class="cap-presente__corpo" x="22" y="66" width="156" height="118" rx="14"/>
-              <rect class="cap-presente__tampa" x="12" y="42" width="176" height="30" rx="8"/>
-              <rect class="cap-presente__fita" x="88" y="42" width="24" height="142"/>
-              <circle class="cap-presente__no" cx="100" cy="40" r="8"/>
-              <circle class="cap-presente__selo" cx="100" cy="128" r="26"/>
-              <text class="cap-presente__q" x="100" y="140" text-anchor="middle">?</text>
-            </svg>
-            <p class="cap-presente__nome">Presente 01</p>
-            <p class="cap-presente__quando">Abre 10/11, 20h, ao vivo</p>
+            <button class="cap-presente__btn" type="button" data-presente="1" aria-label="Presente 01: abre 10/11, às 20h, ao vivo">
+              <svg class="cap-presente__caixa" viewBox="0 0 200 200" aria-hidden="true">
+                <rect class="cap-presente__corpo" x="22" y="76" width="156" height="118" rx="14"/>
+                <rect class="cap-presente__fita" x="88" y="76" width="24" height="118"/>
+                <ellipse class="cap-presente__brilho" cx="100" cy="80" rx="74" ry="26"/>
+                <circle class="cap-presente__selo" cx="100" cy="138" r="26"/>
+                <text class="cap-presente__q" x="100" y="150" text-anchor="middle">?</text>
+                <g class="cap-presente__topo">
+                  <path class="cap-presente__laco" d="M100 50c-10-26-44-34-48-14-3 15 26 18 48 14zM100 50c10-26 44-34 48-14 3 15-26 18-48 14z"/>
+                  <rect class="cap-presente__tampa" x="12" y="52" width="176" height="30" rx="8"/>
+                  <rect class="cap-presente__fita" x="88" y="52" width="24" height="30"/>
+                  <circle class="cap-presente__no" cx="100" cy="50" r="8"/>
+                </g>
+              </svg>
+              <span class="cap-presente__nome">Presente 01</span>
+              <span class="cap-presente__quando">Abre 10/11, 20h, ao vivo</span>
+            </button>
           </li>
           <li class="cap-presente">
-            <svg class="cap-presente__caixa" viewBox="0 0 200 190" aria-hidden="true">
-              <path class="cap-presente__laco" d="M100 40c-10-26-44-34-48-14-3 15 26 18 48 14zM100 40c10-26 44-34 48-14 3 15-26 18-48 14z"/>
-              <rect class="cap-presente__corpo" x="22" y="66" width="156" height="118" rx="14"/>
-              <rect class="cap-presente__tampa" x="12" y="42" width="176" height="30" rx="8"/>
-              <rect class="cap-presente__fita" x="88" y="42" width="24" height="142"/>
-              <circle class="cap-presente__no" cx="100" cy="40" r="8"/>
-              <circle class="cap-presente__selo" cx="100" cy="128" r="26"/>
-              <text class="cap-presente__q" x="100" y="140" text-anchor="middle">?</text>
-            </svg>
-            <p class="cap-presente__nome">Presente 02</p>
-            <p class="cap-presente__quando">Abre 10/11, 20h, ao vivo</p>
+            <button class="cap-presente__btn" type="button" data-presente="2" aria-label="Presente 02: abre 10/11, às 20h, ao vivo">
+              <svg class="cap-presente__caixa" viewBox="0 0 200 200" aria-hidden="true">
+                <rect class="cap-presente__corpo" x="22" y="76" width="156" height="118" rx="14"/>
+                <rect class="cap-presente__fita" x="88" y="76" width="24" height="118"/>
+                <ellipse class="cap-presente__brilho" cx="100" cy="80" rx="74" ry="26"/>
+                <circle class="cap-presente__selo" cx="100" cy="138" r="26"/>
+                <text class="cap-presente__q" x="100" y="150" text-anchor="middle">?</text>
+                <g class="cap-presente__topo">
+                  <path class="cap-presente__laco" d="M100 50c-10-26-44-34-48-14-3 15 26 18 48 14zM100 50c10-26 44-34 48-14 3 15-26 18-48 14z"/>
+                  <rect class="cap-presente__tampa" x="12" y="52" width="176" height="30" rx="8"/>
+                  <rect class="cap-presente__fita" x="88" y="52" width="24" height="30"/>
+                  <circle class="cap-presente__no" cx="100" cy="50" r="8"/>
+                </g>
+              </svg>
+              <span class="cap-presente__nome">Presente 02</span>
+              <span class="cap-presente__quando">Abre 10/11, 20h, ao vivo</span>
+            </button>
           </li>
           <li class="cap-presente">
-            <svg class="cap-presente__caixa" viewBox="0 0 200 190" aria-hidden="true">
-              <path class="cap-presente__laco" d="M100 40c-10-26-44-34-48-14-3 15 26 18 48 14zM100 40c10-26 44-34 48-14 3 15-26 18-48 14z"/>
-              <rect class="cap-presente__corpo" x="22" y="66" width="156" height="118" rx="14"/>
-              <rect class="cap-presente__tampa" x="12" y="42" width="176" height="30" rx="8"/>
-              <rect class="cap-presente__fita" x="88" y="42" width="24" height="142"/>
-              <circle class="cap-presente__no" cx="100" cy="40" r="8"/>
-              <circle class="cap-presente__selo" cx="100" cy="128" r="26"/>
-              <text class="cap-presente__q" x="100" y="140" text-anchor="middle">?</text>
-            </svg>
-            <p class="cap-presente__nome">Presente 03</p>
-            <p class="cap-presente__quando">Abre 10/11, 20h, ao vivo</p>
+            <button class="cap-presente__btn" type="button" data-presente="3" aria-label="Presente 03: abre 10/11, às 20h, ao vivo">
+              <svg class="cap-presente__caixa" viewBox="0 0 200 200" aria-hidden="true">
+                <rect class="cap-presente__corpo" x="22" y="76" width="156" height="118" rx="14"/>
+                <rect class="cap-presente__fita" x="88" y="76" width="24" height="118"/>
+                <ellipse class="cap-presente__brilho" cx="100" cy="80" rx="74" ry="26"/>
+                <circle class="cap-presente__selo" cx="100" cy="138" r="26"/>
+                <text class="cap-presente__q" x="100" y="150" text-anchor="middle">?</text>
+                <g class="cap-presente__topo">
+                  <path class="cap-presente__laco" d="M100 50c-10-26-44-34-48-14-3 15 26 18 48 14zM100 50c10-26 44-34 48-14 3 15-26 18-48 14z"/>
+                  <rect class="cap-presente__tampa" x="12" y="52" width="176" height="30" rx="8"/>
+                  <rect class="cap-presente__fita" x="88" y="52" width="24" height="30"/>
+                  <circle class="cap-presente__no" cx="100" cy="50" r="8"/>
+                </g>
+              </svg>
+              <span class="cap-presente__nome">Presente 03</span>
+              <span class="cap-presente__quando">Abre 10/11, 20h, ao vivo</span>
+            </button>
           </li>
       </ul>
 
       <div class="cap-contador" data-contador="2026-11-10T20:00:00-03:00">
-        <p class="cap-contador__rotulo">Faltam para a live</p>
-        <div class="cap-contador__grade">
+        <p class="cap-contador__rotulo" data-antes>Faltam para a live</p>
+        <div class="cap-contador__grade" data-antes>
           <span><b data-unidade="dias">--</b>dias</span>
           <span><b data-unidade="horas">--</b>horas</span>
           <span><b data-unidade="min">--</b>min</span>
           <span><b data-unidade="seg">--</b>seg</span>
         </div>
-        <p class="cap-contador__fim" role="status" hidden>A live começou: o link da Black Friday está no grupo.</p>
+        <p class="cap-contador__fim" data-fim role="status" hidden>A live começou: o link da Black Friday está no grupo.</p>
       </div>
     </div>
   </section>
@@ -157,7 +195,7 @@
       <ol class="cap-passos__lista">
         <li><b>Entre no Grupo VIP</b><span>Preencha o formulário e entre no grupo do WhatsApp com um toque. É gratuito.</span></li>
         <li><b>Receba o lembrete</b><span>Antes da live, o grupo recebe a hora exata e o link para assistir.</span></li>
-        <li><b>Assista em 10/11, às 20h</b><span>Veja os presentes abertos ao vivo e garanta o seu Guia antes do público.</span></li>
+        <li><b>Assista em 10/11, às 20h</b><span>Veja os presentes abertos ao vivo e tenha a primeira chance, antes do público.</span></li>
       </ol>
       <a class="btn cap-passos__btn" href="#form-guia" data-cta="passos">QUERO ENTRAR NO GRUPO VIP</a>
     </div>
@@ -238,10 +276,34 @@
       <dl class="cap-faq__lista">
         <div><dt>O Grupo VIP é pago?</dt><dd>Não. É gratuito: você entra pelo WhatsApp com um toque.</dd></div>
         <div><dt>Onde vai ser a live?</dt><dd>No Instagram da Amar Saber, em 10/11, às 20h. O link vai no grupo antes de começar.</dd></div>
-        <div><dt>E se eu não puder assistir?</dt><dd>O link da Black Friday sai no grupo no mesmo momento da live. Você compra pelo celular, de onde estiver.</dd></div>
+        <div><dt>E se eu não puder assistir?</dt><dd>O link da Black Friday sai no grupo no mesmo momento da live. Dá para aproveitar pelo celular, de onde estiver.</dd></div>
       </dl>
     </div>
   </section>
+
+  <!-- ===== 8. FECHAMENTO ===== -->
+  <section class="cap-fechamento" data-secao="fechamento">
+    <div class="cap-container">
+      <h2 class="cap-fechamento__title">Não perca <span class="cap-contorno">a abertura.</span></h2>
+      <p class="cap-fechamento__lead">10/11, às 20h, ao vivo no Instagram da Amar Saber. O link da Black Friday sai primeiro no Grupo VIP.</p>
+      <div class="cap-contador" data-contador="2026-11-10T20:00:00-03:00">
+        <div class="cap-contador__grade" data-antes>
+          <span><b data-unidade="dias">--</b>dias</span>
+          <span><b data-unidade="horas">--</b>horas</span>
+          <span><b data-unidade="min">--</b>min</span>
+          <span><b data-unidade="seg">--</b>seg</span>
+        </div>
+        <p class="cap-contador__fim" data-fim role="status" hidden>A live começou: o link da Black Friday está no grupo.</p>
+      </div>
+      <a class="btn cap-fechamento__btn" href="#form-guia" data-cta="fechamento">QUERO ENTRAR NO GRUPO VIP</a>
+    </div>
+  </section>
+
+  <!-- Barra fixa no celular: aparece depois do hero e some ao voltar ao formulário (assets/js/captura.js) -->
+  <div class="cap-barra is-oculta" data-contador="2026-11-10T20:00:00-03:00">
+    <p class="cap-barra__tempo"><span class="cap-pill__dot" aria-hidden="true"></span><span data-antes>Live em <b data-curto>--</b></span><span data-fim hidden>Ao vivo agora</span></p>
+    <a class="btn cap-barra__btn" href="#form-guia" data-cta="barra">ENTRAR NO GRUPO VIP</a>
+  </div>
 
   <!-- ===== RODAPÉ ===== -->
   <footer class="cap-footer">

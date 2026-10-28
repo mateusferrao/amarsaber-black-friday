@@ -241,29 +241,62 @@
   });
 })();
 
-// Contador até a live (data fixa no atributo data-contador). Depois do horário, mostra o aviso e não reinicia.
+// Contador até a live: todos os [data-contador] (hero, presentes, fechamento e barra fixa) terminam na mesma data.
+// Depois do horário, cada um troca o tempo ([data-antes]) pelo aviso ([data-fim]) e não reinicia.
 (function () {
   'use strict';
-  var box = document.querySelector('[data-contador]');
-  if (!box) return;
-  var fim = new Date(box.getAttribute('data-contador')).getTime();
-  var cel = {};
-  ['dias', 'horas', 'min', 'seg'].forEach(function (k) { cel[k] = box.querySelector('[data-unidade="' + k + '"]'); });
+  var boxes = [].slice.call(document.querySelectorAll('[data-contador]'));
+  if (!boxes.length) return;
+  var fim = new Date(boxes[0].getAttribute('data-contador')).getTime();
   var dois = function (n) { return (n < 10 ? '0' : '') + n; };
   var timer;
   function tick() {
     var s = Math.max(0, Math.floor((fim - Date.now()) / 1000));
-    cel.dias.textContent = dois(Math.floor(s / 86400));
-    cel.horas.textContent = dois(Math.floor(s % 86400 / 3600));
-    cel.min.textContent = dois(Math.floor(s % 3600 / 60));
-    cel.seg.textContent = dois(s % 60);
-    if (!s) {
-      clearInterval(timer);
-      box.querySelector('.cap-contador__grade').hidden = true;
-      box.querySelector('.cap-contador__rotulo').hidden = true;
-      box.querySelector('.cap-contador__fim').hidden = false;
-    }
+    var t = { dias: Math.floor(s / 86400), horas: Math.floor(s % 86400 / 3600), min: Math.floor(s % 3600 / 60), seg: s % 60 };
+    var curto = t.dias ? t.dias + 'd ' + dois(t.horas) + 'h ' + dois(t.min) + 'm' : dois(t.horas) + 'h ' + dois(t.min) + 'm ' + dois(t.seg) + 's';
+    boxes.forEach(function (box) {
+      [].forEach.call(box.querySelectorAll('[data-unidade]'), function (el) { el.textContent = dois(t[el.getAttribute('data-unidade')]); });
+      [].forEach.call(box.querySelectorAll('[data-curto]'), function (el) { el.textContent = curto; });
+      if (!s) {
+        [].forEach.call(box.querySelectorAll('[data-antes]'), function (el) { el.hidden = true; });
+        [].forEach.call(box.querySelectorAll('[data-fim]'), function (el) { el.hidden = false; });
+      }
+    });
+    if (!s) clearInterval(timer);
   }
   tick();
   timer = setInterval(tick, 1000);
+})();
+
+// Presentes: espiar no toque (no mouse é o :hover do CSS) e evento lp_presente_espiar, uma vez por caixa.
+(function () {
+  'use strict';
+  var vistos = {};
+  [].forEach.call(document.querySelectorAll('[data-presente]'), function (btn) {
+    var n = Number(btn.getAttribute('data-presente'));
+    var timer;
+    function registrar() {
+      if (vistos[n]) return;
+      vistos[n] = true;
+      if (window.asTracking) window.asTracking.capture('lp_presente_espiar', { presente: n, etapa: 'engajamento' });
+    }
+    btn.addEventListener('mouseenter', registrar);
+    btn.addEventListener('click', function () {
+      registrar();
+      btn.classList.toggle('is-espiando');
+      clearTimeout(timer);
+      if (btn.classList.contains('is-espiando')) timer = setTimeout(function () { btn.classList.remove('is-espiando'); }, 2500);
+    });
+  });
+})();
+
+// Barra fixa do celular: só aparece depois que a pessoa passa do hero (onde estão o título e o formulário).
+(function () {
+  'use strict';
+  var barra = document.querySelector('.cap-barra');
+  var form = document.getElementById('form-guia');
+  if (!barra || !form || !('IntersectionObserver' in window)) return;
+  new IntersectionObserver(function (entries) {
+    barra.classList.toggle('is-oculta', entries[0].isIntersecting);
+  }).observe(form);
 })();

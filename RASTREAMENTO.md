@@ -111,9 +111,10 @@ a pessoa da captura até o clique no checkout.
 | Etapa | Evento PostHog / Clarity | Quando | Propriedades | Meta (os 2 pixels) |
 |---|---|---|---|---|
 | chegada | `$pageview` | abriu a captura ou o obrigado | — | `PageView` |
-| engajamento | `lp_secao_vista` | seção 1 s no meio da tela | `secao` (hero, presentes, como-participar, para-quem, dra, sumario, perguntas) | — |
+| engajamento | `lp_secao_vista` | seção 1 s no meio da tela | `secao` (hero, presentes, como-participar, para-quem, dra, sumario, perguntas, fechamento) | — |
 | engajamento | `lp_engajado` | 30 s com a aba visível | `segundos` | `EngagedVisit` |
-| intenção | `lp_cta_clique` | botão que sobe até o formulário | `posicao` (presentes, passos, dra, sumario) | — |
+| engajamento | `lp_presente_espiar` | passou o mouse ou tocou numa caixa de presente (1 vez por caixa) | `presente` (1, 2, 3) | — |
+| intenção | `lp_cta_clique` | botão que sobe até o formulário | `posicao` (presentes, passos, dra, sumario, fechamento, barra) | — |
 | intenção | `lp_form_inicio` | 1º clique num campo | — | — |
 | intenção | `lp_form_erro` | tentou enviar com erro (1 evento por campo) | `campo` (nome, email, whatsapp), `motivo` (vazio, curto, formato, ddd) | — |
 | conversão | `lp_lead` + identify (e-mail) | o n8n confirmou o recebimento | `repetido` | `Lead` (navegador + servidor, mesmo `eventID`) |

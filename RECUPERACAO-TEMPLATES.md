@@ -53,7 +53,7 @@ Urgência usada (confirmada pelo usuário): prazo de 30/11 23h59, quando a ofert
 >
 > Sem ninguém para conferir, você só descobre se acertou quando o paciente volta. Ou quando ele não volta.
 >
-> Quem compra o Guia de Protocolos na Black entra por 3 meses na Comunidade Amar Saber, um grupo de WhatsApp com veterinários que usam o Guia, com a minha participação e a da equipe. Você leva o caso e compara condutas antes de decidir. Até 30/11.
+> Na Black, o Guia de Protocolos vem com 3 meses na Comunidade Amar Saber, um grupo de WhatsApp com veterinários que usam o Guia, com a minha participação e a da equipe. Você leva o caso e compara condutas antes de decidir. Até 30/11.
 >
 > Quer o link?
 
@@ -74,7 +74,7 @@ Urgência usada (confirmada pelo usuário): prazo de 30/11 23h59, quando a ofert
 **T4 · as_dor_sozinho** (imagem [NEED: print da comunidade, sem dados de membros])
 > {{1}}, com quem você discutiu o último caso difícil?
 >
-> Na Comunidade Amar Saber você leva o caso que te travou e compara condutas com veterinários de outras cidades. Eu e a equipe participamos das conversas. Quem compra o Guia de Protocolos na Black entra por 3 meses.
+> Na Comunidade Amar Saber você leva o caso que te travou e compara condutas com veterinários de outras cidades. Eu e a equipe participamos das conversas. Na Black, o Guia de Protocolos vem com 3 meses de comunidade.
 >
 > A condição vai até 30/11.
 
@@ -118,7 +118,7 @@ Urgência usada (confirmada pelo usuário): prazo de 30/11 23h59, quando a ofert
 >
 > A Black Friday do Guia de Protocolos termina na segunda, 30/11, às 23h59. Até lá, o Guia impresso vem com o curso Atendimento Extraordinário e 3 meses de comunidade, em 12x de R$ 50,57.
 >
-> Quer garantir o seu?
+> Não deixa essa passar: quer o link?
 
 **T11 · as_ultimo_dia** (30/11 9h)
 > Último dia, {{1}}.
@@ -187,7 +187,7 @@ Urgência usada (confirmada pelo usuário): prazo de 30/11 23h59, quando a ofert
 
 **E3 · 24 h**
 - Assunto: “Já vi e adorei o conteúdo”
-- Pré-cabeçalho: Mais de 1.500 Guias vendidos, e as três perguntas que mais recebemos antes da compra.
+- Pré-cabeçalho: Mais de 1.500 Guias vendidos, e as três perguntas que mais recebemos antes de decidir.
 - Corpo: Oi, [nome]. Já são mais de 1.500 Guias de Protocolos vendidos. Esse é um dos recados que recebi:
   [imagem: depoimento]. *Quando chega?* O Guia é impresso e sai em até 10 dias úteis depois da confirmação do
   pagamento; o curso e a comunidade são online, e o acesso chega por e-mail. *Posso parcelar?* Sim, em 12x de
@@ -201,7 +201,7 @@ Urgência usada (confirmada pelo usuário): prazo de 30/11 23h59, quando a ofert
 - Corpo: Oi, [nome]. Passando para avisar: a condição de Black Friday do Guia de Protocolos vai até segunda, 30/11,
   às 23h59. Seu carrinho ainda está guardado com o Guia impresso, o curso completo Atendimento Extraordinário e
   3 meses de comunidade, por 12x de R$ 50,57 ou R$ 497 à vista. Abraço, Maria Paula.
-- CTA: **Garantir na condição de Black**
+- CTA: **Não perder a condição de Black**
 - Desligar os e-mails na Yampi em 30/11 23h59 (a Yampi não sabe a data final).
 
 ## Ativação (quando o Kommo e a Yampi estiverem prontos)

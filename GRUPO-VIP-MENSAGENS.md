@@ -59,7 +59,7 @@ Regras:
 > Amanhã, 20h.
 >
 > Eu abro os três presentes ao vivo no Instagram e, no mesmo minuto, o link da Black Friday chega aqui no grupo,
-> antes do público. Na última campanha o estoque esgotou rápido, então quem está aqui compra primeiro.
+> antes do público. Na última campanha o estoque esgotou rápido, então quem está aqui tem a primeira chance.
 >
 > Amanhã às 18h eu mando o link da live.
 
@@ -88,7 +88,7 @@ Regras:
 > Link (com o cupom já aplicado):
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=live_1011
 >
-> O lote da Black é limitado e a condição vai até 30/11, às 23h59.
+> O lote da Black é limitado. Não deixe essa passar: a condição vai até 30/11, às 23h59.
 
 ## 8 · 11/11, 10h · para quem não viu
 > Para quem não conseguiu ver a live ontem: os três presentes foram o curso Atendimento Extraordinário, 3 meses de
@@ -96,7 +96,7 @@ Regras:
 >
 > O link está aqui: https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=pos_live_1111
 >
-> A condição vai até 30/11, mas o lote é limitado.
+> Ainda dá tempo de não perder: a condição vai até 30/11, mas o lote é limitado.
 
 ---
 
