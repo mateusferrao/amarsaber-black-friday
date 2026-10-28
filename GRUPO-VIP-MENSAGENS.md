@@ -8,8 +8,7 @@ Regras:
 - Os 3 presentes são reais e só são abertos na live: o curso Atendimento Extraordinário, 3 meses de Comunidade
   Amar Saber e a condição (R$ 1.137,70 por R$ 497). As dicas são verdadeiras e não revelam o conteúdo.
 - Não mandar o link da LP antes de 10/11 às 20h: ela mostra os bônus.
-- O link do Instagram da live vai no grupo (3b, 4, 5, 6, 6a e 6b). [NEED: o @ do Instagram da Amar Saber, para trocar
-  `[@INSTAGRAM]` antes de agendar a 3b.]
+- A live é no Instagram da Dra., @mariapaulaferrarivet. O link do perfil vai no grupo (3b, 4, 5, 6, 6a e 6b).
 - Grupo só de avisos: só os administradores enviam. Dúvidas vão para o WhatsApp (31) 9 5349-5052.
 - O produto da Black é o **Guia de Protocolos · Volume 3**. Quem tem o Volume 2 já recebeu as atualizações em PDF.
 - **Caso do dia:** só agenda no SendFlow o caso que a Dra. validou no `CASOS-DO-DIA-VALIDACAO.docx`. Os textos aqui
@@ -107,7 +106,7 @@ Vai na descrição fixa de todos os grupos (campo do SendFlow), para quem entra 
 está na campanha:
 > Bem-vindo ao Grupo VIP da Black Friday do Guia de Protocolos · Volume 3.
 >
-> 📅 10/11, terça, às 20h: a Dra. Maria Paula abre ao vivo, no Instagram da Amar Saber, três presentes e a maior
+> 📅 10/11, terça, às 20h: a Dra. Maria Paula abre ao vivo, no Instagram dela (@mariapaulaferrarivet), três presentes e a maior
 > condição que o Guia de Protocolos já teve. O link da Black sai aqui no grupo no mesmo momento, antes do público.
 >
 > Até lá, a Dra. manda por aqui casos da rotina e bastidores. Este grupo é só de avisos, para não lotar o seu
@@ -194,7 +193,7 @@ assistir ao vivo (os casos reais) e um pedido: tocar em "Vou" no evento do grupo
 ## 3b · seg 09/11, 12h · perguntas para a live
 > Amanhã, na live, vou responder as dúvidas de vocês.
 >
-> Abri uma caixinha de perguntas nos meus stories: [@INSTAGRAM]. Manda lá o que você quer que eu responda, sobre o
+> Abri uma caixinha de perguntas nos meus stories: https://www.instagram.com/mariapaulaferrarivet/. Manda lá o que você quer que eu responda, sobre o
 > Guia, sobre a Black ou sobre um caso da sua rotina. As mais pedidas entram na live.
 
 > Nota: abrir a caixinha nos stories antes de enviar esta mensagem.
@@ -224,31 +223,31 @@ Logo depois, o mesmo evento do WhatsApp da mensagem 1.
 ## 4 · 18h · 2 h antes
 > Hoje, às 20h.
 >
-> O link da live é este: [@INSTAGRAM]
+> O link da live é este: https://www.instagram.com/mariapaulaferrarivet/
 >
 > Ativa o lembrete do Instagram para não perder. Às 20h os presentes são abertos, e o link da Black chega aqui.
 
 > Nota: o lembrete só existe se a live estiver agendada no Instagram. Agendar até 09/11.
 
 ## 5 · 19h50 · 10 min antes · @todos
-> Daqui a 10 minutos eu entro ao vivo: [@INSTAGRAM]
+> Daqui a 10 minutos eu entro ao vivo: https://www.instagram.com/mariapaulaferrarivet/
 >
 > Deixa o grupo aberto: o link da Black sai aqui assim que os presentes forem abertos.
 
 ## 6 · ~20h05 · ao vivo · @todos · manual
-> Estamos ao vivo: [@INSTAGRAM]
+> Estamos ao vivo: https://www.instagram.com/mariapaulaferrarivet/
 
 ## 6a · ~20h08 · quando a Dra. abre o Presente 01 · manual
 > 🎁 Presente 01 aberto: o curso completo Atendimento Extraordinário, o passo a passo da consulta que a gente usa na
 > Amar Veterinária.
 >
-> Ainda faltam dois. Estamos ao vivo: [@INSTAGRAM]
+> Ainda faltam dois. Estamos ao vivo: https://www.instagram.com/mariapaulaferrarivet/
 
 ## 6b · ~20h20 · quando a Dra. abre o Presente 02 · manual
 > 🎁 Presente 02 aberto: 3 meses na Comunidade Amar Saber no WhatsApp, comigo e com a equipe, para você levar o caso
 > que te travou.
 >
-> O último presente é a condição, e o link chega aqui no grupo em instantes: [@INSTAGRAM]
+> O último presente é a condição, e o link chega aqui no grupo em instantes: https://www.instagram.com/mariapaulaferrarivet/
 
 ## 7 · ~20h21 · quando a Dra. abre o Presente 03 · @todos · manual
 > Os presentes estão abertos. A Black Friday do Guia de Protocolos começou para vocês:
