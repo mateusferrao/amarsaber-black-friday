@@ -174,6 +174,15 @@ Yampi direto, sem passar pela LP. Todo link de divulgação deve apontar para a 
   `CONFIG` (R$ 497) só naquela página.
 - **Purchase:** continua só pela Yampi (navegador + API de Conversões), para a oferta principal, o upsell e
   o downsell. O obrigado não dispara `Purchase` para não contar em dobro.
+- **CompraPaga (venda real):** o `Purchase` da Yampi conta PIX gerado. Quando a Yampi avisa o pagamento
+  (`order.paid`, no webhook `as-black-yampi` do fluxo n8n **AS · Recuperação Black**), o n8n manda o evento
+  personalizado `CompraPaga` aos 2 pixels pela API de Conversões, uma vez por pedido (`event_id` =
+  `CompraPaga_<pedido>`). Vai com valor, pedido, e-mail, telefone, nome, cidade e CEP, mais o `external_id`
+  (distinct_id) e o fbclid do cadastro do lead. Crie a conversão personalizada "Compra paga" a partir dele
+  para otimizar e medir venda paga. Pedido com número `TESTE-…` vai só como evento de teste.
+- **Aba Compras** (planilha de leads): uma linha por pedido pago, com as UTMs da compra e a **origem do lead**,
+  que é o 1º cadastro (Grupo WhatsApp ou Quiz) achado pelo WhatsApp: campanha, conjunto, anúncio e UTMs do
+  cadastro, e a dor do quiz. É onde a venda que saiu do grupo volta para o anúncio que trouxe a pessoa.
 - **Clarity:** `etapa_max` = `viu_downsell` → `clicou_downsell` (downsell) e `comprou` (obrigado), com `upgrade`
   da gravação nas duas.
 - **Funil no PostHog:** `lp_checkout` → `lp_downsell_vista` (`de` = checkout) → `lp_downsell_checkout`
