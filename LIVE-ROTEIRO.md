@@ -49,7 +49,7 @@ A condição (Presente 03) vem por último, junto com o link.
 | Está caro / dá para parcelar? | 12x de R$ 50,57 no cartão, ou R$ 497 à vista no Pix ou boleto. Vêm o Guia impresso, o curso completo e 3 meses de comunidade, que somam R$ 1.137,70. |
 | Quando chega? | O Guia é impresso e sai em até 10 dias úteis depois da confirmação do pagamento. O curso e a comunidade são online, com acesso por e-mail. |
 | Serve para mim? | Para quem está começando, é uma base de conduta. Para quem já atende, é a consulta rápida no meio do plantão e o padrão para treinar a equipe. |
-| Comprei antes, tenho direito? | [NEED: o que a Amar oferece para quem já tem o Guia] |
+| Comprei antes, tenho direito? | Quem tem o Volume 2 já recebeu as atualizações em PDF. O Volume 3 completo, impresso, com o curso e os 3 meses de comunidade, é o que está na Black. |
 
 Antes da live, abrir a **caixinha de perguntas nos stories** em 09/11 (o grupo é avisado na mensagem 3b). A co-host
 leva impressas as 5 ou 6 mais pedidas, e elas são respondidas na live.

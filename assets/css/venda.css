@@ -103,6 +103,13 @@
 .o-que-e .vd-h2 { margin-top: 0; }
 .o-que-e .gallery--sumario { width: 100%; margin-top: 8px; }
 
+/* Novidades do Volume 3 (LP e resultado do /teste/) */
+.vd-novo { width: 100%; max-width: 760px; padding: 18px 20px 20px; border: 1px solid rgba(255, 255, 255, .35); border-radius: 16px; background: rgba(34, 0, 27, .28); color: #fff; }
+.vd-novo__titulo { font-family: var(--display); font-size: 22px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--amarelo); }
+.vd-novo__lista { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 20px; margin: 12px 0 0; padding: 0; list-style: none; }
+.vd-novo__lista li { position: relative; padding-left: 20px; font-size: 14px; font-weight: 600; line-height: 20px; }
+.vd-novo__lista li::before { content: ""; position: absolute; left: 2px; top: 6px; width: 8px; height: 8px; background: var(--amarelo); transform: rotate(45deg); }
+
 /* ---------- 6. Autoras (curta) ---------- */
 .autoras__inner { padding-bottom: 32px; }
 
@@ -156,6 +163,7 @@
   .vd-dores { padding: 44px 16px 48px; }
   .vd-h2 { font-size: 40px; }
   .o-que-e__text { line-height: 22px; }
+  .vd-novo__lista { grid-template-columns: 1fr; }
 
   .oferta .vd-selo { margin-top: 16px; }
   .oferta .vd-contador { margin-top: 16px; }

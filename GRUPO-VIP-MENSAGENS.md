@@ -503,16 +503,17 @@ Enquete "Qual é a sua conduta?", uma resposta só: **A)** Não: foi retirada do
 >
 > 📘 Ruptura do ligamento cruzado cranial, com diagnóstico, raio-X e manejo até a cirurgia
 > 📘 Capítulo de hipoglicemia, hipotermia e hipertermia
-> 📘 Estado epilético, no capítulo de Emergências
-> 📘 Sedação
-> 📘 Condutas revistas pelo Brasileish 2025 e pelas diretrizes da WSAVA
+> 📘 Protocolo do estado epilético, no capítulo de Emergências
+> 📘 Sedação e tranquilização
+> 📘 Leishmaniose pelas diretrizes Brasileish 2025
+> 📘 Vacinas com as atualizações da WSAVA
 >
 > E condutas que mudaram, como o omeprazol preventivo, a atropina antes do Imizol e a dexametasona antes da
 > transfusão. Algumas delas já apareceram aqui no Caso do dia.
 >
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=p1
 
-[NEED: a Dra. confirma a lista de novidades antes do envio; ela vem do PDF de atualizações do Volume 2 para o 3.]
+A lista vem do PDF de atualizações do Volume 2 para o 3 (as mesmas novidades do bloco "Novo no Volume 3" da LP).
 
 ### p2 · ter 17/11, 12h · depoimento
 Imagem: `assets/img/depoimento-1.jpg` (um dos depoimentos da LP).
