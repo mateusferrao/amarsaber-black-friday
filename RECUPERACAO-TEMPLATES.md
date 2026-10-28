@@ -20,18 +20,19 @@ teste → checkout troca de sequência sem repetir mensagem; de 28 a 30/11 a ret
 | pix | Pix expirado (Yampi) | T8 na hora → T5 dia seguinte 10h → T6 +2 dias 10h |
 | cartão | `transaction.payment.refused` | T9 +10 min → T5 dia seguinte 10h → T6 +2 dias 10h |
 | reta final | todos ativos sem compra | T10 28/11 10h → T11 30/11 9h → T12 30/11 19h |
-| alternativa | tocou "Preço" | resposta R2 na hora → T13/T14/T15 (pela dor) +48 h, se antes de 30/11 |
+| alternativa | tocou "Preço" | resposta R2 na hora → `as_alternativa` +48 h, se antes de 30/11 |
 
-Lead sem dor (veio só da Yampi): alternativa de consulta (T14), que é o produto que já existe.
 
-## Templates de WhatsApp (v2: gancho na 1ª linha, dor e urgência real)
-Padrão: categoria **Marketing**, idioma **pt_BR**. Templates só de texto: cabeçalho de texto **"Maria Paula · Amar
-Saber"**. Templates com imagem: rodapé **"Maria Paula · Amar Saber"**. Botões de resposta rápida **Quero o link ·
-Tenho uma dúvida** (a triagem tem os seus). Sem botão de sair. `{{1}}` = primeiro nome (exemplo: Ana).
-Urgência usada (confirmada pelo usuário): prazo de 30/11 23h59, quando a oferta inteira acaba; lote realmente limitado; dias que faltam (calculados pelo n8n).
+## Templates de WhatsApp (versão final, 15)
+Cadastro no Kommo campo a campo: `KOMMO-TEMPLATES-FICHA.md`. Padrão: categoria **Marketing**, idioma **pt_BR**,
+cabeçalho de texto **"Maria Paula · Amar Saber"** (ou imagem + o mesmo texto no rodapé), botões de resposta rápida.
+`{{1}}` = primeiro nome (campo `as_nome`); `{{2}}` = dias até 30/11 (campo `as_dias`). A Meta não aceita corpo que começa
+com variável: por isso todos abrem com "Oi, {{1}}" ou equivalente. Mudanças sobre a v2: triagem com 3 botões ("Outra
+dúvida" saiu: texto livre já vai para o atendimento) e uma alternativa só (`as_alternativa`, o curso + comunidade de
+R$ 187 da `/oferta-especial/`), no lugar de `as_alt_plantao`, `as_alt_consulta` e `as_alt_sozinho`.
 
-**T1a · as_resultado_plantao** (15 min depois do teste)
-> {{1}}, seu resultado saiu: o plantão é o seu ponto mais sensível.
+**T1a · as_resultado_plantao** (15 min depois do teste, para quem teve o plantão como ponto mais sensível; Texto: Maria Paula · Amar Saber; botões Quero o link · Tenho uma dúvida)
+> Oi, {{1}}! Seu resultado saiu: o plantão é o seu ponto mais sensível.
 >
 > Na emergência, cada minuto procurando dose no celular é um minuto longe do paciente. E é de madrugada que isso acontece, sem ninguém para perguntar.
 >
@@ -39,8 +40,8 @@ Urgência usada (confirmada pelo usuário): prazo de 30/11 23h59, quando a ofert
 >
 > Quer o link?
 
-**T1b · as_resultado_consulta**
-> {{1}}, seu resultado saiu: o seu ponto mais sensível é a conversa com o tutor.
+**T1b · as_resultado_consulta** (15 min depois do teste, para quem teve a consulta como ponto mais sensível; Texto: Maria Paula · Amar Saber; botões Quero o link · Tenho uma dúvida)
+> Oi, {{1}}! Seu resultado saiu: o seu ponto mais sensível é a conversa com o tutor.
 >
 > Você explica o tratamento e o tutor responde “vou pensar e te aviso”. O animal vai embora sem tratar e a consulta não vira retorno.
 >
@@ -48,8 +49,8 @@ Urgência usada (confirmada pelo usuário): prazo de 30/11 23h59, quando a ofert
 >
 > Quer o link?
 
-**T1c · as_resultado_sozinho**
-> {{1}}, seu resultado saiu: o seu ponto mais sensível é decidir os casos difíceis sozinho.
+**T1c · as_resultado_sozinho** (15 min depois do teste, para quem teve decidir sozinho como ponto mais sensível; Texto: Maria Paula · Amar Saber; botões Quero o link · Tenho uma dúvida)
+> Oi, {{1}}! Seu resultado saiu: o seu ponto mais sensível é decidir os casos difíceis sozinho.
 >
 > Sem ninguém para conferir, você só descobre se acertou quando o paciente volta. Ou quando ele não volta.
 >
@@ -57,97 +58,81 @@ Urgência usada (confirmada pelo usuário): prazo de 30/11 23h59, quando a ofert
 >
 > Quer o link?
 
-**T2 · as_dor_plantao** (imagem: página de emergência do Guia [NEED: qual página])
-> {{1}}, essa é a página que você abriria às 2h da manhã.
+**T2 · as_dor_plantao** (Dia seguinte ao teste, 10h (dor: plantão); Imagem: assets/img/pagina-1.jpg; botões Quero o link · Tenho uma dúvida)
+> Oi, {{1}}. Essa é a página que você abriria às 2h da manhã.
 >
 > No Guia de Protocolos cada emergência vem em passos objetivos, com as doses e o cálculo de fluido. Você consulta na hora, com o paciente na mesa.
 >
 > A Black Friday do Guia vai até 30/11, num lote limitado.
 
-**T3 · as_dor_consulta** (imagem [NEED: página de anamnese do Guia ou print de aula do curso])
-> {{1}}, quantos tutores saíram da sua consulta dizendo “vou pensar” este mês?
+**T3 · as_dor_consulta** (Dia seguinte ao teste, 10h (dor: consulta); Texto: Maria Paula · Amar Saber; botões Quero o link · Tenho uma dúvida)
+> Oi, {{1}}. Quantos tutores saíram da sua consulta dizendo “vou pensar” este mês?
 >
 > Cada um é um tratamento que não aconteceu. No curso Atendimento Extraordinário eu mostro como conduzir a anamnese, explicar o exame físico e apresentar o tratamento ao tutor sem parecer vendedora.
 >
 > Na Black, o curso completo vem junto com o Guia de Protocolos, até 30/11.
 
-**T4 · as_dor_sozinho** (imagem [NEED: print da comunidade, sem dados de membros])
-> {{1}}, com quem você discutiu o último caso difícil?
+**T4 · as_dor_sozinho** (Dia seguinte ao teste, 10h (dor: decidir sozinho); Texto: Maria Paula · Amar Saber; botões Quero o link · Tenho uma dúvida)
+> Oi, {{1}}. Com quem você discutiu o último caso difícil?
 >
 > Na Comunidade Amar Saber você leva o caso que te travou e compara condutas com veterinários de outras cidades. Eu e a equipe participamos das conversas. Na Black, o Guia de Protocolos vem com 3 meses de comunidade.
 >
 > A condição vai até 30/11.
 
-**T5 · as_prova** (imagem: o print da LP com "E já vi e adorei o conteúdo"; frase e uso confirmados)
+**T5 · as_prova** (Teste: mais 1 dia, 19h · Checkout, Pix e cartão: dia seguinte, 10h; Imagem: assets/img/depoimento-1.jpg; botões Quero o link · Tenho uma dúvida)
 > “Já vi e adorei o conteúdo.”
 >
 > Foi o que uma colega mandou quando o Guia de Protocolos chegou. Já são mais de 1.500 vendidos, e o lote da Black Friday é limitado.
 >
 > O seu ainda está a um clique, até 30/11.
 
-**T6 · as_triagem** (botões **Preço · Entrega · Se serve pra mim · Outra dúvida**)
-> {{1}}, o que está te segurando?
+**T6 · as_triagem** (2 dias depois da anterior, 10h (todas as sequências); Texto: Maria Paula · Amar Saber; botões Preço · Entrega · Se serve pra mim)
+> Oi, {{1}}, o que está te segurando?
 >
-> Faltam {{2}} dias para acabar a Black do Guia de Protocolos. Me conta o que pesa mais e eu te respondo agora.
+> Faltam {{2}} dias para acabar a Black do Guia de Protocolos. Toca numa opção ou me escreve a sua dúvida, que eu te respondo agora.
 
-`{{2}}` = dias até 30/11 (exemplo: 9)
-
-**T7 · as_checkout_15min**
-> {{1}}, seu Guia de Protocolos ficou a um clique.
+**T7 · as_checkout_15min** (15 min depois do checkout abandonado na Yampi; Texto: Maria Paula · Amar Saber; botões Quero o link · Tenho uma dúvida)
+> Oi, {{1}}! Seu Guia de Protocolos ficou a um clique.
 >
 > O pedido parou no pagamento, e o lote da Black Friday é limitado. Se travou em alguma coisa, me responde aqui que a equipe resolve com você.
 >
 > Quer o link para terminar?
 
-**T8 · as_pix_expirou**
-> {{1}}, seu Pix expirou, mas o pedido continua aqui.
+**T8 · as_pix_expirou** (Na hora em que o Pix expira; Texto: Maria Paula · Amar Saber; botões Quero o link · Tenho uma dúvida)
+> Oi, {{1}}. Seu Pix expirou, mas o pedido continua aqui.
 >
 > O Guia de Protocolos ainda está na condição de Black Friday. Te mando um link novo agora: dá para pagar no Pix ou parcelar em 12x de R$ 50,57 no cartão.
 >
 > Quer o link?
 
-**T9 · as_cartao_recusado**
-> {{1}}, o banco barrou o pagamento do seu Guia de Protocolos.
+**T9 · as_cartao_recusado** (10 min depois do cartão recusado; Texto: Maria Paula · Amar Saber; botões Quero o link · Tenho uma dúvida)
+> Oi, {{1}}. O banco barrou o pagamento do seu Guia de Protocolos.
 >
 > Costuma ser limite ou bloqueio de segurança. Dá para tentar outro cartão, parcelar em 12x de R$ 50,57 ou pagar no Pix, e a condição de Black continua valendo.
 >
 > Quer o link de novo?
 
-**T10 · as_reta_3dias** (28/11 10h)
-> {{1}}, faltam 3 dias.
+**T10 · as_reta_3dias** (Sáb 28/11, 10h (todos que não compraram); Texto: Maria Paula · Amar Saber; botões Quero o link · Tenho uma dúvida)
+> Oi, {{1}}, faltam 3 dias.
 >
 > A Black Friday do Guia de Protocolos termina na segunda, 30/11, às 23h59. Até lá, o Guia impresso vem com o curso Atendimento Extraordinário e 3 meses de comunidade, em 12x de R$ 50,57.
 >
 > Não deixa essa passar: quer o link?
 
-**T11 · as_ultimo_dia** (30/11 9h)
+**T11 · as_ultimo_dia** (Seg 30/11, 9h (todos que não compraram); Texto: Maria Paula · Amar Saber; botões Quero o link · Tenho uma dúvida)
 > Último dia, {{1}}.
 >
-> Hoje às 23h59 a Black Friday do Guia de Protocolos sai do ar, e a oferta inteira acaba junto: o Guia impresso, o curso Atendimento Extraordinário e a comunidade. São 12x de R$ 50,57 só até a meia-noite.
+> Hoje às 23h59 a Black Friday do Guia de Protocolos sai do ar, e a oferta inteira acaba junto: o Guia impresso, o curso Atendimento Extraordinário e a comunidade. São 12x de R$ 50,57 só até as 23h59 de hoje.
 
-**T12 · as_ultimas_horas** (30/11 19h)
-> {{1}}, faltam 5 horas.
+**T12 · as_ultimas_horas** (Seg 30/11, 19h (todos que não compraram); Texto: Maria Paula · Amar Saber; botões Quero o link · Tenho uma dúvida)
+> Oi, {{1}}, faltam 5 horas.
 >
 > A Black Friday do Guia de Protocolos termina hoje às 23h59, e depois disso a oferta não volta. Se ainda tem alguma dúvida, me responde agora que a equipe te ajuda até o fim.
 
-**T13 · as_alt_plantao** (48 h depois de tocar em "Preço")
-> {{1}}, dá para começar com R$ 187.
+**T13 · as_alternativa** (48 h depois de tocar em "Preço" (se antes de 30/11); Texto: Maria Paula · Amar Saber; botões Quero o link · Tenho uma dúvida)
+> Oi, {{1}}! Se o Guia não cabe agora, dá para começar pela consulta.
 >
-> Você me disse que o preço pesou. Então separei o que resolve o seu ponto mais sensível, o plantão: o módulo Entre o plantão e o medo (classificação de risco, XABCDE, carrinho de emergência, fluidoterapia, transfusão e paciente séptico), mais 3 meses na Comunidade Amar Saber.
->
-> R$ 187 à vista ou 12x de R$ 19,03, só até 30/11.
-
-**T14 · as_alt_consulta**
-> {{1}}, dá para começar com R$ 187.
->
-> Você me disse que o preço pesou. Então separei o que resolve o seu ponto mais sensível, a consulta: o curso completo Atendimento Extraordinário (anamnese que conduz, exame físico explicado ao tutor, Técnica do Detetive e pós-consulta), mais 3 meses na Comunidade Amar Saber.
->
-> R$ 187 à vista ou 12x de R$ 19,03, só até 30/11.
-
-**T15 · as_alt_sozinho**
-> {{1}}, dá para começar com R$ 187.
->
-> Você me disse que o preço pesou. Então separei o que resolve o seu ponto mais sensível, os casos difíceis: o módulo Casos Clínicos, com mais de 20 casos reais, de cesárea e piometra a efusão pleural e convulsão, mais 3 meses na Comunidade Amar Saber para discutir os seus.
+> O curso completo Atendimento Extraordinário (anamnese que conduz, exame físico explicado ao tutor, Técnica do Detetive e pós-consulta) vem com 3 meses na Comunidade Amar Saber.
 >
 > R$ 187 à vista ou 12x de R$ 19,03, só até 30/11.
 
@@ -163,7 +148,7 @@ Urgência usada (confirmada pelo usuário): prazo de 30/11 23h59, quando a ofert
   diretas. Para quem já atende, ele vira a consulta rápida no meio do plantão e o padrão para treinar a equipe."
   [Quero o link] [Tenho uma dúvida]
 - **R5 · Tenho uma dúvida / Outra dúvida / texto livre**: "Pode mandar a sua dúvida aqui. A equipe responde em
-  seguida." [NEED: horário de atendimento] → pausa e vai para o atendimento.
+  seguida." → pausa e vai para o atendimento.
 
 ## E-mails da Yampi (carrinho abandonado; [nome] e o botão são as variáveis da Yampi)
 **E1 · 30 min**
@@ -204,27 +189,24 @@ Urgência usada (confirmada pelo usuário): prazo de 30/11 23h59, quando a ofert
 - CTA: **Não perder a condição de Black**
 - Desligar os e-mails na Yampi em 30/11 23h59 (a Yampi não sabe a data final).
 
-## Ativação (quando o Kommo e a Yampi estiverem prontos)
-1. **Kommo:** conectar o WhatsApp oficial; cadastrar os 17 templates com estes nomes e enviar para aprovação; criar
-   um Salesbot por template (passo "Mensagem" com o template; os botões "Quero o link" e as respostas da triagem
-   chamam o webhook do n8n, ver abaixo); criar os campos do lead `as_nome`, `as_link`, `as_dor` e `as_dias`.
-2. **n8n `AS · Kommo enviar`:** preencher no nó "Config do Kommo" o endereço da conta, o funil, os IDs dos campos e
-   o ID do Salesbot de cada template; criar a credencial "Kommo API" (token de longa duração).
-3. **Salesbot → n8n:** cada botão faz um POST para o webhook `as-black-kommo` (endereço completo no fluxo) com
-   `{ "telefone": "...", "acao": "link" | "preco" | "entrega" | "serve" | "atendimento" }`.
-4. **Yampi:** criar o webhook com os eventos `cart.reminder`, `order.paid`, `order.status.updated` e
-   `transaction.payment.refused` apontando para o webhook `as-black-yampi` do n8n (com a chave na URL); criar os
-   produtos "Entre o plantão e o medo + comunidade" e "Casos Clínicos + comunidade" (R$ 187) e colar os links no
-   "Config" do fluxo `AS · Recuperação Black`.
-5. **n8n `AS · Recuperação Black`:** testar com `TELEFONE_TESTE` e `TESTE_RAPIDO`; depois `ENVIO_ATIVO = true` e
-   publicar.
-6. **E-mails da Yampi:** cadastrar os 4 e desligar em 30/11 às 23h59.
+## Ativação
+1. ~~Kommo: funil "Recuperação Black" e campos `as_*`~~ (feito pela API em 28/10).
+2. ~~Yampi: webhook para `as-black-yampi`~~ (feito pela API em 28/10).
+3. ~~n8n: conta, funil, etapa e campos no "Config do Kommo"; alternativa única~~ (feito em 28/10).
+4. **Kommo (usuário):** cadastrar os 15 templates de `KOMMO-TEMPLATES-FICHA.md` e enviar para aprovação; criar os 15
+   Salesbots `AS · <template>` e o `AS · Respostas` (passo a passo na ficha).
+5. **n8n (usuário):** criar a credencial "Kommo API" e escolher nos nós HTTP do `AS · Kommo enviar`. Eu preencho os IDs
+   dos Salesbots.
+6. **Teste:** `TELEFONE_TESTE` + `TESTE_RAPIDO`, um lead em cada fluxo e um toque em cada botão; depois
+   `ENVIO_ATIVO = true` e publicar.
+7. **E-mails da Yampi:** cadastrar os 4 no painel e desligar em 30/11 às 23h59.
 
-### Estado atual (28/10)
-- `AS · Recuperação Black` (n8n 2ul2dmhhVyHCQPYe) e `AS · Kommo enviar` (exqe8KfQqIZGETyH) estão publicados, com o
-  envio desligado (`ENVIO_ATIVO = false`). A fila `AS · Fila de recuperação` já recebe os leads do teste: o
-  `AS · Teste Black` avisa a recuperação a cada lead (nó "Avisar recuperação"; internos não entram).
-- Quem entrou na fila há mais de 24 h quando o envio for ligado pula a 1ª mensagem (resultado, checkout, Pix ou
-  cartão) e entra no passo seguinte.
-- Linhas de teste na fila: telefones 55319000000xx (ids 1 a 3), já fora da sequência (status `comprou` ou
-  `atendimento`).
+### Estado atual (28/10, noite)
+- **Kommo:** funil "Recuperação Black" (14689116; etapas Em recuperação 113503588 · Pediu o link 113503592 · Em
+  atendimento 113503596) e campos do lead `as_nome` 881487, `as_link` 881489, `as_dor` 881491, `as_dias` 881493.
+- **Yampi:** webhook "AS · Recuperação Black (n8n)" ativo (cart.reminder, order.paid, order.status.updated,
+  transaction.payment.refused) apontando para `as-black-yampi`.
+- **n8n:** `AS · Kommo enviar` com conta, funil, etapa e campos preenchidos; faltam os IDs dos 15 Salesbots e a
+  credencial "Kommo API". `AS · Recuperação Black` com a alternativa única e a entrada do Kommo pelo id do lead;
+  envio desligado (`ENVIO_ATIVO = false`) até os templates serem aprovados e o teste passar.
+- **Falta (usuário):** cadastrar os 15 templates e enviar para aprovação; criar os Salesbots; criar a credencial.
