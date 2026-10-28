@@ -15,11 +15,16 @@ Regras:
 | 0 | Descrição do grupo e mensagem fixada | Boas-vindas |
 | 1 | 03/11 (ter), 19h · D-7 | A data e a 1ª dica |
 | 2 | 06/11 (sex), 12h · D-4 | 2ª dica *(opcional)* |
+| 3b | 09/11 (seg), 12h | Manda a sua pergunta para a live |
 | 3 | 09/11 (seg), 19h · D-1 | Amanhã, 20h + 3ª dica |
 | 4 | 10/11 (ter), 18h · 2 h antes | O link da live |
 | 5 | 10/11, 19h50 · 10 min antes | Já vai começar |
 | 6 | 10/11, 20h05 · ao vivo | Estamos ao vivo |
-| 7 | 10/11, logo após a abertura na live | Presentes abertos + link da Black |
+| 6a | 10/11, ~20h12 · Presente 01 aberto | O 1º presente |
+| 6b | 10/11, ~20h30 · Presente 02 aberto | O 2º presente |
+| 7 | 10/11, ~20h33 · Presente 03 aberto na live | Presentes abertos + link da Black |
+
+A ordem dos presentes e o roteiro da live estão em `LIVE-ROTEIRO.md`.
 | 8 | 11/11 (qua), 10h · dia seguinte | Para quem não viu |
 
 ---
@@ -55,6 +60,15 @@ Regras:
 >
 > 10/11, terça, 20h, ao vivo.
 
+## 3b · 09/11, 12h · perguntas para a live
+> Amanhã, na live, vou responder as dúvidas de vocês.
+>
+> Me manda aqui no privado, no (31) 9 9082-2333, a pergunta que você quer que eu responda: sobre o Guia, sobre a
+> Black ou sobre um caso da sua rotina. As mais pedidas entram na live.
+
+> Nota: o grupo é só de avisos, então as perguntas vão pelo WhatsApp da Amar Saber. Também abrir a caixinha de
+> perguntas nos stories no mesmo dia.
+
 ## 3 · 09/11, 19h · D-1
 > Amanhã, 20h.
 >
@@ -78,7 +92,19 @@ Regras:
 ## 6 · 10/11, 20h05 · ao vivo
 > Estamos ao vivo: [@INSTAGRAM]
 
-## 7 · 10/11, logo após a abertura dos presentes na live
+## 6a · 10/11, ~20h12 · quando a Dra. abre o Presente 01
+> 🎁 Presente 01 aberto: o curso completo Atendimento Extraordinário, o passo a passo da consulta que a gente usa na
+> Amar Veterinária.
+>
+> Ainda faltam dois. Estamos ao vivo: [@INSTAGRAM]
+
+## 6b · 10/11, ~20h30 · quando a Dra. abre o Presente 02
+> 🎁 Presente 02 aberto: 3 meses na Comunidade Amar Saber no WhatsApp, comigo e com a equipe, para você levar o caso
+> que te travou.
+>
+> O último presente é a condição, e o link sai aqui daqui a pouco: [@INSTAGRAM]
+
+## 7 · 10/11, ~20h33 · quando a Dra. abre o Presente 03 na live
 > Os presentes estão abertos. A Black Friday do Guia de Protocolos começou para vocês:
 >
 > 🎁 Presente 01: o curso completo Atendimento Extraordinário
