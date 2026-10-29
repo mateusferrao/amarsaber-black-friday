@@ -197,9 +197,8 @@ R$ 187 da `/oferta-especial/`), no lugar de `as_alt_plantao`, `as_alt_consulta` 
 5. ~~n8n: credencial "Kommo API" nos 5 nós HTTP do `AS · Kommo enviar`~~ (feito em 29/10).
 6. ~~Meta: forma de pagamento na conta do WhatsApp Business~~ (feito em 29/10). **Falta (usuário):** verificação da
    empresa na BM.
-7. **Kommo (usuário):** ramo "Falha ao enviar a mensagem" dos 15 bots de template → webhook `acao=falha`; apagar as
-   cópias "em revisão" do `as_reta_3dias` e do `as_ultimas_horas`; conferir o gatilho do TestBot e do AUTOMAÇÃO;
-   definir quem atende os leads da recuperação.
+7. ~~Kommo: ramo "Falha ao enviar a mensagem" dos 15 bots → `acao=falha`; apagar as cópias "em revisão"~~ (feito em
+   29/10). Quem atende os leads em "Pediu o link" e "Em atendimento": **a equipe comercial**.
 8. ~~Teste de ponta a ponta e `ENVIO_ATIVO = true`~~ (feito em 29/10; ver "Teste de ponta a ponta" abaixo).
 9. **Liga sozinho em 10/11 às 20h30** (`LIGA_EM`), depois do link da live no Grupo VIP.
 10. **E-mails e cupons da Yampi:** cadastrar os 4 e-mails no painel; em 30/11 às 23h59, desligar os e-mails e os cupons
@@ -241,5 +240,5 @@ como texto em `data`. O "Montar lead" não via o contato achado e criava um cont
 "Pegar lead" não lia o lead existente. Os dois nós agora leem o `data`. Depois da correção, o 2º envio em diante foi
 para a conversa certa.
 
-**Sobrou do teste (usuário):** apagar no Kommo o contato duplicado "Mateus" +55 31 9 9481-1420 (a API não apaga
-contatos). Os leads de teste foram para "Perdido".
+O contato duplicado "Mateus" +55 31 9 9481-1420 fica no Kommo (decisão do usuário). Os leads de teste foram para
+"Perdido". A parcela de 12x R$ 50,57 do R2 foi conferida no checkout pelo usuário.
