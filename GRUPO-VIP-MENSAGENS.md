@@ -64,7 +64,7 @@ Se a Dra. mudar um texto, corrigir aqui e editar ou recriar a ação corresponde
 | 8 | `ZR23Fy6ZMqy1R9l8fmc4` |
 | C | `ydiyawtpel0iWkFLiSVx` |
 | caso01 12h | `sn7uqcsuhtw1Q1u3SFpz` |
-| caso01 19h30 | `M8cvDZS8tyN94XWGCouH` |
+| caso01 19h30 | `z481mIXN7LF88cvqu6sq` |
 | caso02 12h | `etuSITATzwF8ofrMyxJ7` |
 | caso02 19h30 | `Y47l4175hnlejS34BFQ6` |
 | caso03 12h | `GndDMCP25ftk29yy1nDv` |
@@ -346,7 +346,7 @@ Ninguém sai do grupo depois de comprar. Esta é a única mensagem só para eles
 > Dúvida sobre o pedido: WhatsApp (31) 9 5349-5052.
 
 ## Caso do dia
-Às 12h o caso e a enquete. Às 19h30 a resposta, com a foto da página do Guia (menos no #1, que vai só em texto) e o
+Às 12h o caso e a enquete. Às 19h30 a resposta, com a foto da página do Guia e o
 link. A resposta mostra a conduta, sem dose. Casos escolhidos a partir do Guia de Protocolos Volume 3 e conferidos nas
 páginas; validados pela Dra. em 29/10, sem ajustes (`CASOS-DO-DIA-VALIDACAO.docx`, com as marcações dela). As fotos ficam em `assets/img/casos/`.
 
@@ -362,7 +362,7 @@ páginas; validados pela Dra. em 29/10, sem ajustes (`CASOS-DO-DIA-VALIDACAO.doc
 
 Enquete "Qual fármaco é contraindicado?", uma resposta só: **A)** Carprofeno · **B)** Meloxicam · **C)** Dipirona
 
-**19h30 · a resposta** (só texto: a Dra. não mandou a página 17)
+**19h30 · a resposta** (imagem `assets/img/casos/caso01-p17.jpg` com a legenda)
 
 > ✅ *Caso #1: a resposta é a A.*
 >
