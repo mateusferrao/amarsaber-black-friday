@@ -405,6 +405,13 @@ conversa", o bot roda em toda conversa nova da conta: abra o bot, clique no gati
 "Todos". A conta tem também uma conexão WA Lite, que não manda botões; com "Todos", o editor avisa que a mensagem sai
 sem botões.
 
+**Abrir conversa com quem nunca falou com o número (obrigatório nos 17 bots de template):** no passo **Enviar
+mensagem**, em **Canais**, marque **"Se você nunca conversou em um canal: Tente enviar uma mensagem"**. Sem isso, o bot
+rodado pelo n8n pula em silêncio todo contato sem conversa aberta (quem fez o teste, abandonou o checkout ou se
+cadastrou e não entrou no grupo): não envia, não passa pelo ramo de falha, e o n8n marca como enviado. Achado em
+29/10, quando os 25 primeiros convites não saíram. Nos bots de resposta não precisa, porque eles só respondem dentro
+de uma conversa que já existe.
+
 **Sinônimos (opcional):** no botão **Quero o link**, use **+ sinônimo** para `quero`, `link` e `manda o link`. Quem
 digitar em vez de tocar também cai no ramo.
 
