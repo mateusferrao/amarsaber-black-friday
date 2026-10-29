@@ -411,7 +411,10 @@ de bots para os outros. Em cada cópia, troque só o nome e o template.
    - **Tenho uma dúvida** → **Iniciar Salesbot** → `AS · Dúvida`
    - **Outra resposta** → **Iniciar Salesbot** → `AS · Atendimento`
 4. Não ligue **Sem resposta**. Assim o bot fica esperando o toque até o próximo template, que o n8n manda dias depois.
-5. Se aparecer o ramo **Falha ao enviar mensagem**, deixe vazio: o n8n registra o erro pelo retorno da API.
+5. Ramo **Falha ao enviar a mensagem** → **Ação ▾ → Enviar webhook** →
+   `https://n8n.automato.pro/webhook/as-black-kommo?chave=<CHAVE>&acao=falha`. O Kommo aceita rodar o bot mesmo
+   quando a Meta recusa o template (ex.: falta de pagamento, erro 3107); sem esse ramo o n8n acha que a mensagem saiu.
+   Com ele, a linha da fila fica com status `erro_envio` e para.
 
 **Exceção: `AS · as_triagem`.** Os ramos são outros:
 - **Preço** → `AS · Preço`

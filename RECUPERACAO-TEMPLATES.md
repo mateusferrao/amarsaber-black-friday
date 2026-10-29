@@ -193,22 +193,35 @@ R$ 187 da `/oferta-especial/`), no lugar de `as_alt_plantao`, `as_alt_consulta` 
 1. ~~Kommo: funil "Recuperação Black" e campos `as_*`~~ (feito pela API em 28/10).
 2. ~~Yampi: webhook para `as-black-yampi`~~ (feito pela API em 28/10).
 3. ~~n8n: conta, funil, etapa e campos no "Config do Kommo"; alternativa única~~ (feito em 28/10).
-4. **Kommo (usuário):** cadastrar os 15 templates de `KOMMO-TEMPLATES-FICHA.md` e enviar para aprovação; criar os 15
-   Salesbots `AS · <template>` e os 6 de resposta (`AS · Atendimento`, `AS · Dúvida`, `AS · Link`, `AS · Preço`,
-   `AS · Entrega`, `AS · Serve`). O passo a passo está na ficha. Os de resposta vêm primeiro e nenhum bot tem
-   gatilho.
-5. **n8n (usuário):** criar a credencial "Kommo API" e escolher nos nós HTTP do `AS · Kommo enviar`. Eu preencho os IDs
-   dos Salesbots.
-6. **Teste:** `TELEFONE_TESTE` + `TESTE_RAPIDO`, um lead em cada fluxo e um toque em cada botão; depois
-   `ENVIO_ATIVO = true` e publicar.
-7. **E-mails da Yampi:** cadastrar os 4 no painel e desligar em 30/11 às 23h59.
+4. ~~Kommo: 15 templates aprovados e 21 Salesbots~~ (feito em 29/10; IDs dos bots no "Config do Kommo").
+5. ~~n8n: credencial "Kommo API" nos 5 nós HTTP do `AS · Kommo enviar`~~ (feito em 29/10).
+6. **Meta (usuário):** forma de pagamento na conta do WhatsApp Business e verificação da empresa na BM.
+7. **Kommo (usuário):** ramo "Falha ao enviar a mensagem" dos 15 bots de template → webhook `acao=falha`; apagar as
+   cópias "em revisão" do `as_reta_3dias` e do `as_ultimas_horas`; conferir o gatilho do TestBot e do AUTOMAÇÃO;
+   definir quem atende os leads da recuperação.
+8. **Teste:** `TELEFONE_TESTE = 5531994811420` (só a linha desse número anda), lead 21680639 no Kommo, um toque em
+   cada botão. Depois `ENVIO_ATIVO = true` e publicar.
+9. **Liga sozinho em 10/11 às 20h30** (`LIGA_EM`), depois do link da live no Grupo VIP.
+10. **E-mails e cupons da Yampi:** cadastrar os 4 e-mails no painel; em 30/11 às 23h59, desligar os e-mails e os cupons
+    BLACKAMARSABER e BLACKAMARSABERDS.
 
-### Estado atual (28/10, noite)
+### Proteções do disparador (29/10)
+- **Só depois de `LIGA_EM`** (10/11, 20h30) e com `ENVIO_ATIVO = true`. Antes disso, as linhas esperam sem mudar.
+- **Teto de 200 envios por dia** somando todo mundo (`MAX_ENVIOS_DIA`): a BM sem verificação tem ~250 conversas
+  iniciadas por 24 h na Meta. O que passa do teto vai para o dia seguinte às 8h.
+- **No máximo 40 linhas por rodada** de 5 min ("Ordenar e limitar"), com checkout, Pix e cartão na frente. Sem isso,
+  uma rodada longa se sobrepõe à seguinte e a mesma pessoa recebe duas vezes.
+- **Falha de envio:** o ramo de falha do bot chama `acao=falha` e a linha fica `erro_envio` (para revisar à mão).
+- **Aceite de WhatsApp:** o lead do teste só entra na fila com `consentimento: true` (texto junto do botão do /teste/).
+- **Contato no Kommo:** a busca vai pelos 8 últimos dígitos e confere o DDD, porque o contato que veio do WhatsApp
+  costuma estar salvo sem o 9. Assim não nasce contato duplicado.
+
+### Estado atual (29/10)
 - **Kommo:** funil "Recuperação Black" (14689116; etapas Em recuperação 113503588 · Pediu o link 113503592 · Em
-  atendimento 113503596) e campos do lead `as_nome` 881487, `as_link` 881489, `as_dor` 881491, `as_dias` 881493.
+  atendimento 113503596), campos do lead `as_nome` 881487, `as_link` 881489, `as_dor` 881491, `as_dias` 881493;
+  15 templates aprovados com os marcadores `{{lead.cf.881487}}` (e `{{lead.cf.881493}}` na triagem); 21 bots.
 - **Yampi:** webhook "AS · Recuperação Black (n8n)" ativo (cart.reminder, order.paid, order.status.updated,
-  transaction.payment.refused) apontando para `as-black-yampi`.
-- **n8n:** `AS · Kommo enviar` com conta, funil, etapa e campos preenchidos; faltam os IDs dos 15 Salesbots de template e a
-  credencial "Kommo API". `AS · Recuperação Black` com a alternativa única e a entrada do Kommo pelo id do lead;
-  envio desligado (`ENVIO_ATIVO = false`) até os templates serem aprovados e o teste passar.
-- **Falta (usuário):** cadastrar os 15 templates e enviar para aprovação; criar os 21 Salesbots; criar a credencial.
+  transaction.payment.refused) apontando para `as-black-yampi`. Ainda sem evento real para conferir o formato.
+- **n8n:** tudo publicado; envio desligado até o teste passar, e só a partir de 10/11 às 20h30.
+- **Teste de 28/10:** o template saiu pelo Kommo, mas a Meta recusou (erro 3107: falta forma de pagamento). Com o
+  nome ainda em `{{1}}`, que foi corrigido nos templates.
