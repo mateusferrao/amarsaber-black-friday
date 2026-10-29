@@ -348,9 +348,9 @@ Ninguém sai do grupo depois de comprar. Esta é a única mensagem só para eles
 ## Caso do dia
 Às 12h o caso e a enquete. Às 19h30 a resposta, com a foto da página do Guia (menos no #1, que vai só em texto) e o
 link. A resposta mostra a conduta, sem dose. Casos escolhidos a partir do Guia de Protocolos Volume 3 e conferidos nas
-páginas; a validação da Dra. está no `CASOS-DO-DIA-VALIDACAO.docx` (até 11/11). As fotos ficam em `assets/img/casos/`.
+páginas; validados pela Dra. em 29/10, sem ajustes (`CASOS-DO-DIA-VALIDACAO.docx`, com as marcações dela). As fotos ficam em `assets/img/casos/`.
 
-### Caso #1 · AINE no gato · 12/11 (qui) *(aguardando validação da Dra.)*
+### Caso #1 · AINE no gato · 12/11 (qui) *(validado pela Dra. em 29/10)*
 
 **12h · o caso + enquete**
 
@@ -372,7 +372,7 @@ Enquete "Qual fármaco é contraindicado?", uma resposta só: **A)** Carprofeno 
 >
 > A condição da Black vai até 30/11: https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=caso01
 
-### Caso #2 · Otite por Malassezia · 13/11 (sex) *(aguardando validação da Dra.)*
+### Caso #2 · Otite por Malassezia · 13/11 (sex) *(validado pela Dra. em 29/10)*
 
 **12h · o caso + enquete**
 
@@ -394,7 +394,7 @@ Enquete "Qual é a sua conduta?", uma resposta só: **A)** Antibiótico otológi
 >
 > A condição da Black vai até 30/11: https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=caso02
 
-### Caso #3 · Antiemético na parvovirose · 15/11 (dom) *(aguardando validação da Dra.)*
+### Caso #3 · Antiemético na parvovirose · 15/11 (dom) *(validado pela Dra. em 29/10)*
 
 **12h · o caso + enquete**
 
@@ -416,7 +416,7 @@ Enquete "Qual antiemético você evita?", uma resposta só: **A)** Maropitant ·
 >
 > A condição da Black vai até 30/11: https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=caso03
 
-### Caso #4 · Gato agressivo na consulta · 16/11 (seg) *(aguardando validação da Dra.)*
+### Caso #4 · Gato agressivo na consulta · 16/11 (seg) *(validado pela Dra. em 29/10)*
 
 **12h · o caso + enquete**
 
@@ -438,7 +438,7 @@ Enquete "Qual é a sua conduta?", uma resposta só: **A)** Trazodona oral duas h
 >
 > A condição da Black vai até 30/11: https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=caso04
 
-### Caso #5 · Manutenção da atopia · 18/11 (qua) *(aguardando validação da Dra.)*
+### Caso #5 · Manutenção da atopia · 18/11 (qua) *(validado pela Dra. em 29/10)*
 
 **12h · o caso + enquete**
 
@@ -460,7 +460,7 @@ Enquete "Qual é a sua conduta?", uma resposta só: **A)** Inibidor de JAK na ma
 >
 > A condição da Black vai até 30/11: https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=caso05
 
-### Caso #6 · Leishmaniose · 19/11 (qui) *(aguardando validação da Dra.)*
+### Caso #6 · Leishmaniose · 19/11 (qui) *(validado pela Dra. em 29/10)*
 
 **12h · o caso + enquete**
 
@@ -482,7 +482,7 @@ Enquete "Qual é a conduta correta?", uma resposta só: **A)** Eutanásia, por s
 >
 > A condição da Black vai até 30/11: https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=caso06
 
-### Caso #7 · Antibiótico na pancreatite · 21/11 (sáb) *(aguardando validação da Dra.)*
+### Caso #7 · Antibiótico na pancreatite · 21/11 (sáb) *(validado pela Dra. em 29/10)*
 
 **12h · o caso + enquete**
 
@@ -504,7 +504,7 @@ Enquete "E o antibiótico?", uma resposta só: **A)** Não prescrever de rotina:
 >
 > A condição da Black vai até 30/11: https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=caso07
 
-### Caso #8 · Sarna otodécica · 23/11 (seg) *(aguardando validação da Dra.)*
+### Caso #8 · Sarna otodécica · 23/11 (seg) *(validado pela Dra. em 29/10)*
 
 **12h · o caso + enquete**
 
@@ -526,7 +526,7 @@ Enquete "Qual é o tratamento de escolha?", uma resposta só: **A)** Gotas otol�
 >
 > A condição da Black vai até 30/11: https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=caso08
 
-### Caso #9 · Início da levotiroxina · 24/11 (ter) *(aguardando validação da Dra.)*
+### Caso #9 · Início da levotiroxina · 24/11 (ter) *(validado pela Dra. em 29/10)*
 
 **12h · o caso + enquete**
 
@@ -548,7 +548,7 @@ Enquete "Como introduzir a medicação?", uma resposta só: **A)** Dose total de
 >
 > A condição da Black vai até 30/11: https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=caso09
 
-### Caso #10 · Imidocarb na babesiose · 26/11 (qui) *(aguardando validação da Dra.)*
+### Caso #10 · Imidocarb na babesiose · 26/11 (qui) *(validado pela Dra. em 29/10)*
 
 **12h · o caso + enquete**
 
@@ -569,6 +569,21 @@ Enquete "Qual é a conduta imediata?", uma resposta só: **A)** Observação cl�
 > No Guia de Protocolos · Volume 3, p. 85: o cálculo da dose por peso, o intervalo entre as aplicações, as reações adversas e o manejo das complicações.
 >
 > A condição da Black vai até 30/11: https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=caso10
+
+### Reservas (validadas, não agendadas)
+Se precisar trocar um caso, um destes entra no mesmo dia e horário. Fotos: `assets/img/casos/reserva-erliquiose-p87.jpg` e `assets/img/casos/reserva-gastro-p94.jpg`.
+
+**R1 · Tempo de tratamento da erliquiose** · caso: Cão com erliquiose confirmada. No 14º dia de doxiciclina, os sinais sumiram e o tutor quer suspender o tratamento. O que você orienta? · enquete "Qual é a conduta correta?": **A)** Suspender: a melhora clínica confirma a cura · **B)** Manter a doxiciclina até completar 28 dias · **C)** Trocar por enrofloxacino por mais sete dias · certa: B
+
+> Manter a doxiciclina até completar 28 dias. Parar quando o paciente melhora favorece a recidiva e a evolução para a fase crônica. E, como todo antibiótico, ela vai depois da alimentação.
+>
+> No Guia de Protocolos · Volume 3, p. 87: o protocolo da erliquiose, o suporte hematológico, os hepatoprotetores e o acompanhamento laboratorial.
+
+**R2 · Gastroenterite aguda** · caso: Cão sem raça definida, 3 anos, com diarreia pastosa e dois vômitos nas últimas 24 h. Está normotérmico, alerta e hidratado, não há sangue nas fezes e o teste para parvovirose deu negativo. Qual é a sua conduta inicial? · enquete "Qual é a sua conduta?": **A)** Enrofloxacino com antisséptico intestinal e antidiarreico · **B)** Suporte sintomático, hidratação e probiótico · **C)** Corticoide com metronidazol · certa: B
+
+> Suporte sintomático, hidratação e probiótico. A maioria das gastroenterites agudas é alimentar ou viral leve. O antibiótico sem indicação elimina a flora benéfica, atrasa a recuperação e causa disbiose. Ele fica para suspeita de infecção bacteriana grave, risco de translocação ou diarreia hemorrágica.
+>
+> No Guia de Protocolos · Volume 3, p. 93: o protocolo das gastroenterites, os critérios para antibiótico, os antieméticos, a analgesia e os protetores gástricos.
 
 ## Dias de prova e novidade
 
