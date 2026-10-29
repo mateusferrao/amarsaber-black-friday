@@ -254,8 +254,12 @@ separado por campanha: a comparação teste × LP sai das UTMs (`utm_campaign`),
   `assets/img/grupo-vip.jpg`; nome, foto, descrição e os 6 admins valem para todo grupo novo.
 - **Número operador:** (31) 93618-8016, só para os grupos. O 93618-4795 caiu em 28/10, 17h19, logo depois de criar 4
   grupos em 15 min. Os grupos que só ele administrava (#2 a #5) saíram da campanha e ficaram vazios no WhatsApp.
-- **Criação de grupos:** desligada, com margem 1. Hoje só o #1 está na campanha. Quando ele chegar perto de 500
-  (aba "Grupos"), religar a criação: o SendFlow cria 1 grupo novo, pelo 93618-8016.
+- **Criação de grupos:** desligada de vez (`countStart` 3). Criar grupo pelo chip novo é o que derrubou o anterior,
+  então o grupo novo é criado à mão. Em 29/10 estão na campanha o #1 (gid 120363398206198157) e o #2 (gid
+  120363430862559950), que o Mateus criou no celular e importou; a descrição, a foto, "só admins falam" e "travado"
+  foram aplicados pelo SendFlow. Quando o #2 passar de ~400 (aba "Grupos"), criar o #3 do mesmo jeito: no celular,
+  com os 6 admins (inclusive o 93618-8016), nome "Grupo VIP Amar Saber · Black 2026 #3", importar na campanha e
+  aplicar descrição, foto e configurações só nele.
 - **Link de rodízio:** `https://sndflw.com/i/amarsaber-black-vip`, no botão `data-grupo` do obrigado. Manda para o
   grupo com vaga. O clique continua gerando `lp_grupo_clique` e `GroupClick`.
 - **Teste:** campanha separada "Teste BF", sem criação de grupos. O grupo de teste antigo se perdeu com o número que

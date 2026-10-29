@@ -18,7 +18,10 @@ Regras:
 ## Como operar no SendFlow
 - **Teste antes:** toda mensagem nova vai primeiro para a campanha "Teste BF" (grupo de teste, com o operador 93618-8016 como admin) e é
   conferida no celular. Só depois vai para a campanha "Black 2026 · Grupo VIP", para todos os grupos.
-- **Agendadas:** saem pela campanha inteira (todas as contas da campanha), no horário de Brasília da tabela.
+- **Agendadas:** saem pela campanha inteira (todas as contas da campanha e todos os grupos, hoje o #1 e o #2), no
+  horário de Brasília da tabela.
+- **Grupos novos:** a criação automática fica desligada. O próximo grupo é criado à mão no celular e importado
+  (passo a passo em `RASTREAMENTO.md`).
 - **Manuais (dia da live):** a 6, a 6a, a 6b e a 7 ficam prontas como template e o Mateus dispara pelo painel quando a
   Dra. abre cada presente. Ensaio na live de teste de 09/11.
 - **Evento do WhatsApp:** nas mensagens 1 e 3, um evento nativo "Live da Black · Guia de Protocolos" em 10/11, 20h,
