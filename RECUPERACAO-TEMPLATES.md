@@ -216,6 +216,19 @@ Para quem está fora de todos os grupos do SendFlow e por isso não recebe nada 
   - texto livre → atendimento;
   - checkout, Pix, cartão ou teste depois → troca para o fluxo da compra ou do teste, sem repetir mensagem.
 - **Contato manual:** substitui o da aba "Grupos · Não entrou". A equipe não precisa mais chamar à mão.
+- **IDs:** templates `as_vip_convite` 44235 e `as_vip_lancamento` 44239 (aprovados em 29/10); bots `AS · Grupo` 50553,
+  `AS · Sair` 50555, `AS · as_vip_convite` 50559, `AS · as_vip_lancamento` 50563 (no "Config do Kommo").
+- **n8n:** `VIP_ATIVO = true` desde 29/10 às 16h55. Nós novos no disparador: "Tem VIP na rodada?", "SendAPI ·
+  participantes agora", "Baixar participantes agora" e "Marcar quem está no grupo". No `AS · Grupos SendFlow → Sheets`:
+  exportação com `includeLeft: true` e o ramo "Ler fila da recuperação → Montar fila de quem está fora → Entrar/Atualizar
+  na fila". Com o fluxo vip desligado, as linhas vip voltam a ser olhadas a cada 1 h.
+- **Teste de 29/10 (número do Mateus):**
+  - convite pelo bot: chegou com o nome. "Quero entrar" mandou o link do grupo (kommo.cc → sndflw.com/i/amarsaber-black-vip)
+    e "Pagar mais caro" mandou o "Combinado…" e passou o lead para Perdido;
+  - fora dos 2 grupos, a sincronização criou a linha `vip_saiu` e o lançamento saiu (lead novo no contato certo, sem
+    duplicar);
+  - de volta ao grupo, a rodada seguinte marcou `no_grupo` e a prova não saiu.
+- **1ª carga (29/10):** 25 `vip_cadastro` (convite na rodada das 17h30) e 4 `vip_saiu` (lançamento em 10/11 20h30).
 - **Riscos aceitos:**
   - contato frio, num número sem verificação;
   - o lançamento não tem botão de saída.
