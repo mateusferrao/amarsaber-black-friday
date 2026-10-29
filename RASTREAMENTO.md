@@ -250,14 +250,15 @@ separado por campanha: a comparação teste × LP sai das UTMs (`utm_campaign`),
 ## Grupos VIP (SendFlow)
 
 - **Campanha:** "Black 2026 · Grupo VIP" no SendFlow (tipo lançamento com transbordo). Grupos "Grupo VIP Amar
-  Saber · Black 2026 #1", #2…, com até 500 pessoas, só admins falam e 1 grupo por pessoa. Foto
+  Saber · Black 2026 #1", #2…, com até 700 pessoas, só admins falam e 1 grupo por pessoa. Foto
   `assets/img/grupo-vip.jpg`; nome, foto, descrição e os 6 admins valem para todo grupo novo.
 - **Número operador:** (31) 93618-8016, só para os grupos. O 93618-4795 caiu em 28/10, 17h19, logo depois de criar 4
   grupos em 15 min. Os grupos que só ele administrava (#2 a #5) saíram da campanha e ficaram vazios no WhatsApp.
 - **Criação de grupos:** desligada de vez (`countStart` 3). Criar grupo pelo chip novo é o que derrubou o anterior,
   então o grupo novo é criado à mão. Em 29/10 estão na campanha o #1 (gid 120363398206198157) e o #2 (gid
   120363430862559950), que o Mateus criou no celular e importou; a descrição, a foto, "só admins falam" e "travado"
-  foram aplicados pelo SendFlow. Quando o #2 passar de ~400 (aba "Grupos"), criar o #3 do mesmo jeito: no celular,
+  foram aplicados pelo SendFlow. Limite de 700 por grupo (desde 29/10). Uma conferência diária às 7h43 manda a
+  contagem de cada grupo; quando o último grupo com vaga passar de 550, criar o próximo do mesmo jeito: no celular,
   com os 6 admins (inclusive o 93618-8016), nome "Grupo VIP Amar Saber · Black 2026 #3", importar na campanha e
   aplicar descrição, foto e configurações só nele.
 - **Link de rodízio:** `https://sndflw.com/i/amarsaber-black-vip`, no botão `data-grupo` do obrigado. Manda para o
