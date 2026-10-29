@@ -4,12 +4,13 @@ Textos para cadastrar no Kommo (templates de WhatsApp, aprovados pela Meta), nas
 de carrinho abandonado da Yampi. Os fluxos do n8n (`AS · Recuperação Black` e `AS · Kommo enviar`) usam os **nomes dos
 templates** abaixo: cadastre com o mesmo nome. Como ligar tudo: seção "Ativação" no fim.
 
-Regras da cadência: 1ª mensagem na hora (8h–21h; senão às 8h); depois só das 8h às 21h e no máximo 2 por dia; compra
+Regras da cadência: 1ª mensagem na hora, a qualquer hora (responde ao que a pessoa acabou de fazer: teste, checkout,
+Pix ou cartão; com mais de 60 min de atraso, espera as 8h); depois só das 8h às 21h e no máximo 2 por dia; compra
 de qualquer produto para tudo; qualquer resposta fora dos botões pausa a automação e vai para o atendimento; nada sai
 depois de 30/11 23h59.
 
 ## Sequências
-Regras: 1ª mensagem na hora (8h–21h; senão às 8h); depois só 8h–21h e no máx. 2/dia; compra de qualquer produto
+Regras: 1ª mensagem na hora, a qualquer hora; depois só 8h–21h e no máx. 2/dia; compra de qualquer produto
 para tudo; sem saída própria: qualquer texto fora dos botões segue o padrão e vai para o atendimento; resposta que não seja "Quero o link" pausa (status `atendimento`);
 teste → checkout troca de sequência sem repetir mensagem; de 28 a 30/11 a reta final substitui o núcleo.
 
