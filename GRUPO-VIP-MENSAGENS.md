@@ -60,26 +60,26 @@ Se a Dra. mudar um texto, corrigir aqui e editar ou recriar a ação corresponde
 | 5 | `jC6oXuqR7OQzmqWW9BdW` |
 | 8 | `ZR23Fy6ZMqy1R9l8fmc4` |
 | C | `ydiyawtpel0iWkFLiSVx` |
-| caso01 12h | `6NberdYiwp4Nk9dbgC67` |
-| caso01 19h30 | `RJpVu5Un5Yv8dlXXQI5s` |
-| caso02 12h | `P8tbpIaXUFWiEIePxWjX` |
-| caso02 19h30 | `oMT77dXXAeA1Sq7boouZ` |
-| caso03 12h | `D2msApkoQVkk5yQ6SMgt` |
-| caso03 19h30 | `TiZ2D6IRlcGJYbQyTIg3` |
-| caso04 12h | `fHr8YbRCdFPMcyimwLyV` |
-| caso04 19h30 | `CQSOeuamBMFLOj07a5Oq` |
-| caso05 12h | `FvqXu2SVTWB5UCka8dMU` |
-| caso05 19h30 | `qNmhDxnelYJQBza1nfCl` |
-| caso06 12h | `U4bvNCFXolakhfDyz93V` |
-| caso06 19h30 | `xBN2D6CX8m2s48RLmarr` |
-| caso07 12h | `K30gKD4By8vNVsObDIAA` |
-| caso07 19h30 | `cc8n16pDw2v02Ra1jefh` |
-| caso08 12h | `v4DO2wttzuMc4fSUCe9p` |
-| caso08 19h30 | `9rTA8tO624W738lFOWKa` |
-| caso09 12h | `OWDW1w1HfJosGTSf5G6M` |
-| caso09 19h30 | `DaWqg6eKBD3eTbU6CJfo` |
-| caso10 12h | `1XmDrUJSsAS74p2G46NA` |
-| caso10 19h30 | `c9f2vRBcGePRo2yq4S3w` |
+| caso01 12h | `sn7uqcsuhtw1Q1u3SFpz` |
+| caso01 19h30 | `M8cvDZS8tyN94XWGCouH` |
+| caso02 12h | `etuSITATzwF8ofrMyxJ7` |
+| caso02 19h30 | `Y47l4175hnlejS34BFQ6` |
+| caso03 12h | `GndDMCP25ftk29yy1nDv` |
+| caso03 19h30 | `T07e8LP1hv4YetuxGEUN` |
+| caso04 12h | `3vYwPj0lgrknz2B95Rgm` |
+| caso04 19h30 | `i3kIjLLQEshhEgPc9iqv` |
+| caso05 12h | `D6BfijfN5YFbgWPd1BwI` |
+| caso05 19h30 | `YDeIiRU8oV6r01dCfqeK` |
+| caso06 12h | `sLZ7Iv5mXlXsvZQPTMsu` |
+| caso06 19h30 | `tPI3bWCsa3vpFG4DBYmz` |
+| caso07 12h | `07RlmBbsJ2AUhTP3n58H` |
+| caso07 19h30 | `D3TTwXfI3RfXGFkTZvQL` |
+| caso08 12h | `2G1ECWkPCQowpk5gLJpE` |
+| caso08 19h30 | `C7IvRcIMTD4uwaps5x4Q` |
+| caso09 12h | `yQ423YctCQJpSZ2FoYuB` |
+| caso09 19h30 | `HBZUda102LxHDVqMjols` |
+| caso10 12h | `GElso3fOUhUyzMYnowmZ` |
+| caso10 19h30 | `04SW32sawJom51bBo0s1` |
 | p1 | `tyAapSAhuXbtX1oFr8HS` |
 | p2 | `zDyjJV04YG48N7gmdmZL` |
 | p3 | `K0hRp8H6oNymsnRub1T9` |
@@ -128,21 +128,21 @@ Na UTMify e no PostHog, o `utm_content` mostra quais casos e quais dias trazem v
 | | 10/11, ~20h21 | 7 | Presentes abertos + link da Black | texto, @todos, manual |
 | Carrinho aberto | qua 11/11, 10h | 8 | Para quem não viu | texto |
 | | qui 12/11, 10h | C | Para quem já comprou | texto |
-| | qui 12/11 | caso01 | Corticoide no gato | 12h caso + enquete · 19h30 resposta |
-| | sex 13/11 | caso02 | Indução de vômito | 12h · 19h30 |
+| | qui 12/11 | caso01 | AINE no gato | 12h caso + enquete · 19h30 resposta |
+| | sex 13/11 | caso02 | Otite por Malassezia | 12h · 19h30 |
 | | sáb 14/11, 12h | p1 | O que tem de novo no Volume 3 | texto |
-| | dom 15/11 | caso03 | Hipoglicemia | 12h · 19h30 |
-| | seg 16/11 | caso04 | Antibiótico e estômago | 12h · 19h30 |
+| | dom 15/11 | caso03 | Antiemético na parvovirose | 12h · 19h30 |
+| | seg 16/11 | caso04 | Gato agressivo na consulta | 12h · 19h30 |
 | | ter 17/11, 12h | p2 | Depoimento | imagem + texto |
-| | qua 18/11 | caso05 | Cinomose | 12h · 19h30 |
-| | qui 19/11 | caso06 | Fluido e azotemia | 12h · 19h30 |
+| | qua 18/11 | caso05 | Manutenção da atopia | 12h · 19h30 |
+| | qui 19/11 | caso06 | Leishmaniose | 12h · 19h30 |
 | | sex 20/11, 12h | p3 | Os dois presentes que vêm junto | texto |
-| | sáb 21/11 | caso07 | Babesiose e Imizol | 12h · 19h30 |
+| | sáb 21/11 | caso07 | Antibiótico na pancreatite | 12h · 19h30 |
 | | dom 22/11, 12h | p4 | Dúvidas frequentes | texto |
-| | seg 23/11 | caso08 | Otite | 12h · 19h30 |
-| | ter 24/11 | caso09 | Ligamento cruzado | 12h · 19h30 |
+| | seg 23/11 | caso08 | Sarna otodécica | 12h · 19h30 |
+| | ter 24/11 | caso09 | Início da levotiroxina | 12h · 19h30 |
 | | qua 25/11, 12h | p5 | Depoimento | imagem + texto |
-| | qui 26/11 | caso10 | Transfusão | 12h · 19h30 |
+| | qui 26/11 | caso10 | Imidocarb na babesiose | 12h · 19h30 |
 | Reta final | sex 27/11, 9h | r2711 | Hoje é Black Friday | texto |
 | | sáb 28/11, 12h | r2811 | Depoimento + dúvidas | imagem + texto |
 | | dom 29/11, 19h30 | r2911 | Amanhã acaba | texto |
@@ -343,227 +343,227 @@ Ninguém sai do grupo depois de comprar. Esta é a única mensagem só para eles
 > Dúvida sobre o pedido: WhatsApp (31) 9 5349-5052.
 
 ## Caso do dia
-Às 12h o caso e a enquete. Às 19h30 a resposta, com o que fica para o Guia e o link. A resposta mostra a conduta,
-sem dose: o protocolo completo está no Guia. Se a Dra. mandar a foto da página do Guia sobre o tema, ela vai junto
-com a resposta.
+Às 12h o caso e a enquete. Às 19h30 a resposta, com a foto da página do Guia (menos no #1, que vai só em texto) e o
+link. A resposta mostra a conduta, sem dose. Casos escolhidos a partir do Guia de Protocolos Volume 3 e conferidos nas
+páginas; a validação da Dra. está no `CASOS-DO-DIA-VALIDACAO.docx` (até 11/11). As fotos ficam em `assets/img/casos/`.
 
-### Caso #1 · Corticoide no gato · 12/11 (qui) *(aguardando validação da Dra.)*
+### Caso #1 · AINE no gato · 12/11 (qui) *(aguardando validação da Dra.)*
 
 **12h · o caso + enquete**
 
 > 🩺 *Caso do dia #1*
 >
-> Gato, 4 anos, com lesão ulcerada no lábio superior. A citologia por imprint mostra muitos eosinófilos: complexo granuloma eosinofílico, primeira ocorrência, lesão pequena. Qual corticoide você prescreve?
+> Gata persa, 12 anos, com dor e limitação articular por doença articular degenerativa. Na escolha do anti-inflamatório não esteroidal, qual fármaco é contraindicado para a espécie felina?
 >
-> Vota na enquete aqui embaixo. Às 19h30 eu mando a resposta.
+> Vota na enquete aqui embaixo. Às 19h30 eu mando a resposta, com a página do Guia.
 
-Enquete "Qual é a sua conduta?", uma resposta só: **A)** Prednisolona oral · **B)** Prednisona oral · **C)** Depo-Medrol já na primeira consulta
+Enquete "Qual fármaco é contraindicado?", uma resposta só: **A)** Carprofeno · **B)** Meloxicam · **C)** Dipirona
 
-**19h30 · a resposta** (certa: A)
+**19h30 · a resposta** (só texto: a Dra. não mandou a página 17)
 
 > ✅ *Caso #1: a resposta é a A.*
 >
-> Prednisolona. O gato não converte a prednisona em prednisolona de forma eficiente, por uma deficiência enzimática hepática, então a prednisona perde efeito nele. Em lesão pequena e de primeira ocorrência, muitos pacientes respondem só à prednisolona oral, sem corticoide de depósito. O Depo-Medrol fica para casos moderados a graves, e nunca em gato diabético sem acompanhamento de endocrinologista.
+> O carprofeno é contraindicado em felinos, pelo alto risco de toxicidade renal e hepática nessa espécie. Para a dor articular do gato, usamos opções com segurança comprovada para a espécie, por períodos curtos, dentro de uma analgesia multimodal.
 >
-> No Guia de Protocolos · Volume 3: dose e duração da prednisolona, quando usar o Depo-Medrol e o desmame obrigatório depois dele.
+> No Guia de Protocolos · Volume 3, p. 17: a tabela de AINEs permitidos e proibidos para gatos, a analgesia multimodal felina e a conduta na dor crônica.
 >
 > A condição da Black vai até 30/11: https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=caso01
 
-### Caso #2 · Indução de vômito · 13/11 (sex) *(aguardando validação da Dra.)*
+### Caso #2 · Otite por Malassezia · 13/11 (sex) *(aguardando validação da Dra.)*
 
 **12h · o caso + enquete**
 
 > 🩺 *Caso do dia #2*
 >
-> Cão de 3 anos, consciente e responsivo. O tutor chega dizendo que ele comeu um agente tóxico há uns 40 minutos. O produto não é corrosivo nem oleoso. Você induz o vômito?
+> Cocker Spaniel, 5 anos, com eritema, prurido e secreção enegrecida e ceruminosa nos dois condutos auditivos. A citologia mostra muita Malassezia sp., sem cocos e sem bacilos. Qual é a sua conduta?
 >
-> Vota na enquete aqui embaixo. Às 19h30 eu mando a resposta.
+> Vota na enquete aqui embaixo. Às 19h30 eu mando a resposta, com a página do Guia.
 
-Enquete "Qual é a sua conduta?", uma resposta só: **A)** Sim, sempre que houver ingestão de tóxico · **B)** Sim, e se não vomitar, faz lavagem gástrica · **C)** Não: passou da janela de 30 minutos
+Enquete "Qual é a sua conduta?", uma resposta só: **A)** Antibiótico otológico com gentamicina e corticoide · **B)** Antibiótico sistêmico por via oral por vinte dias · **C)** Solução otológica antifúngica, sem antibiótico
 
-**19h30 · a resposta** (certa: C)
+**19h30 · a resposta** (imagem `assets/img/casos/caso02-p46.jpg` com a legenda)
 
 > ✅ *Caso #2: a resposta é a C.*
 >
-> Não. A indução de vômito só é considerada quando a ingestão foi há no máximo 30 minutos, com o paciente consciente, sem risco de aspiração e sem sinais neurológicos graves, e quando o agente não é corrosivo, cáustico ou oleoso. Depois disso o tóxico já foi absorvido em parte, e nem a indução nem a lavagem gástrica trazem benefício. O erro comum é induzir "por garantia".
+> Solução otológica antifúngica, sem antibiótico. Quando a citologia mostra só leveduras, não há motivo para incluir antibacteriano. O antibiótico tópico sem indicação ainda seleciona bactérias resistentes no conduto, e a próxima otite fica mais difícil.
 >
-> No Guia de Protocolos · Volume 3: o protocolo de indução (com as opções de fármaco e dose) e todos os critérios de quando não induzir.
+> No Guia de Protocolos · Volume 3, p. 46: a classificação das otites pela citologia, o ativo para cocos, bacilos ou leveduras, o protocolo de limpeza e a conduta nas otites recidivantes.
 >
 > A condição da Black vai até 30/11: https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=caso02
 
-### Caso #3 · Hipoglicemia · 15/11 (dom) *(aguardando validação da Dra.)*
+### Caso #3 · Antiemético na parvovirose · 15/11 (dom) *(aguardando validação da Dra.)*
 
 **12h · o caso + enquete**
 
 > 🩺 *Caso do dia #3*
 >
-> Filhote de raça mini, 2 meses, chega inconsciente depois de passar o dia sem comer. O glicosímetro confirma hipoglicemia. Qual é a primeira conduta?
+> Filhote de Pitbull, 4 meses, chega no plantão com diarreia fétida e sanguinolenta, prostração e vômitos frequentes. Para controlar o vômito e a dor visceral, qual antiemético você evita nesse paciente?
 >
-> Vota na enquete aqui embaixo. Às 19h30 eu mando a resposta.
+> Vota na enquete aqui embaixo. Às 19h30 eu mando a resposta, com a página do Guia.
 
-Enquete "Qual é a sua conduta?", uma resposta só: **A)** Mel ou solução açucarada na gengiva · **B)** Glicose 50% IV, em bolus lento · **C)** Fluidoterapia sem glicose e reavaliar em 1 hora
+Enquete "Qual antiemético você evita?", uma resposta só: **A)** Maropitant · **B)** Metoclopramida · **C)** Ondansetrona
 
-**19h30 · a resposta** (certa: B)
+**19h30 · a resposta** (imagem `assets/img/casos/caso03-p78.jpg` com a legenda)
 
 > ✅ *Caso #3: a resposta é a B.*
 >
-> Glicose 50% IV, em bolus lento. A via oral (glicose, mel ou solução açucarada) é só para o paciente consciente: no inconsciente há risco de aspiração e a absorção não é confiável. Depois da correção inicial, fluidoterapia com glicose e glicemia a cada 15 minutos até estabilizar, sem correção abrupta. E investigar a causa: filhotes e raças mini são o grupo de maior risco.
+> A metoclopramida. Por ser procinética, ela aumenta o peristaltismo e pode piorar as cólicas, a dor visceral e o risco de intussuscepção no paciente com parvovirose. Para o vômito, preferimos o maropitant ou a ondansetrona.
 >
-> No Guia de Protocolos · Volume 3: a dose da glicose, o monitoramento e o capítulo novo de hipoglicemia, hipotermia e hipertermia.
+> No Guia de Protocolos · Volume 3, p. 78: o suporte completo na parvovirose, com a fluidoterapia de reposição, os antieméticos indicados e o protocolo para tutores de baixa renda.
 >
 > A condição da Black vai até 30/11: https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=caso03
 
-### Caso #4 · Antibiótico e estômago · 16/11 (seg) *(aguardando validação da Dra.)*
+### Caso #4 · Gato agressivo na consulta · 16/11 (seg) *(aguardando validação da Dra.)*
 
 **12h · o caso + enquete**
 
 > 🩺 *Caso do dia #4*
 >
-> Cão vai fazer 20 dias de antibiótico. O tutor pergunta se precisa dar omeprazol junto "para proteger o estômago". O que você orienta?
+> Gato de 4 anos, muito arredio e estressado, precisa de exame físico e coleta de exames. A tutora conta que ele não deixa ninguém manipular na clínica. Qual protocolo oral você indica antes da consulta?
 >
-> Vota na enquete aqui embaixo. Às 19h30 eu mando a resposta.
+> Vota na enquete aqui embaixo. Às 19h30 eu mando a resposta, com a página do Guia.
 
-Enquete "Qual é a sua conduta?", uma resposta só: **A)** Sim, omeprazol durante todo o antibiótico · **B)** Não: dar o antibiótico sempre depois da alimentação · **C)** Trocar por antibiótico injetável
+Enquete "Qual é a sua conduta?", uma resposta só: **A)** Trazodona oral duas horas antes da consulta · **B)** Acepromazina oral em gota antes de sair de casa · **C)** Gabapentina oral duas horas antes da consulta
 
-**19h30 · a resposta** (certa: B)
+**19h30 · a resposta** (imagem `assets/img/casos/caso04-p12.jpg` com a legenda)
 
-> ✅ *Caso #4: a resposta é a B.*
+> ✅ *Caso #4: a resposta é a C.*
 >
-> Não é mais recomendado o omeprazol preventivo de rotina em antibiótico prolongado. A conduta atual é orientar que todo antibiótico seja dado depois da alimentação, o que reduz bastante os efeitos gastrointestinais e previne a gastrite induzida por fármaco.
+> Gabapentina oral, duas horas antes do atendimento. É a tranquilização oral para o gato ansioso ou agressivo; a trazodona é a opção para os cães. Com o gato mais tranquilo, o exame fica mais completo e seguro para todos: paciente, tutor e equipe.
 >
-> No Guia de Protocolos · Volume 3: a mudança vale para todos os protocolos do Guia, e cada tratamento traz o antibiótico, a dose e a duração.
+> No Guia de Protocolos · Volume 3, p. 12: o manejo do paciente ansioso, os protocolos de tranquilização oral para cães e gatos e as orientações de segurança na consulta.
 >
 > A condição da Black vai até 30/11: https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=caso04
 
-### Caso #5 · Cinomose · 18/11 (qua) *(aguardando validação da Dra.)*
+### Caso #5 · Manutenção da atopia · 18/11 (qua) *(aguardando validação da Dra.)*
 
 **12h · o caso + enquete**
 
 > 🩺 *Caso do dia #5*
 >
-> Filhote com cinomose, sem nenhum sinal clínico ou laboratorial de infecção bacteriana secundária. Você entra com antibiótico?
+> Shih Tzu, 3 anos, atópico, com o prurido controlado depois de uma crise. O tutor quer saber como manter o controle a longo prazo, sem os efeitos do corticoide. Qual é a sua conduta de manutenção?
 >
-> Vota na enquete aqui embaixo. Às 19h30 eu mando a resposta.
+> Vota na enquete aqui embaixo. Às 19h30 eu mando a resposta, com a página do Guia.
 
-Enquete "Qual é a sua conduta?", uma resposta só: **A)** Sim, antibiótico em todo caso de cinomose · **B)** Sim, dois antibióticos para ampliar o espectro · **C)** Só se houver sinal de infecção bacteriana secundária
+Enquete "Qual é a sua conduta?", uma resposta só: **A)** Inibidor de JAK na manutenção, com cuidado da barreira cutânea · **B)** Corticoide oral contínuo, em dias alternados · **C)** Triancinolona de depósito uma vez por mês
 
-**19h30 · a resposta** (certa: C)
+**19h30 · a resposta** (imagem `assets/img/casos/caso05-p33.jpg` com a legenda)
 
-> ✅ *Caso #5: a resposta é a C.*
+> ✅ *Caso #5: a resposta é a A.*
 >
-> O antibiótico não é obrigatório em todo caso de cinomose. Ele é indicado quando há sinais clínicos ou laboratoriais de infecção bacteriana secundária. E não se associa mais de um protocolo antibiótico ao mesmo tempo.
+> Inibidor de JAK na manutenção, junto com o cuidado da barreira cutânea. Além do oclacitinib, o Volume 3 traz o ilunocitinib. O corticoide contínuo, oral ou de depósito, controla o prurido, mas cobra caro: Cushing iatrogênico e outros efeitos sistêmicos. O erro comum é deixar o atópico anos no corticoide.
 >
-> No Guia de Protocolos · Volume 3: o protocolo completo da cinomose, com o suporte e qual antibiótico usar quando ele é indicado.
+> No Guia de Protocolos · Volume 3, p. 33: o esquema da crise e da manutenção da atopia, com oclacitinib, ilunocitinib, imunobiológicos e a restauração da barreira cutânea.
 >
 > A condição da Black vai até 30/11: https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=caso05
 
-### Caso #6 · Fluido e azotemia · 19/11 (qui) *(aguardando validação da Dra.)*
+### Caso #6 · Leishmaniose · 19/11 (qui) *(aguardando validação da Dra.)*
 
 **12h · o caso + enquete**
 
 > 🩺 *Caso do dia #6*
 >
-> Cão idoso com ureia e creatinina altas nos exames, lesão renal aguda. A ideia na equipe é "entrar com bastante fluido para baixar os valores". O que você faz?
+> Cão com leishmaniose visceral confirmada, estágio III pelo BrasilLeish 2025, sem comprometimento renal. O tutor ouviu que a única saída seria a eutanásia. Qual conduta as diretrizes do Guia recomendam?
 >
-> Vota na enquete aqui embaixo. Às 19h30 eu mando a resposta.
+> Vota na enquete aqui embaixo. Às 19h30 eu mando a resposta, com a página do Guia.
 
-Enquete "Qual é a sua conduta?", uma resposta só: **A)** Fluido em taxa alta até normalizar ureia e creatinina · **B)** Avaliar caso a caso: fluido não "normaliza" azotemia · **C)** Nunca usar fluido em paciente renal
+Enquete "Qual é a conduta correta?", uma resposta só: **A)** Eutanásia, por ser zoonose sem cura parasitológica · **B)** Protocolo com leishmanicida, leishmaniostático e imunomodulador · **C)** Só corticoide até os sinais clínicos sumirem
 
-**19h30 · a resposta** (certa: B)
+**19h30 · a resposta** (imagem `assets/img/casos/caso06-p73.jpg` com a legenda)
 
 > ✅ *Caso #6: a resposta é a B.*
 >
-> A fluidoterapia não reduz a azotemia na lesão renal aguda. Fluido em excesso sobrecarrega o rim, piora a função renal e favorece a progressão para doença renal crônica. O paciente precisa ser avaliado individualmente, e a fluidoterapia nunca deve ser instituída só para "normalizar" esses valores. Idosos, gatos, cardiopatas e anêmicos também pedem taxas mais conservadoras.
+> Tratamento multimodal, com leishmanicida, leishmaniostático e imunomodulador. Com tratamento, coleira repelente e acompanhamento, a carga parasitária cai e o risco de transmissão diminui. A eutanásia não é a primeira opção: fica para o paciente sem resposta e em sofrimento irreversível.
 >
-> No Guia de Protocolos · Volume 3: o cálculo da fluidoterapia e os cuidados específicos para anêmicos, idosos, gatos, cardiopatas e renais.
+> No Guia de Protocolos · Volume 3, p. 72 e 73: a tabela atualizada do BrasilLeish 2025, o estadiamento do estágio I ao VI e os protocolos com miltefosina, alopurinol, domperidona e imunoterapia.
 >
 > A condição da Black vai até 30/11: https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=caso06
 
-### Caso #7 · Babesiose e Imizol · 21/11 (sáb) *(aguardando validação da Dra.)*
+### Caso #7 · Antibiótico na pancreatite · 21/11 (sáb) *(aguardando validação da Dra.)*
 
 **12h · o caso + enquete**
 
 > 🩺 *Caso do dia #7*
 >
-> Cão com babesiose confirmada. Você vai aplicar o Imizol (imidocarb). O que faz antes e depois da aplicação?
+> Poodle, 8 anos, chega no plantão com dor abdominal intensa (posição de prece), vômitos e lipase pancreática específica alterada. Com o diagnóstico de pancreatite aguda, qual é a sua conduta quanto ao antibiótico?
 >
-> Vota na enquete aqui embaixo. Às 19h30 eu mando a resposta.
+> Vota na enquete aqui embaixo. Às 19h30 eu mando a resposta, com a página do Guia.
 
-Enquete "Qual é a sua conduta?", uma resposta só: **A)** Atropina antes, de rotina, e libera o paciente · **B)** Aplica e libera, porque reação é rara · **C)** Sem atropina de rotina e observação de pelo menos 3 horas
+Enquete "E o antibiótico?", uma resposta só: **A)** Não prescrever de rotina: a pancreatite é um processo estéril · **B)** Enrofloxacino com metronidazol, já na entrada · **C)** Cefalosporina de terceira geração por via intravenosa
 
-**19h30 · a resposta** (certa: C)
+**19h30 · a resposta** (imagem `assets/img/casos/caso07-p100.jpg` com a legenda)
 
-> ✅ *Caso #7: a resposta é a C.*
+> ✅ *Caso #7: a resposta é a A.*
 >
-> O uso preventivo de atropina antes do Imizol não é mais indicado de rotina (alguns colegas ainda usam, e fica a critério do veterinário, avaliando o paciente). O que é obrigatório é observar o paciente por pelo menos 3 horas depois da aplicação. Se houver reação, o manejo é pelo sintoma, nunca com medicação preventiva.
+> Não prescrever de rotina. A pancreatite é uma inflamação estéril, de autodigestão enzimática. O antibiótico fica para quando há infecção bacteriana secundária confirmada ou forte suspeita, ou sepse. O foco é analgesia e fluidoterapia.
 >
-> No Guia de Protocolos · Volume 3: o cálculo da dose do Imizol, o intervalo entre as duas aplicações e a conduta para cada reação adversa.
+> No Guia de Protocolos · Volume 3, p. 100: o suporte intensivo na pancreatite, a analgesia multimodal, o controle do vômito, os protetores gástricos e os critérios para antibiótico.
 >
 > A condição da Black vai até 30/11: https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=caso07
 
-### Caso #8 · Otite · 23/11 (seg) *(aguardando validação da Dra.)*
+### Caso #8 · Sarna otodécica · 23/11 (seg) *(aguardando validação da Dra.)*
 
 **12h · o caso + enquete**
 
 > 🩺 *Caso do dia #8*
 >
-> Cão com otite. O tutor conta que limpa o ouvido todo dia, "para ajudar o remédio". O que você orienta?
+> Filhote de gato, 3 meses, com prurido auricular intenso e cerúmen escuro, com aspecto de borra de café. A citologia confirma Otodectes cynotis. Qual é o tratamento de escolha para eliminar o ácaro?
 >
-> Vota na enquete aqui embaixo. Às 19h30 eu mando a resposta.
+> Vota na enquete aqui embaixo. Às 19h30 eu mando a resposta, com a página do Guia.
 
-Enquete "Qual é a sua conduta?", uma resposta só: **A)** Limpeza só quando houver secreção significativa, e tratamento guiado pela citologia · **B)** Limpeza diária durante todo o tratamento · **C)** Antibiótico tópico de amplo espectro, sem exame
+Enquete "Qual é o tratamento de escolha?", uma resposta só: **A)** Gotas otológicas com gentamicina por dez dias · **B)** Limpeza diária do conduto só com solução fisiológica · **C)** Antiparasitário de selamectina ou moxidectina
 
-**19h30 · a resposta** (certa: A)
+**19h30 · a resposta** (imagem `assets/img/casos/caso08-p50.jpg` com a legenda)
 
-> ✅ *Caso #8: a resposta é a A.*
+> ✅ *Caso #8: a resposta é a C.*
 >
-> Limpeza excessiva aumenta a inflamação e atrasa a recuperação: um pouco de cerúmen é protetor. A limpeza é feita no dia da consulta ou nos primeiros dias, quando há acúmulo de secreção. E a base da escolha do tratamento é a citologia do conduto, que diz se há cocos, bacilos ou Malassezia (otite só por Malassezia não leva antibiótico).
+> Antiparasitário com selamectina ou moxidectina. A sarna otodécica é causada por um ácaro, e a gota otológica com antibiótico não elimina o parasita: é um erro comum, que ainda favorece a otite secundária.
 >
-> No Guia de Protocolos · Volume 3: qual medicamento usar em cada resultado da citologia, a conduta nas otites recidivantes e as dicas para o tutor.
+> No Guia de Protocolos · Volume 3, p. 50: o diagnóstico citológico do Otodectes, o protocolo de limpeza auricular e o manejo antiparasitário em felinos.
 >
 > A condição da Black vai até 30/11: https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=caso08
 
-### Caso #9 · Ligamento cruzado · 24/11 (ter) *(aguardando validação da Dra.)*
+### Caso #9 · Início da levotiroxina · 24/11 (ter) *(aguardando validação da Dra.)*
 
 **12h · o caso + enquete**
 
 > 🩺 *Caso do dia #9*
 >
-> Cão com teste de gaveta positivo e ruptura do ligamento cruzado cranial confirmada no raio-X. O tutor pergunta se dá para tratar só com remédio e repouso. O que você responde?
+> Golden Retriever, 6 anos, com hipotireoidismo primário confirmado: ganho de peso, alopecia em cauda de rato e T4 livre baixo. Como você introduz a levotiroxina?
 >
-> Vota na enquete aqui embaixo. Às 19h30 eu mando a resposta.
+> Vota na enquete aqui embaixo. Às 19h30 eu mando a resposta, com a página do Guia.
 
-Enquete "Qual é a sua conduta?", uma resposta só: **A)** Dá: anti-inflamatório e repouso resolvem · **B)** Dá: condroprotetor regenera o ligamento · **C)** O manejo clínico é paliativo; o tratamento definitivo é cirúrgico
+Enquete "Como introduzir a medicação?", uma resposta só: **A)** Dose total desde o primeiro dia · **B)** Aumentar aos poucos, semana a semana, até a dose total · **C)** Dose total só nos fins de semana, para adaptar
 
-**19h30 · a resposta** (certa: C)
+**19h30 · a resposta** (imagem `assets/img/casos/caso09-p59.jpg` com a legenda)
 
-> ✅ *Caso #9: a resposta é a C.*
+> ✅ *Caso #9: a resposta é a B.*
 >
-> Até a cirurgia, o tratamento é paliativo, para controlar a dor e a inflamação, porque todo caso de ruptura do ligamento cruzado cranial é cirúrgico. O organismo não consegue regenerar o colágeno do ligamento com medicação. A técnica é definida pelo ortopedista, e o sucesso depende também de dor controlada, pós-operatório e fisioterapia.
+> Aos poucos, ao longo de quatro semanas: começa com uma fração da dose e aumenta a cada semana até a dose total. Esse cuidado evita taquicardia, agitação e complicações cardiovasculares por uma mudança hormonal brusca.
 >
-> A ruptura do ligamento cruzado é patologia nova no Guia de Protocolos · Volume 3: diagnóstico, projeções do raio-X, manejo até a cirurgia e as dicas para o tutor.
+> No Guia de Protocolos · Volume 3, p. 59: o esquema de introdução em 4 semanas, as doses para os quadros clínicos e subclínicos e os ajustes em pacientes com comorbidades.
 >
 > A condição da Black vai até 30/11: https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=caso09
 
-### Caso #10 · Transfusão · 26/11 (qui) *(aguardando validação da Dra.)*
+### Caso #10 · Imidocarb na babesiose · 26/11 (qui) *(aguardando validação da Dra.)*
 
 **12h · o caso + enquete**
 
 > 🩺 *Caso do dia #10*
 >
-> Paciente vai receber transfusão de sangue. Você faz dexametasona antes, como preparo?
+> Cão com babesiose confirmada por PCR recebe o dipropionato de imidocarb por via subcutânea. Qual é a conduta indispensável logo depois da aplicação, na clínica?
 >
-> Vota na enquete aqui embaixo. Às 19h30 eu mando a resposta.
+> Vota na enquete aqui embaixo. Às 19h30 eu mando a resposta, com a página do Guia.
 
-Enquete "Qual é a sua conduta?", uma resposta só: **A)** Não: foi retirada do preparo; se houver reação, interromper e tratar · **B)** Sim, dexametasona pré-transfusional de rotina · **C)** Sim, dexametasona e prometazina preventivas
+Enquete "Qual é a conduta imediata?", uma resposta só: **A)** Observação clínica por pelo menos três horas · **B)** Liberar para repousar em casa · **C)** Corticoide em dose alta antes de liberar
 
-**19h30 · a resposta** (certa: A)
+**19h30 · a resposta** (imagem `assets/img/casos/caso10-p85.jpg` com a legenda)
 
 > ✅ *Caso #10: a resposta é a A.*
 >
-> A dexametasona saiu do preparo pré-transfusional. Se o paciente tiver reação transfusional, principalmente alérgica ou anafilática, a transfusão é interrompida na hora, o paciente é avaliado e a reação é tratada.
+> Observação clínica por pelo menos três horas. O imidocarb pode causar reação colinérgica: sialorreia, tremores, vômito, bradicardia e até desconforto respiratório. Se acontecer, o suporte tem que ser imediato, e por isso o paciente não vai embora logo depois da aplicação.
 >
-> No Guia de Protocolos · Volume 3: o protocolo de tratamento das reações transfusionais, com fármacos e doses.
+> No Guia de Protocolos · Volume 3, p. 85: o cálculo da dose por peso, o intervalo entre as aplicações, as reações adversas e o manejo das complicações.
 >
 > A condição da Black vai até 30/11: https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=caso10
 
