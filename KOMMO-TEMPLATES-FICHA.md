@@ -298,6 +298,46 @@ R$ 187 à vista ou 12x de R$ 19,03, só até 30/11.
 - **Rodapé:** (vazio)
 - **Botões (resposta rápida):** Quero o link · Tenho uma dúvida
 
+## T14 · `as_vip_convite` (id 44235)
+Só para quem se cadastrou no acesso antecipado e nunca entrou no Grupo VIP. É a única mensagem que sai antes de 10/11,
+porque não revela a oferta.
+
+- **Quando sai:** na primeira janela (8h–21h) depois de a pessoa entrar na fila; só até 10/11 20h30
+- **Cabeçalho:** sem cabeçalho
+- **Corpo:**
+
+```
+Oi, {{1}}! Aqui é a Maria Paula.
+
+Você se cadastrou no acesso antecipado da Black do Guia de Protocolos, mas ainda não entrou no Grupo VIP. É lá que eu mando o link da live de 10/11, às 20h, e a condição da Black antes do público.
+
+Quer o link do grupo?
+```
+
+- **{{1}}:** campo **as_nome** pelo ícone {-} (exemplo: Mateus)
+- **Rodapé:** Maria Paula · Amar Saber
+- **Botões (resposta rápida):** Quero entrar · Pagar mais caro. O "Pagar mais caro" é a saída: o ramo dele vai para
+  `AS · Sair`.
+
+## T15 · `as_vip_lancamento` (id 44239)
+Para quem está fora do Grupo VIP (cadastrou e não entrou, ou entrou e saiu).
+
+- **Quando sai:** 10/11 às 20h30 (quem entra na fila depois disso recebe na entrada, dentro da janela 8h–21h)
+- **Cabeçalho:** sem cabeçalho
+- **Corpo:**
+
+```
+Oi, {{1}}! A Black Friday do Guia de Protocolos começou.
+
+O Guia de Protocolos vem com o curso Atendimento Extraordinário e 3 meses de Comunidade Amar Saber, por R$ 497 à vista ou 12x de R$ 50,57. Separados, sairiam por R$ 1.137,70.
+
+A condição vale até 30/11, ou enquanto o lote durar. Quer o link?
+```
+
+- **{{1}}:** campo **as_nome** (exemplo: Ana)
+- **Rodapé:** (vazio)
+- **Botões (resposta rápida):** Quero o link · Tenho uma dúvida
+
 ## Respostas dos Salesbots (texto livre, sem aprovação: vão dentro das 24 h depois do toque)
 
 **R1 · Tocou em "Quero o link"**
@@ -336,10 +376,23 @@ Botões: Quero o link · Tenho uma dúvida
 Pode mandar a sua dúvida aqui. A equipe responde em seguida.
 ```
 
+**R6 · Tocou em "Quero entrar" (convite)**
+
+```
+Aqui está o link do grupo: https://sndflw.com/i/amarsaber-black-vip
+Só eu e a equipe mandamos mensagem por lá.
+```
+
+**R7 · Tocou em "Pagar mais caro" (convite)**
+
+```
+Combinado. Você não recebe mais mensagens da Black por aqui.
+```
+
 
 ## Salesbots no Kommo: passo a passo
 O n8n decide **qual** template sai e **quando**. O Kommo só envia, para a conversa ficar no histórico do lead. São
-**21 bots, nenhum com gatilho**: o n8n roda os 15 de template pela API, e eles chamam os 6 de resposta com o passo
+**25 bots, nenhum com gatilho**: o n8n roda os 17 de template pela API, e eles chamam os 8 de resposta com o passo
 **Iniciar Salesbot**.
 
 **Onde:** Configurações → **Salesbot** (ou Automações → Salesbot) → **+ Criar bot** → **Criar do zero**. Em cada
@@ -355,14 +408,14 @@ sem botões.
 **Sinônimos (opcional):** no botão **Quero o link**, use **+ sinônimo** para `quero`, `link` e `manda o link`. Quem
 digitar em vez de tocar também cai no ramo.
 
-**Ordem:** primeiro os 6 bots de resposta (parte A), depois os 15 de template (parte B). O passo **Iniciar Salesbot**
+**Ordem:** primeiro os 8 bots de resposta (parte A), depois os 17 de template (parte B). O passo **Iniciar Salesbot**
 só lista bots que já existem.
 
 **Endereço do webhook** (passo **Ação → Enviar webhook**), igual em todos e com a `acao` trocada:
 `https://n8n.automato.pro/webhook/as-black-kommo?chave=<CHAVE>&acao=<acao>`. A `<CHAVE>` está no nó "Ler evento" do
 fluxo `AS · Recuperação Black` e não fica no repositório. O n8n acha o lead pelo id que o Kommo manda junto.
 
-### A. Os 6 bots de resposta
+### A. Os 8 bots de resposta
 
 **A1 · `AS · Atendimento`.** A pessoa quer falar com a equipe. O bot para a sequência e passa o lead para o time.
 1. **Ação → Enviar webhook** → `…&acao=atendimento`
@@ -396,7 +449,17 @@ fluxo `AS · Recuperação Black` e não fica no repositório. O n8n acha o lead
 **A6 · `AS · Serve`.** Vem do botão "Se serve pra mim" da triagem. É igual ao A5, com `…&acao=serve` e o texto
 **R4**.
 
-### B. Os 15 bots de template
+**A7 · `AS · Grupo`** (id 50553). Vem do botão "Quero entrar" do convite.
+1. **Ação → Enviar webhook** → `…&acao=grupo`
+2. **Enviar mensagem** → texto **R6**
+
+**A8 · `AS · Sair`** (id 50555). Vem do botão "Pagar mais caro" do convite. Para todas as mensagens da Black para essa
+pessoa.
+1. **Ação → Enviar webhook** → `…&acao=sair`
+2. **Enviar mensagem** → texto **R7**
+3. **Ação → Alterar etapa do lead** → *Recuperação Black* → *Perdido*
+
+### B. Os 17 bots de template
 Nome: `AS · <nome do template>` (ex.: `AS · as_resultado_plantao`). Monte um, confira, e use **Duplicar** na lista
 de bots para os outros. Em cada cópia, troque só o nome e o template.
 
@@ -439,12 +502,14 @@ de bots para os outros. Em cada cópia, troque só o nome e o template.
 | 13 | `AS · as_ultimo_dia` | as_ultimo_dia | Link · Dúvida · Atendimento |
 | 14 | `AS · as_ultimas_horas` | as_ultimas_horas | Link · Dúvida · Atendimento |
 | 15 | `AS · as_alternativa` | as_alternativa | Link · Dúvida · Atendimento |
+| 16 | `AS · as_vip_convite` | as_vip_convite | Quero entrar ▸ `AS · Grupo` · Pagar mais caro ▸ `AS · Sair` · Outra ▸ Atendimento |
+| 17 | `AS · as_vip_lancamento` | as_vip_lancamento | Link · Dúvida · Atendimento |
 
-O Kommo só deixa escolher o template depois que a Meta aprova. Dá para criar os 6 bots de resposta agora e os 15 de
+O Kommo só deixa escolher o template depois que a Meta aprova. Dá para criar os 8 bots de resposta agora e os 17 de
 template à medida que os templates forem aprovados.
 
 ### C. Depois dos bots
-- Me avise: eu leio os IDs dos 15 bots de template pela API (`/api/v4/bots`) e preencho o BOTS no n8n.
+- Me avise: eu leio os IDs dos 17 bots de template pela API (`/api/v4/bots`) e preencho o BOTS no n8n.
 - **n8n:** criar a credencial **Kommo API** (Header Auth/Custom: `Authorization: Bearer <token de longa duração>`) e
   escolher nos 5 nós HTTP do `AS · Kommo enviar`.
 - No teste, confiro no n8n o formato do webhook que o Kommo manda e se o lead é achado.

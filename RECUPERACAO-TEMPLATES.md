@@ -190,6 +190,37 @@ R$ 187 da `/oferta-especial/`), no lugar de `as_alt_plantao`, `as_alt_consulta` 
 - CTA: **Não perder a condição de Black**
 - Desligar os e-mails na Yampi em 30/11 23h59 (a Yampi não sabe a data final).
 
+## Fora do Grupo VIP (fluxos `vip_cadastro` e `vip_saiu`)
+Para quem está fora de todos os grupos do SendFlow e por isso não recebe nada do grupo.
+
+| Fluxo | Quem | Sequência |
+|---|---|---|
+| `vip_cadastro` | Cadastrou no /acesso-antecipado/ há mais de 2 h (sem "Interno") e não está em nenhum grupo | `as_vip_convite` (só antes de 10/11 20h30) → `as_vip_lancamento` → `as_prova` → `as_triagem` → reta final |
+| `vip_saiu` | Entrou no grupo e saiu (exportação do SendFlow com "Saiu = Sim") e não voltou | `as_vip_lancamento` → `as_prova` → `as_triagem` → reta final |
+
+- **Horários:**
+  - convite: na primeira janela 8h–21h depois de entrar na fila;
+  - lançamento: 10/11 20h30, ou na entrada se for depois;
+  - prova: 2 dias depois, às 19h;
+  - triagem: 3 dias depois, às 10h;
+  - reta final: a de todos.
+- **Antes de 10/11:** só o convite sai, com `VIP_ATIVO`. O resto espera `LIGA_EM`.
+- **Entrada na fila:** todo dia às 7h05, pelo `AS · Grupos SendFlow → Sheets` (ramo "Fora do grupo → fila"). Quem já
+  tem linha na fila (teste, checkout, compra) não entra de novo.
+- **Conferência do grupo:**
+  - na hora de cada envio, o disparador busca os participantes no SendFlow, e quem está em algum grupo sai com status
+    `no_grupo`, sem receber;
+  - às 7h05, quem estava `no_grupo` e saiu do grupo volta a `ativo`.
+- **Saída:**
+  - "Pagar mais caro" no convite → `AS · Sair` → status `saiu`, e nada mais sai;
+  - texto livre → atendimento;
+  - checkout, Pix, cartão ou teste depois → troca para o fluxo da compra ou do teste, sem repetir mensagem.
+- **Contato manual:** substitui o da aba "Grupos · Não entrou". A equipe não precisa mais chamar à mão.
+- **Riscos aceitos:**
+  - contato frio, num número sem verificação;
+  - o lançamento não tem botão de saída.
+  - Check-ins de qualidade do número em 10/11 às 21h e 11/11 às 9h. Se a qualidade cair, `VIP_ATIVO = false`.
+
 ## Ativação
 1. ~~Kommo: funil "Recuperação Black" e campos `as_*`~~ (feito pela API em 28/10).
 2. ~~Yampi: webhook para `as-black-yampi`~~ (feito pela API em 28/10).

@@ -32,9 +32,10 @@ Regras:
   cada mensagem do dia anterior (abas "Grupos" e "Grupos · Mensagens") e a lista de quem se cadastrou e não entrou
   (aba "Grupos · Não entrou", para contato manual).
 
-## Contato manual com quem não entrou no grupo
-A aba "Grupos · Não entrou" lista, todo dia às 7h05, quem se cadastrou há mais de 2 h e não está no grupo. A equipe
-manda no privado, pelo WhatsApp de dúvidas (31) 9 5349-5052, uma vez por pessoa, e marca "Contato feito":
+## Contato com quem não entrou no grupo (automático)
+Desde 29/10 o convite sai sozinho pela recuperação (template `as_vip_convite`, fluxo `vip_cadastro` em
+`RECUPERACAO-TEMPLATES.md`), e quem saiu do grupo também é coberto (`vip_saiu`). A aba "Grupos · Não entrou" continua
+como relatório; a equipe não precisa mais mandar o texto abaixo. Texto antigo, para referência:
 > Oi, [NOME]! Aqui é da Amar Saber. Vi que você se cadastrou para a Black do Guia de Protocolos, mas ainda não entrou
 > no Grupo VIP. É por lá que a Dra. Maria Paula manda o link da live de 10/11, às 20h, e a condição antes do público.
 >
