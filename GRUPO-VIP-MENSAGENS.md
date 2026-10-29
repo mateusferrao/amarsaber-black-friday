@@ -131,6 +131,7 @@ Na UTMify e no PostHog, o `utm_content` mostra quais casos e quais dias trazem v
 | | 10/11, ~20h20 | 6b | Presente 02 aberto | texto, manual |
 | | 10/11, ~20h21 | 7 | Presentes abertos + link da Black | texto, @todos, manual |
 | Carrinho aberto | qua 11/11, 10h | 8 | Para quem não viu | texto |
+| | qua 11/11, 19h30 | 8b | Amanhã começa o Caso do dia | texto |
 | | qui 12/11, 10h | C | Para quem já comprou | texto |
 | | qui 12/11 | caso01 | AINE no gato | 12h caso + enquete · 19h30 resposta |
 | | sex 13/11 | caso02 | Otite por Malassezia | 12h · 19h30 |
@@ -335,6 +336,18 @@ Logo depois, o mesmo evento do WhatsApp da mensagem 1.
 > O link está aqui: https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=pos_live_1111
 >
 > A condição vai até 30/11, às 23h59, enquanto o lote durar.
+
+## 8b · qua 11/11, 19h30 · amanhã começa o Caso do dia *(agendada; ação x4jknWydUrmIlgGO4tg0)*
+Apresenta a série antes do Caso #1, para todo o grupo (a C fala só com quem comprou).
+> 🩺 *Amanhã começa o Caso do dia*
+>
+> De quinta, 12/11, até 26/11, eu mando aqui 10 casos que chegam no plantão de verdade: gato com dor articular,
+> otite que não cede, parvovirose no fim de semana.
+>
+> Às 12h sai o caso com uma enquete de três condutas. Vota no que você faria. Às 19h30 eu mando a resposta com a
+> página do Guia de Protocolos onde está o protocolo completo.
+>
+> Quem já tem o Guia confere a conduta na própria página. Quem ainda não tem vê o que vem dentro antes de decidir.
 
 ## C · qui 12/11, 10h · para quem já comprou
 Ninguém sai do grupo depois de comprar. Esta é a única mensagem só para eles.
