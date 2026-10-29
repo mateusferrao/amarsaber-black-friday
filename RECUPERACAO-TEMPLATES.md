@@ -195,12 +195,12 @@ R$ 187 da `/oferta-especial/`), no lugar de `as_alt_plantao`, `as_alt_consulta` 
 3. ~~n8n: conta, funil, etapa e campos no "Config do Kommo"; alternativa única~~ (feito em 28/10).
 4. ~~Kommo: 15 templates aprovados e 21 Salesbots~~ (feito em 29/10; IDs dos bots no "Config do Kommo").
 5. ~~n8n: credencial "Kommo API" nos 5 nós HTTP do `AS · Kommo enviar`~~ (feito em 29/10).
-6. **Meta (usuário):** forma de pagamento na conta do WhatsApp Business e verificação da empresa na BM.
+6. ~~Meta: forma de pagamento na conta do WhatsApp Business~~ (feito em 29/10). **Falta (usuário):** verificação da
+   empresa na BM.
 7. **Kommo (usuário):** ramo "Falha ao enviar a mensagem" dos 15 bots de template → webhook `acao=falha`; apagar as
    cópias "em revisão" do `as_reta_3dias` e do `as_ultimas_horas`; conferir o gatilho do TestBot e do AUTOMAÇÃO;
    definir quem atende os leads da recuperação.
-8. **Teste:** `TELEFONE_TESTE = 5531994811420` (só a linha desse número anda), lead 21680639 no Kommo, um toque em
-   cada botão. Depois `ENVIO_ATIVO = true` e publicar.
+8. ~~Teste de ponta a ponta e `ENVIO_ATIVO = true`~~ (feito em 29/10; ver "Teste de ponta a ponta" abaixo).
 9. **Liga sozinho em 10/11 às 20h30** (`LIGA_EM`), depois do link da live no Grupo VIP.
 10. **E-mails e cupons da Yampi:** cadastrar os 4 e-mails no painel; em 30/11 às 23h59, desligar os e-mails e os cupons
     BLACKAMARSABER e BLACKAMARSABERDS.
@@ -222,6 +222,24 @@ R$ 187 da `/oferta-especial/`), no lugar de `as_alt_plantao`, `as_alt_consulta` 
   15 templates aprovados com os marcadores `{{lead.cf.881487}}` (e `{{lead.cf.881493}}` na triagem); 21 bots.
 - **Yampi:** webhook "AS · Recuperação Black (n8n)" ativo (cart.reminder, order.paid, order.status.updated,
   transaction.payment.refused) apontando para `as-black-yampi`. Ainda sem evento real para conferir o formato.
-- **n8n:** tudo publicado; envio desligado até o teste passar, e só a partir de 10/11 às 20h30.
-- **Teste de 28/10:** o template saiu pelo Kommo, mas a Meta recusou (erro 3107: falta forma de pagamento). Com o
-  nome ainda em `{{1}}`, que foi corrigido nos templates.
+- **n8n:** tudo publicado, com `ENVIO_ATIVO = true`, `TELEFONE_TESTE` vazio e `TESTE_RAPIDO = false`. Nada sai antes
+  de 10/11 às 20h30 (`LIGA_EM`).
+
+### Teste de ponta a ponta (29/10, número do Mateus)
+Com `TELEFONE_TESTE` e `TESTE_RAPIDO` (intervalos em minutos), a linha da fila andou sozinha pelo disparador:
+
+| Passo | Resultado |
+|---|---|
+| as_resultado_plantao, as_dor_plantao (imagem), as_prova (imagem), as_triagem | Chegaram com "Oi, Mateus", os botões e "Faltam 33 dias". A 1ª se perdeu por causa do erro abaixo (reenviada depois e conferida) |
+| Botão **Preço** na triagem | R2 com "Quero o link"; na fila, `objecao = preco` e alternativa agendada para 48 h depois |
+| as_alternativa (disparada direto pelo bot) | Chegou com o texto de R$ 187 e os botões |
+| Texto livre | n8n pôs a linha em `atendimento`; lead em "Em atendimento". Sem resposta automática, como previsto: a equipe responde |
+| Pedido falso da Yampi (`order.status.updated`, status `invoiced`) | Linha marcada `comprou`. Status `invoiced` não manda CompraPaga à Meta nem grava na aba Compras |
+
+**Erro achado e corrigido no `AS · Kommo enviar`:** o Kommo responde `application/hal+json`, e o n8n entregava o corpo
+como texto em `data`. O "Montar lead" não via o contato achado e criava um contato duplicado (com o 9), e o
+"Pegar lead" não lia o lead existente. Os dois nós agora leem o `data`. Depois da correção, o 2º envio em diante foi
+para a conversa certa.
+
+**Sobrou do teste (usuário):** apagar no Kommo o contato duplicado "Mateus" +55 31 9 9481-1420 (a API não apaga
+contatos). Os leads de teste foram para "Perdido".
