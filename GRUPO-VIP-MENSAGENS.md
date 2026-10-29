@@ -284,6 +284,8 @@ Logo depois, o mesmo evento do WhatsApp da mensagem 1.
 > Às 18h eu mando o link da live.
 
 ## 4 · 18h · 2 h antes
+*Fora do grupo:* no mesmo horário, quem se cadastrou e não entrou (ou saiu) recebe o template `as_vip_live` pela
+recuperação (`RECUPERACAO-TEMPLATES.md`, fluxos vip).
 > Hoje, às 20h.
 >
 > O link da live é este: https://www.instagram.com/mariapaulaferrarivet/

@@ -195,8 +195,8 @@ Para quem está fora de todos os grupos do SendFlow e por isso não recebe nada 
 
 | Fluxo | Quem | Sequência |
 |---|---|---|
-| `vip_cadastro` | Cadastrou no /acesso-antecipado/ há mais de 2 h (sem "Interno") e não está em nenhum grupo | `as_vip_convite` (só antes de 10/11 20h30) → `as_vip_lancamento` → `as_prova` → `as_triagem` → reta final |
-| `vip_saiu` | Entrou no grupo e saiu (exportação do SendFlow com "Saiu = Sim") e não voltou | `as_vip_lancamento` → `as_prova` → `as_triagem` → reta final |
+| `vip_cadastro` | Cadastrou no /acesso-antecipado/ há mais de 2 h (sem "Interno") e não está em nenhum grupo | `as_vip_convite` (só antes de 10/11 20h30) → `as_vip_live` (10/11 18h) → `as_vip_lancamento` → `as_prova` → `as_triagem` → reta final |
+| `vip_saiu` | Entrou no grupo e saiu (exportação do SendFlow com "Saiu = Sim") e não voltou | `as_vip_live` (10/11 18h) → `as_vip_lancamento` → `as_prova` → `as_triagem` → reta final |
 
 - **Horários:**
   - convite: na primeira janela 8h–21h depois de entrar na fila;
@@ -204,7 +204,7 @@ Para quem está fora de todos os grupos do SendFlow e por isso não recebe nada 
   - prova: 2 dias depois, às 19h;
   - triagem: 3 dias depois, às 10h;
   - reta final: a de todos.
-- **Antes de 10/11:** só o convite sai, com `VIP_ATIVO`. O resto espera `LIGA_EM`.
+- **Antes de 10/11 20h30:** só o convite e o aviso da live (10/11 18h, `LIVE_EM`; descartado depois das 20h, `LIVE_FIM`) saem. O resto espera `LIGA_EM`.
 - **Entrada na fila:** todo dia às 7h05, pelo `AS · Grupos SendFlow → Sheets` (ramo "Fora do grupo → fila"). Quem já
   tem linha na fila (teste, checkout, compra) não entra de novo.
 - **Conferência do grupo:**

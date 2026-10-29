@@ -338,6 +338,25 @@ A condição vale até 30/11, ou enquanto o lote durar. Quer o link?
 - **Rodapé:** (vazio)
 - **Botões (resposta rápida):** Quero o link · Tenho uma dúvida
 
+## T16 · `as_vip_live` (id 44320)
+Para quem está fora do Grupo VIP (cadastrou e não entrou, ou saiu). Não revela a oferta.
+
+- **Quando sai:** 10/11 às 18h (descartado se não sair até as 20h)
+- **Cabeçalho:** sem cabeçalho
+- **Corpo:**
+
+```
+Oi, {{1}}! Hoje, às 20h, eu entro ao vivo no Instagram para abrir os três presentes da Black do Guia de Protocolos.
+
+Um deles é a maior condição que o Guia já teve, e quem assistir fica sabendo antes de todo mundo (antes que o estoque acabe).
+
+É no meu perfil: instagram.com/mariapaulaferrarivet
+```
+
+- **{{1}}:** campo **as_nome** (exemplo: Ana)
+- **Rodapé:** Maria Paula · Amar Saber
+- **Botões (resposta rápida):** Vou assistir · Perder oportunidade (a saída: vai para `AS · Sair`)
+
 ## Respostas dos Salesbots (texto livre, sem aprovação: vão dentro das 24 h depois do toque)
 
 **R1 · Tocou em "Quero o link"**
@@ -383,7 +402,13 @@ Aqui está o link do grupo: https://sndflw.com/i/amarsaber-black-vip
 Só eu e a equipe mandamos mensagem por lá.
 ```
 
-**R7 · Tocou em "Pagar mais caro" (convite)**
+**R8 · Tocou em "Vou assistir" (aviso da live)**
+
+```
+Combinado, te vejo às 20h! É aqui: https://instagram.com/mariapaulaferrarivet
+```
+
+**R7 · Tocou em "Pagar mais caro" (convite) ou "Perder oportunidade" (aviso da live)**
 
 ```
 Combinado. Você não recebe mais mensagens da Black por aqui.
@@ -392,7 +417,7 @@ Combinado. Você não recebe mais mensagens da Black por aqui.
 
 ## Salesbots no Kommo: passo a passo
 O n8n decide **qual** template sai e **quando**. O Kommo só envia, para a conversa ficar no histórico do lead. São
-**25 bots, nenhum com gatilho**: o n8n roda os 17 de template pela API, e eles chamam os 8 de resposta com o passo
+**27 bots, nenhum com gatilho**: o n8n roda os 18 de template pela API, e eles chamam os 9 de resposta com o passo
 **Iniciar Salesbot**.
 
 **Onde:** Configurações → **Salesbot** (ou Automações → Salesbot) → **+ Criar bot** → **Criar do zero**. Em cada
@@ -405,7 +430,7 @@ conversa", o bot roda em toda conversa nova da conta: abra o bot, clique no gati
 "Todos". A conta tem também uma conexão WA Lite, que não manda botões; com "Todos", o editor avisa que a mensagem sai
 sem botões.
 
-**Abrir conversa com quem nunca falou com o número (obrigatório nos 17 bots de template):** no passo **Enviar
+**Abrir conversa com quem nunca falou com o número (obrigatório nos 18 bots de template):** no passo **Enviar
 mensagem**, em **Canais**, marque **"Se você nunca conversou em um canal: Tente enviar uma mensagem"**. Sem isso, o bot
 rodado pelo n8n pula em silêncio todo contato sem conversa aberta (quem fez o teste, abandonou o checkout ou se
 cadastrou e não entrou no grupo): não envia, não passa pelo ramo de falha, e o n8n marca como enviado. Achado em
@@ -415,14 +440,14 @@ de uma conversa que já existe.
 **Sinônimos (opcional):** no botão **Quero o link**, use **+ sinônimo** para `quero`, `link` e `manda o link`. Quem
 digitar em vez de tocar também cai no ramo.
 
-**Ordem:** primeiro os 8 bots de resposta (parte A), depois os 17 de template (parte B). O passo **Iniciar Salesbot**
+**Ordem:** primeiro os 9 bots de resposta (parte A), depois os 18 de template (parte B). O passo **Iniciar Salesbot**
 só lista bots que já existem.
 
 **Endereço do webhook** (passo **Ação → Enviar webhook**), igual em todos e com a `acao` trocada:
 `https://n8n.automato.pro/webhook/as-black-kommo?chave=<CHAVE>&acao=<acao>`. A `<CHAVE>` está no nó "Ler evento" do
 fluxo `AS · Recuperação Black` e não fica no repositório. O n8n acha o lead pelo id que o Kommo manda junto.
 
-### A. Os 8 bots de resposta
+### A. Os 9 bots de resposta
 
 **A1 · `AS · Atendimento`.** A pessoa quer falar com a equipe. O bot para a sequência e passa o lead para o time.
 1. **Ação → Enviar webhook** → `…&acao=atendimento`
@@ -466,7 +491,10 @@ pessoa.
 2. **Enviar mensagem** → texto **R7**
 3. **Ação → Alterar etapa do lead** → *Recuperação Black* → *Perdido*
 
-### B. Os 17 bots de template
+**A9 · `AS · Live`** (id 50654). Vem do botão "Vou assistir" do aviso da live. Sem webhook.
+1. **Enviar mensagem** → texto **R8**
+
+### B. Os 18 bots de template
 Nome: `AS · <nome do template>` (ex.: `AS · as_resultado_plantao`). Monte um, confira, e use **Duplicar** na lista
 de bots para os outros. Em cada cópia, troque só o nome e o template.
 
@@ -511,6 +539,7 @@ de bots para os outros. Em cada cópia, troque só o nome e o template.
 | 15 | `AS · as_alternativa` | as_alternativa | Link · Dúvida · Atendimento |
 | 16 | `AS · as_vip_convite` | as_vip_convite | Quero entrar ▸ `AS · Grupo` · Pagar mais caro ▸ `AS · Sair` · Outra ▸ Atendimento |
 | 17 | `AS · as_vip_lancamento` | as_vip_lancamento | Link · Dúvida · Atendimento |
+| 18 | `AS · as_vip_live` (id 50660) | as_vip_live | Vou assistir ▸ `AS · Live` · Perder oportunidade ▸ `AS · Sair` · Outra ▸ Atendimento |
 
 O Kommo só deixa escolher o template depois que a Meta aprova. Dá para criar os 8 bots de resposta agora e os 17 de
 template à medida que os templates forem aprovados.
