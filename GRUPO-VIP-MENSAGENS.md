@@ -186,7 +186,7 @@ está na campanha:
 > Até lá, o grupo é só de avisos. Vou mandar algumas coisas que uso na rotina da Amar. A primeira chega sábado, ao
 > meio-dia.
 
-## A2 · sáb 31/10, 12h · Caso #0 *(aguardando validação da Dra. até 30/10)*
+## A2 · sáb 31/10, 12h · Caso #0 *(validado pela Dra. em 29/10)*
 A A1 promete "a primeira chega sábado, ao meio-dia". Se a Dra. não validar o Caso #0 até sexta, a A4 (enquete) sai no
 sábado ao meio-dia no lugar dela, e o Caso #0 vai para quinta, 05/11, 12h, com a resposta às 19h30.
 
@@ -200,7 +200,7 @@ sábado ao meio-dia no lugar dela, e o Caso #0 vai para quinta, 05/11, 12h, com 
 Enquete "Qual é a sua conduta?", uma resposta só: **A)** Pegar o acesso venoso antes de medicar · **B)**
 Benzodiazepínico agora, pela via que tiver (intrarretal ou IM) · **C)** Esperar a crise passar e investigar a causa
 
-## A3 · dom 01/11, 19h30 · resposta do Caso #0 *(aguardando validação)*
+## A3 · dom 01/11, 19h30 · resposta do Caso #0 *(validado pela Dra. em 29/10)*
 Imagem: `assets/img/pagina-1.jpg` (capítulo de Emergências). [NEED: se a Dra. tiver a página do estado epilético do
 Volume 3, ela entra no lugar.]
 > ✅ *A resposta de ontem é a B.*
