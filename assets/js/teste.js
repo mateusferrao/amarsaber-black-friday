@@ -399,6 +399,7 @@
       perfil_tempo: tempo ? tempo.texto : '',
       perfil_local: local ? local.texto : '',
       respostas: answersText(),
+      consentimento: true, // o texto de aceite do WhatsApp está junto do botão
       event_id: eventId,
       repetido: repeated,
       interno: !!T.interno,

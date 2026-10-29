@@ -167,6 +167,7 @@
       nome: nome,
       email: '',
       whatsapp: whatsapp,
+      consentimento: true, // o texto de aceite do WhatsApp está junto do botão
       event_id: eventId,
       repetido: repeated,
       interno: !!T.interno,
