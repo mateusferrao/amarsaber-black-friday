@@ -302,6 +302,12 @@ separado por campanha: a comparação teste × LP sai das UTMs (`utm_campaign`),
   SendFlow só contam a partir de 28/10, quando a campanha foi criada: as 236 pessoas importadas com o Grupo #1 não
   aparecem como entrada.
 
+## Acessos da Black (curso e comunidade)
+
+O n8n **AS · Acessos Black** grava cada pedido pago da Black na aba **Comunidade · Acessos** da planilha de leads
+(pedido, prazos, se entrou no grupo, reembolso) e os pedidos de entrada no grupo sem compra achada em
+**Comunidade · Pendentes**. Detalhes em [ACESSOS-BLACK.md](ACESSOS-BLACK.md).
+
 ## Limites conhecidos
 
 - PostHog grátis: 1 milhão de eventos/mês e **para de gravar ao estourar**. Com autocapture desligado,

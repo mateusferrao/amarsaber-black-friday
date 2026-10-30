@@ -30,6 +30,7 @@ assets/js/teste.js           ← perguntas, pontuação, nome + WhatsApp (n8n), 
 assets/css/teste.css         ← visual das telas do teste (o resto vem de style.css)
 RASTREAMENTO.md       ← dicionário de eventos, UTMs e como usar os dados
 DOMINIO-HOSTGATOR.md  ← passo a passo do domínio
+ACESSOS-BLACK.md      ← liberação do curso (Memberkit) e da comunidade (WhatsApp) depois da compra
 ```
 
 ## Como editar
@@ -76,6 +77,12 @@ para `/oferta-especial/`: curso Atendimento Extraordinário + 3 meses de comunid
 R$ 187. O botão de recusa leva de volta à oferta da LP. A Yampi deve redirecionar o pós-compra (depois do
 upsell nativo) para `https://black.amarsaber.com.br/compra-confirmada/`. As duas páginas têm `noindex`.
 Detalhes e eventos: [RASTREAMENTO.md](RASTREAMENTO.md#downsell-e-obrigado-da-compra).
+
+## Acessos depois da compra
+
+Compra paga da Black (produtos 46520027 e 46522438 da Yampi) libera o curso no Memberkit por 365 dias (integração
+nativa) e a comunidade no WhatsApp por 3 meses (n8n **AS · Acessos Black** + SendFlow + e-mail pelo Kommo). Fluxo,
+ativação e teste: [ACESSOS-BLACK.md](ACESSOS-BLACK.md).
 
 ## Teste (`/teste/`)
 
