@@ -183,7 +183,7 @@ html[data-hero="dor"] [data-so]:not([data-so~="dor"]) { display: none !important
 .cap-gaveta .cap-form { margin-top: 4px; }
 .cap-gaveta__garantia { margin-top: 2px; font-size: 13px; line-height: 19px; color: var(--cream); }
 .cap-gaveta__prova { display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 13px; font-weight: 600; color: #fff; }
-.cap-gaveta__prova::before { content: ""; flex: none; width: 8px; height: 8px; border-radius: 50%; background: #00e63a; box-shadow: 0 0 0 4px rgba(0, 230, 58, .18); }
+.cap-gaveta__prova::before { content: ""; flex: none; width: 8px; height: 8px; border-radius: 50%; background: var(--pink); box-shadow: 0 0 0 4px rgba(252, 36, 148, .2); }
 .cap-gaveta__nota { font-size: 12px; line-height: 17px; color: rgba(255, 255, 255, .6); text-align: center; }
 .cap-gaveta__nota a { text-decoration: underline; }
 html.cap-sem-rolagem, html.cap-sem-rolagem body { overflow: hidden; }

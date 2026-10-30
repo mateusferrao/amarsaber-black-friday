@@ -67,9 +67,6 @@ sorteio está no script do `<head>`. Para ver cada uma: `/acesso-antecipado/?her
 apague os elementos da variante que perdeu e troque o sorteio por `v = 'b'` (ou `'a'`). Detalhes:
 [RASTREAMENTO.md](RASTREAMENTO.md#captura-acesso-antecipado-acesso-antecipado).
 
-Contador "Mais de 300 colegas já estão no grupo" (gaveta do formulário): número do SendFlow arredondado para baixo,
-atualizado à mão.
-
 A LP de vendas (`/`) está com `noindex` até a abertura pública: o link sai primeiro no grupo em 10/11.
 
 ## Downsell e obrigado da compra
