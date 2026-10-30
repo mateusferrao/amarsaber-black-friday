@@ -59,7 +59,18 @@ uma origem recente; voltar do checkout também não conta como nova origem.
 | `anuncio`, `anuncio_id` | `utm_content` = `nome\|id` | `Video1`, `1202…` |
 | `posicionamento` | `utm_term` | `Instagram_Reels` |
 | `tem_fbclid` | fbclid na URL | `true` |
+| `meta_auto_utm` | clique com os parâmetros automáticos da Meta no Instagram (abaixo) | `true` / `false` |
 | `utm_*` | brutos, como vieram | — |
+
+**Parâmetros automáticos da Meta no Instagram:** parte dos cliques dos anúncios chega com
+`utm_source=ig&utm_medium=paid&utm_campaign=<id da campanha>&utm_term=<id do conjunto>&utm_content=<id do anúncio>`,
+sem o modelo de UTMs. O `tracking.js` trata esse clique como `canal = meta_ads`, preenche `campanha_id`,
+`conjunto_id` e `anuncio_id` e busca o nome da campanha e do anúncio em `CONFIG.metaNomes` (anúncio novo: inclua
+o ID lá; sem isso ele aparece só pelo ID). `posicionamento = instagram_auto` e `meta_auto_utm = true`.
+Nomes com `+` no lugar do espaço viram espaço, e macro sem substituir (`{{ad.name}}`) fica vazia.
+
+**Robôs da Meta:** a revisão de anúncios abre a página com a URL codificada duas vezes (`%255B`), de data centers
+fora do Brasil. O filtro de contas de teste do PostHog exclui `$current_url` com `%255B`.
 
 Clarity recebe ainda a tag `etapa_max` (`engajou` → `viu_oferta` → `clicou_checkout`) e o
 **Custom user ID = distinct_id do PostHog** (achar no Clarity a gravação de quem aparece no PostHog).
@@ -119,12 +130,13 @@ a pessoa da captura até o clique no checkout.
 | Etapa | Evento PostHog / Clarity | Quando | Propriedades | Meta (os 2 pixels) |
 |---|---|---|---|---|
 | chegada | `$pageview` | abriu a captura ou o obrigado | — | `PageView` |
-| engajamento | `lp_secao_vista` | seção 1 s no meio da tela | `secao` (hero, presentes, como-participar, para-quem, dra, sumario, perguntas, fechamento) | — |
+| engajamento | `lp_secao_vista` | seção 1 s no meio da tela | `secao` (hero, presentes, provas, como-participar, para-quem, dra, sumario, perguntas, fechamento) | — |
 | engajamento | `lp_engajado` | 30 s com a aba visível | `segundos` | `EngagedVisit` |
 | engajamento | `lp_presente_espiar` | passou o mouse ou tocou numa caixa de presente (1 vez por caixa) | `presente` (1, 2, 3) | — |
-| intenção | `lp_cta_clique` | botão que abre o formulário | `posicao` (hero, presentes, passos, dra, sumario, fechamento, barra) | — |
+| intenção | `lp_cta_clique` | botão que abre o formulário | `posicao` (hero, presentes, provas, passos, dra, sumario, fechamento, barra) | — |
 | intenção | `lp_form_aberto` | a gaveta do formulário abriu | `posicao` (o mesmo do botão; `url` se chegou com `#form-guia`) | — |
-| intenção | `lp_form_inicio` | 1º clique num campo | — | — |
+| intenção | `lp_form_inicio` | 1ª tecla digitada num campo (desde 30/10; antes era o foco, que a gaveta dá sozinha ao abrir) | — | — |
+| intenção | `lp_form_fechado` | fechou a gaveta sem enviar (X, fundo, Esc ou voltar) | `segundos` (aberta), `digitou` | — |
 | intenção | `lp_form_erro` | tentou enviar com erro (1 evento por campo) | `campo` (nome, whatsapp), `motivo` (vazio, curto, formato, ddd) | — |
 | conversão | `lp_lead` + identify (`wa_55` + WhatsApp, o mesmo id do /teste/) | o n8n confirmou o recebimento | `repetido` | `Lead` (navegador + servidor, mesmo `eventID`) |
 | conversão | `lp_lead_falha` | n8n fora do ar (2 tentativas) | `motivo`, `nome`, `whatsapp` | — |
@@ -132,6 +144,12 @@ a pessoa da captura até o clique no checkout.
 
 - **Formulário:** só nome e WhatsApp (desde 28/10), dentro de uma gaveta que abre em todos os botões
   (`href="#form-guia"`). O funil fica `lp_cta_clique` → `lp_form_aberto` → `lp_form_inicio` → `lp_lead`.
+- **Teste A/B do hero (desde 30/10):** o script no `<head>` da captura sorteia `a` (texto atual) ou `b` (diz o que é o
+  Guia), 50/50, guardado no navegador (`as_hero`). Quem vem do anúncio de cinomose (nome ou ID `120250476746130232`)
+  vê `dor` ("Paciente com cinomose? Tem protocolo.") e fica fora do sorteio. A variante vai em todo evento do
+  PostHog (`hero_variante`), como tag no Clarity e na coluna `Variante_hero` da planilha. Insight
+  **Captura · A/B do hero** no dashboard do funil. Revisar: `?hero=a`, `?hero=b` ou `?hero=dor` com `?interno=1`.
+  Regra: até ~07/11; a `b` fica, a não ser que a conversão caia mais de 3 pontos ou a entrada no grupo caia.
 - **Lead na Meta:** só depois do OK do n8n, nunca no clique. Vai com advanced matching (telefone, nome,
   `external_id` = distinct_id do PostHog) e, pelo n8n, também pela API de Conversões, com o mesmo
   `event_id` (a Meta deduplica). O mesmo WhatsApp no mesmo navegador não gera um segundo `Lead`.
@@ -139,7 +157,7 @@ a pessoa da captura até o clique no checkout.
   "Testar eventos" do Gerenciador de Eventos) e enviar o formulário.
 - **Clarity:** `etapa_max` = `engajou` → `iniciou_form` → `virou_lead` (captura) e `clicou_grupo` (obrigado).
 - **Planilha:** uma linha por envio, com Canal, Campanha/Conjunto/Anúncio (nome e ID), utm_* brutos,
-  fbclid, Repetido, Interno (`?interno=1`), Página, distinct_id e event_id.
+  fbclid, Repetido, Interno (`?interno=1`), Página, distinct_id, event_id e Variante_hero.
 - **Otimizar campanha de captura:** em `Lead`. Públicos: `Lead` nos últimos 30 dias (excluir de captura,
   incluir no remarketing da Black); `GroupClick` = clicou para entrar no grupo; captura vista sem `Lead` = remarketing
   de captura.

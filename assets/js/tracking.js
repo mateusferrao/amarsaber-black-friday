@@ -15,7 +15,23 @@
     offerSection: '#secao-oferta',
     engagedSeconds: 30,     // tempo com a aba visível para contar como visita engajada
     attributionDays: 7,     // mesmo prazo da UTMify
-    videoMarks: [25, 50, 75, 95]
+    videoMarks: [25, 50, 75, 95],
+    // Nomes das campanhas e anúncios da Meta por ID. Alguns cliques no Instagram chegam com os parâmetros
+    // automáticos da Meta (utm_source=ig&utm_medium=paid e só IDs, sem o modelo de UTMs): o nome vem daqui.
+    // Anúncio novo sem nome aqui continua identificado pelo ID (anuncio_id).
+    metaNomes: {
+      '120250476213620232': '[D.A][TRAFEGO][1-x-1[BLACKANTECIPADA][MARIA][ABO]',
+      '120250476723290232': '[D.A[]Leads][BLACKANTECIPADA][BELLE]',
+      '120250476345580232': '[LP][ADVD][ MARIA] - Temos um presente',
+      '120250476463170232': '[LP][ADVD][ MARIA] - Voce ainda não sabe disso',
+      '120250476345540232': '[LP][ADVD][ MARIA] - Essa novidade é pra voce.',
+      '120250476345570232': '[LP][ADVD][ MARIA] - Eu tenho a melhor noticia',
+      '120250476746130232': '[LP][ADVD][BELLE] - Paciente com Cinomose',
+      '120250476816980232': '[LP][ADVD][BELLE] - Voce ainda não sabe disso',
+      '120250476817000232': '[LP][ADVD][BELLE] - O Sonho',
+      '120250476816970232': '[LP][ADVD][BELLE] - Voce fica inseguro',
+      '120250476817010232': '[LP][ADVD][BELLE] - Temos um presente pra voce'
+    }
   };
 
   // ---------- Helpers de armazenamento (podem falhar em aba anônima) ----------
@@ -78,10 +94,16 @@
   // e como tag no Clarity. O anúncio Meta manda "nome|id" em utm_campaign/medium/content: separamos os dois.
   var UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
 
+  // O nome às vezes chega com "+" no lugar do espaço (URL codificada duas vezes) ou com a macro
+  // sem substituir ({{ad.name}}, prévia do anúncio): normaliza para o mesmo criativo não virar dois.
   function splitNameId(value) {
     if (!value) return [null, null];
     var i = value.lastIndexOf('|');
-    return i === -1 ? [value, null] : [value.slice(0, i), value.slice(i + 1)];
+    var name = (i === -1 ? value : value.slice(0, i)).replace(/\+/g, ' ');
+    var id = i === -1 ? null : value.slice(i + 1);
+    if (name.indexOf('{{') !== -1) name = null;
+    if (id && id.indexOf('{{') !== -1) id = null;
+    return [name, id];
   }
 
   function channel(source, hasFbclid, referrer) {
@@ -120,6 +142,18 @@
     a.posicionamento = a.utm_term;
     a.tem_fbclid = hasFbclid;
     a.canal = channel(a.utm_source, hasFbclid, referrer);
+    a.meta_auto_utm = false; // sempre presente, para não herdar o true de uma visita anterior
+
+    // Parâmetros automáticos da Meta no Instagram: utm_campaign = ID da campanha, utm_term = ID do conjunto,
+    // utm_content = ID do anúncio. É o mesmo anúncio pago: vira meta_ads com o nome pelo ID.
+    if (a.utm_source === 'ig' && a.utm_medium === 'paid' && /^\d+$/.test(a.utm_campaign || '')) {
+      a.canal = 'meta_ads';
+      a.campanha_id = a.utm_campaign; a.campanha = CONFIG.metaNomes[a.utm_campaign] || null;
+      a.conjunto_id = a.utm_term || null; a.conjunto = null;
+      a.anuncio_id = a.utm_content || null; a.anuncio = CONFIG.metaNomes[a.utm_content] || null;
+      a.posicionamento = 'instagram_auto';
+      a.meta_auto_utm = true;
+    }
 
     // Visita direta não apaga uma origem paga recente (último toque não direto).
     if (a.canal === 'direto' && fresh) { delete stored.salvo_em; return stored; }
@@ -135,6 +169,13 @@
   });
   posthog.register(origem);
   Object.keys(origem).forEach(function (k) { clarity('set', k, String(origem[k])); });
+
+  // Teste A/B do hero da captura: a variante vem do script no <head> (<html data-hero>) e vai em todo evento.
+  var heroVariante = document.documentElement.getAttribute('data-hero');
+  if (heroVariante) {
+    posthog.register({ hero_variante: heroVariante });
+    clarity('set', 'hero_variante', heroVariante);
+  }
 
   // ---------- Envio ----------
   var startedAt = Date.now();

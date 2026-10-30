@@ -21,6 +21,30 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Sora:wght@300;400;500;600;700&family=Roboto:wght@400;600&display=swap">
   <link rel="stylesheet" href="../assets/css/captura.css">
 
+  <!-- ===== TESTE A/B DO HERO =====
+       Roda antes da página aparecer (sem piscar) e grava a variante em <html data-hero>. O CSS mostra só os
+       elementos [data-so] da variante. tracking.js manda hero_variante em todo evento; captura.js, no lead.
+       a = texto atual · b = diz o que é o Guia · dor = quem veio do anúncio de cinomose (fora do sorteio).
+       Para revisar: ?hero=a, ?hero=b ou ?hero=dor (junto com ?interno=1). -->
+  <script>
+    (function () {
+      var p = new URLSearchParams(location.search), v = p.get('hero'), o = {};
+      try { o = JSON.parse(localStorage.getItem('as_origem')) || {}; } catch (e) {}
+      var anuncio = [p.get('utm_content'), o.anuncio, o.anuncio_id].join(' ');
+      if (!/^(a|b|dor)$/.test(v || '')) {
+        if (/cinomose|120250476746130232/i.test(anuncio)) v = 'dor';
+        else {
+          try { v = localStorage.getItem('as_hero'); } catch (e) {}
+          if (v !== 'a' && v !== 'b') {
+            v = Math.random() < 0.5 ? 'a' : 'b';
+            try { localStorage.setItem('as_hero', v); } catch (e) {}
+          }
+        }
+      }
+      document.documentElement.setAttribute('data-hero', v);
+    })();
+  </script>
+
   <!-- ===== RASTREAMENTO =====
        Meta Pixel, PostHog e Clarity: assets/js/tracking.js (o mesmo da LP).
        Formulário, envio ao n8n e evento Lead: assets/js/captura.js. -->
@@ -46,8 +70,11 @@
       <div class="cap-hero__content">
         <img class="cap-hero__logo" src="../assets/img/logo-amarsaber.png" width="254" height="152" alt="Amar Saber">
         <p class="cap-pill"><span class="cap-pill__dot" aria-hidden="true"></span>Ao vivo · 10/11, 20h · Instagram</p>
-        <h1 class="cap-hero__title"><span>Tem <em>presente</em></span> <span class="cap-contorno">embrulhado.</span></h1>
-        <p class="cap-hero__lead">Três presentes e a maior condição que o Guia de Protocolos já teve, trancados até a live da Dra. Maria Paula, em 10/11 às 20h. Quem está no Grupo VIP recebe o lembrete e o link antes de todo mundo.</p>
+        <h1 class="cap-hero__title" data-so="a b"><span>Tem <em>presente</em></span> <span class="cap-contorno">embrulhado.</span></h1>
+        <h1 class="cap-hero__title" data-so="dor"><span>Paciente com <em>cinomose?</em></span> <span class="cap-contorno">Tem protocolo.</span></h1>
+        <p class="cap-hero__lead" data-so="a">Três presentes e a maior condição que o Guia de Protocolos já teve, trancados até a live da Dra. Maria Paula, em 10/11 às 20h. Quem está no Grupo VIP recebe o lembrete e o link antes de todo mundo.</p>
+        <p class="cap-hero__lead" data-so="b">O Guia de Protocolos traz protocolos, doses e condutas da clínica de pequenos animais, da rotina da Dra. Maria Paula na Amar Veterinária. Em 10/11, às 20h, ela abre ao vivo três presentes e a maior condição que o Guia já teve. Quem está no Grupo VIP recebe o link antes de todo mundo.</p>
+        <p class="cap-hero__lead" data-so="dor">O protocolo de cinomose está no Guia de Protocolos, com doses e condutas da clínica de pequenos animais. Em 10/11, às 20h, a Dra. Maria Paula abre ao vivo três presentes e a maior condição que o Guia já teve. Quem está no Grupo VIP recebe o link antes de todo mundo.</p>
 
         <div class="cap-contador cap-contador--hero" data-contador="2026-11-10T20:00:00-03:00">
           <p class="cap-contador__rotulo" data-antes>Faltam para a live</p>
@@ -61,6 +88,7 @@
         </div>
 
         <a class="btn cap-hero__btn" href="#form-guia" data-cta="hero">QUERO A CHAVE DOS PRESENTES</a>
+        <p class="cap-selo"><b>+1.500</b> Guias de Protocolos vendidos</p>
 
         <p class="cap-hero__note">Grupo gratuito. A live é no Instagram da Dra. Maria Paula (@mariapaulaferrarivet), e o link da Black Friday sai no grupo no mesmo momento, antes do público. Na última campanha o estoque esgotou rápido: quem está no grupo tem a primeira chance.</p>
         <!-- Só no celular: no desktop o livro já está no banner do fundo -->
@@ -75,8 +103,8 @@
   <section class="cap-presentes" data-secao="presentes">
     <div class="cap-container">
       <p class="cap-presentes__kicker">O que está guardado</p>
-      <h2 class="cap-presentes__title">Ninguém sabe o que tem dentro.</h2>
-      <p class="cap-presentes__lead">Nem a condição. Tudo é aberto ao vivo pela Dra. Maria Paula, em 10/11, às 20h, no Instagram dela, @mariapaulaferrarivet.</p>
+      <h2 class="cap-presentes__title">Três pistas. A resposta sai na live.</h2>
+      <p class="cap-presentes__lead">A Dra. Maria Paula abre cada um ao vivo em 10/11, às 20h, no Instagram dela, @mariapaulaferrarivet.</p>
 
       <div class="cap-cofre">
         <span class="cap-cofre__icone"><svg viewBox="0 0 448 512" aria-hidden="true"><path d="M144 144v48h160v-48a80 80 0 0 0-160 0zm-64 48v-48a144 144 0 0 1 288 0v48h16c35.3 0 64 28.7 64 64v192c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V256c0-35.3 28.7-64 64-64h16zm144 80a32 32 0 0 0-16 59.7V376a16 16 0 0 0 32 0v-44.3A32 32 0 0 0 224 272z"/></svg></span>
@@ -91,7 +119,7 @@
 
       <ul class="cap-presentes__lista">
           <li class="cap-presente">
-            <button class="cap-presente__btn" type="button" data-presente="1" aria-label="Presente 01: abre 10/11, às 20h, ao vivo">
+            <button class="cap-presente__btn" type="button" data-presente="1" aria-label="Presente 01, pista: para a consulta. Abre ao vivo em 10/11, às 20h">
               <svg class="cap-presente__caixa" viewBox="0 0 200 200" aria-hidden="true">
                 <rect class="cap-presente__corpo" x="22" y="76" width="156" height="118" rx="14"/>
                 <rect class="cap-presente__fita" x="88" y="76" width="24" height="118"/>
@@ -106,11 +134,12 @@
                 </g>
               </svg>
               <span class="cap-presente__nome">Presente 01</span>
-              <span class="cap-presente__quando">Abre 10/11, 20h, ao vivo</span>
+              <span class="cap-presente__quando">Para a consulta</span>
+              <span class="cap-presente__segredo">Para o tutor dizer sim ao tratamento.</span>
             </button>
           </li>
           <li class="cap-presente">
-            <button class="cap-presente__btn" type="button" data-presente="2" aria-label="Presente 02: abre 10/11, às 20h, ao vivo">
+            <button class="cap-presente__btn" type="button" data-presente="2" aria-label="Presente 02, pista: para o caso difícil. Abre ao vivo em 10/11, às 20h">
               <svg class="cap-presente__caixa" viewBox="0 0 200 200" aria-hidden="true">
                 <rect class="cap-presente__corpo" x="22" y="76" width="156" height="118" rx="14"/>
                 <rect class="cap-presente__fita" x="88" y="76" width="24" height="118"/>
@@ -125,11 +154,12 @@
                 </g>
               </svg>
               <span class="cap-presente__nome">Presente 02</span>
-              <span class="cap-presente__quando">Abre 10/11, 20h, ao vivo</span>
+              <span class="cap-presente__quando">Para o caso difícil</span>
+              <span class="cap-presente__segredo">Para ter com quem conferir a conduta.</span>
             </button>
           </li>
           <li class="cap-presente">
-            <button class="cap-presente__btn" type="button" data-presente="3" aria-label="Presente 03: abre 10/11, às 20h, ao vivo">
+            <button class="cap-presente__btn" type="button" data-presente="3" aria-label="Presente 03, pista: o preço. Abre ao vivo em 10/11, às 20h">
               <svg class="cap-presente__caixa" viewBox="0 0 200 200" aria-hidden="true">
                 <rect class="cap-presente__corpo" x="22" y="76" width="156" height="118" rx="14"/>
                 <rect class="cap-presente__fita" x="88" y="76" width="24" height="118"/>
@@ -144,7 +174,8 @@
                 </g>
               </svg>
               <span class="cap-presente__nome">Presente 03</span>
-              <span class="cap-presente__quando">Abre 10/11, 20h, ao vivo</span>
+              <span class="cap-presente__quando">O preço</span>
+              <span class="cap-presente__segredo">Abre às 20h do dia 10.</span>
             </button>
           </li>
       </ul>
@@ -159,6 +190,31 @@
         </div>
         <p class="cap-contador__fim" data-fim role="status" hidden>A live começou: o link da Black Friday está no grupo.</p>
       </div>
+    </div>
+  </section>
+
+  <!-- ===== 2b. QUEM JÁ TEM O GUIA (prova social) =====
+       Trechos dos depoimentos da LP (assets/img/depoimento-3.jpg e -5.jpg), com o primeiro nome.
+       O link abre os prints originais no lightbox (assets/js/main.js, .gallery). -->
+  <section class="cap-provas" data-secao="provas">
+    <div class="cap-container">
+      <p class="cap-provas__kicker"><b>+1.500</b> Guias vendidos</p>
+      <h2 class="cap-provas__title">Quem já tem o Guia</h2>
+      <div class="cap-provas__lista">
+        <figure class="cap-prova">
+          <blockquote>“Perfeito! A parte dos tratamentos onde tinha mais dificuldades muito bem detalhado, vai otimizar muito tempo nas receitas.”</blockquote>
+          <figcaption>Júlia</figcaption>
+        </figure>
+        <figure class="cap-prova">
+          <blockquote>“Muito lindo e muito completo, vai me ajudar muito na rotina.”</blockquote>
+          <figcaption>Lorenzza</figcaption>
+        </figure>
+      </div>
+      <p class="gallery cap-provas__prints">
+        <a href="../assets/img/depoimento-3.jpg">Ver as mensagens originais</a>
+        <a href="../assets/img/depoimento-5.jpg" hidden>Mensagem da Lorenzza</a>
+      </p>
+      <a class="btn cap-provas__btn" href="#form-guia" data-cta="provas">QUERO ENTRAR NO GRUPO VIP</a>
     </div>
   </section>
 
@@ -287,8 +343,8 @@
     <div class="cap-gaveta__caixa">
       <a class="cap-gaveta__fechar" href="#topo" aria-label="Fechar">&times;</a>
       <p class="cap-pill"><span class="cap-pill__dot" aria-hidden="true"></span>Ao vivo · 10/11, 20h</p>
-      <h2 class="cap-gaveta__titulo" id="gaveta-titulo">Pegue a sua chave</h2>
-      <p class="cap-gaveta__texto">Entre no Grupo VIP do WhatsApp: é lá que chegam o lembrete da live e o link da Black Friday, antes do público.</p>
+      <h2 class="cap-gaveta__titulo" id="gaveta-titulo">Falta só o seu WhatsApp</h2>
+      <p class="cap-gaveta__texto">É por lá que chegam o lembrete da live e o link da Black Friday, às 20h do dia 10, antes do público.</p>
       <!-- Envio, validação e eventos: assets/js/captura.js -->
       <form class="cap-form" id="form-lead" novalidate>
         <div class="cap-field">
@@ -306,9 +362,13 @@
           <label for="lead-site">Site</label>
           <input id="lead-site" name="website" type="text" tabindex="-1" autocomplete="off">
         </div>
+        <!-- "uns 10": mensagens do roteiro de 29/10 a 09/11 (GRUPO-VIP-MENSAGENS.md, A1 a 3) -->
+        <p class="cap-gaveta__garantia">Só avisos e casos da Dra. Maria Paula, uns 10 até a live. Dá para sair do grupo quando quiser.</p>
         <button class="btn cap-form__btn" type="submit">QUERO ENTRAR NO GRUPO VIP</button>
+        <!-- Número do SendFlow arredondado para baixo: atualize à mão (300, 400, 500...) -->
+        <p class="cap-gaveta__prova">Mais de 300 colegas já estão no grupo.</p>
       </form>
-      <p class="cap-gaveta__nota">Grupo gratuito, só de avisos. Ao continuar, você aceita receber mensagens da Amar Saber no WhatsApp e concorda com a <a href="https://amarsaber.com.br/politica-de-privacidade/" target="_blank" rel="noopener">Política de Privacidade</a>.</p>
+      <p class="cap-gaveta__nota">Ao continuar, você aceita receber mensagens da Amar Saber no WhatsApp e concorda com a <a href="https://amarsaber.com.br/politica-de-privacidade/" target="_blank" rel="noopener">Política de Privacidade</a>.</p>
     </div>
   </div>
 

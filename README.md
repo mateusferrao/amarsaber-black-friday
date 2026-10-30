@@ -61,6 +61,15 @@ que grava na planilha **Leads · Acesso antecipado Black – Amar Saber** (aba `
 Se o n8n não responder, a pessoa segue para o grupo mesmo assim e o lead fica no PostHog
 (`lp_lead_falha`, com nome e WhatsApp).
 
+**Teste A/B do hero (30/10 a ~07/11):** metade vê o texto atual (`a`), metade vê o texto que diz o que é o Guia (`b`);
+quem vem do anúncio de cinomose vê `dor`. As versões ficam no `index.html` com `data-so="a"`, `"b"` ou `"dor"`, e o
+sorteio está no script do `<head>`. Para ver cada uma: `/acesso-antecipado/?hero=b&interno=1`. Para encerrar o teste,
+apague os elementos da variante que perdeu e troque o sorteio por `v = 'b'` (ou `'a'`). Detalhes:
+[RASTREAMENTO.md](RASTREAMENTO.md#captura-acesso-antecipado-acesso-antecipado).
+
+Contador "Mais de 300 colegas já estão no grupo" (gaveta do formulário): número do SendFlow arredondado para baixo,
+atualizado à mão.
+
 A LP de vendas (`/`) está com `noindex` até a abertura pública: o link sai primeiro no grupo em 10/11.
 
 ## Downsell e obrigado da compra

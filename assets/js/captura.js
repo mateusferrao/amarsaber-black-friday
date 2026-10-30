@@ -99,8 +99,9 @@
   });
 
   // ---------- Início do formulário ----------
+  // Na primeira tecla digitada (a gaveta já põe o foco no nome ao abrir, então o foco não serve).
   var started = false;
-  form.addEventListener('focusin', function () {
+  form.addEventListener('input', function () {
     if (started) return;
     started = true;
     T.capture('lp_form_inicio', { etapa: 'intencao' });
@@ -151,6 +152,7 @@
 
     // Robô preencheu o campo escondido: finge sucesso e não envia nada.
     if (form.elements.website.value) { goToThankYou(); return; }
+    form.dataset.enviado = '1'; // a gaveta não conta lp_form_fechado depois do envio
 
     var nome = fields.nome.value.trim().replace(/\s+/g, ' ');
     var whatsapp = nationalDigits(fields.whatsapp.value);
@@ -175,6 +177,7 @@
       fbp: cookie('_fbp'),
       fbc: fbc,
       posthog_distinct_id: distinctId,
+      hero_variante: document.documentElement.getAttribute('data-hero') || '', // teste A/B do hero
       pagina: location.href.split('#')[0],
       referrer: document.referrer,
       // ?test_event_code=TEST123 → o Lead do servidor aparece em "Testar eventos" no Gerenciador de Eventos
@@ -264,13 +267,16 @@
   var gaveta = document.getElementById('form-guia');
   if (!gaveta) return;
   var primeiro = gaveta.querySelector('input:not([tabindex="-1"])');
+  var form = document.getElementById('form-lead');
   var aberta = false;
   var origem = null;
+  var abertaEm = 0;
 
   function abrir(posicao, quem) {
     if (aberta) return;
     aberta = true;
     origem = quem || null;
+    abertaEm = Date.now();
     gaveta.classList.add('is-aberta');
     document.documentElement.classList.add('cap-sem-rolagem');
     try { history.pushState({ gaveta: true }, ''); } catch (e) {}
@@ -281,6 +287,11 @@
     if (!aberta) return;
     aberta = false;
     gaveta.classList.remove('is-aberta');
+    // Fechou sem enviar: quanto tempo ficou e se chegou a digitar (onde as desistências acontecem).
+    if (form && !form.dataset.enviado && window.asTracking) {
+      var digitou = [].some.call(form.querySelectorAll('input:not([tabindex="-1"])'), function (i) { return i.value.trim() !== ''; });
+      window.asTracking.capture('lp_form_fechado', { segundos: Math.round((Date.now() - abertaEm) / 1000), digitou: digitou, etapa: 'intencao' });
+    }
     document.documentElement.classList.remove('cap-sem-rolagem');
     if (!doHistorico) { try { if (history.state && history.state.gaveta) history.back(); } catch (e) {} }
     if (origem && origem.focus) origem.focus({ preventScroll: true });

@@ -30,6 +30,12 @@ h1, h2, h3, p { margin: 0; }
 a { color: inherit; text-decoration: none; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
+/* Teste A/B do hero: só aparecem os [data-so] da variante em <html data-hero> (script no <head>). Sem JS, a "a". */
+html:not([data-hero]) [data-so]:not([data-so~="a"]),
+html[data-hero="a"] [data-so]:not([data-so~="a"]),
+html[data-hero="b"] [data-so]:not([data-so~="b"]),
+html[data-hero="dor"] [data-so]:not([data-so~="dor"]) { display: none !important; }
+
 .cap-container { width: 100%; max-width: 1140px; margin: 0 auto; padding: 0 20px; }
 
 /* ---------- Botão verde (o mesmo da LP) ---------- */
@@ -138,6 +144,14 @@ a { color: inherit; text-decoration: none; }
 .cap-form__btn { width: 100%; margin-top: 4px; border-radius: 17px; font-size: 15px; }
 
 .cap-hero__note { margin-top: -6px; font-size: 12px; line-height: 15px; }
+/* Selo de prova embaixo do botão do hero */
+.cap-selo {
+  align-self: flex-start; display: inline-flex; align-items: baseline; gap: 8px;
+  margin-top: -6px; padding: 7px 14px;
+  font-size: 13px; font-weight: 600; color: var(--cream);
+  border: 1px solid var(--card-border); border-radius: 100px; background: rgba(252, 36, 148, .08);
+}
+.cap-selo b { font-family: var(--display); font-weight: 400; font-size: 20px; line-height: 1; letter-spacing: .5px; color: var(--pink); }
 .cap-hero__livro { display: none; }
 .cap-hero__btn { align-self: flex-start; min-width: 340px; padding: 22px 32px; font-size: 17px; font-weight: 600; letter-spacing: 1.4px; }
 
@@ -167,6 +181,9 @@ a { color: inherit; text-decoration: none; }
 .cap-gaveta__titulo { font-family: var(--display); font-weight: 400; font-size: 40px; line-height: 1; text-transform: uppercase; }
 .cap-gaveta__texto { font-size: 15px; line-height: 22px; color: var(--cream); }
 .cap-gaveta .cap-form { margin-top: 4px; }
+.cap-gaveta__garantia { margin-top: 2px; font-size: 13px; line-height: 19px; color: var(--cream); }
+.cap-gaveta__prova { display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 13px; font-weight: 600; color: #fff; }
+.cap-gaveta__prova::before { content: ""; flex: none; width: 8px; height: 8px; border-radius: 50%; background: #00e63a; box-shadow: 0 0 0 4px rgba(0, 230, 58, .18); }
 .cap-gaveta__nota { font-size: 12px; line-height: 17px; color: rgba(255, 255, 255, .6); text-align: center; }
 .cap-gaveta__nota a { text-decoration: underline; }
 html.cap-sem-rolagem, html.cap-sem-rolagem body { overflow: hidden; }
@@ -252,6 +269,35 @@ html.cap-sem-rolagem, html.cap-sem-rolagem body { overflow: hidden; }
 .cap-presente__nome, .cap-presente__quando { display: block; }
 .cap-presente__nome { margin-top: 14px; font-family: var(--display); font-size: 22px; letter-spacing: 1.6px; text-transform: uppercase; }
 .cap-presente__quando { margin-top: 2px; font-size: 12px; font-weight: 600; letter-spacing: 1.4px; text-transform: uppercase; color: var(--pink); }
+/* Pista extra: aparece ao espiar (toque ou mouse) */
+.cap-presente__segredo {
+  display: block; max-height: 0; overflow: hidden; opacity: 0; margin-top: 0;
+  font-size: 13px; line-height: 18px; color: var(--cream);
+  transition: max-height .45s, opacity .45s, margin-top .45s;
+}
+.cap-presente__btn.is-espiando .cap-presente__segredo { max-height: 80px; opacity: 1; margin-top: 6px; }
+@media (hover: hover) {
+  .cap-presente__btn:hover .cap-presente__segredo { max-height: 80px; opacity: 1; margin-top: 6px; }
+}
+
+/* =========================================================
+   2b. QUEM JÁ TEM O GUIA (prova social)
+   ========================================================= */
+.cap-provas { padding: 8px 0 64px; text-align: center; }
+.cap-provas__kicker { font-size: 13px; font-weight: 700; letter-spacing: 2.4px; text-transform: uppercase; color: var(--cream); }
+.cap-provas__kicker b { font-family: var(--display); font-weight: 400; font-size: 22px; letter-spacing: 1px; color: var(--pink); }
+.cap-provas__title { margin-top: 8px; font-family: var(--display); font-weight: 400; font-size: clamp(34px, 4.4vw, 48px); line-height: 1; text-transform: uppercase; }
+.cap-provas__lista { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; max-width: 900px; margin: 28px auto 0; text-align: left; }
+.cap-prova {
+  margin: 0; padding: 24px 22px 20px;
+  border: 1px solid var(--card-border); border-radius: 14px; background: rgba(252, 36, 148, .06);
+}
+.cap-prova blockquote { margin: 0; font-size: 17px; line-height: 25px; color: #fff; }
+.cap-prova figcaption { margin-top: 12px; font-size: 13px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase; color: var(--pink); }
+.gallery.cap-provas__prints { display: block; margin-top: 16px; }
+.cap-provas .cap-provas__prints a { display: inline; font-size: 14px; color: var(--cream); text-decoration: underline; }
+.cap-provas .cap-provas__prints a[hidden] { display: none; }
+.cap-provas__btn { margin-top: 24px; padding: 16px 24px; font-size: 16px; letter-spacing: 1.6px; }
 
 .cap-contador { margin-top: 44px; }
 .cap-contador__rotulo { font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--cream); }
@@ -562,6 +608,14 @@ html.cap-sem-rolagem, html.cap-sem-rolagem body { overflow: hidden; }
   .cap-cofre__preco { justify-content: center; font-size: 44px; }
   .cap-cofre__preco i { width: 28px; height: 38px; }
   .cap-presente__quando { font-size: 9.5px; letter-spacing: .6px; }
+  .cap-presente__segredo { font-size: 11px; line-height: 14px; }
+  .cap-selo { align-self: center; margin-top: 0; }
+  .cap-provas { padding: 0 0 44px; }
+  .cap-provas__title { font-size: 36px; }
+  .cap-provas__lista { grid-template-columns: 1fr; gap: 12px; margin-top: 22px; }
+  .cap-prova { padding: 18px 16px 16px; }
+  .cap-prova blockquote { font-size: 15px; line-height: 22px; }
+  .cap-provas__btn { width: 100%; font-size: 14px; letter-spacing: .8px; }
   .cap-contador { margin-top: 32px; }
   .cap-contador__grade { gap: 8px; }
   .cap-contador__grade span { min-width: 0; flex: 1; max-width: 76px; padding: 10px 4px; font-size: 10px; }
