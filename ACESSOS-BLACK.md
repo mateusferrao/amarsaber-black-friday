@@ -64,7 +64,8 @@ remoção voltar (o 1º vencimento é em fevereiro/2027). A renovação (avisos 
    e varredura testados com um pedido antigo (descartado por não ser da Black).
 4. ~~Yampi: webhook "AS · Acessos Black (n8n)"~~ (01/11, pela API; order.paid e order.status.updated). O n8n já filtra os
    2 produtos.
-5. **Memberkit ↔ Yampi (Mateus):** a integração nativa não escolhe produto, então o filtro fica no webhook da Yampi.
+5. ~~**Memberkit ↔ Yampi:**~~ (01/11; conferido pela API: "Memberkit · Black (curso)" ativo, URL
+   `memberkit.com.br/callbacks/yampi/…`, Pedido criado + Status atualizado, só os produtos 46520027 e 46522438). a integração nativa não escolhe produto, então o filtro fica no webhook da Yampi.
    A API da Yampi não grava a lista de produtos do webhook: ela é marcada no painel.
    - Memberkit → Integrações → Yampi: nome `Yampi · Black 2026`, **chave secreta** = a do webhook "Memberkit · Black
      (curso)" na Yampi (Configurações → Webhooks), modalidade **Assinatura**, conteúdo **Black 2026 · Atendimento
