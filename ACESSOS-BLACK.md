@@ -74,7 +74,8 @@ remoção voltar (o 1º vencimento é em fevereiro/2027). A renovação (avisos 
      eventos Pedido criado e Status do pedido atualizado): colar a URL do Memberkit, marcar **só** os produtos
      46520027 e 46522438, ativar e salvar. Sem produto marcado, o webhook vale para a loja inteira.
    - Depois disso, ninguém mexe nesse webhook pela API: um PUT sem a lista de produtos pode apagar o filtro.
-6. **Kommo (Mateus):** automação de e-mail na etapa Acesso enviado (passo a passo abaixo); depois `KOMMO_ATIVO = true`.
+6. ~~Kommo: caixa, modelo e bot de e-mail~~ (01/11). E-mail de teste chegou na caixa de entrada; `KOMMO_ATIVO = true` e
+   fluxo publicado em 01/11.
 7. **Teste de ponta a ponta** (abaixo), depois `APROVAR_ATIVO = true`.
 
 ## Kommo: e-mail automático com o link do grupo
@@ -86,11 +87,14 @@ SSL). Precisa estar como **Compartilhado**: a automação do funil envia pela ca
    ativo. Esse endereço é o remetente.
 2. **Modelo:** E-mail → Modelos (ou Configurações → Modelos de e-mail) → **+ Novo modelo**. Nome
    `AS · Acesso comunidade Black`, assunto `Seu acesso à Comunidade Amar Saber`, corpo abaixo. Nome e data entram pelo
-   seletor de campos: `as_nome` e `as_comunidade_ate` do lead.
-3. **Automação:** Leads → funil **Clientes Black** → Automatizar → coluna **Acesso enviado** → **+ Adicionar gatilho**
-   → **Enviar e-mail**: ao mover ou criar nesta etapa, todos os leads, destinatário contato principal, remetente da
-   caixa do passo 1, modelo `AS · Acesso comunidade Black`. Salvar.
-4. **Teste:** lead de teste com o próprio e-mail nessa etapa; conferir remetente, nome, link e se caiu no spam.
+   seletor de campos (o modelo atual usa o nome do contato, que vem completo da Yampi; para só o primeiro nome, trocar
+   pelo campo `as_nome` do lead).
+3. **Bot:** Salesbot **"AS - LIBERAÇÃO DE ACESSOS"**, gatilho "Movido para ou criado na etapa" Clientes Black / Acesso
+   enviado → passo **Enviar email** com o modelo `AS · Acesso comunidade Black`, remetente **Gerente responsável**, só
+   o contato principal. O n8n cria o lead com o responsável **Amar Saber (15657099)**, dono da caixa, então o e-mail sai
+   de `amarsaber@amarveterinaria.com.br`.
+4. ~~Teste~~ (01/11): lead "TESTE · Acesso Black" (`mateusferraocosta2000@gmail.com`) recebeu o e-mail na caixa de
+   entrada com o link certo; o lead foi para Closed - lost.
 
 O n8n grava o e-mail da compra no contato antes de criar o lead, porque o e-mail sai para o e-mail do contato.
 
