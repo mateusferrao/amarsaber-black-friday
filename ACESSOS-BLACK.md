@@ -4,7 +4,7 @@ Quem paga a Black na Yampi recebe sozinho:
 
 | O quê | Onde | Prazo | Como chega |
 |---|---|---|---|
-| Curso Atendimento Extraordinário | Memberkit, assinatura **Black 2026 · Atendimento Extraordinário** (id 38626, Turma A 394987) | 365 dias a partir do pagamento | integração nativa Yampi → Memberkit (e-mail de acesso do Memberkit) |
+| Curso Atendimento Extraordinário | Memberkit, assinatura **Black 2026 · Atendimento Extraordinário** (id 38626, Turma A 394987) | 365 dias a partir do pagamento | integração nativa Yampi → Memberkit, com o webhook da Yampi filtrado pelos 2 produtos (e-mail de boas-vindas do Memberkit) |
 | Comunidade Amar Saber | grupo **Comunidade - Guia Amar Saber** no WhatsApp, campanha de mesmo nome no SendFlow | 3 meses a partir do pagamento | e-mail com o link (automação do Kommo) e aprovação automática da entrada |
 
 Produtos da Yampi que liberam: **46520027** (Guia + curso + comunidade, R$ 497) e **46522438** (downsell curso +
@@ -55,22 +55,26 @@ remoção voltar (o 1º vencimento é em fevereiro/2027). A renovação (avisos 
 
 ## Ativação
 
-1. ~~SendFlow: campanha da comunidade~~ (feito em 30/10).
-2. **SendFlow (Mateus):** importar o grupo "Comunidade - Guia Amar Saber" na campanha, pelo painel (Campanha →
-   Importar grupos), **sem padronizar**. Confirmar que a aprovação de entrada está ligada no grupo.
-3. ~~Kommo: funil Clientes Black e campos~~ (feito em 30/10).
-4. ~~n8n: tabela, abas da planilha e fluxo~~ (feito em 30/10, desligado). Trilha das entradas testada sem dados.
-5. **n8n (Mateus):** criar a credencial **Yampi API** do tipo *Custom Auth* com
-   `{"headers":{"User-Token":"<token>","User-Secret-Key":"<chave secreta>"}}` e escolher nos nós *Yampi · pedido* e
-   *Yampi · últimos pedidos*.
-6. **Memberkit (Mateus):** conferir "Extensão de acesso" = 365 na assinatura, gerar a URL de webhook da Yampi
-   (Integrações → Yampi), vincular os produtos 46520027 e 46522438 à assinatura e mandar a URL. A Yampi manda todos os
-   pedidos da loja para essa URL: se a tela não vincular por produto, usar a API do Memberkit pelo n8n em vez da
-   integração nativa.
-7. **Yampi:** cadastrar pela API o webhook do Memberkit e o `as-black-acessos` (order.paid, order.status.updated),
-   com o fluxo publicado.
-8. **Kommo (Mateus):** automação de e-mail na etapa Acesso enviado (passo a passo abaixo); depois `KOMMO_ATIVO = true`.
-9. **Teste de ponta a ponta** (abaixo), depois `APROVAR_ATIVO = true`.
+1. ~~SendFlow: campanha da comunidade e grupo importado~~ (30/10 e 01/11). Convite do grupo:
+   `https://chat.whatsapp.com/KcaNKf553yk2k5fu29qeDc`. **Falta (Mateus):** confirmar no celular que "Aprovar novos
+   participantes" está ligado no grupo.
+2. ~~Kommo: funil Clientes Black e campos~~ (30/10).
+3. ~~n8n: tabela, abas, fluxo, credencial Yampi API~~ (30/10 e 01/11). Fluxo **publicado** em 01/11 com `KOMMO_ATIVO` e
+   `APROVAR_ATIVO` desligados: grava os pedidos da Black e lista os pendentes, mas não aprova nem manda e-mail. Webhook
+   e varredura testados com um pedido antigo (descartado por não ser da Black).
+4. ~~Yampi: webhook "AS · Acessos Black (n8n)"~~ (01/11, pela API; order.paid e order.status.updated). O n8n já filtra os
+   2 produtos.
+5. **Memberkit ↔ Yampi (Mateus):** a integração nativa não escolhe produto, então o filtro fica no webhook da Yampi.
+   A API da Yampi não grava a lista de produtos do webhook: ela é marcada no painel.
+   - Memberkit → Integrações → Yampi: nome `Yampi · Black 2026`, **chave secreta** = a do webhook "Memberkit · Black
+     (curso)" na Yampi (Configurações → Webhooks), modalidade **Assinatura**, conteúdo **Black 2026 · Atendimento
+     Extraordinário** → **Gerar URL de Notificação**.
+   - Yampi → Configurações → Webhooks → editar **"Memberkit · Black (curso)"** (criado desligado pela API em 01/11,
+     eventos Pedido criado e Status do pedido atualizado): colar a URL do Memberkit, marcar **só** os produtos
+     46520027 e 46522438, ativar e salvar. Sem produto marcado, o webhook vale para a loja inteira.
+   - Depois disso, ninguém mexe nesse webhook pela API: um PUT sem a lista de produtos pode apagar o filtro.
+6. **Kommo (Mateus):** automação de e-mail na etapa Acesso enviado (passo a passo abaixo); depois `KOMMO_ATIVO = true`.
+7. **Teste de ponta a ponta** (abaixo), depois `APROVAR_ATIVO = true`.
 
 ## Kommo: e-mail automático com o link do grupo
 
@@ -93,7 +97,7 @@ O n8n grava o e-mail da compra no contato antes de criar o lead, porque o e-mail
 > Sua compra da Black do Guia de Protocolos foi confirmada, e aqui está o seu acesso à Comunidade Amar Saber no
 > WhatsApp:
 >
-> 👉 [Entrar na comunidade] (link do grupo)
+> 👉 [Entrar na comunidade](https://chat.whatsapp.com/KcaNKf553yk2k5fu29qeDc)
 >
 > Como entrar: toque no link com o WhatsApp do número que você usou na compra e peça para entrar. A aprovação é feita
 > automaticamente em alguns minutos. Se você usou outro número na compra, responda este e-mail com o WhatsApp certo,
