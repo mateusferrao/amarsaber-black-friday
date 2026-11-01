@@ -76,7 +76,16 @@ remoção voltar (o 1º vencimento é em fevereiro/2027). A renovação (avisos 
    - Depois disso, ninguém mexe nesse webhook pela API: um PUT sem a lista de produtos pode apagar o filtro.
 6. ~~Kommo: caixa, modelo e bot de e-mail~~ (01/11). E-mail de teste chegou na caixa de entrada; `KOMMO_ATIVO = true` e
    fluxo publicado em 01/11.
-7. **Teste de ponta a ponta** (abaixo), depois `APROVAR_ATIVO = true`.
+7. ~~Teste de ponta a ponta~~ (01/11, simulação sem pedido real na Yampi, com os dados do Mateus) e `APROVAR_ATIVO = true`.
+   - Memberkit: aviso da Yampi assinado com a chave do webhook, para os 2 produtos → aluno criado na assinatura 38626
+     até 01/11/2027 e e-mail de boas-vindas recebido.
+   - n8n (entrada temporária de simulação, já removida): 2 pedidos da Black gravados, Guia avulso ignorado, sem duplicar
+     no reenvio, cancelamento depois de pago → `revogado`; lead no Kommo e e-mail com o link recebidos.
+   - Entrada no grupo: o 99137-2667 pediu para entrar e foi aprovado sozinho na rodada seguinte (SendFlow `matched = 1`).
+     O número chega sem o 9 (`553191372667`), e a regra DDD + 8 dígitos casa.
+   - Bug achado e corrigido: o nó *Lead criado* não lia o ID do lead (o n8n entrega a resposta do Kommo item a item).
+   - Limpeza: linhas de teste apagadas da tabela e da planilha, leads de teste em Closed - lost, aluno de teste arquivado
+     no Memberkit. Não testado: o aviso real da Yampi (só pela API, sem pedido real); o 1º pedido real confirma.
 
 ## Kommo: e-mail automático com o link do grupo
 
