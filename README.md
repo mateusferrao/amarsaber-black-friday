@@ -81,8 +81,8 @@ Detalhes e eventos: [RASTREAMENTO.md](RASTREAMENTO.md#downsell-e-obrigado-da-com
 ## Acessos depois da compra
 
 Compra paga da Black (produtos 46520027 e 46522438 da Yampi) libera o curso no Memberkit por 365 dias (integração
-nativa) e a comunidade no WhatsApp por 3 meses (n8n **AS · Acessos Black** + SendFlow + e-mail pelo Kommo). Fluxo,
-ativação e teste: [ACESSOS-BLACK.md](ACESSOS-BLACK.md).
+nativa) e a entrada na comunidade do WhatsApp (n8n **AS · Acessos Black** + SendFlow + e-mail pelo Kommo). O prazo de 3
+meses da comunidade fica registrado; remoção e renovação estão fora do escopo por enquanto. Fluxo, ativação e teste: [ACESSOS-BLACK.md](ACESSOS-BLACK.md).
 
 ## Teste (`/teste/`)
 

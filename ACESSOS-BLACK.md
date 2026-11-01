@@ -22,8 +22,7 @@ Yampi pedido pago (46520027 ou 46522438)
        Entradas  a cada 5 min: pedidos de entrada no grupo (aprovação ligada no grupo)
                  → mesmo WhatsApp da compra (DDD + 8 últimos dígitos): aprova (APROVAR_ATIVO)
                  → não bateu: aba "Comunidade · Pendentes" depois de 30 min (nunca recusa)
-       Saída     todo dia 9h: venceu os 3 meses → remove pelo SendFlow (REMOVER_ATIVO, máx. 30/dia)
-                 reembolso/chargeback → remove só com REMOVER_REVOGADOS
+       Saída     fora do escopo por enquanto (gatilho das 9h desativado; veja abaixo)
 ```
 
 - **Um pedido = uma linha**, idempotente pelo número do pedido: paid, invoiced e delivered do mesmo pedido não
@@ -33,14 +32,22 @@ Yampi pedido pago (46520027 ou 46522438)
 - **Comprou com outro WhatsApp:** o pedido de entrada fica na aba **Comunidade · Pendentes**. A equipe escreve o
   número do pedido da Yampi na coluna "Pedido Yampi (preencher para liberar)", e a rodada seguinte (até 5 min) aprova
   e marca "Liberado". Pedido inexistente, sem pagamento ou vencido volta como "Não liberado".
-- **Reembolso:** `cancelled`/`refunded` depois de pago marca a linha como `revogado`. Status desconhecido depois de
-  pago só gera observação para conferir. O alias exato do reembolso na Yampi ainda não apareceu num pedido real.
+- **Reembolso:** `cancelled`/`refunded` depois de pago marca a linha como `revogado`, para a equipe ver. Ninguém sai
+  do grupo sozinho. Status desconhecido depois de pago só gera observação para conferir. O alias exato do reembolso na
+  Yampi ainda não apareceu num pedido real.
+
+## Fora do escopo por enquanto: saída e renovação
+
+O prazo de 3 meses da comunidade fica **registrado** (coluna "Comunidade até" e campo `as_comunidade_ate` no Kommo),
+mas por enquanto ninguém é removido do grupo e não há aviso de vencimento nem oferta de renovação. A trilha da saída
+continua no fluxo, com o gatilho *Todo dia às 9h* desativado e `REMOVER_ATIVO = false`, para reaproveitar quando a
+remoção voltar (o 1º vencimento é em fevereiro/2027). A renovação (avisos 30 e 15 dias antes) ainda não foi criada.
 
 ## Onde está cada coisa
 
 | Sistema | Item |
 |---|---|
-| n8n | fluxo **AS · Acessos Black** (`hnIC4dP5ECARANTk`), tabela **AS · Acessos Black**. Interruptores no topo dos nós *Decidir pedido* (`KOMMO_ATIVO`), *Decidir entradas* (`APROVAR_ATIVO`) e *Quem sai hoje* (`REMOVER_ATIVO`, `REMOVER_REVOGADOS`). A chave do webhook fica no nó *Ler webhook*, não no repositório |
+| n8n | fluxo **AS · Acessos Black** (`hnIC4dP5ECARANTk`), tabela **AS · Acessos Black**. Interruptores no topo dos nós *Decidir pedido* (`KOMMO_ATIVO`), *Decidir entradas* (`APROVAR_ATIVO`); a saída (*Quem sai hoje*) está desativada. A chave do webhook fica no nó *Ler webhook*, não no repositório |
 | Planilha | **Leads · Black – Amar Saber**, abas **Comunidade · Acessos** (uma linha por pedido) e **Comunidade · Pendentes** |
 | SendFlow | campanha **Comunidade - Guia Amar Saber** (conta BF 2026, 93618-8016), criação de grupos desligada |
 | Kommo | funil **Clientes Black** (14699768): Acesso enviado 113585712 · Entrou no grupo 113585716 · Precisa de ajuda 113585720 · Acesso encerrado 113585724. Campos do lead: `as_nome` 881487, `as_pedido` 882627, `as_comunidade_ate` 882629, `as_curso_ate` 882631 |
@@ -63,8 +70,7 @@ Yampi pedido pago (46520027 ou 46522438)
 7. **Yampi:** cadastrar pela API o webhook do Memberkit e o `as-black-acessos` (order.paid, order.status.updated),
    com o fluxo publicado.
 8. **Kommo (Mateus):** automação de e-mail na etapa Acesso enviado (passo a passo abaixo); depois `KOMMO_ATIVO = true`.
-9. **Teste de ponta a ponta** (abaixo), depois `APROVAR_ATIVO = true`. `REMOVER_ATIVO` liga no teste e volta a
-   `false` até o 1º vencimento (fevereiro/2027).
+9. **Teste de ponta a ponta** (abaixo), depois `APROVAR_ATIVO = true`.
 
 ## Kommo: e-mail automático com o link do grupo
 
@@ -110,8 +116,7 @@ O n8n grava o e-mail da compra no contato antes de criar o lead, porque o e-mail
    - Kommo: lead em Clientes Black / Acesso enviado e e-mail recebido;
    - WhatsApp: pedir para entrar → aprovado em até 5 min → linha `no_grupo`, lead em Entrou no grupo;
    - outro número sem compra pede para entrar → fica pendente e aparece em Comunidade · Pendentes depois de 30 min.
-2. Reembolso do pedido de teste: Memberkit bloqueia; o n8n registra o status que chegou (confirma o alias do
-   reembolso). Com `REMOVER_ATIVO` e `REMOVER_REVOGADOS` ligados só no teste, o número sai do grupo no dia seguinte às 9h
-   (ou rodando o nó à mão).
+2. Reembolso do pedido de teste: Memberkit bloqueia; o n8n marca a linha como `revogado` e registra o status que
+   chegou (confirma o alias do reembolso). A saída do grupo, se for o caso, é feita à mão.
 3. Webhook perdido: com o webhook desligado, um pedido entra pela varredura de 30 min.
 4. Pedido de outro produto (ex.: Guia Vol. 3 avulso) não entra na tabela.
