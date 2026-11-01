@@ -18,8 +18,9 @@ Regras:
 ## Como operar no SendFlow
 - **Teste antes:** toda mensagem nova vai primeiro para a campanha "Teste BF" (grupo de teste, com o operador 93618-8016 como admin) e é
   conferida no celular. Só depois vai para a campanha "Black 2026 · Grupo VIP", para todos os grupos.
-- **Agendadas:** saem pela campanha inteira (todas as contas da campanha e todos os grupos, hoje o #1 e o #2), no
-  horário de Brasília da tabela.
+- **Agendadas:** saem pela campanha inteira (todas as contas da campanha e todos os grupos da campanha), no horário
+  de Brasília da tabela. Desde 01/11 só o #1 está na campanha: o #2, vazio, saiu para não receber as mensagens por
+  enquanto (a SendAPI não troca o destino de uma ação agendada). Ele volta reimportado quando o #1 passar de 650.
 - **Grupos novos:** a criação automática fica desligada. O próximo grupo é criado à mão no celular e importado
   (passo a passo em `RASTREAMENTO.md`).
 - **Manuais (dia da live):** a 6, a 6a, a 6b e a 7 ficam prontas como template e o Mateus dispara pelo painel quando a

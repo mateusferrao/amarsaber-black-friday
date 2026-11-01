@@ -281,8 +281,10 @@ separado por campanha: a comparação teste × LP sai das UTMs (`utm_campaign`),
   aplicar descrição, foto e configurações só nele.
 - **Link de rodízio:** `https://sndflw.com/i/amarsaber-black-vip`, no botão `data-grupo` do obrigado. Manda para o
   grupo **mais novo** da campanha que não está marcado como cheio (grupo importado vira o grupo da vez). Em 29/10 o #2
-  foi marcado como cheio no SendFlow para o link voltar ao #1; a conferência diária desmarca o #2 quando o #1 passar
-  de 650. O clique continua gerando `lp_grupo_clique` e `GroupClick`.
+  foi marcado como cheio no SendFlow para o link voltar ao #1. **Em 01/11 o #2 (vazio) saiu da campanha** para não
+  receber as mensagens agendadas, que vão para todos os grupos da campanha; o grupo continua no WhatsApp. Quando o #1
+  passar de 650, o #2 é reimportado (`import-groups-action`, jid 120363430862559950, sem padronizar) e vira o grupo
+  da vez do link e das mensagens. O clique continua gerando `lp_grupo_clique` e `GroupClick`.
 - **Teste:** campanha separada "Teste BF", sem criação de grupos. O grupo de teste antigo se perdeu com o número que
   caiu; o novo é criado no celular do Mateus, com o 93618-8016 como admin, e importado na campanha. Toda mensagem
   vai primeiro para lá.
