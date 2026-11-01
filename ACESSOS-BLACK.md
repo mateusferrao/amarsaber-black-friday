@@ -79,6 +79,9 @@ remoção voltar (o 1º vencimento é em fevereiro/2027). A renovação (avisos 
 
 ## Kommo: e-mail automático com o link do grupo
 
+Caixa conectada em 01/11: **amarsaber@amarveterinaria.com.br** (servidor `mail03.l4email.com`, IMAP 993 e SMTP 465 com
+SSL). Precisa estar como **Compartilhado**: a automação do funil envia pela caixa compartilhada da equipe.
+
 1. **Caixa de e-mail:** menu **E-mail** → engrenagem / configurações da caixa → conferir o endereço conectado e se está
    ativo. Esse endereço é o remetente.
 2. **Modelo:** E-mail → Modelos (ou Configurações → Modelos de e-mail) → **+ Novo modelo**. Nome
@@ -104,9 +107,7 @@ O n8n grava o e-mail da compra no contato antes de criar o lead, porque o e-mail
 > automaticamente em alguns minutos. Se você usou outro número na compra, responda este e-mail com o WhatsApp certo,
 > que a equipe libera.
 >
-> Seu acesso à comunidade vale até [as_comunidade_ate].
->
-> O curso Atendimento Extraordinário chega em outro e-mail, da MemberKit, com o login da área de membros. O Guia
+> O acesso ao curso Atendimento Extraordinário chega em outro e-mail, da MemberKit, com o seu login. O Guia
 > impresso é enviado em até 10 dias úteis.
 >
 > Dúvidas: WhatsApp (31) 9 5349-5052.
