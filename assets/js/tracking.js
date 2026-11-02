@@ -170,11 +170,13 @@
   posthog.register(origem);
   Object.keys(origem).forEach(function (k) { clarity('set', k, String(origem[k])); });
 
-  // Teste A/B do hero da captura: a variante vem do script no <head> (<html data-hero>) e vai em todo evento.
-  var heroVariante = document.documentElement.getAttribute('data-hero');
-  if (heroVariante) {
-    posthog.register({ hero_variante: heroVariante });
-    clarity('set', 'hero_variante', heroVariante);
+  // Teste da página da captura (antiga × nova): a versão vem do script no <head> (<html data-pagina>) e vai em
+  // todo evento, inclusive no obrigado (o register fica guardado). O teste A/B do hero acabou em 02/11.
+  posthog.unregister('hero_variante');
+  var paginaVersao = document.documentElement.getAttribute('data-pagina');
+  if (paginaVersao) {
+    posthog.register({ pagina_versao: paginaVersao });
+    clarity('set', 'pagina_versao', paginaVersao);
   }
 
   // ---------- Envio ----------

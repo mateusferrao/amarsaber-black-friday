@@ -135,8 +135,8 @@ a pessoa da captura até o clique no checkout.
 | engajamento | `lp_presente_espiar` | passou o mouse ou tocou numa caixa de presente (1 vez por caixa) | `presente` (1, 2, 3) | — |
 | intenção | `lp_cta_clique` | botão que abre o formulário | `posicao` (hero, presentes, provas, passos, dra, sumario, fechamento, barra) | — |
 | intenção | `lp_form_aberto` | a gaveta do formulário abriu | `posicao` (o mesmo do botão; `url` se chegou com `#form-guia`) | — |
-| intenção | `lp_form_inicio` | 1ª tecla digitada num campo (desde 30/10; antes era o foco, que a gaveta dá sozinha ao abrir) | — | — |
-| intenção | `lp_form_fechado` | fechou a gaveta sem enviar (X, fundo, Esc ou voltar) | `segundos` (aberta), `digitou` | — |
+| intenção | `lp_form_inicio` | 1º texto num campo, uma vez por página (desde 30/10; antes era o foco, que a gaveta dá sozinha ao abrir). O preenchimento automático do navegador também conta | — | — |
+| intenção | `lp_form_fechado` | fechou a gaveta sem enviar (X, fundo, Esc ou voltar) | `segundos` (aberta), `digitou` (teclou nesta abertura, desde 02/11), `preenchido` (algum campo com texto, de qualquer origem), `abertura` (1ª, 2ª…) | — |
 | intenção | `lp_form_erro` | tentou enviar com erro (1 evento por campo) | `campo` (nome, whatsapp), `motivo` (vazio, curto, formato, ddd) | — |
 | conversão | `lp_lead` + identify (`wa_55` + WhatsApp, o mesmo id do /teste/) | o n8n confirmou o recebimento | `repetido` | `Lead` (navegador + servidor, mesmo `eventID`) |
 | conversão | `lp_lead_falha` | n8n fora do ar (2 tentativas) | `motivo`, `nome`, `whatsapp` | — |
@@ -144,12 +144,25 @@ a pessoa da captura até o clique no checkout.
 
 - **Formulário:** só nome e WhatsApp (desde 28/10), dentro de uma gaveta que abre em todos os botões
   (`href="#form-guia"`). O funil fica `lp_cta_clique` → `lp_form_aberto` → `lp_form_inicio` → `lp_lead`.
-- **Teste A/B do hero (desde 30/10):** o script no `<head>` da captura sorteia `a` (texto atual) ou `b` (diz o que é o
-  Guia), 50/50, guardado no navegador (`as_hero`). Quem vem do anúncio de cinomose (nome ou ID `120250476746130232`)
-  vê `dor` ("Paciente com cinomose? Tem protocolo.") e fica fora do sorteio. A variante vai em todo evento do
-  PostHog (`hero_variante`), como tag no Clarity e na coluna `Variante_hero` da planilha. Insight
-  **Captura · A/B do hero** no dashboard do funil. Revisar: `?hero=a`, `?hero=b` ou `?hero=dor` com `?interno=1`.
-  Regra: até ~07/11; a `b` fica, a não ser que a conversão caia mais de 3 pontos ou a entrada no grupo caia.
+- **`digitou` antes de 02/11 não vale:** marcava só se algum campo tinha texto, e o texto fica lá ao reabrir a
+  gaveta, ao voltar para a página e no preenchimento automático. De 30/10 a 02/11, 66 fechamentos saíram com
+  `digitou = true`, inclusive 41 de quem nunca teve `lp_form_inicio`.
+- **Teste A/B do hero (30/10 a 02/11, encerrado):** `a` 33,0% × `b` 32,5% de visitante → lead (Meta, 550 pessoas),
+  empate; ficou a `b`. A variante `dor` (anúncio de cinomose) foi desligada: 4,8% contra 31% antes dela.
+- **Teste da página (desde 02/11): página de 29/10 × página atual.** O script no `<head>` sorteia `antiga` ou `nova`,
+  50/50, para todo mundo (inclusive o anúncio de cinomose), guardado no navegador (`as_pagina`). As versões ficam
+  no `index.html` com `data-so="antiga"` ou `"nova"`.
+  - `antiga` = a página como estava até 29/10, 21h: hero `a`, sem selo, sem "Quem já tem o Guia", presentes sem
+    pistas e o formulário antigo ("Pegue a sua chave").
+  - `nova` = a página atual com o hero `b`, sem "uns 10 até a live" no formulário.
+  - A versão vai em todo evento do PostHog (`pagina_versao`, guardado também no obrigado), como tag no Clarity e,
+    no lead, no campo `hero_variante` → coluna `Variante_hero` da planilha (`antiga` / `nova`).
+  - Revisar: `?pagina=antiga` ou `?pagina=nova` com `?interno=1`.
+  - Por que: depois das mudanças de 29/10 a conversão caiu de 47% para 32% (Meta), mas o anúncio também ficou mais
+    frio (CTR de 2,8% para 1,2%). O teste separa as duas coisas.
+  - Regra: decidir em 06/11 à noite pela conversão visitante → lead do tráfego pago, por versão. Ganha a que
+    converter mais; com menos de 3 pontos de diferença, fica a `antiga`. Para encerrar, apague os elementos
+    `data-so` da que perdeu e troque o sorteio por `v = '<vencedora>'`.
 - **Lead na Meta:** só depois do OK do n8n, nunca no clique. Vai com advanced matching (telefone, nome,
   `external_id` = distinct_id do PostHog) e, pelo n8n, também pela API de Conversões, com o mesmo
   `event_id` (a Meta deduplica). O mesmo WhatsApp no mesmo navegador não gera um segundo `Lead`.
@@ -157,7 +170,8 @@ a pessoa da captura até o clique no checkout.
   "Testar eventos" do Gerenciador de Eventos) e enviar o formulário.
 - **Clarity:** `etapa_max` = `engajou` → `iniciou_form` → `virou_lead` (captura) e `clicou_grupo` (obrigado).
 - **Planilha:** uma linha por envio, com Canal, Campanha/Conjunto/Anúncio (nome e ID), utm_* brutos,
-  fbclid, Repetido, Interno (`?interno=1`), Página, distinct_id, event_id e Variante_hero.
+  fbclid, Repetido, Interno (`?interno=1`), Página, distinct_id, event_id e Variante_hero (`a`/`b`/`dor` até 02/11;
+  `antiga`/`nova` desde 02/11).
 - **Otimizar campanha de captura:** em `Lead`. Públicos: `Lead` nos últimos 30 dias (excluir de captura,
   incluir no remarketing da Black); `GroupClick` = clicou para entrar no grupo; captura vista sem `Lead` = remarketing
   de captura.

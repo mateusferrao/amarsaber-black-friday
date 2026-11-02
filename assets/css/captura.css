@@ -30,11 +30,10 @@ h1, h2, h3, p { margin: 0; }
 a { color: inherit; text-decoration: none; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
-/* Teste A/B do hero: só aparecem os [data-so] da variante em <html data-hero> (script no <head>). Sem JS, a "a". */
-html:not([data-hero]) [data-so]:not([data-so~="a"]),
-html[data-hero="a"] [data-so]:not([data-so~="a"]),
-html[data-hero="b"] [data-so]:not([data-so~="b"]),
-html[data-hero="dor"] [data-so]:not([data-so~="dor"]) { display: none !important; }
+/* Teste da página: só aparecem os [data-so] da versão em <html data-pagina> (script no <head>). Sem JS, a "nova". */
+html:not([data-pagina]) [data-so]:not([data-so~="nova"]),
+html[data-pagina="antiga"] [data-so]:not([data-so~="antiga"]),
+html[data-pagina="nova"] [data-so]:not([data-so~="nova"]) { display: none !important; }
 
 .cap-container { width: 100%; max-width: 1140px; margin: 0 auto; padding: 0 20px; }
 

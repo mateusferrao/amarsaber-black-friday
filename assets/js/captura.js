@@ -177,7 +177,8 @@
       fbp: cookie('_fbp'),
       fbc: fbc,
       posthog_distinct_id: distinctId,
-      hero_variante: document.documentElement.getAttribute('data-hero') || '', // teste A/B do hero
+      // Teste da página (antiga × nova). Vai no campo hero_variante para cair na coluna Variante_hero da planilha.
+      hero_variante: document.documentElement.getAttribute('data-pagina') || '',
       pagina: location.href.split('#')[0],
       referrer: document.referrer,
       // ?test_event_code=TEST123 → o Lead do servidor aparece em "Testar eventos" no Gerenciador de Eventos
@@ -271,12 +272,25 @@
   var aberta = false;
   var origem = null;
   var abertaEm = 0;
+  var aberturas = 0;
+  var digitouAgora = false; // digitou nesta abertura da gaveta
+  // Tecla de verdade nesta abertura. O valor do campo não serve: o navegador repõe o que estava escrito ao
+  // voltar para a página, o preenchimento automático põe o nome sozinho e a abertura anterior deixa o texto lá.
+  if (form) {
+    form.addEventListener('keydown', function (e) {
+      var tecla = e.key || '';
+      if (aberta && e.target.tabIndex !== -1 && (tecla.length === 1 || tecla === 'Backspace' || tecla === 'Delete')) digitouAgora = true;
+    });
+    form.addEventListener('beforeinput', function (e) { if (aberta && e.target.tabIndex !== -1 && e.inputType !== 'insertReplacementText') digitouAgora = true; });
+  }
 
   function abrir(posicao, quem) {
     if (aberta) return;
     aberta = true;
     origem = quem || null;
     abertaEm = Date.now();
+    aberturas++;
+    digitouAgora = false;
     gaveta.classList.add('is-aberta');
     document.documentElement.classList.add('cap-sem-rolagem');
     try { history.pushState({ gaveta: true }, ''); } catch (e) {}
@@ -288,9 +302,10 @@
     aberta = false;
     gaveta.classList.remove('is-aberta');
     // Fechou sem enviar: quanto tempo ficou e se chegou a digitar (onde as desistências acontecem).
+    // digitou = teclou nesta abertura · preenchido = algum campo com texto, de qualquer origem · abertura = 1ª, 2ª…
     if (form && !form.dataset.enviado && window.asTracking) {
-      var digitou = [].some.call(form.querySelectorAll('input:not([tabindex="-1"])'), function (i) { return i.value.trim() !== ''; });
-      window.asTracking.capture('lp_form_fechado', { segundos: Math.round((Date.now() - abertaEm) / 1000), digitou: digitou, etapa: 'intencao' });
+      var preenchido = [].some.call(form.querySelectorAll('input:not([tabindex="-1"])'), function (i) { return i.value.trim() !== ''; });
+      window.asTracking.capture('lp_form_fechado', { segundos: Math.round((Date.now() - abertaEm) / 1000), digitou: digitouAgora, preenchido: preenchido, abertura: aberturas, etapa: 'intencao' });
     }
     document.documentElement.classList.remove('cap-sem-rolagem');
     if (!doHistorico) { try { if (history.state && history.state.gaveta) history.back(); } catch (e) {} }
