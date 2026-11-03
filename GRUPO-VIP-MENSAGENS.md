@@ -45,7 +45,7 @@ como relatório; a equipe não precisa mais mandar o texto abaixo. Texto antigo,
 ## Agendado no SendFlow (28/10)
 Tudo da tabela do calendário está agendado na campanha "Black 2026 · Grupo VIP", inclusive os casos ainda sem
 validação. Fora do agendamento:
-- **A5 (vídeo) e A6 (áudio):** entram quando a Dra. mandar os arquivos;
+- **A5 (vídeo):** entra quando a Dra. mandar o arquivo (o A6, áudio, foi agendado em 03/11);
 - **6, 6a, 6b e 7:** templates "Live 10/11 · …" no painel, para o Mateus disparar na live.
 
 Se a Dra. mudar um texto, corrigir aqui e editar ou recriar a ação correspondente:
@@ -248,9 +248,12 @@ difícil que decido sozinho
 Vídeo de 15 a 30 s da Dra. com as 3 caixas rosa, sem mostrar o conteúdo. Legenda:
 > Embrulhando os presentes de terça. 🎁 Ninguém fora daqui sabe o que tem dentro.
 
-## A6 · dom 08/11, 19h30 · áudio da Dra. *(a Dra. grava até 08/11)*
-Áudio de até 1 minuto, com as palavras dela: quem ela é em uma frase, o que acontece terça às 20h, por que vale
-assistir ao vivo (os casos reais) e um pedido: tocar em "Vou" no evento do grupo.
+## A6 · dom 08/11, 19h30 · áudio da Dra. *(recebido em 03/11, agendado)*
+Áudio de 46 s gravado pela Dra. (enviado em 03/11), como mensagem de voz, sem legenda. O roteiro pedido era: quem ela
+é em uma frase, o que acontece terça às 20h, por que vale assistir ao vivo (os casos reais) e um pedido: tocar em
+"Vou" no evento do grupo.
+Arquivo: `assets/audio/a6-convite-dra.ogg` (Opus, o formato da mensagem de voz do WhatsApp), publicado em
+https://black.amarsaber.com.br/assets/audio/a6-convite-dra.ogg para o SendFlow buscar.
 
 ## 3b · seg 09/11, 12h · perguntas para a live
 > Amanhã, na live, vou responder as dúvidas de vocês.
