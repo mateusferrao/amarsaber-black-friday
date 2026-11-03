@@ -58,6 +58,7 @@ Se a Dra. mudar um texto, corrigir aqui e editar ou recriar a ação corresponde
 | 1 | `ixFXa9om1ussq8YmJKew` |
 | A4 | `0ogzsDKp7XSVJoC5mGi3` |
 | 2 | `oRm0HcjOnRiMJAYMxbhO` |
+| A6 (áudio) | `r3q0LMKNWbAze2QpV6TK` |
 | 3b | `bNgZpbKGe3ALNXE9TN2A` |
 | 3 | `Qwzcnzc47cLV7v5peUVU` |
 | L0 | `EXjX1wXtY3bWpLi60XVT` |
