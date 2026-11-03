@@ -5,7 +5,7 @@ Quem paga a Black na Yampi recebe sozinho:
 | O quê | Onde | Prazo | Como chega |
 |---|---|---|---|
 | Curso Atendimento Extraordinário | Memberkit, assinatura **Black 2026 · Atendimento Extraordinário** (id 38626, Turma A 394987) | 365 dias a partir do pagamento | integração nativa Yampi → Memberkit, com o webhook da Yampi filtrado pelos 2 produtos (e-mail de boas-vindas do Memberkit) |
-| Comunidade Amar Saber | grupo **Comunidade - Guia Amar Saber** no WhatsApp, campanha de mesmo nome no SendFlow | 3 meses a partir do pagamento | e-mail com o link (automação do Kommo) e aprovação automática da entrada |
+| Comunidade Amar Saber | grupo **Comunidade - Guia Amar Saber** no WhatsApp, campanha de mesmo nome no SendFlow | 3 meses a partir do pagamento | e-mail com o link (automação do Kommo); desde 03/11 a pessoa entra direto pelo link, sem aprovação |
 
 Produtos da Yampi que liberam: **46520027** (Guia + curso + comunidade, R$ 497) e **46522438** (downsell curso +
 comunidade, R$ 187). Não há upsell. Qualquer outro produto da loja não libera nada.
@@ -19,9 +19,10 @@ Yampi pedido pago (46520027 ou 46522438)
        Pedidos   webhook as-black-acessos + varredura de 30 min na API da Yampi
                  → tabela "AS · Acessos Black" + aba "Comunidade · Acessos"
                  → (KOMMO_ATIVO) lead em Clientes Black / Acesso enviado → e-mail com o link do grupo
-       Entradas  a cada 5 min: pedidos de entrada no grupo (aprovação ligada no grupo)
-                 → mesmo WhatsApp da compra (DDD + 8 últimos dígitos): aprova (APROVAR_ATIVO)
-                 → não bateu: aba "Comunidade · Pendentes" depois de 30 min (nunca recusa)
+       Entradas  DESLIGADO desde 03/11 (gatilho "A cada 5 minutos" desativado): o grupo não pede mais
+                 aprovação, para não arriscar banimento do chip. A conferência de intrusos é feita depois.
+                 (Quando ligado: pedido de entrada com o mesmo WhatsApp da compra → aprova; não bateu → aba
+                 "Comunidade · Pendentes" depois de 30 min.)
        Saída     fora do escopo por enquanto (gatilho das 9h desativado; veja abaixo)
 ```
 
@@ -35,6 +36,23 @@ Yampi pedido pago (46520027 ou 46522438)
 - **Reembolso:** `cancelled`/`refunded` depois de pago marca a linha como `revogado`, para a equipe ver. Ninguém sai
   do grupo sozinho. Status desconhecido depois de pago só gera observação para conferir. O alias exato do reembolso na
   Yampi ainda não apareceu num pedido real.
+
+## Sem aprovação de entrada (desde 03/11)
+
+O Mateus desligou "Aprovar novos participantes" no grupo da comunidade, e o gatilho *A cada 5 minutos* do fluxo foi
+desativado. Por isso:
+- quem tem o link entra direto, comprador ou não. O link só sai no e-mail da compra, mas pode ser repassado;
+- a etapa **Entrou no grupo** do Kommo e a coluna `no_grupo` da tabela não são mais marcadas sozinhas;
+- a aba **Comunidade · Pendentes** para de receber linhas;
+- **conferência de intrusos:** comparar os participantes do grupo (exportação do SendFlow) com os WhatsApp da tabela
+  **AS · Acessos Black** (DDD + 8 últimos dígitos, a mesma regra) e tirar à mão quem não comprou nem é da equipe;
+- para religar a aprovação: ligar a opção no grupo e reativar o gatilho *A cada 5 minutos* (o código continua igual,
+  com `APROVAR_ATIVO = true`).
+
+O texto do e-mail no Kommo ainda fala em "peça para entrar" e "aprovação automática". Texto novo para o modelo
+`AS · Acesso comunidade Black`, no lugar do parágrafo "Como entrar":
+
+> Como entrar: toque no link com o seu WhatsApp e entre no grupo.
 
 ## Fora do escopo por enquanto: saída e renovação
 
