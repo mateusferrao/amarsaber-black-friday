@@ -196,7 +196,7 @@ Para quem está fora de todos os grupos do SendFlow e por isso não recebe nada 
 | Fluxo | Quem | Sequência |
 |---|---|---|
 | `vip_cadastro` | Cadastrou no /acesso-antecipado/ há mais de 2 h (sem "Interno") e não está em nenhum grupo | `as_vip_convite` (só antes de 10/11 20h30) → `as_vip_live` (10/11 18h) → `as_vip_lancamento` → `as_prova` → `as_triagem` → reta final |
-| `vip_saiu` | Entrou no grupo e saiu (exportação do SendFlow com "Saiu = Sim") e não voltou | `as_vip_live` (10/11 18h) → `as_vip_lancamento` → `as_prova` → `as_triagem` → reta final |
+| `vip_saiu` | Entrou no grupo e saiu (exportação do SendFlow com "Saiu = Sim") e não voltou. Exceção (04/11): quem saiu só dos #3, #4 ou #5 (grupos da Black passada) sem cadastro deste ano não entra | `as_vip_live` (10/11 18h) → `as_vip_lancamento` → `as_prova` → `as_triagem` → reta final |
 
 - **Horários:**
   - convite: na primeira janela 8h–21h depois de entrar na fila;
@@ -205,6 +205,10 @@ Para quem está fora de todos os grupos do SendFlow e por isso não recebe nada 
   - triagem: 3 dias depois, às 10h;
   - reta final: a de todos.
 - **Antes de 10/11 20h30:** só o convite e o aviso da live (10/11 18h, `LIVE_EM`; descartado depois das 20h, `LIVE_FIM`) saem. O resto espera `LIGA_EM`.
+- **Grupos considerados:** a exportação é da campanha inteira, então todo grupo da campanha conta (os #3 a #5
+  importados em 04/11 e qualquer grupo novo, como um #6). A lista `GRUPOS_BLACK_PASSADA` no nó "Montar fila de quem
+  está fora" (nomes exatos dos #3, #4 e #5) só serve para não mandar mensagem individual a quem sai desses grupos sem
+  ter se cadastrado este ano. Grupo novo não precisa entrar em lista nenhuma.
 - **Entrada na fila:** todo dia às 7h05, pelo `AS · Grupos SendFlow → Sheets` (ramo "Fora do grupo → fila"). Quem já
   tem linha na fila (teste, checkout, compra) não entra de novo.
 - **Conferência do grupo:**
