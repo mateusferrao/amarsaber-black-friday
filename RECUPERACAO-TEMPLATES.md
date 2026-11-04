@@ -251,8 +251,9 @@ Para quem está fora de todos os grupos do SendFlow e por isso não recebe nada 
 
 ### Proteções do disparador (29/10)
 - **Só depois de `LIGA_EM`** (10/11, 20h30) e com `ENVIO_ATIVO = true`. Antes disso, as linhas esperam sem mudar.
-- **Teto de 200 envios por dia** somando todo mundo (`MAX_ENVIOS_DIA`): a BM sem verificação tem ~250 conversas
-  iniciadas por 24 h na Meta. O que passa do teto vai para o dia seguinte às 8h.
+- **Teto de 1.600 envios por dia** somando todo mundo (`MAX_ENVIOS_DIA`, era 200 até 04/11): a BM - Amar Veterinária
+  foi verificada em 04/11 e a Meta libera 2.000 conversas iniciadas por 24 h. A folga de 400 fica para as conversas
+  que a equipe abre no Kommo. O que passa do teto vai para o dia seguinte às 8h.
 - **No máximo 40 linhas por rodada** de 5 min ("Ordenar e limitar"), com checkout, Pix e cartão na frente. Sem isso,
   uma rodada longa se sobrepõe à seguinte e a mesma pessoa recebe duas vezes.
 - **Falha de envio:** o ramo de falha do bot chama `acao=falha` e a linha fica `erro_envio` (para revisar à mão).
