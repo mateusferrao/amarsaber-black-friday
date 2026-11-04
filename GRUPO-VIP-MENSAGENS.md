@@ -65,7 +65,10 @@ validação. Fora do agendamento:
 - **A5 (vídeo):** entra quando a Dra. mandar o arquivo (o A6, áudio, foi agendado em 03/11);
 - **6, 6a, 6b e 7:** templates "Live 10/11 · …" no painel, para o Mateus disparar na live.
 
-Se a Dra. mudar um texto, corrigir aqui e editar ou recriar a ação correspondente:
+O SendFlow não edita mensagem agendada. Para mudar um texto, corrigir aqui, criar a ação nova no mesmo horário e
+cancelar a antiga. Em 04/11 a revisão de copy (valor, escassez "limitadíssimo" e "esgotou rápido", garantia de 7 dias e
+ponte de cada caso para a oferta) recriou 28 ações. Os IDs abaixo já são os novos. Os templates manuais 6a e 7 não mudaram.
+
 
 | Mensagem | Ação no SendFlow |
 |---|---|
@@ -73,46 +76,46 @@ Se a Dra. mudar um texto, corrigir aqui e editar ou recriar a ação corresponde
 | A2 | `QsS9kbSo7Oa0CJAXKFNG` |
 | A3 | `8DLm70xruo2Po31G3Lbz` |
 | 1 | `ixFXa9om1ussq8YmJKew` |
-| A4 | `0ogzsDKp7XSVJoC5mGi3` |
-| 2 | `oRm0HcjOnRiMJAYMxbhO` |
+| A4 | `q6jEK9AZ46xteZrohm5n` |
+| 2 | `KWAy0SbMt7GWefPujf7T` |
 | A6 (áudio) | `r3q0LMKNWbAze2QpV6TK` |
-| 3b | `bNgZpbKGe3ALNXE9TN2A` |
-| 3 | `Qwzcnzc47cLV7v5peUVU` |
-| L0 | `EXjX1wXtY3bWpLi60XVT` |
-| 4 | `kX7jwXrr82KSgQGupy9Q` |
-| 5 | `jC6oXuqR7OQzmqWW9BdW` |
-| 8 | `ZR23Fy6ZMqy1R9l8fmc4` |
+| 3b | `Ugm66Bj4iEVkS447a5ac` |
+| 3 | `PHK8CjjF09qvqx0otLJx` |
+| L0 | `CzV6269BQYMredo04dCD` |
+| 4 | `j2DrN3qDQrEnft2MnX0O` |
+| 5 | `wrZc84lnBd4o6uBUN5nc` |
+| 8 | `QcfT2dAm0WrMHnrXCyKo` |
 | C | `ydiyawtpel0iWkFLiSVx` |
 | caso01 12h | `sn7uqcsuhtw1Q1u3SFpz` |
-| caso01 19h30 | `z481mIXN7LF88cvqu6sq` |
+| caso01 19h30 | `xdjGy9YghTZmIlWrSZ7s` |
 | caso02 12h | `etuSITATzwF8ofrMyxJ7` |
-| caso02 19h30 | `Y47l4175hnlejS34BFQ6` |
+| caso02 19h30 | `sbPg1Q9JiRrjU1TEkzNO` |
 | caso03 12h | `GndDMCP25ftk29yy1nDv` |
-| caso03 19h30 | `T07e8LP1hv4YetuxGEUN` |
+| caso03 19h30 | `pdjh8la75U2o1j65YYwI` |
 | caso04 12h | `3vYwPj0lgrknz2B95Rgm` |
-| caso04 19h30 | `i3kIjLLQEshhEgPc9iqv` |
+| caso04 19h30 | `04PmXtCJdxiVamLutFJL` |
 | caso05 12h | `D6BfijfN5YFbgWPd1BwI` |
-| caso05 19h30 | `YDeIiRU8oV6r01dCfqeK` |
+| caso05 19h30 | `JHksfFkpkIgj8Cn2EX7V` |
 | caso06 12h | `sLZ7Iv5mXlXsvZQPTMsu` |
-| caso06 19h30 | `tPI3bWCsa3vpFG4DBYmz` |
+| caso06 19h30 | `AE6A5OfOUGu5rv0PeG7U` |
 | caso07 12h | `07RlmBbsJ2AUhTP3n58H` |
-| caso07 19h30 | `D3TTwXfI3RfXGFkTZvQL` |
+| caso07 19h30 | `imV70WlO4vrIY5jTNFUK` |
 | caso08 12h | `2G1ECWkPCQowpk5gLJpE` |
-| caso08 19h30 | `C7IvRcIMTD4uwaps5x4Q` |
+| caso08 19h30 | `lEAXBdcBOtb4yH222MT9` |
 | caso09 12h | `yQ423YctCQJpSZ2FoYuB` |
-| caso09 19h30 | `HBZUda102LxHDVqMjols` |
+| caso09 19h30 | `cmuO6dPFy7lZZToljpFC` |
 | caso10 12h | `GElso3fOUhUyzMYnowmZ` |
-| caso10 19h30 | `04SW32sawJom51bBo0s1` |
-| p1 | `tyAapSAhuXbtX1oFr8HS` |
-| p2 | `zDyjJV04YG48N7gmdmZL` |
-| p3 | `K0hRp8H6oNymsnRub1T9` |
-| p4 | `ZczZU5qvU9id0CDYsYNk` |
-| p5 | `7sHt7SVUfZ5j4Nf4GGmy` |
-| r2711 | `odddwgPBID3AQaa7cM0g` |
-| r2811 | `wkvmE7QJ85YCy9TBiZHj` |
-| r2911 | `wMQFeSKP4u5yfYCuU5zq` |
-| r3011a | `gMTxlqOjQacpldn0mqWd` |
-| r3011b | `odD54aogJwLK5Y2XCSqZ` |
+| caso10 19h30 | `96QUEcZ9IzVBkYtK7czs` |
+| p1 | `Jk6feVmgq5aN2zekeDNm` |
+| p2 | `zY8IAk7Mb4Gs9q5wgzeY` |
+| p3 | `rSFLfEChUc1KKCPzODLr` |
+| p4 | `kH2qRB0T3tc3pB0d202s` |
+| p5 | `XLA8MVcctkXTve5UDOu0` |
+| r2711 | `uKfTDQ7RJhZqIvd8dTVg` |
+| r2811 | `gQfdwoaFw4HRk6Pcn6Qs` |
+| r2911 | `L9j9t66xLypKuouprAsw` |
+| r3011a | `U7VqrrHl9s86dHpb3Vo4` |
+| r3011b | `EBYhbxyXscwb6XdrPtk2` |
 | r3011c | `aoHlwWFtaRhkGJSfbBaA` |
 | E | `A7LrKVosvsZiuGVgNL7o` |
 
@@ -249,22 +252,39 @@ Logo depois, o evento do WhatsApp: "Live da Black · Guia de Protocolos", 10/11,
 
 
 ## A4 · qui 05/11, 12h · enquete
-> Quero preparar a live pensando em vocês. Hoje, o que mais te trava na rotina?
+> Estou montando os casos da live de terça e quero partir do que mais pesa na rotina de vocês. O tema mais votado
+> aqui guia os casos que eu levo para a live.
+>
+> Qual desses mais te trava hoje?
 
 Enquete, uma resposta só: O plantão: dose e conduta na hora · A consulta: o tutor que diz "vou pensar" · O caso
 difícil que decido sozinho
 
 ## 2 · sex 06/11, 12h · 2ª dica
-> Segunda dica: outro presente é para aquele caso difícil que você decide sozinho, sem ter com quem conferir a
-> conduta.
+> Segunda dica dos presentes de terça: um deles é para o caso difícil que você decide sozinho, sem ninguém para
+> conferir a conduta.
 >
-> O terceiro eu não conto. Só adianto que é o maior que o Guia de Protocolos já teve.
+> O terceiro é a condição, e essa eu só abro ao vivo. Adianto que é a maior que o Guia de Protocolos já teve e que o
+> lote é limitadíssimo. Na última Black o estoque esgotou rápido.
 >
-> 10/11, terça, 20h, ao vivo.
+> Terça, 10/11, às 20h, no meu Instagram. Quem está aqui recebe o link antes de todo mundo.
 
-## A5 · sáb 07/11, 12h · vídeo de bastidor *(a Dra. grava até 07/11)*
-Vídeo de 15 a 30 s da Dra. com as 3 caixas rosa, sem mostrar o conteúdo. Legenda:
-> Embrulhando os presentes de terça. 🎁 Ninguém fora daqui sabe o que tem dentro.
+## A5 · sáb 07/11, 12h · vídeo: para que serve cada presente *(a Dra. grava; agendar quando o vídeo chegar)*
+Vertical, de 30 a 50 s. Ela fala direto para a câmera, num lugar da Amar (consultório ou corredor), com luz natural.
+Não abre nem embrulha presentes.
+
+- **Abertura:** "Na terça, às 20h, eu entro ao vivo no meu Instagram pra abrir os três presentes da Black do Guia de
+  Protocolos. E hoje eu vou contar só pra quem tá aqui no grupo pra que serve cada um."
+- **Presente 1:** "O primeiro é pra aquela hora da consulta em que você explica tudo, o tutor diz 'vou pensar'… e o
+  animal vai embora sem tratar. Esse presente muda essa conversa."
+- **Presente 2:** "O segundo é pro caso difícil que você decide sozinho, sem ninguém pra conferir a conduta. Com ele,
+  você não fica mais sozinho nessa."
+- **Presente 3:** "E o terceiro… esse eu não conto. Só digo que é a maior condição que o Guia já teve."
+- **Fechamento:** "Terça, 20h, ao vivo. O link sai aqui no grupo antes de todo mundo. Toca em 'Vou' no evento aqui do
+  grupo, que o WhatsApp te lembra na hora."
+
+Legenda:
+> Três presentes, terça, 20h, ao vivo. 🎁 Hoje, só aqui no grupo, eu conto para que serve cada um.
 
 ## A6 · dom 08/11, 19h30 · áudio da Dra. *(recebido em 03/11, agendado)*
 Áudio de 46 s gravado pela Dra. (enviado em 03/11), como mensagem de voz, sem legenda. O roteiro pedido era: quem ela
@@ -274,22 +294,26 @@ Arquivo: `assets/audio/a6-convite-dra.ogg` (Opus, o formato da mensagem de voz d
 https://black.amarsaber.com.br/assets/audio/a6-convite-dra.ogg para o SendFlow buscar.
 
 ## 3b · seg 09/11, 12h · perguntas para a live
-> Amanhã, na live, vou responder as dúvidas de vocês.
+> Amanhã, na live, eu respondo as dúvidas de vocês: o caso que está te travando, a dose que você nunca lembra, a
+> pergunta sobre o Guia ou sobre a Black.
 >
-> Abri uma caixinha de perguntas nos meus stories. Manda lá o que você quer que eu responda, sobre o Guia, sobre a
-> Black ou sobre um caso da sua rotina. As mais pedidas entram na live.
+> Abri uma caixinha de perguntas nos meus stories. Manda lá, e as mais pedidas entram na live.
 >
 > https://www.instagram.com/mariapaulaferrarivet/
 
 > Nota: abrir a caixinha nos stories antes de enviar esta mensagem.
 
 ## 3 · seg 09/11, 19h · D-1 + evento
-> Amanhã, 20h.
+> Amanhã, às 20h.
 >
-> Eu abro os três presentes ao vivo no Instagram e, no mesmo minuto, o link da Black Friday chega aqui no grupo,
-> antes do público. Na última campanha o estoque esgotou rápido, então quem está aqui tem a primeira chance.
+> Eu abro os três presentes ao vivo no Instagram e, no mesmo minuto, o link da Black chega aqui no grupo. Quem está
+> aqui compra antes do público, e isso faz diferença: o lote é limitadíssimo, e na última Black o estoque esgotou
+> rápido.
 >
-> Amanhã às 18h eu mando o link da live.
+> Na live, além dos presentes, eu resolvo casos reais da rotina e respondo as perguntas da caixinha. Pouco antes de
+> começar, mando aqui o link da live.
+>
+> Toca em "Vou" no evento aqui embaixo para o WhatsApp te lembrar.
 
 Logo depois, o mesmo evento do WhatsApp da mensagem 1.
 
@@ -297,29 +321,29 @@ Logo depois, o mesmo evento do WhatsApp da mensagem 1.
 
 # Fase 2 · Dia da live (10/11)
 
-## L0 · 12h · é hoje *(texto novo: revisar)*
+## L0 · 12h · é hoje
 > É hoje, às 20h.
 >
-> Eu entro ao vivo no Instagram e abro os três presentes. O link da Black chega aqui no grupo no mesmo minuto,
-> antes do público.
+> Separei casos reais do plantão para resolver ao vivo, vou responder as perguntas da caixinha e, no fim, abro os
+> três presentes. A condição sai primeiro aqui no grupo. Como o lote é limitadíssimo, quem estiver na live sai na
+> frente.
 >
-> Às 18h eu mando o link da live.
+> Antes de começar, eu mando aqui o link da live.
 
 ## 4 · 18h · 2 h antes
 *Fora do grupo:* no mesmo horário, quem se cadastrou e não entrou (ou saiu) recebe o template `as_vip_live` pela
 recuperação (`RECUPERACAO-TEMPLATES.md`, fluxos vip).
-> Hoje, às 20h.
+> Faltam 2 horas. O link da live: https://www.instagram.com/mariapaulaferrarivet/
 >
-> O link da live é este: https://www.instagram.com/mariapaulaferrarivet/
->
-> Ativa o lembrete do Instagram para não perder. Às 20h os presentes são abertos, e o link da Black chega aqui.
+> Ativa o lembrete no Instagram. Quando eu abrir o último presente, o link da Black chega aqui, antes do público.
 
 > Nota: o lembrete só existe se a live estiver agendada no Instagram. Agendar até 09/11.
 
 ## 5 · 19h50 · 10 min antes · @todos
 > Daqui a 10 minutos eu entro ao vivo: https://www.instagram.com/mariapaulaferrarivet/
 >
-> Deixa o grupo aberto: o link da Black sai aqui assim que os presentes forem abertos.
+> Deixa este grupo aberto. O link da Black sai aqui assim que eu abrir o último presente, antes de aparecer em
+> qualquer outro lugar.
 
 ## 6 · ~20h05 · ao vivo · @todos · manual
 > Estamos ao vivo: https://www.instagram.com/mariapaulaferrarivet/
@@ -354,12 +378,16 @@ recuperação (`RECUPERACAO-TEMPLATES.md`, fluxos vip).
 # Fase 3 · Carrinho aberto (11/11 a 26/11)
 
 ## 8 · qua 11/11, 10h · para quem não viu
-> Para quem não conseguiu ver a live ontem: os três presentes foram o curso Atendimento Extraordinário, 3 meses de
-> comunidade e o Guia de Protocolos · Volume 3 por R$ 497 (de R$ 1.137,70), em até 12x de R$ 50,57.
+> Para quem não conseguiu ver a live ontem, foi isto que eu abri:
 >
-> O link está aqui: https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=pos_live_1111
+> 📘 Guia de Protocolos · Volume 3, impresso
+> 🎁 Curso completo Atendimento Extraordinário
+> 🎁 3 meses na Comunidade Amar Saber
 >
-> A condição vai até 30/11, às 23h59, enquanto o lote durar.
+> De R$ 1.137,70 por R$ 497 à vista ou 12x de R$ 50,57, até 30/11 ou enquanto o lote durar. É limitadíssimo:
+> https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=pos_live_1111
+>
+> Se o Guia não servir para você, tem 7 dias para devolver.
 
 ## 8b · qua 11/11, 19h30 · amanhã começa o Caso do dia *(agendada; ação x4jknWydUrmIlgGO4tg0)*
 Apresenta a série antes do Caso #1, para todo o grupo (a C fala só com quem comprou).
@@ -408,7 +436,8 @@ Enquete "Qual fármaco é contraindicado?", uma resposta só: **A)** Carprofeno 
 >
 > No Guia de Protocolos · Volume 3, p. 17: a tabela de AINEs permitidos e proibidos para gatos, a analgesia multimodal felina e a conduta na dor crônica.
 >
-> A condição da Black vai até 30/11: https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=caso01
+> Se você ficou em dúvida entre duas alternativas, essa tabela resolve isso com o paciente na sua frente. Na Black, o Guia vem com o curso e 3 meses de comunidade:
+> https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=caso01
 
 ### Caso #2 · Otite por Malassezia · 13/11 (sex) *(validado pela Dra. em 29/10)*
 
@@ -430,7 +459,8 @@ Enquete "Qual é a sua conduta?", uma resposta só: **A)** Antibiótico otológi
 >
 > No Guia de Protocolos · Volume 3, p. 46: a classificação das otites pela citologia, o ativo para cocos, bacilos ou leveduras, o protocolo de limpeza e a conduta nas otites recidivantes.
 >
-> A condição da Black vai até 30/11: https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=caso02
+> Otite que volta é o tipo de caso que você leva para a comunidade, comigo e com a equipe. Ela vem junto com o Guia na Black, até 30/11 ou enquanto o lote durar:
+> https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=caso02
 
 ### Caso #3 · Antiemético na parvovirose · 15/11 (dom) *(validado pela Dra. em 29/10)*
 
@@ -452,7 +482,8 @@ Enquete "Qual antiemético você evita?", uma resposta só: **A)** Maropitant ·
 >
 > No Guia de Protocolos · Volume 3, p. 78: o suporte completo na parvovirose, com a fluidoterapia de reposição, os antieméticos indicados e o protocolo para tutores de baixa renda.
 >
-> A condição da Black vai até 30/11: https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=caso03
+> É o protocolo que eu quero aberto num plantão de domingo. Guia impresso, curso e comunidade por 12x de R$ 50,57:
+> https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=caso03
 
 ### Caso #4 · Gato agressivo na consulta · 16/11 (seg) *(validado pela Dra. em 29/10)*
 
@@ -474,7 +505,8 @@ Enquete "Qual é a sua conduta?", uma resposta só: **A)** Trazodona oral duas h
 >
 > No Guia de Protocolos · Volume 3, p. 12: o manejo do paciente ansioso, os protocolos de tranquilização oral para cães e gatos e as orientações de segurança na consulta.
 >
-> A condição da Black vai até 30/11: https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=caso04
+> Com o gato tranquilo, ainda falta conversar com o tutor até ele aceitar o tratamento. O curso Atendimento Extraordinário, que vem junto na Black, ensina essa parte:
+> https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=caso04
 
 ### Caso #5 · Manutenção da atopia · 18/11 (qua) *(validado pela Dra. em 29/10)*
 
@@ -496,7 +528,8 @@ Enquete "Qual é a sua conduta?", uma resposta só: **A)** Inibidor de JAK na ma
 >
 > No Guia de Protocolos · Volume 3, p. 33: o esquema da crise e da manutenção da atopia, com oclacitinib, ilunocitinib, imunobiológicos e a restauração da barreira cutânea.
 >
-> A condição da Black vai até 30/11: https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=caso05
+> A manutenção da atopia está atualizada no Volume 3. Guia, curso e comunidade até 30/11, e o lote é limitadíssimo:
+> https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=caso05
 
 ### Caso #6 · Leishmaniose · 19/11 (qui) *(validado pela Dra. em 29/10)*
 
@@ -518,7 +551,8 @@ Enquete "Qual é a conduta correta?", uma resposta só: **A)** Eutanásia, por s
 >
 > No Guia de Protocolos · Volume 3, p. 72 e 73: a tabela atualizada do BrasilLeish 2025, o estadiamento do estágio I ao VI e os protocolos com miltefosina, alopurinol, domperidona e imunoterapia.
 >
-> A condição da Black vai até 30/11: https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=caso06
+> As diretrizes do BrasilLeish 2025 já estão no Volume 3. Na Black, ele vem com o curso e a comunidade, e você tem 7 dias para devolver se não servir:
+> https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=caso06
 
 ### Caso #7 · Antibiótico na pancreatite · 21/11 (sáb) *(validado pela Dra. em 29/10)*
 
@@ -540,7 +574,8 @@ Enquete "E o antibiótico?", uma resposta só: **A)** Não prescrever de rotina:
 >
 > No Guia de Protocolos · Volume 3, p. 100: o suporte intensivo na pancreatite, a analgesia multimodal, o controle do vômito, os protetores gástricos e os critérios para antibiótico.
 >
-> A condição da Black vai até 30/11: https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=caso07
+> Antibiótico de rotina na pancreatite ainda aparece muito no plantão. Guia, curso e comunidade por R$ 497:
+> https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=caso07
 
 ### Caso #8 · Sarna otodécica · 23/11 (seg) *(validado pela Dra. em 29/10)*
 
@@ -562,7 +597,8 @@ Enquete "Qual é o tratamento de escolha?", uma resposta só: **A)** Gotas otol�
 >
 > No Guia de Protocolos · Volume 3, p. 50: o diagnóstico citológico do Otodectes, o protocolo de limpeza auricular e o manejo antiparasitário em felinos.
 >
-> A condição da Black vai até 30/11: https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=caso08
+> Se você ficou em dúvida entre duas alternativas, essa página resolve isso na consulta. Na Black, o Guia vem com o curso e 3 meses de comunidade:
+> https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=caso08
 
 ### Caso #9 · Início da levotiroxina · 24/11 (ter) *(validado pela Dra. em 29/10)*
 
@@ -584,7 +620,8 @@ Enquete "Como introduzir a medicação?", uma resposta só: **A)** Dose total de
 >
 > No Guia de Protocolos · Volume 3, p. 59: o esquema de introdução em 4 semanas, as doses para os quadros clínicos e subclínicos e os ajustes em pacientes com comorbidades.
 >
-> A condição da Black vai até 30/11: https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=caso09
+> Hipotireoidismo com comorbidade é o tipo de caso que você leva para a comunidade, comigo e com a equipe. Ela vem junto com o Guia na Black, até 30/11:
+> https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=caso09
 
 ### Caso #10 · Imidocarb na babesiose · 26/11 (qui) *(validado pela Dra. em 29/10)*
 
@@ -606,7 +643,8 @@ Enquete "Qual é a conduta imediata?", uma resposta só: **A)** Observação cl�
 >
 > No Guia de Protocolos · Volume 3, p. 85: o cálculo da dose por peso, o intervalo entre as aplicações, as reações adversas e o manejo das complicações.
 >
-> A condição da Black vai até 30/11: https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=caso10
+> Faltam 4 dias para a Black acabar. Guia impresso, curso e comunidade por 12x de R$ 50,57, e o lote é limitadíssimo:
+> https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=caso10
 
 ### Reservas (validadas, não agendadas)
 Se precisar trocar um caso, um destes entra no mesmo dia e horário. Fotos: `assets/img/casos/reserva-erliquiose-p87.jpg` e `assets/img/casos/reserva-gastro-p94.jpg`.
@@ -632,21 +670,22 @@ Se precisar trocar um caso, um destes entra no mesmo dia e horário. Fotos: `ass
 > 📘 Capítulo de hipoglicemia, hipotermia e hipertermia
 > 📘 Protocolo do estado epilético, no capítulo de Emergências
 > 📘 Sedação e tranquilização
-> 📘 Leishmaniose pelas diretrizes Brasileish 2025
+> 📘 Leishmaniose pelas diretrizes BrasilLeish 2025
 > 📘 Vacinas com as atualizações da WSAVA
 >
 > E condutas que mudaram, como o omeprazol preventivo, a atropina antes do Imizol e a dexametasona antes da
-> transfusão. Algumas delas já apareceram aqui no Caso do dia.
+> transfusão.
 >
+> Na Black, o Volume 3 impresso vem com os dois bônus por 12x de R$ 50,57, até 30/11:
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=p1
 
 A lista vem do PDF de atualizações do Volume 2 para o 3 (as mesmas novidades do bloco "Novo no Volume 3" da LP).
 
 ### p2 · ter 17/11, 12h · depoimento
 Imagem: `assets/img/depoimento-1.jpg` (um dos depoimentos da LP).
-> Quem usa o Guia na rotina conta melhor do que eu. 💗
+> Esse recado chegou de uma colega que usa o Guia na rotina. 💗
 >
-> A condição da Black vai até 30/11:
+> Na Black, o Guia vem com o curso e 3 meses de comunidade, até 30/11 ou enquanto o lote durar:
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=p2
 
 ### p3 · sex 20/11, 12h · os dois presentes que vêm junto
@@ -656,7 +695,7 @@ Imagem: `assets/img/depoimento-1.jpg` (um dos depoimentos da LP).
 > para a hora em que o tutor diz "vou pensar"
 > 🎁 3 meses na Comunidade Amar Saber no WhatsApp, comigo e com a equipe, para levar o caso que te travou
 >
-> Tudo por R$ 497 à vista ou 12x de R$ 50,57, até 30/11:
+> Tudo por R$ 497 à vista ou 12x de R$ 50,57, até 30/11, com 7 dias para devolver se não servir para você:
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=p3
 
 ### p4 · dom 22/11, 12h · dúvidas frequentes
@@ -667,6 +706,7 @@ Imagem: `assets/img/depoimento-1.jpg` (um dos depoimentos da LP).
 > *Dá para parcelar?* Sim, em até 12x de R$ 50,57.
 > *Quando chega?* O acesso ao curso e à comunidade chega no e-mail da compra. O Guia impresso é enviado em até 10
 > dias úteis depois da confirmação do pagamento.
+> *E se o Guia não servir para mim?* Você tem 7 dias para devolver.
 >
 > Outra dúvida? WhatsApp (31) 9 5349-5052.
 >
@@ -676,7 +716,7 @@ Imagem: `assets/img/depoimento-1.jpg` (um dos depoimentos da LP).
 Imagem: `assets/img/depoimento-2.jpg`.
 > Mais de 1.500 Guias de Protocolos já foram vendidos. Este é um dos recados que chegam para a gente. 💗
 >
-> A Black vai até segunda, 30/11:
+> A Black vai até segunda, 30/11, e o lote é limitadíssimo:
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=p5
 
 ---
@@ -684,16 +724,20 @@ Imagem: `assets/img/depoimento-2.jpg`.
 # Fase 4 · Reta final (27/11 a 30/11)
 
 ## r2711 · sex 27/11, 9h · hoje é Black Friday
-> Hoje é Black Friday, e a condição do Guia de Protocolos acaba segunda, 30/11, às 23h59.
+> Hoje é Black Friday, e esta é a última semana da condição do Guia de Protocolos: até segunda, 30/11, às 23h59, ou
+> antes, se o lote acabar.
 >
-> Guia de Protocolos · Volume 3, curso Atendimento Extraordinário e 3 meses de comunidade por R$ 497 à vista ou 12x
-> de R$ 50,57:
+> Guia de Protocolos · Volume 3 impresso, curso Atendimento Extraordinário e 3 meses de comunidade por R$ 497 à
+> vista ou 12x de R$ 50,57:
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_reta&utm_content=r2711
 
 ## r2811 · sáb 28/11, 12h · depoimento + dúvidas
 Imagem: `assets/img/depoimento-3.jpg`.
-> Para quem ainda está em dúvida: dá para parcelar em até 12x de R$ 50,57, o acesso ao curso e à comunidade chega no
-> e-mail da compra e o Guia impresso é enviado em até 10 dias úteis.
+> Para quem ainda está em dúvida:
+>
+> • dá para parcelar em 12x de R$ 50,57;
+> • o curso e a comunidade chegam no e-mail da compra, e o Guia impresso é enviado em até 10 dias úteis;
+> • se não servir para você, tem 7 dias para devolver.
 >
 > Qualquer outra dúvida, me chama no WhatsApp (31) 9 5349-5052. A condição vai até segunda, 30/11:
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_reta&utm_content=r2811
@@ -701,21 +745,21 @@ Imagem: `assets/img/depoimento-3.jpg`.
 ## r2911 · dom 29/11, 19h30 · amanhã acaba
 > Amanhã acaba.
 >
-> Segunda, 30/11, às 23h59, a condição da Black do Guia de Protocolos sai do ar. Se você vem deixando para depois, o
-> link é este:
+> Segunda, 30/11, às 23h59, o link da Black sai do ar. Até lá, o Guia de Protocolos · Volume 3 vem com o curso e 3
+> meses de comunidade por R$ 497 ou 12x de R$ 50,57. Se você vem deixando para depois:
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_reta&utm_content=r2911
 
 ## r3011a · seg 30/11, 9h · último dia
 > Último dia.
 >
-> Até hoje, às 23h59: Guia de Protocolos · Volume 3, curso Atendimento Extraordinário e 3 meses de comunidade por
-> R$ 497 ou 12x de R$ 50,57.
+> Até hoje, às 23h59: Guia de Protocolos · Volume 3 impresso, curso Atendimento Extraordinário e 3 meses de
+> comunidade por R$ 497 ou 12x de R$ 50,57. Se não servir, você tem 7 dias para devolver.
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_reta&utm_content=r3011a
 
 ## r3011b · seg 30/11, 19h · faltam 5 horas · @todos
-> Faltam 5 horas para a Black do Guia de Protocolos acabar: Guia · Volume 3, curso Atendimento Extraordinário e 3
-> meses de comunidade por R$ 497 ou 12x de R$ 50,57.
+> Faltam 5 horas. Às 23h59 o link da Black sai do ar.
 >
+> Guia · Volume 3, curso Atendimento Extraordinário e 3 meses de comunidade por R$ 497 ou 12x de R$ 50,57:
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_reta&utm_content=r3011b
 
 ## r3011c · seg 30/11, 23h · última hora · @todos

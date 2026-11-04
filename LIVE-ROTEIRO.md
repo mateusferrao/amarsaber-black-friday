@@ -11,6 +11,11 @@ quiz. Cada caso termina abrindo o presente que resolve aquela dor:
 
 A condição (Presente 03) vem por último, junto com o link.
 
+**Enquete do grupo (A4, 05/11):** o grupo votou qual dessas três dores mais trava, e a mensagem diz que o tema mais
+votado guia os casos da live. Na abertura, a Dra. diz qual ganhou e dá mais tempo a esse caso. A ordem dos casos
+não muda, porque o caso de plantão precisa vir antes da condição. Resultado: `get-action-poll-votes` da ação
+`q6jEK9AZ46xteZrohm5n` no SendFlow.
+
 - **Duração:** 30 min (dá para estender as perguntas se as vendas estiverem saindo). Não menos de 25 min: muita gente
   entra nos primeiros 10 min, e a condição não deve sair antes de o Guia aparecer no caso do plantão.
 - **Pessoas:**
