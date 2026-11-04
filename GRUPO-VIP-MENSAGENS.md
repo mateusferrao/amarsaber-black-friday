@@ -63,7 +63,8 @@ como relatório; a equipe não precisa mais mandar o texto abaixo. Texto antigo,
 Tudo da tabela do calendário está agendado na campanha "Black 2026 · Grupo VIP", inclusive os casos ainda sem
 validação. Fora do agendamento:
 - **A5 (vídeo):** agendado em 04/11 com o evento da live logo depois (o A6, áudio, foi agendado em 03/11);
-- **6, 6a, 6b e 7:** templates "Live 10/11 · …" no painel, para o Mateus disparar na live.
+- **6a, 6b e 7:** templates "Live 10/11 · …" no painel, para o Mateus disparar na live. A 6 passou a ser agendada
+  (20h10); o template 6 fica de reserva, só para o caso de a live atrasar.
 
 O SendFlow não edita mensagem agendada. Para mudar um texto, corrigir aqui, criar a ação nova no mesmo horário e
 cancelar a antiga. Em 04/11 a revisão de copy (valor, escassez "limitadíssimo" e "esgotou rápido", garantia de 7 dias e
@@ -85,6 +86,7 @@ ponte de cada caso para a oferta) recriou 28 ações. Os IDs abaixo já são os 
 | L0 | `CzV6269BQYMredo04dCD` |
 | 4 | `j2DrN3qDQrEnft2MnX0O` |
 | 5 | `wrZc84lnBd4o6uBUN5nc` |
+| 6 (20h10) | `g59nAEGwnIafB2P6PEcB` |
 | 8 | `QcfT2dAm0WrMHnrXCyKo` |
 | C | `ydiyawtpel0iWkFLiSVx` |
 | caso01 12h | `sn7uqcsuhtw1Q1u3SFpz` |
@@ -149,7 +151,7 @@ Na UTMify e no PostHog, o `utm_content` mostra quais casos e quais dias trazem v
 | Live | ter 10/11, 12h | L0 | É hoje | texto |
 | | 10/11, 18h | 4 | O link da live | texto |
 | | 10/11, 19h50 | 5 | Já vai começar | texto, @todos |
-| | 10/11, ~20h05 | 6 | Estamos ao vivo | texto, @todos, manual |
+| | 10/11, 20h10 | 6 | Já estamos ao vivo | texto, agendada |
 | | 10/11, ~20h08 | 6a | Presente 01 aberto | texto, manual |
 | | 10/11, ~20h20 | 6b | Presente 02 aberto | texto, manual |
 | | 10/11, ~20h21 | 7 | Presentes abertos + link da Black | texto, @todos, manual |
@@ -354,8 +356,13 @@ recuperação (`RECUPERACAO-TEMPLATES.md`, fluxos vip).
 > Deixa este grupo aberto. O link da Black sai aqui assim que eu abrir o último presente, antes de aparecer em
 > qualquer outro lugar.
 
-## 6 · ~20h05 · ao vivo · @todos · manual
-> Estamos ao vivo: https://www.instagram.com/mariapaulaferrarivet/
+## 6 · 20h10 · ao vivo *(agendada em 04/11; ação g59nAEGwnIafB2P6PEcB; sem @todos)*
+> Já estamos ao vivo! Entra agora: https://www.instagram.com/mariapaulaferrarivet/
+>
+> Daqui a pouco eu abro os três presentes, e o link da Black sai aqui no grupo antes de todo mundo.
+
+Sem @todos porque a 5 (19h50) e a 7 já marcam todo mundo. Se a live atrasar, cancelar esta ação antes das 20h10 e
+disparar na hora o template de reserva "Live 10/11 · 6 · Estamos ao vivo (@todos)".
 
 ## 6a · ~20h08 · quando a Dra. abre o Presente 01 · manual
 > 🎁 Presente 01 aberto: o curso completo Atendimento Extraordinário. É o passo a passo da consulta que a gente usa

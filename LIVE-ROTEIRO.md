@@ -28,7 +28,7 @@ não muda, porque o caso de plantão precisa vir antes da condição. Resultado:
 
 | Min | Bloco | O que acontece | Bastidor |
 |---|---|---|---|
-| 0–3 | Abertura | Promessa: "hoje eu abro três presentes e a maior condição que o Guia já teve. O link sai no Grupo VIP e nos stories, porque a live não deixa colocar link." | Mensagem 6 no grupo ("Estamos ao vivo") |
+| 0–3 | Abertura | Promessa: "hoje eu abro três presentes e a maior condição que o Guia já teve. O link sai no Grupo VIP e nos stories, porque a live não deixa colocar link." | Mensagem 6 no grupo sai sozinha às 20h10 ("Já estamos ao vivo"); se a live atrasar, cancelar e disparar o template 6 na hora |
 | 3–8 | **Caso 1 · Consulta** | O tutor que disse "vou pensar" e foi embora sem tratar: só o antes e depois da conversa. | — |
 | ~8 | 🎁 **Presente 01** | Abre a 1ª caixa: o curso completo Atendimento Extraordinário. "É o passo a passo da consulta que a gente usa na Amar." | Mensagem 6a no grupo |
 | 8–15 | **Caso 2 · Plantão** | Uma emergência de madrugada, resolvida com o Guia aberto na câmera: onde está a conduta, a dose e o fluido. Termina com a recapitulação da co-host para quem chegou agora. | Comentário fixado: "O link sai no Grupo VIP quando o 3º presente abrir" |
