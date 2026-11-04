@@ -308,7 +308,8 @@ separado por campanha: a comparação teste × LP sai das UTMs (`utm_campaign`),
   redireciona para o código de convite que ele guarda; se um admin redefine o link no WhatsApp, o SendFlow não fica
   sabendo e continua mandando para o código morto. Nenhuma ação do SendFlow redefiniu o convite (não há
   `updateGroupInviteCode` na campanha). Correção: #1 desmarcado como cheio e #2 marcado como cheio, e o link voltou ao
-  #1. Como detectar: a página `chat.whatsapp.com/<código>` de um convite válido traz o nome do grupo em `og:title`;
+  #1. Na mesma noite o Mateus atualizou o convite do #2 no SendFlow (J3ycIdLRpS0Kkdix8LR6J0, conferido válido) e o
+  link voltou ao #2, com o #1 de novo marcado como cheio. Como detectar: a página `chat.whatsapp.com/<código>` de um convite válido traz o nome do grupo em `og:title`;
   a de um convite redefinido vem vazia. A conferência diária checa isso.
 - **Teste:** campanha separada "Teste BF", sem criação de grupos. O grupo de teste antigo se perdeu com o número que
   caiu; o novo é criado no celular do Mateus, com o 93618-8016 como admin, e importado na campanha. Toda mensagem
