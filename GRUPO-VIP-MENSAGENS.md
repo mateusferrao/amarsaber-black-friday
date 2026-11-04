@@ -88,7 +88,7 @@ ponte de cada caso para a oferta) recriou 28 ações. Os IDs abaixo já são os 
 | 5 | `wrZc84lnBd4o6uBUN5nc` |
 | 6 (20h10) | `g59nAEGwnIafB2P6PEcB` |
 | 8 | `QcfT2dAm0WrMHnrXCyKo` |
-| C | `ydiyawtpel0iWkFLiSVx` |
+| C | `VirOMT71bgyZRIp0LaLO` |
 | caso01 12h | `sn7uqcsuhtw1Q1u3SFpz` |
 | caso01 19h30 | `xdjGy9YghTZmIlWrSZ7s` |
 | caso02 12h | `etuSITATzwF8ofrMyxJ7` |
@@ -157,7 +157,7 @@ Na UTMify e no PostHog, o `utm_content` mostra quais casos e quais dias trazem v
 | | 10/11, ~20h21 | 7 | Presentes abertos + link da Black | texto, @todos, manual |
 | Carrinho aberto | qua 11/11, 10h | 8 | Para quem não viu | texto |
 | | qua 11/11, 19h30 | 8b | Amanhã começa o Caso do dia | texto |
-| | qui 12/11, 10h | C | Para quem já comprou | texto |
+| | qui 12/11, 10h | C | Obrigada a quem comprou + urgência para quem não comprou | texto, link |
 | | qui 12/11 | caso01 | AINE no gato | 12h caso + enquete · 19h30 resposta |
 | | sex 13/11 | caso02 | Otite por Malassezia | 12h · 19h30 |
 | | sáb 14/11, 12h | p1 | O que tem de novo no Volume 3 | texto |
@@ -419,15 +419,19 @@ Apresenta a série antes do Caso #1, para todo o grupo (a C fala só com quem co
 >
 > Quem já tem o Guia confere a conduta na própria página. Quem ainda não tem vê o que vem dentro antes de decidir.
 
-## C · qui 12/11, 10h · para quem já comprou
-Ninguém sai do grupo depois de comprar. Esta é a única mensagem só para eles.
-> Para quem já garantiu o Guia na Black: o acesso ao curso e à comunidade chega no e-mail que você usou na compra.
-> Se não aparecer na caixa de entrada, confira o spam e a aba Promoções. Se o seu pedido inclui o Guia impresso, o
-> envio acontece em até 10 dias úteis depois da confirmação do pagamento.
+## C · qui 12/11, 10h · obrigada a quem comprou + urgência *(refeita em 04/11; ação VirOMT71bgyZRIp0LaLO)*
+Agradece quem comprou (prova de que estão comprando, sem número), mostra que a comunidade já serve antes de o Guia
+chegar e dá urgência e link para quem não comprou. A informação de acesso (e-mail, prazo) saiu do grupo: quem compra já
+recebe por e-mail.
+> Obrigada a cada um que garantiu o Guia desde terça. 💗 Enquanto o Guia impresso não chega, a comunidade já está
+> aberta para você: leva lá o caso que está te travando esta semana.
 >
-> Fica por aqui: até 26/11 eu mando um caso de plantão por dia, e você já vai poder conferir a conduta no seu Guia.
+> Para quem ainda não garantiu: o lote da Black é limitadíssimo, e na última Black esgotou rápido. Guia impresso,
+> curso Atendimento Extraordinário e 3 meses de comunidade, podendo dividir em até 12x e com 7 dias de garantia
+> incondicional:
+> https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=c1211
 >
-> Dúvida sobre o pedido: WhatsApp (31) 9 5349-5052.
+> E fica por aqui: às 12h sai o primeiro Caso do dia, com a enquete.
 
 ## Caso do dia
 Às 12h o caso e a enquete. Às 19h30 a resposta, com a foto da página do Guia e o
