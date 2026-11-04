@@ -16,7 +16,7 @@ Regras:
 - Fim de semana igual a dia útil. A leitura de 31/10–01/11 e 07–08/11 (aba "Grupos · Mensagens") diz se muda.
 
 ## Como operar no SendFlow
-- **Teste antes:** toda mensagem nova vai primeiro para a campanha "Teste BF" (grupo de teste, com o operador 93618-8016 como admin) e é
+- **Teste antes:** toda mensagem nova vai primeiro para a campanha "Teste BF" (grupo de teste, com o operador 93618-8152 como admin) e é
   conferida no celular. Só depois vai para a campanha "Black 2026 · Grupo VIP", para todos os grupos.
 - **Agendadas:** saem pela campanha inteira (todas as contas da campanha e todos os grupos da campanha), no horário
   de Brasília da tabela. De 01/11 a 03/11 só o #1 esteve na campanha. **Em 03/11 (10h) o #2 voltou** (reimportado, com
@@ -67,7 +67,7 @@ validação. Fora do agendamento:
 
 O SendFlow não edita mensagem agendada. Para mudar um texto, corrigir aqui, criar a ação nova no mesmo horário e
 cancelar a antiga. Em 04/11 a revisão de copy (valor, escassez "limitadíssimo" e "esgotou rápido", garantia de 7 dias e
-ponte de cada caso para a oferta) recriou 28 ações. Os IDs abaixo já são os novos. Os templates manuais 6a e 7 não mudaram.
+ponte de cada caso para a oferta) recriou 28 ações. Os IDs abaixo já são os novos. Os templates manuais 6a e 7 também foram atualizados.
 
 
 | Mensagem | Ação no SendFlow |
@@ -349,8 +349,8 @@ recuperação (`RECUPERACAO-TEMPLATES.md`, fluxos vip).
 > Estamos ao vivo: https://www.instagram.com/mariapaulaferrarivet/
 
 ## 6a · ~20h08 · quando a Dra. abre o Presente 01 · manual
-> 🎁 Presente 01 aberto: o curso completo Atendimento Extraordinário, o passo a passo da consulta que a gente usa na
-> Amar Veterinária.
+> 🎁 Presente 01 aberto: o curso completo Atendimento Extraordinário. É o passo a passo da consulta que a gente usa
+> na Amar Veterinária, da anamnese ao pós-consulta, para o tutor entender a conduta e dizer sim ao tratamento.
 >
 > Ainda faltam dois. Estamos ao vivo: https://www.instagram.com/mariapaulaferrarivet/
 
@@ -361,17 +361,19 @@ recuperação (`RECUPERACAO-TEMPLATES.md`, fluxos vip).
 > O último presente é a condição, e o link chega aqui no grupo em instantes: https://www.instagram.com/mariapaulaferrarivet/
 
 ## 7 · ~20h21 · quando a Dra. abre o Presente 03 · @todos · manual
-> Os presentes estão abertos. A Black Friday do Guia de Protocolos começou para vocês:
+> A Black do Guia de Protocolos está aberta, primeiro para vocês.
 >
-> 🎁 Presente 01: o curso completo Atendimento Extraordinário
-> 🎁 Presente 02: 3 meses na Comunidade Amar Saber no WhatsApp, comigo e com a equipe
-> 🎁 Presente 03: a condição. Guia de Protocolos · Volume 3, curso e comunidade: R$ 1.137,70 por R$ 497 à vista ou
-> 12x de R$ 50,57
+> 📘 Guia de Protocolos · Volume 3, impresso: condutas, doses e cálculos da clínica de pequenos animais, para abrir no
+> meio do atendimento
+> 🎁 Curso completo Atendimento Extraordinário
+> 🎁 3 meses na Comunidade Amar Saber, comigo e com a equipe
 >
-> Link (com o cupom já aplicado):
+> Tudo isso soma R$ 1.137,70. Na Black sai por R$ 497 à vista ou 12x de R$ 50,57, até 30/11, às 23h59.
+>
+> Garanta o seu aqui, com o cupom já aplicado:
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=live_1011
 >
-> O lote da Black é limitado. Não deixe essa passar: a condição vai até 30/11, às 23h59.
+> O lote é limitadíssimo, e na última Black esgotou rápido. Se o Guia não servir para você, tem 7 dias para devolver.
 
 ---
 
