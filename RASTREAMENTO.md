@@ -301,7 +301,9 @@ separado por campanha: a comparação teste × LP sai das UTMs (`utm_campaign`),
   grupo da vez do link e recebe as mensagens. O próximo (#3) é criado à mão quando o #2 passar de 550.
   **Em 04/11 o link voltou sozinho para o #1** (o #2 tinha recebido 26 pessoas no dia 03): a escolha do SendFlow não
   é confiável. O #1 foi marcado como cheio (`full: true`), o que não bloqueia as agendadas, e o link ficou no #2.
-  Regra daqui em diante: o grupo que não deve receber gente fica marcado como cheio. O clique continua gerando `lp_grupo_clique` e `GroupClick`.
+  Regra daqui em diante: o grupo que não deve receber gente fica marcado como cheio.
+  **Em 04/11 o chip 93618-8016 caiu**; o SendFlow envia pelo (31) 93618-8152 (conta "BF 2026 Amar Saber #2"). Entraram
+  na campanha os #3, #4 e #5, grupos da Black passada, marcados como cheios (só mensagens). O link segue no #2. O clique continua gerando `lp_grupo_clique` e `GroupClick`.
 - **Teste:** campanha separada "Teste BF", sem criação de grupos. O grupo de teste antigo se perdeu com o número que
   caiu; o novo é criado no celular do Mateus, com o 93618-8016 como admin, e importado na campanha. Toda mensagem
   vai primeiro para lá.

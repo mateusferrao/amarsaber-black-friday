@@ -21,6 +21,23 @@ Regras:
 - **Agendadas:** saem pela campanha inteira (todas as contas da campanha e todos os grupos da campanha), no horário
   de Brasília da tabela. De 01/11 a 03/11 só o #1 esteve na campanha. **Em 03/11 (10h) o #2 voltou** (reimportado, com
   o #1 em 620) e passou a receber as agendadas e a gente nova do link.
+- **Número e grupos (04/11):** o chip 93618-8016 caiu. O SendFlow envia agora pelo **(31) 93618-8152** (conta
+  "BF 2026 Amar Saber #2"); as agendadas migraram sozinhas. Na campanha estão o #1 (cheio), o #2 (o único que recebe
+  gente pelo link) e os **#3, #4 e #5, grupos da Black passada** (837 pessoas, marcados como cheios: só recebem as
+  mensagens, sem gente nova). Toda mudança de grupo (criar, importar, renomear, foto, descrição, permissões, admins,
+  marcar cheio) é feita pelo Mateus no celular; o número do SendFlow só envia. Atenção: importar com padrão de nome
+  faz o SendFlow renomear o grupo pelo chip (aconteceu 4 vezes em 04/11).
+- **Reativação dos #3 a #5 (R0):** qui 05/11, 9h, só nesses 3 grupos (ação `ACuJmYiakQoAQlsrCdWW`), antes da enquete
+  das 12h, que seria a 1ª mensagem do ano para eles. Testada no Teste BF em 04/11:
+  > Oi! Aqui é a Maria Paula. 👋
+  >
+  > A Black Friday do Guia de Protocolos · Volume 3 está chegando, e este ano ela vem com três presentes e a maior
+  > condição que o Guia já teve.
+  >
+  > Eu abro tudo ao vivo na terça, 10/11, às 20h, no meu Instagram (@mariapaulaferrarivet). O link da Black chega aqui
+  > no grupo no mesmo minuto, antes do público. E o estoque é limitadíssimo: quem está aqui tem a primeira chance.
+  >
+  > Até lá, mando por aqui casos da rotina e dicas do que tem dentro de cada presente.
 - **Grupos novos:** a criação automática fica desligada. O próximo grupo é criado à mão no celular e importado
   (passo a passo em `RASTREAMENTO.md`).
 - **Manuais (dia da live):** a 6, a 6a, a 6b e a 7 ficam prontas como template e o Mateus dispara pelo painel quando a
