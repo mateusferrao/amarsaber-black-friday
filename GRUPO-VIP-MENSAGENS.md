@@ -62,7 +62,7 @@ como relatório; a equipe não precisa mais mandar o texto abaixo. Texto antigo,
 ## Agendado no SendFlow (28/10)
 Tudo da tabela do calendário está agendado na campanha "Black 2026 · Grupo VIP", inclusive os casos ainda sem
 validação. Fora do agendamento:
-- **A5 (vídeo):** entra quando a Dra. mandar o arquivo (o A6, áudio, foi agendado em 03/11);
+- **A5 (vídeo):** agendado em 04/11 com o evento da live logo depois (o A6, áudio, foi agendado em 03/11);
 - **6, 6a, 6b e 7:** templates "Live 10/11 · …" no painel, para o Mateus disparar na live.
 
 O SendFlow não edita mensagem agendada. Para mudar um texto, corrigir aqui, criar a ação nova no mesmo horário e
@@ -78,6 +78,7 @@ ponte de cada caso para a oferta) recriou 28 ações. Os IDs abaixo já são os 
 | 1 | `ixFXa9om1ussq8YmJKew` |
 | A4 | `q6jEK9AZ46xteZrohm5n` |
 | 2 | `KWAy0SbMt7GWefPujf7T` |
+| A5 (vídeo + evento) | `z6YpqzG2buyZ93Em2b51` |
 | A6 (áudio) | `r3q0LMKNWbAze2QpV6TK` |
 | 3b | `Ugm66Bj4iEVkS447a5ac` |
 | 3 | `PHK8CjjF09qvqx0otLJx` |
@@ -269,7 +270,7 @@ difícil que decido sozinho
 >
 > Terça, 10/11, às 20h, no meu Instagram. Quem está aqui recebe o link antes de todo mundo.
 
-## A5 · sáb 07/11, 12h · vídeo: para que serve cada presente *(a Dra. grava; agendar quando o vídeo chegar)*
+## A5 · sáb 07/11, 12h · vídeo: para que serve cada presente + evento *(agendada em 04/11; ação z6YpqzG2buyZ93Em2b51)*
 Vertical, de 30 a 50 s. Ela fala direto para a câmera, num lugar da Amar (consultório ou corredor), com luz natural.
 Não abre nem embrulha presentes.
 
@@ -283,8 +284,16 @@ Não abre nem embrulha presentes.
 - **Fechamento:** "Terça, 20h, ao vivo. O link sai aqui no grupo antes de todo mundo. Toca em 'Vou' no evento aqui do
   grupo, que o WhatsApp te lembra na hora."
 
+Vídeo recebido em 04/11 (56 s, horizontal, com legenda embutida), convertido para MP4 720p (12 MB):
+`assets/video/a5-presentes-dra.mp4`, publicado em https://black.amarsaber.com.br/assets/video/a5-presentes-dra.mp4. A fala
+segue o roteiro e termina com "não se esqueça de tocar aqui em Eu vou". Por isso o mesmo evento da live sai logo depois
+do vídeo: os #3 a #5 não receberam o evento de 03/11, e nos #1 e #2 ele ficou lá em cima na conversa.
+
 Legenda:
-> Três presentes, terça, 20h, ao vivo. 🎁 Hoje, só aqui no grupo, eu conto para que serve cada um.
+> Três presentes, terça, 20h, ao vivo. 🎁 Hoje, só aqui no grupo, eu conto para que serve cada um. Toca em Vou no
+> evento aqui embaixo.
+
+Logo depois, o evento "Live da Black · Guia de Protocolos", 10/11, 20h.
 
 ## A6 · dom 08/11, 19h30 · áudio da Dra. *(recebido em 03/11, agendado)*
 Áudio de 46 s gravado pela Dra. (enviado em 03/11), como mensagem de voz, sem legenda. O roteiro pedido era: quem ela
