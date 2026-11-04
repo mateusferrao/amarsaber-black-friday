@@ -304,6 +304,12 @@ separado por campanha: a comparação teste × LP sai das UTMs (`utm_campaign`),
   Regra daqui em diante: o grupo que não deve receber gente fica marcado como cheio.
   **Em 04/11 o chip 93618-8016 caiu**; o SendFlow envia pelo (31) 93618-8152 (conta "BF 2026 Amar Saber #2"). Entraram
   na campanha os #3, #4 e #5, grupos da Black passada, marcados como cheios (só mensagens). O link segue no #2. O clique continua gerando `lp_grupo_clique` e `GroupClick`.
+- **Convite do #2 redefinido (04/11, fim da tarde):** quem tocava no link caía em "link redefinido". O SendFlow só
+  redireciona para o código de convite que ele guarda; se um admin redefine o link no WhatsApp, o SendFlow não fica
+  sabendo e continua mandando para o código morto. Nenhuma ação do SendFlow redefiniu o convite (não há
+  `updateGroupInviteCode` na campanha). Correção: #1 desmarcado como cheio e #2 marcado como cheio, e o link voltou ao
+  #1. Como detectar: a página `chat.whatsapp.com/<código>` de um convite válido traz o nome do grupo em `og:title`;
+  a de um convite redefinido vem vazia. A conferência diária checa isso.
 - **Teste:** campanha separada "Teste BF", sem criação de grupos. O grupo de teste antigo se perdeu com o número que
   caiu; o novo é criado no celular do Mateus, com o 93618-8016 como admin, e importado na campanha. Toda mensagem
   vai primeiro para lá.

@@ -22,8 +22,9 @@ Regras:
   de Brasília da tabela. De 01/11 a 03/11 só o #1 esteve na campanha. **Em 03/11 (10h) o #2 voltou** (reimportado, com
   o #1 em 620) e passou a receber as agendadas e a gente nova do link.
 - **Número e grupos (04/11):** o chip 93618-8016 caiu. O SendFlow envia agora pelo **(31) 93618-8152** (conta
-  "BF 2026 Amar Saber #2"); as agendadas migraram sozinhas. Na campanha estão o #1 (cheio), o #2 (o único que recebe
-  gente pelo link) e os **#3, #4 e #5, grupos da Black passada** (837 pessoas, marcados como cheios: só recebem as
+  "BF 2026 Amar Saber #2"); as agendadas migraram sozinhas. Na campanha estão o #1 (desde 04/11 à noite, o único que
+  recebe gente pelo link), o #2 (marcado cheio em 04/11: o convite dele foi redefinido no WhatsApp e o SendFlow guarda o
+  código antigo) e os **#3, #4 e #5, grupos da Black passada** (837 pessoas, marcados como cheios: só recebem as
   mensagens, sem gente nova). Toda mudança de grupo (criar, importar, renomear, foto, descrição, permissões, admins,
   marcar cheio) é feita pelo Mateus no celular; o número do SendFlow só envia. Atenção: importar com padrão de nome
   faz o SendFlow renomear o grupo pelo chip (aconteceu 4 vezes em 04/11).
