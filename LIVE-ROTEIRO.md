@@ -5,7 +5,7 @@ estão em `GRUPO-VIP-MENSAGENS.md`. Versão de 05/11: duas veterinárias em luga
 partir da pesquisa do grupo (`/live/`). A versão para imprimir, com uma página por pessoa, é a
 `LIVE-ROTEIRO-EQUIPE.docx`.
 
-**Formato:** uma aula que usa o produto. A Isabelle, veterinária da Amar e coautora do Guia, traz 3 casos reais e anonimizados da clínica;
+**Formato:** uma aula que usa o produto. Uma veterinária da Amar (a vet convidada, a definir) traz 3 casos reais e anonimizados da clínica;
 a Dra. resolve. Cada caso termina abrindo o presente que resolve aquela dor:
 
 | Caso | Presente |
@@ -20,12 +20,12 @@ A condição (Presente 03) vem por último, junto com o link.
 | Pessoa | Onde | Papel |
 |---|---|---|
 | **Dra. Maria Paula** | celular dela, perfil @mariapaulaferrarivet, com as 3 caixas e o Guia impresso | abre a live, resolve os casos com o Guia aberto na câmera, abre os 3 presentes, fala a oferta e fecha a live |
-| **Isabelle** (veterinária da Amar, coautora do Guia) | celular dela, como convidada da live (tela dividida), mais um 2º aparelho (tablet ou notebook com WhatsApp) para receber as perguntas | apresenta-se, conta os 3 casos, diz com as palavras dela como usa o Guia no plantão, propõe o desafio do Guia, faz a recapitulação para quem chega e lê as perguntas |
-| **Equipe da Amar** (1 ou 2 pessoas) | 2º aparelho logado no Instagram da Dra., mais WhatsApp e o Kommo | durante a live, colhe nos comentários as perguntas que quebram objeção ou tiram dúvida sobre o produto e manda para a Isabelle; no minuto da oferta, link na bio, story com figurinha de link e respostas no direct; a live toda, atende no Kommo o WhatsApp de atendimento (31) 9 5349-5052 (dúvida de compra, pagamento, acesso); repassa à Isabelle o número de pedidos que o Daniel mandar |
+| **Vet convidada** (veterinária da Amar, a definir) | celular dela, como convidada da live (tela dividida), mais um 2º aparelho (tablet ou notebook com WhatsApp) para receber as perguntas | apresenta-se, conta os 3 casos, diz com as palavras dela como usa o Guia no plantão, propõe o desafio do Guia, faz a recapitulação para quem chega e lê as perguntas |
+| **Equipe da Amar** (1 ou 2 pessoas) | 2º aparelho logado no Instagram da Dra., mais WhatsApp e o Kommo | durante a live, colhe nos comentários as perguntas que quebram objeção ou tiram dúvida sobre o produto e manda para a vet convidada; no minuto da oferta, link na bio, story com figurinha de link e respostas no direct; a live toda, atende no Kommo o WhatsApp de atendimento (31) 9 5349-5052 (dúvida de compra, pagamento, acesso); repassa à vet convidada o número de pedidos que o Daniel mandar |
 | **Mateus** | painel do SendFlow, assistindo à live | mensagens 6a, 6b e 7 no minuto de cada presente; contingência da 6 se a live atrasar; texto de reserva se a live cair |
 | **Daniel** | Gerenciador de Anúncios, Yampi, LP e checkout | anúncio de lembrete no dia; liga a campanha de vendas na oferta; acompanha LP, checkout e anúncios; depois da oferta, manda à equipe o número real de pedidos da Yampi a cada ~5 min |
 
-- **Em lugares diferentes:** a live sai no perfil da Dra. e a Isabelle entra como convidada, do celular dela.
+- **Em lugares diferentes:** a live sai no perfil da Dra. e a vet convidada entra como convidada, do celular dela.
 - **Quem estiver na clínica:**
   - corre risco de barulho, de chegar uma emergência e de Wi-Fi fraco;
   - fica numa sala fechada, com o 4G como reserva;
@@ -39,7 +39,7 @@ pesquisa decide o conteúdo:
 | Pergunta da pesquisa | O que define na live |
 |---|---|
 | O que mais te trava (plantão / consulta / sozinho / Outro) | o peso de cada caso. O tema mais votado ganha uns 3 min a mais e é o que a Dra. cita na abertura. Um "Outro" que aparecer muito vira pergunta no bloco final |
-| Caso ou dúvida que quer ver resolvido | quais casos a Isabelle traz: entre os casos dela, a Dra. escolhe os 3 mais parecidos com os pedidos. As frases do público podem ser citadas pela Dra. |
+| Caso ou dúvida que quer ver resolvido | quais casos a vet convidada traz: entre os casos dela, a Dra. escolhe os 3 mais parecidos com os pedidos. As frases do público podem ser citadas pela Dra. |
 | Já tem o Guia (não / edição anterior) | o peso da resposta "comprei antes, tenho direito?" no bloco de perguntas |
 | O que pesaria na decisão (valor / entrega / momento / anterior / outro) | a ordem das objeções no bloco de perguntas: a mais marcada vem primeiro |
 | Tempo de atendimento e onde atende | o tom dos casos. Muitos estudantes e recém-formados pedem a explicação mais passo a passo; mais clínicos experientes pedem o caso mais complexo. Também muda a resposta de "serve para mim?" |
@@ -52,17 +52,18 @@ A ordem dos casos não muda: o caso de plantão, com o Guia aberto, vem antes da
 | Min | Na câmera | Bastidor |
 |---|---|---|
 | 0–3 | **Dra. sozinha.** Abertura (pontos da abertura): avisa que a condição sai depois dos 3 casos e que, logo depois dela, mostra o que entrou de novo no Volume 3. Espera o público chegar. | Mateus: a mensagem 6 sai sozinha às 20h10. Equipe: começa a ler os comentários. |
-| ~3 | A Dra. chama a Isabelle como convidada. | Equipe confirma que a Isabelle entrou. Se ela não entrar em 2 min, vale o plano B. |
-| 3–6 | A Dra. apresenta a Isabelle e diz o que mais apareceu na pesquisa. | — |
-| 6–12 | **Caso 1 · Consulta:** a Isabelle conta o caso do tutor que disse "vou pensar"; a Dra. explica o antes e o depois da conversa. | — |
+| ~3 | A Dra. chama a vet convidada como convidada. | Equipe confirma que a vet convidada entrou. Se ela não entrar em 2 min, vale o plano B. |
+| 3–6 | A Dra. apresenta a vet convidada e diz o que mais apareceu na pesquisa. | — |
+| 6–12 | **Caso 1 · Consulta:** a vet convidada conta o caso do tutor que disse "vou pensar"; a Dra. explica o antes e o depois da conversa. | — |
 | ~12 | 🎁 **Presente 01:** a Dra. abre a 1ª caixa, o curso Atendimento Extraordinário: para que serve, quanto custa fora da Black (R$ 297) e que libera no mesmo dia da compra. | **Mateus: 6a** |
-| 12–20 | **Caso 2 · Plantão:** a Isabelle conta a emergência; a Dra. resolve com o Guia aberto na câmera (conduta, dose, fluido). A Isabelle conta como usa o Guia no plantão. **Desafio do Guia:** a Isabelle (ou um comentário) diz uma condição e a Dra. acha a conduta e a dose no Guia, na câmera. No fim, a Isabelle recapitula para quem chegou. | Desde o começo, a equipe marca nos comentários as perguntas boas para o bloco final. |
-| 20–26 | **Caso 3 · Caso difícil:** a Isabelle traz o caso em que conferir a conduta com alguém mudou o desfecho. | — |
+| 12–20 | **Caso 2 · Plantão:** a vet convidada conta a emergência; a Dra. resolve com o Guia aberto na câmera (conduta, dose, fluido). A vet convidada conta como usa o Guia no plantão. **Desafio do Guia:** a vet convidada (ou um comentário) diz uma condição e a Dra. acha a conduta e a dose no Guia, na câmera. No fim, a vet convidada recapitula para quem chegou. | Desde o começo, a equipe marca nos comentários as perguntas boas para o bloco final. |
+| 20–26 | **Caso 3 · Caso difícil:** a vet convidada traz o caso em que conferir a conduta com alguém mudou o desfecho. | — |
 | ~26 | 🎁 **Presente 02:** a Dra. abre a 2ª caixa, os 3 meses na Comunidade Amar Saber: como funciona, quanto custa fora da Black (R$ 47,90 por mês, R$ 143,70 nos 3 meses) e que libera no mesmo dia. | **Mateus: 6b** |
-| ~27 | 🎁 **Presente 03 + link:** a Dra. abre a 3ª caixa e faz a ancoragem na ordem da seção "Valor, âncora e CTA", termina com o CTA em passos. | **Mateus: 7 (@todos).** Equipe: link na bio, story com link e respostas no direct. **Daniel:** liga a campanha de vendas. |
-| 28–31 | **Novidades do Volume 3:** a Dra. mostra no Guia 2 ou 3 das páginas novas (lista na seção "Valor, âncora e CTA"). É o que segura o público depois do preço. | Daniel começa a mandar o número de pedidos. |
-| 31–42 | **Perguntas:** a Isabelle intercala as da caixinha (já escolhidas, na ordem das objeções da pesquisa) com as melhores dos comentários. A Dra. responde e fecha cada objeção com o CTA ("se essa era a sua dúvida, o link está no Grupo VIP"). A cada ~5 min: onde está o link e, se o Daniel mandou, o número real de pedidos e o convite para quem comprou comentar COMPREI. | Equipe manda as perguntas dos comentários para a Isabelle, responde no direct e atende no Kommo (final 5052). Daniel avisa a equipe se a LP ou o checkout derem problema. |
-| 42–45 | **Fechamento (Dra.):** os pontos do fechamento. Se as vendas estiverem saindo, estende as perguntas. | — |
+| ~27 | 🎁 **Presente 03 + link:** a Dra. abre a 3ª caixa: é a condição. | **Mateus: 7 (@todos)** no minuto em que a caixa abre. |
+| 27–33 | **Pitch de vendas (Dra.):** os 10 blocos da seção "Pitch de vendas", na ordem. | **Mateus: 7 (@todos).** Equipe: link na bio, story com link e respostas no direct. **Daniel:** liga a campanha de vendas. |
+| 33–36 | **Novidades do Volume 3:** a Dra. mostra no Guia 2 ou 3 das páginas novas (lista na seção "Valor, âncora e CTA"). É o que segura o público depois do preço. | Daniel começa a mandar o número de pedidos. |
+| 36–43 | **Perguntas:** a vet convidada intercala as da caixinha (já escolhidas, na ordem das objeções da pesquisa) com as melhores dos comentários. A Dra. responde e fecha cada objeção com o CTA ("se essa era a sua dúvida, o link está no Grupo VIP"). A cada ~5 min: onde está o link e, se o Daniel mandou, o número real de pedidos e o convite para quem comprou comentar COMPREI. | Equipe manda as perguntas dos comentários para a vet convidada, responde no direct e atende no Kommo (final 5052). Daniel avisa a equipe se a LP ou o checkout derem problema. |
+| 43–45 | **Fechamento (Dra.):** os pontos do fechamento. Se as vendas estiverem saindo, estende as perguntas. | — |
 
 **Links do minuto ~27:**
 - **Story,** com figurinha de link: `https://black.amarsaber.com.br/?utm_source=instagram&utm_medium=stories&utm_campaign=live_1011`
@@ -78,22 +79,51 @@ domingo.
 | Momento | Quem | Pontos |
 |---|---|---|
 | Abertura | Dra. | 3 presentes hoje, e o último é a maior condição que o Guia já teve · antes, 3 casos reais da Amar, escolhidos pela pesquisa do grupo · depois da condição, mostra o que entrou de novo no Volume 3 · o Instagram não deixa link na live: o link sai no Grupo VIP, nos stories e na bio quando abrir o último presente |
-| Apresentação | Dra. | quem é a Isabelle (função e tempo de casa) · coautora do Guia · os casos são de pacientes que passaram por ela |
+| Apresentação | Dra. | quem é a vet convidada (função e tempo de casa) · se for coautora do Guia, dizer; se não, que usa o Guia no dia a dia · os casos são de pacientes que passaram por ela |
 | Pesquisa | Dra. | o tema que mais apareceu · número de respostas só se for real e não for pequeno |
 | Presente 01 | Dra. | para que serve o curso (a conversa do "vou pensar") · R$ 297 fora da Black · libera no mesmo dia da compra |
-| Desafio do Guia, no caso de plantão | Isabelle e Dra. | a Isabelle diz a condição · a Dra. acha a conduta e a dose em voz alta, mostrando a página |
-| Recapitulação, no fim do caso de plantão | Isabelle | para quem chegou: são 3 presentes · o 1º já foi aberto (o curso) · o link sai no Grupo VIP e nos stories quando abrir o último |
+| Desafio do Guia, no caso de plantão | Vet convidada e Dra. | a vet convidada diz a condição · a Dra. acha a conduta e a dose em voz alta, mostrando a página |
+| Recapitulação, no fim do caso de plantão | Vet convidada | para quem chegou: são 3 presentes · o 1º já foi aberto (o curso) · o link sai no Grupo VIP e nos stories quando abrir o último |
 | Presente 02 | Dra. | como funciona a comunidade (levar o caso que travou) · R$ 47,90 por mês, R$ 143,70 nos 3 meses · libera no mesmo dia |
-| Presente 03 | Dra. | a ancoragem, na ordem da seção "Valor, âncora e CTA" · o CTA em passos · lote limitadíssimo, e na última Black esgotou rápido |
-| A cada ~5 min, nas perguntas | Isabelle ou Dra. | onde está o link: Grupo VIP, stories e bio |
+| Presente 03 e pitch | Dra. | os 10 blocos da seção "Pitch de vendas", na ordem |
+| A cada ~5 min, nas perguntas | Vet convidada ou Dra. | onde está o link: Grupo VIP, stories e bio |
 | Fechamento | Dra. | os 3 presentes · R$ 497 ou 12x de R$ 50,57 · até 30/11, às 23h59, ou enquanto o lote durar · 7 dias de garantia incondicional, contados do recebimento · onde está o link |
+
+## Pitch de vendas (minutos ~27 a 33, Dra.)
+Começa quando a 3ª caixa abre. Pontos na ordem, sem texto decorado. Base: skill de oferta (offers) e a pesquisa do grupo.
+
+**O que a pesquisa diz (56 respostas em 05/11, parcial):**
+- "o valor" aparece em quase todas as respostas;
+- o público é sobretudo estudante ou formado há menos de 2 anos;
+- o plantão é o tema mais pedido.
+
+Por isso o pitch trata o valor de frente, antes do bloco de perguntas, e fala primeiro com quem está começando.
+
+| # | Bloco | Pontos |
+|---|---|---|
+| 1 | Ponte dos casos para a oferta | cada caso da noite teve uma peça que resolveu: no plantão, o Guia; na consulta, a conversa (o curso); no caso difícil, conferir com alguém (a comunidade) |
+| 2 | Para quem é | quem está começando: base de conduta para não travar no plantão · quem já atende: consulta rápida no meio do atendimento e padrão para treinar a equipe · pode citar uma frase real da pesquisa, sem nome (ex.: travar no cálculo de dose e não ter a quem perguntar na hora) |
+| 3 | O que tem dentro | o Guia na mão, folheando: emergências, cálculo de doses, fluidoterapia, transfusão, anamnese e as principais patologias da clínica de pequenos animais · linguagem direta, para abrir no atendimento · +1.500 Guias vendidos |
+| 4 | Âncora em camadas | Guia de Protocolos · Volume 3 impresso, R$ 697 · curso Atendimento Extraordinário, R$ 297 · 3 meses de Comunidade, R$ 143,70 · tudo soma R$ 1.137,70 |
+| 5 | Preço e o valor de frente | na Black: R$ 497 à vista ou 12x de R$ 50,57 (falar a parcela em voz alta) · R$ 497 é menos que o Guia sozinho, e o curso e a comunidade vêm junto · a parcela dá menos de R$ 2 por dia (R$ 50,57 ÷ 30 = R$ 1,69) |
+| 6 | Começa hoje | o curso e a comunidade liberam no mesmo dia da compra, por e-mail · o Guia impresso sai em até 10 dias úteis |
+| 7 | Sem risco | 7 dias de garantia incondicional, contados do recebimento: recebeu, usou e não serviu, devolve e recebe o valor de volta |
+| 8 | Por que agora | lote limitadíssimo · na última Black esgotou rápido · até 30/11, às 23h59, ou enquanto o lote durar |
+| 9 | CTA em passos e o que vem depois | abre o Grupo VIP (ou os stories, ou a bio), toca no link e escolhe Pix ou 12x no cartão · depois da compra chega o e-mail com o curso e a comunidade |
+| 10 | Segundo CTA e gancho | quem já comprou comenta COMPREI · "agora eu mostro o que entrou de novo no Volume 3 e depois respondo as dúvidas de vocês" |
+
+**Fora do pitch:**
+- o downsell de R$ 187;
+- o número de unidades do lote;
+- bônus;
+- "só para quem está ao vivo".
 
 ## Valor, âncora e CTA
 Base: skill de oferta (offers). O que mais converte na live é aumentar a confiança de que o Guia resolve (prova e
 demonstração) e encurtar a espera. Preço baixo sozinho não faz isso. Todos os valores abaixo são os cobrados fora da
 Black (confirmado em 05/11).
 
-**1. Âncora em camadas:** cada presente é aberto com o valor dele, e no Presente 03 a soma fecha na ordem:
+**1. Âncora em camadas** (no pitch, blocos 4 e 5): cada presente é aberto com o valor dele, e no Presente 03 a soma fecha na ordem:
 1. Guia de Protocolos · Volume 3, impresso: R$ 697.
 2. Curso Atendimento Extraordinário: R$ 297.
 3. 3 meses de Comunidade: R$ 143,70 (R$ 47,90 por mês).
@@ -106,7 +136,7 @@ Black (confirmado em 05/11).
 - o Guia impresso sai em até 10 dias úteis depois da confirmação do pagamento.
 
 **3. Prova ao vivo:**
-- **coautoria:** a Isabelle é coautora do Guia e conta como usa no plantão;
+- **quem usa o Guia:** a vet convidada conta como usa no plantão (e, se for coautora, isso entra na apresentação);
 - **desafio do Guia:** a Dra. acha conduta e dose na câmera. Treinar antes com 3 ou 4 condições: se ela demorar para
   achar, a prova vira contra;
 - **número real de pedidos:** vem do Daniel, pela Yampi. Nunca estimado;
@@ -153,7 +183,7 @@ receber e recebe o valor de volta".
 - **O downsell de R$ 187 (curso + comunidade):** quem trava no preço já recebe esse downsell sozinho ao sair do
   checkout. Falar dele na live canibaliza a oferta principal.
 - **Valores que não sejam os de tabela** e bônus inflados.
-- **Proporção:** a oferta não toma a live. Os casos são o que dá autoridade à Dra. e à Isabelle.
+- **Proporção:** a oferta não toma a live. Os casos são o que dá autoridade à Dra. e à vet convidada.
 
 ## Perguntas: o que vem pronto e o que é colhido na hora
 - **Antes:** a caixinha abre nos stories em 09/11 e a mensagem 3b avisa o grupo.
@@ -162,9 +192,9 @@ receber e recebe o valor de volta".
     - as que quebram as objeções mais marcadas na pesquisa (valor e parcelamento, entrega, "serve para mim",
       "comprei antes");
     - as dúvidas sobre o produto (o que tem no Volume 3, como funciona o curso, como funciona a comunidade).
-  - Elas vão impressas para a Isabelle e para a Dra., cada uma com a resposta-base da tabela abaixo.
+  - Elas vão impressas para a vet convidada e para a Dra., cada uma com a resposta-base da tabela abaixo.
 - **Na hora:** a equipe procura nos comentários perguntas do mesmo tipo e prefere as que muita gente repete. Manda para a
-  Isabelle no 2º aparelho, já com a resposta-base quando houver.
+  vet convidada no 2º aparelho, já com a resposta-base quando houver.
 - **Caso clínico pedido nos comentários:** se der tempo, a Dra. responde em uma frase e diz que esse tipo de conduta
   está no Guia.
 
@@ -178,8 +208,8 @@ receber e recebe o valor de volta".
 | O que tem de novo no Volume 3? | Ruptura do ligamento cruzado; hipoglicemia, hipotermia e hipertermia; estado epilético; sedação e tranquilização; leishmaniose pelas diretrizes Brasileish 2025; vacinas com as atualizações da WSAVA (lista da LP). |
 
 ## Plano B
-- **A Isabelle não entra ou a conexão dela cai:** a Dra. conta o caso sozinha, pelas fichas que recebeu no domingo, e
-  a equipe tenta chamar a Isabelle de novo.
+- **A vet convidada não entra ou a conexão dela cai:** a Dra. conta o caso sozinha, pelas fichas que recebeu no domingo, e
+  a equipe tenta chamar a vet convidada de novo.
 - **A live da Dra. cai:** ela reabre na hora, e o Mateus manda no grupo o texto de reserva "a live caiu, já estou
   voltando" (ver Preparação).
 - **A live atrasa:** cancelar a mensagem 6 antes das 20h10 e disparar o template de reserva "Live 10/11 · 6 · Estamos ao
@@ -193,9 +223,10 @@ Em todas as linhas, quanto antes, melhor: a data é o limite.
 | Até | O quê | Quem |
 |---|---|---|
 | qui 05/11 | pesquisa às 12h e lembrete às 19h no grupo (agendados) | SendFlow |
-| sáb 07/11 | função e tempo de casa da Isabelle, para a apresentação na live | Mateus, com a Isabelle |
-| sáb 07/11 | definir de onde cada uma entra (clínica ou casa), com os cuidados para quem ficar na clínica | Dra. e Isabelle |
-| sáb 07/11 | a Isabelle separa de 4 a 6 casos reais anonimizados, olhando as respostas parciais da pesquisa. Ficha por caso, abaixo | Isabelle |
+| sáb 07/11 | definir quem é a vet convidada | Dra. e Mateus |
+| sáb 07/11 | função e tempo de casa da vet convidada (e se é coautora do Guia), para a apresentação na live | Mateus, com a vet convidada |
+| sáb 07/11 | definir de onde cada uma entra (clínica ou casa), com os cuidados para quem ficar na clínica | Dra. e vet convidada |
+| sáb 07/11 | a vet convidada separa de 4 a 6 casos reais anonimizados, olhando as respostas parciais da pesquisa. Ficha por caso, abaixo | vet convidada |
 | dom 08/11 | leitura da pesquisa (12h): tema, casos pedidos e objeções. A Dra. escolhe os 3 casos e recebe as fichas; os pontos do tema e a ordem das objeções são fechados | Dra. e Mateus |
 | dom 08/11 | se a pesquisa mostrar muita gente com edição anterior, decidir se há condição própria para quem comprou antes (ver "Valor, âncora e CTA", item 8) | Dra. e Mateus |
 | seg 09/11, 12h | caixinha de perguntas nos stories, antes da mensagem 3b | Dra. ou equipe |
@@ -207,12 +238,12 @@ Em todas as linhas, quanto antes, melhor: a data é o limite.
 | seg 09/11 | verificar automação de resposta a story e a comentário de post (ex.: quem comenta ou responde "GUIA" recebe o link no direct). Sem ela, fica o direct manual da equipe | Mateus |
 | seg 09/11 | treinar o desafio do Guia com 3 ou 4 condições e deixar marcadas 2 ou 3 páginas das novidades do Volume 3 | Dra. |
 | seg 09/11 | acesso à Yampi durante a live para acompanhar os pedidos e combinar como o número chega à equipe (WhatsApp) | Daniel |
-| seg 09/11 *(sugestão)* | ensaio nos mesmos aparelhos e lugares de terça: uma live de teste com a Isabelle como convidada e um disparo de teste das 6a, 6b e 7 no Teste BF | todos |
-| ter 10/11, 17h | perguntas da caixinha escolhidas (de 6 a 8), com a resposta-base, impressas para a Isabelle e para a Dra. | equipe e Mateus |
+| seg 09/11 *(sugestão)* | ensaio nos mesmos aparelhos e lugares de terça: uma live de teste com a vet convidada como convidada e um disparo de teste das 6a, 6b e 7 no Teste BF | todos |
+| ter 10/11, 17h | perguntas da caixinha escolhidas (de 6 a 8), com a resposta-base, impressas para a vet convidada e para a Dra. | equipe e Mateus |
 | ter 10/11, de dia | anúncio de lembrete para o público quente; a campanha de vendas fica pronta e desligada | Daniel |
 | ter 10/11, 19h30 | todos conectados (lista abaixo) | todos |
 
-**Ficha de cada caso (Isabelle):**
+**Ficha de cada caso (vet convidada):**
 - paciente (espécie, idade, sem nome do tutor);
 - queixa;
 - o que aconteceu;
@@ -225,7 +256,7 @@ Em todas as linhas, quanto antes, melhor: a data é o limite.
 - internet testada, com o 4G de reserva;
 - as 3 caixas na ordem;
 - o Guia marcado na página do caso de plantão e nas páginas das novidades do Volume 3;
-- o 2º aparelho da Isabelle com o WhatsApp aberto;
+- o 2º aparelho da vet convidada com o WhatsApp aberto;
 - a mensagem 7 e os templates manuais abertos no painel do Mateus;
 - o story e o link da bio prontos no aparelho da equipe;
 - noindex da LP: decidir se sai em 10/11 (ver `index.html`), para a LP aparecer no Google;
