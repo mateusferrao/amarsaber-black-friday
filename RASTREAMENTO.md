@@ -282,8 +282,19 @@ separado por campanha: a comparação teste × LP sai das UTMs (`utm_campaign`),
 ## Pesquisa da live (`/live/`)
 
 Página do Grupo VIP (mensagem A4, 05/11) para montar os casos da live de 10/11, mapear objeções e conhecer o público.
-Mesmos PostHog, Clarity e Meta Pixel da LP (`tracking.js`), mas **sem Lead e sem API de Conversões**: quem responde já é
-lead, e um Lead novo atrapalharia a otimização das campanhas de captação. A Meta recebe só `PageView` e `EngagedVisit`.
+Mesmos PostHog, Clarity e Meta Pixel da LP (`tracking.js`), mas **sem Lead**: quem responde já é lead, e um Lead novo
+atrapalharia a otimização das campanhas de captação (que otimizam em Lead no pixel 1393…).
+
+**Meta: evento personalizado `PesquisaLive`** (não é usado para otimizar; serve para públicos de remarketing por objeção):
+- **navegador**, uma vez, quando a pessoa chega à última tela, nos 2 pixels; parâmetros só de escolha (ids): `tema`,
+  `tem_guia`, `pesaria` (ids separados por vírgula, ex. `valor,momento`), `tempo`, `local`, `content_name` = Pesquisa da
+  live. Nenhum texto livre;
+- **servidor** (n8n, API de Conversões, 2 pixels), quando a pessoa toca em ENVIAR **com WhatsApp**: mesmo `event_id`
+  (a Meta deduplica), com telefone e distinct_id em SHA-256, fbp/fbc, IP e user agent. Internos não vão;
+- públicos sugeridos (Gerenciador de Eventos → Públicos → Site → evento `PesquisaLive` com o parâmetro `pesaria`
+  contendo `valor`, `momento`, `anterior` ou `decidido`). Público de anúncio precisa de algumas centenas de pessoas
+  reconhecidas pela Meta;
+- teste: `/live/?test_event_code=CÓDIGO` (código da aba Testar eventos) vai também no envio do servidor.
 
 | Etapa | Evento PostHog / Clarity | Quando | Propriedades |
 |---|---|---|---|
@@ -295,8 +306,10 @@ lead, e um Lead novo atrapalharia a otimização das campanhas de captação. A 
 | conversão | `lp_pesquisa_falha` | n8n fora do ar (2 tentativas); a pessoa vê o fim mesmo assim | `motivo` e as respostas completas (para recuperar) |
 
 - **Perguntas:** O que mais te trava na rotina? (3 opções da antiga enquete + Outro) · Qual caso ou dúvida você quer que
-  eu resolva ao vivo? (texto opcional) · Você já tem o Guia? · Na Black, o que mais pesaria na sua decisão? (O valor, O
-  prazo de entrega, Se serve para o meu momento, Já tenho uma edição anterior, Nada, já vou levar, Outro) · Há quanto
+  eu resolva ao vivo? (texto opcional) · Você já tem o Guia? · Na Black, o que mais pesaria na sua decisão? (**múltipla
+  escolha**, "Pode marcar mais de uma": O valor, O prazo de entrega, Se serve para o meu momento, Já tenho uma edição
+  anterior, Nada, já vou levar, Outro; "Nada, já vou levar" desmarca as outras; na planilha as escolhas ficam separadas
+  por "; ") · Há quanto
   tempo você atende? (as do `/teste/` + Não atendo) · Onde você mais atende hoje? (as do `/teste/` + Outro; não aparece
   para quem não atende). "Outro" e "Não atendo" abrem um campo de texto opcional.
 - **Nada se perde sem o clique em enviar.** Cada pessoa tem um `ID` (sessionStorage `as_pesquisa_id`) e o n8n atualiza a
@@ -308,8 +321,8 @@ lead, e um Lead novo atrapalharia a otimização das campanhas de captação. A 
   A coluna **Data** é a da última atualização; **Respondidas** conta as perguntas respondidas.
 - **Texto livre** (caso pedido e os "Outro") vai só para a planilha, não para o PostHog.
 - **Clarity:** `etapa_max` = `engajou` → `iniciou_pesquisa` → `enviou_pesquisa`.
-- **Planilha:** n8n **AS · Pesquisa da live → Sheets** (`J3HEcFVLFnuQE6Cc`, webhook `as-black-live`, CORS só para
-  black.amarsaber.com.br), aba **Pesquisa da live**: Data, Tema, Tema_outro, Caso_pedido, Tem_Guia, Pesaria,
+- **Planilha e API de Conversões:** n8n **AS · Pesquisa da live → Sheets** (`J3HEcFVLFnuQE6Cc`, webhook `as-black-live`,
+  CORS só para black.amarsaber.com.br), aba **Pesquisa da live**: Data, Tema, Tema_outro, Caso_pedido, Tem_Guia, Pesaria,
   Pesaria_outro, Tempo, Tempo_outro, Local, Local_outro, WhatsApp, Link_WhatsApp, Canal, utm_*, Interno, Página,
   distinct_id, ID, Status, Respondidas. Robôs (campo escondido) e envios vazios são descartados.
 - **Quem já respondeu** (localStorage `as_pesquisa_live`) vê direto a tela final. `?refazer=1` mostra as perguntas de novo.

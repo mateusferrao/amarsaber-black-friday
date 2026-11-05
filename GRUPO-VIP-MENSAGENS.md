@@ -263,7 +263,7 @@ Logo depois, o evento do WhatsApp: "Live da Black · Guia de Protocolos", 10/11,
 > https://black.amarsaber.com.br/live/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=pesquisa_live
 
 Sem @todos. A página `/live/` tem 6 perguntas: tema (com "Outro"), caso pedido (texto), se já tem o Guia, o que pesaria
-na decisão (com "Outro"), tempo de atendimento (com "Não atendo") e local (com "Outro"; pula para quem não atende).
+na decisão (múltipla escolha, com "Outro"), tempo de atendimento (com "Não atendo") e local (com "Outro"; pula para quem não atende).
 O WhatsApp é opcional. As respostas caem na aba **Pesquisa da live** da planilha (detalhes em `RASTREAMENTO.md`).
 A Dra. concordou que os temas mais pedidos viram os casos da live. Leitura das respostas: domingo, 08/11, 12h.
 
