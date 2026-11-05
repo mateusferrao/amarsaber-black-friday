@@ -279,6 +279,33 @@ separado por campanha: a comparação teste × LP sai das UTMs (`utm_campaign`),
 - **Testar a API de Conversões:** `/teste/?test_event_code=TESTxxxx`. A equipe usa `?interno=1`: a linha vai para a
   planilha com Interno = sim e nada vai para a Meta.
 
+## Pesquisa da live (`/live/`)
+
+Página do Grupo VIP (mensagem A4, 05/11) para montar os casos da live de 10/11, mapear objeções e conhecer o público.
+Mesmos PostHog, Clarity e Meta Pixel da LP (`tracking.js`), mas **sem Lead e sem API de Conversões**: quem responde já é
+lead, e um Lead novo atrapalharia a otimização das campanhas de captação. A Meta recebe só `PageView` e `EngagedVisit`.
+
+| Etapa | Evento PostHog / Clarity | Quando | Propriedades |
+|---|---|---|---|
+| engajamento | `lp_pesquisa_inicio` | 1ª resposta | — |
+| engajamento | `lp_pesquisa_resposta` | cada pergunta respondida | `pergunta_id` (tema, caso, tem_guia, pesaria, tempo, local), `numero`, `resposta_id`, `resposta`, `com_texto` |
+| conversão | `lp_pesquisa_enviada` + identify (`wa_55…`, só se deu o WhatsApp) | o n8n recebeu | ids de `tema`, `tem_guia`, `pesaria`, `tempo`, `local`; `tem_caso`, `deu_whatsapp`, `segundos_na_pesquisa` |
+| conversão | `lp_pesquisa_falha` | n8n fora do ar (2 tentativas); a pessoa vê o fim mesmo assim | `motivo` e as respostas completas (para recuperar) |
+
+- **Perguntas:** O que mais te trava na rotina? (3 opções da antiga enquete + Outro) · Qual caso ou dúvida você quer que
+  eu resolva ao vivo? (texto opcional) · Você já tem o Guia? · Na Black, o que mais pesaria na sua decisão? (O valor, O
+  prazo de entrega, Se serve para o meu momento, Já tenho uma edição anterior, Nada, já vou levar, Outro) · Há quanto
+  tempo você atende? (as do `/teste/` + Não atendo) · Onde você mais atende hoje? (as do `/teste/` + Outro; não aparece
+  para quem não atende). "Outro" e "Não atendo" abrem um campo de texto opcional.
+- **Texto livre** (caso pedido e os "Outro") vai só para a planilha, não para o PostHog.
+- **Clarity:** `etapa_max` = `engajou` → `iniciou_pesquisa` → `enviou_pesquisa`.
+- **Planilha:** n8n **AS · Pesquisa da live → Sheets** (`J3HEcFVLFnuQE6Cc`, webhook `as-black-live`, CORS só para
+  black.amarsaber.com.br), aba **Pesquisa da live**: Data, Tema, Tema_outro, Caso_pedido, Tem_Guia, Pesaria,
+  Pesaria_outro, Tempo, Tempo_outro, Local, Local_outro, WhatsApp, Link_WhatsApp, Canal, utm_*, Interno, Página,
+  distinct_id. Robôs (campo escondido) e envios vazios são descartados.
+- **Quem já respondeu** (localStorage `as_pesquisa_live`) vê direto a tela final. `?refazer=1` mostra as perguntas de novo.
+- **Testar:** `/live/?interno=1` (a linha cai com Interno = sim; apague depois).
+
 ## Grupos VIP (SendFlow)
 
 - **Campanha:** "Black 2026 · Grupo VIP" no SendFlow (tipo lançamento com transbordo). Grupos "Grupo VIP Amar

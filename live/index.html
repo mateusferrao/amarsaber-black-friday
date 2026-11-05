@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Monte a live de terça comigo – Amar Saber</title>
+  <meta name="description" content="Perguntas rápidas para a Dra. Maria Paula montar os casos da live de 10/11, às 20h, com o que vocês mais pedirem.">
+  <!-- noindex: página do Grupo VIP, não é para busca -->
+  <meta name="robots" content="noindex">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Monte a live de terça com a Dra. Maria Paula">
+  <meta property="og:description" content="O que vocês mais pedirem vira os casos que ela resolve ao vivo em 10/11, às 20h.">
+  <meta property="og:image" content="https://black.amarsaber.com.br/assets/img/og-guia.jpg">
+
+  <link rel="icon" href="../assets/img/favicon-150.png" sizes="32x32">
+  <link rel="icon" href="../assets/img/favicon-300.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/img/favicon-300.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Sora:wght@300;400;500;600;700&family=Roboto:wght@400;600&display=swap">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/teste.css">
+  <link rel="stylesheet" href="../assets/css/venda.css">
+  <link rel="stylesheet" href="../assets/css/live.css?v=20261105">
+
+  <!-- ===== RASTREAMENTO =====
+       tracking.js: Meta Pixel (só PageView e visita engajada), PostHog e Clarity, o mesmo da LP.
+       live.js: perguntas e envio ao n8n (planilha "Pesquisa da live"). Sem Lead da Meta: quem responde já é lead.
+       Dicionário de eventos: RASTREAMENTO.md, seção "Pesquisa da live". -->
+  <script src="../assets/js/tracking.js" defer></script>
+  <script src="../assets/js/live.js?v=20261105" defer></script>
+</head>
+<body data-etapas="engajou,iniciou_pesquisa,enviou_pesquisa">
+  <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1393732806282634&ev=PageView&noscript=1"></noscript>
+
+  <!-- ===== 1. PERGUNTAS ===== -->
+  <section class="teste" id="pesquisa" data-secao="perguntas">
+    <div class="teste__inner">
+      <header class="teste__intro">
+        <img class="teste__logo" src="../assets/img/logo-amarsaber.png" width="254" height="152" alt="Amar Saber">
+        <p class="teste__eyebrow">Live · 10/11, 20h · Instagram</p>
+        <h1 class="teste__title vd-anton">Monte a live <span class="vd-contorno">de terça comigo</span></h1>
+        <p class="teste__sub">O que vocês mais pedirem vira os casos que eu resolvo ao vivo em 10/11, às 20h. Quase tudo aqui é de tocar e escolher.</p>
+      </header>
+
+      <div class="teste__card" id="pesquisa-card">
+        <div class="teste__top">
+          <button class="teste__voltar" type="button" hidden>Voltar</button>
+          <p class="teste__contador" aria-live="polite">Pergunta 1 de 6</p>
+        </div>
+        <div class="teste__barra" aria-hidden="true"><span></span></div>
+        <h2 class="teste__pergunta" id="pesquisa-pergunta" tabindex="-1"></h2>
+        <div class="teste__opcoes" role="group" aria-labelledby="pesquisa-pergunta"></div>
+        <!-- Texto livre: pergunta aberta, "Outro" e "Não atendo" -->
+        <div class="live-texto" hidden>
+          <label class="live-texto__rotulo" for="pesquisa-texto"></label>
+          <textarea id="pesquisa-texto" rows="3" maxlength="500" placeholder="Escreva aqui (opcional)"></textarea>
+          <div class="live-acoes">
+            <button class="btn live-acoes__seguir" type="button">CONTINUAR</button>
+          </div>
+        </div>
+        <noscript><p class="teste__aviso">Para responder, ative o JavaScript do navegador.</p></noscript>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 2. WHATSAPP (opcional) E ENVIO ===== -->
+  <section class="teste" id="pesquisa-envio" data-secao="envio" hidden>
+    <div class="teste__inner">
+      <div class="teste__card">
+        <h2 class="teste-gate__title">Falta só enviar</h2>
+        <p class="teste-gate__text">Se quiser, deixe seu WhatsApp. Ele serve só para ligar suas respostas ao seu cadastro no Grupo VIP.</p>
+        <form class="teste-form" id="form-pesquisa" novalidate>
+          <div class="cap-field">
+            <label class="sr-only" for="pesquisa-whatsapp">Seu WhatsApp com DDD (opcional)</label>
+            <input id="pesquisa-whatsapp" name="whatsapp" type="tel" placeholder="Seu WhatsApp com DDD (opcional)" autocomplete="tel-national" inputmode="tel" maxlength="20">
+            <p class="cap-field__msg" aria-live="polite"></p>
+          </div>
+          <!-- Armadilha para robôs: pessoas não veem este campo -->
+          <div class="cap-hp" aria-hidden="true">
+            <label for="pesquisa-site">Site</label>
+            <input id="pesquisa-site" name="website" type="text" tabindex="-1" autocomplete="off">
+          </div>
+          <button class="btn teste-form__btn" type="submit">ENVIAR MINHAS RESPOSTAS</button>
+        </form>
+        <button class="teste__voltar live-envio__voltar" type="button">Voltar</button>
+        <p class="teste-gate__privacidade">Suas respostas seguem a <a href="https://amarsaber.com.br/politica-de-privacidade/" target="_blank" rel="noopener">Política de Privacidade</a> da Amar Saber.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 3. FIM ===== -->
+  <section class="teste" id="pesquisa-fim" data-secao="fim" hidden>
+    <div class="teste__inner">
+      <div class="teste__card live-fim">
+        <img class="teste__logo" src="../assets/img/logo-amarsaber.png" width="254" height="152" alt="Amar Saber">
+        <h2 class="teste-gate__title">Recebi.</h2>
+        <p class="teste-gate__text">Os temas mais pedidos entram nos casos da live de terça, 10/11, às 20h, no meu Instagram, @mariapaulaferrarivet.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="cap-footer live-footer">
+    <p>Amar Saber · Dra. Maria Paula Ferrari</p>
+  </footer>
+</body>
+</html>

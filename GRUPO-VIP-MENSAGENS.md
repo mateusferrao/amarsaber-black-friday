@@ -142,7 +142,7 @@ Na UTMify e no PostHog, o `utm_content` mostra quais casos e quais dias trazem v
 | | sáb 31/10, 12h | A2 | Caso #0 · estado epilético | texto + enquete |
 | | dom 01/11, 19h30 | A3 | Resposta do Caso #0 | imagem + texto |
 | | ter 03/11, 19h | 1 | D-7 + 1ª dica | texto + evento |
-| | qui 05/11, 12h | A4 | "O que mais te trava?" | enquete |
+| | qui 05/11, 12h | A4 | Pesquisa da live (link para /live/) | texto + link |
 | | sex 06/11, 12h | 2 | 2ª dica | texto |
 | | sáb 07/11, 12h | A5 | Bastidor: embrulhando os presentes | vídeo |
 | | dom 08/11, 19h30 | A6 | Convite da Dra. | áudio |
@@ -254,14 +254,21 @@ Volume 3, ela entra no lugar.]
 Logo depois, o evento do WhatsApp: "Live da Black · Guia de Protocolos", 10/11, 20h, com o link do Instagram.
 
 
-## A4 · qui 05/11, 12h · enquete
-> Estou montando os casos da live de terça e quero partir do que mais pesa na rotina de vocês. O tema mais votado
-> aqui guia os casos que eu levo para a live.
+## A4 · qui 05/11, 12h · pesquisa da live *(trocada em 05/11: era uma enquete)*
+> Estou montando os casos da live de terça e quero partir do que mais pesa na rotina de vocês.
 >
-> Qual desses mais te trava hoje?
+> Separei umas perguntas rápidas, quase todas de tocar e escolher. O que vocês mais pedirem vira os casos que eu
+> resolvo ao vivo, com o protocolo aberto.
+>
+> https://black.amarsaber.com.br/live/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=pesquisa_live
 
-Enquete, uma resposta só: O plantão: dose e conduta na hora · A consulta: o tutor que diz "vou pensar" · O caso
-difícil que decido sozinho
+Sem @todos. A página `/live/` tem 6 perguntas: tema (com "Outro"), caso pedido (texto), se já tem o Guia, o que pesaria
+na decisão (com "Outro"), tempo de atendimento (com "Não atendo") e local (com "Outro"; pula para quem não atende).
+O WhatsApp é opcional. As respostas caem na aba **Pesquisa da live** da planilha (detalhes em `RASTREAMENTO.md`).
+A Dra. concordou que os temas mais pedidos viram os casos da live. Leitura das respostas: domingo, 08/11, 12h.
+
+Enquete antiga (cancelada), para referência: "O que mais te trava na rotina?" com O plantão: dose e conduta na hora ·
+A consulta: o tutor que diz "vou pensar" · O caso difícil que decido sozinho.
 
 ## 2 · sex 06/11, 12h · 2ª dica
 > Segunda dica dos presentes de terça: um deles é para o caso difícil que você decide sozinho, sem ninguém para

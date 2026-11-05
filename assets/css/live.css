@@ -1,0 +1,31 @@
+/* =========================================================
+   Amar Saber — Pesquisa da live /live/
+   Usa as telas do /teste/ (teste.css) e as cores da LP (style.css).
+   Aqui ficam só o campo de texto livre, os botões dele e o rodapé.
+   ========================================================= */
+.live-texto { display: flex; flex-direction: column; gap: 10px; margin-top: 18px; }
+.live-texto__rotulo { font-size: 15px; font-weight: 600; line-height: 1.35; color: var(--cream); }
+.live-texto__rotulo:empty { display: none; }
+.live-texto textarea {
+  width: 100%;
+  min-height: 96px;
+  padding: 12px 14px;
+  font-family: "Roboto", sans-serif; font-size: 16px; line-height: 1.4;
+  color: #fff;
+  background: transparent;
+  border: 1px solid #fff;
+  border-radius: 8px;
+  resize: vertical;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+}
+.live-texto textarea::placeholder { color: rgba(255, 255, 255, .55); }
+.live-texto textarea:focus { border-color: var(--pink); box-shadow: 0 0 0 2px rgba(252, 36, 148, .35); }
+.live-acoes { display: flex; flex-direction: column; align-items: stretch; gap: 8px; }
+.live-acoes__seguir { width: 100%; padding: 18px; font-size: 15px; cursor: pointer; }
+
+.live-envio__voltar { display: block; margin: 14px auto 0; }
+.live-fim { display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; }
+.live-fim .teste__logo { width: 120px; }
+
+.live-footer { padding: 20px 16px; font-size: 12px; text-align: center; color: rgba(255, 255, 255, .6); background: var(--bg-dark); }
