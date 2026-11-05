@@ -267,6 +267,16 @@ na decisão (múltipla escolha, com "Outro"), tempo de atendimento (com "Não at
 O WhatsApp é opcional. As respostas caem na aba **Pesquisa da live** da planilha (detalhes em `RASTREAMENTO.md`).
 A Dra. concordou que os temas mais pedidos viram os casos da live. Leitura das respostas: domingo, 08/11, 12h.
 
+**Lembrete, qui 05/11, 19h** (aprovado em 05/11; agendado às 18h30 com o resultado real da planilha). Sem @todos. Com 10+
+respostas e um tema na frente:
+> Já chegaram as primeiras respostas para a live de terça, e o tema mais pedido até agora é [tema].
+>
+> Se o que mais pesa na sua rotina é outro, ainda dá tempo de contar. São poucas perguntas, quase todas de tocar:
+> https://black.amarsaber.com.br/live/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=pesquisa_live&utm_content=lembrete
+
+Com poucas respostas ou empate: "Ainda dá tempo de escolher o que eu resolvo ao vivo na terça. São poucas perguntas,
+quase todas de tocar: [mesmo link]".
+
 Enquete antiga (cancelada), para referência: "O que mais te trava na rotina?" com O plantão: dose e conduta na hora ·
 A consulta: o tutor que diz "vou pensar" · O caso difícil que decido sozinho.
 
