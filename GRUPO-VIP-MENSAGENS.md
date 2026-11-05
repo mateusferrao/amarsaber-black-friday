@@ -41,7 +41,7 @@ Regras:
 - **Grupos novos:** a criação automática fica desligada. O próximo grupo é criado à mão no celular e importado
   (passo a passo em `RASTREAMENTO.md`).
 - **Manuais (dia da live):** a 6, a 6a, a 6b e a 7 ficam prontas como template e o Mateus dispara pelo painel quando a
-  Dra. abre cada presente. Ensaio na live de teste de 09/11.
+  Dra. abre cada presente. Ensaio sugerido em 09/11 (`LIVE-ROTEIRO.md`, Preparação).
 - **Evento do WhatsApp:** nas mensagens 1 e 3, um evento nativo "Live da Black · Guia de Protocolos" em 10/11, 20h,
   com o link do Instagram. Quem toca em "Vou" recebe o lembrete do próprio WhatsApp.
 - **@todos** (menciona todos e faz tocar o celular de quem silenciou): só nas mensagens 5, 6 e 7 e nas duas últimas de
@@ -152,9 +152,9 @@ Na UTMify e no PostHog, o `utm_content` mostra quais casos e quais dias trazem v
 | | 10/11, 18h | 4 | O link da live | texto |
 | | 10/11, 19h50 | 5 | Já vai começar | texto, @todos |
 | | 10/11, 20h10 | 6 | Já estamos ao vivo | texto, agendada |
-| | 10/11, ~20h08 | 6a | Presente 01 aberto | texto, manual |
-| | 10/11, ~20h20 | 6b | Presente 02 aberto | texto, manual |
-| | 10/11, ~20h21 | 7 | Presentes abertos + link da Black | texto, @todos, manual |
+| | 10/11, ~20h12 | 6a | Presente 01 aberto | texto, manual |
+| | 10/11, ~20h26 | 6b | Presente 02 aberto | texto, manual |
+| | 10/11, ~20h27 | 7 | Presentes abertos + link da Black | texto, @todos, manual |
 | Carrinho aberto | qua 11/11, 10h | 8 | Para quem não viu | texto |
 | | qua 11/11, 19h30 | 8b | Amanhã começa o Caso do dia | texto |
 | | qui 12/11, 10h | C | Obrigada a quem comprou + urgência para quem não comprou | texto, link |
@@ -381,19 +381,19 @@ recuperação (`RECUPERACAO-TEMPLATES.md`, fluxos vip).
 Sem @todos porque a 5 (19h50) e a 7 já marcam todo mundo. Se a live atrasar, cancelar esta ação antes das 20h10 e
 disparar na hora o template de reserva "Live 10/11 · 6 · Estamos ao vivo (@todos)".
 
-## 6a · ~20h08 · quando a Dra. abre o Presente 01 · manual
+## 6a · ~20h12 · quando a Dra. abre o Presente 01 · manual
 > 🎁 Presente 01 aberto: o curso completo Atendimento Extraordinário. É o passo a passo da consulta que a gente usa
 > na Amar Veterinária, da anamnese ao pós-consulta, para o tutor entender a conduta e dizer sim ao tratamento.
 >
 > Ainda faltam dois. Estamos ao vivo: https://www.instagram.com/mariapaulaferrarivet/
 
-## 6b · ~20h20 · quando a Dra. abre o Presente 02 · manual
+## 6b · ~20h26 · quando a Dra. abre o Presente 02 · manual
 > 🎁 Presente 02 aberto: 3 meses na Comunidade Amar Saber no WhatsApp, comigo e com a equipe, para você levar o caso
 > que te travou.
 >
 > O último presente é a condição, e o link chega aqui no grupo em instantes: https://www.instagram.com/mariapaulaferrarivet/
 
-## 7 · ~20h21 · quando a Dra. abre o Presente 03 · @todos · manual
+## 7 · ~20h27 · quando a Dra. abre o Presente 03 · @todos · manual
 > A Black do Guia de Protocolos está aberta, primeiro para vocês.
 >
 > 📘 Guia de Protocolos · Volume 3, impresso: condutas, doses e cálculos da clínica de pequenos animais, para abrir no
