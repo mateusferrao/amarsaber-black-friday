@@ -1,6 +1,8 @@
 // Pesquisa da live /live/: 6 perguntas (tema, caso pedido, se já tem o Guia, o que pesaria na decisão, tempo de
 // atendimento e local), WhatsApp opcional e envio ao n8n (aba "Pesquisa da live" da planilha Leads · Black).
-// Sem Lead da Meta: quem responde já é lead. Eventos só no PostHog e tags no Clarity.
+// Sem Lead da Meta: quem responde já é lead. Para a Meta vai o evento personalizado PesquisaLive (só respostas de
+// escolha, para públicos de remarketing por objeção; não é usado para otimizar campanha). Pelo servidor (n8n, API de
+// Conversões) ele vai de novo, com o mesmo event_id, quando a pessoa deu o WhatsApp.
 // Nada se perde se a pessoa não clicar em enviar: cada pessoa tem um ID, e a planilha atualiza a mesma linha.
 //   - saiu no meio (fechou a aba, trocou de app): envia o que já respondeu, status "parcial";
 //   - chegou à última tela: envia tudo na hora, status "respondeu";
@@ -17,7 +19,7 @@
   };
 
   var noop = function () {};
-  var T = window.asTracking || { capture: noop, reachStage: noop, origem: {} };
+  var T = window.asTracking || { capture: noop, reachStage: noop, metaTrack: noop, origem: {} };
   var live = !!window.asTracking && !T.interno;
 
   // ---------- Perguntas ----------
@@ -36,12 +38,13 @@
       { id: 'nao', texto: 'Ainda não' },
       { id: 'anterior', texto: 'Tenho uma edição anterior' }
     ] },
-    { id: 'pesaria', tipo: 'escolha', texto: 'Na Black, o que mais pesaria na sua decisão de levar o Guia?', opcoes: [
+    // Múltipla escolha. "Nada, já vou levar" exclui as outras (e vice-versa).
+    { id: 'pesaria', tipo: 'escolha', multipla: true, texto: 'Na Black, o que mais pesaria na sua decisão de levar o Guia?', opcoes: [
       { id: 'valor', texto: 'O valor' },
       { id: 'entrega', texto: 'O prazo de entrega' },
       { id: 'momento', texto: 'Se serve para o meu momento' },
       { id: 'anterior', texto: 'Já tenho uma edição anterior' },
-      { id: 'decidido', texto: 'Nada, já vou levar' },
+      { id: 'decidido', texto: 'Nada, já vou levar', exclusiva: true },
       { id: 'outro', texto: 'Outro', abre: 'O quê?' }
     ] },
     { id: 'tempo', tipo: 'escolha', texto: 'Há quanto tempo você atende?', opcoes: [
@@ -64,6 +67,10 @@
   // ---------- Helpers ----------
   function load(key) { try { return JSON.parse(localStorage.getItem(key)); } catch (e) { return null; } }
   function save(key, v) { try { localStorage.setItem(key, JSON.stringify(v)); } catch (e) {} }
+  function cookie(name) {
+    var m = document.cookie.match('(?:^|; )' + name + '=([^;]*)');
+    return m ? decodeURIComponent(m[1]) : '';
+  }
   function nationalDigits(v) {
     var d = String(v || '').replace(/\D/g, '');
     if (d.length > 11 && d.indexOf('55') === 0) d = d.slice(2);
@@ -98,6 +105,11 @@
   var textLabel = textBox.querySelector('.live-texto__pergunta');
   var textArea = textBox.querySelector('textarea');
   var textNext = textBox.querySelector('.live-acoes__seguir');
+  var textActions = textBox.querySelector('.live-acoes');
+  var hint = card.querySelector('.live-dica');
+  var multiBox = card.querySelector('.live-multi');
+  var multiNext = multiBox.querySelector('.live-multi__seguir');
+  var multiMsg = multiBox.querySelector('.live-multi__msg');
   var form = document.getElementById('form-pesquisa');
   var phone = document.getElementById('pesquisa-whatsapp');
   var sendBack = screens.envio.querySelector('.live-envio__voltar');
@@ -110,6 +122,8 @@
   var started = false;
   var startedAt = 0;
   var onSendScreen = false;
+  var metaEventId = (T.eventId ? T.eventId('PesquisaLive') : 'PesquisaLive_' + Date.now().toString(36));
+  var metaSent = false;
   var finalSent = false;       // clicou em enviar e o n8n recebeu
   var lastSignature = '';      // o último envio igual não é repetido
   var queue = Promise.resolve(); // envios em ordem: o "enviado" nunca chega antes do "respondeu"
@@ -146,6 +160,10 @@
     optionsBox.innerHTML = '';
     textBox.hidden = true;
     textArea.value = '';
+    hint.hidden = !q.multipla;
+    multiBox.hidden = !q.multipla;
+    multiMsg.textContent = '';
+    textActions.hidden = !!q.multipla;
 
     if (q.tipo === 'texto') {
       optionsBox.hidden = true;
@@ -155,19 +173,25 @@
       q.opcoes.forEach(function (o) {
         var b = document.createElement('button');
         b.type = 'button';
-        b.className = 'teste__opcao';
+        b.className = 'teste__opcao' + (q.multipla ? ' is-multi' : '');
         b.textContent = o.texto;
-        if (answers[q.id] && answers[q.id].id === o.id) b.classList.add('is-selected');
+        b.dataset.opcao = o.id;
+        if (q.multipla) b.setAttribute('aria-pressed', 'false');
+        var a = answers[q.id];
+        if (a && (q.multipla ? a.ids.indexOf(o.id) !== -1 : a.id === o.id)) { b.classList.add('is-selected'); if (q.multipla) b.setAttribute('aria-pressed', 'true'); }
         b.addEventListener('click', function () { choose(q, o, b); });
         optionsBox.appendChild(b);
       });
       var prev = answers[q.id];
-      if (prev && prev.abre) openText(prev.abre, prev.outro || '');
+      if (prev && q.multipla && prev.ids.indexOf('outro') !== -1) openText(optionById(q, 'outro').abre, prev.outro || '');
+      else if (prev && prev.abre) openText(prev.abre, prev.outro || '');
     }
     title.focus({ preventScroll: true });
     // Depois da 1ª pergunta, mantém o topo do cartão na tela (a anterior pode ter deixado a página rolada)
     if (history.length && card.getBoundingClientRect().top < 0) card.scrollIntoView({ block: 'start' });
   }
+
+  function optionById(q, id) { for (var i = 0; i < q.opcoes.length; i++) if (q.opcoes[i].id === id) return q.opcoes[i]; return null; }
 
   function openText(label, value) {
     textLabel.textContent = label;
@@ -188,8 +212,9 @@
     T.capture('lp_pesquisa_resposta', Object.assign({
       pergunta_id: q.id,
       numero: visible().indexOf(q) + 1,
-      resposta_id: a.id || (a.texto ? 'texto' : 'vazio'),
-      resposta: a.id ? a.texto : '',
+      resposta_id: a.ids ? a.ids.join(',') : (a.id || (a.texto ? 'texto' : 'vazio')),
+      resposta: a.ids ? a.textos.join('; ') : (a.id ? a.texto : ''),
+      quantidade: a.ids ? a.ids.length : undefined,
       com_texto: !!(a.outro || (q.tipo === 'texto' && a.texto)),
       etapa: 'engajamento'
     }, extra || {}));
@@ -197,6 +222,7 @@
 
   function choose(q, o, button) {
     begin();
+    if (q.multipla) { toggle(q, o); return; }
     [].forEach.call(optionsBox.children, function (el) { el.classList.toggle('is-selected', el === button); });
     var prev = answers[q.id];
     answers[q.id] = { id: o.id, texto: o.texto, abre: o.abre || '', outro: prev && prev.id === o.id ? prev.outro : '' };
@@ -205,6 +231,40 @@
     record(q);
     setTimeout(advance, 180);
   }
+
+  // Múltipla escolha: marca/desmarca; a opção exclusiva limpa as outras e vice-versa
+  function toggle(q, o) {
+    var a = answers[q.id] || { multi: true, ids: [], textos: [], outro: '' };
+    var i = a.ids.indexOf(o.id);
+    if (i !== -1) { a.ids.splice(i, 1); }
+    else {
+      if (o.exclusiva) a.ids = [];
+      else a.ids = a.ids.filter(function (id) { var op = optionById(q, id); return !(op && op.exclusiva); });
+      a.ids.push(o.id);
+    }
+    // Mantém a ordem das opções na tela
+    a.ids = q.opcoes.filter(function (op) { return a.ids.indexOf(op.id) !== -1; }).map(function (op) { return op.id; });
+    a.textos = a.ids.map(function (id) { return optionById(q, id).texto; });
+    answers[q.id] = a;
+    [].forEach.call(optionsBox.children, function (el) {
+      var on = a.ids.indexOf(el.dataset.opcao) !== -1;
+      el.classList.toggle('is-selected', on);
+      el.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+    multiMsg.textContent = '';
+    var outro = optionById(q, 'outro');
+    if (a.ids.indexOf('outro') !== -1) { if (textBox.hidden) { openText(outro.abre, a.outro || ''); if (o.id === 'outro') textArea.focus(); } }
+    else { textBox.hidden = true; a.outro = ''; }
+  }
+
+  multiNext.addEventListener('click', function () {
+    var q = QUESTIONS[current];
+    var a = answers[q.id];
+    if (!a || !a.ids.length) { multiMsg.textContent = 'Marque pelo menos uma opção.'; return; }
+    a.outro = a.ids.indexOf('outro') !== -1 ? textArea.value.trim().slice(0, 500) : '';
+    record(q);
+    advance();
+  });
 
   textNext.addEventListener('click', function () {
     var q = QUESTIONS[current];
@@ -224,6 +284,7 @@
       show('envio');
       // Respondeu tudo: as respostas já vão para a planilha, mesmo que a pessoa feche sem clicar em enviar
       send('respondeu').catch(noop);
+      trackMeta();
       T.capture('lp_pesquisa_respondeu', Object.assign({ etapa: 'conversao' }, summary()));
       return;
     }
@@ -271,10 +332,21 @@
   }
   function postWithRetry(payload) { return post(payload).catch(function () { return post(payload); }); }
 
-  function answerText(id) { var a = answers[id]; return a ? (a.id ? a.texto : a.texto || '') : ''; }
-  function answerOther(id) { var a = answers[id]; return a && a.id ? (a.outro || '') : ''; }
-  function answerId(id) { var a = answers[id]; return a && a.id ? a.id : ''; }
-  function answeredCount() { return Object.keys(answers).filter(function (k) { return answers[k].id || answers[k].texto; }).length; }
+  function answerText(id) { var a = answers[id]; if (!a) return ''; if (a.ids) return a.textos.join('; '); return a.id ? a.texto : (a.texto || ''); }
+  function answerOther(id) { var a = answers[id]; return a && (a.id || a.ids) ? (a.outro || '') : ''; }
+  function answerId(id) { var a = answers[id]; if (!a) return ''; if (a.ids) return a.ids.join(','); return a.id || ''; }
+  function answeredCount() { return Object.keys(answers).filter(function (k) { var a = answers[k]; return a.ids ? a.ids.length : (a.id || a.texto); }).length; }
+
+  // Evento personalizado da Meta, uma vez, quando a pessoa chega ao fim (só respostas de escolha, sem texto livre)
+  function trackMeta() {
+    if (metaSent || !T.metaTrack) return;
+    metaSent = true;
+    T.metaTrack('PesquisaLive', {
+      content_name: 'Pesquisa da live',
+      tema: answerId('tema'), tem_guia: answerId('tem_guia'), pesaria: answerId('pesaria'),
+      tempo: answerId('tempo'), local: answerId('local')
+    }, true, metaEventId);
+  }
 
   // Texto digitado e ainda não confirmado (a pessoa saiu antes de tocar em CONTINUAR) também vale
   function keepTyped() {
@@ -282,7 +354,7 @@
     var q = QUESTIONS[current], v = textArea.value.trim().slice(0, 500);
     if (!v) return;
     if (q.tipo === 'texto') answers[q.id] = { texto: v };
-    else if (answers[q.id] && answers[q.id].abre) answers[q.id].outro = v;
+    else if (answers[q.id] && (answers[q.id].abre || answers[q.id].ids)) answers[q.id].outro = v;
   }
 
   function collect() {
@@ -309,10 +381,13 @@
       status: status,
       respondidas: answeredCount(),
       respostas: collect(),
+      r_ids: { tema: answerId('tema'), tem_guia: answerId('tem_guia'), pesaria: answerId('pesaria'), tempo: answerId('tempo'), local: answerId('local') },
       whatsapp: whatsapp || '',
       website: form.elements.website.value || undefined,
       interno: !!T.interno,
       posthog_distinct_id: (window.posthog && posthog.get_distinct_id && posthog.get_distinct_id()) || '',
+      // API de Conversões (n8n), só quando a pessoa deu o WhatsApp: mesmo event_id do navegador (deduplica)
+      meta: { event_id: metaEventId, fbp: cookie('_fbp'), fbc: cookie('_fbc'), test_event_code: new URLSearchParams(location.search).get('test_event_code') || '' },
       pagina: location.href.split('#')[0],
       referrer: document.referrer
     });

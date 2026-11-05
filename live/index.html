@@ -23,14 +23,14 @@
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../assets/css/teste.css">
   <link rel="stylesheet" href="../assets/css/venda.css">
-  <link rel="stylesheet" href="../assets/css/live.css?v=20261105b">
+  <link rel="stylesheet" href="../assets/css/live.css?v=20261105c">
 
   <!-- ===== RASTREAMENTO =====
        tracking.js: Meta Pixel (só PageView e visita engajada), PostHog e Clarity, o mesmo da LP.
        live.js: perguntas e envio ao n8n (planilha "Pesquisa da live"). Sem Lead da Meta: quem responde já é lead.
        Dicionário de eventos: RASTREAMENTO.md, seção "Pesquisa da live". -->
   <script src="../assets/js/tracking.js" defer></script>
-  <script src="../assets/js/live.js?v=20261105b" defer></script>
+  <script src="../assets/js/live.js?v=20261105c" defer></script>
 </head>
 <body data-etapas="engajou,iniciou_pesquisa,enviou_pesquisa">
   <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1393732806282634&ev=PageView&noscript=1"></noscript>
@@ -52,6 +52,7 @@
         </div>
         <div class="teste__barra" aria-hidden="true"><span></span></div>
         <h2 class="teste__pergunta" id="pesquisa-pergunta" tabindex="-1"></h2>
+        <p class="live-dica" hidden>Pode marcar mais de uma.</p>
         <div class="teste__opcoes" role="group" aria-labelledby="pesquisa-pergunta"></div>
         <!-- Texto livre: pergunta aberta, "Outro" e "Não atendo" -->
         <div class="live-texto" hidden>
@@ -60,6 +61,11 @@
           <div class="live-acoes">
             <button class="btn live-acoes__seguir" type="button">CONTINUAR</button>
           </div>
+        </div>
+        <!-- Múltipla escolha: o CONTINUAR fica fora do campo de texto -->
+        <div class="live-multi" hidden>
+          <p class="cap-field__msg live-multi__msg" aria-live="polite"></p>
+          <button class="btn live-acoes__seguir live-multi__seguir" type="button">CONTINUAR</button>
         </div>
         <noscript><p class="teste__aviso">Para responder, ative o JavaScript do navegador.</p></noscript>
       </div>

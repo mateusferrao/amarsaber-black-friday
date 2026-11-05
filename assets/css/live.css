@@ -38,3 +38,14 @@
 }
 .teste__pergunta .live-opcional { font-size: 11px; }
 .live-rotulo { display: block; margin-bottom: 8px; font-size: 15px; font-weight: 600; line-height: 1.35; color: var(--cream); }
+
+/* Múltipla escolha (pergunta 4) */
+.live-dica { margin-top: 8px; font-size: 14px; font-weight: 600; color: var(--pink); }
+.live-multi { display: flex; flex-direction: column; gap: 8px; margin-top: 18px; }
+.live-multi__msg:empty { display: none; }
+.teste__opcao.is-multi { position: relative; padding-left: 52px; }
+.teste__opcao.is-multi::before {
+  content: ""; position: absolute; left: 18px; top: 50%; width: 20px; height: 20px; margin-top: -10px;
+  border: 2px solid rgba(255, 255, 255, .6); border-radius: 5px;
+}
+.teste__opcao.is-multi.is-selected::before { border-color: var(--pink); background: var(--pink); box-shadow: inset 0 0 0 3px var(--bg-dark); }
