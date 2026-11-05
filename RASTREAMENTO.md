@@ -304,7 +304,8 @@ lead, e um Lead novo atrapalharia a otimização das campanhas de captação. A 
   Pesaria_outro, Tempo, Tempo_outro, Local, Local_outro, WhatsApp, Link_WhatsApp, Canal, utm_*, Interno, Página,
   distinct_id. Robôs (campo escondido) e envios vazios são descartados.
 - **Quem já respondeu** (localStorage `as_pesquisa_live`) vê direto a tela final. `?refazer=1` mostra as perguntas de novo.
-- **Testar:** `/live/?interno=1` (a linha cai com Interno = sim; apague depois).
+- **Testar:** `/live/?interno=1` (a linha cai com Interno = sim; apague depois). Navegador automatizado (Playwright) não manda
+  eventos ao PostHog nem nesta página nem na captura: confira os eventos com um celular de verdade.
 
 ## Grupos VIP (SendFlow)
 

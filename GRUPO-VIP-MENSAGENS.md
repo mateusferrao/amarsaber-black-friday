@@ -77,7 +77,7 @@ ponte de cada caso para a oferta) recriou 28 ações. Os IDs abaixo já são os 
 | A2 | `QsS9kbSo7Oa0CJAXKFNG` |
 | A3 | `8DLm70xruo2Po31G3Lbz` |
 | 1 | `ixFXa9om1ussq8YmJKew` |
-| A4 | `q6jEK9AZ46xteZrohm5n` |
+| A4 (pesquisa da live, link para /live/) | `NuzR98yZ8sGjkk8OdUiE` (a enquete `q6jEK9AZ46xteZrohm5n` foi cancelada em 05/11) |
 | 2 | `KWAy0SbMt7GWefPujf7T` |
 | A5 (vídeo + evento) | `z6YpqzG2buyZ93Em2b51` |
 | A6 (áudio) | `r3q0LMKNWbAze2QpV6TK` |
