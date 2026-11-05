@@ -140,6 +140,15 @@ receber e recebe o valor de volta".
 - "a maior condição que o Guia já teve" é verdade (confirmado em 05/11);
 - não há bônus de abertura: a condição é a mesma até 30/11, e ninguém fala "só para quem está ao vivo".
 
+**8. Quem já tem uma edição anterior (decidir no domingo, com a pesquisa):**
+- a pergunta 3 da pesquisa mostra quantas pessoas já têm o Guia;
+- se for uma parte grande do público, vale discutir uma condição própria para quem comprou antes. Exemplos: um valor
+  de atualização para o Volume 3, ou o curso e a comunidade como o principal motivo para essas pessoas;
+- isso muda a oferta, então só entra com a decisão da Dra. Até lá, vale a resposta-base de "comprei antes, tenho
+  direito?";
+- **cuidado:** uma condição só para quem já comprou não pode baixar o valor percebido da oferta principal para quem
+  nunca comprou. Ela iria por mensagem direta, e não na live.
+
 **Fora da live:**
 - **O downsell de R$ 187 (curso + comunidade):** quem trava no preço já recebe esse downsell sozinho ao sair do
   checkout. Falar dele na live canibaliza a oferta principal.
@@ -188,6 +197,7 @@ Em todas as linhas, quanto antes, melhor: a data é o limite.
 | sáb 07/11 | definir de onde cada uma entra (clínica ou casa), com os cuidados para quem ficar na clínica | Dra. e Isabelle |
 | sáb 07/11 | a Isabelle separa de 4 a 6 casos reais anonimizados, olhando as respostas parciais da pesquisa. Ficha por caso, abaixo | Isabelle |
 | dom 08/11 | leitura da pesquisa (12h): tema, casos pedidos e objeções. A Dra. escolhe os 3 casos e recebe as fichas; os pontos do tema e a ordem das objeções são fechados | Dra. e Mateus |
+| dom 08/11 | se a pesquisa mostrar muita gente com edição anterior, decidir se há condição própria para quem comprou antes (ver "Valor, âncora e CTA", item 8) | Dra. e Mateus |
 | seg 09/11, 12h | caixinha de perguntas nos stories, antes da mensagem 3b | Dra. ou equipe |
 | seg 09/11 | a Dra. dá acesso ao Instagram dela a 1 pessoa da equipe, e as duas testam o login com a verificação em duas etapas | Dra. e equipe |
 | seg 09/11 | agendar a live no Instagram (a mensagem 4 pede para ativar o lembrete) | Dra. |
