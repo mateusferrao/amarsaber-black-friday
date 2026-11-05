@@ -78,6 +78,7 @@ ponte de cada caso para a oferta) recriou 28 ações. Os IDs abaixo já são os 
 | A3 | `8DLm70xruo2Po31G3Lbz` |
 | 1 | `ixFXa9om1ussq8YmJKew` |
 | A4 (pesquisa da live, link para /live/) | `NuzR98yZ8sGjkk8OdUiE` (a enquete `q6jEK9AZ46xteZrohm5n` foi cancelada em 05/11) |
+| Lembrete da A4 (05/11, ~19h40) | `Jqynx6lGY1FIe8xP2wJG` |
 | 2 | `KWAy0SbMt7GWefPujf7T` |
 | A5 (vídeo + evento) | `z6YpqzG2buyZ93Em2b51` |
 | A6 (áudio) | `r3q0LMKNWbAze2QpV6TK` |
@@ -267,7 +268,7 @@ na decisão (múltipla escolha, com "Outro"), tempo de atendimento (com "Não at
 O WhatsApp é opcional. As respostas caem na aba **Pesquisa da live** da planilha (detalhes em `RASTREAMENTO.md`).
 A Dra. concordou que os temas mais pedidos viram os casos da live. Leitura das respostas: domingo, 08/11, 12h.
 
-**Lembrete, qui 05/11, 19h** (aprovado em 05/11; agendado às 18h30 com o resultado real da planilha). Sem @todos. Com 10+
+**Lembrete, qui 05/11** (aprovado em 05/11). Saiu às ~19h40 com o texto A (ação `Jqynx6lGY1FIe8xP2wJG`): 60 respostas, plantão 36, caso difícil 13, consulta 9. Sem @todos. Com 10+
 respostas e um tema na frente:
 > Já chegaram as primeiras respostas para a live de terça, e o tema mais pedido até agora é [tema].
 >
