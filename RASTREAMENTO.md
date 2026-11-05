@@ -289,6 +289,8 @@ lead, e um Lead novo atrapalharia a otimização das campanhas de captação. A 
 |---|---|---|---|
 | engajamento | `lp_pesquisa_inicio` | 1ª resposta | — |
 | engajamento | `lp_pesquisa_resposta` | cada pergunta respondida | `pergunta_id` (tema, caso, tem_guia, pesaria, tempo, local), `numero`, `resposta_id`, `resposta`, `com_texto` |
+| conversão | `lp_pesquisa_respondeu` | chegou à última tela (respondeu tudo, antes do botão) | ids das respostas, `respondidas`, `tem_caso`, `segundos_na_pesquisa` |
+| engajamento | `lp_pesquisa_parcial` | saiu no meio (aba escondida ou fechada) | `ultima_pergunta`, `respondidas` e os ids já respondidos |
 | conversão | `lp_pesquisa_enviada` + identify (`wa_55…`, só se deu o WhatsApp) | o n8n recebeu | ids de `tema`, `tem_guia`, `pesaria`, `tempo`, `local`; `tem_caso`, `deu_whatsapp`, `segundos_na_pesquisa` |
 | conversão | `lp_pesquisa_falha` | n8n fora do ar (2 tentativas); a pessoa vê o fim mesmo assim | `motivo` e as respostas completas (para recuperar) |
 
@@ -297,12 +299,19 @@ lead, e um Lead novo atrapalharia a otimização das campanhas de captação. A 
   prazo de entrega, Se serve para o meu momento, Já tenho uma edição anterior, Nada, já vou levar, Outro) · Há quanto
   tempo você atende? (as do `/teste/` + Não atendo) · Onde você mais atende hoje? (as do `/teste/` + Outro; não aparece
   para quem não atende). "Outro" e "Não atendo" abrem um campo de texto opcional.
+- **Nada se perde sem o clique em enviar.** Cada pessoa tem um `ID` (sessionStorage `as_pesquisa_id`) e o n8n atualiza a
+  mesma linha (Google Sheets "append or update" pela coluna ID). Coluna **Status**:
+  - `parcial (saiu no meio)`: saiu antes do fim (fechou a aba, trocou de app); vai por `sendBeacon`, com o texto que
+    estava digitado;
+  - `respondeu, não clicou em enviar`: chegou à tela do WhatsApp; vai na hora, sem esperar o botão;
+  - `enviado`: tocou em ENVIAR (com ou sem WhatsApp).
+  A coluna **Data** é a da última atualização; **Respondidas** conta as perguntas respondidas.
 - **Texto livre** (caso pedido e os "Outro") vai só para a planilha, não para o PostHog.
 - **Clarity:** `etapa_max` = `engajou` → `iniciou_pesquisa` → `enviou_pesquisa`.
 - **Planilha:** n8n **AS · Pesquisa da live → Sheets** (`J3HEcFVLFnuQE6Cc`, webhook `as-black-live`, CORS só para
   black.amarsaber.com.br), aba **Pesquisa da live**: Data, Tema, Tema_outro, Caso_pedido, Tem_Guia, Pesaria,
   Pesaria_outro, Tempo, Tempo_outro, Local, Local_outro, WhatsApp, Link_WhatsApp, Canal, utm_*, Interno, Página,
-  distinct_id. Robôs (campo escondido) e envios vazios são descartados.
+  distinct_id, ID, Status, Respondidas. Robôs (campo escondido) e envios vazios são descartados.
 - **Quem já respondeu** (localStorage `as_pesquisa_live`) vê direto a tela final. `?refazer=1` mostra as perguntas de novo.
 - **Testar:** `/live/?interno=1` (a linha cai com Interno = sim; apague depois). Navegador automatizado (Playwright) não manda
   eventos ao PostHog nem nesta página nem na captura: confira os eventos com um celular de verdade.

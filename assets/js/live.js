@@ -1,6 +1,10 @@
 // Pesquisa da live /live/: 6 perguntas (tema, caso pedido, se já tem o Guia, o que pesaria na decisão, tempo de
 // atendimento e local), WhatsApp opcional e envio ao n8n (aba "Pesquisa da live" da planilha Leads · Black).
 // Sem Lead da Meta: quem responde já é lead. Eventos só no PostHog e tags no Clarity.
+// Nada se perde se a pessoa não clicar em enviar: cada pessoa tem um ID, e a planilha atualiza a mesma linha.
+//   - saiu no meio (fechou a aba, trocou de app): envia o que já respondeu, status "parcial";
+//   - chegou à última tela: envia tudo na hora, status "respondeu";
+//   - clicou em enviar: envia com o WhatsApp (se deu), status "enviado".
 // Dicionário de eventos: RASTREAMENTO.md, seção "Pesquisa da live".
 (function () {
   'use strict';
@@ -8,7 +12,8 @@
   var CONFIG = {
     webhook: 'https://n8n.automato.pro/webhook/as-black-live',
     timeoutMs: 8000,
-    sent: 'as_pesquisa_live' // já respondeu neste navegador (localStorage): quem volta vê a tela final
+    sent: 'as_pesquisa_live', // já respondeu neste navegador (localStorage): quem volta vê a tela final
+    id: 'as_pesquisa_id'      // ID desta resposta (sessionStorage): sobrevive a recarregar a página
   };
 
   var noop = function () {};
@@ -90,7 +95,7 @@
   var bar = card.querySelector('.teste__barra span');
   var back = card.querySelector('.teste__voltar');
   var textBox = card.querySelector('.live-texto');
-  var textLabel = textBox.querySelector('.live-texto__rotulo');
+  var textLabel = textBox.querySelector('.live-texto__pergunta');
   var textArea = textBox.querySelector('textarea');
   var textNext = textBox.querySelector('.live-acoes__seguir');
   var form = document.getElementById('form-pesquisa');
@@ -104,8 +109,22 @@
   var current = -1;
   var started = false;
   var startedAt = 0;
+  var onSendScreen = false;
+  var finalSent = false;       // clicou em enviar e o n8n recebeu
+  var lastSignature = '';      // o último envio igual não é repetido
+  var queue = Promise.resolve(); // envios em ordem: o "enviado" nunca chega antes do "respondeu"
+  var responseId = (function () {
+    var v = null;
+    try { v = sessionStorage.getItem(CONFIG.id); } catch (e) {}
+    if (!v) {
+      v = (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : Date.now().toString(36) + Math.random().toString(36).slice(2);
+      try { sessionStorage.setItem(CONFIG.id, v); } catch (e) {}
+    }
+    return v;
+  })();
 
   function show(name) {
+    onSendScreen = name === 'envio';
     Object.keys(screens).forEach(function (k) { screens[k].hidden = k !== name; });
     window.scrollTo(0, 0);
   }
@@ -203,6 +222,9 @@
     if (n === -1) {
       bar.style.width = '100%';
       show('envio');
+      // Respondeu tudo: as respostas já vão para a planilha, mesmo que a pessoa feche sem clicar em enviar
+      send('respondeu').catch(noop);
+      T.capture('lp_pesquisa_respondeu', Object.assign({ etapa: 'conversao' }, summary()));
       return;
     }
     render(n);
@@ -252,6 +274,77 @@
   function answerText(id) { var a = answers[id]; return a ? (a.id ? a.texto : a.texto || '') : ''; }
   function answerOther(id) { var a = answers[id]; return a && a.id ? (a.outro || '') : ''; }
   function answerId(id) { var a = answers[id]; return a && a.id ? a.id : ''; }
+  function answeredCount() { return Object.keys(answers).filter(function (k) { return answers[k].id || answers[k].texto; }).length; }
+
+  // Texto digitado e ainda não confirmado (a pessoa saiu antes de tocar em CONTINUAR) também vale
+  function keepTyped() {
+    if (textBox.hidden || current < 0 || onSendScreen) return;
+    var q = QUESTIONS[current], v = textArea.value.trim().slice(0, 500);
+    if (!v) return;
+    if (q.tipo === 'texto') answers[q.id] = { texto: v };
+    else if (answers[q.id] && answers[q.id].abre) answers[q.id].outro = v;
+  }
+
+  function collect() {
+    return {
+      tema: answerText('tema'), tema_outro: answerOther('tema'),
+      caso: answerText('caso'),
+      tem_guia: answerText('tem_guia'),
+      pesaria: answerText('pesaria'), pesaria_outro: answerOther('pesaria'),
+      tempo: answerText('tempo'), tempo_outro: answerOther('tempo'),
+      local: answerText('local'), local_outro: answerOther('local')
+    };
+  }
+  function summary() {
+    return {
+      tema: answerId('tema'), tem_guia: answerId('tem_guia'), pesaria: answerId('pesaria'),
+      tempo: answerId('tempo'), local: answerId('local'),
+      tem_caso: !!answerText('caso'), respondidas: answeredCount(),
+      segundos_na_pesquisa: startedAt ? Math.round((Date.now() - startedAt) / 1000) : 0
+    };
+  }
+  function buildPayload(status, whatsapp) {
+    return Object.assign({}, T.origem, {
+      id: responseId,
+      status: status,
+      respondidas: answeredCount(),
+      respostas: collect(),
+      whatsapp: whatsapp || '',
+      website: form.elements.website.value || undefined,
+      interno: !!T.interno,
+      posthog_distinct_id: (window.posthog && posthog.get_distinct_id && posthog.get_distinct_id()) || '',
+      pagina: location.href.split('#')[0],
+      referrer: document.referrer
+    });
+  }
+  function signature(p) { return p.status + '|' + p.whatsapp + '|' + JSON.stringify(p.respostas); }
+
+  // Envio com fetch (respondeu / enviado), em fila
+  function send(status, whatsapp) {
+    var payload = buildPayload(status, whatsapp);
+    var sig = signature(payload);
+    if (finalSent || sig === lastSignature) return queue;
+    lastSignature = sig;
+    queue = queue.then(function () { return postWithRetry(payload); }, function () { return postWithRetry(payload); });
+    return queue;
+  }
+
+  // Saiu da página (fechou a aba, trocou de app, voltou para o WhatsApp): sendBeacon chega mesmo com a página indo embora
+  function sendOnExit() {
+    if (!started || finalSent) return;
+    keepTyped();
+    var payload = buildPayload(onSendScreen ? 'respondeu' : 'parcial', '');
+    var sig = signature(payload);
+    if (sig === lastSignature) return;
+    lastSignature = sig;
+    var body = JSON.stringify(payload);
+    var ok = false;
+    try { ok = navigator.sendBeacon && navigator.sendBeacon(CONFIG.webhook, new Blob([body], { type: 'text/plain;charset=UTF-8' })); } catch (e) {}
+    if (!ok) { try { fetch(CONFIG.webhook, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=UTF-8' }, body: body, keepalive: true }); } catch (e) {} }
+    if (!onSendScreen) T.capture('lp_pesquisa_parcial', Object.assign({ etapa: 'engajamento', ultima_pergunta: current >= 0 ? QUESTIONS[current].id : '' }, summary()), { transport: 'sendBeacon' });
+  }
+  document.addEventListener('visibilitychange', function () { if (document.visibilityState === 'hidden') sendOnExit(); });
+  window.addEventListener('pagehide', sendOnExit);
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -262,40 +355,20 @@
     if (form.elements.website.value) { show('fim'); return; } // robô
 
     var whatsapp = nationalDigits(phone.value);
-    var distinctId = (window.posthog && posthog.get_distinct_id && posthog.get_distinct_id()) || '';
-    var respostas = {
-      tema: answerText('tema'), tema_outro: answerOther('tema'),
-      caso: answerText('caso'),
-      tem_guia: answerText('tem_guia'),
-      pesaria: answerText('pesaria'), pesaria_outro: answerOther('pesaria'),
-      tempo: answerText('tempo'), tempo_outro: answerOther('tempo'),
-      local: answerText('local'), local_outro: answerOther('local')
-    };
-    var payload = Object.assign({}, T.origem, {
-      respostas: respostas,
-      whatsapp: whatsapp,
-      interno: !!T.interno,
-      posthog_distinct_id: distinctId,
-      pagina: location.href.split('#')[0],
-      referrer: document.referrer
-    });
-    var resumo = {
-      tema: answerId('tema'), tem_guia: answerId('tem_guia'), pesaria: answerId('pesaria'),
-      tempo: answerId('tempo'), local: answerId('local'),
-      tem_caso: !!respostas.caso, deu_whatsapp: !!whatsapp,
-      segundos_na_pesquisa: startedAt ? Math.round((Date.now() - startedAt) / 1000) : 0
-    };
+    var resumo = Object.assign(summary(), { deu_whatsapp: !!whatsapp });
 
     sendButton.disabled = true;
     sendButton.textContent = 'ENVIANDO...';
-    postWithRetry(payload).then(function () {
+    send('enviado', whatsapp).then(function () {
+      finalSent = true;
       if (live && whatsapp && window.posthog && posthog.identify) posthog.identify('wa_55' + whatsapp);
       T.capture('lp_pesquisa_enviada', Object.assign({ etapa: 'conversao' }, resumo), { send_instantly: true });
       T.reachStage('enviou_pesquisa');
       save(CONFIG.sent, { em: new Date().toISOString() });
     }, function (err) {
       // n8n fora do ar: a pessoa vê o fim mesmo assim e as respostas ficam no PostHog para recuperar.
-      T.capture('lp_pesquisa_falha', Object.assign({ motivo: err.message, respostas: respostas, whatsapp: whatsapp, etapa: 'conversao' }, resumo), { send_instantly: true });
+      finalSent = true;
+      T.capture('lp_pesquisa_falha', Object.assign({ motivo: err.message, respostas: collect(), whatsapp: whatsapp, etapa: 'conversao' }, resumo), { send_instantly: true });
     }).then(function () {
       sendButton.disabled = false;
       sendButton.textContent = sendText;
