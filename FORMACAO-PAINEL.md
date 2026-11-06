@@ -67,8 +67,8 @@ módulo, na ordem em que eles aparecem.
 
 ## 3. Certificados → Novo modelo de certificado (um por curso)
 
-- **Frente:** `NN-sigla-certificado-frente-1056x816.png`
-- **Verso:** `NN-sigla-certificado-verso-1056x816.png`
+- **Frente:** `NN-sigla-certificado-frente-1056x816.jpg`
+- **Verso:** `NN-sigla-certificado-verso-1056x816.jpg`
 - **Campos:**
   - **nome do aluno:** sobre a linha, entre "Certificamos que" e "concluiu o curso" (fonte Helvetica, cor #22001b);
   - **datas de início e conclusão:** logo abaixo de "Período do curso";
