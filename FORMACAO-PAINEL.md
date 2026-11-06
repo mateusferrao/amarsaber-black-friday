@@ -87,7 +87,8 @@ módulo, na ordem em que eles aparecem.
 
 - **Configurações → Webhooks → novo webhook** "Memberkit · Black (formação)":
   - URL do item 4;
-  - eventos **Pedido criado** e **Status do pedido atualizado**;
+  - eventos **Pedido atualizado** e **Status do pedido atualizado** (sem "Pedido criado" desde 06/11: ele mandava o
+    e-mail de acesso a quem gerava Pix e não pagava);
   - marcar **só** o produto **Black 2026 · Formação Completa**. Sem produto marcado, o webhook vale para a loja
     inteira;
   - ativar.

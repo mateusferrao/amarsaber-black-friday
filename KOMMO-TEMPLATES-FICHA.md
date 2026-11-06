@@ -27,6 +27,7 @@ Os textos validados ficam em `RECUPERACAO-TEMPLATES.md`; esta ficha é a mesma c
 | T11 | `as_ultimo_dia` | Texto: Maria Paula · Amar Saber | — | Quero o link · Tenho uma dúvida |
 | T12 | `as_ultimas_horas` | Texto: Maria Paula · Amar Saber | — | Quero o link · Tenho uma dúvida |
 | T13 | `as_alternativa` | Texto: Maria Paula · Amar Saber | — | Quero o link · Tenho uma dúvida |
+| T17 | `as_curso_pedido` (id 45755, 06/11) | Texto: Maria Paula · Amar Saber | — | Quero o link · Tenho uma dúvida |
 
 ## T1a · `as_resultado_plantao`
 
@@ -357,6 +358,27 @@ Um deles é a maior condição que o Guia já teve, e quem assistir fica sabendo
 - **Rodapé:** Maria Paula · Amar Saber
 - **Botões (resposta rápida):** Vou assistir · Perder oportunidade (a saída: vai para `AS · Sair`)
 
+## T17 · `as_curso_pedido` (id 45755, criado em 06/11)
+
+- **Quando sai:** carrinho abandonado (15 min), Pix expirado (na hora) ou cartão recusado (10 min) **do curso do
+  downsell** (R$ 187, produto 46522438). O link que vai no "Quero o link" é o checkout do curso com o cupom
+  BLACKAMARSABERDS.
+- **Cabeçalho:** Texto: Maria Paula · Amar Saber
+- **Corpo:**
+
+```
+Oi, {{1}}! Seu pedido do curso Atendimento Extraordinário ficou pela metade.
+
+O curso completo, com 3 meses na Comunidade Amar Saber, continua por R$ 187 à vista ou 12x de R$ 19,03, só até 30/11. Se travou em alguma coisa no pagamento, me responde aqui que a equipe resolve com você.
+
+Quer o link?
+```
+
+- **Exemplos:** {{1}} = Ana
+- **Rodapé:** (vazio)
+- **Botões (resposta rápida):** Quero o link · Tenho uma dúvida
+- **Bot:** `AS · as_curso_pedido` (51865), igual ao `AS · as_checkout_15min`.
+
 ## Respostas dos Salesbots (texto livre, sem aprovação: vão dentro das 24 h depois do toque)
 
 **R1 · Tocou em "Quero o link"**
@@ -494,7 +516,7 @@ pessoa.
 **A9 · `AS · Live`** (id 50654). Vem do botão "Vou assistir" do aviso da live. Sem webhook.
 1. **Enviar mensagem** → texto **R8**
 
-### B. Os 18 bots de template
+### B. Os 19 bots de template
 Nome: `AS · <nome do template>` (ex.: `AS · as_resultado_plantao`). Monte um, confira, e use **Duplicar** na lista
 de bots para os outros. Em cada cópia, troque só o nome e o template.
 
@@ -540,6 +562,7 @@ de bots para os outros. Em cada cópia, troque só o nome e o template.
 | 16 | `AS · as_vip_convite` | as_vip_convite | Quero entrar ▸ `AS · Grupo` · Pagar mais caro ▸ `AS · Sair` · Outra ▸ Atendimento |
 | 17 | `AS · as_vip_lancamento` | as_vip_lancamento | Link · Dúvida · Atendimento |
 | 18 | `AS · as_vip_live` (id 50660) | as_vip_live | Vou assistir ▸ `AS · Live` · Perder oportunidade ▸ `AS · Sair` · Outra ▸ Atendimento |
+| 19 | `AS · as_curso_pedido` (id 51865, 06/11) | as_curso_pedido | Link · Dúvida · Atendimento |
 
 O Kommo só deixa escolher o template depois que a Meta aprova. Dá para criar os 8 bots de resposta agora e os 17 de
 template à medida que os templates forem aprovados.

@@ -6,8 +6,9 @@ templates** abaixo: cadastre com o mesmo nome. Como ligar tudo: seção "Ativaç
 
 Regras da cadência: 1ª mensagem na hora, a qualquer hora (responde ao que a pessoa acabou de fazer: teste, checkout,
 Pix ou cartão; com mais de 60 min de atraso, espera as 8h); depois só das 8h às 21h e no máximo 2 por dia; compra
-de qualquer produto para tudo; qualquer resposta fora dos botões pausa a automação e vai para o atendimento; nada sai
-depois de 30/11 23h59.
+de qualquer produto para tudo; qualquer resposta fora dos botões pausa a automação e vai para o atendimento (só o
+"Último dia" ainda chega); nada sai depois de 30/11 23h59. Carrinho, Pix e cartão só contam para a **Black** (46520027)
+e o **curso do downsell** (46522438); os outros produtos da loja são ignorados (desde 06/11).
 
 ## Sequências
 Regras: 1ª mensagem na hora, a qualquer hora; depois só 8h–21h e no máx. 2/dia; compra de qualquer produto
@@ -21,10 +22,12 @@ teste → checkout troca de sequência sem repetir mensagem; de 28 a 30/11 a ret
 | pix | Pix expirado (Yampi) | T8 na hora → T5 dia seguinte 10h → T6 +2 dias 10h |
 | cartão | `transaction.payment.refused` | T9 +10 min → T5 dia seguinte 10h → T6 +2 dias 10h |
 | reta final | todos ativos sem compra | T10 28/11 10h → T11 30/11 9h → T12 30/11 19h |
+| curso (06/11) | carrinho, Pix ou cartão do downsell de R$ 187 | T17 (carrinho +15 min, Pix na hora, cartão +10 min) → T5 dia seguinte 10h → T6 +2 dias 10h |
 | alternativa | tocou "Preço" | resposta R2 na hora → `as_alternativa` +48 h, se antes de 30/11 |
+| em atendimento | respondeu fora dos botões | só T11 (`as_ultimo_dia`), 30/11 9h, uma vez (desde 06/11) |
 
 
-## Templates de WhatsApp (versão final, 15)
+## Templates de WhatsApp (versão final, 16)
 Cadastro no Kommo campo a campo: `KOMMO-TEMPLATES-FICHA.md`. Padrão: categoria **Marketing**, idioma **pt_BR**,
 cabeçalho de texto **"Maria Paula · Amar Saber"** (ou imagem + o mesmo texto no rodapé), botões de resposta rápida.
 `{{1}}` = primeiro nome (campo `as_nome`); `{{2}}` = dias até 30/11 (campo `as_dias`). A Meta não aceita corpo que começa
@@ -137,6 +140,13 @@ R$ 187 da `/oferta-especial/`), no lugar de `as_alt_plantao`, `as_alt_consulta` 
 >
 > R$ 187 à vista ou 12x de R$ 19,03, só até 30/11.
 
+**T17 · as_curso_pedido** (06/11; carrinho, Pix ou cartão do curso do downsell, R$ 187; Texto: Maria Paula · Amar Saber; botões Quero o link · Tenho uma dúvida; o link é o checkout do curso com BLACKAMARSABERDS)
+> Oi, {{1}}! Seu pedido do curso Atendimento Extraordinário ficou pela metade.
+>
+> O curso completo, com 3 meses na Comunidade Amar Saber, continua por R$ 187 à vista ou 12x de R$ 19,03, só até 30/11. Se travou em alguma coisa no pagamento, me responde aqui que a equipe resolve com você.
+>
+> Quer o link?
+
 ## Respostas livres do Salesbot (dentro da janela de 24 h, sem aprovação)
 - **R1 · Quero o link**: "Aqui está o link com a condição de Black Friday: {{link}}
   Se travar em qualquer parte do pagamento, me responde aqui."
@@ -152,6 +162,8 @@ R$ 187 da `/oferta-especial/`), no lugar de `as_alt_plantao`, `as_alt_consulta` 
   atendimento. Quem escreve qualquer outra coisa não recebe texto: pausa e vai direto para o atendimento.
 
 ## E-mails da Yampi (carrinho abandonado; [nome] e o botão são as variáveis da Yampi)
+**Não usados (decisão de 06/11):** na Yampi continuam os e-mails genéricos de carrinho que já estavam cadastrados, para
+não mexer no fluxo dos outros produtos da loja. Os 4 abaixo ficam escritos, caso se decida usar.
 **E1 · 30 min**
 - Assunto: Seu Guia de Protocolos ficou a um clique
 - Pré-cabeçalho: A condição de Black Friday continua valendo até 30/11.
@@ -250,8 +262,10 @@ Para quem está fora de todos os grupos do SendFlow e por isso não recebe nada 
    29/10). Quem atende os leads em "Pediu o link" e "Em atendimento": **a equipe comercial**.
 8. ~~Teste de ponta a ponta e `ENVIO_ATIVO = true`~~ (feito em 29/10; ver "Teste de ponta a ponta" abaixo).
 9. **Liga sozinho em 10/11 às 20h30** (`LIGA_EM`), depois do link da live no Grupo VIP.
-10. **E-mails e cupons da Yampi:** cadastrar os 4 e-mails no painel; em 30/11 às 23h59, desligar os e-mails e os cupons
-    BLACKAMARSABER e BLACKAMARSABERDS.
+10. **E-mails e cupons da Yampi:** os e-mails da Black não foram cadastrados (ficam os genéricos). Os cupons
+    BLACKAMARSABER (R$ 640,70) e BLACKAMARSABERDS (R$ 253,70) já vencem sozinhos em 30/11 às 23h59 (data final na
+    Yampi); conferir no dia.
+11. ~~Fluxo `curso`, filtro por produto e "Último dia" para quem está em atendimento~~ (feito em 06/11; ver abaixo).
 
 ### Proteções do disparador (29/10)
 - **Só depois de `LIGA_EM`** (10/11, 20h30) e com `ENVIO_ATIVO = true`. Antes disso, as linhas esperam sem mudar.
@@ -292,3 +306,25 @@ para a conversa certa.
 
 O contato duplicado "Mateus" +55 31 9 9481-1420 fica no Kommo (decisão do usuário). Os leads de teste foram para
 "Perdido". A parcela de 12x R$ 50,57 do R2 foi conferida no checkout pelo usuário.
+
+### Mudanças de 06/11 (testadas localmente com eventos reais da Yampi)
+- **Por produto.** O webhook da Yampi vale para a loja inteira, e até 06/11 qualquer carrinho, Pix ou cartão entrava
+  nas mensagens do Guia (inclusive a Formação Completa vendida pelo cadeado do Memberkit e cursos fora da Black).
+  - O `Ler evento` agora lê `resource.items.data[].product_id`:
+    - **Black** (46520027) → `checkout`, `pix` ou `cartao`, como antes. Inclui pedido com o bump da Formação.
+    - **Curso** (46522438) → fluxo `curso`.
+    - **Outro produto** → ignorado.
+  - Cartão recusado sem itens no evento vale como Black.
+  - Compra de qualquer produto continua parando tudo.
+- **Fluxo `curso`.**
+  - **Sequência:** `as_curso_pedido` (bot 51865, link do R$ 187) → `as_prova` → `as_triagem`, que voltam a oferecer
+    o Guia.
+  - **Troca de fluxo:** curso depois da Black troca de sequência, e Black depois do curso também. Outro evento do
+    mesmo fluxo não reinicia.
+- **Em atendimento.** Ao ir para o atendimento, a linha fica marcada para 30/11 às 9h e recebe só o `as_ultimo_dia`.
+  Continua `atendimento` depois.
+  - A busca do disparador ("Buscar mensagens na hora") deixou de filtrar por status.
+  - O "Ordenar e limitar" deixa passar as `ativo` e, a partir de 30/11 às 9h, as `atendimento` que não receberam o
+    "Último dia".
+- **Pix expirado:** a Yampi manda `order.status.updated` com status `cancelled` e o Pix nos pagamentos (visto num
+  reembolso de 06/11). O mesmo formato vale para Pix vencido; confirmar com o pedido de teste 178013480.

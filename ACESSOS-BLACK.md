@@ -94,6 +94,16 @@ remoção voltar (o 1º vencimento é em fevereiro/2027). A renovação (avisos 
      eventos Pedido criado e Status do pedido atualizado): colar a URL do Memberkit, marcar **só** os produtos
      46520027 e 46522438, ativar e salvar. Sem produto marcado, o webhook vale para a loja inteira.
    - Depois disso, ninguém mexe nesse webhook pela API: um PUT sem a lista de produtos pode apagar o filtro.
+   - **06/11: sem "Pedido criado".** Um Pix gerado e não pago (pedido de teste 178013480) fez o Memberkit mandar o
+     e-mail de acesso, com a assinatura `pending` e tudo trancado. Para isso não acontecer com quem não paga, os
+     webhooks "Memberkit · Black (curso)" (1774262) e "Memberkit · Black (formação)" (1775941) ficaram sem
+     `order.created`; os produtos foram mantidos (conferido pela API).
+     - O de curso ficou só com `order.status.updated`.
+     - O da formação ficou com `order.updated` e `order.status.updated`.
+     - Falta confirmar, com um pedido pago de teste, que o acesso chega só com o pagamento.
+   - **Pela API**, a lista de produtos de um webhook se grava com o campo `products_ids`. O campo `products` é
+     ignorado no PUT e não apaga a lista.
+   - **UTMify:** o webhook "Yampi" (1645171) recebe também a Formação Completa (46637102) desde 06/11.
 6. ~~Kommo: caixa, modelo e bot de e-mail~~ (01/11). E-mail de teste chegou na caixa de entrada; `KOMMO_ATIVO = true` e
    fluxo publicado em 01/11.
 7. ~~Teste de ponta a ponta~~ (01/11, simulação sem pedido real na Yampi, com os dados do Mateus) e `APROVAR_ATIVO = true`.
