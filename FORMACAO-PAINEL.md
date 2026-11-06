@@ -12,6 +12,20 @@ access". A trava por domínio exige o plano Premium do Tella (a conta é Pro).
 O que segue **só dá para fazer no painel**: a API do Memberkit não edita curso, não apaga módulo e não recebe imagem.
 As artes estão em [`formacao/artes/`](formacao/artes/).
 
+## 0. Categoria da vitrine (Conteúdos → Nova categoria)
+
+1. **Criar a categoria:** nome "Formação Amar Saber". Descrição opcional: "Os 7 cursos da Formação, do atendimento ao
+   plantão."
+2. **Em cada um dos 7 cursos:** Editar curso → **Categoria na vitrine** = Formação Amar Saber.
+3. **Ordenar os cursos dentro da categoria, nesta ordem** (a mesma das capas, "Curso 1 de 7" …):
+   1. Atendimento Extraordinário
+   2. Entre o plantão e o medo
+   3. Leitura de hemograma
+   4. Clínica de felinos
+   5. Casos clínicos
+   6. Procedimentos veterinários
+   7. Cálculos, exames e condutas
+
 ## 1. Cada curso: Conteúdos → abrir o curso → Editar curso
 
 Os 7 cursos levam a mesma **URL da página de vendas**, por enquanto o checkout da Black (teste; troca depois):
