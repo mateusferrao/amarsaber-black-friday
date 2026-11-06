@@ -28,10 +28,10 @@ As artes estão em [`formacao/artes/`](formacao/artes/).
 
 ## 1. Cada curso: Conteúdos → abrir o curso → Editar curso
 
-Os 7 cursos levam a mesma **URL da página de vendas**, por enquanto o checkout da Black (teste; troca depois):
+Os 7 cursos levam a mesma **URL da página de vendas**: o checkout da Formação Completa com o cupom (R$ 397):
 
 ```
-https://seguro.amarsaberstore.com.br/r/LUIR27AS3L?promocode=BLACKAMARSABER
+https://seguro.amarsaberstore.com.br/r/510DFCQ5AV?promocode=FORMACAOAMARSABER
 ```
 
 Em todos: ligar **"Mostrar curso na vitrine de todos os alunos"** e enviar a capa, a capa vertical e a imagem de

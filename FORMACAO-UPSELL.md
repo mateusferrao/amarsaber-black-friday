@@ -17,6 +17,14 @@ Falta o painel ([FORMACAO-PAINEL.md](FORMACAO-PAINEL.md)) e o teste de compra.
 | Upsell one click, cartão, finalização, depois de 46520027 e 46522438, R$ 297 | 449508 |
 | Bump Pix, checkouts 46520027 e 46522438, de R$ 697 por R$ 297 | 281355 |
 | Bump boleto, mesmos checkouts e preço | 282360 |
+| Cupom `FORMACAOAMARSABER` (R$ 300 de desconto, R$ 697 → R$ 397, sem fim; vale até 31/12/2099) | 11202198 |
+
+**Cadeado do Memberkit.** A URL de vendas dos 7 cursos leva ao checkout do produto novo. Com o cupom, o link fica
+`https://seguro.amarsaberstore.com.br/r/510DFCQ5AV?promocode=FORMACAOAMARSABER` e cobra **R$ 397**. Como esse valor
+não é R$ 297, o "essa condição só aparece aqui" continua verdadeiro.
+
+**Atenção:** a API não restringe o cupom por produto. Se alguém digitar o código em outra compra, ganha R$ 300 de
+desconto. No painel (Marketing → Cupons → FORMACAOAMARSABER), restringir ao produto **Black 2026 · Formação Completa**.
 
 ## Onde aparece
 
