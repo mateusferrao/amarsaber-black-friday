@@ -26,8 +26,19 @@ Painel feito ([FORMACAO-PAINEL.md](FORMACAO-PAINEL.md)). Upsell e bumps **ligado
   parcelado). Quem paga no Pix fica na página "Recebemos o seu Pix" da Yampi e recebe os acessos por e-mail. Decisão
   de 06/11: **fica assim**. Um script na página de obrigado precisaria consultar o pedido (essa página não mostra os
   produtos) e foi descartado.
-- **Falta:** reembolsar os pedidos de teste (178003017, 178003876, 178003904, 178004829 e 178005288) e limpar os dados
-  de teste (leads no Kommo, linhas no n8n e na planilha, cupons de teste).
+- **Reembolso (06/11, 17h):** os 5 pedidos de teste foram reembolsados pelo **Mercado Pago**.
+  - **Yampi:** cancelou os pedidos sozinha.
+  - **n8n:** marcou as linhas como `revogado`.
+  - **Memberkit:** desativou as assinaturas 38626 e 38676.
+  - **Atenção:** o Memberkit desativa a assinatura inteira quando **qualquer** pedido daquela pessoa é reembolsado,
+    mesmo que ela tenha outro pedido pago. A equipe reativa à mão se isso acontecer.
+- **Limpeza:**
+  - os cadastros de teste no Memberkit foram arquivados;
+  - os leads de teste no Kommo foram para Closed - lost;
+  - as linhas de teste foram apagadas da planilha (Comunidade · Acessos e Compras);
+  - o cupom de teste já tinha sido apagado.
+  - Na tabela "AS · Acessos Black" do n8n, as 4 linhas de teste ficaram com status `revogado` (a API não apaga
+    linhas).
 
 | Na Yampi | ID |
 |---|---|
