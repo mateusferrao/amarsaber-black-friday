@@ -296,7 +296,7 @@ O que trava muita gente na rotina: cálculo de dose (oral, injetável, em gramas
 | `vid_cmvx433y400pr02rz1a5e6fua` | Monócitos: duplicado (mesma transcrição) |
 | `vid_cmvwn9ugq00m708jp60xchpwd` | "Hchm": duplicado do CHCM (mesma transcrição) |
 | `vid_cmvx4k4l100nk08l17rclfihr` | "Neutrofilos": a mesma aula do "Neutrofilos segmentados", só que cortada antes do fim (falta o trecho de neutrofilia e neutropenia) |
-| `vid_cmw0zfk5400pu02kt3a0a9w6t` | "aula rodrigo pratica": PENDENTE. O envio ao Tella em 03/11 não terminou (o arquivo original não está no Tella nem no Drive). Volta como "Sondagem uretral na fêmea: prática" quando o arquivo for subido de novo |
+| `vid_cmw0zfk5400pu02kt3a0a9w6t` | "aula rodrigo pratica": não está na pasta do Drive (e o envio ao Tella em 03/11 não terminou) |
 | `vid_cmvwn7eni039707jv6oxv9vi5` | "eritograma": mesma aula do "Como o hemograma é dividido", na gravação sem edição (102 s, com uma frase repetida); ficou a editada (84 s) |
 | `vid_cmw53xncc004008l2g2pbbsk6` | "Eosinófilo" (subido hoje): duplicado do "Eosinofilos" |
 | `vid_cmvzwizcv000502nt7jfc0knr` | "calculo dose" (02/11): duplicado do "Calculo dipirona" |
@@ -305,11 +305,10 @@ O que trava muita gente na rotina: cálculo de dose (oral, injetável, em gramas
 | `vid_cmw48274g01rp08l96xbu3llh` | "raspado de pele de orelha": duplicado do "Raspado de orelha" |
 | `vid_cmw4805u900cr08jnfvd98w83` | "SEDACAO" (06/11): duplicado do "Sedação" |
 
-## Para aprovar
+## Decisões da revisão (06/11)
 
-1. **Sondagem uretral na fêmea: prática** (aula prática do Rodrigo) ficou **fora** por enquanto. O envio dela ao Tella
-   em 03/11 não terminou: o arquivo original não está no Tella (dá erro ao baixar) nem no Drive. Quando alguém subir
-   o arquivo de novo, a aula volta ao Procedimentos veterinários, depois da aula de anatomia.
+1. **Aula prática do Rodrigo (sondagem uretral na fêmea): fora da Formação.** Não está na pasta do Drive, que é a
+   referência da divisão. A aula teórica (anatomia) continua.
 2. **Duas aulas do hemograma tinham duas versões**, conferidas pela transcrição completa:
    - "Neutrofilos" é a mesma aula do "Neutrofilos segmentados", só que cortada antes do fim. Ficou a completa.
    - "eritograma" e "Como o hemograma é dividido" são a mesma aula. A primeira é a gravação sem edição, com uma

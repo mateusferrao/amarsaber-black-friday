@@ -4,8 +4,8 @@ Quem compra a Black (46520027) ou o downsell (46522438) já recebe o curso Atend
 cursos da Formação Amar Saber. A oferta completa os outros 6 por **R$ 297** (preço de lista da Formação na loja:
 **R$ 697**).
 
-**Status:** aguardando aprovação dos textos, da divisão das aulas
-([FORMACAO-MEMBERKIT.md](FORMACAO-MEMBERKIT.md)) e das artes (`formacao/artes/`). Nada está ligado na Yampi.
+**Status:** textos, divisão das aulas e artes aprovados em 06/11
+([FORMACAO-MEMBERKIT.md](FORMACAO-MEMBERKIT.md)) e artes (`formacao/artes/`). Nada está ligado na Yampi.
 
 ## Onde aparece
 
@@ -28,7 +28,7 @@ O mesmo vale no checkout da Black e no do downsell.
 | No texto | Fonte |
 |---|---|
 | 7 cursos | os 7 cursos de [FORMACAO-MEMBERKIT.md](FORMACAO-MEMBERKIT.md), os mesmos da Formação na Kiwify |
-| 6 cursos, 111 aulas, cerca de 7 horas | o inventário sem o Atendimento (111 aulas, 7,0 h de vídeo, medido no Tella). Volta a 112 quando a aula prática do Rodrigo for subida de novo |
+| 6 cursos, 111 aulas, cerca de 7 horas | o inventário sem o Atendimento (111 aulas, 7,0 h de vídeo, medido no Tella) |
 | 1 ano de acesso | extensão de 365 dias na assinatura 38676 |
 | certificado em cada curso | os 7 modelos de certificado configurados no Memberkit |
 | 7 dias de garantia | igual à oferta principal |
