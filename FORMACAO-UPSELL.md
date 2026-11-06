@@ -9,7 +9,18 @@ cursos da Formação Amar Saber. A oferta completa os outros 6 por **R$ 297** (p
 - cursos criados no Memberkit;
 - produto, upsell e bumps criados na Yampi, **todos desligados**.
 
-Falta o painel ([FORMACAO-PAINEL.md](FORMACAO-PAINEL.md)) e o teste de compra.
+Painel feito ([FORMACAO-PAINEL.md](FORMACAO-PAINEL.md)). Upsell e bumps **ligados** desde 06/11, 16h.
+
+**Teste do upsell (06/11, 16h19, pedidos de R$ 1 com o upsell temporariamente a R$ 1):**
+- **Pedidos:** downsell 178003876 no cartão; a oferta apareceu depois do pagamento; o upsell 178003904 entrou como
+  pedido **separado** (`is_upsell`), cobrado no mesmo cartão sem digitar de novo.
+- **Página:** a pessoa caiu em `/compra-confirmada/`.
+- **Memberkit:** assinaturas 38626 e 38676 ativas até 06/11/2027.
+- **n8n:** o fluxo da comunidade gravou só o pedido do downsell.
+- **Preço:** o upsell voltou para R$ 297 logo depois do teste.
+- **Cupom de 100%:** com o pedido em R$ 0 não há cobrança no cartão, e a Yampi não mostra o upsell one click. Para
+  testar, use um pedido de pelo menos R$ 1.
+- **Falta:** teste do bump no Pix, reembolsos e limpeza dos dados de teste.
 
 | Na Yampi | ID |
 |---|---|
@@ -76,7 +87,7 @@ Os dois bumps usam o mesmo texto e só mudam o meio de pagamento.
 | Botão | + Completar a Formação |
 | Preço | de R$ 697 por R$ 297 |
 
-## Página /compra-confirmada/ (bloco novo)
+## Página /compra-confirmada/ (bloco no ar desde 06/11)
 
 > **Se você levou a Formação completa:** os 7 cursos aparecem na sua área de membros da MemberKit, no mesmo login do
 > Atendimento Extraordinário. O acesso chega no e-mail da compra.

@@ -538,6 +538,7 @@ html.cap-sem-rolagem, html.cap-sem-rolagem body { overflow: hidden; }
 .ok-step { padding: 24px 22px; background: var(--bg-dark); border: 1px solid var(--card-border); border-radius: 7px; }
 .ok-step h2 { margin-bottom: 8px; font-size: 18px; font-weight: 600; color: var(--pink); }
 .ok-step p { font-size: 15px; line-height: 22px; color: var(--cream); }
+.ok-step--full { grid-column: 1 / -1; }
 .ok-pill { align-self: center; margin-top: 28px; }
 .ok-title { margin-top: 20px; font-family: var(--display); font-weight: 400; font-size: 64px; line-height: 1; letter-spacing: .5px; text-transform: uppercase; color: #fff; }
 .ok-title .cap-contorno { display: block; -webkit-text-stroke-width: 2px; }
