@@ -68,12 +68,22 @@ O mesmo vale no checkout da Black e no do downsell.
 ## Upsell (cartão)
 
 - **Nome interno:** Black 2026 · Formação Completa (cartão)
-- **Texto da oferta:**
+- **Texto da oferta** (HTML no campo "Mensagem do upsell"; a Yampi troca `{first_name}` pelo primeiro nome):
 
-> Você já tem 1 dos 7 cursos da Formação Amar Saber. Leve os outros 6 por R$ 297 (o preço normal da Formação é
-> R$ 697): plantão, leitura de hemograma, clínica de felinos, casos clínicos reais da Amar, procedimentos e cálculo de
-> dose. São 111 aulas curtas, com 1 ano de acesso, certificado em cada curso e 7 dias de garantia. A cobrança é no mesmo
-> cartão, em 1 clique. Essa condição só aparece aqui.
+```html
+<h2>{first_name}, você já tem 1 dos 7 cursos da Formação Amar Saber</h2>
+<p>Complete agora com os outros 6 por <strong>R$ 297</strong>. O preço normal da Formação é R$ 697.</p>
+<ul>
+<li><strong>Entre o plantão e o medo:</strong> telefone, classificação de risco, trauma, fluidoterapia e transfusão</li>
+<li><strong>Leitura de hemograma:</strong> eritrograma, plaquetas e leucograma, com casos reais</li>
+<li><strong>Clínica de felinos:</strong> consulta, contenção e coleta de sangue sem estresse</li>
+<li><strong>Casos clínicos:</strong> 25 casos atendidos na Amar, do diagnóstico à evolução</li>
+<li><strong>Procedimentos veterinários:</strong> coletas, sondas, intubação, sedação e transfusão na prática</li>
+<li><strong>Cálculos, exames e condutas:</strong> dose oral, injetável e em UI, bioquímico e urinálise</li>
+</ul>
+<p>111 aulas curtas · 1 ano de acesso · certificado em cada curso · 7 dias de garantia</p>
+<p><strong>A cobrança é no mesmo cartão, em 1 clique. Essa condição só aparece aqui.</strong></p>
+```
 
 ## Bumps (Pix e boleto)
 
