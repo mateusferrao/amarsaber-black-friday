@@ -326,5 +326,17 @@ O contato duplicado "Mateus" +55 31 9 9481-1420 fica no Kommo (decisão do usuá
   - A busca do disparador ("Buscar mensagens na hora") deixou de filtrar por status.
   - O "Ordenar e limitar" deixa passar as `ativo` e, a partir de 30/11 às 9h, as `atendimento` que não receberam o
     "Último dia".
-- **Pix expirado:** a Yampi manda `order.status.updated` com status `cancelled` e o Pix nos pagamentos (visto num
-  reembolso de 06/11). O mesmo formato vale para Pix vencido; confirmar com o pedido de teste 178013480.
+- **Pix expirado (testado em 06/11, pedido 178013480):**
+  - A tela do Pix expira em 30 min.
+  - A Yampi cancela o pedido uns 6 min depois e manda `order.status.updated` com `cancelled` (sem evento próprio de
+    Pix). O T8 sai nessa hora.
+  - O `Ler evento` leu "pix / black" certo.
+- **Correção do Pix (06/11):** o Pix era detectado por qualquer "pix" no JSON, e todo pedido traz `"is_pix": false`.
+  Com isso, pedido de cartão cancelado virava "Pix expirou" e a pessoa recebia T8 depois do T9.
+  - Agora vale o meio de pagamento: `payments[].alias`, `transactions[].payment.data.alias` ou
+    `search.data.payment_method`.
+  - Testado com os pedidos reais de 06/11: cartão cancelado é ignorado; Pix e compras continuam certos.
+- **Reembolso não devolve à recuperação (decisão de 06/11):** quem comprou fica `comprou` mesmo depois de reembolsar,
+  porque já teve o produto e desistiu.
+  - Para testar de novo com um número que já comprou, apague a linha dele na tabela "AS · Fila de recuperação" do
+    n8n. O número do Mateus é a linha 36.
