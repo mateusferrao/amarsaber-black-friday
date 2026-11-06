@@ -20,7 +20,14 @@ Painel feito ([FORMACAO-PAINEL.md](FORMACAO-PAINEL.md)). Upsell e bumps **ligado
 - **Preço:** o upsell voltou para R$ 297 logo depois do teste.
 - **Cupom de 100%:** com o pedido em R$ 0 não há cobrança no cartão, e a Yampi não mostra o upsell one click. Para
   testar, use um pedido de pelo menos R$ 1.
-- **Falta:** teste do bump no Pix, reembolsos e limpeza dos dados de teste.
+- **Bump no Pix (16h32, pedido 178005288, bump a R$ 1 durante o teste):** downsell e Formação Completa no
+  **mesmo pedido**; assinaturas 38626 e 38676 ativas; uma linha só no n8n. O bump voltou para R$ 297.
+- **Pix sem redirecionamento:** a Yampi não tem redirecionamento para Pix à vista (só cartão, boleto, upsell e Pix
+  parcelado). Quem paga no Pix fica na página "Recebemos o seu Pix" da Yampi e recebe os acessos por e-mail. Decisão
+  de 06/11: **fica assim**. Um script na página de obrigado precisaria consultar o pedido (essa página não mostra os
+  produtos) e foi descartado.
+- **Falta:** reembolsar os pedidos de teste (178003017, 178003876, 178003904, 178004829 e 178005288) e limpar os dados
+  de teste (leads no Kommo, linhas no n8n e na planilha, cupons de teste).
 
 | Na Yampi | ID |
 |---|---|
