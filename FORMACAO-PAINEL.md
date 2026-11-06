@@ -61,12 +61,23 @@ módulo, na ordem em que eles aparecem.
   - **QR Code:** canto inferior direito, dentro da moldura.
 - Conferir em **Visualizar** antes de salvar.
 
-## 4. Integrações → Yampi (depois que o produto novo existir na Yampi)
+## 4. Integrações → Yampi (o produto novo já existe: 46637102)
 
 - **Nome:** `Yampi · Black Formação`
 - **Modalidade:** Assinatura
 - **Conteúdo:** Black 2026 · Plataforma Completa
 - Clicar em **Gerar URL de Notificação**. A URL vai no webhook "Memberkit · Black (formação)" da Yampi, com **só** o
   produto novo marcado.
+
+## 5. Na Yampi
+
+- **Configurações → Webhooks → novo webhook** "Memberkit · Black (formação)":
+  - URL do item 4;
+  - eventos **Pedido criado** e **Status do pedido atualizado**;
+  - marcar **só** o produto **Black 2026 · Formação Completa**. Sem produto marcado, o webhook vale para a loja
+    inteira;
+  - ativar.
+- **Configurações → Checkout → redirecionamento depois do upsell:** `https://black.amarsaber.com.br/compra-confirmada/`.
+  O upsell continua desligado até o teste.
 
 Depois de cada item, me avise: confiro pela API o que ela mostra (turmas da assinatura, módulos e ordem das aulas).

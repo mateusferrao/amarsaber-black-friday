@@ -4,8 +4,19 @@ Quem compra a Black (46520027) ou o downsell (46522438) já recebe o curso Atend
 cursos da Formação Amar Saber. A oferta completa os outros 6 por **R$ 297** (preço de lista da Formação na loja:
 **R$ 697**).
 
-**Status:** textos, divisão das aulas e artes aprovados em 06/11
-([FORMACAO-MEMBERKIT.md](FORMACAO-MEMBERKIT.md)) e artes (`formacao/artes/`). Nada está ligado na Yampi.
+**Status (06/11):**
+- textos, divisão das aulas e artes aprovados;
+- cursos criados no Memberkit;
+- produto, upsell e bumps criados na Yampi, **todos desligados**.
+
+Falta o painel ([FORMACAO-PAINEL.md](FORMACAO-PAINEL.md)) e o teste de compra.
+
+| Na Yampi | ID |
+|---|---|
+| Produto "Black 2026 · Formação Completa" (digital, fora da busca, lista R$ 697) | 46637102, SKU 307532282 |
+| Upsell one click, cartão, finalização, depois de 46520027 e 46522438, R$ 297 | 449508 |
+| Bump Pix, checkouts 46520027 e 46522438, de R$ 697 por R$ 297 | 281355 |
+| Bump boleto, mesmos checkouts e preço | 282360 |
 
 ## Onde aparece
 
@@ -70,4 +81,5 @@ Os dois bumps usam o mesmo texto e só mudam o meio de pagamento.
    - cartão com o upsell aceito;
    - cartão com o upsell recusado;
    - Pix com o bump.
-4. O redirecionamento pós-compra para `/compra-confirmada/` está configurado (depois do upsell, Pix e boleto).
+4. **Redirecionamento.** Os produtos 46520027 e 46522438 já mandam cartão e boleto para `/compra-confirmada/`.
+   Falta o redirecionamento **depois do upsell** (Yampi → Checkout), e o teste mostra se o do cartão no produto pula o upsell.

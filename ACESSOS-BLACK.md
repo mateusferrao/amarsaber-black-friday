@@ -8,7 +8,9 @@ Quem paga a Black na Yampi recebe sozinho:
 | Comunidade Amar Saber | grupo **Comunidade - Guia Amar Saber** no WhatsApp, campanha de mesmo nome no SendFlow | 3 meses a partir do pagamento | e-mail com o link (automação do Kommo); desde 03/11 a pessoa entra direto pelo link, sem aprovação |
 
 Produtos da Yampi que liberam: **46520027** (Guia + curso + comunidade, R$ 497) e **46522438** (downsell curso +
-comunidade, R$ 187). Não há upsell. Qualquer outro produto da loja não libera nada.
+comunidade, R$ 187). Além deles, a **Formação Completa** (46637102, R$ 297 no upsell do cartão e nos bumps de Pix e
+boleto) libera os 7 cursos na assinatura **Black 2026 · Plataforma Completa** (38676) por 365 dias. Não libera
+comunidade. Detalhes em [FORMACAO-UPSELL.md](FORMACAO-UPSELL.md). Qualquer outro produto da loja não libera nada.
 
 ## Fluxo
 
@@ -69,7 +71,7 @@ remoção voltar (o 1º vencimento é em fevereiro/2027). A renovação (avisos 
 | Planilha | **Leads · Black – Amar Saber**, abas **Comunidade · Acessos** (uma linha por pedido) e **Comunidade · Pendentes** |
 | SendFlow | campanha **Comunidade - Guia Amar Saber** (conta BF 2026, 93618-8016), criação de grupos desligada |
 | Kommo | funil **Clientes Black** (14699768): Acesso enviado 113585712 · Entrou no grupo 113585716 · Precisa de ajuda 113585720 · Acesso encerrado 113585724. Campos do lead: `as_nome` 881487, `as_pedido` 882627, `as_comunidade_ate` 882629, `as_curso_ate` 882631 |
-| Memberkit | assinatura 38626 → curso 297948 / Turma A 394987 |
+| Memberkit | assinatura 38626 → curso 297948 / Turma A 394987. Assinatura 38676 (Formação Completa) → os 7 cursos (ver [FORMACAO-PAINEL.md](FORMACAO-PAINEL.md)) |
 
 ## Ativação
 
