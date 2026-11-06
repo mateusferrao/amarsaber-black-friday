@@ -117,6 +117,13 @@
 .oferta__title.vd-anton { font-size: clamp(40px, 5vw, 60px); line-height: .98; }
 .oferta .vd-selo { width: auto; align-self: center; margin-top: 4px; font-size: 20px; letter-spacing: 3px; }
 .oferta .vd-contador { margin-top: 4px; }
+/* Frete grátis (06/11): selo rosa abaixo do preço, mesmo desenho do "lote limitado" */
+.vd-frete { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 10px 0 2px; font-size: 13px; font-weight: 600; line-height: 18px; color: var(--cream); }
+.vd-frete b {
+  flex: none; padding: 4px 12px; border: 2px solid var(--pink); border-radius: 6px; color: var(--pink);
+  font-family: var(--display); font-weight: 400; font-size: 17px; letter-spacing: 2.5px; text-transform: uppercase;
+  transform: rotate(-3deg);
+}
 .vd-oferta__urg { font-size: 13px; font-weight: 600; color: var(--amarelo); }
 .vd-oferta__pag { font-size: 13px; line-height: 19px; color: var(--cream); }
 
