@@ -28,7 +28,7 @@ O mesmo vale no checkout da Black e no do downsell.
 | No texto | Fonte |
 |---|---|
 | 7 cursos | os 7 cursos de [FORMACAO-MEMBERKIT.md](FORMACAO-MEMBERKIT.md), os mesmos da Formação na Kiwify |
-| 6 cursos, 112 aulas, cerca de 7 horas | o inventário sem o Atendimento (112 aulas, 7,1 h de vídeo, medido no Tella) |
+| 6 cursos, 111 aulas, cerca de 7 horas | o inventário sem o Atendimento (111 aulas, 7,0 h de vídeo, medido no Tella). Volta a 112 quando a aula prática do Rodrigo for subida de novo |
 | 1 ano de acesso | extensão de 365 dias na assinatura 38676 |
 | certificado em cada curso | os 7 modelos de certificado configurados no Memberkit |
 | 7 dias de garantia | igual à oferta principal |
@@ -42,7 +42,7 @@ O mesmo vale no checkout da Black e no do downsell.
 
 > Você já tem 1 dos 7 cursos da Formação Amar Saber. Leve os outros 6 por R$ 297 (o preço normal da Formação é
 > R$ 697): plantão, leitura de hemograma, clínica de felinos, casos clínicos reais da Amar, procedimentos e cálculo de
-> dose. São 112 aulas curtas, com 1 ano de acesso, certificado em cada curso e 7 dias de garantia. A cobrança é no mesmo
+> dose. São 111 aulas curtas, com 1 ano de acesso, certificado em cada curso e 7 dias de garantia. A cobrança é no mesmo
 > cartão, em 1 clique. Essa condição só aparece aqui.
 
 ## Bumps (Pix e boleto)
@@ -53,7 +53,7 @@ Os dois bumps usam o mesmo texto e só mudam o meio de pagamento.
 |---|---|
 | Nome interno | Black 2026 · Formação Completa (Pix) / (boleto) |
 | Título | Complete a Formação Amar Saber por R$ 297 |
-| Mensagem | O curso do seu pedido é 1 dos 7 cursos da Formação. Marque aqui e leve os outros 6: plantão, hemograma, felinos, casos clínicos reais, procedimentos e cálculo de dose. 112 aulas, 1 ano de acesso, certificado e 7 dias de garantia. Essa condição só aparece aqui. |
+| Mensagem | O curso do seu pedido é 1 dos 7 cursos da Formação. Marque aqui e leve os outros 6: plantão, hemograma, felinos, casos clínicos reais, procedimentos e cálculo de dose. 111 aulas, 1 ano de acesso, certificado e 7 dias de garantia. Essa condição só aparece aqui. |
 | Botão | + Completar a Formação |
 | Preço | de R$ 697 por R$ 297 |
 

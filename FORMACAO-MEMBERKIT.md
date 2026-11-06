@@ -2,17 +2,17 @@
 
 Fonte: playlists e vídeos do Tella (workspace da Dra.), divisão das pastas do Drive. Cada aula do Memberkit recebe o vídeo do Tella por código de incorporação (o mesmo formato das aulas do Atendimento) e a descrição abaixo. Os títulos não levam nome de quem apresenta.
 
-**Total: 7 cursos, 135 aulas, 9.3 h de vídeo.** Sem o Atendimento (que quem compra a Black já recebe): 6 cursos, 112 aulas, 7.1 h.
+**Total: 7 cursos, 134 aulas, 9,2 h de vídeo.** Sem o Atendimento (que quem compra a Black já recebe): 6 cursos, 111 aulas, 7,0 h.
 
 | Curso | Sigla | Aulas | Duração | Carga horária no certificado |
 |---|---|---|---|---|
-| Atendimento Extraordinário | ATEND | 23 | 2.3 h | 2,5 h |
-| Entre o plantão e o medo | PLANT | 19 | 2.0 h | 2 h |
-| Leitura de hemograma | HEMO | 29 | 1.1 h | 1,5 h |
-| Clínica de felinos | FELIN | 8 | 0.8 h | 1 h |
-| Casos clínicos | CASOS | 25 | 1.2 h | 1,5 h |
-| Procedimentos veterinários | PROC | 21 | 1.0 h | 1,5 h |
-| Cálculos, exames e condutas | CALC | 10 | 0.9 h | 1 h |
+| Atendimento Extraordinário | ATEND | 23 | 2,3 h | 2,5 h |
+| Entre o plantão e o medo | PLANT | 19 | 2,0 h | 2 h |
+| Leitura de hemograma | HEMO | 29 | 1,1 h | 1,5 h |
+| Clínica de felinos | FELIN | 8 | 0,8 h | 1 h |
+| Casos clínicos | CASOS | 25 | 1,2 h | 1,5 h |
+| Procedimentos veterinários | PROC | 20 | 0,9 h | 1 h |
+| Cálculos, exames e condutas | CALC | 10 | 0,9 h | 1 h |
 
 Carga horária: duração real dos vídeos arredondada para cima, de meia em meia hora.
 
@@ -86,7 +86,7 @@ O hemograma lido do jeito que se usa na clínica: eritrograma, plaquetas e leuco
 |---|---|---|---|---|
 | 1 | Boas-vindas | O que você vai conseguir ler no hemograma ao fim do curso. | 1:08 | `vid_cmvwm8ckp007d02p57agn7rqn` |
 | 2 | Quem ensina: Dra. Maria Paula | A história da Dra. Maria Paula e como o Amar Saber nasceu da rotina da clínica. | 2:29 | `vid_cmvx45d4900kz07l3ahwshbts` |
-| 3 | Como o hemograma é dividido | Eritrograma, plaquetograma e leucograma: o que cada parte mostra. | 1:42 | `vid_cmvwn7eni039707jv6oxv9vi5` |
+| 3 | Como o hemograma é dividido | Eritrograma, plaquetograma e leucograma: o que cada parte mostra. | 1:24 | `vid_cmvwmvcbj03uj02no01k4a0l2` |
 | 4 | Medula óssea: onde as células nascem | Como a medula produz as células do sangue e como o organismo regula essa produção. | 0:58 | `vid_cmvx4b1mx001508l50eir06d5` |
 
 ### Eritrograma
@@ -238,11 +238,10 @@ Os procedimentos do dia a dia mostrados na prática: coletas e exames rápidos, 
 | # | Título | Descrição | Duração | Vídeo no Tella |
 |---|---|---|---|---|
 | 1 | Sondagem uretral na fêmea: anatomia | O desenho do trato reprodutor da cadela para achar o óstio uretral. | 1:15 | `vid_cmvzwjxgo008o02nt01xu0oqk` |
-| 2 | Sondagem uretral na fêmea: prática | O procedimento na prática. | 5:33 | `vid_cmw0zfk5400pu02kt3a0a9w6t` |
-| 3 | Sondagem uretral no macho | Da escolha da sonda à coleta de urina. | 3:50 | `vid_cmw47zo8o00a408jn7gcfdawu` |
-| 4 | Sonda nasogástrica | A passagem da sonda num paciente no pós-cirúrgico com vômitos. | 3:56 | `vid_cmw53yy4h007j02qwb4534h6d` |
-| 5 | Intubação orotraqueal | Passo a passo da intubação do cão para anestesia e emergência. | 3:09 | `vid_cmw484i1t00hk08l0ee0pdku4` |
-| 6 | Vias de administração de medicamentos | Intramuscular, subcutânea e endovenosa em cães e gatos. | 5:01 | `vid_cmw47xx01009y08le6vbre46t` |
+| 2 | Sondagem uretral no macho | Da escolha da sonda à coleta de urina. | 3:50 | `vid_cmw47zo8o00a408jn7gcfdawu` |
+| 3 | Sonda nasogástrica | A passagem da sonda num paciente no pós-cirúrgico com vômitos. | 3:56 | `vid_cmw53yy4h007j02qwb4534h6d` |
+| 4 | Intubação orotraqueal | Passo a passo da intubação do cão para anestesia e emergência. | 3:09 | `vid_cmw484i1t00hk08l0ee0pdku4` |
+| 5 | Vias de administração de medicamentos | Intramuscular, subcutânea e endovenosa em cães e gatos. | 5:01 | `vid_cmw47xx01009y08le6vbre46t` |
 
 ### Sedação e toracocentese
 
@@ -296,8 +295,9 @@ O que trava muita gente na rotina: cálculo de dose (oral, injetável, em gramas
 |---|---|
 | `vid_cmvx433y400pr02rz1a5e6fua` | Monócitos: duplicado (mesma transcrição) |
 | `vid_cmvwn9ugq00m708jp60xchpwd` | "Hchm": duplicado do CHCM (mesma transcrição) |
-| `vid_cmvx4k4l100nk08l17rclfihr` | "Neutrofilos": outra gravação do "Neutrofilos segmentados" (97% igual; ficou a versão que fecha com neutrofilia e neutropenia) |
-| `vid_cmvwmvcbj03uj02no01k4a0l2` | "Como o hemograma é dividido": outra gravação do "eritograma" (mesma abertura; ficou a mais completa) |
+| `vid_cmvx4k4l100nk08l17rclfihr` | "Neutrofilos": a mesma aula do "Neutrofilos segmentados", só que cortada antes do fim (falta o trecho de neutrofilia e neutropenia) |
+| `vid_cmw0zfk5400pu02kt3a0a9w6t` | "aula rodrigo pratica": PENDENTE. O envio ao Tella em 03/11 não terminou (o arquivo original não está no Tella nem no Drive). Volta como "Sondagem uretral na fêmea: prática" quando o arquivo for subido de novo |
+| `vid_cmvwn7eni039707jv6oxv9vi5` | "eritograma": mesma aula do "Como o hemograma é dividido", na gravação sem edição (102 s, com uma frase repetida); ficou a editada (84 s) |
 | `vid_cmw53xncc004008l2g2pbbsk6` | "Eosinófilo" (subido hoje): duplicado do "Eosinofilos" |
 | `vid_cmvzwizcv000502nt7jfc0knr` | "calculo dose" (02/11): duplicado do "Calculo dipirona" |
 | `vid_cmw0yx0pr002v08l59hwhhf08` | "calculo medicacao oral" (03/11): duplicado do de 06/11 |
@@ -307,13 +307,13 @@ O que trava muita gente na rotina: cálculo de dose (oral, injetável, em gramas
 
 ## Para aprovar
 
-1. **Sondagem uretral na fêmea: prática** (`vid_cmw0zfk5400pu02kt3a0a9w6t`, a aula prática do Rodrigo).
-   - O vídeo está "em conversão" no Tella desde 03/11: não tem transcrição nem miniatura, e provavelmente não toca.
-   - O título e o lugar no curso foram deduzidos da aula teórica. Precisa ser subido de novo.
-   - O arquivo não está no Drive.
-2. **Duas gravações quase iguais no hemograma.** Ficou uma de cada; a outra está na tabela "Fora do curso":
-   - "Neutrofilos" e "Neutrofilos segmentados";
-   - "eritograma" e "Como o hemograma é dividido".
+1. **Sondagem uretral na fêmea: prática** (aula prática do Rodrigo) ficou **fora** por enquanto. O envio dela ao Tella
+   em 03/11 não terminou: o arquivo original não está no Tella (dá erro ao baixar) nem no Drive. Quando alguém subir
+   o arquivo de novo, a aula volta ao Procedimentos veterinários, depois da aula de anatomia.
+2. **Duas aulas do hemograma tinham duas versões**, conferidas pela transcrição completa:
+   - "Neutrofilos" é a mesma aula do "Neutrofilos segmentados", só que cortada antes do fim. Ficou a completa.
+   - "eritograma" e "Como o hemograma é dividido" são a mesma aula. A primeira é a gravação sem edição, com uma
+     frase repetida (102 s); ficou a editada (84 s).
 3. **Procedimentos × vídeos novos.** Os vídeos de 06/11 que são procedimentos foram para o curso Procedimentos
    veterinários: sondagem no macho, intubação, vias de administração, coletas, pressão e transfusão. O 7º curso ficou
    com cálculo de dose, exames laboratoriais e comunicação. Assim cada procedimento fica num lugar só.
