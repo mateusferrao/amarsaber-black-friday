@@ -149,20 +149,26 @@ a pessoa da captura até o clique no checkout.
   `digitou = true`, inclusive 41 de quem nunca teve `lp_form_inicio`.
 - **Teste A/B do hero (30/10 a 02/11, encerrado):** `a` 33,0% × `b` 32,5% de visitante → lead (Meta, 550 pessoas),
   empate; ficou a `b`. A variante `dor` (anúncio de cinomose) foi desligada: 4,8% contra 31% antes dela.
-- **Teste da página (desde 02/11): página de 29/10 × página atual.** O script no `<head>` sorteia `antiga` ou `nova`,
-  50/50, para todo mundo (inclusive o anúncio de cinomose), guardado no navegador (`as_pagina`). As versões ficam
-  no `index.html` com `data-so="antiga"` ou `"nova"`.
+- **Teste da página (02/11 a 06/11, encerrado): página de 29/10 (`antiga`) × página atual (`nova`).** Sorteio 50/50
+  no `<head>`, guardado no navegador.
   - `antiga` = a página como estava até 29/10, 21h: hero `a`, sem selo, sem "Quem já tem o Guia", presentes sem
-    pistas e o formulário antigo ("Pegue a sua chave").
-  - `nova` = a página atual com o hero `b`, sem "uns 10 até a live" no formulário.
-  - A versão vai em todo evento do PostHog (`pagina_versao`, guardado também no obrigado), como tag no Clarity e,
-    no lead, no campo `hero_variante` → coluna `Variante_hero` da planilha (`antiga` / `nova`).
-  - Revisar: `?pagina=antiga` ou `?pagina=nova` com `?interno=1`.
-  - Por que: depois das mudanças de 29/10 a conversão caiu de 47% para 32% (Meta), mas o anúncio também ficou mais
-    frio (CTR de 2,8% para 1,2%). O teste separa as duas coisas.
-  - Regra: decidir em 06/11 à noite pela conversão visitante → lead do tráfego pago, por versão. Ganha a que
-    converter mais; com menos de 3 pontos de diferença, fica a `antiga`. Para encerrar, apague os elementos
-    `data-so` da que perdeu e troque o sorteio por `v = '<vencedora>'`.
+    pistas e o formulário "Pegue a sua chave".
+  - `nova` = a página com o hero `b`, o selo +1.500, a seção "Quem já tem o Guia", as pistas dos presentes e o
+    formulário "Falta só o seu WhatsApp".
+  - **Resultado** (PostHog, tráfego pago, de 02/11 14h21 a 06/11 17h):
+
+    | Versão | Visitantes | Abriram o formulário | Leads | Visitante → lead | Formulário → lead |
+    |---|---|---|---|---|---|
+    | `antiga` | 413 | 160 | 134 | **32,4%** | 84% |
+    | `nova` | 390 | 148 | 114 | **29,2%** | 77% |
+
+    Por dia, a antiga ganhou 3 de 5 dias. A diferença não é significativa (p ≈ 0,33).
+  - **Decisão pela regra fixada antes do teste:** ganha a que converter mais, e com menos de 3 pontos fica a
+    `antiga`. As duas condições dão a `antiga`, que desde 06/11 à noite vale para 100% do tráfego.
+  - **No código:**
+    - a `nova` saiu do `index.html`;
+    - o `<head>` fixa `data-pagina = antiga`, então `pagina_versao` e `Variante_hero` continuam gravando `antiga`;
+    - o `?pagina=` não muda mais nada.
 - **Lead na Meta:** só depois do OK do n8n, nunca no clique. Vai com advanced matching (telefone, nome,
   `external_id` = distinct_id do PostHog) e, pelo n8n, também pela API de Conversões, com o mesmo
   `event_id` (a Meta deduplica). O mesmo WhatsApp no mesmo navegador não gera um segundo `Lead`.
