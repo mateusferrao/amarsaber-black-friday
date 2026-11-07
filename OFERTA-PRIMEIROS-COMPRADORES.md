@@ -24,7 +24,7 @@ Dados de 06/11:
 | Objetivo da sala | urgência na abertura **e** receita dentro da sala, com o mesmo peso |
 | Quem entra | **os 40 primeiros pedidos pagos da Black** (produto 46520027, "Guia + curso + comunidade"), pela ordem do pedido. O boleto entra se for pago. **Sem prazo de data ou hora** |
 | Formato | **1 encontro ao vivo por vídeo**, fechado, com a equipe da Amar. Cada um leva o seu caso |
-| Quando | **depois que o Guia chegar**. Nenhum texto público diz a data |
+| Quando | **depois que o Guia chegar** (decisão interna). Desde 07/11, **nenhum texto público diz quando** é o encontro, nem "depois que o Guia chegar" |
 | Diferença para a comunidade | é pequena (40 pessoas, o caso de cada um) e é o **primeiro** encontro: os encontros ao vivo da comunidade começam depois dela |
 | Comunidade | passa a ter **encontros ao vivo para todos os compradores** (Black e downsell). Confirmado com a equipe. Texto genérico, sem quantidade e sem data |
 | Ofertas na sala | (1) **Formação Completa por R$ 297**: cada caso discutido aponta para o curso da Formação que cobre o tema. (2) **Jornada Semente** (mentoria de ~R$ 7 mil para donos de clínica): pitch para todos, **sem preço**, com a chamada para **preencher a aplicação**; a venda acontece na call. **Nenhum produto novo** |
