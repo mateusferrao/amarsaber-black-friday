@@ -48,7 +48,7 @@ Dados de 06/11:
 | `assets/js/teste.js` | resultado "decidir sozinho": a comunidade tem encontros ao vivo |
 | `oferta-especial/index.html` | item da comunidade com encontros ao vivo |
 | `LIVE-ROTEIRO.md` e `LIVE-ROTEIRO-EQUIPE.docx` | teaser na abertura, comunidade com encontros no Presente 02, bloco **8b · Sala VIP** no pitch, a sala no fechamento, "bônus" fora da lista do que não se fala, e a regra nova no item 7 (urgência) |
-| `GRUPO-VIP-MENSAGENS.md` | L0, 5, 6b, 7, 8, C, Casos #2 e #9 e p3 revisadas; 4 mensagens novas da noite (n2115 a n2330) e 10 de objeção e dor (o1111 a o2511). Todas marcadas "aguarda aprovação" |
+| `GRUPO-VIP-MENSAGENS.md` | **Já agendadas no SendFlow (07/11):** L0 (com o teaser e o lembrete do Instagram) e 5 (com o teaser). A 3b, a 4 e a 6b saíram (manutenção até a live). **Aguardam aprovação:** 7, 8, C, Casos #2 e #9 e p3 revisadas, 4 mensagens novas da noite (n2115 a n2330) e 10 de objeção e dor (o1111 a o2511) |
 | Planilha de leads, aba **Sala VIP** | lista automática dos 40 primeiros (veja "Contagem") |
 
 ## Contagem dos 40

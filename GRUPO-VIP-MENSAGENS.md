@@ -14,8 +14,10 @@ Regras:
   `OFERTA-PRIMEIROS-COMPRADORES.md`.
 - **Comunidade:** tem encontros ao vivo com a equipe (texto genérico, sem quantidade nem data). As mensagens que
   descrevem a comunidade foram revisadas em 07/11.
+- **Até a live, só manutenção (decisão de 07/11):** a 3b, a 4 e a 6b saíram. Ficam A6, 3, L0, 5, 6, 6a e 7. Motivo:
+  cada mensagem faz gente sair, e quem sai antes da live nem vê a oferta.
 - **Ritmo depois da live (decisão de 07/11):** 3 mensagens por dia de 11 a 17/11 e 2 por dia de 18 a 26/11.
-- A live é no Instagram da Dra., @mariapaulaferrarivet. O link do perfil vai no grupo (3b, 4, 5, 6, 6a e 6b).
+- A live é no Instagram da Dra., @mariapaulaferrarivet. O link do perfil vai no grupo (3, L0, 5, 6 e 6a).
 - Grupo só de avisos: só os administradores enviam. Dúvidas vão para o WhatsApp (31) 9 5349-5052.
 - O produto da Black é o **Guia de Protocolos · Volume 3**. Quem tem o Volume 2 já recebeu as atualizações em PDF.
 - **Caso do dia:** só agenda no SendFlow o caso que a Dra. validou no `CASOS-DO-DIA-VALIDACAO.docx`. Os textos aqui
@@ -47,7 +49,7 @@ Regras:
   > Até lá, mando por aqui casos da rotina e dicas do que tem dentro de cada presente.
 - **Grupos novos:** a criação automática fica desligada. O próximo grupo é criado à mão no celular e importado
   (passo a passo em `RASTREAMENTO.md`).
-- **Manuais (dia da live):** a 6, a 6a, a 6b e a 7 ficam prontas como template e o Mateus dispara pelo painel quando a
+- **Manuais (dia da live):** a 6, a 6a e a 7 (a 6b saiu em 07/11) ficam prontas como template e o Mateus dispara pelo painel quando a
   Dra. abre cada presente. Ensaio sugerido em 09/11 (`LIVE-ROTEIRO.md`, Preparação).
 - **Evento do WhatsApp:** nas mensagens 1 e 3, um evento nativo "Live da Black · Guia de Protocolos" em 10/11, 20h,
   com o link do Instagram. Quem toca em "Vou" recebe o lembrete do próprio WhatsApp.
@@ -70,7 +72,7 @@ como relatório; a equipe não precisa mais mandar o texto abaixo. Texto antigo,
 Tudo da tabela do calendário está agendado na campanha "Black 2026 · Grupo VIP", inclusive os casos ainda sem
 validação. Fora do agendamento:
 - **A5 (vídeo):** agendado em 04/11 com o evento da live logo depois (o A6, áudio, foi agendado em 03/11);
-- **6a, 6b e 7:** templates "Live 10/11 · …" no painel, para o Mateus disparar na live. A 6 passou a ser agendada
+- **6a e 7:** templates "Live 10/11 · …" no painel, para o Mateus disparar na live. A 6 passou a ser agendada
   (20h10); o template 6 fica de reserva, só para o caso de a live atrasar.
 
 O SendFlow não edita mensagem agendada. Para mudar um texto, corrigir aqui, criar a ação nova no mesmo horário e
@@ -89,11 +91,11 @@ ponte de cada caso para a oferta) recriou 28 ações. Os IDs abaixo já são os 
 | 2 | `KWAy0SbMt7GWefPujf7T` |
 | A5 (vídeo + evento) | `z6YpqzG2buyZ93Em2b51` |
 | A6 (áudio) | `r3q0LMKNWbAze2QpV6TK` |
-| 3b | `Ugm66Bj4iEVkS447a5ac` |
-| 3 | `PHK8CjjF09qvqx0otLJx` |
-| L0 | `CzV6269BQYMredo04dCD` |
-| 4 | `j2DrN3qDQrEnft2MnX0O` |
-| 5 | `wrZc84lnBd4o6uBUN5nc` |
+| 3b | cortada em 07/11 (`Ugm66Bj4iEVkS447a5ac` cancelada) |
+| 3 | `dKZliBGWa9pepTpr5XT4` (07/11; a antiga `PHK8CjjF09qvqx0otLJx` foi cancelada) |
+| L0 | `XYA1kLLNsuc5SIPpj3ub` (07/11; a antiga `CzV6269BQYMredo04dCD` foi cancelada) |
+| 4 | cortada em 07/11 (`j2DrN3qDQrEnft2MnX0O` cancelada) |
+| 5 | `ZbH7Uwi5PkckwEP7iDIh` (07/11; a antiga `wrZc84lnBd4o6uBUN5nc` foi cancelada) |
 | 6 (20h10) | `g59nAEGwnIafB2P6PEcB` |
 | 8 | `QcfT2dAm0WrMHnrXCyKo` |
 | C | `VirOMT71bgyZRIp0LaLO` |
@@ -121,7 +123,7 @@ ponte de cada caso para a oferta) recriou 28 ações. Os IDs abaixo já são os 
 | p2 | `zY8IAk7Mb4Gs9q5wgzeY` |
 | p3 | `rSFLfEChUc1KKCPzODLr` |
 | p4 | `kH2qRB0T3tc3pB0d202s` |
-| p5 | `XLA8MVcctkXTve5UDOu0` |
+| p5 | `MSxkmy7jqtajuImswhVH` (07/11, +2.000; a antiga `XLA8MVcctkXTve5UDOu0` foi cancelada) |
 | r2711 | `uKfTDQ7RJhZqIvd8dTVg` |
 | r2811 | `gQfdwoaFw4HRk6Pcn6Qs` |
 | r2911 | `L9j9t66xLypKuouprAsw` |
@@ -155,14 +157,14 @@ Na UTMify e no PostHog, o `utm_content` mostra quais casos e quais dias trazem v
 | | sex 06/11, 12h | 2 | 2ª dica | texto |
 | | sáb 07/11, 12h | A5 | Bastidor: embrulhando os presentes | vídeo |
 | | dom 08/11, 19h30 | A6 | Convite da Dra. | áudio |
-| | seg 09/11, 12h | 3b | Caixinha de perguntas | texto |
-| | seg 09/11, 19h | 3 | D-1 + 3ª dica | texto + evento |
-| Live | ter 10/11, 12h | L0 | É hoje (+ teaser da Sala VIP, revisada 07/11) | texto |
-| | 10/11, 18h | 4 | O link da live | texto |
-| | 10/11, 19h50 | 5 | Já vai começar (+ teaser, revisada 07/11) | texto, @todos |
+| | ~~seg 09/11, 12h~~ | ~~3b~~ | cortada em 07/11 (entrou na 3) | — |
+| | seg 09/11, 19h | 3 | D-1 + caixinha (recriada 07/11) | texto + evento |
+| Live | ter 10/11, 12h | L0 | É hoje + teaser + lembrete do Instagram (recriada 07/11) | texto |
+| | ~~10/11, 18h~~ | ~~4~~ | cortada em 07/11 | — |
+| | 10/11, 19h50 | 5 | Já vai começar + teaser (recriada 07/11) | texto, @todos |
 | | 10/11, 20h10 | 6 | Já estamos ao vivo | texto, agendada |
 | | 10/11, ~20h12 | 6a | Presente 01 aberto | texto, manual |
-| | 10/11, ~20h26 | 6b | Presente 02 aberto | texto, manual |
+| | ~~10/11, ~20h26~~ | ~~6b~~ | cortada em 07/11 | — |
 | | 10/11, ~20h27 | 7 | Presentes abertos + link da Black + Sala VIP (revisada 07/11) | texto, @todos, manual |
 | | 10/11, 21h15 | n2115 | Sala VIP: o que é e a regra (nova 07/11) | texto, agendada |
 | | 10/11, 22h | n2200 | Prova: depoimento (nova 07/11) | imagem + texto, agendada |
@@ -345,57 +347,54 @@ Logo depois, o evento "Live da Black · Guia de Protocolos", 10/11, 20h.
 Arquivo: `assets/audio/a6-convite-dra.ogg` (Opus, o formato da mensagem de voz do WhatsApp), publicado em
 https://black.amarsaber.com.br/assets/audio/a6-convite-dra.ogg para o SendFlow buscar.
 
-## 3b · seg 09/11, 12h · perguntas para a live
-> Amanhã, na live, eu respondo as dúvidas de vocês: o caso que está te travando, a dose que você nunca lembra, a
-> pergunta sobre o Guia ou sobre a Black.
->
-> Abri uma caixinha de perguntas nos meus stories. Manda lá, e as mais pedidas entram na live.
->
-> https://www.instagram.com/mariapaulaferrarivet/
+## ~~3b · seg 09/11, 12h · perguntas para a live~~
+*(cortada em 07/11: manutenção até a live, para não perder gente antes de ver a oferta)* A caixinha entrou na 3 (19h). Ação `Ugm66Bj4iEVkS447a5ac` cancelada.
 
-> Nota: abrir a caixinha nos stories antes de enviar esta mensagem.
-
-## 3 · seg 09/11, 19h · D-1 + evento
+## 3 · seg 09/11, 19h · D-1 + caixinha + evento *(recriada em 07/11; ação dKZliBGWa9pepTpr5XT4)*
 > Amanhã, às 20h.
 >
 > Eu abro os três presentes ao vivo no Instagram e, no mesmo minuto, o link da Black chega aqui no grupo. Quem está
 > aqui compra antes do público, e isso faz diferença: o lote é limitadíssimo, e na última Black o estoque esgotou
 > rápido.
 >
-> Na live, além dos presentes, eu resolvo casos reais da rotina e respondo as perguntas da caixinha. Pouco antes de
-> começar, mando aqui o link da live.
+> Na live, além dos presentes, eu resolvo casos reais da rotina e respondo as dúvidas de vocês. Abri uma caixinha de
+> perguntas nos meus stories: manda lá o caso que está te travando, a dose que você nunca lembra ou a sua dúvida sobre
+> o Guia, e as mais pedidas entram na live.
+> https://www.instagram.com/mariapaulaferrarivet/
 >
 > Toca em "Vou" no evento aqui embaixo para o WhatsApp te lembrar.
 
-Logo depois, o mesmo evento do WhatsApp da mensagem 1.
+Logo depois, o mesmo evento do WhatsApp da mensagem 1 (na mesma ação). A ação antiga `PHK8CjjF09qvqx0otLJx` foi
+cancelada.
+
+> Nota: abrir a caixinha nos stories até 18h30 de 09/11, antes desta mensagem.
 
 ---
 
 # Fase 2 · Dia da live (10/11)
 
-## L0 · 12h · é hoje
+## L0 · 12h · é hoje *(recriada em 07/11; ação XYA1kLLNsuc5SIPpj3ub)*
 > É hoje, às 20h.
 >
-> Separei casos reais do plantão para resolver ao vivo, vou responder as perguntas da caixinha e, no fim, abro os
-> três presentes. A condição sai primeiro aqui no grupo. Como o lote é limitadíssimo, quem estiver na live sai na
-> frente.
->
-> Antes de começar, eu mando aqui o link da live.
+> Separei casos reais do plantão para resolver ao vivo, vou responder as perguntas da caixinha e, ao longo da live,
+> abro os três presentes. A condição sai primeiro aqui no grupo. Como o lote é limitadíssimo, quem estiver na live sai
+> na frente.
 >
 > E tem uma coisa que eu só conto na live: quem decidir primeiro leva algo que não vai se repetir nesta Black.
-
-*(texto revisado em 07/11 · aguarda aprovação · recriar no SendFlow e cancelar a ação antiga)* Acrescentada a última linha (teaser da Sala VIP). Ação atual `CzV6269BQYMredo04dCD`.
-
-## 4 · 18h · 2 h antes
-*Fora do grupo:* no mesmo horário, quem se cadastrou e não entrou (ou saiu) recebe o template `as_vip_live` pela
-recuperação (`RECUPERACAO-TEMPLATES.md`, fluxos vip).
-> Faltam 2 horas. O link da live: https://www.instagram.com/mariapaulaferrarivet/
 >
-> Ativa o lembrete no Instagram. Quando eu abrir o último presente, o link da Black chega aqui, antes do público.
+> Ativa o lembrete da live no meu Instagram: https://www.instagram.com/mariapaulaferrarivet/
+
+Mudanças de 07/11: "ao longo da live" no lugar de "no fim" (os presentes abrem durante a live), o teaser da Sala VIP e
+o lembrete do Instagram, que estava na 4. A ação antiga `CzV6269BQYMredo04dCD` foi cancelada.
 
 > Nota: o lembrete só existe se a live estiver agendada no Instagram. Agendar até 09/11.
 
-## 5 · 19h50 · 10 min antes · @todos
+## ~~4 · 18h · 2 h antes~~
+*(cortada em 07/11: manutenção até a live, para não perder gente antes de ver a oferta)* O lembrete do Instagram foi para a L0, e o link da live sai na 5. Ação `j2DrN3qDQrEnft2MnX0O`
+cancelada. *Fora do grupo continua:* às 18h, quem se cadastrou e não entrou (ou saiu) recebe o template
+`as_vip_live` pela recuperação (`RECUPERACAO-TEMPLATES.md`, fluxos vip).
+
+## 5 · 19h50 · 10 min antes · @todos *(recriada em 07/11; ação ZbH7Uwi5PkckwEP7iDIh)*
 > Daqui a 10 minutos eu entro ao vivo: https://www.instagram.com/mariapaulaferrarivet/
 >
 > Deixa este grupo aberto. O link da Black sai aqui assim que eu abrir o último presente, antes de aparecer em
@@ -403,7 +402,7 @@ recuperação (`RECUPERACAO-TEMPLATES.md`, fluxos vip).
 >
 > Quem decidir primeiro leva algo que não vai se repetir. Deixa o cartão ou o Pix à mão.
 
-*(texto revisado em 07/11 · aguarda aprovação · recriar no SendFlow e cancelar a ação antiga)* Acrescentada a última linha. Ação atual `wrZc84lnBd4o6uBUN5nc`.
+Acrescentada a última linha em 07/11. A ação antiga `wrZc84lnBd4o6uBUN5nc` foi cancelada.
 
 ## 6 · 20h10 · ao vivo *(agendada em 04/11; ação g59nAEGwnIafB2P6PEcB; sem @todos)*
 > Já estamos ao vivo! Entra agora: https://www.instagram.com/mariapaulaferrarivet/
@@ -419,13 +418,9 @@ disparar na hora o template de reserva "Live 10/11 · 6 · Estamos ao vivo (@tod
 >
 > Ainda faltam dois. Estamos ao vivo: https://www.instagram.com/mariapaulaferrarivet/
 
-## 6b · ~20h26 · quando a Dra. abre o Presente 02 · manual
-> 🎁 Presente 02 aberto: 3 meses na Comunidade Amar Saber no WhatsApp, comigo e com a equipe, para você levar o caso
-> que te travou. E a comunidade tem encontros ao vivo com a equipe da Amar.
-
-*(texto revisado em 07/11 · atualizar o template manual "Live 10/11 · 6b" no SendFlow)*
->
-> O último presente é a condição, e o link chega aqui no grupo em instantes: https://www.instagram.com/mariapaulaferrarivet/
+## ~~6b · ~20h26 · quando a Dra. abre o Presente 02 · manual~~
+*(cortada em 07/11: saía 1 minuto antes da 7, que lista os 3 presentes e marca todo mundo)* O template
+"Live 10/11 · 6b" fica no painel, sem uso. Na live, a sequência é 6 → 6a → 7.
 
 ## 7 · ~20h27 · quando a Dra. abre o Presente 03 · @todos · manual
 > A Black do Guia de Protocolos está aberta, primeiro para vocês.
@@ -853,9 +848,9 @@ Imagem: `assets/img/depoimento-1.jpg` (um dos depoimentos da LP).
 >
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=p4
 
-### p5 · qua 25/11, 12h · depoimento
+### p5 · qua 25/11, 12h · depoimento *(recriada em 07/11 com +2.000; ação MSxkmy7jqtajuImswhVH)*
 Imagem: `assets/img/depoimento-2.jpg`.
-> Mais de 1.500 Guias de Protocolos já foram vendidos. Este é um dos recados que chegam para a gente. 💗
+> Mais de 2.000 Guias de Protocolos já foram vendidos. Este é um dos recados que chegam para a gente. 💗
 >
 > A Black vai até segunda, 30/11, e o lote é limitadíssimo:
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=p5
