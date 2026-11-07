@@ -31,7 +31,7 @@ assets/css/teste.css         ← visual das telas do teste (o resto vem de style
 RASTREAMENTO.md       ← dicionário de eventos, UTMs e como usar os dados
 DOMINIO-HOSTGATOR.md  ← passo a passo do domínio
 ACESSOS-BLACK.md      ← liberação do curso (Memberkit) e da comunidade (WhatsApp) depois da compra
-OFERTA-PRIMEIROS-COMPRADORES.md ← Sala VIP (Plantão VIP) para os primeiros compradores, upsell e downsell da sala, ondas de urgência
+OFERTA-PRIMEIROS-COMPRADORES.md ← Sala VIP dos 40 primeiros pedidos pagos: regra, contagem, encontro, ofertas da sala (Formação e Jornada Semente)
 ```
 
 ## Como editar

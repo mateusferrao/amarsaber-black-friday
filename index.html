@@ -23,7 +23,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Sora:wght@300;400;500;600;700&family=Space+Grotesk:wght@600&family=Roboto:wght@600&display=swap">
   <link rel="stylesheet" href="assets/css/style.css">
   <!-- Componentes da Black (faixa, dores, selo, contador, barra fixa). O style.css é dividido com o /teste/. -->
-  <link rel="stylesheet" href="assets/css/venda.css?v=20261106">
+  <link rel="stylesheet" href="assets/css/venda.css?v=20261107">
 
   <!-- ===== RASTREAMENTO =====
        IDs, eventos e regras ficam em assets/js/tracking.js (Meta Pixel, PostHog, Microsoft Clarity).
@@ -33,7 +33,7 @@
   <script src="assets/js/voltar.js" defer></script>
   <script src="assets/js/tracking.js" defer></script>
   <!-- Reta final (27/11), contadores até 30/11, barra fixa do celular e pílula de quem veio da live. -->
-  <script src="assets/js/venda.js" defer></script>
+  <script src="assets/js/venda.js?v=20261107" defer></script>
   <!-- UTMify: propaga utm_* e fbclid até o checkout. Script do painel UTMify (Integrações → UTMs → "Outra"). -->
   <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck data-utmify-prevent-subids async defer></script>
 </head>
@@ -97,7 +97,7 @@
       </li>
       <li class="vd-dor">
         <div class="vd-dor__dor"><p class="vd-dor__tag">No caso difícil</p><p class="vd-dor__texto">O caso não fecha e não tem ninguém por perto para conferir a conduta com você.</p></div>
-        <div class="vd-dor__sol"><span class="vd-dor__item">Bônus · 3 meses de Comunidade</span><p>Você leva o caso para o grupo no WhatsApp, onde a Dra. Maria Paula e a equipe da Amar participam das conversas.</p></div>
+        <div class="vd-dor__sol"><span class="vd-dor__item">Bônus · 3 meses de Comunidade</span><p>Você leva o caso para o grupo no WhatsApp, onde a Dra. Maria Paula e a equipe da Amar participam das conversas, e participa dos encontros ao vivo com a equipe.</p></div>
       </li>
     </ul>
     <div class="vd-centro"><a class="btn" href="#secao-oferta" data-cta="dores">QUERO O GUIA COM OS BÔNUS</a></div>
@@ -213,7 +213,7 @@
         <ul class="oferta__list">
           <li>Guia de Protocolos Clínicos · Volume 3 | <b class="red">R$ 697,00</b></li>
           <li>Curso completo Atendimento Extraordinário | <b class="red">R$&nbsp;297,00</b></li>
-          <li>3 meses na Comunidade com a Dra. Maria Paula e equipe | <b class="red">R$&nbsp;143,70</b></li>
+          <li>3 meses na Comunidade com a Dra. Maria Paula e equipe, com encontros ao vivo | <b class="red">R$&nbsp;143,70</b></li>
         </ul>
 
         <p class="oferta__total">Valor total <span class="red">R$1.137,70</span></p>
@@ -221,6 +221,12 @@
         <p class="oferta__price"><span>12x</span>R$50,57</p>
         <p class="oferta__cash">ou R$497,00 à vista</p>
         <p class="vd-frete"><b>Frete grátis</b>por tempo limitado</p>
+        <!-- Sala VIP (decisão de 07/11): visível só em 10/11 e 11/11 (datas em assets/js/venda.js). Vale para os 40 primeiros
+             pedidos pagos da Black, pela hora do pedido, sem prazo; o texto deixa a regra clara mesmo depois de lotar. -->
+        <div class="vd-sala" data-sala-vip hidden>
+          <p class="vd-sala__tag">Sala VIP · 40 primeiros</p>
+          <p class="vd-sala__texto">Os 40 primeiros pedidos pagos desta Black entram num encontro ao vivo e fechado com a equipe da Amar, depois que o Guia chegar, para levar o seu caso. Vale a ordem dos pedidos. Não está à venda.</p>
+        </div>
         <p class="vd-selo">Lote limitado</p>
         <p class="oferta__stock">Na última campanha o estoque esgotou. Este lote também é limitado.</p>
 
@@ -273,7 +279,7 @@
         </details>
         <details>
           <summary>Por quanto tempo tenho acesso à comunidade?</summary>
-          <div class="faq__answer"><p>O acesso à Comunidade Amar Saber no WhatsApp vale por 3 meses. Nesse período você discute casos e troca experiências com outros alunos do Guia, e a Dra. Maria Paula e a equipe da Amar participam das conversas.</p></div>
+          <div class="faq__answer"><p>O acesso à Comunidade Amar Saber no WhatsApp vale por 3 meses. Nesse período você discute casos e troca experiências com outros alunos do Guia, e a Dra. Maria Paula e a equipe da Amar participam das conversas. Também tem encontros ao vivo com a equipe da Amar, por vídeo, para discutir casos.</p></div>
         </details>
       </div>
     </div>

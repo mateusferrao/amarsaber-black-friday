@@ -5,7 +5,11 @@
 
   var CONFIG = {
     retaFinal: '2026-11-27T00:00:00-03:00', // a partir daqui o selo "lote limitado" dá lugar ao contador
-    fim: '2026-11-30T23:59:59-03:00'        // fim da condição de Black Friday
+    fim: '2026-11-30T23:59:59-03:00',       // fim da condição de Black Friday
+    // Sala VIP (decisão de 07/11): o bloco [data-sala-vip] aparece só entre estas datas. A sala vale para os 40 primeiros
+    // pedidos pagos, sem prazo; o bloco sai do ar em 11/11 por segurança, mesmo que a sala ainda não tenha lotado.
+    salaVipInicio: '2026-11-10T00:00:00-03:00',
+    salaVipFim: '2026-11-11T23:59:59-03:00'
   };
 
   var params = new URLSearchParams(location.search);
@@ -17,6 +21,10 @@
   var fim = new Date(CONFIG.fim).getTime();
   var reta = agora() >= new Date(CONFIG.retaFinal).getTime();
   var barra = document.querySelector('.vd-barra');
+
+  // ---------- Sala VIP: bloco da oferta só em 10/11 e 11/11 ----------
+  var salaVip = agora() >= new Date(CONFIG.salaVipInicio).getTime() && agora() <= new Date(CONFIG.salaVipFim).getTime();
+  [].forEach.call(document.querySelectorAll('[data-sala-vip]'), function (el) { el.hidden = !salaVip; });
 
   // ---------- Reta final: troca os selos pelos contadores ----------
   [].forEach.call(document.querySelectorAll('[data-reta]'), function (el) { el.hidden = !reta; });
