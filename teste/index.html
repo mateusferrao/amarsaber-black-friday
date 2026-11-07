@@ -23,7 +23,7 @@
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../assets/css/teste.css">
   <!-- Faixa, selo de lote, contador da reta final e barra fixa: os mesmos componentes da LP -->
-  <link rel="stylesheet" href="../assets/css/venda.css?v=20261107b">
+  <link rel="stylesheet" href="../assets/css/venda.css?v=20261107c">
 
   <!-- ===== RASTREAMENTO =====
        tracking.js: Meta Pixel, PostHog, Clarity (o mesmo da LP). teste.js: perguntas, lead e resultado.
@@ -144,14 +144,7 @@
         <p class="oferta__price"><span>12x</span>R$50,57</p>
         <p class="oferta__cash">ou R$497,00 à vista</p>
         <p class="vd-frete"><b>Frete grátis</b>por tempo limitado</p>
-        <!-- Sala VIP (decisão de 07/11): visível de 07/11 a 11/11, 23h59 (datas em assets/js/venda.js). Vale para os 40 primeiros
-             pedidos pagos da Black, pela hora do pedido, sem prazo; o texto deixa a regra clara mesmo depois de lotar. -->
-        <div class="vd-sala" data-sala-vip hidden>
-          <p class="vd-sala__tag">Sala VIP · 40 primeiros</p>
-          <p class="vd-sala__texto">Os 40 primeiros pedidos pagos desta Black entram num encontro ao vivo e fechado com a equipe da Amar, para levar o seu caso. Não está à venda.</p>
-        </div>
         <p class="vd-selo">Lote limitado</p>
-        <p class="oferta__stock">Na última campanha o estoque esgotou. Este lote também é limitado.</p>
 
         <div class="vd-contador vd-contador--centro" data-reta data-contador hidden>
           <p class="vd-contador__rotulo" data-antes>A condição termina em</p>
@@ -163,6 +156,12 @@
 
         <!-- Link do checkout (o mesmo da LP) -->
         <div class="center"><a class="btn" href="https://seguro.amarsaberstore.com.br/r/LUIR27AS3L?promocode=BLACKAMARSABER" data-r="checkout">GARANTIR O MEU GUIA</a></div>
+        <!-- Sala VIP (decisão de 07/11): abaixo do botão de compra (07/11); visível de 07/11 a 11/11, 23h59 (datas em assets/js/venda.js). Vale para os 40 primeiros
+             pedidos pagos da Black, pela hora do pedido, sem prazo; o texto deixa a regra clara mesmo depois de lotar. -->
+        <div class="vd-sala" data-sala-vip hidden>
+          <p class="vd-sala__tag">Sala VIP · 40 primeiros</p>
+          <p class="vd-sala__texto">Os 40 primeiros pedidos pagos desta Black entram num encontro ao vivo e fechado com a equipe da Amar, para levar o seu caso. Não está à venda.</p>
+        </div>
         <p class="vd-oferta__urg">Não perca: a condição vai até 30/11, às 23h59.</p>
         <p class="vd-oferta__pag">Pix, boleto ou cartão em até 12x. O Guia impresso sai em até 10 dias úteis após o pagamento, com frete grátis por tempo limitado.</p>
 
