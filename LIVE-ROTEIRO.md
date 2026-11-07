@@ -58,7 +58,7 @@ A ordem dos casos não muda: o caso de plantão, com o Guia aberto, vem antes da
 | ~12 | 🎁 **Presente 01:** a Dra. abre a 1ª caixa, o curso Atendimento Extraordinário: para que serve, quanto custa fora da Black (R$ 297) e que libera no mesmo dia da compra. | **Mateus: 6a** |
 | 12–20 | **Caso 2 · Plantão:** a vet convidada conta a emergência; a Dra. resolve com o Guia aberto na câmera (conduta, dose, fluido). A vet convidada conta como usa o Guia no plantão. **Desafio do Guia:** a vet convidada (ou um comentário) diz uma condição e a Dra. acha a conduta e a dose no Guia, na câmera. No fim, a vet convidada recapitula para quem chegou. | Desde o começo, a equipe marca nos comentários as perguntas boas para o bloco final. |
 | 20–26 | **Caso 3 · Caso difícil:** a vet convidada traz o caso em que conferir a conduta com alguém mudou o desfecho. | — |
-| ~26 | 🎁 **Presente 02:** a Dra. abre a 2ª caixa, os 3 meses na Comunidade Amar Saber: como funciona, quanto custa fora da Black (R$ 47,90 por mês, R$ 143,70 nos 3 meses) e que libera no mesmo dia. | **Mateus: 6b** |
+| ~26 | 🎁 **Presente 02:** a Dra. abre a 2ª caixa, os 3 meses na Comunidade Amar Saber: como funciona (inclusive os encontros ao vivo com a equipe), quanto custa fora da Black (R$ 47,90 por mês, R$ 143,70 nos 3 meses) e que libera no mesmo dia. | **Mateus: 6b** |
 | ~27 | 🎁 **Presente 03 + link:** a Dra. abre a 3ª caixa: é a condição. | **Mateus: 7 (@todos)** no minuto em que a caixa abre. |
 | 27–33 | **Pitch de vendas (Dra.):** os 10 blocos da seção "Pitch de vendas", na ordem. | **Mateus: 7 (@todos).** Equipe: link na bio, story com link e respostas no direct. **Daniel:** liga a campanha de vendas. |
 | 33–36 | **Novidades do Volume 3:** a Dra. mostra no Guia 2 ou 3 das páginas novas (lista na seção "Valor, âncora e CTA"). É o que segura o público depois do preço. | Daniel começa a mandar o número de pedidos. |
@@ -78,16 +78,16 @@ domingo.
 
 | Momento | Quem | Pontos |
 |---|---|---|
-| Abertura | Dra. | 3 presentes hoje, e o último é a maior condição que o Guia já teve · antes, 3 casos reais da Amar, escolhidos pela pesquisa do grupo · depois da condição, mostra o que entrou de novo no Volume 3 · o Instagram não deixa link na live: o link sai no Grupo VIP, nos stories e na bio quando abrir o último presente |
+| Abertura | Dra. | 3 presentes hoje, e o último é a maior condição que o Guia já teve · quem decidir primeiro leva algo que não vai se repetir (sem contar o que é: a Sala VIP aparece no pitch) · antes, 3 casos reais da Amar, escolhidos pela pesquisa do grupo · depois da condição, mostra o que entrou de novo no Volume 3 · o Instagram não deixa link na live: o link sai no Grupo VIP, nos stories e na bio quando abrir o último presente |
 | Apresentação | Dra. | quem é a vet convidada (função e tempo de casa) · se for coautora do Guia, dizer; se não, que usa o Guia no dia a dia · os casos são de pacientes que passaram por ela |
 | Pesquisa | Dra. | o tema que mais apareceu · número de respostas só se for real e não for pequeno |
 | Presente 01 | Dra. | para que serve o curso (a conversa do "vou pensar") · R$ 297 fora da Black · libera no mesmo dia da compra |
 | Desafio do Guia, no caso de plantão | Vet convidada e Dra. | a vet convidada diz a condição · a Dra. acha a conduta e a dose em voz alta, mostrando a página |
 | Recapitulação, no fim do caso de plantão | Vet convidada | para quem chegou: são 3 presentes · o 1º já foi aberto (o curso) · o link sai no Grupo VIP e nos stories quando abrir o último |
-| Presente 02 | Dra. | como funciona a comunidade (levar o caso que travou) · R$ 47,90 por mês, R$ 143,70 nos 3 meses · libera no mesmo dia |
+| Presente 02 | Dra. | como funciona a comunidade (levar o caso que travou) · tem encontros ao vivo com a equipe da Amar (sem dizer quantos nem quando) · R$ 47,90 por mês, R$ 143,70 nos 3 meses · libera no mesmo dia |
 | Presente 03 e pitch | Dra. | os 10 blocos da seção "Pitch de vendas", na ordem |
 | A cada ~5 min, nas perguntas | Vet convidada ou Dra. | onde está o link: Grupo VIP, stories e bio |
-| Fechamento | Dra. | os 3 presentes · R$ 497 ou 12x de R$ 50,57 · até 30/11, às 23h59, ou enquanto o lote durar · 7 dias de garantia incondicional, contados do recebimento · onde está o link |
+| Fechamento | Dra. | os 3 presentes · a Sala VIP para os 40 primeiros pedidos pagos · R$ 497 ou 12x de R$ 50,57 · até 30/11, às 23h59, ou enquanto o lote durar · 7 dias de garantia incondicional, contados do recebimento · onde está o link |
 
 ## Pitch de vendas (minutos ~27 a 33, Dra.)
 Começa quando a 3ª caixa abre. Pontos na ordem, sem texto decorado. Base: skill de oferta (offers) e a pesquisa do grupo.
@@ -109,13 +109,13 @@ Por isso o pitch trata o valor de frente, antes do bloco de perguntas, e fala pr
 | 6 | Começa hoje | o curso e a comunidade liberam no mesmo dia da compra, por e-mail · o Guia impresso sai em até 10 dias úteis |
 | 7 | Sem risco | 7 dias de garantia incondicional, contados do recebimento: recebeu, usou e não serviu, devolve e recebe o valor de volta |
 | 8 | Por que agora | lote limitadíssimo · na última Black esgotou rápido · até 30/11, às 23h59, ou enquanto o lote durar |
+| 8b | Sala VIP (decisão de 07/11) | os 40 primeiros pedidos pagos desta Black entram na Sala VIP: um encontro ao vivo e fechado com a equipe da Amar, depois que o Guia chegar, em que cada um leva o seu caso · só 40 porque, com mais gente, não dá para olhar o caso de cada um · vale para qualquer canal · não está à venda e não se repete · sem data do encontro e sem número de vagas restantes, a menos que o Daniel passe o número real |
 | 9 | CTA em passos e o que vem depois | abre o Grupo VIP (ou os stories, ou a bio), toca no link e escolhe Pix ou 12x no cartão · depois da compra chega o e-mail com o curso e a comunidade |
 | 10 | Segundo CTA e gancho | quem já comprou comenta COMPREI · "agora eu mostro o que entrou de novo no Volume 3 e depois respondo as dúvidas de vocês" |
 
 **Fora do pitch:**
 - o downsell de R$ 187;
 - o número de unidades do lote;
-- bônus;
 - "só para quem está ao vivo".
 
 ## Valor, âncora e CTA
@@ -168,7 +168,10 @@ receber e recebe o valor de volta".
 - "na última Black esgotou rápido";
 - prazo até 30/11;
 - "a maior condição que o Guia já teve" é verdade (confirmado em 05/11);
-- não há bônus de abertura: a condição é a mesma até 30/11, e ninguém fala "só para quem está ao vivo".
+- **a Sala VIP (decisão de 07/11, revoga o "sem bônus de abertura" de 05/11):** os 40 primeiros pedidos pagos, pela hora
+  do pedido, sem prazo. É escassez real (o encontro não comporta mais gente). O preço e os 3 presentes continuam iguais
+  até 30/11 para todos, e ninguém fala "só para quem está ao vivo": a sala vale para qualquer canal. Detalhes em
+  `OFERTA-PRIMEIROS-COMPRADORES.md`.
 
 **8. Quem já tem uma edição anterior (decidir no domingo, com a pesquisa):**
 - a pergunta 3 da pesquisa mostra quantas pessoas já têm o Guia;

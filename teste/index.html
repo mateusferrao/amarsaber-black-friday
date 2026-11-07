@@ -23,7 +23,7 @@
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../assets/css/teste.css">
   <!-- Faixa, selo de lote, contador da reta final e barra fixa: os mesmos componentes da LP -->
-  <link rel="stylesheet" href="../assets/css/venda.css?v=20261106">
+  <link rel="stylesheet" href="../assets/css/venda.css?v=20261107">
 
   <!-- ===== RASTREAMENTO =====
        tracking.js: Meta Pixel, PostHog, Clarity (o mesmo da LP). teste.js: perguntas, lead e resultado.
@@ -31,9 +31,9 @@
        Dicionário de eventos: RASTREAMENTO.md, seção "Teste". -->
   <script src="../assets/js/voltar.js" defer></script>
   <script src="../assets/js/tracking.js" defer></script>
-  <script src="../assets/js/teste.js" defer></script>
+  <script src="../assets/js/teste.js?v=20261107" defer></script>
   <!-- Reta final e contadores (datas em venda.js). A barra fixa só aparece depois do resultado. -->
-  <script src="../assets/js/venda.js" defer></script>
+  <script src="../assets/js/venda.js?v=20261107" defer></script>
   <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck data-utmify-prevent-subids async defer></script>
 </head>
 <body data-etapas="iniciou_teste,metade_teste,virou_lead,viu_resultado,viu_oferta,clicou_checkout"
@@ -136,7 +136,7 @@
         <ul class="oferta__list">
           <li data-item="guia">Guia de Protocolos Clínicos · Volume 3 | <b class="red">R$ 697,00</b></li>
           <li data-item="curso">Curso completo Atendimento Extraordinário | <b class="red">R$&nbsp;297,00</b></li>
-          <li data-item="comunidade">3 meses na Comunidade com a Dra. Maria Paula e equipe | <b class="red">R$&nbsp;143,70</b></li>
+          <li data-item="comunidade">3 meses na Comunidade com a Dra. Maria Paula e equipe, com encontros ao vivo | <b class="red">R$&nbsp;143,70</b></li>
         </ul>
 
         <p class="oferta__total">Valor total <span class="red">R$1.137,70</span></p>
@@ -144,6 +144,12 @@
         <p class="oferta__price"><span>12x</span>R$50,57</p>
         <p class="oferta__cash">ou R$497,00 à vista</p>
         <p class="vd-frete"><b>Frete grátis</b>por tempo limitado</p>
+        <!-- Sala VIP (decisão de 07/11): visível só em 10/11 e 11/11 (datas em assets/js/venda.js). Vale para os 40 primeiros
+             pedidos pagos da Black, pela hora do pedido, sem prazo; o texto deixa a regra clara mesmo depois de lotar. -->
+        <div class="vd-sala" data-sala-vip hidden>
+          <p class="vd-sala__tag">Sala VIP · 40 primeiros</p>
+          <p class="vd-sala__texto">Os 40 primeiros pedidos pagos desta Black entram num encontro ao vivo e fechado com a equipe da Amar, depois que o Guia chegar, para levar o seu caso. Não está à venda.</p>
+        </div>
         <p class="vd-selo">Lote limitado</p>
         <p class="oferta__stock">Na última campanha o estoque esgotou. Este lote também é limitado.</p>
 

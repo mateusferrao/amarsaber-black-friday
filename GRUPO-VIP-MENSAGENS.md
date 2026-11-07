@@ -8,6 +8,13 @@ Regras:
 - Os 3 presentes são reais e só são abertos na live: o curso Atendimento Extraordinário, 3 meses de Comunidade
   Amar Saber e a condição (R$ 1.137,70 por R$ 497). As dicas são verdadeiras e não revelam o conteúdo.
 - Não mandar o link da LP antes de 10/11 às 20h: ela mostra os bônus.
+- **Sala VIP (decisão de 07/11):** os 40 primeiros pedidos pagos da Black, pela hora do pedido, entram num encontro ao
+  vivo e fechado com a equipe da Amar, depois que o Guia chegar. Sem prazo e sem data. No grupo, a sala só aparece na
+  noite de 10/11 (7, n2115, n2200, n2245, n2330), **sem número de vagas e sem mensagem de "fechou"**. Detalhes em
+  `OFERTA-PRIMEIROS-COMPRADORES.md`.
+- **Comunidade:** tem encontros ao vivo com a equipe (texto genérico, sem quantidade nem data). As mensagens que
+  descrevem a comunidade foram revisadas em 07/11.
+- **Ritmo depois da live (decisão de 07/11):** 3 mensagens por dia de 11 a 17/11 e 2 por dia de 18 a 26/11.
 - A live é no Instagram da Dra., @mariapaulaferrarivet. O link do perfil vai no grupo (3b, 4, 5, 6, 6a e 6b).
 - Grupo só de avisos: só os administradores enviam. Dúvidas vão para o WhatsApp (31) 9 5349-5052.
 - O produto da Black é o **Guia de Protocolos · Volume 3**. Quem tem o Volume 2 já recebeu as atualizações em PDF.
@@ -129,8 +136,9 @@ Todo link da LP leva `utm_source=whatsapp&utm_medium=grupo_vip`, mais:
 | Fase | `utm_campaign` | `utm_content` |
 |---|---|---|
 | Live (mensagem 7) | `live_1011` | — |
+| Noite da live (Sala VIP) | `live_1011` | `n2115`, `n2200`, `n2245`, `n2330` |
 | Dia seguinte (mensagem 8) | `pos_live_1111` | — |
-| Carrinho aberto (12/11 a 26/11) | `black_carrinho` | `caso01`…`caso10`, `p1`…`p5` |
+| Carrinho aberto (11/11 a 26/11) | `black_carrinho` | `caso01`…`caso10`, `p1`…`p5`, `o1111`…`o2511` (objeções, 07/11) |
 | Reta final (27/11 a 30/11) | `black_reta` | `r2711`, `r2811`, `r2911`, `r3011a`, `r3011b`, `r3011c` |
 
 Na UTMify e no PostHog, o `utm_content` mostra quais casos e quais dias trazem venda.
@@ -149,30 +157,45 @@ Na UTMify e no PostHog, o `utm_content` mostra quais casos e quais dias trazem v
 | | dom 08/11, 19h30 | A6 | Convite da Dra. | áudio |
 | | seg 09/11, 12h | 3b | Caixinha de perguntas | texto |
 | | seg 09/11, 19h | 3 | D-1 + 3ª dica | texto + evento |
-| Live | ter 10/11, 12h | L0 | É hoje | texto |
+| Live | ter 10/11, 12h | L0 | É hoje (+ teaser da Sala VIP, revisada 07/11) | texto |
 | | 10/11, 18h | 4 | O link da live | texto |
-| | 10/11, 19h50 | 5 | Já vai começar | texto, @todos |
+| | 10/11, 19h50 | 5 | Já vai começar (+ teaser, revisada 07/11) | texto, @todos |
 | | 10/11, 20h10 | 6 | Já estamos ao vivo | texto, agendada |
 | | 10/11, ~20h12 | 6a | Presente 01 aberto | texto, manual |
 | | 10/11, ~20h26 | 6b | Presente 02 aberto | texto, manual |
-| | 10/11, ~20h27 | 7 | Presentes abertos + link da Black | texto, @todos, manual |
+| | 10/11, ~20h27 | 7 | Presentes abertos + link da Black + Sala VIP (revisada 07/11) | texto, @todos, manual |
+| | 10/11, 21h15 | n2115 | Sala VIP: o que é e a regra (nova 07/11) | texto, agendada |
+| | 10/11, 22h | n2200 | Prova: depoimento (nova 07/11) | imagem + texto, agendada |
+| | 10/11, 22h45 | n2245 | Objeção do valor + garantia (nova 07/11) | texto, agendada |
+| | 10/11, 23h30 | n2330 | Última: valor + oferta (nova 07/11) | texto, agendada |
 | Carrinho aberto | qua 11/11, 10h | 8 | Para quem não viu | texto |
+| | qua 11/11, 15h | o1111 | Começa hoje: curso e comunidade no e-mail (nova 07/11) | texto, link |
 | | qua 11/11, 19h30 | 8b | Amanhã começa o Caso do dia | texto |
 | | qui 12/11, 10h | C | Obrigada a quem comprou + urgência para quem não comprou | texto, link |
 | | qui 12/11 | caso01 | AINE no gato | 12h caso + enquete · 19h30 resposta |
+| | sex 13/11, 9h30 | o1311 | Objeção: o valor (nova 07/11) | texto, link |
 | | sex 13/11 | caso02 | Otite por Malassezia | 12h · 19h30 |
+| | sáb 14/11, 9h30 | o1411 | Objeção: serve para o meu momento? (nova 07/11) | texto, link |
 | | sáb 14/11, 12h | p1 | O que tem de novo no Volume 3 | texto |
+| | sáb 14/11, 19h30 | o1411b | Dor: decidir sozinho + comunidade com encontros ao vivo (nova 07/11) | texto, link |
+| | dom 15/11, 9h30 | o1511 | Depoimento (nova 07/11) | imagem + texto |
 | | dom 15/11 | caso03 | Antiemético na parvovirose | 12h · 19h30 |
+| | seg 16/11, 9h30 | o1611 | Objeção: já tenho o Volume 2 (nova 07/11) | texto, link |
 | | seg 16/11 | caso04 | Gato agressivo na consulta | 12h · 19h30 |
+| | ter 17/11, 9h30 | o1711 | Vídeo da Dra. (ou texto de reserva) (nova 07/11) | vídeo + texto |
 | | ter 17/11, 12h | p2 | Depoimento | imagem + texto |
+| | ter 17/11, 19h30 | o1711b | Objeção: e se não servir? (garantia) (nova 07/11) | texto, link |
 | | qua 18/11 | caso05 | Manutenção da atopia | 12h · 19h30 |
 | | qui 19/11 | caso06 | Leishmaniose | 12h · 19h30 |
-| | sex 20/11, 12h | p3 | Os dois presentes que vêm junto | texto |
+| | sex 20/11, 12h | p3 | Os dois presentes que vêm junto (revisada 07/11) | texto |
+| | sex 20/11, 19h30 | o2011 | Faltam 10 dias + lote (nova 07/11) | texto, link |
 | | sáb 21/11 | caso07 | Antibiótico na pancreatite | 12h · 19h30 |
 | | dom 22/11, 12h | p4 | Dúvidas frequentes | texto |
+| | dom 22/11, 19h30 | o2211 | Dor: o plantão de domingo (nova 07/11) | texto, link |
 | | seg 23/11 | caso08 | Sarna otodécica | 12h · 19h30 |
 | | ter 24/11 | caso09 | Início da levotiroxina | 12h · 19h30 |
 | | qua 25/11, 12h | p5 | Depoimento | imagem + texto |
+| | qua 25/11, 19h30 | o2511 | Depoimento + faltam 5 dias (nova 07/11) | imagem + texto |
 | | qui 26/11 | caso10 | Imidocarb na babesiose | 12h · 19h30 |
 | Reta final | sex 27/11, 9h | r2711 | Hoje é Black Friday | texto |
 | | sáb 28/11, 12h | r2811 | Depoimento + dúvidas | imagem + texto |
@@ -358,6 +381,10 @@ Logo depois, o mesmo evento do WhatsApp da mensagem 1.
 > frente.
 >
 > Antes de começar, eu mando aqui o link da live.
+>
+> E tem uma coisa que eu só conto na live: quem decidir primeiro leva algo que não vai se repetir nesta Black.
+
+*(texto revisado em 07/11 · aguarda aprovação · recriar no SendFlow e cancelar a ação antiga)* Acrescentada a última linha (teaser da Sala VIP). Ação atual `CzV6269BQYMredo04dCD`.
 
 ## 4 · 18h · 2 h antes
 *Fora do grupo:* no mesmo horário, quem se cadastrou e não entrou (ou saiu) recebe o template `as_vip_live` pela
@@ -373,6 +400,10 @@ recuperação (`RECUPERACAO-TEMPLATES.md`, fluxos vip).
 >
 > Deixa este grupo aberto. O link da Black sai aqui assim que eu abrir o último presente, antes de aparecer em
 > qualquer outro lugar.
+>
+> Quem decidir primeiro leva algo que não vai se repetir. Deixa o cartão ou o Pix à mão.
+
+*(texto revisado em 07/11 · aguarda aprovação · recriar no SendFlow e cancelar a ação antiga)* Acrescentada a última linha. Ação atual `wrZc84lnBd4o6uBUN5nc`.
 
 ## 6 · 20h10 · ao vivo *(agendada em 04/11; ação g59nAEGwnIafB2P6PEcB; sem @todos)*
 > Já estamos ao vivo! Entra agora: https://www.instagram.com/mariapaulaferrarivet/
@@ -390,7 +421,9 @@ disparar na hora o template de reserva "Live 10/11 · 6 · Estamos ao vivo (@tod
 
 ## 6b · ~20h26 · quando a Dra. abre o Presente 02 · manual
 > 🎁 Presente 02 aberto: 3 meses na Comunidade Amar Saber no WhatsApp, comigo e com a equipe, para você levar o caso
-> que te travou.
+> que te travou. E a comunidade tem encontros ao vivo com a equipe da Amar.
+
+*(texto revisado em 07/11 · atualizar o template manual "Live 10/11 · 6b" no SendFlow)*
 >
 > O último presente é a condição, e o link chega aqui no grupo em instantes: https://www.instagram.com/mariapaulaferrarivet/
 
@@ -400,14 +433,63 @@ disparar na hora o template de reserva "Live 10/11 · 6 · Estamos ao vivo (@tod
 > 📘 Guia de Protocolos · Volume 3, impresso: condutas, doses e cálculos da clínica de pequenos animais, para abrir no
 > meio do atendimento
 > 🎁 Curso completo Atendimento Extraordinário
-> 🎁 3 meses na Comunidade Amar Saber, comigo e com a equipe
+> 🎁 3 meses na Comunidade Amar Saber, comigo e com a equipe, com encontros ao vivo
 >
 > Tudo isso soma R$ 1.137,70. Na Black sai por R$ 497 à vista ou 12x de R$ 50,57, até 30/11, às 23h59.
+>
+> 🎟️ E os 40 primeiros pedidos pagos entram na Sala VIP: um encontro ao vivo e fechado com a equipe da Amar, depois
+> que o seu Guia chegar, para você levar o seu caso. Não está à venda.
 >
 > Garanta o seu aqui, com o cupom já aplicado:
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=live_1011
 >
 > O lote é limitadíssimo, e na última Black esgotou rápido. Se o Guia não servir para você, tem 7 dias para devolver.
+
+*(texto revisado em 07/11: comunidade com encontros ao vivo e a Sala VIP · atualizar o template manual "Live 10/11 · 7")*
+
+## Noite da live: Sala VIP (4 agendadas, sem número de vagas e sem "fechou")
+*(nova, 07/11 · aguarda aprovação do Mateus · Teste BF antes)* Saem para todos os grupos da campanha, sem @todos. Valem como texto da regra, então continuam verdadeiras
+mesmo que as 40 vagas acabem antes.
+
+### n2115 · 21h15 · o que é a Sala VIP
+> 🎟️ *Sala VIP: os 40 primeiros*
+>
+> Além dos três presentes, os 40 primeiros pedidos pagos desta Black entram na Sala VIP: um encontro ao vivo e
+> fechado com a equipe da Amar, depois que o seu Guia chegar. Cada um leva o caso que está travando, e a gente resolve
+> junto.
+>
+> São só 40 porque, com mais gente, não dá para olhar o caso de cada um. E a sala não está à venda.
+>
+> https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=live_1011&utm_content=n2115
+
+### n2200 · 22h · prova
+Imagem: `assets/img/depoimento-4.jpg` (depoimento da LP ainda não usado no grupo).
+> Na live de hoje eu resolvi casos com o Guia aberto na câmera. Esse recado é de uma colega que usa o Guia na rotina
+> dela. 💗
+>
+> Guia impresso, curso Atendimento Extraordinário e 3 meses de comunidade, com encontros ao vivo, por 12x de R$ 50,57.
+> E a Sala VIP é dos 40 primeiros pedidos pagos:
+> https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=live_1011&utm_content=n2200
+
+### n2245 · 22h45 · o valor
+> Sei que o valor pesa. Foi o que mais apareceu na pesquisa de vocês.
+>
+> Então a conta: são 12x de R$ 50,57, menos de R$ 2 por dia. É menos do que o Guia sozinho custa fora da Black
+> (R$ 697), e o curso e a comunidade vêm junto.
+>
+> E se não servir para você, tem 7 dias de garantia incondicional, contados do dia em que o Guia chega:
+> https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=live_1011&utm_content=n2245
+
+### n2330 · 23h30 · a última da noite
+> Antes de dormir, o que você leva na Black do Guia de Protocolos:
+>
+> 📘 Guia de Protocolos · Volume 3, impresso (R$ 697)
+> 🎁 Curso completo Atendimento Extraordinário (R$ 297)
+> 🎁 3 meses de comunidade, com encontros ao vivo com a equipe (R$ 143,70)
+> 🎟️ Sala VIP para os 40 primeiros pedidos pagos: essa não tem preço, porque não está à venda
+>
+> Tudo soma R$ 1.137,70. Na Black: R$ 497 à vista ou 12x de R$ 50,57.
+> https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=live_1011&utm_content=n2330
 
 ---
 
@@ -418,12 +500,22 @@ disparar na hora o template de reserva "Live 10/11 · 6 · Estamos ao vivo (@tod
 >
 > 📘 Guia de Protocolos · Volume 3, impresso
 > 🎁 Curso completo Atendimento Extraordinário
-> 🎁 3 meses na Comunidade Amar Saber
+> 🎁 3 meses na Comunidade Amar Saber, com encontros ao vivo
 >
 > De R$ 1.137,70 por R$ 497 à vista ou 12x de R$ 50,57, até 30/11 ou enquanto o lote durar. É limitadíssimo:
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=pos_live_1111
 >
 > Se o Guia não servir para você, tem 7 dias para devolver.
+
+*(texto revisado em 07/11 · aguarda aprovação · recriar no SendFlow e cancelar a ação antiga)* Comunidade com encontros ao vivo. Ação atual `QcfT2dAm0WrMHnrXCyKo`.
+
+## o1111 · qua 11/11, 15h · começa hoje
+*(nova, 07/11 · aguarda aprovação do Mateus · Teste BF antes)*
+> Quem garantiu ontem já recebeu no e-mail o acesso ao curso Atendimento Extraordinário e à comunidade. 💗 Dá para
+> começar hoje, enquanto o Guia impresso é preparado (ele sai em até 10 dias úteis).
+>
+> Se você ainda está decidindo: o lote é limitadíssimo, e na última Black esgotou rápido.
+> https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=o1111
 
 ## 8b · qua 11/11, 19h30 · amanhã começa o Caso do dia *(agendada; ação x4jknWydUrmIlgGO4tg0)*
 Apresenta a série antes do Caso #1, para todo o grupo (a C fala só com quem comprou).
@@ -445,11 +537,13 @@ recebe por e-mail.
 > aberta para você: leva lá o caso que está te travando esta semana.
 >
 > Para quem ainda não garantiu: o lote da Black é limitadíssimo, e na última Black esgotou rápido. Guia impresso,
-> curso Atendimento Extraordinário e 3 meses de comunidade, podendo dividir em até 12x e com 7 dias de garantia
-> incondicional:
+> curso Atendimento Extraordinário e 3 meses de comunidade, com encontros ao vivo, podendo dividir em até 12x e com
+> 7 dias de garantia incondicional:
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=c1211
 >
 > E fica por aqui: às 12h sai o primeiro Caso do dia, com a enquete.
+
+*(texto revisado em 07/11 · aguarda aprovação · recriar no SendFlow e cancelar a ação antiga)* Comunidade com encontros ao vivo. Ação atual `VirOMT71bgyZRIp0LaLO`.
 
 ## Caso do dia
 Às 12h o caso e a enquete. Às 19h30 a resposta, com a foto da página do Guia e o
@@ -499,8 +593,10 @@ Enquete "Qual é a sua conduta?", uma resposta só: **A)** Antibiótico otológi
 >
 > No Guia de Protocolos · Volume 3, p. 46: a classificação das otites pela citologia, o ativo para cocos, bacilos ou leveduras, o protocolo de limpeza e a conduta nas otites recidivantes.
 >
-> Otite que volta é o tipo de caso que você leva para a comunidade, comigo e com a equipe. Ela vem junto com o Guia na Black, até 30/11 ou enquanto o lote durar:
+> Otite que volta é o tipo de caso que você leva para a comunidade, comigo e com a equipe, nas conversas e nos encontros ao vivo. Ela vem junto com o Guia na Black, até 30/11 ou enquanto o lote durar:
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=caso02
+
+*(texto revisado em 07/11 · aguarda aprovação · recriar no SendFlow e cancelar a ação antiga)* Ação atual da resposta (19h30): `sbPg1Q9JiRrjU1TEkzNO`.
 
 ### Caso #3 · Antiemético na parvovirose · 15/11 (dom) *(validado pela Dra. em 29/10)*
 
@@ -660,8 +756,10 @@ Enquete "Como introduzir a medicação?", uma resposta só: **A)** Dose total de
 >
 > No Guia de Protocolos · Volume 3, p. 59: o esquema de introdução em 4 semanas, as doses para os quadros clínicos e subclínicos e os ajustes em pacientes com comorbidades.
 >
-> Hipotireoidismo com comorbidade é o tipo de caso que você leva para a comunidade, comigo e com a equipe. Ela vem junto com o Guia na Black, até 30/11:
+> Hipotireoidismo com comorbidade é o tipo de caso que você leva para a comunidade, comigo e com a equipe, nas conversas e nos encontros ao vivo. Ela vem junto com o Guia na Black, até 30/11:
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=caso09
+
+*(texto revisado em 07/11 · aguarda aprovação · recriar no SendFlow e cancelar a ação antiga)* Ação atual da resposta (19h30): `cmuO6dPFy7lZZToljpFC`.
 
 ### Caso #10 · Imidocarb na babesiose · 26/11 (qui) *(validado pela Dra. em 29/10)*
 
@@ -733,10 +831,13 @@ Imagem: `assets/img/depoimento-1.jpg` (um dos depoimentos da LP).
 >
 > 🎁 O curso completo Atendimento Extraordinário, o passo a passo da consulta que a gente usa na Amar Veterinária,
 > para a hora em que o tutor diz "vou pensar"
-> 🎁 3 meses na Comunidade Amar Saber no WhatsApp, comigo e com a equipe, para levar o caso que te travou
+> 🎁 3 meses na Comunidade Amar Saber no WhatsApp, comigo e com a equipe, com encontros ao vivo, para levar o caso
+> que te travou
 >
 > Tudo por R$ 497 à vista ou 12x de R$ 50,57, até 30/11, com 7 dias para devolver se não servir para você:
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=p3
+
+*(texto revisado em 07/11 · aguarda aprovação · recriar no SendFlow e cancelar a ação antiga)* Ação atual `rSFLfEChUc1KKCPzODLr`.
 
 ### p4 · dom 22/11, 12h · dúvidas frequentes
 > Respostas rápidas para as dúvidas mais comuns:
@@ -758,6 +859,97 @@ Imagem: `assets/img/depoimento-2.jpg`.
 >
 > A Black vai até segunda, 30/11, e o lote é limitadíssimo:
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=p5
+
+## Objeções e dores (11 a 25/11, decisão de 07/11)
+Completam o ritmo de 3 por dia até 17/11 e de 2 por dia de 18 a 26/11. Cada uma ataca uma objeção ou dor da pesquisa
+da live (o valor, "serve para o meu momento", o prazo, "já tenho uma edição anterior", decidir sozinho). A o1111
+fica logo depois da 8. Provas disponíveis: depoimentos da LP e alguns vídeos novos da Dra.
+
+### o1311 · sex 13/11, 9h30 · o valor
+*(nova, 07/11 · aguarda aprovação do Mateus · Teste BF antes)*
+> "O valor" foi a resposta mais marcada na pesquisa da live. Então vamos à conta.
+>
+> O Guia sozinho custa R$ 697 fora da Black. Na Black ele vem com o curso Atendimento Extraordinário e 3 meses de
+> comunidade por R$ 497, ou 12x de R$ 50,57. É menos de R$ 2 por dia para ter a conduta e a dose na bancada no próximo
+> plantão:
+> https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=o1311
+
+### o1411 · sáb 14/11, 9h30 · serve para o meu momento?
+*(nova, 07/11 · aguarda aprovação do Mateus · Teste BF antes)*
+> Muita gente que respondeu a pesquisa ainda está na faculdade ou se formou há pouco. E a pergunta é sempre a mesma:
+> "serve para o meu momento?"
+>
+> Para quem está começando, o Guia é a base de conduta para não travar no plantão. Ele nasceu para isso: escrevi os
+> protocolos da Amar para que quem chegava na equipe atendesse no mesmo padrão de quem estava há anos.
+>
+> Para quem já atende, é a consulta rápida no meio do atendimento:
+> https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=o1411
+
+### o1411b · sáb 14/11, 19h30 · decidir sozinho
+*(nova, 07/11 · aguarda aprovação do Mateus · Teste BF antes)* A frase é da pesquisa, sem nome.
+> Uma frase da pesquisa ficou comigo: "peço ajuda a algum colega, mas nem sempre respondem na hora. Me sinto inútil
+> nessas horas."
+>
+> Ninguém devia decidir sozinho. Na Comunidade Amar Saber você leva o caso e compara condutas, e eu e a equipe
+> participamos das conversas. A comunidade também tem encontros ao vivo com a equipe da Amar.
+>
+> Na Black, são 3 meses de comunidade junto com o Guia e o curso:
+> https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=o1411b
+
+### o1511 · dom 15/11, 9h30 · depoimento
+*(nova, 07/11 · aguarda aprovação do Mateus · Teste BF antes)* Imagem: `assets/img/depoimento-5.jpg`.
+> Bom domingo! 💗 Esse recado chegou de uma colega que usa o Guia no plantão.
+>
+> Guia impresso, curso e 3 meses de comunidade, até 30/11 ou enquanto o lote durar:
+> https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=o1511
+
+### o1611 · seg 16/11, 9h30 · já tenho o Volume 2
+*(nova, 07/11 · aguarda aprovação do Mateus · Teste BF antes)*
+> "Já tenho o Volume 2. Vale a pena?"
+>
+> Quem tem o Volume 2 recebeu as atualizações em PDF. O Volume 3 é o livro novo, impresso, com o que entrou depois:
+> ruptura do ligamento cruzado, estado epilético, sedação e tranquilização, leishmaniose pelo BrasilLeish 2025 e
+> vacinas pela WSAVA. E na Black ele vem junto com o curso Atendimento Extraordinário e 3 meses de comunidade:
+> https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=o1611
+
+### o1711 · ter 17/11, 9h30 · vídeo da Dra.
+*(nova, 07/11 · aguarda aprovação do Mateus · Teste BF antes)* Vídeo vertical da Dra., de até 1 min, sobre a dor do plantão (ela no lugar de quem trava na dose às 3h da manhã).
+**Sem vídeo até 16/11, sai o texto de reserva:** "Três da manhã, um cão em choque na mesa, e a dose do fluido precisa
+sair agora. É para esse minuto que o Guia existe: a conduta, a dose e o cálculo na mesma página, para consultar com o
+paciente na sua frente."
+> Gravei esse recado para quem ainda está pensando. ⬇️
+> https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=o1711
+
+### o1711b · ter 17/11, 19h30 · e se não servir?
+*(nova, 07/11 · aguarda aprovação do Mateus · Teste BF antes)*
+> "E se eu receber e não for o que eu esperava?"
+>
+> Você tem 7 dias de garantia incondicional, contados do dia em que o Guia chega. Recebeu, folheou, usou no plantão e
+> não serviu: devolve e recebe o valor de volta.
+> https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=o1711b
+
+### o2011 · sex 20/11, 19h30 · faltam 10 dias
+*(nova, 07/11 · aguarda aprovação do Mateus · Teste BF antes)*
+> Faltam 10 dias para a Black do Guia acabar, e o lote não espera o dia 30. Na última Black, ele esgotou antes do
+> prazo.
+>
+> Guia impresso, curso Atendimento Extraordinário e 3 meses de comunidade por R$ 497 ou 12x de R$ 50,57:
+> https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=o2011
+
+### o2211 · dom 22/11, 19h30 · o plantão de domingo
+*(nova, 07/11 · aguarda aprovação do Mateus · Teste BF antes)* Se a Dra. mandar um 2º vídeo, ele entra aqui no lugar do texto.
+> Domingo é dia de plantão para muita gente aqui.
+>
+> Se hoje chegou aquele caso em que você ficou em dúvida da dose, é para esse momento que o Guia existe: a conduta, a
+> dose e o cálculo na mesma página, para consultar com o paciente na sua frente.
+> https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=o2211
+
+### o2511 · qua 25/11, 19h30 · depoimento + faltam 5 dias
+*(nova, 07/11 · aguarda aprovação do Mateus · Teste BF antes)* Imagem: `assets/img/depoimento-6.jpg`.
+> Mais um recado de quem usa o Guia na rotina. 💗
+>
+> Faltam 5 dias para a Black acabar. Guia impresso, curso e 3 meses de comunidade, com 7 dias de garantia:
+> https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=o2511
 
 ---
 
