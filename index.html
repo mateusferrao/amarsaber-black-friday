@@ -23,7 +23,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Sora:wght@300;400;500;600;700&family=Space+Grotesk:wght@600&family=Roboto:wght@600&display=swap">
   <link rel="stylesheet" href="assets/css/style.css">
   <!-- Componentes da Black (faixa, dores, selo, contador, barra fixa). O style.css é dividido com o /teste/. -->
-  <link rel="stylesheet" href="assets/css/venda.css?v=20261107">
+  <link rel="stylesheet" href="assets/css/venda.css?v=20261107b">
 
   <!-- ===== RASTREAMENTO =====
        IDs, eventos e regras ficam em assets/js/tracking.js (Meta Pixel, PostHog, Microsoft Clarity).
@@ -62,6 +62,8 @@
           <li>+ Curso completo</li>
           <li>+ 3 meses de comunidade</li>
           <li>+ Frete grátis por tempo limitado</li>
+          <!-- Sala VIP: aparece junto com o bloco da oferta (de 07/11 a 11/11, datas em assets/js/venda.js) -->
+          <li class="vd-itens__vip" data-sala-vip hidden>+ Sala VIP para os 40 primeiros</li>
         </ul>
 
         <!-- Até 26/11: selo. De 27/11 em diante (reta final): contador. Datas em assets/js/venda.js -->
@@ -225,7 +227,7 @@
              pedidos pagos da Black, pela hora do pedido, sem prazo; o texto deixa a regra clara mesmo depois de lotar. -->
         <div class="vd-sala" data-sala-vip hidden>
           <p class="vd-sala__tag">Sala VIP · 40 primeiros</p>
-          <p class="vd-sala__texto">Os 40 primeiros pedidos pagos desta Black entram num encontro ao vivo e fechado com a equipe da Amar, depois que o Guia chegar, para levar o seu caso. Não está à venda.</p>
+          <p class="vd-sala__texto">Os 40 primeiros pedidos pagos desta Black entram num encontro ao vivo e fechado com a equipe da Amar, para levar o seu caso. Não está à venda.</p>
         </div>
         <p class="vd-selo">Lote limitado</p>
         <p class="oferta__stock">Na última campanha o estoque esgotou. Este lote também é limitado.</p>

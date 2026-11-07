@@ -55,6 +55,9 @@
   font-size: 11px; font-weight: 600; letter-spacing: .5px; list-style: none;
 }
 .vd-itens { margin: 0; padding: 0; }
+/* Chip da Sala VIP (07/11): amarelo, para destacar dos outros itens; some junto com o bloco da oferta */
+.vd-itens li.vd-itens__vip { border-color: var(--amarelo); background: rgba(255, 214, 0, .14); color: var(--amarelo); }
+.vd-itens li[hidden] { display: none; }
 .vd-hero__foto { display: none; }
 
 /* Selo "lote limitado" (até a reta final) */
