@@ -109,7 +109,7 @@ Por isso o pitch trata o valor de frente, antes do bloco de perguntas, e fala pr
 | 6 | Começa hoje | o curso e a comunidade liberam no mesmo dia da compra, por e-mail · o Guia impresso sai em até 10 dias úteis |
 | 7 | Sem risco | 7 dias de garantia incondicional, contados do recebimento: recebeu, usou e não serviu, devolve e recebe o valor de volta |
 | 8 | Por que agora | lote limitadíssimo · na última Black esgotou rápido · até 30/11, às 23h59, ou enquanto o lote durar |
-| 8b | Sala VIP (decisão de 07/11) | os 40 primeiros pedidos pagos desta Black entram na Sala VIP: um encontro ao vivo e fechado com a equipe da Amar, depois que o Guia chegar, em que cada um leva o seu caso · só 40 porque, com mais gente, não dá para olhar o caso de cada um · vale a ordem dos pedidos, de qualquer canal · não está à venda e não se repete · sem data do encontro e sem número de vagas restantes, a menos que o Daniel passe o número real |
+| 8b | Sala VIP (decisão de 07/11) | os 40 primeiros pedidos pagos desta Black entram na Sala VIP: um encontro ao vivo e fechado com a equipe da Amar, depois que o Guia chegar, em que cada um leva o seu caso · só 40 porque, com mais gente, não dá para olhar o caso de cada um · vale para qualquer canal · não está à venda e não se repete · sem data do encontro e sem número de vagas restantes, a menos que o Daniel passe o número real |
 | 9 | CTA em passos e o que vem depois | abre o Grupo VIP (ou os stories, ou a bio), toca no link e escolhe Pix ou 12x no cartão · depois da compra chega o e-mail com o curso e a comunidade |
 | 10 | Segundo CTA e gancho | quem já comprou comenta COMPREI · "agora eu mostro o que entrou de novo no Volume 3 e depois respondo as dúvidas de vocês" |
 

@@ -438,7 +438,7 @@ disparar na hora o template de reserva "Live 10/11 · 6 · Estamos ao vivo (@tod
 > Tudo isso soma R$ 1.137,70. Na Black sai por R$ 497 à vista ou 12x de R$ 50,57, até 30/11, às 23h59.
 >
 > 🎟️ E os 40 primeiros pedidos pagos entram na Sala VIP: um encontro ao vivo e fechado com a equipe da Amar, depois
-> que o seu Guia chegar, para você levar o seu caso. Vale a ordem dos pedidos. Não está à venda.
+> que o seu Guia chegar, para você levar o seu caso. Não está à venda.
 >
 > Garanta o seu aqui, com o cupom já aplicado:
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=live_1011
@@ -458,8 +458,7 @@ mesmo que as 40 vagas acabem antes.
 > fechado com a equipe da Amar, depois que o seu Guia chegar. Cada um leva o caso que está travando, e a gente resolve
 > junto.
 >
-> São só 40 porque, com mais gente, não dá para olhar o caso de cada um. Vale a ordem dos pedidos, e a sala não está à
-> venda.
+> São só 40 porque, com mais gente, não dá para olhar o caso de cada um. E a sala não está à venda.
 >
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=live_1011&utm_content=n2115
 
