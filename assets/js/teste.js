@@ -503,7 +503,7 @@
           : 'Nas situações do teste, você recorreu a outra pessoa para decidir.';
         return [
           first + ' Sem ninguém para conferir, você só descobre se acertou quando o paciente volta.',
-          'Na Comunidade Amar Saber, um grupo de WhatsApp com veterinários que usam o Guia, você leva o caso que te travou, compara condutas e conhece colegas de outras cidades. A Dra. Maria Paula e a equipe da Amar participam das conversas. Na Black, são 3 meses de comunidade junto com o Guia.'
+          'Na Comunidade Amar Saber, um grupo de WhatsApp com veterinários que usam o Guia, você leva o caso que te travou, compara condutas e conhece colegas de outras cidades. A Dra. Maria Paula e a equipe da Amar participam das conversas, e a comunidade tem encontros ao vivo com a equipe. Na Black, são 3 meses de comunidade junto com o Guia.'
         ];
       }
     }

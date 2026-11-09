@@ -23,7 +23,7 @@
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../assets/css/teste.css?v=20261109">
   <!-- Faixa, selo de lote, contador da reta final e barra fixa: os mesmos componentes da LP -->
-  <link rel="stylesheet" href="../assets/css/venda.css?v=20261106">
+  <link rel="stylesheet" href="../assets/css/venda.css?v=20261107c">
 
   <!-- ===== RASTREAMENTO =====
        tracking.js: Meta Pixel, PostHog, Clarity (o mesmo da LP). teste.js: perguntas, lead e resultado.
@@ -33,7 +33,7 @@
   <script src="../assets/js/tracking.js" defer></script>
   <script src="../assets/js/teste.js?v=20261109" defer></script>
   <!-- Reta final e contadores (datas em venda.js). A barra fixa só aparece depois do resultado. -->
-  <script src="../assets/js/venda.js" defer></script>
+  <script src="../assets/js/venda.js?v=20261107b" defer></script>
   <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck data-utmify-prevent-subids async defer></script>
 </head>
 <body data-etapas="iniciou_teste,metade_teste,virou_lead,viu_resultado,viu_oferta,clicou_checkout"
@@ -124,7 +124,7 @@
         <ul class="oferta__list">
           <li data-item="guia">Guia de Protocolos Clínicos · Volume 3 | <b class="red">R$ 697,00</b></li>
           <li data-item="curso">Curso completo Atendimento Extraordinário | <b class="red">R$&nbsp;297,00</b></li>
-          <li data-item="comunidade">3 meses na Comunidade com a Dra. Maria Paula e equipe | <b class="red">R$&nbsp;143,70</b></li>
+          <li data-item="comunidade">3 meses na Comunidade com a Dra. Maria Paula e equipe, com encontros ao vivo | <b class="red">R$&nbsp;143,70</b></li>
         </ul>
 
         <p class="oferta__total">Valor total <span class="red">R$1.137,70</span></p>
@@ -133,7 +133,6 @@
         <p class="oferta__cash">ou R$497,00 à vista</p>
         <p class="vd-frete"><b>Frete grátis</b>por tempo limitado</p>
         <p class="vd-selo">Lote limitado</p>
-        <p class="oferta__stock">Na última campanha o estoque esgotou. Este lote também é limitado.</p>
 
         <div class="vd-contador vd-contador--centro" data-reta data-contador hidden>
           <p class="vd-contador__rotulo" data-antes>A condição termina em</p>
@@ -145,6 +144,12 @@
 
         <!-- Link do checkout (o mesmo da LP) -->
         <div class="center"><a class="btn" href="https://seguro.amarsaberstore.com.br/r/LUIR27AS3L?promocode=BLACKAMARSABER" data-r="checkout">GARANTIR O MEU GUIA</a></div>
+        <!-- Sala VIP (decisão de 07/11): abaixo do botão de compra (07/11); visível de 07/11 a 11/11, 23h59 (datas em assets/js/venda.js). Vale para os 40 primeiros
+             pedidos pagos da Black, pela hora do pedido, sem prazo; o texto deixa a regra clara mesmo depois de lotar. -->
+        <div class="vd-sala" data-sala-vip hidden>
+          <p class="vd-sala__tag">Sala VIP · 40 primeiros</p>
+          <p class="vd-sala__texto">Os 40 primeiros pedidos pagos desta Black entram num encontro ao vivo e fechado com a equipe da Amar, para levar o seu caso. Não está à venda.</p>
+        </div>
         <p class="vd-oferta__urg">Não perca: a condição vai até 30/11, às 23h59.</p>
         <p class="vd-oferta__pag">Pix, boleto ou cartão em até 12x. O Guia impresso sai em até 10 dias úteis após o pagamento, com frete grátis por tempo limitado.</p>
 
@@ -174,7 +179,7 @@
   <section class="provas" data-secao="provas" hidden>
     <div class="container provas__inner">
       <img class="provas__arrow" src="../assets/img/seta-separadora.svg" width="224" height="55" alt="">
-      <p class="teste-vendidos">Mais de 1.500 Guias de Protocolos vendidos</p>
+      <p class="teste-vendidos">Mais de 2.000 Guias de Protocolos vendidos</p>
       <h2 class="section-title section-title--sm">O que dizem sobre o Guia</h2>
 
       <div class="gallery gallery--depoimentos only-desktop">

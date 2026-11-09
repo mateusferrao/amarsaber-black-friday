@@ -55,6 +55,9 @@
   font-size: 11px; font-weight: 600; letter-spacing: .5px; list-style: none;
 }
 .vd-itens { margin: 0; padding: 0; }
+/* Chip da Sala VIP (07/11): amarelo, para destacar dos outros itens; some junto com o bloco da oferta */
+.vd-itens li.vd-itens__vip { border-color: var(--amarelo); background: rgba(255, 214, 0, .14); color: var(--amarelo); }
+.vd-itens li[hidden] { display: none; }
 .vd-hero__foto { display: none; }
 
 /* Selo "lote limitado" (até a reta final) */
@@ -124,6 +127,14 @@
   font-family: var(--display); font-weight: 400; font-size: 17px; letter-spacing: 2.5px; text-transform: uppercase;
   transform: rotate(-3deg);
 }
+/* Sala VIP (07/11): caixa tracejada amarela abaixo do frete, só em 10/11 e 11/11 (venda.js) */
+.vd-sala { margin: 12px 0 2px; padding: 12px 14px; border: 2px dashed var(--amarelo); border-radius: 10px; text-align: center; }
+.vd-sala[hidden] { display: none; }
+.vd-sala__tag {
+  display: inline-block; margin-bottom: 6px; color: var(--amarelo);
+  font-family: var(--display); font-weight: 400; font-size: 18px; letter-spacing: 2.5px; text-transform: uppercase;
+}
+.vd-sala__texto { font-size: 13px; font-weight: 500; line-height: 19px; color: var(--cream); }
 .vd-oferta__urg { font-size: 13px; font-weight: 600; color: var(--amarelo); }
 .vd-oferta__pag { font-size: 13px; line-height: 19px; color: var(--cream); }
 
