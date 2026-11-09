@@ -23,7 +23,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Sora:wght@300;400;500;600;700&family=Space+Grotesk:wght@600&family=Roboto:wght@600&display=swap">
   <link rel="stylesheet" href="assets/css/style.css">
   <!-- Componentes da Black (faixa, dores, selo, contador, barra fixa). O style.css é dividido com o /teste/. -->
-  <link rel="stylesheet" href="assets/css/venda.css?v=20261109c">
+  <link rel="stylesheet" href="assets/css/venda.css?v=20261109d">
 
   <!-- ===== RASTREAMENTO =====
        IDs, eventos e regras ficam em assets/js/tracking.js (Meta Pixel, PostHog, Microsoft Clarity).
@@ -174,23 +174,23 @@
         </button>
       </div>
 
-      <div class="gallery gallery--sumario only-desktop">
-        <a href="assets/img/sumario-a.png"><img src="assets/img/sumario-a.png" width="2517" height="3544" alt="Sumário do Guia" loading="lazy"></a>
-        <a href="assets/img/sumario-b.png"><img src="assets/img/sumario-b.png" width="2517" height="3544" alt="Sumário do Guia" loading="lazy"></a>
-        <a href="assets/img/sumario-c.png"><img src="assets/img/sumario-c.png" width="2517" height="3544" alt="Sumário do Guia" loading="lazy"></a>
-        <a href="assets/img/sumario-d.png"><img src="assets/img/sumario-d.png" width="2517" height="3544" alt="Sumário do Guia" loading="lazy"></a>
-        <a href="assets/img/pagina-1.jpg"><img src="assets/img/pagina-1.jpg" width="993" height="1403" alt="Página do Guia" loading="lazy"></a>
-        <a href="assets/img/pagina-2.jpg"><img src="assets/img/pagina-2.jpg" width="994" height="1403" alt="Página do Guia" loading="lazy"></a>
-      </div>
-      <div class="carousel carousel--sumario only-mobile" aria-label="Páginas do Guia">
-        <div class="carousel__track">
-          <img src="assets/img/sumario-mobile-1.jpg" alt="Sumário do Guia" loading="lazy">
-          <img src="assets/img/sumario-mobile-2.jpg" alt="Sumário do Guia" loading="lazy">
-          <img src="assets/img/sumario-c.png" alt="Sumário do Guia" loading="lazy">
-          <img src="assets/img/sumario-d.png" alt="Sumário do Guia" loading="lazy">
-          <img src="assets/img/pagina-1.jpg" alt="Página do Guia" loading="lazy">
-          <img src="assets/img/pagina-3.jpg" alt="Página do Guia" loading="lazy">
-          <img src="assets/img/pagina-2.jpg" alt="Página do Guia" loading="lazy">
+      <!-- Fotos do Guia (09/11): mesma fileira rolando dos depoimentos (.vd-marquee), no celular e no computador. -->
+      <div class="vd-marquee vd-marquee--guia gallery" aria-label="Páginas do Guia">
+        <div class="vd-marquee__trilha">
+          <a href="assets/img/sumario-a.png"><img src="assets/img/sumario-a.png" width="2517" height="3544" alt="Sumário do Guia" loading="lazy"></a>
+          <a href="assets/img/sumario-b.png"><img src="assets/img/sumario-b.png" width="2517" height="3544" alt="Sumário do Guia" loading="lazy"></a>
+          <a href="assets/img/sumario-c.png"><img src="assets/img/sumario-c.png" width="2517" height="3544" alt="Sumário do Guia" loading="lazy"></a>
+          <a href="assets/img/sumario-d.png"><img src="assets/img/sumario-d.png" width="2517" height="3544" alt="Sumário do Guia" loading="lazy"></a>
+          <a href="assets/img/pagina-1.jpg"><img src="assets/img/pagina-1.jpg" width="993" height="1403" alt="Página do Guia" loading="lazy"></a>
+          <a href="assets/img/pagina-3.jpg"><img src="assets/img/pagina-3.jpg" width="993" height="1403" alt="Página do Guia" loading="lazy"></a>
+          <a href="assets/img/pagina-2.jpg"><img src="assets/img/pagina-2.jpg" width="994" height="1403" alt="Página do Guia" loading="lazy"></a>
+          <a href="assets/img/sumario-a.png" tabindex="-1" aria-hidden="true"><img src="assets/img/sumario-a.png" width="2517" height="3544" alt="" loading="lazy"></a>
+          <a href="assets/img/sumario-b.png" tabindex="-1" aria-hidden="true"><img src="assets/img/sumario-b.png" width="2517" height="3544" alt="" loading="lazy"></a>
+          <a href="assets/img/sumario-c.png" tabindex="-1" aria-hidden="true"><img src="assets/img/sumario-c.png" width="2517" height="3544" alt="" loading="lazy"></a>
+          <a href="assets/img/sumario-d.png" tabindex="-1" aria-hidden="true"><img src="assets/img/sumario-d.png" width="2517" height="3544" alt="" loading="lazy"></a>
+          <a href="assets/img/pagina-1.jpg" tabindex="-1" aria-hidden="true"><img src="assets/img/pagina-1.jpg" width="993" height="1403" alt="" loading="lazy"></a>
+          <a href="assets/img/pagina-3.jpg" tabindex="-1" aria-hidden="true"><img src="assets/img/pagina-3.jpg" width="993" height="1403" alt="" loading="lazy"></a>
+          <a href="assets/img/pagina-2.jpg" tabindex="-1" aria-hidden="true"><img src="assets/img/pagina-2.jpg" width="994" height="1403" alt="" loading="lazy"></a>
         </div>
       </div>
     </div>
@@ -376,6 +376,6 @@
     <a class="btn" href="#secao-oferta" data-cta="barra">VER A CONDIÇÃO</a>
   </div>
 
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js?v=20261109d"></script>
 </body>
 </html>

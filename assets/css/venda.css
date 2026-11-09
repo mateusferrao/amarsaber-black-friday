@@ -140,7 +140,10 @@
 
 /* ---------- 3. O que tem no Guia ---------- */
 .o-que-e .vd-h2 { margin-top: 0; }
-.o-que-e .gallery--sumario { width: 100%; margin-top: 8px; }
+.o-que-e { overflow: hidden; }
+.o-que-e .vd-marquee { margin-top: 8px; }
+/* Fotos do Guia: proporção das páginas (≈ 0,71) */
+.vd-marquee--guia img { aspect-ratio: 2517 / 3544; }
 
 /* Novidades do Volume 3 (LP e resultado do /teste/) */
 .vd-novo { width: 100%; max-width: 760px; padding: 18px 20px 20px; border: 1px solid rgba(255, 255, 255, .35); border-radius: 16px; background: rgba(34, 0, 27, .28); color: #fff; }
@@ -153,7 +156,7 @@
 /* A trilha tem a lista 2x; andar -50% volta ao começo sem emenda. Espaço com margin (não gap) para o -50% ser exato. */
 .vd-marquee { display: block; width: 100vw; max-width: none; margin: 0 calc(50% - 50vw); overflow: hidden; }
 .vd-marquee__trilha { display: flex; width: max-content; animation: vd-marquee 45s linear infinite; }
-.vd-marquee:hover .vd-marquee__trilha { animation-play-state: paused; }
+.vd-marquee:hover .vd-marquee__trilha, .vd-marquee.is-pausado .vd-marquee__trilha { animation-play-state: paused; }
 .vd-marquee a { flex: none; margin-right: 12px; border-radius: 12px; overflow: hidden; }
 .vd-marquee img { width: auto; height: 380px; aspect-ratio: 1080 / 1920; object-fit: cover; }
 .vd-marquee a:hover img { transform: none; }

@@ -104,6 +104,16 @@
     play();
   });
 
+  // ---------- Fileiras rolando (.vd-marquee): no celular, param enquanto o dedo está em cima ----------
+  // No computador quem pausa é o :hover do CSS (venda.css).
+  document.querySelectorAll('.vd-marquee').forEach(function (row) {
+    var on = function () { row.classList.add('is-pausado'); };
+    var off = function () { row.classList.remove('is-pausado'); };
+    row.addEventListener('touchstart', on, { passive: true });
+    row.addEventListener('touchend', off);
+    row.addEventListener('touchcancel', off);
+  });
+
   // ---------- Lightbox das galerias ----------
   var galleries = document.querySelectorAll('.gallery');
   if (!galleries.length) return;
