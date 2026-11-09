@@ -114,6 +114,19 @@
     row.addEventListener('touchcancel', off);
   });
 
+  // Fotos das fileiras: carregam todas quando a fileira chega perto da tela (as cópias do loop, com loading="lazy",
+  // ficavam em branco até entrar na tela e abriam um vão entre a última foto e a primeira).
+  var marquees = document.querySelectorAll('.vd-marquee');
+  var carregar = function (row) { row.querySelectorAll('img[loading="lazy"]').forEach(function (img) { img.loading = 'eager'; }); };
+  if ('IntersectionObserver' in window) {
+    var obsMarquee = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { carregar(e.target); obsMarquee.unobserve(e.target); } });
+    }, { rootMargin: '800px 0px' });
+    marquees.forEach(function (row) { obsMarquee.observe(row); });
+  } else {
+    marquees.forEach(carregar);
+  }
+
   // ---------- Lightbox das galerias ----------
   var galleries = document.querySelectorAll('.gallery');
   if (!galleries.length) return;

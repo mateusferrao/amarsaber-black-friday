@@ -154,7 +154,12 @@
 
 /* ---------- 4. Depoimentos (09/11): uma fileira rolando; para com o mouse em cima ---------- */
 /* A trilha tem a lista 2x; andar -50% volta ao começo sem emenda. Espaço com margin (não gap) para o -50% ser exato. */
-.vd-marquee { display: block; width: 100vw; max-width: none; margin: 0 calc(50% - 50vw); overflow: hidden; }
+/* Faixa delimitada (09/11): largura do conteúdo, cantos arredondados e bordas esmaecidas, em vez de ir de ponta a ponta. */
+.vd-marquee {
+  display: block; width: 100%; max-width: 1100px; margin: 0 auto; overflow: hidden; border-radius: 14px;
+  -webkit-mask: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+          mask: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+}
 .vd-marquee__trilha { display: flex; width: max-content; animation: vd-marquee 45s linear infinite; }
 .vd-marquee:hover .vd-marquee__trilha, .vd-marquee.is-pausado .vd-marquee__trilha { animation-play-state: paused; }
 .vd-marquee a { flex: none; margin-right: 12px; border-radius: 12px; overflow: hidden; }
