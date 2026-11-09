@@ -93,7 +93,7 @@
     gate: document.getElementById('teste-gate'),
     resultado: document.getElementById('resultado')
   };
-  var afterResult = document.querySelectorAll('#secao-oferta, .provas, .faq, .teste-final');
+  var afterResult = document.querySelectorAll('#secao-oferta, .teste-novo, .provas, .faq, .teste-final');
   var intro = document.getElementById('teste-intro');
   var counter = document.querySelector('.teste__contador');
   var bar = document.querySelector('.teste__barra span');

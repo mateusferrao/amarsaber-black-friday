@@ -137,6 +137,9 @@
 }
 
 /* Botão final, depois do FAQ */
+/* Novo no Volume 3: depois da oferta (09/11) */
+.teste-novo { padding: 8px 16px 48px; background: #230014; }
+.teste-novo__inner { display: flex; justify-content: center; }
 .teste-final { padding: 0 16px 56px; background: #230014; }
 .teste-final__inner { display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center; }
 .teste-final__text { font-size: 16px; font-weight: 500; line-height: 24px; color: #fff; }
