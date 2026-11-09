@@ -17,7 +17,8 @@ fixo do checkout e a vendedora se perde no caminho.
 | **Belle** | https://seguro.amarsaberstore.com.br/r/LUIR27AS3L?promocode=BLACKAMARSABER&utm_source=vendedor&utm_medium=whatsapp_1a1&utm_campaign=black_vendas&utm_content=belle&metadata%5Bvendedor%5D=belle | https://seguro.amarsaberstore.com.br/r/5PS9VFMQHI?promocode=BLACKAMARSABERDS&utm_source=vendedor&utm_medium=whatsapp_1a1&utm_campaign=black_vendas&utm_content=belle&metadata%5Bvendedor%5D=belle |
 
 - O que identifica a vendedora é `utm_source=vendedor` + `utm_content=<nome>`. A `metadata[vendedor]` vai junto como
-  reserva, caso algo mexa na UTM no checkout.
+  reserva, mas no teste de 09/11 (pedido 178395351, link da Heid) ela **não** chegou ao pedido: só vieram as UTMs.
+  Quem atribui na prática é a UTM, e o teste deu certo (linha "Heid · link").
 - Copie o link inteiro. Se cortar o fim, a venda continua valendo pela UTM; se cortar a UTM, a venda some.
 - A Formação Completa (upsell de R$ 297 no cartão, ou bump no Pix e no boleto) não precisa de link: o upsell vai para
   a vendedora do pedido principal e o bump já está dentro do mesmo pedido.

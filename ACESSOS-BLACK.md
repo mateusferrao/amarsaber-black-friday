@@ -135,7 +135,14 @@ SSL). Precisa estar como **Compartilhado**: a automação do funil envia pela ca
 4. ~~Teste~~ (01/11): lead "TESTE · Acesso Black" (`mateusferraocosta2000@gmail.com`) recebeu o e-mail na caixa de
    entrada com o link certo; o lead foi para Closed - lost.
 
-O n8n grava o e-mail da compra no contato antes de criar o lead, porque o e-mail sai para o e-mail do contato.
+O n8n deixa no contato **só o e-mail da compra** antes de criar o lead (desde 09/11). O passo "Enviar email" manda
+para **todos** os e-mails do contato principal: no teste de 09/11 (pedido 178395351) o contato tinha 3 e-mails e
+chegaram 3 e-mails iguais. O Kommo não tem opção de escolher um só endereço. Os e-mails antigos ficam numa nota do
+contato ("E-mails do contato antes da compra …"), nó "Kommo · nota e-mails antigos". Contato que já tinha só o e-mail
+da compra não é mexido.
+
+O bot também tinha o gatilho **"Qualquer nova conversa"**, que pode reenviar o e-mail quando o comprador escreve no
+WhatsApp. Deve ficar só "Movido para ou criado na etapa" (ajuste no Kommo, pelo usuário).
 
 **Texto (aprovar com a Dra. antes):**
 
