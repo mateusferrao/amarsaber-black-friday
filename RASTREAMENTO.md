@@ -230,6 +230,8 @@ Yampi direto, sem passar pela LP. Todo link de divulgação deve apontar para a 
 - **Aba Compras** (planilha de leads): uma linha por pedido pago, com as UTMs da compra e a **origem do lead**,
   que é o 1º cadastro (Grupo WhatsApp ou Quiz) achado pelo WhatsApp: campanha, conjunto, anúncio e UTMs do
   cadastro, e a dor do quiz. É onde a venda que saiu do grupo volta para o anúncio que trouxe a pessoa.
+  As colunas `Compra_utm_*` vêm das UTMs do próprio pedido da Yampi (`resource.utm_*`). Até 09/11 o nó "Ler evento" da
+  recuperação lia de `metadata` e elas ficavam vazias; corrigido e a venda daquele dia preenchida à mão.
 - **Clarity:** `etapa_max` = `viu_downsell` → `clicou_downsell` (downsell) e `comprou` (obrigado), com `upgrade`
   da gravação nas duas.
 - **Funil no PostHog:** `lp_checkout` → `lp_downsell_vista` (`de` = checkout) → `lp_downsell_checkout`
