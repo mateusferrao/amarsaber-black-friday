@@ -1,0 +1,29 @@
+/* Popup de objeção (popup.js): cartão no canto inferior direito, sem fundo escurecido.
+   Arquivo próprio, com cores literais, porque a LP e o teste usam venda.css e o downsell usa captura.css. */
+.vd-popup {
+  position: fixed; right: 20px; bottom: 20px; z-index: 60; width: 320px; padding: 18px 18px 16px;
+  border: 1px solid #fd4ba89e; border-radius: 16px; color: #fff; font-family: "Sora", sans-serif; text-align: left;
+  background: radial-gradient(ellipse at 30% 0%, #4a0a3c 0%, #22001b 80%);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, .5); animation: vd-popup-entra .3s ease-out;
+}
+.vd-popup[hidden] { display: none; }
+.vd-popup__fechar {
+  position: absolute; top: 4px; right: 6px; width: 32px; height: 32px; padding: 0;
+  border: 0; background: none; color: #fdebdf; font-size: 24px; line-height: 1; cursor: pointer;
+}
+.vd-popup__titulo { margin: 0; padding-right: 24px; font-size: 15px; font-weight: 700; line-height: 20px; }
+.vd-popup__texto { margin: 6px 0 0; font-size: 13px; line-height: 19px; color: #fdebdf; }
+.vd-popup__whats {
+  display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 12px; padding: 11px 14px;
+  border-radius: 10px; background: #25d366; color: #0b2e17; font-size: 14px; font-weight: 700; text-decoration: none;
+}
+.vd-popup__whats svg { width: 20px; height: 20px; fill: currentColor; }
+.vd-popup__whats:hover, .vd-popup__whats:focus-visible { background: #3ee07a; }
+@keyframes vd-popup-entra { from { transform: translateY(16px); opacity: 0; } }
+
+@media (max-width: 767px) {
+  .vd-popup { right: 12px; bottom: 12px; width: min(300px, calc(100% - 24px)); }
+  /* LP e teste: acima da barra fixa do celular */
+  .vd-popup--barra { bottom: calc(84px + env(safe-area-inset-bottom)); }
+}
+@media (prefers-reduced-motion: reduce) { .vd-popup { animation: none; } }

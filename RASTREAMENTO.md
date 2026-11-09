@@ -182,7 +182,14 @@ a pessoa da captura até o clique no checkout.
   incluir no remarketing da Black); `GroupClick` = clicou para entrar no grupo; captura vista sem `Lead` = remarketing
   de captura.
 
-## Popup de objeção (LP e teste)
+## Popup de objeção (LP, teste e downsell)
+
+**Downsell (`/oferta-especial/`, desde 09/11):** mesmo cartão e mesmos gatilhos (a oferta é a página inteira,
+`.ds-oferta`), com texto próprio ("São 12x de R$ 19,03, e o curso e a comunidade liberam no mesmo dia da confirmação do
+pagamento. E tem 7 dias de garantia.") e mensagem pronta própria. A frequência é separada (`as_popup_downsell` e
+`as_popup_fechado_downsell`): quem viu ou fechou o popup na LP também vê no downsell. Tudo vem dos atributos
+`data-popup-*` do `<body>`; o estilo fica em `assets/css/popup.css`, carregado nas 3 páginas.
+
 
 `assets/js/popup.js`. Cartão pequeno no canto inferior direito (no celular, acima da barra fixa), sem fundo escurecido:
 "Ficou com alguma dúvida?" + a quebra da objeção de valor (12x de R$ 50,57, menos de R$ 1,69 por dia, e 7 dias de

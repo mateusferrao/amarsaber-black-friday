@@ -14,12 +14,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Sora:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="../assets/css/captura.css">
+  <link rel="stylesheet" href="../assets/css/popup.css?v=20261109">
 
   <!-- ===== RASTREAMENTO =====
        tracking.js usa o produto e os eventos declarados no <body> (downsell, R$ 187).
        downsell.js: DownsellView / lp_downsell_vista e a recusa. -->
   <script src="../assets/js/tracking.js" defer></script>
   <script src="../assets/js/downsell.js" defer></script>
+  <!-- Popup de objeção (09/11): o mesmo da LP, com texto e frequência do downsell (atributos data-popup-* no <body>) -->
+  <script src="../assets/js/popup.js?v=20261109c" defer></script>
   <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck data-utmify-prevent-subids async defer></script>
 </head>
 <body data-etapas="viu_downsell,clicou_downsell"
@@ -28,7 +31,11 @@
       data-produto-valor="187"
       data-evento-checkout="DownsellCheckout"
       data-evento-checkout-ph="lp_downsell_checkout"
-      data-etapa-checkout="clicou_downsell">
+      data-etapa-checkout="clicou_downsell"
+      data-popup-chave="downsell"
+      data-popup-oferta=".ds-oferta"
+      data-popup-texto="São 12x de R$ 19,03, e o curso e a comunidade liberam no mesmo dia da confirmação do pagamento. E tem 7 dias de garantia."
+      data-popup-mensagem="Oi! Estou na oferta especial do curso Atendimento Extraordinário com a comunidade e tenho uma dúvida antes de comprar.">
   <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1393732806282634&ev=PageView&noscript=1"></noscript>
 
   <div class="cap-faixa" role="note" aria-label="Oferta única nesta página.">
