@@ -1,4 +1,4 @@
-// Página de vendas (raiz): reta final, contadores, barra fixa do celular e pílula de quem veio da live.
+// Página de vendas (raiz): reta final, contadores, barra fixa do celular (texto e, faltando 7 dias, contador) e pílula da live.
 // Datas em CONFIG. Para testar outra data: ?previa=1&data=AAAA-MM-DD (sem previa=1, data é ignorado).
 (function () {
   'use strict';
@@ -6,10 +6,9 @@
   var CONFIG = {
     retaFinal: '2026-11-27T00:00:00-03:00', // a partir daqui o selo "lote limitado" dá lugar ao contador
     fim: '2026-11-30T23:59:59-03:00',       // fim da condição de Black Friday
-    // Sala VIP (decisão de 07/11): o bloco [data-sala-vip] fica visível de 07/11 a 11/11. A sala vale para os 40 primeiros
-    // pedidos pagos, sem prazo; o bloco sai do ar em 11/11 por segurança, mesmo que a sala ainda não tenha lotado.
-    salaVipInicio: '2026-11-07T00:00:00-03:00',
-    salaVipFim: '2026-11-11T23:59:59-03:00'
+    // Barra fixa do celular (09/11): "Condição acaba em breve" até aqui; depois, contador até o fim (faltando 7 dias).
+    // A Sala VIP saiu da LP e do teste em 09/11 (a regra dos 40 primeiros segue na planilha).
+    barraContador: '2026-11-23T23:59:59-03:00'
   };
 
   var params = new URLSearchParams(location.search);
@@ -22,13 +21,14 @@
   var reta = agora() >= new Date(CONFIG.retaFinal).getTime();
   var barra = document.querySelector('.vd-barra');
 
-  // ---------- Sala VIP: bloco da oferta de 07/11 a 11/11 ----------
-  var salaVip = agora() >= new Date(CONFIG.salaVipInicio).getTime() && agora() <= new Date(CONFIG.salaVipFim).getTime();
-  [].forEach.call(document.querySelectorAll('[data-sala-vip]'), function (el) { el.hidden = !salaVip; });
-
   // ---------- Reta final: troca os selos pelos contadores ----------
   [].forEach.call(document.querySelectorAll('[data-reta]'), function (el) { el.hidden = !reta; });
   [].forEach.call(document.querySelectorAll('[data-antes-reta]'), function (el) { el.hidden = reta; });
+
+  // ---------- Barra fixa: texto até faltarem 7 dias, contador depois ----------
+  var barraReta = agora() >= new Date(CONFIG.barraContador).getTime();
+  [].forEach.call(document.querySelectorAll('[data-barra-reta]'), function (el) { el.hidden = !barraReta; });
+  [].forEach.call(document.querySelectorAll('[data-barra-antes]'), function (el) { el.hidden = barraReta; });
 
   // ---------- Contadores: todos os [data-contador] terminam em CONFIG.fim ----------
   // Depois do fim, cada um troca o tempo ([data-antes]) pelo aviso ([data-fim]) e a barra fixa some.
@@ -52,7 +52,7 @@
       if (barra) barra.hidden = true;
     }
   }
-  if (reta && boxes.length) {
+  if ((reta || barraReta) && boxes.length) {
     tick();
     timer = setInterval(tick, 1000);
   }

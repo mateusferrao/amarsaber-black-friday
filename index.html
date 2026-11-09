@@ -23,7 +23,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Sora:wght@300;400;500;600;700&family=Space+Grotesk:wght@600&family=Roboto:wght@600&display=swap">
   <link rel="stylesheet" href="assets/css/style.css">
   <!-- Componentes da Black (faixa, dores, selo, contador, barra fixa). O style.css é dividido com o /teste/. -->
-  <link rel="stylesheet" href="assets/css/venda.css?v=20261109b">
+  <link rel="stylesheet" href="assets/css/venda.css?v=20261109c">
 
   <!-- ===== RASTREAMENTO =====
        IDs, eventos e regras ficam em assets/js/tracking.js (Meta Pixel, PostHog, Microsoft Clarity).
@@ -33,7 +33,7 @@
   <script src="assets/js/voltar.js" defer></script>
   <script src="assets/js/tracking.js" defer></script>
   <!-- Reta final (27/11), contadores até 30/11, barra fixa do celular e pílula de quem veio da live. -->
-  <script src="assets/js/venda.js?v=20261107b" defer></script>
+  <script src="assets/js/venda.js?v=20261109c" defer></script>
   <!-- UTMify: propaga utm_* e fbclid até o checkout. Script do painel UTMify (Integrações → UTMs → "Outra"). -->
   <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck data-utmify-prevent-subids async defer></script>
 </head>
@@ -102,11 +102,11 @@
     </ul>
   </section>
 
-  <!-- ===== 2b. MÉTODO: OS 3 CS DA AMAR (09/11, modelado da "Tríade" da Balbi). Cada pilar resolve uma dor da seção 2
+  <!-- ===== 2b. MÉTODO: OS 3 C’s DA AMAR (09/11, modelado da "Tríade" da Balbi). Cada pilar resolve uma dor da seção 2
        e corresponde a um item da oferta: Conduta = Guia, Conversa = curso, Conferência = comunidade. ===== -->
   <section class="vd-metodo" data-secao="metodo">
     <p class="vd-kicker">O método</p>
-    <h2 class="vd-h2 vd-anton">Os 3 Cs <span class="vd-contorno">da Amar</span></h2>
+    <h2 class="vd-h2 vd-anton">Os 3 C<span class="vd-min">’s</span> <span class="vd-contorno">da Amar</span></h2>
     <p class="vd-metodo__lead">Conduta para saber o que fazer, conversa para o tutor aceitar e conferência para não decidir sozinho.</p>
     <ol class="vd-pilares">
       <li class="vd-pilar">
@@ -116,7 +116,7 @@
         <p class="vd-pilar__texto">A conduta da emergência, a dose e o cálculo do fluido na mesma página, para consultar com o paciente na sua frente.</p>
         <img class="vd-pilar__foto" src="assets/img/grupo-vip.jpg" width="640" height="641" alt="Guia de Protocolos Volume 3 sobre páginas abertas" loading="lazy">
         <p class="vd-pilar__item">Guia de Protocolos · Volume 3</p>
-        <ul class="vd-pilar__tags"><li>emergências</li><li>doses</li><li>fluidoterapia</li><li>transfusão</li></ul>
+        <ul class="vd-pilar__tags"><li>emergências</li><li>doses</li><li>procedimentos</li></ul>
       </li>
       <li class="vd-pilar">
         <span class="vd-pilar__num" aria-hidden="true">02</span>
@@ -125,7 +125,7 @@
         <p class="vd-pilar__texto">O passo a passo da consulta usado na Amar, da anamnese ao pós-consulta, para o tutor entender o tratamento e não ir embora com o "vou pensar".</p>
         <img class="vd-pilar__foto" src="assets/img/pilar-conversa.webp" width="800" height="800" alt="Veterinária da Amar examinando um gato na mesa de atendimento" loading="lazy">
         <p class="vd-pilar__item">Presente · Curso Atendimento Extraordinário</p>
-        <ul class="vd-pilar__tags"><li>anamnese</li><li>explicar o tratamento</li><li>pós-consulta</li></ul>
+        <ul class="vd-pilar__tags"><li>anamnese</li><li>tratamento</li><li>pós-consulta</li></ul>
       </li>
       <li class="vd-pilar">
         <span class="vd-pilar__num" aria-hidden="true">03</span>
@@ -138,7 +138,7 @@
       </li>
     </ol>
     <div class="vd-centro vd-centro--coluna">
-      <a class="btn" href="#secao-oferta" data-cta="metodo">QUERO OS 3 CS NA BLACK</a>
+      <a class="btn" href="#secao-oferta" data-cta="metodo">QUERO OS 3 C’s NA BLACK</a>
       <p class="vd-etiqueta">12x de R$ 50,57 · até 30/11, às 23h59</p>
     </div>
   </section>
@@ -203,23 +203,22 @@
       <p class="vd-prova vd-prova--rosa"><b>+2.000</b>Guias vendidos</p>
       <h2 class="section-title section-title--sm">O que dizem sobre o Guia</h2>
 
-      <!-- Desktop/tablet: grade. Mobile: carrossel (mesmas imagens) -->
-      <div class="gallery gallery--depoimentos only-desktop">
-        <a href="assets/img/depoimento-1.jpg"><img src="assets/img/depoimento-1.jpg" width="1080" height="1920" alt="Depoimento" loading="lazy"></a>
-        <a href="assets/img/depoimento-2.jpg"><img src="assets/img/depoimento-2.jpg" width="1080" height="1920" alt="Depoimento" loading="lazy"></a>
-        <a href="assets/img/depoimento-3.jpg"><img src="assets/img/depoimento-3.jpg" width="1080" height="1920" alt="Depoimento" loading="lazy"></a>
-        <a href="assets/img/depoimento-4.jpg"><img src="assets/img/depoimento-4.jpg" width="1080" height="1920" alt="Depoimento" loading="lazy"></a>
-        <a href="assets/img/depoimento-5.jpg"><img src="assets/img/depoimento-5.jpg" width="1080" height="1920" alt="Depoimento" loading="lazy"></a>
-        <a href="assets/img/depoimento-6.jpg"><img src="assets/img/depoimento-6.jpg" width="1080" height="1920" alt="Depoimento" loading="lazy"></a>
-      </div>
-      <div class="carousel carousel--depoimentos only-mobile" aria-label="Depoimentos">
-        <div class="carousel__track">
-          <img src="assets/img/depoimento-1.jpg" alt="Depoimento" loading="lazy">
-          <img src="assets/img/depoimento-6.jpg" alt="Depoimento" loading="lazy">
-          <img src="assets/img/depoimento-2.jpg" alt="Depoimento" loading="lazy">
-          <img src="assets/img/depoimento-5.jpg" alt="Depoimento" loading="lazy">
-          <img src="assets/img/depoimento-3.jpg" alt="Depoimento" loading="lazy">
-          <img src="assets/img/depoimento-4.jpg" alt="Depoimento" loading="lazy">
+      <!-- Depoimentos (09/11): uma fileira só, rolando sem parar; para com o mouse em cima. A lista vem 2x para o loop
+           não ter emenda (a 2ª cópia fica escondida de leitor de tela). O clique abre o lightbox do main.js (.gallery a). -->
+      <div class="vd-marquee gallery" aria-label="Depoimentos">
+        <div class="vd-marquee__trilha">
+          <a href="assets/img/depoimento-1.jpg"><img src="assets/img/depoimento-1.jpg" width="1080" height="1920" alt="Depoimento de quem usa o Guia" loading="lazy"></a>
+          <a href="assets/img/depoimento-6.jpg"><img src="assets/img/depoimento-6.jpg" width="1080" height="1920" alt="Depoimento de quem usa o Guia" loading="lazy"></a>
+          <a href="assets/img/depoimento-2.jpg"><img src="assets/img/depoimento-2.jpg" width="1080" height="1920" alt="Depoimento de quem usa o Guia" loading="lazy"></a>
+          <a href="assets/img/depoimento-5.jpg"><img src="assets/img/depoimento-5.jpg" width="1080" height="1920" alt="Depoimento de quem usa o Guia" loading="lazy"></a>
+          <a href="assets/img/depoimento-3.jpg"><img src="assets/img/depoimento-3.jpg" width="1080" height="1920" alt="Depoimento de quem usa o Guia" loading="lazy"></a>
+          <a href="assets/img/depoimento-4.jpg"><img src="assets/img/depoimento-4.jpg" width="1080" height="1920" alt="Depoimento de quem usa o Guia" loading="lazy"></a>
+          <a href="assets/img/depoimento-1.jpg" tabindex="-1" aria-hidden="true"><img src="assets/img/depoimento-1.jpg" width="1080" height="1920" alt="" loading="lazy"></a>
+          <a href="assets/img/depoimento-6.jpg" tabindex="-1" aria-hidden="true"><img src="assets/img/depoimento-6.jpg" width="1080" height="1920" alt="" loading="lazy"></a>
+          <a href="assets/img/depoimento-2.jpg" tabindex="-1" aria-hidden="true"><img src="assets/img/depoimento-2.jpg" width="1080" height="1920" alt="" loading="lazy"></a>
+          <a href="assets/img/depoimento-5.jpg" tabindex="-1" aria-hidden="true"><img src="assets/img/depoimento-5.jpg" width="1080" height="1920" alt="" loading="lazy"></a>
+          <a href="assets/img/depoimento-3.jpg" tabindex="-1" aria-hidden="true"><img src="assets/img/depoimento-3.jpg" width="1080" height="1920" alt="" loading="lazy"></a>
+          <a href="assets/img/depoimento-4.jpg" tabindex="-1" aria-hidden="true"><img src="assets/img/depoimento-4.jpg" width="1080" height="1920" alt="" loading="lazy"></a>
         </div>
       </div>
 
@@ -257,7 +256,7 @@
         <p class="oferta__kicker">A maior condição que o Guia já teve</p>
         <h2 class="oferta__title vd-anton">Tudo isso <span class="rosa">na Black</span></h2>
 
-        <!-- Itens da oferta: edite nome e valor "de". Prefixo = pilar dos 3 Cs (seção 2b) -->
+        <!-- Itens da oferta: edite nome e valor "de". Prefixo = pilar dos 3 C’s (seção 2b) -->
         <ul class="oferta__list">
           <li><span class="vd-c">Conduta</span> Guia de Protocolos Clínicos · Volume 3 | <b class="red">R$ 697,00</b></li>
           <li><span class="vd-c">Conversa</span> Curso completo Atendimento Extraordinário | <b class="red">R$&nbsp;297,00</b></li>
@@ -285,12 +284,6 @@
         <div class="center"><a class="btn" href="https://seguro.amarsaberstore.com.br/r/LUIR27AS3L?promocode=BLACKAMARSABER" data-cta="oferta">GARANTIR O MEU GUIA</a></div>
         <!-- Garantia (09/11): mesmo texto da live (LIVE-ROTEIRO.md, pitch bloco 7). Frete de volta só no FAQ. -->
         <p class="vd-garantia"><b>7 dias de garantia incondicional</b>, contados do recebimento: recebeu, usou e não serviu, devolve e recebe o valor de volta.</p>
-        <!-- Sala VIP (decisão de 07/11): abaixo do botão de compra (07/11); visível de 07/11 a 11/11, 23h59 (datas em assets/js/venda.js). Vale para os 40 primeiros
-             pedidos pagos da Black, pela hora do pedido, sem prazo; o texto deixa a regra clara mesmo depois de lotar. -->
-        <div class="vd-sala" data-sala-vip hidden>
-          <p class="vd-sala__tag">Sala VIP · 40 primeiros</p>
-          <p class="vd-sala__texto">Os 40 primeiros pedidos pagos desta Black entram num encontro ao vivo e fechado com a equipe da Amar, para levar o seu caso. Não está à venda.</p>
-        </div>
         <p class="vd-oferta__urg">Não perca: a condição vai até 30/11, às 23h59.</p>
         <p class="vd-oferta__pag">Pix, boleto ou cartão em até 12x. O curso e a comunidade chegam no seu e-mail no mesmo dia da confirmação do pagamento. O Guia impresso sai em até 10 dias úteis, com frete grátis por tempo limitado.</p>
 
@@ -376,8 +369,9 @@
   <!-- ===== BARRA FIXA (celular): aparece depois do hero e some na oferta. Sem preço. ===== -->
   <div class="vd-barra is-oculta" data-contador>
     <p class="vd-barra__tempo">
-      <span data-antes-reta>Lote limitado<b>Black até 30/11</b></span>
-      <span data-reta hidden>A Black termina em<b data-curto>--</b></span>
+      <!-- Barra (09/11): texto fixo até faltarem 7 dias; depois, contador até 30/11 (CONFIG.barraContador em venda.js) -->
+      <span data-barra-antes>Lote limitado<b>Condição acaba em breve</b></span>
+      <span data-barra-reta hidden>A Black termina em<b data-curto>--</b></span>
     </p>
     <a class="btn" href="#secao-oferta" data-cta="barra">VER A CONDIÇÃO</a>
   </div>

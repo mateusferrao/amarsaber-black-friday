@@ -33,7 +33,7 @@ Dados de 06/11:
 | Templates da recuperação | **não mudam** |
 | Frete grátis | **fica como está** ("por tempo limitado") |
 | "Sem bônus de abertura" (roteiro de 05/11) | **revogado**, por decisão do Mateus e do marketing |
-| Sala na LP e no quiz | sim, **de 07/11 até 11/11** (já visível antes da live, decisão de 07/11). O bloco some às 23h59 de 11/11 por segurança, mesmo que a sala não tenha lotado. O texto deixa a regra clara ("os 40 primeiros pedidos pagos"), sem explicar a ordem dos pedidos |
+| Sala na LP e no quiz | **saiu da LP e do quiz em 09/11** (chip do hero e card da oferta, decisão do Mateus); a regra dos 40 primeiros segue valendo pela planilha. Antes: sim, **de 07/11 até 11/11** (já visível antes da live, decisão de 07/11). O bloco some às 23h59 de 11/11 por segurança, mesmo que a sala não tenha lotado. O texto deixa a regra clara ("os 40 primeiros pedidos pagos"), sem explicar a ordem dos pedidos |
 | Grupo antes da live | teaser na L0 (12h) e na 5 (19h50): "quem decidir primeiro leva algo que não vai se repetir" |
 | Grupo na noite de 10/11 | 6a, 6b e 7 **manuais** (Mateus). Depois, **4 agendadas** (21h15, 22h, 22h45, 23h30), **sem número de vagas e sem mensagem de "fechou"**. O grupo só fala da sala nessa noite |
 | Ritmo do grupo | **3 por dia de 11 a 17/11** e **2 por dia de 18 a 26/11**. Provas: depoimentos da LP e alguns vídeos novos da Dra. |
