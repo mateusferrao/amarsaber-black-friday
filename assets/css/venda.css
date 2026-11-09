@@ -46,7 +46,7 @@
 }
 
 /* ---------- Hero ---------- */
-.hero__title.vd-anton { font-size: clamp(46px, 6.4vw, 76px); line-height: 1.12; color: #fff; }
+.hero__title.vd-anton { font-size: clamp(38px, 4.4vw, 58px); line-height: 1.12; color: #fff; }
 .hero__title span { display: block; }
 .vd-itens { display: flex; flex-wrap: wrap; gap: 6px; }
 .vd-itens li {
@@ -223,7 +223,7 @@
   .hero__inner { padding-bottom: 0; }
   .hero__spacer { display: none; }
   .hero__logo { width: 140px; }
-  .hero__title.vd-anton { font-size: 58px; }
+  .hero__title.vd-anton { font-size: 40px; }
   .vd-pill { align-self: center; }
   .vd-itens, .vd-lote, .vd-prova { justify-content: center; }
   .vd-lote, .vd-prova { text-align: left; }
