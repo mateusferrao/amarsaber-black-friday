@@ -23,15 +23,15 @@ Todo evento do PostHog leva a propriedade `etapa` e todas as propriedades de ori
 |---|---|---|---|---|
 | chegada | `$pageview` (automático) | abriu a página | — | `PageView` |
 | chegada | `$pageleave` (automático) | saiu | tempo e % máx. de rolagem | — |
-| engajamento | `lp_secao_vista` | seção ficou 1 s no meio da tela | `secao` (hero, dores, o-que-e, provas, autoras, oferta, faq, fechamento), `ordem` 1–8 | — |
+| engajamento | `lp_secao_vista` | seção ficou 1 s no meio da tela | `secao` (hero, dores, metodo, identidade, o-que-e, provas, autoras, oferta, faq, fechamento), `ordem` 1–10 (metodo e identidade entraram em 09/11: antes, `ordem` ia de 1 a 8) | — |
 | engajamento | `lp_engajado` | 30 s com a aba visível | `segundos` | `EngagedVisit` (personalizado) |
 | engajamento | `lp_video_play` | clicou na capa do vídeo | — | `VideoPlay` (personalizado) |
 | engajamento | `lp_video_progresso` | assistiu 25/50/75/95% (vídeo de 13 min) | `percentual` | `VideoProgress` {percentual} |
 | engajamento | `lp_faq_aberto` | abriu pergunta do FAQ | `pergunta` | — |
-| intenção | `lp_cta_clique` | botão que rola até a oferta | `posicao` (hero, dores, provas, fechamento, barra = barra fixa do celular) | — |
+| intenção | `lp_cta_clique` | botão que rola até a oferta | `posicao` (hero, metodo, provas, barra = barra fixa do celular; até 09/11 também dores e fechamento) | — |
 | intenção | `lp_oferta_vista` | 30% da seção de preço na tela | `valor`, `segundos_ate_oferta` | `ViewContent` (R$ 497) |
 | intenção | `whatsapp_clique` | link do WhatsApp | — | `Contact` |
-| intenção | `lp_checkout` | botão da oferta (vai pra Yampi) | `valor`, `segundos_na_pagina` | `ClickCheckout` (personalizado) |
+| intenção | `lp_checkout` | botão de compra (vai pra Yampi) | `valor`, `segundos_na_pagina`, `posicao` (desde 09/11: oferta ou fechamento; no teste, oferta ou final; vazio no downsell) | `ClickCheckout` (personalizado) |
 | checkout | — (Yampi) | entrou no checkout | — | `InitiateCheckout` |
 | checkout | — (Yampi) | escolheu pagamento (repete a cada troca) | — | `AddPaymentInfo` |
 | compra | — (Yampi) | **pedido criado** (PIX gerado conta) | — | `Purchase`, `Purchase - pix`, `Purchase - New client` |

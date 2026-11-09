@@ -102,6 +102,42 @@
 .vd-dor__sol p { margin-top: 10px; font-size: 14px; line-height: 21px; color: var(--cream); }
 .vd-centro { display: flex; justify-content: center; margin-top: 32px; }
 
+/* ---------- Etiqueta sob o CTA (09/11, modelada da Balbi): condição em 1 linha ---------- */
+.vd-etiqueta { font-size: 11px; font-weight: 700; letter-spacing: 1.6px; line-height: 16px; text-transform: uppercase; color: var(--cream); opacity: .85; }
+.hero .vd-etiqueta { margin-top: -12px; }
+.provas .vd-etiqueta { margin-top: -8px; color: var(--bg-dark); opacity: 1; }
+.vd-centro--coluna { flex-direction: column; align-items: center; gap: 10px; text-align: center; }
+
+/* ---------- 2b. Método: Os 3 Cs da Amar (09/11) ---------- */
+.vd-metodo { padding: 8px 16px 64px; color: #fff; background: var(--bg-dark); }
+.vd-metodo__lead { max-width: 560px; margin: 14px auto 0; font-size: 15px; line-height: 22px; text-align: center; color: var(--cream); }
+.vd-pilares { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 1100px; margin: 32px auto 0; padding: 0; list-style: none; }
+.vd-pilar {
+  position: relative; display: flex; flex-direction: column; overflow: hidden;
+  padding: 22px 20px 20px; border: 1px solid var(--card-border); border-radius: 18px;
+  background: linear-gradient(180deg, rgba(112, 14, 65, .55) 0%, rgba(34, 0, 27, .2) 100%);
+}
+.vd-pilar__num {
+  position: absolute; top: -6px; right: 12px; z-index: 0;
+  font-family: var(--display); font-size: 92px; line-height: 1; color: rgba(252, 36, 148, .14);
+}
+.vd-pilar > *:not(.vd-pilar__num) { position: relative; z-index: 1; }
+.vd-pilar__rotulo { font-size: 11px; font-weight: 700; letter-spacing: 2.4px; text-transform: uppercase; color: var(--pink); }
+.vd-pilar__titulo { margin: 8px 0 0; font-size: 19px; font-weight: 700; line-height: 25px; }
+.vd-pilar__texto { margin-top: 10px; font-size: 14px; line-height: 21px; color: var(--cream); }
+.vd-pilar__foto { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; margin-top: 16px; border-radius: 12px; }
+.vd-pilar__item {
+  align-self: flex-start; margin-top: 14px; padding: 4px 10px; border-radius: 6px;
+  background: var(--pink); color: var(--bg-dark); font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+}
+.vd-pilar__tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0 0; padding: 0; list-style: none; }
+.vd-pilar__tags li { padding: 4px 10px; border: 1px solid rgba(255, 255, 255, .25); border-radius: 100px; font-size: 11px; font-weight: 600; color: #fff; }
+.vd-metodo .vd-centro { margin-top: 32px; }
+
+/* ---------- 2c. Identidade (09/11): a pergunta da insegurança ---------- */
+.vd-identidade { padding: 48px 16px 56px; background: radial-gradient(ellipse at 50% 50%, #4a0a3c 0%, var(--bg-dark) 70%); }
+.vd-identidade__texto { max-width: 900px; margin: 0 auto; font-size: clamp(30px, 4.2vw, 50px); line-height: 1.08; text-align: center; color: #fff; }
+
 /* ---------- 3. O que tem no Guia ---------- */
 .o-que-e .vd-h2 { margin-top: 0; }
 .o-que-e .gallery--sumario { width: 100%; margin-top: 8px; }
@@ -135,6 +171,18 @@
   font-family: var(--display); font-weight: 400; font-size: 18px; letter-spacing: 2.5px; text-transform: uppercase;
 }
 .vd-sala__texto { font-size: 13px; font-weight: 500; line-height: 19px; color: var(--cream); }
+/* Dor antes do preço, pilar em cada item, âncora e garantia (09/11) */
+.vd-oferta__dor { font-size: 15px; font-weight: 600; line-height: 22px; color: var(--cream); }
+.vd-c {
+  display: inline-block; margin-right: 4px; padding: 1px 7px; border-radius: 5px; vertical-align: 1px;
+  background: var(--pink); color: var(--bg-dark); font-size: 10px; font-weight: 700; letter-spacing: 1px; line-height: 16px; text-transform: uppercase;
+}
+.vd-ancora { font-size: 14px; font-weight: 600; line-height: 20px; color: var(--cream); }
+.vd-garantia {
+  margin-top: 4px; padding: 12px 14px; border: 1px solid rgba(115, 238, 82, .55); border-radius: 10px;
+  background: rgba(115, 238, 82, .08); font-size: 13px; line-height: 19px; color: var(--cream);
+}
+.vd-garantia b { color: var(--green-price); }
 .vd-oferta__urg { font-size: 13px; font-weight: 600; color: var(--amarelo); }
 .vd-oferta__pag { font-size: 13px; line-height: 19px; color: var(--cream); }
 
@@ -144,6 +192,15 @@
 .vd-fechamento__title span { display: block; }
 .vd-fechamento__lead { max-width: 560px; margin: 16px auto 0; font-size: 15px; line-height: 22px; color: var(--cream); }
 .vd-fechamento .vd-lote, .vd-fechamento .vd-contador { margin-top: 24px; }
+/* Recado da Dra. (09/11) */
+.vd-fechamento__title--recado { font-size: clamp(38px, 5.4vw, 64px); }
+.vd-recado {
+  max-width: 600px; margin: 24px auto 0; padding: 22px 22px 20px; text-align: left;
+  border: 1px solid var(--card-border); border-radius: 18px; background: rgba(255, 255, 255, .04);
+}
+.vd-recado p { font-size: 15px; line-height: 23px; color: var(--cream); }
+.vd-recado p + p { margin-top: 12px; }
+.vd-recado .vd-assinatura { margin-top: 16px; font-family: var(--display); font-size: 18px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--pink); }
 
 /* ---------- Barra fixa (só celular) ---------- */
 .vd-barra { display: none; }
@@ -155,7 +212,7 @@
 
 /* ---------- Tablet ---------- */
 @media (max-width: 1024px) {
-  .vd-dores__lista { grid-template-columns: 1fr; max-width: 560px; }
+  .vd-dores__lista, .vd-pilares { grid-template-columns: 1fr; max-width: 560px; }
 }
 
 /* ---------- Mobile (até 767px) ---------- */
@@ -172,7 +229,13 @@
   .vd-lote, .vd-prova { text-align: left; }
   .vd-contador__grade { justify-content: center; }
   .vd-contador__grade span { flex: 1; max-width: 76px; min-width: 0; }
-  .hero .btn, .vd-dores .btn, .vd-fechamento .btn { width: 100%; }
+  .hero .btn, .vd-dores .btn, .vd-metodo .btn, .vd-fechamento .btn { width: 100%; }
+  .vd-metodo { padding: 4px 16px 48px; }
+  .vd-identidade { padding: 40px 16px 44px; }
+  .vd-identidade__texto { font-size: 32px; }
+  .vd-recado { padding: 18px 16px; }
+  .vd-oferta__dor { margin-top: 24px; }
+  .vd-ancora, .vd-garantia { margin-top: 12px; }
   .vd-hero__foto {
     display: block; width: calc(100% + 32px); max-width: none; margin: 4px -16px 0;
     -webkit-mask: linear-gradient(180deg, #000 72%, transparent); mask: linear-gradient(180deg, #000 72%, transparent);

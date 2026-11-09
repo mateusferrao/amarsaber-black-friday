@@ -353,7 +353,8 @@
       var checkoutStage = page.etapaCheckout || 'clicou_checkout';
       metaTrack(page.eventoCheckout || 'ClickCheckout', productParams, true);
       // send_instantly: a página vai sair para a Yampi, não espera o lote.
-      capture(page.eventoCheckoutPh || 'lp_checkout', { valor: product.value, segundos_na_pagina: secondsOnPage(), etapa: 'intencao' }, { send_instantly: true });
+      // posicao (09/11): qual botão de compra (oferta, fechamento na LP; oferta, final no teste). null = botão sem data-cta.
+      capture(page.eventoCheckoutPh || 'lp_checkout', { valor: product.value, segundos_na_pagina: secondsOnPage(), posicao: link.dataset.cta || null, etapa: 'intencao' }, { send_instantly: true });
       reachStage(checkoutStage);
       clarity('upgrade', checkoutStage);
     } else if (link.hasAttribute('data-grupo')) {
