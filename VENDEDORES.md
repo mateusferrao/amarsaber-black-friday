@@ -23,6 +23,27 @@ fixo do checkout e a vendedora se perde no caminho.
 - A Formação Completa (upsell de R$ 297 no cartão, ou bump no Pix e no boleto) não precisa de link: o upsell vai para
   a vendedora do pedido principal e o bump já está dentro do mesmo pedido.
 
+## Influenciadoras (link na bio e posts)
+
+Também entram na aba "Vendas · Vendedores", com o nome delas na coluna Vendedor. A diferença para as vendedoras: elas
+podem mandar para a **LP**, porque o script da UTMify da LP leva as UTMs até o botão do checkout (testado em 09/11:
+o botão saiu com `utm_source=vendedor … utm_content=milena`).
+
+**Milena** (`milena`):
+
+| Uso | Link |
+|---|---|
+| **Bio e posts (recomendado)**: o público dela ainda não conhece o produto, e a LP explica e mostra o preço | https://black.amarsaber.com.br/?utm_source=vendedor&utm_medium=influencer_bio&utm_campaign=black_vendas&utm_content=milena |
+| Figurinha de link nos stories, para quem já decidiu (Guia, R$ 497) | https://seguro.amarsaberstore.com.br/r/LUIR27AS3L?promocode=BLACKAMARSABER&utm_source=vendedor&utm_medium=influencer_bio&utm_campaign=black_vendas&utm_content=milena |
+| Só curso + comunidade (R$ 187) | https://seguro.amarsaberstore.com.br/r/5PS9VFMQHI?promocode=BLACKAMARSABERDS&utm_source=vendedor&utm_medium=influencer_bio&utm_campaign=black_vendas&utm_content=milena |
+
+- O link tem que ir inteiro. Se a bio cortar o link, use um encurtador que preserve os parâmetros.
+- **Vale a última UTM:** se a pessoa clica na bio e depois compra por um anúncio, pelo grupo ou pela recuperação, a
+  venda sai com o outro canal.
+- A venda da influenciadora não é 1:1. A gestão decide se entra no bônus ou se é só para medir.
+- `utm_medium=influencer_bio` separa na UTMify e na Yampi as vendas dela das vendas no WhatsApp (`whatsapp_1a1`).
+- Para uma influenciadora nova, troque `milena` pelo nome curto dela nos links.
+
 ## Regra de atribuição (na ordem)
 
 1. **Link pessoal:** o pedido pago tem a UTM (ou a metadata) da vendedora → conta para ela.
