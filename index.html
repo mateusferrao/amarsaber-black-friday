@@ -62,12 +62,14 @@
           <li>Guia impresso · Volume 3</li>
           <li>+ Curso completo</li>
           <li>+ 3 meses de comunidade</li>
-          <li>+ Frete grátis por tempo limitado</li>
-          <!-- Sala VIP: aparece junto com o bloco da oferta (de 07/11 a 11/11, datas em assets/js/venda.js) -->
-          <li class="vd-itens__vip" data-sala-vip hidden>+ Sala VIP para os 40 primeiros</li>
+          <!-- Frete grátis e Sala VIP saíram do hero em 09/11 para o botão subir; os dois seguem na oferta -->
         </ul>
 
-        <!-- Até 26/11: selo. De 27/11 em diante (reta final): contador. Datas em assets/js/venda.js -->
+
+        <div><a class="btn" href="#secao-oferta" data-cta="hero">QUERO VER A CONDIÇÃO</a></div>
+        <!-- Hero sem preço (decisão de 09/11): a etiqueta só leva o prazo -->
+        <p class="vd-etiqueta">Até 30/11, às 23h59</p>
+        <!-- Abaixo do botão desde 09/11. Até 26/11: selo. De 27/11 em diante (reta final): contador. Datas em assets/js/venda.js -->
         <p class="vd-lote" data-antes-reta><b>Lote limitado</b>Na última campanha o estoque esgotou.</p>
         <div class="vd-contador" data-reta data-contador hidden>
           <p class="vd-contador__rotulo" data-antes>Reta final: a condição termina em</p>
@@ -76,10 +78,6 @@
           </div>
           <p class="vd-contador__fim" data-fim role="status" hidden>A condição de Black Friday terminou.</p>
         </div>
-
-        <div><a class="btn" href="#secao-oferta" data-cta="hero">QUERO VER A CONDIÇÃO</a></div>
-        <!-- Hero sem preço (decisão de 09/11): a etiqueta só leva o prazo -->
-        <p class="vd-etiqueta">Até 30/11, às 23h59</p>
         <p class="vd-prova"><b>+2.000</b>Guias de Protocolos vendidos</p>
         <img class="vd-hero__foto" src="assets/img/hero-mobile-recorte.webp" width="800" height="680" alt="Dra. Maria Paula com o Guia de Protocolos">
       </div>
