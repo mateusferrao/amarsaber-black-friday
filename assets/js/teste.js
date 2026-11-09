@@ -93,7 +93,7 @@
     gate: document.getElementById('teste-gate'),
     resultado: document.getElementById('resultado')
   };
-  var afterResult = document.querySelectorAll('#secao-oferta, .teste-novo, .provas, .faq, .teste-final');
+  var afterResult = document.querySelectorAll('#secao-oferta, .provas, .faq, .teste-final');
   var intro = document.getElementById('teste-intro');
   var counter = document.querySelector('.teste__contador');
   var bar = document.querySelector('.teste__barra span');
@@ -451,6 +451,7 @@
     plantao: {
       titulo: 'Seu ponto mais sensível é o plantão',
       botao: 'GARANTIR O MEU GUIA',
+      botaoResultado: 'VER A CONDIÇÃO DO GUIA', // botão do resultado: só rola até a oferta (09/11)
       ordem: ['guia', 'curso', 'comunidade'],
       tituloOferta: 'O Guia <span class="rosa">para o plantão</span>',
       texto: function (p) {
@@ -474,6 +475,7 @@
     consulta: {
       titulo: 'Seu ponto mais sensível é a conversa com o tutor',
       botao: 'GARANTIR O GUIA + CURSO',
+      botaoResultado: 'VER A CONDIÇÃO DO GUIA + CURSO',
       ordem: ['curso', 'guia', 'comunidade'],
       tituloOferta: 'O Guia + <span class="rosa">a consulta que o tutor aceita</span>',
       texto: function () {
@@ -495,6 +497,7 @@
     sozinho: {
       titulo: 'Seu ponto mais sensível é decidir os casos difíceis sozinho',
       botao: 'GARANTIR O GUIA + COMUNIDADE',
+      botaoResultado: 'VER A CONDIÇÃO DO GUIA + COMUNIDADE',
       ordem: ['comunidade', 'guia', 'curso'],
       tituloOferta: 'O Guia + <span class="rosa">quem confere com você</span>',
       texto: function () {
@@ -526,7 +529,8 @@
     var tempo = option('tempo');
     var beginner = tempo && (tempo.id === 'faculdade' || tempo.id === 'ate_2_anos');
     resultBox.querySelector('[data-r="perfil"]').textContent = beginner ? PROFILE.iniciante : PROFILE.experiente;
-    resultBox.querySelector('[data-r="botao"]').textContent = r.botao;
+    // O botão do resultado rola até a oferta; os de checkout (abaixo) é que dizem "GARANTIR…".
+    resultBox.querySelector('[data-r="botao"]').textContent = r.botaoResultado;
     // Oferta: o item que resolve a dor aparece primeiro.
     r.ordem.forEach(function (item) { offerList.appendChild(offerList.querySelector('[data-item="' + item + '"]')); });
     if (offerTitle) offerTitle.innerHTML = r.tituloOferta || offerTitleDefault;
