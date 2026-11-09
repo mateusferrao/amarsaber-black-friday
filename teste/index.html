@@ -23,7 +23,7 @@
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../assets/css/teste.css?v=20261109">
   <!-- Faixa, selo de lote, contador da reta final e barra fixa: os mesmos componentes da LP -->
-  <link rel="stylesheet" href="../assets/css/venda.css?v=20261109d">
+  <link rel="stylesheet" href="../assets/css/venda.css?v=20261109e">
 
   <!-- ===== RASTREAMENTO =====
        tracking.js: Meta Pixel, PostHog, Clarity (o mesmo da LP). teste.js: perguntas, lead e resultado.
@@ -31,13 +31,16 @@
        Dicionário de eventos: RASTREAMENTO.md, seção "Teste". -->
   <script src="../assets/js/voltar.js" defer></script>
   <script src="../assets/js/tracking.js" defer></script>
-  <script src="../assets/js/teste.js?v=20261109" defer></script>
+  <!-- Popup de objeção (09/11): cartão no canto com valor + garantia e WhatsApp. Regras em assets/js/popup.js -->
+  <script src="../assets/js/popup.js?v=20261109b" defer></script>
+  <script src="../assets/js/teste.js?v=20261109b" defer></script>
   <!-- Reta final e contadores (datas em venda.js). A barra fixa só aparece depois do resultado. -->
   <script src="../assets/js/venda.js?v=20261109c" defer></script>
   <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck data-utmify-prevent-subids async defer></script>
 </head>
 <body data-etapas="iniciou_teste,metade_teste,virou_lead,viu_resultado,viu_oferta,clicou_checkout"
       data-voltar="manual"
+      data-popup="manual"
       data-origem="teste"
       data-barra-apos="#resultado">
   <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1393732806282634&ev=PageView&noscript=1"></noscript>

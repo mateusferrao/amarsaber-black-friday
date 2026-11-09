@@ -568,6 +568,8 @@
 
     // A partir daqui, o voltar leva ao downsell (uma vez por aba).
     if (window.asVoltar) window.asVoltar.arm();
+    // E o popup de objeção (popup.js) passa a valer.
+    if (window.asPopup) window.asPopup.arm();
 
     var offer = document.getElementById('secao-oferta');
     if (location.hash === '#secao-oferta' && offer) offer.scrollIntoView();

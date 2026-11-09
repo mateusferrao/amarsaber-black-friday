@@ -182,6 +182,34 @@ a pessoa da captura até o clique no checkout.
   incluir no remarketing da Black); `GroupClick` = clicou para entrar no grupo; captura vista sem `Lead` = remarketing
   de captura.
 
+## Popup de objeção (LP e teste)
+
+`assets/js/popup.js`. Cartão pequeno no canto inferior direito (no celular, acima da barra fixa), sem fundo escurecido:
+"Ficou com alguma dúvida?" + a quebra da objeção de valor (12x de R$ 50,57, menos de R$ 1,69 por dia, e 7 dias de
+garantia depois de receber) + botão **Tirar dúvida no WhatsApp** (atendimento, (31) 9 5349-5052, mensagem pronta).
+Sem cupom. O voltar continua indo ao downsell (`voltar.js`).
+
+**Quando abre** (o primeiro que acontecer):
+| `gatilho` | Regra |
+|---|---|
+| `oferta_parada` | `#secao-oferta` 15 s seguidos na tela (30% visível) sem clique em comprar |
+| `saida_mouse` | computador: o mouse sai pelo topo da janela, depois de 8 s na página |
+| `rolagem_subida` | celular: depois de ver a oferta, subiu 500 px ou mais em até 600 ms (a rolagem dos botões "ver a condição" não conta) |
+| `teste` | `?popup=1` na URL (equipe; use junto com `?interno=1`) |
+
+**Não abre se:** já abriu nesta aba (`sessionStorage` `as_popup`), foi fechado sem clicar no WhatsApp nas últimas 24 h
+(`localStorage` `as_popup_fechado`), a pessoa clicou em comprar nesta visita, o lightbox está aberto ou a página está
+indo para o downsell. No teste, só depois do resultado (`<body data-popup="manual">` + `asPopup.arm()` no `teste.js`).
+
+| Etapa | Evento PostHog | Quando | Propriedades | Meta (os 2 pixels) |
+|---|---|---|---|---|
+| engajamento | `lp_popup_vista` | abriu | `gatilho` | — (Clarity: tag `popup` = gatilho) |
+| intenção | `whatsapp_clique` | botão do WhatsApp do popup | `posicao` = `popup_whats` (fora do popup: vazio) | `Contact` |
+| engajamento | `lp_popup_fechado` | fechou (X ou Esc) | `gatilho`, `clicou_whats` | — |
+
+**Quanto o popup ajuda:** funil `lp_popup_vista` → `whatsapp_clique` (`posicao` = popup_whats); as vendas que saem
+dessas conversas aparecem pelo atendimento (vendedora no Kommo).
+
 ## Downsell e obrigado da compra
 
 ### Quando o downsell aparece (`assets/js/voltar.js`, na LP e no teste)

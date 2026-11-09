@@ -365,7 +365,7 @@
       clarity('upgrade', 'clicou_grupo');
     } else if (href.indexOf('whatsapp') !== -1) {
       metaTrack('Contact');
-      capture('whatsapp_clique', { etapa: 'intencao' }, { send_instantly: true });
+      capture('whatsapp_clique', { posicao: link.dataset.cta || null, etapa: 'intencao' }, { send_instantly: true }); // posicao: popup_whats (popup de objeção) ou null
     } else if (link.dataset.cta) {
       capture('lp_cta_clique', { posicao: link.dataset.cta, etapa: 'intencao' });
     }

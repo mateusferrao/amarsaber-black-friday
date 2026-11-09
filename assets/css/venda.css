@@ -218,12 +218,34 @@
 .vd-recado p + p { margin-top: 12px; }
 .vd-recado .vd-assinatura { margin-top: 16px; font-family: var(--display); font-size: 18px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--pink); }
 
+/* ---------- Popup de objeção (09/11, popup.js): cartão no canto inferior direito, sem fundo escurecido ---------- */
+.vd-popup {
+  position: fixed; right: 20px; bottom: 20px; z-index: 60; width: 320px; padding: 18px 18px 16px;
+  border: 1px solid var(--card-border); border-radius: 16px; color: #fff;
+  background: radial-gradient(ellipse at 30% 0%, #4a0a3c 0%, var(--bg-dark) 80%);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, .5); animation: vd-popup-entra .3s ease-out;
+}
+.vd-popup[hidden] { display: none; }
+.vd-popup__fechar {
+  position: absolute; top: 4px; right: 6px; width: 32px; height: 32px; padding: 0;
+  border: 0; background: none; color: var(--cream); font-size: 24px; line-height: 1; cursor: pointer;
+}
+.vd-popup__titulo { padding-right: 24px; font-size: 15px; font-weight: 700; line-height: 20px; }
+.vd-popup__texto { margin-top: 6px; font-size: 13px; line-height: 19px; color: var(--cream); }
+.vd-popup__whats {
+  display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 12px; padding: 11px 14px;
+  border-radius: 10px; background: #25d366; color: #0b2e17; font-size: 14px; font-weight: 700;
+}
+.vd-popup__whats svg { width: 20px; height: 20px; fill: currentColor; }
+.vd-popup__whats:hover, .vd-popup__whats:focus-visible { background: #3ee07a; }
+@keyframes vd-popup-entra { from { transform: translateY(16px); opacity: 0; } }
+
 /* ---------- Barra fixa (só celular) ---------- */
 .vd-barra { display: none; }
 .vd-barra.vd-barra--espera { display: none !important; } /* /teste/: até o resultado */
 
 @media (prefers-reduced-motion: reduce) {
-  .vd-faixa__trilha, .vd-pill__dot, .vd-marquee__trilha { animation: none; }
+  .vd-faixa__trilha, .vd-pill__dot, .vd-marquee__trilha, .vd-popup { animation: none; }
   .vd-marquee { overflow-x: auto; }
 }
 
@@ -254,6 +276,8 @@
   .vd-oferta__dor { margin-top: 24px; }
   .vd-marquee img { height: 300px; }
   .vd-marquee a { margin-right: 10px; }
+  /* Popup: canto inferior direito, acima da barra fixa */
+  .vd-popup { right: 12px; bottom: calc(84px + env(safe-area-inset-bottom)); width: min(300px, calc(100% - 24px)); }
   .vd-ancora, .vd-garantia { margin-top: 12px; }
   .vd-hero__foto {
     display: block; width: calc(100% + 32px); max-width: none; margin: 4px -16px 0;
