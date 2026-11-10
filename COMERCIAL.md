@@ -68,8 +68,8 @@ repositório).
     (salvar)", "Etapa no Kommo" e "Kommo · mover etapa" do fluxo "AS · Painel comercial (API)";
   - **Kommo → painel:** fluxo "AS · Comercial (Kommo → painel)" (`NhgF9VUnYxcw2xwR`, webhook
     `as-black-comercial-etapa?chave=<CHAVE>`, a mesma chave dos bots, fora do repositório). Grava o Status do contato
-    quando o lead do Comercial Black muda de etapa no Kommo (pela vendedora ou pelo robô). **Depende do webhook da
-    conta do Kommo** (evento "status_lead", Configurações → Integrações → Webhooks) apontando para esse endereço.
+    quando o lead do Comercial Black muda de etapa no Kommo (pela vendedora ou pelo robô). Webhook da conta do Kommo
+    criado pela API em 10/11 (id 47542072, evento "status_lead"); testado com um evento real.
 - **Quem espera e até quando:** a data de 11/11, 8h vale só para quem recebe só pelo grupo; quem tem sequência
   individual em andamento fica em ⏳ até o fim dela + 24 h (16/11, 10h para quem está fora do grupo). Na conferência
   de 10/11: 1.381 liberam em 11/11 8h (nenhuma com sequência individual) e 134 em 16/11 10h.
