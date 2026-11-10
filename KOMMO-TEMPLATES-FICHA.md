@@ -603,13 +603,13 @@ As vendedoras disparam pela planilha (aba "Comercial · Black", coluna "Mandar t
 
 | # | Nome | Para quem | Botões |
 |---|---|---|---|
-| C0 | `vd_geral` | qualquer pessoa (genérico) | Pode contar · Tenho uma dúvida · Agora não |
-| C1 | `vd_upsell` | comprou o Guia, falta a Formação | Pode explicar · Agora não |
-| C2 | `vd_falta_guia` | comprou o curso (downsell), falta o Guia | Pode explicar · Agora não |
-| C3 | `vd_pedido` | cartão recusado, Pix não pago, carrinho abandonado | Me ajuda · Tenho uma dúvida · Desisti |
-| C4 | `vd_grupo` | está no grupo, saiu, cadastrou e não entrou, mensagem não entregue | Pode contar · Tenho uma dúvida · Agora não |
-| C5 | `vd_pesquisa` | respondeu a pesquisa da live | Pode perguntar · Agora não |
-| C6 | `vd_retorno` | não respondeu ao primeiro em 2 dias (só uma vez) | Faz sim · Agora não |
+| C0 | `vd_geral` | qualquer pessoa (genérico) | Pode contar · Tenho uma dúvida |
+| C1 | `vd_upsell` | comprou o Guia, falta a Formação | Pode explicar · Tenho uma dúvida |
+| C2 | `vd_falta_guia` | comprou o curso (downsell), falta o Guia | Pode explicar · Tenho uma dúvida |
+| C3 | `vd_pedido` | cartão recusado, Pix não pago, carrinho abandonado | Me ajuda · Tenho uma dúvida |
+| C4 | `vd_grupo` | está no grupo, saiu, cadastrou e não entrou, mensagem não entregue | Pode contar · Tenho uma dúvida |
+| C5 | `vd_pesquisa` | respondeu a pesquisa da live | Pode perguntar · Tenho uma dúvida |
+| C6 | `vd_retorno` | não respondeu ao primeiro em 2 dias (só uma vez) | Faz sim · Tenho uma dúvida |
 
 ## C0 · `vd_geral`
 ```
@@ -619,7 +619,7 @@ Estou atendendo no individual algumas pessoas da Black do Guia de Protocolos, co
 
 Posso te contar?
 ```
-Botões: **Pode contar** · **Tenho uma dúvida** · **Agora não**
+Botões: **Pode contar** · **Tenho uma dúvida**
 
 ## C1 · `vd_upsell`
 ```
@@ -629,7 +629,7 @@ Vi que você garantiu o seu Guia na Black, parabéns! Separei uma condição esp
 
 Posso?
 ```
-Botões: **Pode explicar** · **Agora não**
+Botões: **Pode explicar** · **Tenho uma dúvida**
 
 ## C2 · `vd_falta_guia`
 ```
@@ -639,7 +639,7 @@ Vi que você já está no curso Atendimento Extraordinário. Tenho uma condiçã
 
 Posso?
 ```
-Botões: **Pode explicar** · **Agora não**
+Botões: **Pode explicar** · **Tenho uma dúvida**
 
 ## C3 · `vd_pedido`
 ```
@@ -647,7 +647,7 @@ Oi, {{1}}! Aqui é a {{2}}, da equipe da Dra. Maria Paula, da Amar Saber.
 
 Vi que o seu pedido da Black não foi concluído. Aconteceu alguma coisa? Me conta, porque consigo te ajudar com uma condição especial por aqui.
 ```
-Botões: **Me ajuda** · **Tenho uma dúvida** · **Desisti**
+Botões: **Me ajuda** · **Tenho uma dúvida**
 
 ## C4 · `vd_grupo`
 ```
@@ -657,7 +657,7 @@ Vi que você está acompanhando a Black do Guia de Protocolos. Estou atendendo n
 
 Posso te contar?
 ```
-Botões: **Pode contar** · **Tenho uma dúvida** · **Agora não**
+Botões: **Pode contar** · **Tenho uma dúvida**
 
 ## C5 · `vd_pesquisa`
 ```
@@ -667,7 +667,7 @@ Li a sua resposta na pesquisa da live, obrigada! Quero entender o seu momento e 
 
 Posso te fazer uma pergunta?
 ```
-Botões: **Pode perguntar** · **Agora não**
+Botões: **Pode perguntar** · **Tenho uma dúvida**
 
 ## C6 · `vd_retorno`
 ```
@@ -677,20 +677,23 @@ Te chamei esses dias e não quis deixar passar: a condição especial que coment
 
 Ainda faz sentido a gente conversar?
 ```
-Botões: **Faz sim** · **Agora não**
+Botões: **Faz sim** · **Tenho uma dúvida**
 
 ## Bots do comercial no Kommo
 O jeito de criar é o mesmo dos bots da recuperação (seção "Salesbots no Kommo: passo a passo" acima):
 - **sem gatilho**;
 - canal **só o WhatsApp da 5052**;
 - nos bots de template, marcar **"Se você nunca conversou em um canal: Tente enviar uma mensagem"**;
-- primeiro os 6 bots de resposta, depois os 7 de template.
+- primeiro os 5 bots de resposta, depois os 7 de template.
+
+**Sem botão de recusa (decisão de 10/11):** quem pedir para sair escreve; a mensagem cai em **Outra resposta**, e a
+vendedora marca "Não quer" no Status do contato da planilha. Com isso, essa pessoa não recebe mais template do comercial.
 
 **Webhook** (passo **Ação → Enviar webhook**), o mesmo em todos, trocando a `acao`:
 `https://n8n.automato.pro/webhook/as-black-comercial?chave=<CHAVE>&acao=<acao>`.
 A `<CHAVE>` está no fluxo n8n "AS · Comercial (disparo)" e não fica no repositório.
 
-### Os 6 bots de resposta
+### Os 5 bots de resposta
 Os bots não mandam link nem preço: abrem a conversa e passam para a vendedora. Ela é a responsável do lead e recebe o
 aviso do Kommo quando a pessoa responde.
 
@@ -700,7 +703,6 @@ aviso do Kommo quando a pessoa responde.
 | `VD · Explicar` | Que bom! 💗 Já te explico tudo aqui. Antes, me conta: você já começou a usar o que comprou? | Respondeu | `quer` |
 | `VD · Pedido` | Me conta o que aconteceu no pagamento que eu já te ajudo 💗 | Respondeu | `pedido` |
 | `VD · Dúvida` | Pode mandar, estou aqui! 💗 | Respondeu | `duvida` |
-| `VD · Agora não` | Tudo bem! Se mudar de ideia, é só responder aqui. 💗 | Não quer | `nao` |
 | `VD · Outra resposta` | (nenhuma mensagem) | Respondeu | `texto` |
 
 Em cada bot de resposta, na ordem: **Enviar mensagem** (quando houver) → **Ação → Alterar etapa do lead** → **Ação →
@@ -716,12 +718,12 @@ Nome `VD · <template>`. Monte o primeiro e use **Duplicar** para os outros.
 
 | Bot | Ramos |
 |---|---|
-| `VD · vd_geral` | Pode contar ▸ Quer conversar · Tenho uma dúvida ▸ Dúvida · Agora não ▸ Agora não · Outra ▸ Outra resposta |
-| `VD · vd_upsell` | Pode explicar ▸ Explicar · Agora não ▸ Agora não · Outra ▸ Outra resposta |
-| `VD · vd_falta_guia` | Pode explicar ▸ Explicar · Agora não ▸ Agora não · Outra ▸ Outra resposta |
-| `VD · vd_pedido` | Me ajuda ▸ Pedido · Tenho uma dúvida ▸ Dúvida · Desisti ▸ Agora não · Outra ▸ Outra resposta |
-| `VD · vd_grupo` | Pode contar ▸ Quer conversar · Tenho uma dúvida ▸ Dúvida · Agora não ▸ Agora não · Outra ▸ Outra resposta |
-| `VD · vd_pesquisa` | Pode perguntar ▸ Quer conversar · Agora não ▸ Agora não · Outra ▸ Outra resposta |
-| `VD · vd_retorno` | Faz sim ▸ Quer conversar · Agora não ▸ Agora não · Outra ▸ Outra resposta |
+| `VD · vd_geral` | Pode contar ▸ Quer conversar · Tenho uma dúvida ▸ Dúvida · Outra ▸ Outra resposta |
+| `VD · vd_upsell` | Pode explicar ▸ Explicar · Tenho uma dúvida ▸ Dúvida · Outra ▸ Outra resposta |
+| `VD · vd_falta_guia` | Pode explicar ▸ Explicar · Tenho uma dúvida ▸ Dúvida · Outra ▸ Outra resposta |
+| `VD · vd_pedido` | Me ajuda ▸ Pedido · Tenho uma dúvida ▸ Dúvida · Outra ▸ Outra resposta |
+| `VD · vd_grupo` | Pode contar ▸ Quer conversar · Tenho uma dúvida ▸ Dúvida · Outra ▸ Outra resposta |
+| `VD · vd_pesquisa` | Pode perguntar ▸ Quer conversar · Tenho uma dúvida ▸ Dúvida · Outra ▸ Outra resposta |
+| `VD · vd_retorno` | Faz sim ▸ Quer conversar · Tenho uma dúvida ▸ Dúvida · Outra ▸ Outra resposta |
 
 **Depois:** me avise. Eu leio os IDs dos bots pela API e ligo no fluxo de disparo.
