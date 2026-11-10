@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Painel comercial · Black Amar Saber</title>
+  <!-- Ferramenta interna da equipe de vendas: fora da busca e sem rastreamento (a página mostra nomes e telefones) -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="referrer" content="no-referrer">
+  <link rel="icon" href="../assets/img/favicon-150.png" sizes="32x32">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="painel.css?v=20261110a">
+  <script src="painel.js?v=20261110a" defer></script>
+</head>
+<body>
+
+  <!-- ===== ENTRAR ===== -->
+  <main class="entrar" id="tela-entrar">
+    <form class="entrar__caixa" id="form-entrar" autocomplete="off">
+      <img src="../assets/img/logo-amarsaber.png" alt="Amar Saber" class="entrar__logo">
+      <h1>Painel comercial da Black</h1>
+      <p class="entrar__sub">Aqui você vê quem chamar, manda a mensagem pelo WhatsApp oficial (5052) e anota como foi a conversa.</p>
+
+      <label class="campo">
+        <span>1. Digite o PIN</span>
+        <input type="password" inputmode="numeric" id="pin" placeholder="PIN da equipe" required>
+      </label>
+
+      <fieldset class="campo">
+        <legend>2. Quem é você?</legend>
+        <div class="quem">
+          <label><input type="radio" name="vendedora" value="Heid"><span>Heid</span></label>
+          <label><input type="radio" name="vendedora" value="Ana"><span>Ana</span></label>
+          <label><input type="radio" name="vendedora" value="Belle"><span>Belle</span></label>
+        </div>
+      </fieldset>
+
+      <button type="submit" class="botao botao--rosa botao--grande" id="botao-entrar">Entrar</button>
+      <p class="erro" id="erro-entrar" role="alert"></p>
+    </form>
+  </main>
+
+  <!-- ===== PAINEL ===== -->
+  <div class="painel" id="tela-painel" hidden>
+    <header class="topo">
+      <div class="topo__linha">
+        <strong class="topo__titulo">Painel comercial · Black</strong>
+        <span class="topo__quem">Você: <b id="eu"></b> · <button type="button" class="link" id="sair">trocar</button></span>
+      </div>
+      <div class="topo__linha topo__linha--2">
+        <span class="topo__hora" id="atualizado">carregando…</span>
+        <button type="button" class="botao botao--claro botao--pequeno" id="atualizar">↻ Atualizar lista</button>
+      </div>
+    </header>
+
+    <div class="aviso-teste" id="aviso-teste" hidden>
+      <b>MODO DE TESTE.</b> Por enquanto a mensagem só sai para o número de teste. Para as outras pessoas, o envio é recusado e nada muda.
+    </div>
+
+    <details class="ajuda" id="ajuda">
+      <summary>Como usar (leia antes de começar)</summary>
+      <ol>
+        <li><b>Abra a aba "Chamar agora".</b> São as pessoas liberadas e sem dona, das mais quentes para as mais frias.</li>
+        <li><b>Toque em "Enviar mensagem".</b> O painel mostra o texto exato que vai sair, já com o nome da pessoa. Confirme. A mensagem sai pelo WhatsApp oficial da Amar (5052), em seu nome, e a pessoa passa a ser <b>sua</b>.</li>
+        <li><b>Quando a pessoa responder</b>, o robô do Kommo responde na hora e a conversa aparece para você no Kommo, no funil <b>Comercial Black</b>. Continue a conversa por lá e mande o <b>seu link</b> (botão "Copiar meu link").</li>
+        <li><b>Anote como foi</b> nos campos do cartão: Status do contato, Objeção e Retornar em. Salva sozinho.</li>
+        <li><b>Não respondeu em 2 dias?</b> Em "Meus contatos", use "Enviar retorno". No máximo 2 mensagens por pessoa.</li>
+      </ol>
+      <p><b>Regras que o painel já confere para você:</b> só envia para quem está 🟢; espera 24 h depois de uma mensagem automática; 48 h entre duas mensagens suas; nunca para quem marcou "Não quer". Se algo bloquear, o motivo aparece no cartão.</p>
+      <p><b>Não use o seu WhatsApp pessoal</b> para a primeira mensagem: pelo oficial a conversa fica registrada e a venda conta para você.</p>
+    </details>
+
+    <nav class="abas" role="tablist">
+      <button type="button" role="tab" data-aba="chamar" class="aba ativa">Chamar agora <span class="conta" data-conta="chamar"></span></button>
+      <button type="button" role="tab" data-aba="kommo" class="aba">Conversa no Kommo <span class="conta" data-conta="kommo"></span></button>
+      <button type="button" role="tab" data-aba="meus" class="aba">Meus contatos <span class="conta" data-conta="meus"></span></button>
+      <button type="button" role="tab" data-aba="aguardar" class="aba">Aguardando <span class="conta" data-conta="aguardar"></span></button>
+    </nav>
+
+    <div class="filtros">
+      <input type="search" id="busca" placeholder="Buscar por nome ou telefone (busca em todas as abas)">
+      <select id="filtro-motivo" aria-label="Filtrar por motivo"><option value="">Todos os motivos</option></select>
+    </div>
+
+    <p class="explica" id="explica-aba"></p>
+    <div class="lista" id="lista"></div>
+    <button type="button" class="botao botao--claro mais" id="mais" hidden>Mostrar mais</button>
+  </div>
+
+  <!-- ===== CONFIRMAR ENVIO ===== -->
+  <dialog class="modal" id="modal-envio">
+    <form method="dialog" class="modal__caixa">
+      <h2>Enviar mensagem para <span id="m-nome"></span></h2>
+      <p class="modal__tipo" id="m-tipo"></p>
+      <div class="balao" id="m-texto"></div>
+      <p class="modal__botoes-wpp" id="m-botoes"></p>
+      <p class="modal__nota">Sai pelo WhatsApp oficial da Amar (5052), em seu nome. Quando a pessoa tocar num botão ou escrever, a conversa aparece para você no Kommo.</p>
+      <div class="modal__acoes">
+        <button value="cancelar" class="botao botao--claro">Cancelar</button>
+        <button value="ok" class="botao botao--rosa" id="m-confirmar">Confirmar envio</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div class="aviso" id="aviso" role="status" aria-live="polite"></div>
+</body>
+</html>
