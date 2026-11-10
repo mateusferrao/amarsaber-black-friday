@@ -178,7 +178,9 @@ Na UTMify e no PostHog, o `utm_content` mostra quais casos e quais dias trazem v
 | | ~~10/11, 18h~~ | ~~4~~ | cortada em 07/11 | — |
 | | 10/11, 19h50 | 5 | Já vai começar + teaser (recriada 07/11) | texto, @todos |
 | | 10/11, 20h10 | 6 | Já estamos ao vivo | texto, agendada |
-| | 10/11, ~20h12 | 6a | Presente 01 aberto | texto, manual |
+| | 10/11, 19h | — | 1 hora antes (nova 10/11) | texto, @todos, agendada |
+| | 10/11, 19h30 | — | 30 minutos antes (nova 10/11) | texto, agendada |
+| | 10/11, 20h30 | — | Ao vivo + presente dos primeiros (no lugar da 6a) | texto, @todos, agendada |
 | | ~~10/11, ~20h26~~ | ~~6b~~ | cortada em 07/11 | — |
 | | 10/11, ~20h27 | 7 | Presentes abertos + link da Black + Sala VIP (revisada 07/11) | texto, @todos, manual |
 | | 10/11, 21h15 | n2115 | Sala VIP: o que é e a regra (nova 07/11) | texto, agendada |
@@ -409,6 +411,18 @@ o lembrete do Instagram, que estava na 4. A ação antiga `CzV6269BQYMredo04dCD`
 cancelada. *Fora do grupo continua:* às 18h, quem se cadastrou e não entrou (ou saiu) recebe o template
 `as_vip_live` pela recuperação (`RECUPERACAO-TEMPLATES.md`, fluxos vip).
 
+## 19h · 1 hora antes · @todos *(nova 10/11; ação OGFMckDs1ih3SSkncjcb)*
+> Daqui a 1 hora, às 20h, eu entro ao vivo para abrir os três presentes da Black do Guia:
+> https://www.instagram.com/mariapaulaferrarivet/
+>
+> O link da Black sai aqui no grupo antes de qualquer outro lugar, e os primeiros pedidos pagos levam algo que não
+> vai se repetir.
+
+## 19h30 · 30 minutos antes · sem @todos *(nova 10/11; ação XAK46l54iit62Bpagxvp)*
+> Faltam 30 minutos. Às 20h eu entro ao vivo: https://www.instagram.com/mariapaulaferrarivet/
+>
+> Ativa o lembrete da live e deixa o cartão ou o Pix à mão.
+
 ## 5 · 19h50 · 10 min antes · @todos *(recriada em 07/11; ação ZbH7Uwi5PkckwEP7iDIh)*
 > Daqui a 10 minutos eu entro ao vivo: https://www.instagram.com/mariapaulaferrarivet/
 >
@@ -430,7 +444,15 @@ disparar na hora o template de reserva "Live 10/11 · 6 · Estamos ao vivo (@tod
 **Reserva se a live cair** (template "Live 10/11 · Reserva · a live caiu", criado em 10/11; manual, só se cair):
 > A live caiu, mas a Dra. já está voltando. Entra de novo aqui: https://www.instagram.com/mariapaulaferrarivet/
 
-## 6a · ~20h12 · quando a Dra. abre o Presente 01 · manual
+## 20h30 · ao vivo + presente dos primeiros · @todos *(nova 10/11; ação vdopAzZxzYzIY8TEjkyB; substitui a 6a)*
+> Estamos ao vivo! Entra agora: https://www.instagram.com/mariapaulaferrarivet/
+>
+> Já já eu libero o presente dos primeiros, e quem estiver na live fica sabendo na hora.
+
+Decisão de 10/11, 18h25: o link (7) sai depois das 20h30, ainda manual, quando a Dra. abrir o último presente.
+
+## ~~6a · ~20h12 · quando a Dra. abre o Presente 01 · manual~~
+*(não usada desde 10/11, 18h25: substituída pela mensagem agendada das 20h30; o template fica no painel)*
 > 🎁 Presente 01 aberto: o curso completo Atendimento Extraordinário. É o passo a passo da consulta que a gente usa
 > na Amar Veterinária, da anamnese ao pós-consulta, para o tutor entender a conduta e dizer sim ao tratamento.
 >
