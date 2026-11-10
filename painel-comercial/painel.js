@@ -138,7 +138,7 @@
 
   var EXPLICA = {
     chamar: 'Pessoas liberadas e sem dona, das mais quentes para as mais frias. Toque em "Enviar mensagem": a pessoa passa a ser sua.',
-    kommo: 'Responderam uma mensagem automática e a conversa já está aberta no Kommo. Não precisa de template: assuma e continue a conversa por lá.',
+    kommo: 'Responderam uma mensagem automática e a conversa já está aberta no Kommo: assuma e continue por lá. Se a última mensagem dela tiver mais de 24 h, dá para mandar mensagem pelo painel.',
     meus: 'As pessoas que são suas. Primeiro quem tem retorno marcado para hoje ou atrasado, depois quem respondeu.',
     aguardar: 'Ainda recebendo as mensagens automáticas. Não chame antes da data de "Liberado". Quando liberar, a pessoa passa para "Chamar agora".',
     busca: 'Resultado da busca em todas as pessoas da lista.'
@@ -201,8 +201,13 @@
   function bloqueioEnvio(l) {
     var eu = sessao.vendedora, s = l['Situação'];
     if (l.Vendedora && l.Vendedora !== eu) return 'Esta pessoa é da ' + l.Vendedora + '.';
-    if (s.indexOf('🟢') !== 0) {
-      if (s.indexOf('💬') === 0) return 'A conversa já está aberta no Kommo: continue por lá, sem template.';
+    if (s.indexOf('💬') === 0) {
+      // Template só 24 h depois da resposta à automação; na hora do envio o sistema confere no Kommo a última mensagem dela
+      var resp = l.respondeu_em ? new Date(l.respondeu_em) : null;
+      if (!resp || isNaN(resp)) return 'A conversa está no Kommo: continue por lá.';
+      var libera = new Date(resp.getTime() + 24 * 3600e3);
+      if (libera > new Date()) return 'Ela respondeu há pouco: a conversa está aberta, escreva no Kommo. Mensagem pelo painel só a partir de ' + quando(libera.toISOString()) + '.';
+    } else if (s.indexOf('🟢') !== 0) {
       if (s.indexOf('⏳') === 0) return 'Ainda na sequência automática. Liberado em ' + (l['Liberado em'] || '?') + '.';
       return 'Não chamar (' + s.replace(/^\S+\s/, '') + ').';
     }
@@ -238,7 +243,7 @@
     if (l.Resposta) h += '<p class="estado estado--azul"><b>Respondeu:</b> ' + esc(l.Resposta) + '. Continue a conversa no Kommo.</p>';
     else if (/^não entregue/.test(l.Template)) h += '<p class="estado estado--vermelho"><b>A última mensagem não foi entregue</b> (o WhatsApp recusou: número sem WhatsApp, bloqueio ou limite da Meta para esta pessoa). Não insista hoje; se ela tiver conversa aberta, siga pelo Kommo.</p>';
     else if (l.Template && !/^não enviado/.test(l.Template)) h += '<p class="estado estado--ok"><b>Mensagem enviada:</b> ' + esc(l.Template) + '. Aguardando resposta.</p>';
-    if (s.indexOf('💬') === 0) h += '<p class="estado estado--azul">Respondeu uma mensagem automática. A conversa está aberta no Kommo.</p>';
+    if (s.indexOf('💬') === 0) h += '<p class="estado estado--azul">Respondeu uma mensagem automática' + (l.respondeu_em ? ' (' + esc(quando(l.respondeu_em)) + ')' : '') + '. Continue a conversa no Kommo. Se ela parou de responder há mais de 24 h, o Kommo não deixa escrever livre: use "Enviar mensagem" (o sistema confere a última mensagem dela antes de enviar).</p>';
     else if (s.indexOf('⏳') === 0) h += '<p class="estado estado--amarelo">Recebendo mensagens automáticas. <b>Liberado em ' + esc(l['Liberado em'] || '?') + '</b>.</p>';
     else if (s.indexOf('⛔') === 0 || s.indexOf('✅') === 0) h += '<p class="estado estado--vermelho">' + esc(s) + ': não chamar.</p>';
     if (l.Vendedora && !minha) h += '<p class="estado estado--amarelo">Esta pessoa é da <b>' + esc(l.Vendedora) + '</b>.</p>';
@@ -247,7 +252,8 @@
     // Ações
     var bloqueio = bloqueioEnvio(l), kommo = linkKommo(l);
     h += '<div class="acoes">';
-    if (s.indexOf('🟢') === 0 && (!l.Vendedora || minha)) {
+    var podeTemplate = s.indexOf('🟢') === 0 || s.indexOf('💬') === 0;
+    if (podeTemplate && (!l.Vendedora || minha)) {
       // A mensagem indicada fica em destaque; "Enviar outra mensagem" abre as 7 para a vendedora escolher
       if (!l.envios) h += '<button type="button" class="botao botao--rosa" data-acao="enviar" data-opcao="Enviar"' + (bloqueio ? ' disabled' : '') + '>✉️ Enviar mensagem · ' + esc(TEMPLATES[t].nome) + '</button>';
       else h += '<button type="button" class="botao botao--rosa" data-acao="enviar" data-opcao="Enviar retorno"' + (bloqueio ? ' disabled' : '') + '>↩️ Enviar retorno</button>';
@@ -257,7 +263,7 @@
     if (minha || !l.Vendedora) h += '<button type="button" class="botao botao--claro" data-acao="copiar" data-produto="' + produtoIndicado(l['Mandar o link']) + '">🔗 Copiar meu link</button>';
     if (!l.Vendedora && s.indexOf('⛔') !== 0 && s.indexOf('✅') !== 0) h += '<button type="button" class="botao botao--claro" data-acao="assumir">Assumir esta pessoa</button>';
     if (minha) h += '<button type="button" class="botao botao--claro" data-acao="soltar">Soltar</button>';
-    if (bloqueio && s.indexOf('🟢') === 0) h += '<p class="bloqueio">⚠️ ' + esc(bloqueio) + '</p>';
+    if (bloqueio && podeTemplate) h += '<p class="bloqueio">⚠️ ' + esc(bloqueio) + '</p>';
     h += '</div>';
 
     // Anotações (só quem é dona ou pessoa sem dona)

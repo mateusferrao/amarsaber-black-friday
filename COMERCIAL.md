@@ -26,7 +26,8 @@ repositório).
 - **Entrar:** PIN + "Quem é você?" (Heid, Ana ou Belle). O login dura até fechar a aba do navegador.
 - **Abas:**
   - **Chamar agora:** 🟢 e sem dona, da Prioridade 1 para a 3;
-  - **Conversa no Kommo:** 💬 sem dona (responderam a automação; assumir e continuar no Kommo, sem template);
+  - **Conversa no Kommo:** 💬 sem dona (responderam a automação; assumir e continuar no Kommo). Template pelo painel
+    só 24 h depois da última mensagem dela;
   - **Meus contatos:** as pessoas da vendedora, primeiro o retorno de hoje ou atrasado, depois quem respondeu;
   - **Aguardando:** ⏳, com a data em que libera.
   - Busca por nome ou telefone em todas, e filtro por Motivo.
@@ -44,7 +45,11 @@ repositório).
 - **Anotar:** Status do contato, Objeção e Retornar em, no próprio cartão; grava na aba na hora. Quem anota numa pessoa
   sem dona vira a dona. "Assumir" e "Soltar" mudam só a Vendedora.
 - **Regras que o envio confere** (fluxo n8n "AS · Painel comercial (API)", nó `Preparar envios`):
-  - só Situação 🟢; a pessoa não pode ser de outra vendedora; Status "Não quer" bloqueia;
+  - só Situação 🟢 ou 💬; a pessoa não pode ser de outra vendedora; Status "Não quer" bloqueia;
+  - no 💬: primeiro, 24 h desde que a linha da fila virou `atendimento` (hora aproximada da resposta); depois, na hora
+    do envio, o fluxo consulta no Kommo a última mensagem recebida do contato (`incoming_chat_message`) e recusa se
+    for de menos de 24 h (nós "Achar contato", "Kommo · mensagens dela", "Conferir conversa");
+  - envios de teste (`teste = true` em "AS · Comercial envios") não contam nos limites;
   - nada nas 24 h depois de uma mensagem automática da recuperação;
   - no máximo 2 templates do comercial por pessoa, com 48 h entre eles; o retorno só depois do primeiro;
   - teto de 300 templates do comercial por dia, somando todas;
