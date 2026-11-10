@@ -235,6 +235,7 @@
 
     // Estado da pessoa, em uma frase
     if (l.Resposta) h += '<p class="estado estado--azul"><b>Respondeu:</b> ' + esc(l.Resposta) + '. Continue a conversa no Kommo.</p>';
+    else if (/^não entregue/.test(l.Template)) h += '<p class="estado estado--vermelho"><b>A última mensagem não foi entregue</b> (o WhatsApp recusou: número sem WhatsApp, bloqueio ou limite da Meta para esta pessoa). Não insista hoje; se ela tiver conversa aberta, siga pelo Kommo.</p>';
     else if (l.Template && !/^não enviado/.test(l.Template)) h += '<p class="estado estado--ok"><b>Mensagem enviada:</b> ' + esc(l.Template) + '. Aguardando resposta.</p>';
     if (s.indexOf('💬') === 0) h += '<p class="estado estado--azul">Respondeu uma mensagem automática. A conversa está aberta no Kommo.</p>';
     else if (s.indexOf('⏳') === 0) h += '<p class="estado estado--amarelo">Recebendo mensagens automáticas. <b>Liberado em ' + esc(l['Liberado em'] || '?') + '</b>.</p>';
