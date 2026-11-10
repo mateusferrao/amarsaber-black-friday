@@ -1,8 +1,9 @@
 # Aba "Comercial · Black" (lista para a equipe ir atrás)
 
 Planilha **Leads · Black – Amar Saber**, aba **Comercial · Black** (primeira aba). Uma linha por pessoa, atualizada
-sozinha às **8h, 12h, 16h e 20h** pelo fluxo n8n **"AS · Comercial (lista)"**. Quem compra muda de lista na
-atualização seguinte, sem perder o que a equipe anotou.
+sozinha às **8h, 12h, 16h e 20h** pelo fluxo n8n **"AS · Comercial (lista)"**. Além disso, **cada venda paga ou
+estornada atualiza na hora a linha do comprador** (Lista, O que já tem e Oferta possível; "Atualizado em" termina com
+"(venda)"), pelo fluxo "AS · Vendas por vendedor". O que a equipe anotou nunca é apagado.
 
 ## As listas (coluna "Lista")
 
@@ -63,6 +64,7 @@ O mesmo fluxo atualiza a aba **Estoque · Guia** nos 4 horários: estoque da Bla
 restante em qualquer dos dois. A conferência diária das 19h também cita o estoque.
 
 ## Limites
-- Atualiza 4x por dia: uma compra feita às 12h05 só sai da lista às 16h. Antes de mandar link, confira em "O que já tem".
+- A compra muda a linha na hora; o resto (grupo, automação, quem entrou ou saiu) só nas 4 atualizações do dia.
+- Venda de quem não deixou telefone no checkout não tem como achar a linha: entra na atualização completa seguinte.
 - Quem não deixou WhatsApp em nenhum lugar (compra sem telefone) não entra.
 - Uma edição feita exatamente durante a gravação (alguns segundos) pode se perder.
