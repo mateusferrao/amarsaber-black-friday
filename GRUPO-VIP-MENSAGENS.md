@@ -103,11 +103,11 @@ ponte de cada caso para a oferta) recriou 28 ações. Os IDs abaixo já são os 
 | n2330 (10/11, 23h30) | `Te493Z3b89Qs5n5ALQ9K` |
 | 8 | `QIbrYEfC9LEGSDupPtl5` (10/11; a antiga `QcfT2dAm0WrMHnrXCyKo` foi cancelada) |
 | o1111 | `lzqiMrb5aCwk6F0hg8MQ` |
-| C | `VirOMT71bgyZRIp0LaLO` |
+| C | `hdK9c7icR22LMiC5VxYy` |
 | caso01 12h | `sn7uqcsuhtw1Q1u3SFpz` |
 | caso01 19h30 | `xdjGy9YghTZmIlWrSZ7s` |
 | caso02 12h | `etuSITATzwF8ofrMyxJ7` |
-| caso02 19h30 | `sbPg1Q9JiRrjU1TEkzNO` |
+| caso02 19h30 | `qMEHd2Hv6Uxh3xhNWisP` |
 | caso03 12h | `GndDMCP25ftk29yy1nDv` |
 | caso03 19h30 | `pdjh8la75U2o1j65YYwI` |
 | caso04 12h | `3vYwPj0lgrknz2B95Rgm` |
@@ -121,7 +121,7 @@ ponte de cada caso para a oferta) recriou 28 ações. Os IDs abaixo já são os 
 | caso08 12h | `2G1ECWkPCQowpk5gLJpE` |
 | caso08 19h30 | `lEAXBdcBOtb4yH222MT9` |
 | caso09 12h | `yQ423YctCQJpSZ2FoYuB` |
-| caso09 19h30 | `cmuO6dPFy7lZZToljpFC` |
+| caso09 19h30 | `phY1a9PafsBxT71k2FFG` |
 | caso10 12h | `GElso3fOUhUyzMYnowmZ` |
 | caso10 19h30 | `96QUEcZ9IzVBkYtK7czs` |
 | o1311 | `ZR751rcIahtSJGsSn6MA` |
@@ -136,7 +136,7 @@ ponte de cada caso para a oferta) recriou 28 ações. Os IDs abaixo já são os 
 | o2511 | `83RMOnZaRZJ8dbET5sGk` |
 | p1 | `Jk6feVmgq5aN2zekeDNm` |
 | p2 | `zY8IAk7Mb4Gs9q5wgzeY` |
-| p3 | `rSFLfEChUc1KKCPzODLr` |
+| p3 | `8uKgw1V643kLTgWDAeJl` |
 | p4 | `kH2qRB0T3tc3pB0d202s` |
 | p5 | `MSxkmy7jqtajuImswhVH` (07/11, +2.000; a antiga `XLA8MVcctkXTve5UDOu0` foi cancelada) |
 | r2711 | `uKfTDQ7RJhZqIvd8dTVg` |
@@ -557,7 +557,7 @@ Apresenta a série antes do Caso #1, para todo o grupo (a C fala só com quem co
 >
 > Quem já tem o Guia confere a conduta na própria página. Quem ainda não tem vê o que vem dentro antes de decidir.
 
-## C · qui 12/11, 10h · obrigada a quem comprou + urgência *(refeita em 04/11; ação VirOMT71bgyZRIp0LaLO)*
+## C · qui 12/11, 10h · obrigada a quem comprou + urgência *(refeita em 04/11; revisada e reagendada em 10/11, ação hdK9c7icR22LMiC5VxYy)*
 Agradece quem comprou (prova de que estão comprando, sem número), mostra que a comunidade já serve antes de o Guia
 chegar e dá urgência e link para quem não comprou. A informação de acesso (e-mail, prazo) saiu do grupo: quem compra já
 recebe por e-mail.
@@ -571,7 +571,7 @@ recebe por e-mail.
 >
 > E fica por aqui: às 12h sai o primeiro Caso do dia, com a enquete.
 
-*(texto revisado em 07/11 · aguarda aprovação · recriar no SendFlow e cancelar a ação antiga)* Comunidade com encontros ao vivo. Ação atual `VirOMT71bgyZRIp0LaLO`.
+*(texto revisado em 07/11 · aprovado e agendado em 10/11: ação `hdK9c7icR22LMiC5VxYy`; a antiga `VirOMT71bgyZRIp0LaLO` foi cancelada)* Comunidade com encontros ao vivo.
 
 ## Caso do dia
 Às 12h o caso e a enquete. Às 19h30 a resposta, com a foto da página do Guia e o
@@ -624,7 +624,7 @@ Enquete "Qual é a sua conduta?", uma resposta só: **A)** Antibiótico otológi
 > Otite que volta é o tipo de caso que você leva para a comunidade, comigo e com a equipe, nas conversas e nos encontros ao vivo. Ela vem junto com o Guia na Black, até 30/11 ou enquanto o lote durar:
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=caso02
 
-*(texto revisado em 07/11 · aguarda aprovação · recriar no SendFlow e cancelar a ação antiga)* Ação atual da resposta (19h30): `sbPg1Q9JiRrjU1TEkzNO`.
+*(texto revisado em 07/11 · aprovado e agendado em 10/11)* Ação da resposta (19h30): `qMEHd2Hv6Uxh3xhNWisP`; a antiga `sbPg1Q9JiRrjU1TEkzNO` foi cancelada.
 
 ### Caso #3 · Antiemético na parvovirose · 15/11 (dom) *(validado pela Dra. em 29/10)*
 
@@ -787,7 +787,7 @@ Enquete "Como introduzir a medicação?", uma resposta só: **A)** Dose total de
 > Hipotireoidismo com comorbidade é o tipo de caso que você leva para a comunidade, comigo e com a equipe, nas conversas e nos encontros ao vivo. Ela vem junto com o Guia na Black, até 30/11:
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=caso09
 
-*(texto revisado em 07/11 · aguarda aprovação · recriar no SendFlow e cancelar a ação antiga)* Ação atual da resposta (19h30): `cmuO6dPFy7lZZToljpFC`.
+*(texto revisado em 07/11 · aprovado e agendado em 10/11)* Ação da resposta (19h30): `phY1a9PafsBxT71k2FFG`; a antiga `cmuO6dPFy7lZZToljpFC` foi cancelada.
 
 ### Caso #10 · Imidocarb na babesiose · 26/11 (qui) *(validado pela Dra. em 29/10)*
 
@@ -865,7 +865,7 @@ Imagem: `assets/img/depoimento-1.jpg` (um dos depoimentos da LP).
 > Tudo por R$ 497 à vista ou 12x de R$ 50,57, até 30/11, com 7 dias para devolver se não servir para você:
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=p3
 
-*(texto revisado em 07/11 · aguarda aprovação · recriar no SendFlow e cancelar a ação antiga)* Ação atual `rSFLfEChUc1KKCPzODLr`.
+*(texto revisado em 07/11 · aprovado e agendado em 10/11: ação `8uKgw1V643kLTgWDAeJl`; a antiga `rSFLfEChUc1KKCPzODLr` foi cancelada)*
 
 ### p4 · dom 22/11, 12h · dúvidas frequentes
 > Respostas rápidas para as dúvidas mais comuns:
