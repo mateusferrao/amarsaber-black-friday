@@ -81,7 +81,7 @@ A legenda está no topo da aba: linha 1 com o "como usar", linha 2 com o que é 
 | Situação | O que significa | O que fazer |
 |---|---|---|
 | 🟢 Chamar agora | sem automação em andamento | chamar |
-| 💬 Continuar no Kommo | a pessoa respondeu uma mensagem automática e a conversa está aberta no Kommo | continuar por lá (link do lead na coluna Kommo) |
+| 💬 Continuar no Kommo | a pessoa respondeu uma mensagem automática **de venda** (carrinho, Pix, cartão, curso, teste) e a conversa está aberta no Kommo. Quem só respondeu o **convite do grupo** (`vip_cadastro`/`vip_saiu`) não entra aqui: segue como o resto do grupo, quente (decisão de 10/11) | continuar por lá (link do lead na coluna Kommo) |
 | ⏳ Aguardar automação | a pessoa ainda está recebendo a sequência automática | **não chamar** antes da data em **Liberado em** |
 | ⛔ Não chamar | estornou ou pediu para não receber ("Pagar mais caro") | não chamar |
 | ✅ Comprou tudo | tem o Guia e a Formação | não chamar para vender |
