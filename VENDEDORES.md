@@ -7,9 +7,13 @@ Decisão de 09/11: o rastreio é **só por UTM e planilha**. Não há cupom pess
 
 ## Links (atualizados em 10/11: um link por produto)
 
+Os mesmos links estão no **topo da aba "Vendas · Vendedores"** (linhas 1 a 13); as vendas começam na linha 17
+(cabeçalho na linha 16, que o fluxo n8n usa: não mover).
+
 Os links abrem direto no checkout, já com o cupom do produto (o da Formação de comprador não usa cupom: o preço já é
 R$ 297). Não mande a LP. O `utm_term` diz qual link foi usado e aparece na coluna **Link (produto)** da aba de vendas e
-na tabela "Vendas pagas por link" da aba Bônus.
+na tabela "Vendas pagas por produto vendido" da aba Bônus (conta pelo produto do pedido, então vale também para
+vendas feitas pelos links antigos, sem `utm_term`).
 
 Cupons restritos ao produto no painel da Yampi (conferido no checkout em 10/11: cada cupom só desconta no próprio
 produto; esteira R$ 794, front R$ 497, downsell R$ 187, Formação de comprador R$ 297 sem cupom).
