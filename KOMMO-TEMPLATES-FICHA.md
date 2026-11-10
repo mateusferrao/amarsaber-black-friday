@@ -577,7 +577,10 @@ template à medida que os templates forem aprovados.
 
 # Templates do comercial (1:1 das vendedoras, 10/11)
 
-As vendedoras disparam pela planilha (aba "Comercial · Black", coluna "Mandar template"), e o n8n envia pelo Kommo.
+**Como sai:** a vendedora toca **"Enviar mensagem"** no **painel comercial**
+(`black.amarsaber.com.br/painel-comercial`, ver `COMERCIAL.md`). O fluxo n8n **"AS · Painel comercial (API)"** confere as
+regras, cria ou atualiza o lead no funil **Comercial Black** e roda o bot do template no Kommo. A coluna "Mandar
+template" da planilha não é mais usada.
 - **Objetivo: a pessoa responder.** Nenhum template leva preço, oferta ou link. A proposta é da vendedora, no 1:1.
 - **Condição especial:** o template pode prometer uma condição especial para todos (decisão de 10/11). As que existem:
   - a esteira (Guia + Formação por R$ 794, só pelo link da vendedora);
@@ -587,10 +590,8 @@ As vendedoras disparam pela planilha (aba "Comercial · Black", coluna "Mandar t
 **Em todos os templates:**
 - Categoria **Marketing** · tipo **Personalizado** · **Português (BR)** · conta do WhatsApp da (31) 9 5349-5052 ·
   **sem cabeçalho** e **sem rodapé**.
-- **{{1}}** = campo **as_nome** (`{{lead.cf.881487}}`), exemplo para a Meta: **Ana**.
-- **{{2}}** = campo **as_vendedora** (`{{lead.cf.902683}}`, criado em 10/11), exemplo: **Heid**. O n8n grava o nome
-  da vendedora nesse campo antes de enviar.
-- Botões de **resposta rápida**, com o texto exato da ficha.
+- **{{1}}** = campo **as_nome** (`{{lead.cf.881487}}`); **{{2}}** = campo **as_vendedora** (`{{lead.cf.902683}}`). O
+  n8n grava os dois no lead antes de rodar o bot, junto com **as_link** (o link da vendedora para o produto do caso).
 - Funil do lead: **Comercial Black** (id 14749468). Etapas:
 
   | Etapa | id |
@@ -601,129 +602,97 @@ As vendedoras disparam pela planilha (aba "Comercial · Black", coluna "Mandar t
   | Negociando | 113968896 |
   | Não quer | 113968900 |
 
-| # | Nome | Para quem | Botões |
-|---|---|---|---|
-| C0 | `vd_geral` | qualquer pessoa (genérico) | Pode contar · Tenho uma dúvida |
-| C1 | `vd_upsell` | comprou o Guia, falta a Formação | Pode explicar · Tenho uma dúvida |
-| C2 | `vd_falta_guia` | comprou o curso (downsell), falta o Guia | Pode explicar · Tenho uma dúvida |
-| C3 | `vd_pedido` | cartão recusado, Pix não pago, carrinho abandonado | Me ajuda · Tenho uma dúvida |
-| C4 | `vd_grupo` | está no grupo, saiu, cadastrou e não entrou, mensagem não entregue | Pode contar · Tenho uma dúvida |
-| C5 | `vd_pesquisa` | respondeu a pesquisa da live | Pode perguntar · Tenho uma dúvida |
-| C6 | `vd_retorno` | não respondeu ao primeiro em 2 dias (só uma vez) | Faz sim · Tenho uma dúvida |
+**Status na Meta (10/11): os 7 aprovados.** Os textos abaixo são os **cadastrados**, lidos pela API do Kommo em 10/11
+(o usuário fez ajustes; ficam exatamente como ele deixou).
+
+| # | Template | Para quem (Motivo da aba) | Botões | Bot |
+|---|---|---|---|---|
+| C0 | `vd_geral` | qualquer pessoa; também quando nenhum outro encaixa | Pode contar · Tenho uma dúvida | 52631 |
+| C1 | `vd_upsell` | Comprou o Guia, falta a Formação | Pode explicar · Tenho uma dúvida | 52633 |
+| C2 | `vd_falta_guia` | Comprou o downsell, falta o Guia | Pode passar · Tenho uma dúvida | 52643 |
+| C3 | `vd_pedido` | Cartão recusado · Pix não pago · Carrinho abandonado · Pix/Boleto aguardando · Tentou o downsell e não pagou | Me ajuda · Tenho uma dúvida | 52635 |
+| C4 | `vd_grupo` | Está no grupo · Saiu do grupo · Cadastrou e nunca entrou · Mensagem automática não entregue | Me conta · Tenho uma dúvida | 52637 |
+| C5 | `vd_pesquisa` | Respondeu a pesquisa da live | Pode perguntar · Tenho uma dúvida | 52639 |
+| C6 | `vd_retorno` | segunda mensagem, para quem não respondeu a primeira (só uma vez, 48 h depois) | Faz sim · Tenho uma dúvida | 52641 |
 
 ## C0 · `vd_geral`
 ```
 Oi, {{1}}! Aqui é a {{2}}, da equipe da Dra. Maria Paula, da Amar Saber.
 
-Estou atendendo no individual algumas pessoas da Black do Guia de Protocolos, com uma condição especial que só consigo passar por aqui.
-
-Posso te contar?
+Estou atendendo no individual algumas pessoas da Black do Guia de Protocolos, com uma condição especial que só consigo passar por aqui. Posso te contar?
 ```
-Botões: **Pode contar** · **Tenho uma dúvida**
 
 ## C1 · `vd_upsell`
 ```
 Oi, {{1}}! Aqui é a {{2}}, da equipe da Dra. Maria Paula, da Amar Saber.
 
-Vi que você garantiu o seu Guia na Black, parabéns! Separei uma condição especial só para quem já comprou, e prefiro te explicar por aqui.
-
-Posso?
+Vi que você garantiu o seu Guia na Black, parabéns! Separei um bônus especial só para quem já comprou, e prefiro te explicar por aqui. Posso?
 ```
-Botões: **Pode explicar** · **Tenho uma dúvida**
+Atenção da vendedora: o texto fala em **bônus**; a oferta é a Formação por R$ 297 (de R$ 697). Apresente como "o bônus
+de quem já comprou".
 
 ## C2 · `vd_falta_guia`
 ```
-Oi, {{1}}! Aqui é a {{2}}, da equipe da Dra. Maria Paula, da Amar Saber.
-
-Vi que você já está no curso Atendimento Extraordinário. Tenho uma condição especial do Guia de Protocolos para quem já faz o curso, e prefiro te explicar por aqui.
-
-Posso?
+Oi, {{1}}! Aqui é a {{2}}, da equipe da Dra. Maria Paula, da Amar Saber. Você já tem o curso Atendimento Extraordinário e a comunidade. Vi que você está buscando evoluir profissionalmente, então queria te presentear com um bônus exclusivo. Posso te passar a condição?
 ```
-Botões: **Pode explicar** · **Tenho uma dúvida**
 
 ## C3 · `vd_pedido`
 ```
 Oi, {{1}}! Aqui é a {{2}}, da equipe da Dra. Maria Paula, da Amar Saber.
 
-Vi que o seu pedido da Black não foi concluído. Aconteceu alguma coisa? Me conta, porque consigo te ajudar com uma condição especial por aqui.
+Vi que o seu pedido da Black não foi concluído. Aconteceu alguma coisa? Me conta, porque consigo te ajudar com uma condição especial por aqui antes do lote esgotar.
 ```
-Botões: **Me ajuda** · **Tenho uma dúvida**
 
-## C4 · `vd_grupo`
+## C4 · `vd_grupo` (sem a apresentação da vendedora)
 ```
-Oi, {{1}}! Aqui é a {{2}}, da equipe da Dra. Maria Paula, da Amar Saber.
-
-Vi que você está acompanhando a Black do Guia de Protocolos. Estou atendendo no individual, com uma condição especial que não está no site.
-
-Posso te contar?
+Oi {{1}}! Vi que você está acompanhando a Black do Guia de Protocolos. Estou atendendo pessoas selecionadas no individual, com uma condição especial que não está no site. Posso te contar?
 ```
-Botões: **Pode contar** · **Tenho uma dúvida**
 
-## C5 · `vd_pesquisa`
+## C5 · `vd_pesquisa` (sem a apresentação da vendedora)
 ```
-Oi, {{1}}! Aqui é a {{2}}, da equipe da Dra. Maria Paula, da Amar Saber.
-
-Li a sua resposta na pesquisa da live, obrigada! Quero entender o seu momento e te mostrar uma condição especial que só passo por aqui.
-
-Posso te fazer uma pergunta?
+Oi {{1}}! Li a sua resposta na pesquisa da live, obrigada! Quero entender o seu momento e te mostrar uma condição especial que só passo por aqui. Posso te fazer uma pergunta?
 ```
-Botões: **Pode perguntar** · **Tenho uma dúvida**
 
 ## C6 · `vd_retorno`
 ```
-Oi, {{1}}, é a {{2}} de novo, da equipe da Dra. Maria Paula.
-
-Te chamei esses dias e não quis deixar passar: a condição especial que comentei vale só até 30/11.
-
-Ainda faz sentido a gente conversar?
+Oi, {{1}}, é a {{2}} de novo Te chamei esses dias e não quis deixar passar: a condição especial que comentei está esgotando. Ainda faz sentido você aproveitar essa oportunidade?
 ```
-Botões: **Faz sim** · **Tenho uma dúvida**
+"Está esgotando" só pode ir enquanto for verdade (regra: urgência só a real).
 
-## Bots do comercial no Kommo
-O jeito de criar é o mesmo dos bots da recuperação (seção "Salesbots no Kommo: passo a passo" acima):
-- **sem gatilho**;
-- canal **só o WhatsApp da 5052**;
-- nos bots de template, marcar **"Se você nunca conversou em um canal: Tente enviar uma mensagem"**;
-- primeiro os 5 bots de resposta, depois os 7 de template.
+## Bots do comercial no Kommo (13, criados pelo usuário em 10/11)
+Todos **sem gatilho**, canal **só o WhatsApp da 5052**. Quem roda os bots de template é o n8n
+(`POST /api/v2/salesbot/run`).
+
+**Bots de template** (enviam o template; um ramo por botão; ramo de falha → webhook `acao=falha`):
+
+| Bot | id | Ramos |
+|---|---|---|
+| `VD · vd_geral` | 52631 | Pode contar ▸ Quer conversar · Tenho uma dúvida ▸ Dúvida · Outra ▸ Outra resposta |
+| `VD · vd_upsell` | 52633 | Pode explicar ▸ Explicar · Tenho uma dúvida ▸ Dúvida · Outra ▸ Outra resposta |
+| `VD · vd_falta_guia` | 52643 | Pode passar ▸ Condição curso · Tenho uma dúvida ▸ Dúvida · Outra ▸ Outra resposta |
+| `VD · vd_pedido` | 52635 | Me ajuda ▸ Pedido · Tenho uma dúvida ▸ Dúvida · Outra ▸ Outra resposta |
+| `VD · vd_grupo` | 52637 | Me conta ▸ Quer conversar · Tenho uma dúvida ▸ Dúvida · Outra ▸ Outra resposta |
+| `VD · vd_pesquisa` | 52639 | Pode perguntar ▸ Quer conversar · Tenho uma dúvida ▸ Dúvida · Outra ▸ Outra resposta |
+| `VD · vd_retorno` | 52641 | Faz sim ▸ Quer conversar · Tenho uma dúvida ▸ Dúvida · Outra ▸ Outra resposta |
+
+**Bots de resposta** (texto livre, mudam a etapa para "Respondeu" e chamam o webhook):
+
+| Bot | id | Mensagem | Webhook `acao` |
+|---|---|---|---|
+| `VD · Quer conversar` | 52611 | Resposta curta que apresenta a vendedora (`{{lead.cf.902683}}`, porque C4 e C5 não apresentam) e pergunta se a pessoa atende em clínica, em plantão ou ainda está na faculdade | `quer` |
+| `VD · Explicar` | 52615 | Que bom! 💗 Pra eu te mostrar o que mais faz sentido pra você, me conta rapidinho: hoje você atende mais em clínica, em plantão ou ainda está na faculdade? | `quer` |
+| `VD · Condição curso` | 52619 | Que bom! 💗 Me conta: como está sendo o curso Atendimento Extraordinário até aqui? Já te passo a condição. | `quer` |
+| `VD · Pedido` | 52623 | Me conta o que aconteceu no pagamento que eu já te ajudo 💗 | `pedido` |
+| `VD · Dúvida` | 52627 | Pode mandar, estou aqui! 💗 | `duvida` |
+| `VD · Outra resposta` | 52629 | (nenhuma mensagem) | `texto` |
+
+Os textos dos bots de resposta são os combinados em 10/11; a API não mostra o conteúdo dos passos, então o que vale é o
+que está cadastrado no Kommo.
+
+**Webhook dos bots:** `https://n8n.automato.pro/webhook/as-black-comercial?chave=<CHAVE>&acao=<acao>`. A `<CHAVE>`
+está no fluxo n8n "AS · Comercial (respostas)" e não fica no repositório. Esse fluxo grava na aba a coluna
+**Resposta** ("Quer conversar · 10/11 14:19", "Tem uma dúvida", "Quer ajuda no pagamento", "Escreveu") ou, na falha,
+"Template: não entregue". O painel mostra a resposta no cartão da pessoa.
 
 **Sem botão de recusa (decisão de 10/11):** quem pedir para sair escreve; a mensagem cai em **Outra resposta**, e a
-vendedora marca "Não quer" no Status do contato da planilha. Com isso, essa pessoa não recebe mais template do comercial.
-
-**Webhook** (passo **Ação → Enviar webhook**), o mesmo em todos, trocando a `acao`:
-`https://n8n.automato.pro/webhook/as-black-comercial?chave=<CHAVE>&acao=<acao>`.
-A `<CHAVE>` está no fluxo n8n "AS · Comercial (disparo)" e não fica no repositório.
-
-### Os 5 bots de resposta
-Os bots não mandam link nem preço: abrem a conversa e passam para a vendedora. Ela é a responsável do lead e recebe o
-aviso do Kommo quando a pessoa responde.
-
-| Bot | Mensagem (texto livre) | Etapa (funil Comercial Black) | Webhook `acao` |
-|---|---|---|---|
-| `VD · Quer conversar` | Que bom! 💗 Pra eu te passar a melhor condição, me conta rapidinho: hoje você atende em clínica, em plantão ou ainda está na faculdade? | Respondeu | `quer` |
-| `VD · Explicar` | Que bom! 💗 Já te explico tudo aqui. Antes, me conta: você já começou a usar o que comprou? | Respondeu | `quer` |
-| `VD · Pedido` | Me conta o que aconteceu no pagamento que eu já te ajudo 💗 | Respondeu | `pedido` |
-| `VD · Dúvida` | Pode mandar, estou aqui! 💗 | Respondeu | `duvida` |
-| `VD · Outra resposta` | (nenhuma mensagem) | Respondeu | `texto` |
-
-Em cada bot de resposta, na ordem: **Enviar mensagem** (quando houver) → **Ação → Alterar etapa do lead** → **Ação →
-Enviar webhook**. Opcional: **Ação → Adicionar tarefa** "Responder agora", para hoje, para o responsável do lead.
-
-### Os 7 bots de template
-Nome `VD · <template>`. Monte o primeiro e use **Duplicar** para os outros.
-1. **Enviar mensagem** → canal WhatsApp da 5052 → **Modelo** → o template de mesmo nome.
-   - {{1}} = `{{lead.cf.881487}}` (as_nome);
-   - {{2}} = `{{lead.cf.902683}}` (as_vendedora).
-2. Um ramo por botão, mais **Outra resposta** (ligue cada um ao bot da tabela). Não ligue **Sem resposta**.
-3. Ramo **Falha ao enviar a mensagem** → **Ação → Enviar webhook** → `…&acao=falha`.
-
-| Bot | Ramos |
-|---|---|
-| `VD · vd_geral` | Pode contar ▸ Quer conversar · Tenho uma dúvida ▸ Dúvida · Outra ▸ Outra resposta |
-| `VD · vd_upsell` | Pode explicar ▸ Explicar · Tenho uma dúvida ▸ Dúvida · Outra ▸ Outra resposta |
-| `VD · vd_falta_guia` | Pode explicar ▸ Explicar · Tenho uma dúvida ▸ Dúvida · Outra ▸ Outra resposta |
-| `VD · vd_pedido` | Me ajuda ▸ Pedido · Tenho uma dúvida ▸ Dúvida · Outra ▸ Outra resposta |
-| `VD · vd_grupo` | Pode contar ▸ Quer conversar · Tenho uma dúvida ▸ Dúvida · Outra ▸ Outra resposta |
-| `VD · vd_pesquisa` | Pode perguntar ▸ Quer conversar · Tenho uma dúvida ▸ Dúvida · Outra ▸ Outra resposta |
-| `VD · vd_retorno` | Faz sim ▸ Quer conversar · Tenho uma dúvida ▸ Dúvida · Outra ▸ Outra resposta |
-
-**Depois:** me avise. Eu leio os IDs dos bots pela API e ligo no fluxo de disparo.
+vendedora marca "Não quer" no painel. Com isso, essa pessoa não recebe mais template do comercial.

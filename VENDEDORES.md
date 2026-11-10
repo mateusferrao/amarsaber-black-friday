@@ -105,6 +105,11 @@ vendedora não contam.
 
 ## Processo da vendedora
 
+**Desde 10/11, a primeira mensagem sai pelo painel comercial** (`black.amarsaber.com.br/painel-comercial`, ver
+`COMERCIAL.md`): o template vai pelo WhatsApp oficial em nome da vendedora, o lead entra no funil Comercial Black com
+ela como responsável e o link dela fica no campo `as_link` do lead. O botão "Copiar meu link" do painel copia o link
+certo para o caso.
+
 1. Ao assumir uma conversa no Kommo, ponha-se como **responsável do lead** (vale para Heid e Ana; é a rede de
    segurança da regra 3).
 2. Mande **o seu link**, nunca o da LP, um link antigo da automação ou um link pego no grupo. Se o cliente comprar por
@@ -132,6 +137,9 @@ vendedora não contam.
 3. Se ela tiver usuário no Kommo: nó **Montar linha**, acrescente `<id do usuário>: 'Carol'` em `RESPONSAVEIS`.
 4. Gere os dois links trocando `ana` por `carol` nos dois lugares (`utm_content` e `metadata`).
 5. A aba "Bônus" lista as vendedoras sozinha (`UNIQUE` da coluna Vendedor).
+6. Painel comercial: acrescente o nome em `VENDEDORAS` nos nós **Ler pedido** e **Preparar envios** (com o id do
+   usuário do Kommo) do fluxo "AS · Painel comercial (API)", e em `SLUG` e na escolha "Quem é você?" do
+   `painel-comercial/` (`index.html` e `painel.js`).
 
 ## Limites conhecidos
 

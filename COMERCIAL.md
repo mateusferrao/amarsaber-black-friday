@@ -20,12 +20,48 @@ Planilha **Leads · Black – Amar Saber**, aba **Comercial · Black** (a primei
   - quem respondeu a mensagem automática (💬, no Kommo).
 - **Pela LP:** cartão, Pix e carrinho feitos pela LP continuam esperando a sequência automática deles.
 
-## Guia rápido da vendedora
+## Painel comercial (10/11): é por ele que as vendedoras trabalham
+**Endereço:** `https://black.amarsaber.com.br/painel-comercial/` · **PIN:** passado pela gestão (não fica no
+repositório).
+- **Entrar:** PIN + "Quem é você?" (Heid, Ana ou Belle). O login dura até fechar a aba do navegador.
+- **Abas:**
+  - **Chamar agora:** 🟢 e sem dona, da Prioridade 1 para a 3;
+  - **Conversa no Kommo:** 💬 sem dona (responderam a automação; assumir e continuar no Kommo, sem template);
+  - **Meus contatos:** as pessoas da vendedora, primeiro o retorno de hoje ou atrasado, depois quem respondeu;
+  - **Aguardando:** ⏳, com a data em que libera.
+  - Busca por nome ou telefone em todas, e filtro por Motivo.
+- **Cartão de cada pessoa:** Motivo, O que já tem, prioridade, a mensagem que já saiu e a resposta, e "Mais
+  informações" (Grupo, Automação, Quiz, Pesquisa da live, Cadastro, os 4 links da vendedora).
+- **Enviar mensagem:** mostra o texto exato do template, já com o nome, e só envia depois de "Confirmar". O template
+  sai pelo Kommo (5052) em nome da vendedora (ver `KOMMO-TEMPLATES-FICHA.md`, "Templates do comercial"). Opções:
+  - **Enviar mensagem** (template pelo Motivo; sem template próprio, sai o geral);
+  - **Usar a mensagem geral** (`vd_geral`);
+  - **Enviar retorno** (`vd_retorno`, só para quem já recebeu a primeira).
+- **Depois do envio:** a pessoa passa a ser da vendedora (Vendedora preenchida, Status "Chamei", coluna Template com
+  o que saiu), o lead entra no funil **Comercial Black** com ela como responsável, e as linhas dela na fila da
+  recuperação viram `vendedora` (a automação não manda mais nada, nem a reta final).
+- **Anotar:** Status do contato, Objeção e Retornar em, no próprio cartão; grava na aba na hora. Quem anota numa pessoa
+  sem dona vira a dona. "Assumir" e "Soltar" mudam só a Vendedora.
+- **Regras que o envio confere** (fluxo n8n "AS · Painel comercial (API)", nó `Preparar envios`):
+  - só Situação 🟢; a pessoa não pode ser de outra vendedora; Status "Não quer" bloqueia;
+  - nada nas 24 h depois de uma mensagem automática da recuperação;
+  - no máximo 2 templates do comercial por pessoa, com 48 h entre eles; o retorno só depois do primeiro;
+  - teto de 300 templates do comercial por dia, somando todas;
+  - Belle só envia quando tiver usuário no Kommo.
+- **Modo de teste:** enquanto `TELEFONE_TESTE` estiver preenchido no nó `Preparar envios` (e `MODO_TESTE` no nó
+  `Montar lista`, que só mostra o aviso), o envio só sai para o número de teste, e os limites de 2 por pessoa e 48 h
+  não valem para ele. Para liberar: esvaziar `TELEFONE_TESTE`, pôr `MODO_TESTE = false` e publicar.
+- **O que fica fora do painel:** a conversa em si (Kommo) e o cupom que a vendedora cria (Yampi).
+- **Segurança:** o PIN é único para a equipe e a página mostra nomes e telefones. A página não entra no Google
+  (`noindex`) e não tem rastreamento (sem Pixel, PostHog ou Clarity). Se o PIN vazar, troque a constante `PIN` no nó
+  `Ler pedido` e publique.
+
+## Guia rápido pela planilha (se o painel estiver fora)
 A legenda está no topo da aba: linha 1 com o "como usar", linha 2 com o que é cada coluna e linha 3 com o cabeçalho.
 1. Filtre **Situação = 🟢 Chamar agora** e **Vendedora vazia**. Comece pela **Prioridade 1 · quente**.
 2. Escolha o **seu nome** em Vendedora **antes** de chamar, para ninguém chamar a mesma pessoa.
-3. Abra o **Link WhatsApp** e mande o **seu** link do produto que está em **Mandar o link** (os links ficam no
-   `VENDEDORES.md` e no topo da aba "Vendas · Vendedores").
+3. Mande o **seu** link do produto que está em **Mandar o link** pelo Kommo (os links ficam no `VENDEDORES.md` e no
+   topo da aba "Vendas · Vendedores"). A coluna **Mandar template** não é mais usada: o template sai pelo painel.
 4. Preencha **Status do contato**, **Retornar em** e **Objeção**. As três só aceitam valores da lista. Detalhe que não
    cabe nelas vai como nota no lead do Kommo.
 5. Se a coluna **Link da vendedora** tiver o nome de outra vendedora, a pessoa é dela.

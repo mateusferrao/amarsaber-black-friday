@@ -89,8 +89,10 @@
   function chamar(corpo) {
     corpo.pin = sessao ? sessao.pin : corpo.pin;
     if (sessao && !corpo.vendedora) corpo.vendedora = sessao.vendedora;
+    var ocupado = 'o sistema está fora do ar ou ocupado agora. Espere 1 minuto e tente de novo (se repetir, avise a gestão)';
     return fetch(API, { method: 'POST', headers: { 'Content-Type': 'text/plain' }, body: JSON.stringify(corpo) })
-      .then(function (r) { if (!r.ok) throw new Error('servidor ' + r.status); return r.json(); });
+      .catch(function () { throw new Error(ocupado); })
+      .then(function (r) { if (!r.ok) throw new Error(ocupado + ' · erro ' + r.status); return r.json(); });
   }
 
   // ---------- Entrar ----------
