@@ -8,7 +8,10 @@
     fim: '2026-11-30T23:59:59-03:00',       // fim da condição de Black Friday
     // Barra fixa do celular (09/11): "Condição acaba em breve" até aqui; depois, contador até o fim (faltando 7 dias).
     // A Sala VIP saiu da LP e do teste em 09/11 (a regra dos 40 primeiros segue na planilha).
-    barraContador: '2026-11-23T23:59:59-03:00'
+    barraContador: '2026-11-23T23:59:59-03:00',
+    // Formação completa para os 10 primeiros pedidos pagos da live (10/11): a linha [data-formacao10] aparece só nesta janela.
+    formacao10Inicio: '2026-11-10T20:00:00-03:00',
+    formacao10Fim: '2026-11-11T00:00:00-03:00'
   };
 
   var params = new URLSearchParams(location.search);
@@ -20,6 +23,10 @@
   var fim = new Date(CONFIG.fim).getTime();
   var reta = agora() >= new Date(CONFIG.retaFinal).getTime();
   var barra = document.querySelector('.vd-barra');
+
+  // ---------- Formação dos 10 primeiros: só entre formacao10Inicio e formacao10Fim ----------
+  var f10 = agora() >= new Date(CONFIG.formacao10Inicio).getTime() && agora() < new Date(CONFIG.formacao10Fim).getTime();
+  [].forEach.call(document.querySelectorAll('[data-formacao10]'), function (el) { el.hidden = !f10; });
 
   // ---------- Reta final: troca os selos pelos contadores ----------
   [].forEach.call(document.querySelectorAll('[data-reta]'), function (el) { el.hidden = !reta; });

@@ -36,7 +36,7 @@
   <!-- Popup de objeção (09/11): cartão no canto com valor + garantia e WhatsApp. Regras em assets/js/popup.js -->
   <script src="assets/js/popup.js?v=20261109c" defer></script>
   <!-- Reta final (27/11), contadores até 30/11, barra fixa do celular e pílula de quem veio da live. -->
-  <script src="assets/js/venda.js?v=20261109c" defer></script>
+  <script src="assets/js/venda.js?v=20261110a" defer></script>
   <!-- UTMify: propaga utm_* e fbclid até o checkout. Script do painel UTMify (Integrações → UTMs → "Outra"). -->
   <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck data-utmify-prevent-subids async defer></script>
 </head>
@@ -273,6 +273,8 @@
         <!-- Âncora principal da live (LIVE-ROTEIRO.md, Valor, âncora e CTA, item 6) -->
         <p class="vd-ancora">R$ 497 é menos do que o Guia sozinho custa fora da Black (R$ 697). O curso e a comunidade vêm junto.</p>
         <p class="vd-frete"><b>Frete grátis</b>por tempo limitado</p>
+        <!-- Formação para os 10 primeiros da live (decisão de 10/11): aparece de 10/11 20h até 11/11 0h (CONFIG em venda.js) -->
+        <p class="vd-frete" data-formacao10 hidden><b>+ Formação completa</b>para os 10 primeiros pedidos pagos</p>
         <p class="vd-selo">Lote limitado</p>
 
         <div class="vd-contador vd-contador--centro" data-reta data-contador hidden>
