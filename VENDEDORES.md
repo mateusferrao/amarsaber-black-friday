@@ -5,23 +5,56 @@ Cada vendedora tem um link pessoal. A venda feita por esse link aparece sozinha 
 
 Decisão de 09/11: o rastreio é **só por UTM e planilha**. Não há cupom pessoal nem webhook novo na Yampi.
 
-## Links
+## Links (atualizados em 10/11: um link por produto)
 
-Os links abrem direto no checkout, com o cupom da Black já aplicado. Não mande a LP: o botão da LP leva a um link
-fixo do checkout e a vendedora se perde no caminho.
+Os links abrem direto no checkout, já com o cupom do produto (o da Formação de comprador não usa cupom: o preço já é
+R$ 297). Não mande a LP. O `utm_term` diz qual link foi usado e aparece na coluna **Link (produto)** da aba de vendas e
+na tabela "Vendas pagas por link" da aba Bônus.
 
-| Vendedora | Guia Vol. 3 + curso + comunidade (R$ 497) | Só curso + comunidade (R$ 187) |
-|---|---|---|
-| **Ana** | https://seguro.amarsaberstore.com.br/r/LUIR27AS3L?promocode=BLACKAMARSABER&utm_source=vendedor&utm_medium=whatsapp_1a1&utm_campaign=black_vendas&utm_content=ana&metadata%5Bvendedor%5D=ana | https://seguro.amarsaberstore.com.br/r/5PS9VFMQHI?promocode=BLACKAMARSABERDS&utm_source=vendedor&utm_medium=whatsapp_1a1&utm_campaign=black_vendas&utm_content=ana&metadata%5Bvendedor%5D=ana |
-| **Heid** | https://seguro.amarsaberstore.com.br/r/LUIR27AS3L?promocode=BLACKAMARSABER&utm_source=vendedor&utm_medium=whatsapp_1a1&utm_campaign=black_vendas&utm_content=heid&metadata%5Bvendedor%5D=heid | https://seguro.amarsaberstore.com.br/r/5PS9VFMQHI?promocode=BLACKAMARSABERDS&utm_source=vendedor&utm_medium=whatsapp_1a1&utm_campaign=black_vendas&utm_content=heid&metadata%5Bvendedor%5D=heid |
-| **Belle** | https://seguro.amarsaberstore.com.br/r/LUIR27AS3L?promocode=BLACKAMARSABER&utm_source=vendedor&utm_medium=whatsapp_1a1&utm_campaign=black_vendas&utm_content=belle&metadata%5Bvendedor%5D=belle | https://seguro.amarsaberstore.com.br/r/5PS9VFMQHI?promocode=BLACKAMARSABERDS&utm_source=vendedor&utm_medium=whatsapp_1a1&utm_campaign=black_vendas&utm_content=belle&metadata%5Bvendedor%5D=belle |
+⚠️ **Esteira e Formação de comprador só depois da liberação do Mateus**: os cupons BLACKAMARSABER, BLACKAMARSABERDS e
+BLACKESTEIRA precisam estar restritos ao produto certo no painel da Yampi, e o BLACKESTEIRA está criado **inativo**.
 
-- O que identifica a vendedora é `utm_source=vendedor` + `utm_content=<nome>`. A `metadata[vendedor]` vai junto como
-  reserva, mas no teste de 09/11 (pedido 178395351, link da Heid) ela **não** chegou ao pedido: só vieram as UTMs.
-  Quem atribui na prática é a UTM, e o teste deu certo (linha "Heid · link").
-- Copie o link inteiro. Se cortar o fim, a venda continua valendo pela UTM; se cortar a UTM, a venda some.
-- A Formação Completa (upsell de R$ 297 no cartão, ou bump no Pix e no boleto) não precisa de link: o upsell vai para
-  a vendedora do pedido principal e o bump já está dentro do mesmo pedido.
+### Ana
+
+| Produto | Link |
+|---|---|
+| **front** · Guia Vol. 3 + curso + comunidade · R$ 497 | https://seguro.amarsaberstore.com.br/r/LUIR27AS3L?promocode=BLACKAMARSABER&utm_source=vendedor&utm_medium=whatsapp_1a1&utm_campaign=black_vendas&utm_content=ana&utm_term=front |
+| **downsell** · Só curso + comunidade · R$ 187 | https://seguro.amarsaberstore.com.br/r/5PS9VFMQHI?promocode=BLACKAMARSABERDS&utm_source=vendedor&utm_medium=whatsapp_1a1&utm_campaign=black_vendas&utm_content=ana&utm_term=downsell |
+| **upsell** · Formação Completa para quem já comprou · R$ 297 (de R$ 697) | https://seguro.amarsaberstore.com.br/r/OXZJFHDY7F?utm_source=vendedor&utm_medium=whatsapp_1a1&utm_campaign=black_vendas&utm_content=ana&utm_term=upsell |
+| **esteira** · Esteira completa: Guia + curso + comunidade + Formação · R$ 794 (de R$ 1.834,70) | https://seguro.amarsaberstore.com.br/r/MOXSHIVAJY?promocode=BLACKESTEIRA&utm_source=vendedor&utm_medium=whatsapp_1a1&utm_campaign=black_vendas&utm_content=ana&utm_term=esteira |
+
+### Heid
+
+| Produto | Link |
+|---|---|
+| **front** · Guia Vol. 3 + curso + comunidade · R$ 497 | https://seguro.amarsaberstore.com.br/r/LUIR27AS3L?promocode=BLACKAMARSABER&utm_source=vendedor&utm_medium=whatsapp_1a1&utm_campaign=black_vendas&utm_content=heid&utm_term=front |
+| **downsell** · Só curso + comunidade · R$ 187 | https://seguro.amarsaberstore.com.br/r/5PS9VFMQHI?promocode=BLACKAMARSABERDS&utm_source=vendedor&utm_medium=whatsapp_1a1&utm_campaign=black_vendas&utm_content=heid&utm_term=downsell |
+| **upsell** · Formação Completa para quem já comprou · R$ 297 (de R$ 697) | https://seguro.amarsaberstore.com.br/r/OXZJFHDY7F?utm_source=vendedor&utm_medium=whatsapp_1a1&utm_campaign=black_vendas&utm_content=heid&utm_term=upsell |
+| **esteira** · Esteira completa: Guia + curso + comunidade + Formação · R$ 794 (de R$ 1.834,70) | https://seguro.amarsaberstore.com.br/r/MOXSHIVAJY?promocode=BLACKESTEIRA&utm_source=vendedor&utm_medium=whatsapp_1a1&utm_campaign=black_vendas&utm_content=heid&utm_term=esteira |
+
+### Belle
+
+| Produto | Link |
+|---|---|
+| **front** · Guia Vol. 3 + curso + comunidade · R$ 497 | https://seguro.amarsaberstore.com.br/r/LUIR27AS3L?promocode=BLACKAMARSABER&utm_source=vendedor&utm_medium=whatsapp_1a1&utm_campaign=black_vendas&utm_content=belle&utm_term=front |
+| **downsell** · Só curso + comunidade · R$ 187 | https://seguro.amarsaberstore.com.br/r/5PS9VFMQHI?promocode=BLACKAMARSABERDS&utm_source=vendedor&utm_medium=whatsapp_1a1&utm_campaign=black_vendas&utm_content=belle&utm_term=downsell |
+| **upsell** · Formação Completa para quem já comprou · R$ 297 (de R$ 697) | https://seguro.amarsaberstore.com.br/r/OXZJFHDY7F?utm_source=vendedor&utm_medium=whatsapp_1a1&utm_campaign=black_vendas&utm_content=belle&utm_term=upsell |
+| **esteira** · Esteira completa: Guia + curso + comunidade + Formação · R$ 794 (de R$ 1.834,70) | https://seguro.amarsaberstore.com.br/r/MOXSHIVAJY?promocode=BLACKESTEIRA&utm_source=vendedor&utm_medium=whatsapp_1a1&utm_campaign=black_vendas&utm_content=belle&utm_term=esteira |
+
+**O que oferecer a quem** (a aba "Comercial · Black" mostra o que a pessoa já tem):
+
+| Quem | Link |
+|---|---|
+| Ainda não comprou nada | **front** ou **esteira** (quem quer tudo) |
+| Comprou o Guia (front) sem a Formação | **upsell** (R$ 297) |
+| Comprou só o downsell (curso + comunidade) | a vendedora escolhe: **front**, **esteira** ou **upsell** |
+| Tentou o downsell e não pagou | **downsell** |
+
+- O que identifica a vendedora é `utm_source=vendedor` + `utm_content=<nome>`. A `metadata[vendedor]` saiu dos links:
+  no teste de 09/11 ela não chegou ao pedido, só as UTMs.
+- Copie o link inteiro. Se cortar a UTM, a venda some da planilha.
+- O upsell de 1 clique depois da compra no cartão (e o bump no Pix e no boleto) continua automático: o upsell vai
+  para a vendedora do pedido principal e o bump já está dentro do mesmo pedido.
 
 ## Influenciadoras (link na bio e posts)
 
@@ -74,8 +107,8 @@ vendedora não contam.
 - A Yampi já manda os pedidos da loja para o webhook do fluxo n8n **"AS · Acessos Black"**. Um nó paralelo,
   **"Encaminhar · vendas por vendedor"**, repassa o mesmo evento para o fluxo **"AS · Vendas por vendedor"**. Se o
   repasse falhar, a entrega dos acessos não para.
-- **"AS · Vendas por vendedor":** lê o pedido (só Black 46520027, curso 46522438 e Formação 46637102; só pagamento e
-  mudança de status) → busca o lead no Kommo pelo telefone → lê a aba → monta a linha → grava pelo número do pedido.
+- **"AS · Vendas por vendedor":** lê o pedido (Black 46520027, curso 46522438, Formação 46637102 e, desde 10/11, esteira
+  46682535 e Formação de comprador 46682536; só pagamento e mudança de status) → busca o lead no Kommo pelo telefone → lê a aba → monta a linha → grava pelo número do pedido.
 - Pedido cancelado depois de pago vira **estornado**. Pedido que nunca foi pago (Pix vencido, cartão recusado) não
   entra na aba.
 - A chave do webhook fica só no n8n, fora do repositório.

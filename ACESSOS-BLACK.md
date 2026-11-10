@@ -7,6 +7,16 @@ Quem paga a Black na Yampi recebe sozinho:
 | Curso Atendimento Extraordinário | Memberkit, assinatura **Black 2026 · Atendimento Extraordinário** (id 38626, Turma A 394987) | 365 dias a partir do pagamento | integração nativa Yampi → Memberkit, com o webhook da Yampi filtrado pelos 2 produtos (e-mail de boas-vindas do Memberkit) |
 | Comunidade Amar Saber | grupo **Comunidade - Guia Amar Saber** no WhatsApp, campanha de mesmo nome no SendFlow | 3 meses a partir do pagamento | e-mail com o link (automação do Kommo); desde 03/11 a pessoa entra direto pelo link, sem aprovação |
 
+**Produtos novos (10/11), vendidos pelos links das vendedoras:**
+- **Esteira completa** (46682535, SKU BF26ESTEIRA, `r/MOXSHIVAJY`): R$ 1.834,70 com o cupom BLACKESTEIRA (R$ 794),
+  físico, estoque próprio de 300. Libera tudo: curso (Memberkit 38626), Formação (38676), comunidade e e-mail (fluxo
+  de acessos, `PRODUTOS` do "Normalizar pedidos") e o Guia impresso.
+- **Formação Completa · comprador Black** (46682536, SKU BF26FORMACAO297, `r/OXZJFHDY7F`): R$ 297 sem cupom, digital.
+  Libera só a Formação (38676), sem comunidade.
+- **Pendente no painel da Yampi** (a API aceita o PUT mas não grava os produtos novos nos webhooks): marcar a esteira
+  no "Memberkit · Black (curso)" (1774262); a esteira e a Formação de comprador no "Memberkit · Black (formação)"
+  (1775941) e no "Yampi" da UTMify (1645171). Sem isso, a compra desses produtos não libera o Memberkit.
+
 Produtos da Yampi que liberam: **46520027** (Guia + curso + comunidade, R$ 497) e **46522438** (downsell curso +
 comunidade, R$ 187). Além deles, a **Formação Completa** (46637102, R$ 297 no upsell do cartão e nos bumps de Pix e
 boleto) libera os 7 cursos na assinatura **Black 2026 · Plataforma Completa** (38676) por 365 dias. Não libera
