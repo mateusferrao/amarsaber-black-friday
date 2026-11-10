@@ -75,6 +75,26 @@ fora do Brasil. O filtro de contas de teste do PostHog exclui `$current_url` com
 Clarity recebe ainda a tag `etapa_max` (`engajou` → `viu_oferta` → `clicou_checkout`) e o
 **Custom user ID = distinct_id do PostHog** (achar no Clarity a gravação de quem aparece no PostHog).
 
+## Links dos perfis na Black (10/11, mandados à Maria, à Belle e à Milena)
+
+A LP repassa as UTMs ao botão do checkout (testado em 09/11). `utm_content` separa o perfil.
+
+| Perfil | Onde | Link |
+|---|---|---|
+| Maria | Bio do Instagram (10/11 até 30/11) | `https://black.amarsaber.com.br/?utm_source=instagram&utm_medium=bio&utm_campaign=bf&utm_content=maria` |
+| Maria | Story na noite da live (10/11) | `https://black.amarsaber.com.br/?utm_source=instagram&utm_medium=stories&utm_campaign=live_1011&utm_content=maria` |
+| Maria | Stories dos outros dias | `https://black.amarsaber.com.br/?utm_source=instagram&utm_medium=story&utm_campaign=bf&utm_content=maria-AAAA-MM-DD` |
+| Maria | Bio do TikTok | `https://black.amarsaber.com.br/?utm_source=tiktok&utm_medium=bio&utm_campaign=bf&utm_content=maria` |
+| Belle | os mesmos 4 links acima | trocar `maria` por `belle` |
+| Milena (influenciadora) | Bio do Instagram, bio do TikTok e stories | `https://black.amarsaber.com.br/?utm_source=vendedor&utm_medium=influencer_bio&utm_campaign=black_vendas&utm_content=milena` |
+
+- **Stories depois da live: `story`, sem o "s".** Com `utm_medium=stories` (ou campanha com `live`), a LP mostra
+  "Você veio da live". O singular evita esse aviso nos stories dos outros dias.
+- **Contagem das vendas:**
+  - perfis da Maria e da Belle: canal `instagram` ou `tiktok`, fora da aba "Vendas · Vendedores" e do bônus;
+  - Milena: `vendedor`, entra na aba de vendas como ela.
+- **TikTok:** só a bio tem link clicável.
+
 ## Padrão de links (UTMs) — use sempre
 
 | Origem | Parâmetros |

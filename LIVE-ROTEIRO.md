@@ -66,8 +66,11 @@ A ordem dos casos não muda: o caso de plantão, com o Guia aberto, vem antes da
 | 43–45 | **Fechamento (Dra.):** os pontos do fechamento. Se as vendas estiverem saindo, estende as perguntas. | — |
 
 **Links do minuto ~27:**
-- **Story,** com figurinha de link: `https://black.amarsaber.com.br/?utm_source=instagram&utm_medium=stories&utm_campaign=live_1011`
-- **Bio:** `https://black.amarsaber.com.br/?utm_source=instagram&utm_medium=bio&utm_campaign=live_1011`
+- **Story,** com figurinha de link: `https://black.amarsaber.com.br/?utm_source=instagram&utm_medium=stories&utm_campaign=live_1011&utm_content=maria`
+  (no perfil da Belle, `utm_content=belle`)
+- **Bio** (10/11: um link só até 30/11, sem trocar depois da live):
+  `https://black.amarsaber.com.br/?utm_source=instagram&utm_medium=bio&utm_campaign=bf&utm_content=maria`
+  (Belle: `utm_content=belle`). Todos os links dos perfis, inclusive TikTok e Milena, estão no `RASTREAMENTO.md`.
   - em 11/11, trocar por `utm_campaign=bf`.
 
 Com `stories` ou a campanha `live`, a pílula do hero da LP diz "Você veio da live".
