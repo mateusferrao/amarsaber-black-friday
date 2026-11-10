@@ -11,8 +11,8 @@ Os links abrem direto no checkout, já com o cupom do produto (o da Formação d
 R$ 297). Não mande a LP. O `utm_term` diz qual link foi usado e aparece na coluna **Link (produto)** da aba de vendas e
 na tabela "Vendas pagas por link" da aba Bônus.
 
-⚠️ **Esteira e Formação de comprador só depois da liberação do Mateus**: os cupons BLACKAMARSABER, BLACKAMARSABERDS e
-BLACKESTEIRA precisam estar restritos ao produto certo no painel da Yampi, e o BLACKESTEIRA está criado **inativo**.
+Cupons restritos ao produto no painel da Yampi (conferido no checkout em 10/11: cada cupom só desconta no próprio
+produto; esteira R$ 794, front R$ 497, downsell R$ 187, Formação de comprador R$ 297 sem cupom).
 
 ### Ana
 

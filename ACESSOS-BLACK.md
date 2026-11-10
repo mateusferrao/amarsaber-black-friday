@@ -13,9 +13,10 @@ Quem paga a Black na Yampi recebe sozinho:
   de acessos, `PRODUTOS` do "Normalizar pedidos") e o Guia impresso.
 - **Formação Completa · comprador Black** (46682536, SKU BF26FORMACAO297, `r/OXZJFHDY7F`): R$ 297 sem cupom, digital.
   Libera só a Formação (38676), sem comunidade.
-- **Pendente no painel da Yampi** (a API aceita o PUT mas não grava os produtos novos nos webhooks): marcar a esteira
-  no "Memberkit · Black (curso)" (1774262); a esteira e a Formação de comprador no "Memberkit · Black (formação)"
-  (1775941) e no "Yampi" da UTMify (1645171). Sem isso, a compra desses produtos não libera o Memberkit.
+- **Webhooks (marcados no painel em 10/11; a API aceita o PUT mas não grava produtos novos):** esteira no "Memberkit ·
+  Black (curso)" (1774262); esteira e Formação de comprador no "Memberkit · Black (formação)" (1775941) e no "Yampi"
+  da UTMify (1645171). Conferido pela API.
+- **Cupons restritos ao produto** no painel (BLACKAMARSABER, BLACKAMARSABERDS, BLACKESTEIRA), conferido no checkout.
 
 Produtos da Yampi que liberam: **46520027** (Guia + curso + comunidade, R$ 497) e **46522438** (downsell curso +
 comunidade, R$ 187). Além deles, a **Formação Completa** (46637102, R$ 297 no upsell do cartão e nos bumps de Pix e
