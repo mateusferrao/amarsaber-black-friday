@@ -124,6 +124,16 @@ ponte de cada caso para a oferta) recriou 28 ações. Os IDs abaixo já são os 
 | caso09 19h30 | `cmuO6dPFy7lZZToljpFC` |
 | caso10 12h | `GElso3fOUhUyzMYnowmZ` |
 | caso10 19h30 | `96QUEcZ9IzVBkYtK7czs` |
+| o1311 | `ZR751rcIahtSJGsSn6MA` |
+| o1411 | `9XQuRKmhiTwln3lZC8Fo` |
+| o1411b | `wgE1kX6gjN0d0bu6sYaA` |
+| o1511 | `nOEYxFGYf00EjNlvRS2Z` |
+| o1611 | `iDyt8mNP13MmPACF2hkh` |
+| o1711 | `cbC8joCLGJ2EBy9CvkjX` |
+| o1711b | `sXvMATiNUKu1hD7FuFbQ` |
+| o2011 | `cHtRLaQxgCACpNMw4BbN` |
+| o2211 | `x06SPCMvog4eA33olwLp` |
+| o2511 | `83RMOnZaRZJ8dbET5sGk` |
 | p1 | `Jk6feVmgq5aN2zekeDNm` |
 | p2 | `zY8IAk7Mb4Gs9q5wgzeY` |
 | p3 | `rSFLfEChUc1KKCPzODLr` |
@@ -880,17 +890,17 @@ Completam o ritmo de 3 por dia até 17/11 e de 2 por dia de 18 a 26/11. Cada uma
 da live (o valor, "serve para o meu momento", o prazo, "já tenho uma edição anterior", decidir sozinho). A o1111
 fica logo depois da 8. Provas disponíveis: depoimentos da LP e alguns vídeos novos da Dra.
 
-### o1311 · sex 13/11, 9h30 · o valor
-*(nova, 07/11 · aguarda aprovação do Mateus · Teste BF antes)*
+### o1311 · sex 13/11, 9h30 · o valor *(ação `ZR751rcIahtSJGsSn6MA`)*
+*(aprovada e agendada em 10/11)*
 > "O valor" foi a resposta mais marcada na pesquisa da live. Então vamos à conta.
 >
 > O Guia sozinho custa R$ 697 fora da Black. Na Black ele vem com o curso Atendimento Extraordinário e 3 meses de
-> comunidade por R$ 497, ou 12x de R$ 50,57. É menos de R$ 2 por dia para ter a conduta e a dose na bancada no próximo
+> comunidade por R$ 497, ou 12x de R$ 50,57, com frete grátis por tempo limitado. É menos de R$ 2 por dia para ter a conduta e a dose na bancada no próximo
 > plantão:
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=o1311
 
-### o1411 · sáb 14/11, 9h30 · serve para o meu momento?
-*(nova, 07/11 · aguarda aprovação do Mateus · Teste BF antes)*
+### o1411 · sáb 14/11, 9h30 · serve para o meu momento? *(ação `9XQuRKmhiTwln3lZC8Fo`)*
+*(aprovada e agendada em 10/11)*
 > Muita gente que respondeu a pesquisa ainda está na faculdade ou se formou há pouco. E a pergunta é sempre a mesma:
 > "serve para o meu momento?"
 >
@@ -900,8 +910,8 @@ fica logo depois da 8. Provas disponíveis: depoimentos da LP e alguns vídeos n
 > Para quem já atende, é a consulta rápida no meio do atendimento:
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=o1411
 
-### o1411b · sáb 14/11, 19h30 · decidir sozinho
-*(nova, 07/11 · aguarda aprovação do Mateus · Teste BF antes)* A frase é da pesquisa, sem nome.
+### o1411b · sáb 14/11, 19h30 · decidir sozinho *(ação `wgE1kX6gjN0d0bu6sYaA`)*
+*(aprovada e agendada em 10/11)* A frase é da pesquisa, sem nome.
 > Uma frase da pesquisa ficou comigo: "peço ajuda a algum colega, mas nem sempre respondem na hora. Me sinto inútil
 > nessas horas."
 >
@@ -911,15 +921,15 @@ fica logo depois da 8. Provas disponíveis: depoimentos da LP e alguns vídeos n
 > Na Black, são 3 meses de comunidade junto com o Guia e o curso:
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=o1411b
 
-### o1511 · dom 15/11, 9h30 · depoimento
-*(nova, 07/11 · aguarda aprovação do Mateus · Teste BF antes)* Imagem: `assets/img/depoimento-5.jpg`.
+### o1511 · dom 15/11, 9h30 · depoimento *(ação `nOEYxFGYf00EjNlvRS2Z`)*
+*(aprovada e agendada em 10/11)* Imagem: `assets/img/depoimento-5.jpg`.
 > Bom domingo! 💗 Esse recado chegou de uma colega que usa o Guia no plantão.
 >
-> Guia impresso, curso e 3 meses de comunidade, até 30/11 ou enquanto o lote durar:
+> Guia impresso, curso e 3 meses de comunidade, com frete grátis por tempo limitado, até 30/11 ou enquanto o lote durar:
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=o1511
 
-### o1611 · seg 16/11, 9h30 · já tenho o Volume 2
-*(nova, 07/11 · aguarda aprovação do Mateus · Teste BF antes)*
+### o1611 · seg 16/11, 9h30 · já tenho o Volume 2 *(ação `iDyt8mNP13MmPACF2hkh`)*
+*(aprovada e agendada em 10/11)*
 > "Já tenho o Volume 2. Vale a pena?"
 >
 > Quem tem o Volume 2 recebeu as atualizações em PDF. O Volume 3 é o livro novo, impresso, com o que entrou depois:
@@ -927,43 +937,43 @@ fica logo depois da 8. Provas disponíveis: depoimentos da LP e alguns vídeos n
 > vacinas pela WSAVA. E na Black ele vem junto com o curso Atendimento Extraordinário e 3 meses de comunidade:
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=o1611
 
-### o1711 · ter 17/11, 9h30 · vídeo da Dra.
-*(nova, 07/11 · aguarda aprovação do Mateus · Teste BF antes)* Vídeo vertical da Dra., de até 1 min, sobre a dor do plantão (ela no lugar de quem trava na dose às 3h da manhã).
-**Sem vídeo até 16/11, sai o texto de reserva:** "Três da manhã, um cão em choque na mesa, e a dose do fluido precisa
+### o1711 · ter 17/11, 9h30 · vídeo da Dra. *(ação `cbC8joCLGJ2EBy9CvkjX`)*
+*(aprovada e agendada em 10/11)* Vídeo vertical da Dra., de até 1 min, sobre a dor do plantão (ela no lugar de quem trava na dose às 3h da manhã).
+**Sem vídeo (decisão de 10/11): agendado o texto de reserva:** "Três da manhã, um cão em choque na mesa, e a dose do fluido precisa
 sair agora. É para esse minuto que o Guia existe: a conduta, a dose e o cálculo na mesma página, para consultar com o
 paciente na sua frente."
 > Gravei esse recado para quem ainda está pensando. ⬇️
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=o1711
 
-### o1711b · ter 17/11, 19h30 · e se não servir?
-*(nova, 07/11 · aguarda aprovação do Mateus · Teste BF antes)*
+### o1711b · ter 17/11, 19h30 · e se não servir? *(ação `sXvMATiNUKu1hD7FuFbQ`)*
+*(aprovada e agendada em 10/11)*
 > "E se eu receber e não for o que eu esperava?"
 >
 > Você tem 7 dias de garantia incondicional, contados do dia em que o Guia chega. Recebeu, folheou, usou no plantão e
 > não serviu: devolve e recebe o valor de volta.
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=o1711b
 
-### o2011 · sex 20/11, 19h30 · faltam 10 dias
-*(nova, 07/11 · aguarda aprovação do Mateus · Teste BF antes)*
+### o2011 · sex 20/11, 19h30 · faltam 10 dias *(ação `cHtRLaQxgCACpNMw4BbN`)*
+*(aprovada e agendada em 10/11)*
 > Faltam 10 dias para a Black do Guia acabar, e o lote não espera o dia 30. Na última Black, ele esgotou antes do
 > prazo.
 >
-> Guia impresso, curso Atendimento Extraordinário e 3 meses de comunidade por R$ 497 ou 12x de R$ 50,57:
+> Guia impresso, curso Atendimento Extraordinário e 3 meses de comunidade por R$ 497 ou 12x de R$ 50,57, com frete grátis por tempo limitado:
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=o2011
 
-### o2211 · dom 22/11, 19h30 · o plantão de domingo
-*(nova, 07/11 · aguarda aprovação do Mateus · Teste BF antes)* Se a Dra. mandar um 2º vídeo, ele entra aqui no lugar do texto.
+### o2211 · dom 22/11, 19h30 · o plantão de domingo *(ação `x06SPCMvog4eA33olwLp`)*
+*(aprovada e agendada em 10/11)* Se a Dra. mandar um 2º vídeo, ele entra aqui no lugar do texto.
 > Domingo é dia de plantão para muita gente aqui.
 >
 > Se hoje chegou aquele caso em que você ficou em dúvida da dose, é para esse momento que o Guia existe: a conduta, a
 > dose e o cálculo na mesma página, para consultar com o paciente na sua frente.
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=o2211
 
-### o2511 · qua 25/11, 19h30 · depoimento + faltam 5 dias
-*(nova, 07/11 · aguarda aprovação do Mateus · Teste BF antes)* Imagem: `assets/img/depoimento-6.jpg`.
+### o2511 · qua 25/11, 19h30 · depoimento + faltam 5 dias *(ação `83RMOnZaRZJ8dbET5sGk`)*
+*(aprovada e agendada em 10/11)* Imagem: `assets/img/depoimento-6.jpg`.
 > Mais um recado de quem usa o Guia na rotina. 💗
 >
-> Faltam 5 dias para a Black acabar. Guia impresso, curso e 3 meses de comunidade, com 7 dias de garantia:
+> Faltam 5 dias para a Black acabar. Guia impresso, curso e 3 meses de comunidade, com frete grátis por tempo limitado e 7 dias de garantia:
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=o2511
 
 ---
