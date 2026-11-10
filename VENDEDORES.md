@@ -59,6 +59,13 @@ produto; esteira R$ 794, front R$ 497, downsell R$ 187, Formação de comprador 
 - Copie o link inteiro. Se cortar a UTM, a venda some da planilha.
 - O upsell de 1 clique depois da compra no cartão (e o bump no Pix e no boleto) continua automático: o upsell vai
   para a vendedora do pedido principal e o bump já está dentro do mesmo pedido.
+- **Quem usou o seu link é seu (10/11).**
+  - Se a pessoa abandona o carrinho, deixa o Pix vencer ou tem o cartão recusado pelo seu link, ela **não recebe
+    nenhuma mensagem automática** da recuperação.
+  - Na aba "Comercial · Black", ela aparece em 🟢 Chamar agora, com o motivo (por exemplo, "Cartão recusado") e o seu
+    nome em "Link da vendedora".
+- **Só chame quem está em 🟢 ou 💬 na aba "Comercial · Black".** Quem está em ⏳ ainda está recebendo a sequência
+  automática; espere a data de "Liberado em" (`COMERCIAL.md`).
 
 ## Influenciadoras (link na bio e posts)
 

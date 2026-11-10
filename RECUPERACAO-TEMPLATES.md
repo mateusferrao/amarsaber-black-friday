@@ -336,6 +336,22 @@ O contato duplicado "Mateus" +55 31 9 9481-1420 fica no Kommo (decisão do usuá
   - Agora vale o meio de pagamento: `payments[].alias`, `transactions[].payment.data.alias` ou
     `search.data.payment_method`.
   - Testado com os pedidos reais de 06/11: cartão cancelado é ignorado; Pix e compras continuam certos.
+- **Link de vendedora fica fora da automação (10/11, publicado antes de ligar).**
+  - **O que motivou:** o carrinho que a Heid abandonou em 09/11 pelo link dela (`utm_source=vendedor`) entrou na fila
+    como `checkout` e receberia o template 15 min depois.
+  - **Como é agora:**
+    - O `Ler evento` reconhece o link da vendedora pela `utm_source=vendedor` (no carrinho ou no pedido de dentro do
+      cartão recusado) ou pela `metadata` `vendedor`.
+    - A esteira (46682535) e a Formação de comprador (46682536) só entram para esse registro.
+    - O `Decidir entrada` não abre sequência: todas as linhas da pessoa viram status **`vendedora`**, com
+      `observacao = "Vendedora heid · cartão recusado · Esteira completa · dd/MM HH:mm"`.
+    - O disparador só pega `ativo` e `atendimento`, então nada mais sai para essa pessoa, nem a reta final.
+    - Evento comum depois disso (LP, teste) não recomeça sequência. A compra continua marcando `comprou`.
+  - **Mesma versão, duas correções:**
+    - as UTMs da fila passam a vir do carrinho ou do pedido. Antes liam `metadata`, e a fila ficava sem a UTM do
+      anúncio de origem;
+    - no cartão recusado, o cliente é lido também do pedido de dentro do evento.
+  - 17 testes locais, incluindo o payload real do carrinho da Heid. Os outros nós ficaram iguais byte a byte.
 - **Reembolso não devolve à recuperação (decisão de 06/11):** quem comprou fica `comprou` mesmo depois de reembolsar,
   porque já teve o produto e desistiu.
   - Para testar de novo com um número que já comprou, apague a linha dele na tabela "AS · Fila de recuperação" do
