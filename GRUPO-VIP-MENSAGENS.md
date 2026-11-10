@@ -97,6 +97,10 @@ ponte de cada caso para a oferta) recriou 28 ações. Os IDs abaixo já são os 
 | 4 | cortada em 07/11 (`j2DrN3qDQrEnft2MnX0O` cancelada) |
 | 5 | `ZbH7Uwi5PkckwEP7iDIh` (07/11; a antiga `wrZc84lnBd4o6uBUN5nc` foi cancelada) |
 | 6 (20h10) | `g59nAEGwnIafB2P6PEcB` |
+| n2115 (10/11, 21h15) | `oqHM4wbmUBDMBwpnFVUT` |
+| n2200 (10/11, 22h) | `O2xbcjiBKpxdGgewfyuc` |
+| n2245 (10/11, 22h45) | `oaoBte3M4gAloEWoZHg7` |
+| n2330 (10/11, 23h30) | `Te493Z3b89Qs5n5ALQ9K` |
 | 8 | `QcfT2dAm0WrMHnrXCyKo` |
 | C | `VirOMT71bgyZRIp0LaLO` |
 | caso01 12h | `sn7uqcsuhtw1Q1u3SFpz` |
@@ -430,51 +434,57 @@ disparar na hora o template de reserva "Live 10/11 · 6 · Estamos ao vivo (@tod
 > 🎁 Curso completo Atendimento Extraordinário
 > 🎁 3 meses na Comunidade Amar Saber, comigo e com a equipe, com encontros ao vivo
 >
-> Tudo isso soma R$ 1.137,70. Na Black sai por R$ 497 à vista ou 12x de R$ 50,57, até 30/11, às 23h59.
+> Tudo isso soma R$ 1.137,70. Na Black sai por R$ 497 à vista ou 12x de R$ 50,57, com frete grátis por tempo limitado.
 >
-> 🎟️ E os 40 primeiros pedidos pagos entram na Sala VIP: um encontro ao vivo e fechado com a equipe da Amar, para
-> você levar o seu caso. Não está à venda.
+> 🎟️ Os 40 primeiros pedidos pagos entram na Sala VIP: um encontro ao vivo e fechado com a equipe da Amar, para você
+> levar o seu caso. A vaga é por ordem de pagamento, e a sala não está à venda.
 >
-> Garanta o seu aqui, com o cupom já aplicado:
+> O lote é limitadíssimo, e na última Black esgotou rápido. Garanta o seu agora, com o cupom já aplicado:
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=live_1011
 >
-> O lote é limitadíssimo, e na última Black esgotou rápido. Se o Guia não servir para você, tem 7 dias para devolver.
+> Se o Guia não servir para você, tem 7 dias para devolver.
 
-*(texto revisado em 07/11: comunidade com encontros ao vivo e a Sala VIP · atualizar o template manual "Live 10/11 · 7")*
+*(revisada em 10/11 com o Mateus: frete grátis, Sala VIP por ordem de pagamento e mais urgência do lote · template
+"Live 10/11 · 7" `Bi6cTjsJvSAJUeoOIlIQ` atualizado no SendFlow)*
 
-## Noite da live: Sala VIP (4 agendadas, sem número de vagas e sem "fechou")
-*(nova, 07/11 · aguarda aprovação do Mateus · Teste BF antes)* Saem para todos os grupos da campanha, sem @todos. Valem como texto da regra, então continuam verdadeiras
-mesmo que as 40 vagas acabem antes.
+## Noite da live: Sala VIP (4 agendadas em 10/11, sem número de vagas)
+Aprovadas pelo Mateus em 10/11. Saem para todos os grupos da campanha, sem @todos. Valem como texto da regra (40
+primeiros pedidos pagos, por ordem de pagamento, sem data), então continuam verdadeiras mesmo que as vagas acabem antes.
 
-### n2115 · 21h15 · o que é a Sala VIP
-> 🎟️ *Sala VIP: os 40 primeiros*
+### n2115 · 21h15 · o que é a Sala VIP *(ação `oqHM4wbmUBDMBwpnFVUT`)*
+> 🎟️ *Sala VIP: só os 40 primeiros*
 >
-> Além dos três presentes, os 40 primeiros pedidos pagos desta Black entram na Sala VIP: um encontro ao vivo e
-> fechado com a equipe da Amar. Cada um leva o caso que está travando, e a gente resolve junto.
+> As vagas da Sala VIP já estão sendo preenchidas. Entram os 40 primeiros pedidos pagos desta Black, na ordem do
+> pagamento: um encontro ao vivo e fechado com a equipe da Amar, em que cada um leva o caso que está travando e a gente
+> resolve junto.
 >
-> São só 40 porque, com mais gente, não dá para olhar o caso de cada um. E a sala não está à venda.
+> São só 40 porque, com mais gente, não dá para olhar o caso de cada um. Quando fecharem, não abre outra, e a sala não
+> está à venda.
 >
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=live_1011&utm_content=n2115
 
-### n2200 · 22h · prova
+### n2200 · 22h · prova *(ação `O2xbcjiBKpxdGgewfyuc`)*
 Imagem: `assets/img/depoimento-4.jpg` (depoimento da LP ainda não usado no grupo).
 > Na live de hoje eu resolvi casos com o Guia aberto na câmera. Esse recado é de uma colega que usa o Guia na rotina
 > dela. 💗
 >
-> Guia impresso, curso Atendimento Extraordinário e 3 meses de comunidade, com encontros ao vivo, por 12x de R$ 50,57.
-> E a Sala VIP é dos 40 primeiros pedidos pagos:
+> Guia impresso, curso Atendimento Extraordinário e 3 meses de comunidade, com encontros ao vivo, por 12x de R$ 50,57,
+> com frete grátis por tempo limitado.
+>
+> O lote é limitadíssimo, e a Sala VIP é só dos 40 primeiros pedidos pagos. Se você já decidiu, não deixa para amanhã:
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=live_1011&utm_content=n2200
 
-### n2245 · 22h45 · o valor
+### n2245 · 22h45 · o valor *(ação `oaoBte3M4gAloEWoZHg7`)*
 > Sei que o valor pesa. Foi o que mais apareceu na pesquisa de vocês.
 >
 > Então a conta: são 12x de R$ 50,57, menos de R$ 2 por dia. É menos do que o Guia sozinho custa fora da Black
 > (R$ 697), e o curso e a comunidade vêm junto.
 >
-> E se não servir para você, tem 7 dias de garantia incondicional, contados do dia em que o Guia chega:
+> E se não servir para você, tem 7 dias de garantia incondicional, contados do dia em que o Guia chega. O risco fica
+> comigo. O que não espera é o lote, que é limitadíssimo, e as 40 vagas da Sala VIP:
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=live_1011&utm_content=n2245
 
-### n2330 · 23h30 · a última da noite
+### n2330 · 23h30 · a última da noite *(ação `Te493Z3b89Qs5n5ALQ9K`)*
 > Antes de dormir, o que você leva na Black do Guia de Protocolos:
 >
 > 📘 Guia de Protocolos · Volume 3, impresso (R$ 697)
@@ -482,7 +492,9 @@ Imagem: `assets/img/depoimento-4.jpg` (depoimento da LP ainda não usado no grup
 > 🎁 3 meses de comunidade, com encontros ao vivo com a equipe (R$ 143,70)
 > 🎟️ Sala VIP para os 40 primeiros pedidos pagos: essa não tem preço, porque não está à venda
 >
-> Tudo soma R$ 1.137,70. Na Black: R$ 497 à vista ou 12x de R$ 50,57.
+> Tudo soma R$ 1.137,70. Na Black: R$ 497 à vista ou 12x de R$ 50,57, com frete grátis por tempo limitado.
+>
+> Na última Black, o lote acabou antes do prazo. Quem garantir hoje já entra na fila da Sala VIP:
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=live_1011&utm_content=n2330
 
 ---
