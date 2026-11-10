@@ -11,8 +11,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap">
-  <link rel="stylesheet" href="painel.css?v=20261110a">
-  <script src="painel.js?v=20261110c" defer></script>
+  <link rel="stylesheet" href="painel.css?v=20261110d">
+  <script src="painel.js?v=20261110d" defer></script>
 </head>
 <body>
 
@@ -63,7 +63,7 @@
       <summary>Como usar (leia antes de começar)</summary>
       <ol>
         <li><b>Abra a aba "Chamar agora".</b> São as pessoas liberadas e sem dona, das mais quentes para as mais frias.</li>
-        <li><b>Toque em "Enviar mensagem".</b> O painel mostra o texto exato que vai sair, já com o nome da pessoa. Confirme. A mensagem sai pelo WhatsApp oficial da Amar (5052), em seu nome, e a pessoa passa a ser <b>sua</b>.</li>
+        <li><b>Toque em "Enviar mensagem".</b> O painel mostra o texto exato que vai sair, já com o nome da pessoa. Confirme. A mensagem sai pelo WhatsApp oficial da Amar (5052), em seu nome, e a pessoa passa a ser <b>sua</b>. O botão rosa é a mensagem indicada para o caso; se preferir outra, toque em <b>"Enviar outra mensagem"</b> e escolha entre as 7.</li>
         <li><b>Quando a pessoa responder</b>, o robô do Kommo responde na hora e a conversa aparece para você no Kommo, no funil <b>Comercial Black</b>. Continue a conversa por lá e mande o <b>seu link</b> (botão "Copiar meu link").</li>
         <li><b>Anote como foi</b> nos campos do cartão: Status do contato, Objeção e Retornar em. Salva sozinho.</li>
         <li><b>Não respondeu em 2 dias?</b> Em "Meus contatos", use "Enviar retorno". No máximo 2 mensagens por pessoa.</li>
@@ -101,6 +101,16 @@
         <button value="cancelar" class="botao botao--claro">Cancelar</button>
         <button value="ok" class="botao botao--rosa" id="m-confirmar">Confirmar envio</button>
       </div>
+    </form>
+  </dialog>
+
+  <!-- ===== ESCOLHER OUTRA MENSAGEM ===== -->
+  <dialog class="modal" id="modal-escolha">
+    <form method="dialog" class="modal__caixa">
+      <h2>Qual mensagem enviar para <span id="e-nome"></span>?</h2>
+      <p class="modal__tipo">A primeira é a indicada para o caso. Toque numa para ver o texto inteiro antes de confirmar.</p>
+      <div class="opcoes" id="e-lista"></div>
+      <div class="modal__acoes"><button value="cancelar" class="botao botao--claro">Cancelar</button></div>
     </form>
   </dialog>
 

@@ -1,7 +1,7 @@
 # Aba "Comercial · Black" (lista para a equipe ir atrás)
 
 Planilha **Leads · Black – Amar Saber**, aba **Comercial · Black** (a primeira). Há uma linha por pessoa.
-- O fluxo n8n **"AS · Comercial (lista)"** refaz a aba sozinho às **8h, 12h, 16h e 20h**.
+- O fluxo n8n **"AS · Comercial (lista)"** refaz a aba sozinho **de hora em hora, das 7h às 23h** (desde 10/11; antes eram 4 vezes por dia).
 - **Cada venda paga ou estornada atualiza na hora a linha do comprador** pelo fluxo "AS · Vendas por vendedor". Nesse
   caso, a coluna "Atualizado em" termina com "(venda)".
 - O que a equipe preenche nunca é apagado.
@@ -35,8 +35,9 @@ repositório).
 - **Enviar mensagem:** mostra o texto exato do template, já com o nome, e só envia depois de "Confirmar". O template
   sai pelo Kommo (5052) em nome da vendedora (ver `KOMMO-TEMPLATES-FICHA.md`, "Templates do comercial"). Opções:
   - **Enviar mensagem** (template pelo Motivo; sem template próprio, sai o geral);
-  - **Usar a mensagem geral** (`vd_geral`);
-  - **Enviar retorno** (`vd_retorno`, só para quem já recebeu a primeira).
+  - **Enviar retorno** (`vd_retorno`), no lugar do botão principal para quem já recebeu a primeira;
+  - **Enviar outra mensagem:** abre as 7 mensagens, com a indicada no topo, e a vendedora escolhe qualquer uma (o
+    retorno só depois da primeira). As regras de envio valem igual.
 - **Depois do envio:** a pessoa passa a ser da vendedora (Vendedora preenchida, Status "Chamei", coluna Template com
   o que saiu), o lead entra no funil **Comercial Black** com ela como responsável, e as linhas dela na fila da
   recuperação viram `vendedora` (a automação não manda mais nada, nem a reta final).
@@ -183,7 +184,7 @@ Valores possíveis:
 - **Como grava:** "atualizar ou incluir" pela Chave. O cabeçalho fica na linha 3 e os dados começam na linha 4.
 
 ## Estoque (aba "Estoque · Guia")
-O mesmo fluxo atualiza a aba **Estoque · Guia** nos 4 horários:
+O mesmo fluxo atualiza a aba **Estoque · Guia** em toda rodada:
 - estoque da Black;
 - estoque da esteira (separado na Yampi);
 - Guias vendidos e o total.
@@ -191,7 +192,7 @@ O mesmo fluxo atualiza a aba **Estoque · Guia** nos 4 horários:
 Fica o alerta quando um dos dois tem menos de 50 unidades ou menos de 15% restante.
 
 ## Limites
-- A compra muda a linha na hora. O resto (automação, grupo, cartão recusado) só nas 4 atualizações do dia.
+- A compra muda a linha na hora. O resto (automação, grupo, cartão recusado) só na rodada seguinte (de hora em hora).
   **Antes de chamar, olhe o lead no Kommo:** se saiu mensagem automática nas últimas horas, espere.
 - Venda de quem não deixou telefone no checkout não acha a linha na hora; entra na atualização completa seguinte.
 - Números fixos e de fora do Brasil entram com o link do WhatsApp como vieram.

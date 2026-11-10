@@ -193,6 +193,7 @@
 
   // ---------- Regras (só para explicar; o fluxo confere de novo) ----------
   function templateDe(l, opcao) {
+    if (/^Enviar:/.test(opcao)) return opcao.slice(7);
     if (opcao === 'Enviar retorno') return 'vd_retorno';
     if (opcao === 'Enviar genérico') return 'vd_geral';
     return POR_MOTIVO[l.Motivo] || 'vd_geral';
@@ -247,11 +248,10 @@
     var bloqueio = bloqueioEnvio(l), kommo = linkKommo(l);
     h += '<div class="acoes">';
     if (s.indexOf('🟢') === 0 && (!l.Vendedora || minha)) {
-      if (!l.envios || modoTeste) {
-        h += '<button type="button" class="botao botao--rosa" data-acao="enviar" data-opcao="Enviar"' + (bloqueio ? ' disabled' : '') + '>✉️ Enviar mensagem · ' + esc(TEMPLATES[t].nome) + '</button>';
-        if (t !== 'vd_geral') h += '<button type="button" class="botao botao--claro" data-acao="enviar" data-opcao="Enviar genérico"' + (bloqueio ? ' disabled' : '') + '>Usar a mensagem geral</button>';
-      }
-      if (l.envios || modoTeste) h += '<button type="button" class="botao botao--' + (l.envios ? 'rosa' : 'claro') + '" data-acao="enviar" data-opcao="Enviar retorno"' + (bloqueio || (!l.envios && !modoTeste) ? ' disabled' : '') + '>↩️ Enviar retorno</button>';
+      // A mensagem indicada fica em destaque; "Enviar outra mensagem" abre as 7 para a vendedora escolher
+      if (!l.envios) h += '<button type="button" class="botao botao--rosa" data-acao="enviar" data-opcao="Enviar"' + (bloqueio ? ' disabled' : '') + '>✉️ Enviar mensagem · ' + esc(TEMPLATES[t].nome) + '</button>';
+      else h += '<button type="button" class="botao botao--rosa" data-acao="enviar" data-opcao="Enviar retorno"' + (bloqueio ? ' disabled' : '') + '>↩️ Enviar retorno</button>';
+      h += '<button type="button" class="botao botao--claro" data-acao="escolher"' + (bloqueio ? ' disabled' : '') + '>Enviar outra mensagem</button>';
     }
     if (kommo && (minha || (!l.Vendedora && s.indexOf('💬') === 0))) h += '<a class="botao botao--claro" href="' + esc(kommo) + '" target="_blank" rel="noopener">Abrir no Kommo</a>';
     if (minha || !l.Vendedora) h += '<button type="button" class="botao botao--claro" data-acao="copiar" data-produto="' + produtoIndicado(l['Mandar o link']) + '">🔗 Copiar meu link</button>';
@@ -313,6 +313,27 @@
     if (typeof m.showModal === 'function') m.showModal();
     else if (window.confirm('Enviar a mensagem "' + tp.nome + '" para ' + (l.Nome || 'a pessoa') + '?')) enviar();
   }
+  // Escolher qualquer uma das 7 mensagens (a indicada para o Motivo vem primeiro, marcada)
+  var escolhendo = null;
+  var ORDEM_TPL = ['vd_geral', 'vd_upsell', 'vd_falta_guia', 'vd_pedido', 'vd_grupo', 'vd_pesquisa', 'vd_retorno'];
+  function abrirEscolha(l) {
+    escolhendo = l;
+    var indicada = l.envios ? 'vd_retorno' : templateDe(l, 'Enviar');
+    var ordem = [indicada].concat(ORDEM_TPL.filter(function (k) { return k !== indicada; }));
+    $('e-nome').textContent = l.Nome || 'a pessoa';
+    $('e-lista').innerHTML = ordem.map(function (k) {
+      var tp = TEMPLATES[k], semRetorno = k === 'vd_retorno' && !l.envios && !modoTeste;
+      var texto = tp.texto.replace(/\{nome\}/g, primeiroNome(l.Nome)).replace(/\{vend\}/g, sessao.vendedora);
+      return '<button type="button" class="opcao" data-tpl="' + k + '"' + (semRetorno ? ' disabled' : '') + '>' +
+        '<span class="opcao__nome">' + esc(tp.nome) + (k === indicada ? ' <em>indicada</em>' : '') + '</span>' +
+        '<span class="opcao__quando">' + esc(semRetorno ? 'só depois da primeira mensagem' : tp.quando) + '</span>' +
+        '<span class="opcao__texto">' + esc(texto.length > 150 ? texto.slice(0, 150) + '…' : texto) + '</span></button>';
+    }).join('');
+    var m = $('modal-escolha');
+    if (typeof m.showModal === 'function') m.showModal();
+    else { var k = window.prompt('Qual mensagem? ' + ordem.join(', '), indicada); if (k && TEMPLATES[k]) abrirEnvio(l, 'Enviar:' + k); }
+  }
+
   function enviar() {
     if (!pendente) return;
     var p = pendente; pendente = null;
@@ -350,6 +371,11 @@
         desenhar(); window.scrollTo(0, 0);
       });
     });
+    $('e-lista').addEventListener('click', function (ev) {
+      var b = ev.target.closest('[data-tpl]'); if (!b || b.disabled || !escolhendo) return;
+      var l = escolhendo; escolhendo = null; $('modal-escolha').close();
+      abrirEnvio(l, 'Enviar:' + b.getAttribute('data-tpl'));
+    });
     $('modal-envio').addEventListener('close', function () { if ($('modal-envio').returnValue === 'ok') enviar(); else pendente = null; });
 
     $('lista').addEventListener('click', function (ev) {
@@ -357,6 +383,7 @@
       var l = achar(b.closest('.pessoa').getAttribute('data-chave')); if (!l) return;
       var acao = b.getAttribute('data-acao');
       if (acao === 'enviar') abrirEnvio(l, b.getAttribute('data-opcao'));
+      else if (acao === 'escolher') abrirEscolha(l);
       else if (acao === 'copiar') copiar(PRODUTOS[b.getAttribute('data-produto')].url(SLUG[sessao.vendedora]));
       else if (acao === 'assumir') salvar(l, { Vendedora: sessao.vendedora }).then(function (ok) { if (ok) aviso((l.Nome || 'A pessoa') + ' agora é sua. Está em "Meus contatos".'); });
       else if (acao === 'soltar') { if (window.confirm('Soltar ' + (l.Nome || 'esta pessoa') + '? Ela volta para a lista de todas.')) salvar(l, { Vendedora: '' }); }

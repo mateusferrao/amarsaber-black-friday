@@ -137,3 +137,13 @@ button, input, select { font: inherit; }
   .mais-info dl { grid-template-columns: 1fr; }
   .mais-info dt { margin-top: 6px; }
 }
+
+/* ---------- Escolher outra mensagem ---------- */
+.opcoes { display: grid; gap: 8px; max-height: 60vh; overflow-y: auto; }
+.opcao { display: block; width: 100%; text-align: left; padding: 10px 12px; border: 1px solid var(--linha); border-radius: 10px; background: #fff; cursor: pointer; color: var(--texto); }
+.opcao:hover:not(:disabled) { border-color: var(--rosa); background: #fff7fb; }
+.opcao:disabled { opacity: .5; cursor: not-allowed; }
+.opcao__nome { display: block; font-weight: 700; font-size: 15px; }
+.opcao__nome em { font-style: normal; font-size: 11px; font-weight: 600; background: var(--rosa); color: #fff; border-radius: 999px; padding: 1px 7px; margin-left: 4px; vertical-align: middle; }
+.opcao__quando { display: block; font-size: 12px; color: var(--suave); margin-top: 1px; }
+.opcao__texto { display: block; font-size: 13px; margin-top: 6px; color: #3b3036; }
