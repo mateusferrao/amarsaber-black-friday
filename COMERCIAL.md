@@ -61,6 +61,17 @@ repositório).
   (15829447), **Belle = "Amar Saber"** (15657099, `amarsaber@amarveterinaria.com.br`, decisão de 10/11). Esse usuário
   é a conta principal: a Belle também vê os avisos dos outros leads dele. O fluxo "AS · Vendas por vendedor" **não**
   usa esse usuário para atribuir venda (só o link dela conta), para não dar à Belle os leads da conta principal.
+- **Responsável no Kommo (10/11):** no Kommo cada vendedora só vê o que é dela (o admin "Amar Saber" vê tudo). Por
+  isso, no fluxo "AS · Painel comercial (API)":
+  - **ao enviar** (nós "Kommo · leads da pessoa (envio)", "Atribuir (envio)" e os dois PATCH): a vendedora vira
+    responsável do lead do Comercial Black, de **todos os contatos com aquele telefone** (o Kommo tem duplicados) e dos
+    leads abertos da Recuperação Black desses contatos;
+  - **ao assumir** (ou na primeira anotação numa pessoa sem dona; nós "Assumir no Kommo?", "Atribuir (salvar)" e
+    seguintes): o mesmo. Se não houver lead do Comercial Black, ele é criado em **Respondeu** (a API não aceita a etapa
+    de entrada), com `as_nome`, `as_vendedora` e `as_link`, e registrado em "AS · Comercial envios" com
+    `template = 'assumiu'` e `ok = false` (liga o lead à pessoa sem contar nos limites de mensagens);
+  - **ao soltar:** lead, contatos e leads da recuperação voltam para "Amar Saber" (15657099), e `as_vendedora` é limpo.
+  - Testado em 10/11 com o número do Mateus (dois contatos duplicados, três leads abertos na recuperação).
 - **Sincronização com o Kommo (10/11):**
   - **painel → Kommo (no ar):** marcar o Status do contato move o lead no funil Comercial Black (Chamei → Template
     enviado, Respondeu, Link enviado, Negociando, Não quer, Comprou → Closed - won, Número inválido → Closed - lost;
