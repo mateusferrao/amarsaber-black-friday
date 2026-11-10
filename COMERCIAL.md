@@ -9,6 +9,17 @@ Planilha **Leads · Black – Amar Saber**, aba **Comercial · Black** (a primei
 **Regra principal (10/11): a vendedora só chama depois que a sequência automática da pessoa termina.** A reta final
 (28 a 30/11) vai para todo mundo e não segura ninguém.
 
+**Quem é só do grupo começa em 11/11, às 8h (decisão de 10/11).**
+- **Quem segura:** está no grupo, saiu do grupo, cadastrou e nunca entrou, respondeu a pesquisa da live, ou não
+  recebeu a mensagem automática.
+- **Até lá:** essas pessoas ficam em ⏳, com "Liberado em" 11/11 08:00. A Black abre na live de 10/11, e a noite e a
+  mensagem das 10h de 11/11 saem só no grupo.
+- **O que pode ser chamado a qualquer hora:**
+  - quem comprou só uma parte (falta a Formação ou o Guia);
+  - quem teve o cartão recusado, deixou o Pix vencer ou abandonou o carrinho pelo link de uma vendedora;
+  - quem respondeu a mensagem automática (💬, no Kommo).
+- **Pela LP:** cartão, Pix e carrinho feitos pela LP continuam esperando a sequência automática deles.
+
 ## Guia rápido da vendedora
 A legenda está no topo da aba: linha 1 com o "como usar", linha 2 com o que é cada coluna e linha 3 com o cabeçalho.
 1. Filtre **Situação = 🟢 Chamar agora** e **Vendedora vazia**. Comece pela **Prioridade 1 · quente**.
