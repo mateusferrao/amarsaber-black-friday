@@ -61,6 +61,18 @@ repositório).
   (15829447), **Belle = "Amar Saber"** (15657099, `amarsaber@amarveterinaria.com.br`, decisão de 10/11). Esse usuário
   é a conta principal: a Belle também vê os avisos dos outros leads dele. O fluxo "AS · Vendas por vendedor" **não**
   usa esse usuário para atribuir venda (só o link dela conta), para não dar à Belle os leads da conta principal.
+- **Sincronização com o Kommo (10/11):**
+  - **painel → Kommo (no ar):** marcar o Status do contato move o lead no funil Comercial Black (Chamei → Template
+    enviado, Respondeu, Link enviado, Negociando, Não quer, Comprou → Closed - won, Número inválido → Closed - lost;
+    "Sem resposta" não move). Só para quem tem lead do comercial (recebeu mensagem pelo painel). Nós "Ler envios
+    (salvar)", "Etapa no Kommo" e "Kommo · mover etapa" do fluxo "AS · Painel comercial (API)";
+  - **Kommo → painel:** fluxo "AS · Comercial (Kommo → painel)" (`NhgF9VUnYxcw2xwR`, webhook
+    `as-black-comercial-etapa?chave=<CHAVE>`, a mesma chave dos bots, fora do repositório). Grava o Status do contato
+    quando o lead do Comercial Black muda de etapa no Kommo (pela vendedora ou pelo robô). **Depende do webhook da
+    conta do Kommo** (evento "status_lead", Configurações → Integrações → Webhooks) apontando para esse endereço.
+- **Quem espera e até quando:** a data de 11/11, 8h vale só para quem recebe só pelo grupo; quem tem sequência
+  individual em andamento fica em ⏳ até o fim dela + 24 h (16/11, 10h para quem está fora do grupo). Na conferência
+  de 10/11: 1.381 liberam em 11/11 8h (nenhuma com sequência individual) e 134 em 16/11 10h.
 - **O que fica fora do painel:** a conversa em si (Kommo) e o cupom que a vendedora cria (Yampi).
 - **Segurança:** o PIN é único para a equipe e a página mostra nomes e telefones. A página não entra no Google
   (`noindex`) e não tem rastreamento (sem Pixel, PostHog ou Clarity). Se o PIN vazar, troque a constante `PIN` no nó
