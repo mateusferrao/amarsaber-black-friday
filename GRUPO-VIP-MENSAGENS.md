@@ -451,21 +451,16 @@ disparar na hora o template de reserva "Live 10/11 · 6 · Estamos ao vivo (@tod
 **Reserva se a live cair** (template "Live 10/11 · Reserva · a live caiu", criado em 10/11; manual, só se cair):
 > A live caiu, mas a Dra. já está voltando. Entra de novo aqui: https://www.instagram.com/mariapaulaferrarivet/
 
-## 20h30 · ao vivo + presentes abertos + Formação dos 10 primeiros · @todos *(reescrita em 10/11, 19h50, no estilo da 5; ação xorlMCma9gg91FzjpFXl; a antiga vdopAzZxzYzIY8TEjkyB foi cancelada; substitui a 6a)*
+## 20h30 · ao vivo + presente dos primeiros · @todos *(reescrita em 10/11, 19h52, sem nomear os presentes nem os valores; ação VH3IJUcgqq0NqHHtyz7K; canceladas vdopAzZxzYzIY8TEjkyB e xorlMCma9gg91FzjpFXl; substitui a 6a)*
 > *A BLACK ESTÁ QUASE ABRINDO!* 🔴
 >
-> Os dois primeiros presentes da live somam R$ 440,70:
-> 🎓 Curso Atendimento Extraordinário (R$ 297)
-> 💬 3 meses na Comunidade Amar Saber, comigo e com a equipe (R$ 143,70)
+> Os presentes já estão sendo abertos na live, e daqui a pouco eu libero a *MAIOR CONDIÇÃO* que o Guia de Protocolos já teve.
 >
-> Daqui a pouco eu abro o terceiro: a condição do Guia de Protocolos · Volume 3. E os *10 PRIMEIROS* pedidos pagos levam também a Formação Amar Saber completa, com os 7 cursos e 1 ano de acesso.
+> Os *PRIMEIROS* pedidos pagos levam um presente extra que não vai se repetir nesta Black. Na última vez o estoque acabou muito rápido.
 >
-> O link sai aqui no grupo. Na última Black o estoque acabou rápido, então deixa o cartão ou o Pix à mão.
+> O link sai aqui no grupo antes de qualquer outro lugar. Deixa o cartão ou o Pix à mão.
 >
 > Entra agora: https://www.instagram.com/mariapaulaferrarivet/
-
-Risco aceito: nomeia o curso e a comunidade como os dois primeiros presentes; se a live atrasar e eles ainda não tiverem
-sido abertos, cancelar a ação antes das 20h30.
 
 Decisão de 10/11, 18h25: o link (7) sai depois das 20h30, ainda manual, quando a Dra. abrir o último presente.
 
