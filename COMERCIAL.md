@@ -48,10 +48,14 @@ repositório).
   - nada nas 24 h depois de uma mensagem automática da recuperação;
   - no máximo 2 templates do comercial por pessoa, com 48 h entre eles; o retorno só depois do primeiro;
   - teto de 300 templates do comercial por dia, somando todas;
-  - Belle só envia quando tiver usuário no Kommo.
-- **Modo de teste:** enquanto `TELEFONE_TESTE` estiver preenchido no nó `Preparar envios` (e `MODO_TESTE` no nó
-  `Montar lista`, que só mostra o aviso), o envio só sai para o número de teste, e os limites de 2 por pessoa e 48 h
-  não valem para ele. Para liberar: esvaziar `TELEFONE_TESTE`, pôr `MODO_TESTE = false` e publicar.
+  - teto de 300 por dia vale para as três juntas.
+- **Em produção desde 10/11, à tarde** (teste de ponta a ponta feito só com o número do Mateus). Para voltar ao modo
+  de teste: `TELEFONE_TESTE = '5531994811420'` no nó `Preparar envios` e `MODO_TESTE = true` no nó `Montar lista`;
+  publicar. No modo de teste só sai para esse número, sem os limites de 2 por pessoa e 48 h.
+- **Usuários do Kommo (responsável do lead):** Heid = "Comercial 1 - Heid" (15829459), Ana = "Comercial 2 - Ana"
+  (15829447), **Belle = "Amar Saber"** (15657099, `amarsaber@amarveterinaria.com.br`, decisão de 10/11). Esse usuário
+  é a conta principal: a Belle também vê os avisos dos outros leads dele. O fluxo "AS · Vendas por vendedor" **não**
+  usa esse usuário para atribuir venda (só o link dela conta), para não dar à Belle os leads da conta principal.
 - **O que fica fora do painel:** a conversa em si (Kommo) e o cupom que a vendedora cria (Yampi).
 - **Segurança:** o PIN é único para a equipe e a página mostra nomes e telefones. A página não entra no Google
   (`noindex`) e não tem rastreamento (sem Pixel, PostHog ou Clarity). Se o PIN vazar, troque a constante `PIN` no nó

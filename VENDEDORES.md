@@ -143,7 +143,9 @@ certo para o caso.
 
 ## Limites conhecidos
 
-- **Belle** não tem usuário no Kommo: as vendas dela contam só pelo link.
+- **Belle** usa no Kommo o usuário "Amar Saber" (15657099, a conta principal, decisão de 10/11). Por isso as vendas
+  dela contam só pelo link: esse usuário **não** entra em `RESPONSAVEIS` do "AS · Vendas por vendedor" (senão os leads
+  da conta principal virariam vendas "a validar" da Belle).
 - O painel da Yampi só mostra `utm_source` e `utm_campaign`. Para ver por vendedora, use a aba da planilha (ou filtre
   `utm_source = vendedor` na Yampi e na UTMify).
 - A UTMify vai mostrar o canal "vendedor" junto, sem separar quem vendeu.
