@@ -427,6 +427,9 @@ Acrescentada a última linha em 07/11. A ação antiga `wrZc84lnBd4o6uBUN5nc` fo
 Sem @todos porque a 5 (19h50) e a 7 já marcam todo mundo. Se a live atrasar, cancelar esta ação antes das 20h10 e
 disparar na hora o template de reserva "Live 10/11 · 6 · Estamos ao vivo (@todos)".
 
+**Reserva se a live cair** (template "Live 10/11 · Reserva · a live caiu", criado em 10/11; manual, só se cair):
+> A live caiu, mas a Dra. já está voltando. Entra de novo aqui: https://www.instagram.com/mariapaulaferrarivet/
+
 ## 6a · ~20h12 · quando a Dra. abre o Presente 01 · manual
 > 🎁 Presente 01 aberto: o curso completo Atendimento Extraordinário. É o passo a passo da consulta que a gente usa
 > na Amar Veterinária, da anamnese ao pós-consulta, para o tutor entender a conduta e dizer sim ao tratamento.
