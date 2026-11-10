@@ -101,7 +101,8 @@ ponte de cada caso para a oferta) recriou 28 ações. Os IDs abaixo já são os 
 | n2200 (10/11, 22h) | `O2xbcjiBKpxdGgewfyuc` |
 | n2245 (10/11, 22h45) | `oaoBte3M4gAloEWoZHg7` |
 | n2330 (10/11, 23h30) | `Te493Z3b89Qs5n5ALQ9K` |
-| 8 | `QcfT2dAm0WrMHnrXCyKo` |
+| 8 | `QIbrYEfC9LEGSDupPtl5` (10/11; a antiga `QcfT2dAm0WrMHnrXCyKo` foi cancelada) |
+| o1111 | `lzqiMrb5aCwk6F0hg8MQ` |
 | C | `VirOMT71bgyZRIp0LaLO` |
 | caso01 12h | `sn7uqcsuhtw1Q1u3SFpz` |
 | caso01 19h30 | `xdjGy9YghTZmIlWrSZ7s` |
@@ -501,26 +502,34 @@ Imagem: `assets/img/depoimento-4.jpg` (depoimento da LP ainda não usado no grup
 
 # Fase 3 · Carrinho aberto (11/11 a 26/11)
 
-## 8 · qua 11/11, 10h · para quem não viu
+## 8 · qua 11/11, 10h · para quem não viu *(ação `QIbrYEfC9LEGSDupPtl5`)*
 > Para quem não conseguiu ver a live ontem, foi isto que eu abri:
 >
 > 📘 Guia de Protocolos · Volume 3, impresso
 > 🎁 Curso completo Atendimento Extraordinário
 > 🎁 3 meses na Comunidade Amar Saber, com encontros ao vivo
 >
-> De R$ 1.137,70 por R$ 497 à vista ou 12x de R$ 50,57, até 30/11 ou enquanto o lote durar. É limitadíssimo:
+> De R$ 1.137,70 por R$ 497 à vista ou 12x de R$ 50,57, com frete grátis por tempo limitado. Vale até 30/11 ou enquanto
+> o lote durar.
+>
+> 🎟️ E os 40 primeiros pedidos pagos entram na Sala VIP: um encontro ao vivo e fechado com a equipe da Amar, para você
+> levar o seu caso. A vaga é por ordem de pagamento, e a sala não está à venda.
+>
+> O lote é limitadíssimo, e na última Black esgotou rápido:
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=pos_live_1111
 >
 > Se o Guia não servir para você, tem 7 dias para devolver.
 
-*(texto revisado em 07/11 · aguarda aprovação · recriar no SendFlow e cancelar a ação antiga)* Comunidade com encontros ao vivo. Ação atual `QcfT2dAm0WrMHnrXCyKo`.
+*(revisada e agendada em 10/11 com o Mateus: encontros ao vivo, frete grátis e Sala VIP · a antiga
+`QcfT2dAm0WrMHnrXCyKo` foi cancelada)*
 
-## o1111 · qua 11/11, 15h · começa hoje
-*(nova, 07/11 · aguarda aprovação do Mateus · Teste BF antes)*
+## o1111 · qua 11/11, 15h · começa hoje *(ação `lzqiMrb5aCwk6F0hg8MQ`)*
+*(aprovada e agendada em 10/11)*
 > Quem garantiu ontem já recebeu no e-mail o acesso ao curso Atendimento Extraordinário e à comunidade. 💗 Dá para
 > começar hoje, enquanto o Guia impresso é preparado (ele sai em até 10 dias úteis).
 >
-> Se você ainda está decidindo: o lote é limitadíssimo, e na última Black esgotou rápido.
+> Se você ainda está decidindo: o lote é limitadíssimo, e a Sala VIP é só dos 40 primeiros pedidos pagos, por ordem de
+> pagamento. O frete grátis também é por tempo limitado.
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=o1111
 
 ## 8b · qua 11/11, 19h30 · amanhã começa o Caso do dia *(agendada; ação x4jknWydUrmIlgGO4tg0)*
