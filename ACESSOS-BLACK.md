@@ -74,6 +74,13 @@ mas por enquanto ninguém é removido do grupo e não há aviso de vencimento ne
 continua no fluxo, com o gatilho *Todo dia às 9h* desativado e `REMOVER_ATIVO = false`, para reaproveitar quando a
 remoção voltar (o 1º vencimento é em fevereiro/2027). A renovação (avisos 30 e 15 dias antes) ainda não foi criada.
 
+## Formação para os 10 primeiros da live (10/11)
+Fluxo separado **AS · Formação 10 primeiros** (`4GuNRs0e6Lk5OzPv`): a cada 5 minutos, os 10 primeiros pedidos pagos
+com o Guia a partir de 10/11 às 20h ganham a assinatura 38676 (Formação completa, 1 ano) pela API do Memberkit
+(`POST /api/v1/users` com `membership_level_id`; a assinatura 38626 do curso não muda). Reembolso tira a 38676 e passa a
+vaga ao próximo. Lista na tabela "AS · Formação 10" e na aba **Formação · 10 primeiros**. Regra completa em
+`OFERTA-PRIMEIROS-COMPRADORES.md`.
+
 ## Onde está cada coisa
 
 | Sistema | Item |

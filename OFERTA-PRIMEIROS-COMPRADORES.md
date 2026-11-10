@@ -65,6 +65,24 @@ Dados de 06/11:
 - **Operação:** quando a lista estiver final, a equipe manda a cada um, individualmente (e-mail pelo Kommo ou WhatsApp do
   atendimento), que a pessoa está na Sala VIP e que a data chega depois que o Guia for entregue.
 
+## Formação completa para os 10 primeiros (decisão de 10/11, véspera da live)
+- **Regra:** os 10 primeiros pedidos pagos da Black **a partir da live (10/11, 20h)**, pela **hora do pagamento**, levam
+  também a Formação Amar Saber completa (os 7 cursos, assinatura 38676 do Memberkit, 1 ano). Conta pedido com o Guia
+  (front ou esteira). Quem comprou antes da live (a Nicolly, 09/11) fica de fora.
+- **Quem já tinha a Formação** (esteira, upsell ou bump): ocupa a vaga, e a equipe reembolsa no Mercado Pago o que a
+  pessoa pagou pela Formação (R$ 297). A aba mostra "reembolsar R$ 297" na observação.
+- **Reembolso do Guia de um dos 10:** a Formação é tirada e a vaga passa ao próximo pedido pago, que recebe o acesso
+  sozinho. Se a pessoa comprou a Formação à parte, o acesso fica.
+- **Automático:** fluxo n8n **AS · Formação 10 primeiros** (`4GuNRs0e6Lk5OzPv`), a cada 5 minutos. Lê a tabela
+  "AS · Acessos Black", a tabela "AS · Formação 10" e a aba "Vendas · Vendedores"; libera ou tira a assinatura 38676
+  pela API do Memberkit (credencial "Memberkit API Amar Saber", que o Mateus criou) e grava a aba
+  **Formação · 10 primeiros** (não editar). O acesso aparece no mesmo login da área de membros.
+- **Onde aparece:** mensagem 7 e as 4 da noite no Grupo VIP (`GRUPO-VIP-MENSAGENS.md`), a LP (linha "+ Formação
+  completa para os 10 primeiros pedidos pagos", de 10/11 20h até 11/11 0h, `CONFIG.formacao10*` em
+  `assets/js/venda.js`) e o pitch da live (bloco 8b do `LIVE-ROTEIRO.md`).
+- **Operação:** quando a lista fechar, a equipe avisa cada um no WhatsApp do atendimento que a Formação já está na área
+  de membros, e faz os reembolsos marcados na aba.
+
 ## O encontro da Sala VIP (roteiro-base)
 Cerca de 75 minutos, por vídeo, depois que o Guia chegar.
 

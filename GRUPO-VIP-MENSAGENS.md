@@ -97,10 +97,10 @@ ponte de cada caso para a oferta) recriou 28 ações. Os IDs abaixo já são os 
 | 4 | cortada em 07/11 (`j2DrN3qDQrEnft2MnX0O` cancelada) |
 | 5 | `ZbH7Uwi5PkckwEP7iDIh` (07/11; a antiga `wrZc84lnBd4o6uBUN5nc` foi cancelada) |
 | 6 (20h10) | `g59nAEGwnIafB2P6PEcB` |
-| n2115 (10/11, 21h15) | `oqHM4wbmUBDMBwpnFVUT` |
-| n2200 (10/11, 22h) | `O2xbcjiBKpxdGgewfyuc` |
-| n2245 (10/11, 22h45) | `oaoBte3M4gAloEWoZHg7` |
-| n2330 (10/11, 23h30) | `Te493Z3b89Qs5n5ALQ9K` |
+| n2115 (10/11, 21h15) | `KI3LfeaWyMcAx6pl71yO` |
+| n2200 (10/11, 22h) | `dxAGrSCkaHRrWMd1bDB0` |
+| n2245 (10/11, 22h45) | `SCmx3mxx8dgOybRbDRsO` |
+| n2330 (10/11, 23h30) | `9WOz8PLuJT1jwjwTy46n` |
 | 8 | `QIbrYEfC9LEGSDupPtl5` (10/11; a antiga `QcfT2dAm0WrMHnrXCyKo` foi cancelada) |
 | o1111 | `lzqiMrb5aCwk6F0hg8MQ` |
 | C | `hdK9c7icR22LMiC5VxYy` |
@@ -443,41 +443,54 @@ disparar na hora o template de reserva "Live 10/11 · 6 · Estamos ao vivo (@tod
 ## 7 · ~20h27 · quando a Dra. abre o Presente 03 · @todos · manual
 > A Black do Guia de Protocolos está aberta, primeiro para vocês.
 >
-> 📘 Guia de Protocolos · Volume 3, impresso: condutas, doses e cálculos da clínica de pequenos animais, para abrir no
-> meio do atendimento
+> 📘 Guia de Protocolos · Volume 3, impresso
 > 🎁 Curso completo Atendimento Extraordinário
-> 🎁 3 meses na Comunidade Amar Saber, comigo e com a equipe, com encontros ao vivo
+> 🎁 3 meses na Comunidade Amar Saber, com encontros ao vivo
 >
 > Tudo isso soma R$ 1.137,70. Na Black sai por R$ 497 à vista ou 12x de R$ 50,57, com frete grátis por tempo limitado.
 >
-> 🎟️ Os 40 primeiros pedidos pagos entram na Sala VIP: um encontro ao vivo e fechado com a equipe da Amar, para você
-> levar o seu caso. A vaga é por ordem de pagamento, e a sala não está à venda.
+> 🎓 Os 10 primeiros pedidos pagos levam também a Formação Amar Saber completa: os 7 cursos, com 1 ano de acesso.
+> 🎟️ Os 40 primeiros entram na Sala VIP, um encontro ao vivo e fechado com a equipe para levar o seu caso.
+> Vale a ordem de pagamento.
 >
-> O lote é limitadíssimo, e na última Black esgotou rápido. Garanta o seu agora, com o cupom já aplicado:
+> O lote é limitadíssimo. Garanta o seu agora, com o cupom já aplicado:
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=live_1011
 >
 > Se o Guia não servir para você, tem 7 dias para devolver.
 
-*(revisada em 10/11 com o Mateus: frete grátis, Sala VIP por ordem de pagamento e mais urgência do lote · template
-"Live 10/11 · 7" `Bi6cTjsJvSAJUeoOIlIQ` atualizado no SendFlow)*
+*(revisada em 10/11 com o Mateus: frete grátis, Sala VIP por ordem de pagamento e mais urgência do lote; às 17h, a
+Formação dos 10 primeiros entrou e o texto ficou mais curto · template "Live 10/11 · 7" `Bi6cTjsJvSAJUeoOIlIQ`
+atualizado no SendFlow)*
 
 ## Noite da live: Sala VIP (4 agendadas em 10/11, sem número de vagas)
+**Formação dos 10 primeiros (10/11, 17h):** as 4 foram recriadas com uma linha da Formação para os 10 primeiros pedidos
+pagos (regra em `OFERTA-PRIMEIROS-COMPRADORES.md`); as antigas foram canceladas. Antes de cada uma, o Claude confere a
+aba "Formação · 10 primeiros"; se as 10 vagas já fecharam, troca a linha pela versão "preenchida":
+- n2115: "As 10 vagas com a Formação Amar Saber completa já foram preenchidas. A Sala VIP continua recebendo os
+  próximos pedidos."
+- n2200: "A Formação completa dos 10 primeiros já saiu toda. O lote é limitadíssimo e a Sala VIP é só dos 40
+  primeiros. Se você já decidiu, não deixa para amanhã:"
+- n2245: volta à frase sem a Formação.
+- n2330: a linha 🎓 sai.
+
 Aprovadas pelo Mateus em 10/11. Saem para todos os grupos da campanha, sem @todos. Valem como texto da regra (40
 primeiros pedidos pagos, por ordem de pagamento, sem data), então continuam verdadeiras mesmo que as vagas acabem antes.
 
-### n2115 · 21h15 · o que é a Sala VIP *(ação `oqHM4wbmUBDMBwpnFVUT`)*
+### n2115 · 21h15 · o que é a Sala VIP *(ação `KI3LfeaWyMcAx6pl71yO`)*
 > 🎟️ *Sala VIP: só os 40 primeiros*
 >
 > As vagas da Sala VIP já estão sendo preenchidas. Entram os 40 primeiros pedidos pagos desta Black, na ordem do
 > pagamento: um encontro ao vivo e fechado com a equipe da Amar, em que cada um leva o caso que está travando e a gente
 > resolve junto.
 >
+> E os 10 primeiros pedidos pagos levam também a Formação Amar Saber completa, com os 7 cursos.
+>
 > São só 40 porque, com mais gente, não dá para olhar o caso de cada um. Quando fecharem, não abre outra, e a sala não
 > está à venda.
 >
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=live_1011&utm_content=n2115
 
-### n2200 · 22h · prova *(ação `O2xbcjiBKpxdGgewfyuc`)*
+### n2200 · 22h · prova *(ação `dxAGrSCkaHRrWMd1bDB0`)*
 Imagem: `assets/img/depoimento-4.jpg` (depoimento da LP ainda não usado no grupo).
 > Na live de hoje eu resolvi casos com o Guia aberto na câmera. Esse recado é de uma colega que usa o Guia na rotina
 > dela. 💗
@@ -485,26 +498,29 @@ Imagem: `assets/img/depoimento-4.jpg` (depoimento da LP ainda não usado no grup
 > Guia impresso, curso Atendimento Extraordinário e 3 meses de comunidade, com encontros ao vivo, por 12x de R$ 50,57,
 > com frete grátis por tempo limitado.
 >
-> O lote é limitadíssimo, e a Sala VIP é só dos 40 primeiros pedidos pagos. Se você já decidiu, não deixa para amanhã:
+> O lote é limitadíssimo, os 10 primeiros pedidos pagos levam a Formação completa e a Sala VIP é só dos 40 primeiros.
+> Se você já decidiu, não deixa para amanhã:
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=live_1011&utm_content=n2200
 
-### n2245 · 22h45 · o valor *(ação `oaoBte3M4gAloEWoZHg7`)*
+### n2245 · 22h45 · o valor *(ação `SCmx3mxx8dgOybRbDRsO`)*
 > Sei que o valor pesa. Foi o que mais apareceu na pesquisa de vocês.
 >
 > Então a conta: são 12x de R$ 50,57, menos de R$ 2 por dia. É menos do que o Guia sozinho custa fora da Black
 > (R$ 697), e o curso e a comunidade vêm junto.
 >
 > E se não servir para você, tem 7 dias de garantia incondicional, contados do dia em que o Guia chega. O risco fica
-> comigo. O que não espera é o lote, que é limitadíssimo, e as 40 vagas da Sala VIP:
+> comigo. O que não espera é o lote, que é limitadíssimo, a Formação completa dos 10 primeiros e as 40 vagas da Sala
+> VIP:
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=live_1011&utm_content=n2245
 
-### n2330 · 23h30 · a última da noite *(ação `Te493Z3b89Qs5n5ALQ9K`)*
+### n2330 · 23h30 · a última da noite *(ação `9WOz8PLuJT1jwjwTy46n`)*
 > Antes de dormir, o que você leva na Black do Guia de Protocolos:
 >
 > 📘 Guia de Protocolos · Volume 3, impresso (R$ 697)
 > 🎁 Curso completo Atendimento Extraordinário (R$ 297)
 > 🎁 3 meses de comunidade, com encontros ao vivo com a equipe (R$ 143,70)
 > 🎟️ Sala VIP para os 40 primeiros pedidos pagos: essa não tem preço, porque não está à venda
+> 🎓 Formação Amar Saber completa, com os 7 cursos, para os 10 primeiros pedidos pagos
 >
 > Tudo soma R$ 1.137,70. Na Black: R$ 497 à vista ou 12x de R$ 50,57, com frete grátis por tempo limitado.
 >
