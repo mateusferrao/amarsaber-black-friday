@@ -187,6 +187,15 @@ Valores possíveis:
   - **Quiz, Pesquisa da live, Cadastro, Origem do cadastro, Cidade/UF, Email, WhatsApp, Kommo** (link do lead).
   - **Chave:** DDD + 8 últimos dígitos. É por ela que a linha é atualizada; não editar.
 
+## Como a lista sabe que a pessoa comprou
+- **Pelo telefone:** um pedido pago na Yampi com a mesma chave (DDD + 8 últimos dígitos) conta como compra da pessoa.
+- **Pelo e-mail (desde 11/11):** quem pagou com **outro telefone** e o **mesmo e-mail** também conta como compra. Em
+  "O que já tem", a compra aparece com "pago com outro telefone".
+- **Com a compra, a pessoa sai sozinha** de Cartão recusado, Pix não pago e Carrinho abandonado, e vai para a lista
+  certa (por exemplo, "Comprou o Guia, falta a Formação").
+- **A lista atualiza a cada 15 minutos, das 7h às 23h45.** Uma compra feita de madrugada só aparece às 7h.
+- **Não aparece:** compra com outro telefone **e** outro e-mail, e venda fora da Yampi (por exemplo, link da Kiwify).
+
 ## Link da vendedora e automação (as duas não se atropelam)
 - **A automação não entra por cima da vendedora:**
   - se a pessoa abandona o carrinho, deixa o Pix vencer ou tem o cartão recusado **pelo link de uma vendedora**, ela
