@@ -105,28 +105,28 @@ R$ 187 da `/oferta-especial/`), no lugar de `as_alt_plantao`, `as_alt_consulta` 
 **T8 · as_pix_expirou** (Na hora em que o Pix expira; Texto: Maria Paula · Amar Saber; botões Quero o link · Tenho uma dúvida)
 > Oi, {{1}}. Seu Pix expirou, mas o pedido continua aqui.
 >
-> O Guia de Protocolos ainda está na condição de Black Friday. Te mando um link novo agora: dá para pagar no Pix ou parcelar em 12x de R$ 50,57 no cartão.
+> O Guia de Protocolos ainda está na condição de Black Friday. Te mando um link novo agora: dá para pagar no Pix ou parcelar em 12x de R$ 51,40 no cartão.
 >
 > Quer o link?
 
 **T9 · as_cartao_recusado** (10 min depois do cartão recusado; Texto: Maria Paula · Amar Saber; botões Quero o link · Tenho uma dúvida)
 > Oi, {{1}}. O banco barrou o pagamento do seu Guia de Protocolos.
 >
-> Costuma ser limite ou bloqueio de segurança. Dá para tentar outro cartão, parcelar em 12x de R$ 50,57 ou pagar no Pix, e a condição de Black continua valendo.
+> Costuma ser limite ou bloqueio de segurança. Dá para tentar outro cartão, parcelar em 12x de R$ 51,40 ou pagar no Pix, e a condição de Black continua valendo.
 >
 > Quer o link de novo?
 
 **T10 · as_reta_3dias** (Sáb 28/11, 10h (todos que não compraram); Texto: Maria Paula · Amar Saber; botões Quero o link · Tenho uma dúvida)
 > Oi, {{1}}, faltam 3 dias.
 >
-> A Black Friday do Guia de Protocolos termina na segunda, 30/11, às 23h59. Até lá, o Guia impresso vem com o curso Atendimento Extraordinário e 3 meses de comunidade, em 12x de R$ 50,57.
+> A Black Friday do Guia de Protocolos termina na segunda, 30/11, às 23h59. Até lá, o Guia impresso vem com o curso Atendimento Extraordinário e 3 meses de comunidade, em 12x de R$ 51,40.
 >
 > Não deixa essa passar: quer o link?
 
 **T11 · as_ultimo_dia** (Seg 30/11, 9h (todos que não compraram); Texto: Maria Paula · Amar Saber; botões Quero o link · Tenho uma dúvida)
 > Último dia, {{1}}.
 >
-> Hoje às 23h59 a Black Friday do Guia de Protocolos sai do ar, e a oferta inteira acaba junto: o Guia impresso, o curso Atendimento Extraordinário e a comunidade. São 12x de R$ 50,57 só até as 23h59 de hoje.
+> Hoje às 23h59 a Black Friday do Guia de Protocolos sai do ar, e a oferta inteira acaba junto: o Guia impresso, o curso Atendimento Extraordinário e a comunidade. São 12x de R$ 51,40 só até as 23h59 de hoje.
 
 **T12 · as_ultimas_horas** (Seg 30/11, 19h (todos que não compraram); Texto: Maria Paula · Amar Saber; botões Quero o link · Tenho uma dúvida)
 > Oi, {{1}}, faltam 5 horas.
@@ -138,19 +138,19 @@ R$ 187 da `/oferta-especial/`), no lugar de `as_alt_plantao`, `as_alt_consulta` 
 >
 > O curso completo Atendimento Extraordinário (anamnese que conduz, exame físico explicado ao tutor, Técnica do Detetive e pós-consulta) vem com 3 meses na Comunidade Amar Saber.
 >
-> R$ 187 à vista ou 12x de R$ 19,03, só até 30/11.
+> R$ 187 à vista ou 12x de R$ 19,34, só até 30/11.
 
 **T17 · as_curso_pedido** (06/11; carrinho, Pix ou cartão do curso do downsell, R$ 187; Texto: Maria Paula · Amar Saber; botões Quero o link · Tenho uma dúvida; o link é o checkout do curso com BLACKAMARSABERDS)
 > Oi, {{1}}! Seu pedido do curso Atendimento Extraordinário ficou pela metade.
 >
-> O curso completo, com 3 meses na Comunidade Amar Saber, continua por R$ 187 à vista ou 12x de R$ 19,03, só até 30/11. Se travou em alguma coisa no pagamento, me responde aqui que a equipe resolve com você.
+> O curso completo, com 3 meses na Comunidade Amar Saber, continua por R$ 187 à vista ou 12x de R$ 19,34, só até 30/11. Se travou em alguma coisa no pagamento, me responde aqui que a equipe resolve com você.
 >
 > Quer o link?
 
 ## Respostas livres do Salesbot (dentro da janela de 24 h, sem aprovação)
 - **R1 · Quero o link**: "Aqui está o link com a condição de Black Friday: {{link}}
   Se travar em qualquer parte do pagamento, me responde aqui."
-- **R2 · Preço**: "Dá para parcelar em 12x de R$ 50,57 no cartão, ou pagar R$ 497 à vista no Pix ou boleto. Nesse
+- **R2 · Preço**: "Dá para parcelar em 12x de R$ 51,40 no cartão, ou pagar R$ 497 à vista no Pix ou boleto. Nesse
   valor vêm o Guia impresso, o curso completo Atendimento Extraordinário e 3 meses de comunidade, que somados valem
   R$ 1.137,70." [Quero o link] → n8n marca `objecao = preco` e agenda a alternativa em 48 h.
 - **R3 · Entrega**: "O Guia é impresso e sai em até 10 dias úteis depois da confirmação do pagamento. O curso e a
@@ -169,7 +169,7 @@ não mexer no fluxo dos outros produtos da loja. Os 4 abaixo ficam escritos, cas
 - Pré-cabeçalho: A condição de Black Friday continua valendo até 30/11.
 - Corpo: Oi, [nome]. Aqui é a Maria Paula, da Amar Saber. Vi que o seu pedido do Guia de Protocolos ficou pela
   metade. Guardei tudo no carrinho. Na Black Friday, o pedido inclui o Guia de Protocolos Clínicos impresso, o curso
-  completo Atendimento Extraordinário e 3 meses na Comunidade Amar Saber no WhatsApp, por 12x de R$ 50,57 ou R$ 497 à
+  completo Atendimento Extraordinário e 3 meses na Comunidade Amar Saber no WhatsApp, por 12x de R$ 51,40 ou R$ 497 à
   vista. Se alguma coisa travou no pagamento, responda este e-mail ou chame a gente no WhatsApp (31) 9 5349-5052.
 - CTA: **Terminar meu pedido**
 
@@ -189,16 +189,16 @@ não mexer no fluxo dos outros produtos da loja. Os 4 abaixo ficam escritos, cas
 - Corpo: Oi, [nome]. Já são mais de 1.500 Guias de Protocolos vendidos. Esse é um dos recados que recebi:
   [imagem: depoimento]. *Quando chega?* O Guia é impresso e sai em até 10 dias úteis depois da confirmação do
   pagamento; o curso e a comunidade são online, e o acesso chega por e-mail. *Posso parcelar?* Sim, em 12x de
-  R$ 50,57 no cartão, ou R$ 497 à vista no Pix ou boleto. *Serve para mim?* Para quem está começando, é uma base de
+  R$ 51,40 no cartão, ou R$ 497 à vista no Pix ou boleto. *Serve para mim?* Para quem está começando, é uma base de
   conduta; para quem já atende, é a consulta rápida no meio do plantão e o padrão para treinar a equipe.
 - CTA: **Terminar meu pedido**
 
 **E4 · 48 h**
 - Assunto: Seu carrinho da Black ainda está guardado (até 30/11)
-- Pré-cabeçalho: Guia, curso e comunidade por 12x de R$ 50,57 até segunda, 23h59.
+- Pré-cabeçalho: Guia, curso e comunidade por 12x de R$ 51,40 até segunda, 23h59.
 - Corpo: Oi, [nome]. Passando para avisar: a condição de Black Friday do Guia de Protocolos vai até segunda, 30/11,
   às 23h59. Seu carrinho ainda está guardado com o Guia impresso, o curso completo Atendimento Extraordinário e
-  3 meses de comunidade, por 12x de R$ 50,57 ou R$ 497 à vista. Abraço, Maria Paula.
+  3 meses de comunidade, por 12x de R$ 51,40 ou R$ 497 à vista. Abraço, Maria Paula.
 - CTA: **Não perder a condição de Black**
 - Desligar os e-mails na Yampi em 30/11 23h59 (a Yampi não sabe a data final).
 

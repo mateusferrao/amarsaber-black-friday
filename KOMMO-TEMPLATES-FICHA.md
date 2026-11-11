@@ -29,6 +29,31 @@ Os textos validados ficam em `RECUPERACAO-TEMPLATES.md`; esta ficha é a mesma c
 | T13 | `as_alternativa` | Texto: Maria Paula · Amar Saber | — | Quero o link · Tenho uma dúvida |
 | T17 | `as_curso_pedido` (id 45755, 06/11) | Texto: Maria Paula · Amar Saber | — | Quero o link · Tenho uma dúvida |
 
+## Templates `_v2`: parcela da Kiwify (11/11)
+Os links da recuperação passaram a abrir o checkout da Kiwify, onde a parcela é outra:
+- R$ 497 em 12x de **R$ 51,40** (antes R$ 50,57);
+- R$ 187 em 12x de **R$ 19,34** (antes R$ 19,03).
+
+Para não interromper os envios enquanto a Meta analisava, os 7 templates que citam a parcela ganharam cópias `_v2`. O
+texto é o mesmo, só muda o valor da parcela. Os textos abaixo já estão com os valores novos. Os originais continuam no
+Kommo sem uso e podem ser apagados depois da Black.
+
+| Original | Cópia (aprovada 11/11) | Bot que troca o template |
+|---|---|---|
+| `as_pix_expirou` (44111) | `as_pix_expirou_v2` (46857) | `AS · as_pix_expirou` (50213) |
+| `as_cartao_recusado` (44113) | `as_cartao_recusado_v2` (46859)¹ | `AS · as_cartao_recusado` (50215) |
+| `as_reta_3dias` (44125) | `as_reta_3dias_v2` (46861) | `AS · as_reta_3dias` (50249) |
+| `as_ultimo_dia` (44117) | `as_ultimo_dia_v2` (46863) | `AS · as_ultimo_dia` (50217) |
+| `as_vip_lancamento` (44239) | `as_vip_lancamento_v2` (46865) | `AS · as_vip_lancamento` (50563) |
+| `as_alternativa` (44121) | `as_alternativa_v2` (46867) | `AS · as_alternativa` (50219) |
+| `as_curso_pedido` (45755) | `as_curso_pedido_v2` (46869) | `AS · as_curso_pedido` (51865) |
+
+¹ Ficou na categoria **Utilidade** (os outros são Marketing) e sem a vírgula depois do "Oi".
+
+- **Troca nos bots:** quem faz é a equipe, no Kommo, porque a API não edita Salesbots. O bot continua o mesmo, só o
+  template muda. O n8n roda os bots pelo id (mapa `BOTS` em "AS · Kommo enviar (subfluxo)"), então nada muda nele.
+- **No bot `AS · Preço`:** o texto livre do R2 passa a dizer 12x de R$ 51,40.
+
 ## T1a · `as_resultado_plantao`
 
 - **Quando sai:** 15 min depois do teste, para quem teve o plantão como ponto mais sensível
@@ -204,7 +229,7 @@ Quer o link para terminar?
 ```
 Oi, {{1}}. Seu Pix expirou, mas o pedido continua aqui.
 
-O Guia de Protocolos ainda está na condição de Black Friday. Te mando um link novo agora: dá para pagar no Pix ou parcelar em 12x de R$ 50,57 no cartão.
+O Guia de Protocolos ainda está na condição de Black Friday. Te mando um link novo agora: dá para pagar no Pix ou parcelar em 12x de R$ 51,40 no cartão.
 
 Quer o link?
 ```
@@ -222,7 +247,7 @@ Quer o link?
 ```
 Oi, {{1}}. O banco barrou o pagamento do seu Guia de Protocolos.
 
-Costuma ser limite ou bloqueio de segurança. Dá para tentar outro cartão, parcelar em 12x de R$ 50,57 ou pagar no Pix, e a condição de Black continua valendo.
+Costuma ser limite ou bloqueio de segurança. Dá para tentar outro cartão, parcelar em 12x de R$ 51,40 ou pagar no Pix, e a condição de Black continua valendo.
 
 Quer o link de novo?
 ```
@@ -240,7 +265,7 @@ Quer o link de novo?
 ```
 Oi, {{1}}, faltam 3 dias.
 
-A Black Friday do Guia de Protocolos termina na segunda, 30/11, às 23h59. Até lá, o Guia impresso vem com o curso Atendimento Extraordinário e 3 meses de comunidade, em 12x de R$ 50,57.
+A Black Friday do Guia de Protocolos termina na segunda, 30/11, às 23h59. Até lá, o Guia impresso vem com o curso Atendimento Extraordinário e 3 meses de comunidade, em 12x de R$ 51,40.
 
 Não deixa essa passar: quer o link?
 ```
@@ -258,7 +283,7 @@ Não deixa essa passar: quer o link?
 ```
 Último dia, {{1}}.
 
-Hoje às 23h59 a Black Friday do Guia de Protocolos sai do ar, e a oferta inteira acaba junto: o Guia impresso, o curso Atendimento Extraordinário e a comunidade. São 12x de R$ 50,57 só até as 23h59 de hoje.
+Hoje às 23h59 a Black Friday do Guia de Protocolos sai do ar, e a oferta inteira acaba junto: o Guia impresso, o curso Atendimento Extraordinário e a comunidade. São 12x de R$ 51,40 só até as 23h59 de hoje.
 ```
 
 - **Exemplos:** {{1}} = Ana
@@ -292,7 +317,7 @@ Oi, {{1}}! Se o Guia não cabe agora, dá para começar pela consulta.
 
 O curso completo Atendimento Extraordinário (anamnese que conduz, exame físico explicado ao tutor, Técnica do Detetive e pós-consulta) vem com 3 meses na Comunidade Amar Saber.
 
-R$ 187 à vista ou 12x de R$ 19,03, só até 30/11.
+R$ 187 à vista ou 12x de R$ 19,34, só até 30/11.
 ```
 
 - **Exemplos:** {{1}} = Ana
@@ -330,7 +355,7 @@ Para quem está fora do Grupo VIP (cadastrou e não entrou, ou entrou e saiu).
 ```
 Oi, {{1}}! A Black Friday do Guia de Protocolos começou.
 
-O Guia de Protocolos vem com o curso Atendimento Extraordinário e 3 meses de Comunidade Amar Saber, por R$ 497 à vista ou 12x de R$ 50,57. Separados, sairiam por R$ 1.137,70.
+O Guia de Protocolos vem com o curso Atendimento Extraordinário e 3 meses de Comunidade Amar Saber, por R$ 497 à vista ou 12x de R$ 51,40. Separados, sairiam por R$ 1.137,70.
 
 A condição vale até 30/11, ou enquanto o lote durar. Quer o link?
 ```
@@ -369,7 +394,7 @@ Um deles é a maior condição que o Guia já teve, e quem assistir fica sabendo
 ```
 Oi, {{1}}! Seu pedido do curso Atendimento Extraordinário ficou pela metade.
 
-O curso completo, com 3 meses na Comunidade Amar Saber, continua por R$ 187 à vista ou 12x de R$ 19,03, só até 30/11. Se travou em alguma coisa no pagamento, me responde aqui que a equipe resolve com você.
+O curso completo, com 3 meses na Comunidade Amar Saber, continua por R$ 187 à vista ou 12x de R$ 19,34, só até 30/11. Se travou em alguma coisa no pagamento, me responde aqui que a equipe resolve com você.
 
 Quer o link?
 ```
@@ -393,7 +418,7 @@ Se travar em qualquer parte do pagamento, me responde aqui.
 **R2 · Tocou em "Preço" (triagem)**
 
 ```
-Dá para parcelar em 12x de R$ 50,57 no cartão, ou pagar R$ 497 à vista no Pix ou boleto. Nesse valor vêm o Guia impresso, o curso completo Atendimento Extraordinário e 3 meses de comunidade, que somados valem R$ 1.137,70.
+Dá para parcelar em 12x de R$ 51,40 no cartão, ou pagar R$ 497 à vista no Pix ou boleto. Nesse valor vêm o Guia impresso, o curso completo Atendimento Extraordinário e 3 meses de comunidade, que somados valem R$ 1.137,70.
 ```
 Botões: Quero o link
 
