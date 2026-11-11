@@ -43,8 +43,7 @@ Os pedidos da Kiwify aparecem como **`KW-<referência>`**, e as abas ganharam a 
 - **Webhook:**
   - grava o evento cru em **AS · Kiwify eventos**;
   - o nó **Processar** traduz o evento para o formato da Yampi e grava o estado em **AS · Kiwify pedidos**;
-  - em seguida repassa para os outros fluxos, com intervalo de 12 s entre os envios para as planilhas não
-    disputarem a mesma linha.
+  - em seguida repassa para os outros fluxos (intervalo de 12 s entre os envios).
 - **Repasses (interruptores `ENVIAR` no nó Processar):**
 
   | Destino | O que recebe |
@@ -66,6 +65,24 @@ Os pedidos da Kiwify aparecem como **`KW-<referência>`**, e as abas ganharam a 
 - **Teste:** o TESTE BLACK aparece como `TESTE (curso + comunidade)` na comunidade. Assim não entra na Sala VIP nem
   nos 10 primeiros, e o CompraPaga sai como `TESTE-KW-…`, com código de teste.
 
+## Planilha · fila única de gravação (11/11)
+Antes, cada fluxo gravava direto na planilha. Quando dois pedidos chegavam juntos, um sobrescrevia ou duplicava a linha
+do outro, porque o Sheets lê a última linha e só depois escreve. Assim se perderam Lucas, Hemilly e Vitoria, e a aba
+Compras ficou com 7 pedidos da Yampi em dobro, já removidos. A Yampi manda o mesmo `order.paid` duas vezes.
+
+- **Quem põe na fila:** Recuperação (aba Compras), Acessos Black (Comunidade · Acessos) e Vendas por vendedor (Vendas ·
+  Vendedores e Comercial · Black). Eles não gravam mais na planilha: inserem a linha em **AS · Fila da planilha**
+  (Data Table `I5Sf5hYiQoMhVggM`), com `aba`, `chave`, `linha` (JSON) e `status=pendente`.
+- **Quem grava:** **AS · Planilha (fila de gravação)** (`dx1OTMpVBCz7vJau`).
+  - Roda a cada minuto e grava até 10 linhas, **uma de cada vez**, com appendOrUpdate pela chave (Pedido ou, no
+    Comercial, Chave). Sem linha perdida e sem linha duplicada: um evento repetido só atualiza a mesma linha.
+  - Tem tempo máximo de 55 s, para duas execuções nunca se sobreporem.
+  - Erro do Sheets: até 3 tentativas. Se não der, a linha fica com `status=erro` e a mensagem na fila. Para regravar,
+    basta voltar o status para `pendente`.
+- **Vendas por vendedor:** "Ler vendas" junta a planilha com o que ainda está pendente na fila. Assim o upsell herda a
+  vendedora do pedido principal mesmo antes de a linha chegar à planilha.
+- A linha aparece na planilha em até ~1 min depois do evento.
+
 ## Upsell (página `/upsell/`, obrigado do Black e do Downsell)
 - **Como funciona:** o botão é o snippet da Kiwify da oferta `MrKKqps`. `data-upsell-url` e `data-downsell-url` levam
   a `/compra-confirmada/?upsell=aceitou|recusou`.
@@ -83,4 +100,6 @@ Os pedidos da Kiwify aparecem como **`KW-<referência>`**, e as abas ganharam a 
 - **Botões da LP, do quiz e do downsell e links da recuperação (T5–T12):** trocar para a Kiwify depois do teste.
 - **Parcelas:** o texto passa de "12x de R$ 50,57" para "12x de R$ 51,40". Os templates de WhatsApp já aprovados que
   citam o valor seguem com o valor antigo.
-- **Aba Sala VIP:** não tem fórmula. A decisão é ordenar pela hora do pagamento, com Yampi e Kiwify juntas.
+- **Aba Sala VIP:** já tem fórmula. Lista os 40 primeiros pela hora do pagamento, com Yampi e Kiwify juntas.
+- **AS · Comercial (lista):** ao religar, a atualização das 8h, 12h, 16h e 20h também deve gravar a Comercial · Black
+  pela fila, ou num horário em que a fila esteja parada.
