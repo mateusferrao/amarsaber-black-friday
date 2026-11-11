@@ -701,3 +701,7 @@ html.cap-sem-rolagem, html.cap-sem-rolagem body { overflow: hidden; }
 .up-kiwify [id^="kiwify-upsell-cancel-trigger"] { font-family: var(--font) !important; color: rgba(255, 255, 255, .7) !important; }
 .up-kiwify .kiwify-upsell-inline-label { color: #fff !important; font-family: var(--font) !important; }
 .up-kiwify .kiwify-upsell-inline-select { font-family: var(--font) !important; }
+/* Upsell da Kiwify recusado pelo banco (11/11) */
+.ok-upsell-recusado { width: 100%; max-width: 860px; margin-top: 24px; border-color: #ff6b6b; text-align: left; }
+.ok-upsell-recusado[hidden] { display: none; }
+.ok-upsell-recusado__btn { margin-top: 16px; padding: 16px 24px; font-size: 14px; }

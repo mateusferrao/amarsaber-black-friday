@@ -3,6 +3,17 @@
 (function () {
   'use strict';
 
+  // Upsell da Kiwify (11/11): o script da Kiwify manda para upsell=aceitou também quando o banco recusa a cobrança.
+  // Aprovado chega com o token da cobrança na URL; recusado chega sem. Nesse caso mostra o aviso e o link para tentar
+  // de novo (o aviso aparece mesmo com o rastreamento desligado).
+  var q = new URLSearchParams(location.search);
+  var upsellRecusado = q.get('upsell') === 'aceitou' && !q.get('token');
+  var aviso = document.querySelector('[data-upsell-recusado]');
+  if (upsellRecusado && aviso) aviso.hidden = false;
+  // Teste (/upsell-teste/ manda teste=1): o link de tentar de novo vai para o TESTE UPSELL de R$ 5
+  var tentar = document.querySelector('[data-upsell-link]');
+  if (upsellRecusado && tentar && q.get('teste') === '1') tentar.href = 'https://pay.kiwify.com.br/5Venypp?utm_source=upsell&utm_medium=recusado&utm_campaign=teste';
+
   var T = window.asTracking;
   if (!T || T.interno) return;
 
@@ -18,6 +29,11 @@
     if (!PERSONAL.test(key) && !SECRET.test(key) && !/^utm_|^fbclid$/.test(key)) props['checkout_' + key] = value.slice(0, 100);
   });
 
+  if (upsellRecusado) {
+    props.upsell_recusado = true;
+    var link = document.querySelector('[data-upsell-link]');
+    if (link) link.addEventListener('click', function () { T.capture('lp_upsell_tentar_de_novo', { etapa: 'upsell' }, { send_instantly: true }); });
+  }
   T.capture('lp_compra_confirmada', props, { send_instantly: true });
   T.reachStage('comprou');
   if (window.clarity) clarity('upgrade', 'comprou');

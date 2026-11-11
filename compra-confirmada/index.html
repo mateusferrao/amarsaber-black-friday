@@ -32,6 +32,14 @@
     <h1 class="ok-title">Compra <span class="cap-contorno">confirmada.</span></h1>
     <p class="cap-obrigado__text">Veja o que acontece agora.</p>
 
+    <!-- 11/11: upsell da Kiwify recusado pelo banco. O script da Kiwify manda para cá (upsell=aceitou) mesmo quando o
+         banco recusa; aprovado vem com token na URL, recusado vem sem. compra.js mostra este aviso só nesse caso. -->
+    <div class="ok-step ok-upsell-recusado" data-upsell-recusado hidden>
+      <h2>O pagamento da Formação não foi aprovado</h2>
+      <p>Sua compra principal está confirmada e os acessos chegam no seu e-mail. Só a Formação completa foi recusada pelo banco. Você pode tentar de novo com outro cartão ou no Pix, pelo mesmo valor de R$ 297.</p>
+      <a class="btn ok-upsell-recusado__btn" data-upsell-link href="https://pay.kiwify.com.br/6uMOg9c?utm_source=upsell&utm_medium=recusado&utm_campaign=black_upsell">TENTAR DE NOVO A FORMAÇÃO POR R$ 297</a>
+    </div>
+
     <div class="ok-steps">
       <div class="ok-step">
         <h2>Curso e comunidade</h2>
