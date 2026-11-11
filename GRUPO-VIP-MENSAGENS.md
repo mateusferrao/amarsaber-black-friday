@@ -24,6 +24,14 @@ Regras:
   são os mesmos do arquivo; se ela ajustar algo lá, o ajuste vale aqui também.
 - Fim de semana igual a dia útil. A leitura de 31/10–01/11 e 07–08/11 (aba "Grupos · Mensagens") diz se muda.
 
+
+> **11/11, 9h40: mensagens de venda reforçadas (pedido do usuário).** As 22 mensagens de venda direta de 11/11 a 30/11
+> foram trocadas por versões com título em negrito, CAIXA ALTA na urgência, preço riscado
+> (~De R$ 1.137,70~ por *R$ 497*), ⚠️ *O LOTE É LIMITADÍSSIMO*, 🚚 *FRETE GRÁTIS* e 👉 *Garanta o seu agora*.
+> - Os textos valendo estão em `PROPOSTA-MENSAGENS-VENDA-1111.md`. Os textos antigos abaixo ficam só como histórico.
+> - Os IDs abaixo já são os novos.
+> - A p2 (17/11, 12h, depoimento) foi cancelada, a pedido do usuário.
+
 ## Como operar no SendFlow
 - **Teste antes:** toda mensagem nova vai primeiro para a campanha "Teste BF" (grupo de teste, com o operador 93618-8152 como admin) e é
   conferida no celular. Só depois vai para a campanha "Black 2026 · Grupo VIP", para todos os grupos.
@@ -97,13 +105,13 @@ ponte de cada caso para a oferta) recriou 28 ações. Os IDs abaixo já são os 
 | 4 | cortada em 07/11 (`j2DrN3qDQrEnft2MnX0O` cancelada) |
 | 5 | `ZbH7Uwi5PkckwEP7iDIh` (07/11; a antiga `wrZc84lnBd4o6uBUN5nc` foi cancelada) |
 | 6 (20h10) | `g59nAEGwnIafB2P6PEcB` |
-| n2115 (10/11, 21h15) | `HyH3sRZQVDJ8X9geirrM` |
-| n2200 (10/11, 22h) | `9aQBEqPgdknF6t16clNm` |
-| n2245 (10/11, 22h45) | `tQeGcxcRkm91ujgHYTHB` |
-| n2330 (10/11, 23h30) | `lgV0iwuXxqjvMbHWCqX6` |
-| 8 | `0GeP4KrngSdR5Fhrr4L1` (10/11; a antiga `QcfT2dAm0WrMHnrXCyKo` foi cancelada) |
-| o1111 | `Ku8fgirwqBD9bXoRF34m` |
-| C | `M0m5KwrH6PnkFVHaEmdy` |
+| n2115 (10/11, 21h15) | `V9g06S7phEbNNn1xKeLm` |
+| n2200 (10/11, 22h) | `ZJkSlIPv5DXkO0Lg0GOh` |
+| n2245 (10/11, 22h45) | `vvRj2OlbheH0gIiyQQxD` |
+| n2330 (10/11, 23h30) | `QShSTHeVDDKQTPcjZeQr` |
+| 8 | `64uzGH93nWPn0gmeCDZl` (10/11; a antiga `QcfT2dAm0WrMHnrXCyKo` foi cancelada) |
+| o1111 | `dw8u6Dj3J2upklPcKVq3` |
+| C | `ln87EpfyxfqXRot6xTiJ` |
 | caso01 12h | `sn7uqcsuhtw1Q1u3SFpz` |
 | caso01 19h30 | `lmQslywV6hzBCrn5B6V4` |
 | caso02 12h | `etuSITATzwF8ofrMyxJ7` |
@@ -124,27 +132,27 @@ ponte de cada caso para a oferta) recriou 28 ações. Os IDs abaixo já são os 
 | caso09 19h30 | `o4vNFfQ6CoOir6vErtjw` |
 | caso10 12h | `GElso3fOUhUyzMYnowmZ` |
 | caso10 19h30 | `WDktGfStq1JOSC8xkwZa` |
-| o1311 | `zFPYh2p3F2BJ7STsFm6q` |
-| o1411 | `mkIkjx2TmERXczSdUNAR` |
-| o1411b | `970DmaKmu5PXXAdtVW1f` |
-| o1511 | `id6C7GOIAuXzaDYaWAWJ` |
-| o1611 | `IQml1Ay5JT43lLquVlC5` |
-| o1711 | `FY8LPOXR8FmJaBltIoRU` |
-| o1711b | `uHMByzmVUkDvsYktoIUi` |
-| o2011 | `TvtWNmyLXJ42Qhn8oISR` |
-| o2211 | `5slxXDxBRXbW8pgLyoLY` |
-| o2511 | `2FVckyuPaKMTkN49WPdH` |
-| p1 | `jqszzsjeVjOR1zWHjPGN` |
-| p2 | `KH4JiFV4F4Wtv2qqqvgN` |
-| p3 | `0Yoqs0DuHup5ZJpVEbVb` |
-| p4 | `0sLoCUB6AELjM3WV05sy` |
-| p5 | `btZsr7UWxoJWxoAkz9xf` (07/11, +2.000; a antiga `XLA8MVcctkXTve5UDOu0` foi cancelada) |
-| r2711 | `S2AzmrE8Ym7DrMH0GLFA` |
-| r2811 | `gihzPj3sbnFhardjMKLL` |
-| r2911 | `y5aiZmYkFBDwSvlb05rR` |
-| r3011a | `92nHveh96mP8uDDCdNGk` |
-| r3011b | `EBYhbxyXscwb6XdrPtk2` |
-| r3011c | `aoHlwWFtaRhkGJSfbBaA` |
+| o1311 | `niVnvUcXQ5HulYnywlu1` |
+| o1411 | `4B4EOhOvF6Uk1QcLccKx` |
+| o1411b | `J0W2aVrU0qD5yyzj8YjE` |
+| o1511 | `VmkblmSx8LEqr7oyPs64` |
+| o1611 | `LM6Ibhxbgfefuy8hibTX` |
+| o1711 | `aoofdCQcaJlDg1eCuTMQ` |
+| o1711b | `dKTGotYgaa86kjWCRMNK` |
+| o2011 | `d50achuIZEXqkaeGqdss` |
+| o2211 | `WvU5yg7GXy9strpsap0B` |
+| o2511 | `mhyoTJXkJMp8VSDwjhKx` |
+| p1 | `kJ8IeWUW3dUpGtdTS3H1` |
+| p2 | ~~`KH4JiFV4F4Wtv2qqqvgN`~~ cancelada em 11/11 (pedido do usuário) |
+| p3 | `Tz3pMorPRX4IUpqkdG2U` |
+| p4 | `0w0thIShVyifQUNkqE71` |
+| p5 | `IEz5OOgeHkrM2ylBTusG` (07/11, +2.000; a antiga `XLA8MVcctkXTve5UDOu0` foi cancelada) |
+| r2711 | `thdcIFucuZUfAAulIc3G` |
+| r2811 | `dUh25ehULo65qiJ01fwv` |
+| r2911 | `qREOYATWQEszNbbsVVZU` |
+| r3011a | `k7kLQDljXoJoEskN1ymC` |
+| r3011b | `l0ylmIkOPoZ2EfYpQsA3` |
+| r3011c | `1pA6uQAv4IHGwWqndGBg` |
 | E | `A7LrKVosvsZiuGVgNL7o` |
 
 ## Links e UTM
@@ -202,7 +210,7 @@ Na UTMify e no PostHog, o `utm_content` mostra quais casos e quais dias trazem v
 | | seg 16/11, 9h30 | o1611 | Objeção: já tenho o Volume 2 (nova 07/11) | texto, link |
 | | seg 16/11 | caso04 | Gato agressivo na consulta | 12h · 19h30 |
 | | ter 17/11, 9h30 | o1711 | Vídeo da Dra. (ou texto de reserva) (nova 07/11) | vídeo + texto |
-| | ter 17/11, 12h | p2 | Depoimento | imagem + texto |
+| | ~~ter 17/11, 12h~~ | ~~p2~~ | Depoimento | cancelada em 11/11 |
 | | ter 17/11, 19h30 | o1711b | Objeção: e se não servir? (garantia) (nova 07/11) | texto, link |
 | | qua 18/11 | caso05 | Manutenção da atopia | 12h · 19h30 |
 | | qui 19/11 | caso06 | Leishmaniose | 12h · 19h30 |
@@ -511,7 +519,7 @@ aba "Formação · 10 primeiros"; se as 10 vagas já fecharam, troca a linha pel
 Aprovadas pelo Mateus em 10/11. Saem para todos os grupos da campanha, sem @todos. Valem como texto da regra (40
 primeiros pedidos pagos, por ordem de pagamento, sem data), então continuam verdadeiras mesmo que as vagas acabem antes.
 
-### n2115 · 21h15 · o que é a Sala VIP *(ação `HyH3sRZQVDJ8X9geirrM`)*
+### n2115 · 21h15 · o que é a Sala VIP *(ação `V9g06S7phEbNNn1xKeLm`)*
 > 🎟️ *Sala VIP: só os 40 primeiros*
 >
 > As vagas da Sala VIP já estão sendo preenchidas. Entram os 40 primeiros pedidos pagos desta Black, na ordem do
@@ -525,7 +533,7 @@ primeiros pedidos pagos, por ordem de pagamento, sem data), então continuam ver
 >
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=live_1011&utm_content=n2115
 
-### n2200 · 22h · prova *(ação `9aQBEqPgdknF6t16clNm`)*
+### n2200 · 22h · prova *(ação `ZJkSlIPv5DXkO0Lg0GOh`)*
 Imagem: `assets/img/depoimento-4.jpg` (depoimento da LP ainda não usado no grupo).
 > Na live de hoje eu resolvi casos com o Guia aberto na câmera. Esse recado é de uma colega que usa o Guia na rotina
 > dela. 💗
@@ -537,7 +545,7 @@ Imagem: `assets/img/depoimento-4.jpg` (depoimento da LP ainda não usado no grup
 > Se você já decidiu, não deixa para amanhã:
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=live_1011&utm_content=n2200
 
-### n2245 · 22h45 · o valor *(ação `tQeGcxcRkm91ujgHYTHB`)*
+### n2245 · 22h45 · o valor *(ação `vvRj2OlbheH0gIiyQQxD`)*
 > Sei que o valor pesa. Foi o que mais apareceu na pesquisa de vocês.
 >
 > Então a conta: são 12x de R$ 50,57, menos de R$ 2 por dia. É menos do que o Guia sozinho custa fora da Black
@@ -548,7 +556,7 @@ Imagem: `assets/img/depoimento-4.jpg` (depoimento da LP ainda não usado no grup
 > VIP:
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=live_1011&utm_content=n2245
 
-### n2330 · 23h30 · a última da noite *(ação `lgV0iwuXxqjvMbHWCqX6`)*
+### n2330 · 23h30 · a última da noite *(ação `QShSTHeVDDKQTPcjZeQr`)*
 > Antes de dormir, o que você leva na Black do Guia de Protocolos:
 >
 > 📘 Guia de Protocolos · Volume 3, impresso (R$ 697)
@@ -572,7 +580,7 @@ iguais, só com a marcação, e as antigas foram canceladas (os IDs deste docume
 trocada daqui até 30/11 também sai com @todos.
 
 
-## 8 · qua 11/11, 10h · para quem não viu *(ação `0GeP4KrngSdR5Fhrr4L1`)*
+## 8 · qua 11/11, 10h · para quem não viu *(ação `64uzGH93nWPn0gmeCDZl`)*
 > Para quem não conseguiu ver a live ontem, foi isto que eu abri:
 >
 > 📘 Guia de Protocolos · Volume 3, impresso
@@ -593,7 +601,7 @@ trocada daqui até 30/11 também sai com @todos.
 *(revisada e agendada em 10/11 com o Mateus: encontros ao vivo, frete grátis e Sala VIP · a antiga
 `QcfT2dAm0WrMHnrXCyKo` foi cancelada)*
 
-## o1111 · qua 11/11, 15h · começa hoje *(ação `Ku8fgirwqBD9bXoRF34m`)*
+## o1111 · qua 11/11, 15h · começa hoje *(ação `dw8u6Dj3J2upklPcKVq3`)*
 *(aprovada e agendada em 10/11)*
 > Quem garantiu ontem já recebeu no e-mail o acesso ao curso Atendimento Extraordinário e à comunidade. 💗 Dá para
 > começar hoje, enquanto o Guia impresso é preparado (ele sai em até 10 dias úteis).
@@ -614,7 +622,7 @@ Apresenta a série antes do Caso #1, para todo o grupo (a C fala só com quem co
 >
 > Quem já tem o Guia confere a conduta na própria página. Quem ainda não tem vê o que vem dentro antes de decidir.
 
-## C · qui 12/11, 10h · obrigada a quem comprou + urgência *(refeita em 04/11; revisada e reagendada em 10/11, ação M0m5KwrH6PnkFVHaEmdy)*
+## C · qui 12/11, 10h · obrigada a quem comprou + urgência *(refeita em 04/11; revisada e reagendada em 10/11, ação ln87EpfyxfqXRot6xTiJ)*
 Agradece quem comprou (prova de que estão comprando, sem número), mostra que a comunidade já serve antes de o Guia
 chegar e dá urgência e link para quem não comprou. A informação de acesso (e-mail, prazo) saiu do grupo: quem compra já
 recebe por e-mail.
@@ -628,7 +636,7 @@ recebe por e-mail.
 >
 > E fica por aqui: às 12h sai o primeiro Caso do dia, com a enquete.
 
-*(texto revisado em 07/11 · aprovado e agendado em 10/11: ação `M0m5KwrH6PnkFVHaEmdy`; a antiga `VirOMT71bgyZRIp0LaLO` foi cancelada)* Comunidade com encontros ao vivo.
+*(texto revisado em 07/11 · aprovado e agendado em 10/11: ação `ln87EpfyxfqXRot6xTiJ`; a antiga `VirOMT71bgyZRIp0LaLO` foi cancelada)* Comunidade com encontros ao vivo.
 
 ## Caso do dia
 Às 12h o caso e a enquete. Às 19h30 a resposta, com a foto da página do Guia e o
@@ -922,7 +930,7 @@ Imagem: `assets/img/depoimento-1.jpg` (um dos depoimentos da LP).
 > Tudo por R$ 497 à vista ou 12x de R$ 50,57, até 30/11, com 7 dias para devolver se não servir para você:
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=p3
 
-*(texto revisado em 07/11 · aprovado e agendado em 10/11: ação `0Yoqs0DuHup5ZJpVEbVb`; a antiga `rSFLfEChUc1KKCPzODLr` foi cancelada)*
+*(texto revisado em 07/11 · aprovado e agendado em 10/11: ação `Tz3pMorPRX4IUpqkdG2U`; a antiga `rSFLfEChUc1KKCPzODLr` foi cancelada)*
 
 ### p4 · dom 22/11, 12h · dúvidas frequentes
 > Respostas rápidas para as dúvidas mais comuns:
@@ -938,7 +946,7 @@ Imagem: `assets/img/depoimento-1.jpg` (um dos depoimentos da LP).
 >
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=p4
 
-### p5 · qua 25/11, 12h · depoimento *(recriada em 07/11 com +2.000; ação btZsr7UWxoJWxoAkz9xf)*
+### p5 · qua 25/11, 12h · depoimento *(recriada em 07/11 com +2.000; ação IEz5OOgeHkrM2ylBTusG)*
 Imagem: `assets/img/depoimento-2.jpg`.
 > Mais de 2.000 Guias de Protocolos já foram vendidos. Este é um dos recados que chegam para a gente. 💗
 >
@@ -950,7 +958,7 @@ Completam o ritmo de 3 por dia até 17/11 e de 2 por dia de 18 a 26/11. Cada uma
 da live (o valor, "serve para o meu momento", o prazo, "já tenho uma edição anterior", decidir sozinho). A o1111
 fica logo depois da 8. Provas disponíveis: depoimentos da LP e alguns vídeos novos da Dra.
 
-### o1311 · sex 13/11, 9h30 · o valor *(ação `zFPYh2p3F2BJ7STsFm6q`)*
+### o1311 · sex 13/11, 9h30 · o valor *(ação `niVnvUcXQ5HulYnywlu1`)*
 *(aprovada e agendada em 10/11)*
 > "O valor" foi a resposta mais marcada na pesquisa da live. Então vamos à conta.
 >
@@ -959,7 +967,7 @@ fica logo depois da 8. Provas disponíveis: depoimentos da LP e alguns vídeos n
 > plantão:
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=o1311
 
-### o1411 · sáb 14/11, 9h30 · serve para o meu momento? *(ação `mkIkjx2TmERXczSdUNAR`)*
+### o1411 · sáb 14/11, 9h30 · serve para o meu momento? *(ação `4B4EOhOvF6Uk1QcLccKx`)*
 *(aprovada e agendada em 10/11)*
 > Muita gente que respondeu a pesquisa ainda está na faculdade ou se formou há pouco. E a pergunta é sempre a mesma:
 > "serve para o meu momento?"
@@ -970,7 +978,7 @@ fica logo depois da 8. Provas disponíveis: depoimentos da LP e alguns vídeos n
 > Para quem já atende, é a consulta rápida no meio do atendimento:
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=o1411
 
-### o1411b · sáb 14/11, 19h30 · decidir sozinho *(ação `970DmaKmu5PXXAdtVW1f`)*
+### o1411b · sáb 14/11, 19h30 · decidir sozinho *(ação `J0W2aVrU0qD5yyzj8YjE`)*
 *(aprovada e agendada em 10/11)* A frase é da pesquisa, sem nome.
 > Uma frase da pesquisa ficou comigo: "peço ajuda a algum colega, mas nem sempre respondem na hora. Me sinto inútil
 > nessas horas."
@@ -981,14 +989,14 @@ fica logo depois da 8. Provas disponíveis: depoimentos da LP e alguns vídeos n
 > Na Black, são 3 meses de comunidade junto com o Guia e o curso:
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=o1411b
 
-### o1511 · dom 15/11, 9h30 · depoimento *(ação `id6C7GOIAuXzaDYaWAWJ`)*
+### o1511 · dom 15/11, 9h30 · depoimento *(ação `VmkblmSx8LEqr7oyPs64`)*
 *(aprovada e agendada em 10/11)* Imagem: `assets/img/depoimento-5.jpg`.
 > Bom domingo! 💗 Esse recado chegou de uma colega que usa o Guia no plantão.
 >
 > Guia impresso, curso e 3 meses de comunidade, com frete grátis por tempo limitado, até 30/11 ou enquanto o lote durar:
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=o1511
 
-### o1611 · seg 16/11, 9h30 · já tenho o Volume 2 *(ação `IQml1Ay5JT43lLquVlC5`)*
+### o1611 · seg 16/11, 9h30 · já tenho o Volume 2 *(ação `LM6Ibhxbgfefuy8hibTX`)*
 *(aprovada e agendada em 10/11)*
 > "Já tenho o Volume 2. Vale a pena?"
 >
@@ -997,7 +1005,7 @@ fica logo depois da 8. Provas disponíveis: depoimentos da LP e alguns vídeos n
 > vacinas pela WSAVA. E na Black ele vem junto com o curso Atendimento Extraordinário e 3 meses de comunidade:
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=o1611
 
-### o1711 · ter 17/11, 9h30 · vídeo da Dra. *(ação `FY8LPOXR8FmJaBltIoRU`)*
+### o1711 · ter 17/11, 9h30 · vídeo da Dra. *(ação `aoofdCQcaJlDg1eCuTMQ`)*
 *(aprovada e agendada em 10/11)* Vídeo vertical da Dra., de até 1 min, sobre a dor do plantão (ela no lugar de quem trava na dose às 3h da manhã).
 **Sem vídeo (decisão de 10/11): agendado o texto de reserva:** "Três da manhã, um cão em choque na mesa, e a dose do fluido precisa
 sair agora. É para esse minuto que o Guia existe: a conduta, a dose e o cálculo na mesma página, para consultar com o
@@ -1005,7 +1013,7 @@ paciente na sua frente."
 > Gravei esse recado para quem ainda está pensando. ⬇️
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=o1711
 
-### o1711b · ter 17/11, 19h30 · e se não servir? *(ação `uHMByzmVUkDvsYktoIUi`)*
+### o1711b · ter 17/11, 19h30 · e se não servir? *(ação `dKTGotYgaa86kjWCRMNK`)*
 *(aprovada e agendada em 10/11)*
 > "E se eu receber e não for o que eu esperava?"
 >
@@ -1013,7 +1021,7 @@ paciente na sua frente."
 > não serviu: devolve e recebe o valor de volta.
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=o1711b
 
-### o2011 · sex 20/11, 19h30 · faltam 10 dias *(ação `TvtWNmyLXJ42Qhn8oISR`)*
+### o2011 · sex 20/11, 19h30 · faltam 10 dias *(ação `d50achuIZEXqkaeGqdss`)*
 *(aprovada e agendada em 10/11)*
 > Faltam 10 dias para a Black do Guia acabar, e o lote não espera o dia 30. Na última Black, ele esgotou antes do
 > prazo.
@@ -1021,7 +1029,7 @@ paciente na sua frente."
 > Guia impresso, curso Atendimento Extraordinário e 3 meses de comunidade por R$ 497 ou 12x de R$ 50,57, com frete grátis por tempo limitado:
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=o2011
 
-### o2211 · dom 22/11, 19h30 · o plantão de domingo *(ação `5slxXDxBRXbW8pgLyoLY`)*
+### o2211 · dom 22/11, 19h30 · o plantão de domingo *(ação `WvU5yg7GXy9strpsap0B`)*
 *(aprovada e agendada em 10/11)* Se a Dra. mandar um 2º vídeo, ele entra aqui no lugar do texto.
 > Domingo é dia de plantão para muita gente aqui.
 >
@@ -1029,7 +1037,7 @@ paciente na sua frente."
 > dose e o cálculo na mesma página, para consultar com o paciente na sua frente.
 > https://black.amarsaber.com.br/?utm_source=whatsapp&utm_medium=grupo_vip&utm_campaign=black_carrinho&utm_content=o2211
 
-### o2511 · qua 25/11, 19h30 · depoimento + faltam 5 dias *(ação `2FVckyuPaKMTkN49WPdH`)*
+### o2511 · qua 25/11, 19h30 · depoimento + faltam 5 dias *(ação `mhyoTJXkJMp8VSDwjhKx`)*
 *(aprovada e agendada em 10/11)* Imagem: `assets/img/depoimento-6.jpg`.
 > Mais um recado de quem usa o Guia na rotina. 💗
 >
