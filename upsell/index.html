@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Complete a sua Formação – Amar Saber</title>
+  <meta name="robots" content="noindex">
+
+  <link rel="icon" href="../assets/img/favicon-150.png" sizes="32x32">
+  <link rel="icon" href="../assets/img/favicon-300.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/img/favicon-300.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Sora:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="../assets/css/captura.css">
+
+  <!-- ===== UPSELL DA KIWIFY (11/11) =====
+       Página de obrigado do Black e do Downsell na Kiwify. O script da Kiwify lê o token da compra na URL e cobra
+       a Formação (oferta MrKKqps, R$ 297) no mesmo cartão em 1 clique; no Pix, gera um QR novo aqui mesmo.
+       data-upsell-url / data-downsell-url: destino depois de aceitar / recusar (sem eles a Kiwify manda para a
+       área de membros dela, que os nossos produtos não usam). upsell.js manda os eventos do PostHog. -->
+  <script src="../assets/js/tracking.js" defer></script>
+  <script src="../assets/js/upsell.js" defer></script>
+</head>
+<body data-etapas="comprou">
+  <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1393732806282634&ev=PageView&noscript=1"></noscript>
+
+  <div class="cap-faixa" role="note" aria-label="Seu pedido foi recebido. Oferta única nesta página.">
+    <div class="cap-faixa__trilha" aria-hidden="true">
+      <div class="cap-faixa__grupo"><span>Pedido recebido</span><span>Oferta única nesta página</span><span>Formação completa</span><span>R$ 297</span><span>Pedido recebido</span><span>Oferta única nesta página</span><span>Formação completa</span><span>R$ 297</span></div>
+      <div class="cap-faixa__grupo"><span>Pedido recebido</span><span>Oferta única nesta página</span><span>Formação completa</span><span>R$ 297</span><span>Pedido recebido</span><span>Oferta única nesta página</span><span>Formação completa</span><span>R$ 297</span></div>
+    </div>
+  </div>
+
+  <section class="ds-oferta up-oferta" data-secao="upsell">
+    <div class="cap-container ds-oferta__inner">
+      <img class="ds-logo" src="../assets/img/logo-amarsaber.png" width="254" height="152" alt="Amar Saber">
+
+      <p class="up-ok">Seu pedido foi recebido. Os acessos chegam no seu e-mail.</p>
+      <h1 class="ds-title">Você já tem 1 dos 7 <span class="cap-contorno">cursos da Formação</span></h1>
+      <p class="ds-sub">Complete agora com os outros 6 por R$&nbsp;297. O preço normal da Formação é R$&nbsp;697.</p>
+
+      <ul class="ds-list">
+        <li><b>Entre o plantão e o medo:</b> telefone, classificação de risco, trauma, fluidoterapia e transfusão</li>
+        <li><b>Leitura de hemograma:</b> eritrograma, plaquetas e leucograma, com casos reais</li>
+        <li><b>Clínica de felinos:</b> consulta, contenção e coleta de sangue sem estresse</li>
+        <li><b>Casos clínicos:</b> 25 casos atendidos na Amar, do diagnóstico à evolução</li>
+        <li><b>Procedimentos veterinários:</b> coletas, sondas, intubação, sedação e transfusão na prática</li>
+        <li><b>Cálculos, exames e condutas:</b> dose oral, injetável e em UI, bioquímico e urinálise</li>
+      </ul>
+
+      <p class="ds-de">Preço normal da Formação <span class="ds-red">R$&nbsp;697,00</span></p>
+      <p class="ds-but">Só nesta página, os 6 cursos saem por</p>
+      <p class="ds-price"><span>12x</span>R$&nbsp;30,72</p>
+      <p class="ds-cash">ou R$&nbsp;297,00 à vista</p>
+
+      <p class="ds-note">111 aulas curtas · 1 ano de acesso · certificado em cada curso · 7 dias de garantia</p>
+      <p class="up-como">No cartão, a cobrança é no mesmo cartão da compra, em 1 clique. No Pix, o código aparece aqui mesmo.</p>
+
+      <!-- Botão da Kiwify (gerador de upsell, oferta "Formação Completa · Oferta pós-compra") -->
+      <div class="up-kiwify" id="kiwify-upsell-MrKKqps"
+           data-upsell-url="https://black.amarsaber.com.br/compra-confirmada/?upsell=aceitou"
+           data-downsell-url="https://black.amarsaber.com.br/compra-confirmada/?upsell=recusou"
+           style="--kiwify-upsell-accept-bg:#00a313;--kiwify-upsell-accept-color:#FFFFFF">
+        <button id="kiwify-upsell-trigger-MrKKqps">Sim, quero completar a Formação por R$ 297</button>
+        <div id="kiwify-upsell-cancel-trigger-MrKKqps">Não, quero perder essa oportunidade</div>
+      </div>
+      <script src="https://snippets.kiwify.com/upsell-v2/upsell.min.js"></script>
+    </div>
+  </section>
+
+  <footer class="cap-footer">
+    <div class="cap-container cap-footer__inner">
+      <p class="cap-footer__copy">© Amar Saber. Todos os direitos reservados.</p>
+      <nav class="cap-footer__nav" aria-label="Rodapé">
+        <a href="https://amarsaber.com.br/termos-e-condicoes/">Termos e Condições</a>
+        <a href="https://amarsaber.com.br/politica-de-privacidade/">Política de Privacidade</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
