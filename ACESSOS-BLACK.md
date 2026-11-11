@@ -83,25 +83,49 @@ vaga ao próximo. Lista na tabela "AS · Formação 10" e na aba **Formação ·
 
 ## Memberkit: liberação garantida pelo n8n (desde 11/11)
 - **O problema:** a integração nativa Yampi → Memberkit deixou **41 dos 82 compradores pagos sem acesso** ao curso.
-  - Em parte deles, o curso ficou **inativo**: em geral eram pessoas com cartão recusado antes do pagamento aprovado.
-  - Os outros **nunca foram cadastrados** no Memberkit.
+  - 15 ficaram com o curso **inativo**, em geral pessoas com cartão recusado antes do pagamento aprovado.
+  - 26 **nunca foram cadastrados** no Memberkit.
+- **Causa** (conferida em 11/11 pelo histórico de status de cada pedido):
+  1. **Cartão aprovado na hora:** o pedido já nasce "pago", sem passar por "aguardando pagamento".
+     - Em 06/11, o `order.created` saiu dos dois webhooks do Memberkit, para o Pix não pago parar de mandar o e-mail
+       de acesso. Sobrou só o `order.status.updated`.
+     - Como o status desses pedidos nunca muda, a Yampi não avisava o Memberkit.
+     - Nenhum dos 43 pagamentos no cartão aprovado na hora recebeu acesso pela integração. O upsell também nasce
+       pago, então caiu no mesmo caso.
+     - Os que tinham cadastro inativo receberam antes o aviso de um pedido recusado ou cancelado, mas não o do pago.
+  2. **Pix pago com um pedido antigo ainda aberto:**
+     - o pedido antigo expira 30 min depois, como "cancelado", quando o novo já está pago;
+     - o Memberkit recebe esse "cancelado" e desativa o curso;
+     - aconteceu com 3 pessoas.
+  3. **E-mail digitado errado na compra:** 1 pessoa (gamil).
+  - O Pix que passa de "aguardando" para "pago", sem pedido antigo aberto, funcionou normalmente.
+- **Correção de 11/11:**
+  - o `order.paid` (Pedido aprovado) entrou nos dois webhooks do Memberkit, para o curso e a Formação. Ele só
+    dispara no pagamento, então o Pix não pago continua sem e-mail;
+  - o fluxo abaixo passou a rodar a cada 5 min e a reenviar quem teve outro pedido cancelado ou recusado na última
+    hora.
   - Caso real: a Maryana Moura pagou o Guia e a Formação, mas ficou com o curso inativo e sem a Formação.
 - **Em 11/11, ~10h:**
   - os 41 foram liberados pela API: curso 38626 por 1 ano a partir do pagamento, e a Formação 38676 para quem
     comprou;
   - uma nova conferência deu os 82 com acesso ativo.
 - **Fluxo novo "AS · Memberkit · garantir acesso"** (n8n `98WvEhMsY8fsd4zr`):
-  - **a cada 15 min:** lê os pedidos pagos na Yampi desde 27/10 e libera no Memberkit quem ainda não foi liberado por
+  - **a cada 5 min:** lê os pedidos pagos na Yampi desde 27/10 e libera no Memberkit quem ainda não foi liberado por
     ele (tabela **"AS · Memberkit liberados"**, chave `email|nível`):
     - curso 38626: front, downsell, esteira;
     - Formação 38676: upsell/bump, Formação de comprador, esteira;
+  - **a cada 5 min, também:** reenvia a liberação de quem pagou e tem outro pedido que virou cancelado ou recusado
+    na última hora. Isso desfaz a desativação do caso 2 da causa;
   - **todo dia às 6h15:** reenvia a liberação de todos os pedidos pagos, o que conserta quem a integração nativa
     desativar;
   - **reembolso ou estorno:** o pedido deixa de estar "pago" e não é mais reenviado. O bloqueio continua com a
     integração nativa do Memberkit;
   - **e-mail digitado errado na compra:** é corrigido na lista `CORRIGIR` do nó "Decidir" (hoje, a Giullya).
-- **A integração nativa continua ligada.** Os dois avisos da Yampi para o Memberkit (curso e Formação) seguem ativos;
-  o fluxo novo só garante a liberação.
+- **A integração nativa continua ligada.** Os dois avisos da Yampi para o Memberkit seguem ativos:
+  - curso (1774262): `order.status.updated` + `order.paid`;
+  - Formação (1775941): `order.updated` + `order.status.updated` + `order.paid`.
+
+  O fluxo novo só garante a liberação.
 
 ## Onde está cada coisa
 
