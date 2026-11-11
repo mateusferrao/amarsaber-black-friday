@@ -193,7 +193,8 @@ Valores possíveis:
   "O que já tem", a compra aparece com "pago com outro telefone".
 - **Com a compra, a pessoa sai sozinha** de Cartão recusado, Pix não pago e Carrinho abandonado, e vai para a lista
   certa (por exemplo, "Comprou o Guia, falta a Formação").
-- **A lista atualiza a cada 15 minutos, das 7h às 23h45.** Uma compra feita de madrugada só aparece às 7h.
+- **A lista atualiza a cada 30 minutos, das 7h às 23h30** (desde 11/11; antes era a cada 15 min). Uma compra feita
+  de madrugada só aparece às 7h.
 - **Não aparece:** compra com outro telefone **e** outro e-mail, e venda fora da Yampi (por exemplo, link da Kiwify).
 
 ## Link da vendedora e automação (as duas não se atropelam)
@@ -205,6 +206,29 @@ Valores possíveis:
 
   Vale para os produtos front, downsell, esteira e Formação de comprador.
 - **A vendedora não entra por cima da automação:** enquanto a sequência roda, a pessoa fica em ⏳.
+
+## Conversou no Kommo, vira dela no painel (desde 11/11)
+As vendedoras respondem muita gente direto no Kommo (quem escreveu, Central de Conversas, Recuperação Black), sem
+passar pelo painel. O fluxo **"AS · Comercial (conversa Kommo → painel)"** (n8n `CqO7hDmqQabmYtrG`) roda a cada
+5 min, das 7h às 23h, nos minutos 2, 7, 12… Esses minutos ficam longe das regravações da lista, às :00 e às :30.
+- **O que ele lê:** as mensagens mandadas por pessoas nas últimas 12 h, da Heid, da Ana e do usuário "Amar Saber".
+  Toda mensagem do "Amar Saber" conta como da **Belle**, inclusive as do admin, que usa o mesmo usuário.
+  - Template, bot e Salesbot não contam: no Kommo, o autor dessas mensagens é o robô.
+- **O que ele faz, pela pessoa (achada pelo telefone ou pelo e-mail):**
+  1. **Vendedora:** a primeira que mandou mensagem vira a Vendedora, se a coluna estiver vazia. Nunca troca uma
+     vendedora já preenchida.
+  2. **Status do contato:** se estiver vazio, vira "Respondeu" (a pessoa mandou mensagem) ou "Chamei" (só a
+     vendedora falou).
+  3. **Automação:** para. As linhas da fila viram `vendedora`, e entra uma linha `vendedora` para quem não tinha
+     nenhuma.
+  4. **Kommo:** o lead da conversa e o contato passam a ter a vendedora como responsável.
+     - Só muda quando o responsável atual é o "Amar Saber" ou ninguém.
+     - Não muda para quem já comprou, para não puxar a venda para o bônus "a validar".
+- **Não mexe:** em ✅ Comprou tudo e ⛔ Não chamar, em números da equipe e em conversas sem telefone ou e-mail
+  que estejam na aba.
+- **"Soltar" no painel continua valendo.** O registro fica na tabela "AS · Comercial conversas". A pessoa só volta a
+  ser da vendedora se ela mandar mensagem nova depois de soltar.
+  - O "Soltar" não devolve a pessoa à automação.
 
 ## De onde vêm os dados (fluxo "AS · Comercial (lista)", n8n `DU3pXpHMjMZ6hLZP`)
 - **Yampi:** pedidos desde 27/10 (pagos, estornados e aguardando pagamento) dos produtos:
