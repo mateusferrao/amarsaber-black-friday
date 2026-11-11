@@ -81,6 +81,28 @@ com o Guia a partir de 10/11 às 20h ganham a assinatura 38676 (Formação compl
 vaga ao próximo. Lista na tabela "AS · Formação 10" e na aba **Formação · 10 primeiros**. Regra completa em
 `OFERTA-PRIMEIROS-COMPRADORES.md`.
 
+## Memberkit: liberação garantida pelo n8n (desde 11/11)
+- **O problema:** a integração nativa Yampi → Memberkit deixou **41 dos 82 compradores pagos sem acesso** ao curso.
+  - Em parte deles, o curso ficou **inativo**: em geral eram pessoas com cartão recusado antes do pagamento aprovado.
+  - Os outros **nunca foram cadastrados** no Memberkit.
+  - Caso real: a Maryana Moura pagou o Guia e a Formação, mas ficou com o curso inativo e sem a Formação.
+- **Em 11/11, ~10h:**
+  - os 41 foram liberados pela API: curso 38626 por 1 ano a partir do pagamento, e a Formação 38676 para quem
+    comprou;
+  - uma nova conferência deu os 82 com acesso ativo.
+- **Fluxo novo "AS · Memberkit · garantir acesso"** (n8n `98WvEhMsY8fsd4zr`):
+  - **a cada 15 min:** lê os pedidos pagos na Yampi desde 27/10 e libera no Memberkit quem ainda não foi liberado por
+    ele (tabela **"AS · Memberkit liberados"**, chave `email|nível`):
+    - curso 38626: front, downsell, esteira;
+    - Formação 38676: upsell/bump, Formação de comprador, esteira;
+  - **todo dia às 6h15:** reenvia a liberação de todos os pedidos pagos, o que conserta quem a integração nativa
+    desativar;
+  - **reembolso ou estorno:** o pedido deixa de estar "pago" e não é mais reenviado. O bloqueio continua com a
+    integração nativa do Memberkit;
+  - **e-mail digitado errado na compra:** é corrigido na lista `CORRIGIR` do nó "Decidir" (hoje, a Giullya).
+- **A integração nativa continua ligada.** Os dois avisos da Yampi para o Memberkit (curso e Formação) seguem ativos;
+  o fluxo novo só garante a liberação.
+
 ## Onde está cada coisa
 
 | Sistema | Item |
