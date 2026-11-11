@@ -8,7 +8,7 @@
 
   var CONFIG = {
     destino: '/oferta-especial/',
-    checkoutHost: 'seguro.amarsaberstore.com.br',
+    checkoutHosts: ['seguro.amarsaberstore.com.br', 'pay.kiwify.com.br'],   // Yampi e Kiwify (11/11)
     checkoutMinutos: 60   // volta do checkout depois disso não conta
   };
   var SHOWN = 'as_downsell';
@@ -59,7 +59,7 @@
 
   // ---------- Volta do checkout ----------
   document.addEventListener('click', function (e) {
-    var link = e.target.closest('a[href*="' + CONFIG.checkoutHost + '"]');
+    var link = e.target.closest(CONFIG.checkoutHosts.map(function (h) { return 'a[href*="' + h + '"]'; }).join(', '));
     if (!link || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || link.target === '_blank') return;
     set(CHECKOUT, String(Date.now()));
   });

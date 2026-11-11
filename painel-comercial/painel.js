@@ -50,13 +50,14 @@
 
   // ---------- Links de cada vendedora (VENDEDORES.md) ----------
   var SLUG = { Heid: 'heid', Ana: 'ana', Belle: 'belle' };
-  var B = 'https://seguro.amarsaberstore.com.br/r/';
+  // 11/11: links da Kiwify (preço da Black direto, sem cupom). A UTM marca a vendedora (Vendas · Vendedores).
+  var B = 'https://pay.kiwify.com.br/';
   function utm(s, t) { return 'utm_source=vendedor&utm_medium=whatsapp_1a1&utm_campaign=black_vendas&utm_content=' + s + '&utm_term=' + t; }
   var PRODUTOS = {
-    front: { nome: 'Guia + curso + comunidade · R$ 497', url: function (s) { return B + 'LUIR27AS3L?promocode=BLACKAMARSABER&' + utm(s, 'front'); } },
-    esteira: { nome: 'Esteira completa (Guia + Formação) · R$ 794', url: function (s) { return B + 'MOXSHIVAJY?promocode=BLACKESTEIRA&' + utm(s, 'esteira'); } },
-    upsell: { nome: 'Formação para quem já comprou · R$ 297', url: function (s) { return B + 'OXZJFHDY7F?' + utm(s, 'upsell'); } },
-    downsell: { nome: 'Só curso + comunidade · R$ 187', url: function (s) { return B + '5PS9VFMQHI?promocode=BLACKAMARSABERDS&' + utm(s, 'downsell'); } }
+    front: { nome: 'Guia + curso + comunidade · R$ 497', url: function (s) { return B + 't4PJOip?' + utm(s, 'front'); } },
+    esteira: { nome: 'Esteira completa (Guia + Formação) · R$ 794', url: function (s) { return B + 'uKUsGJd?' + utm(s, 'esteira'); } },
+    upsell: { nome: 'Formação para quem já comprou · R$ 297', url: function (s) { return B + '6uMOg9c?' + utm(s, 'upsell'); } },
+    downsell: { nome: 'Só curso + comunidade · R$ 187', url: function (s) { return B + 'ysYUkuP?' + utm(s, 'downsell'); } }
   };
   function produtoIndicado(mandar) {
     if (/^Upsell/.test(mandar)) return 'upsell';

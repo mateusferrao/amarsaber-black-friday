@@ -11,7 +11,7 @@
     posthog: { key: 'phc_w7v3y2rN3kkwfEbV8n7wVzoAzYEU7pNMBJWGpvWTaB9R', host: 'https://us.i.posthog.com' },
     clarityId: 'z2xmncb9r0',
     product: { id: 'guia-protocolos', name: 'Guia de Protocolos Clínicos', value: 497, currency: 'BRL' },
-    checkoutHost: 'seguro.amarsaberstore.com.br',
+    checkoutHosts: ['seguro.amarsaberstore.com.br', 'pay.kiwify.com.br'],   // Yampi e Kiwify (11/11)
     offerSection: '#secao-oferta',
     engagedSeconds: 30,     // tempo com a aba visível para contar como visita engajada
     attributionDays: 7,     // mesmo prazo da UTMify
@@ -127,7 +127,7 @@
     var hasUtm = UTM_KEYS.some(function (k) { return params.get(k); });
     var hasFbclid = !!params.get('fbclid');
     // Voltar do checkout ou recarregar a página não é uma nova origem.
-    var referrer = /amarsaber(store)?\.com\.br|localhost/.test(document.referrer) ? '' : document.referrer;
+    var referrer = /amarsaber(store)?\.com\.br|kiwify\.com(\.br)?|localhost/.test(document.referrer) ? '' : document.referrer;
     var stored = load('as_origem');
     var fresh = stored && Date.now() - stored.salvo_em < CONFIG.attributionDays * 864e5;
 
@@ -348,11 +348,11 @@
     if (!link) return;
     var href = link.getAttribute('href') || '';
 
-    if (href.indexOf(CONFIG.checkoutHost) !== -1) {
+    if (CONFIG.checkoutHosts.some(function (h) { return href.indexOf(h) !== -1; })) {
       // Nomes por página: na LP ClickCheckout / lp_checkout; no downsell, os do <body>.
       var checkoutStage = page.etapaCheckout || 'clicou_checkout';
       metaTrack(page.eventoCheckout || 'ClickCheckout', productParams, true);
-      // send_instantly: a página vai sair para a Yampi, não espera o lote.
+      // send_instantly: a página vai sair para o checkout (Yampi ou Kiwify), não espera o lote.
       // posicao (09/11): qual botão de compra (oferta, fechamento na LP; oferta, final no teste). null = botão sem data-cta.
       capture(page.eventoCheckoutPh || 'lp_checkout', { valor: product.value, segundos_na_pagina: secondsOnPage(), posicao: link.dataset.cta || null, etapa: 'intencao' }, { send_instantly: true });
       reachStage(checkoutStage);

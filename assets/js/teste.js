@@ -591,7 +591,7 @@
     offerSeen.observe(offerSection);
   }
   document.addEventListener('click', function (e) {
-    if (e.target.closest('a[href*="seguro.amarsaberstore.com.br"]')) setStage('checkout');
+    if (e.target.closest('a[href*="seguro.amarsaberstore.com.br"], a[href*="pay.kiwify.com.br"]')) setStage('checkout');
   }, true);
 
   resultBox.querySelector('.resultado__refazer').addEventListener('click', function () {

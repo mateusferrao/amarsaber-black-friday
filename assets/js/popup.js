@@ -18,7 +18,7 @@
     subidaPx: 500,              // (c) quanto sobe…
     subidaMs: 600,              // …em quanto tempo
     pausaHoras: 24,             // fechado sem clicar: quanto tempo sem mostrar de novo
-    checkoutHost: 'seguro.amarsaberstore.com.br',
+    checkoutHosts: ['seguro.amarsaberstore.com.br', 'pay.kiwify.com.br'],   // Yampi e Kiwify (11/11)
     whats: '5531953495052',
     mensagem: 'Oi! Estou na página da Black do Guia de Protocolos e tenho uma dúvida antes de comprar.'
   };
@@ -26,7 +26,7 @@
   var CHAVE = B.popupChave ? '_' + B.popupChave : '';
   var VISTO = 'as_popup' + CHAVE;               // sessionStorage: já abriu nesta aba
   var FECHADO = 'as_popup_fechado' + CHAVE;     // localStorage: quando foi fechado sem clicar no WhatsApp
-  var TEXTO = B.popupTexto || 'São 12x de R$ 50,57, menos de R$ 1,69 por dia. E se o Guia não servir para você, ' +
+  var TEXTO = B.popupTexto || 'São 12x de R$ 51,40, menos de R$ 1,69 por dia. E se o Guia não servir para você, ' +
     'tem 7 dias de garantia depois de receber.';
   if (B.popupMensagem) CONFIG.mensagem = B.popupMensagem;
 
@@ -93,7 +93,7 @@
     var a = e.target.closest('a');
     if (!a) return;
     var href = a.getAttribute('href') || '';
-    if (href.indexOf(CONFIG.checkoutHost) !== -1) { foiCheckout = true; pararGatilhos(); }
+    if (CONFIG.checkoutHosts.some(function (h) { return href.indexOf(h) !== -1; })) { foiCheckout = true; pararGatilhos(); }
     else if (href.charAt(0) === '#') ignorarRolagemAte = Date.now() + 1500; // rolagem dos CTAs âncora não conta
   }, true);
 
