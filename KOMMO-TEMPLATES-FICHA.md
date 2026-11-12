@@ -721,3 +721,218 @@ está no fluxo n8n "AS · Comercial (respostas)" e não fica no repositório. Es
 
 **Sem botão de recusa (decisão de 10/11):** quem pedir para sair escreve; a mensagem cai em **Outra resposta**, e a
 vendedora marca "Não quer" no painel. Com isso, essa pessoa não recebe mais template do comercial.
+
+# Templates de campanha (12/11)
+
+Textos lidos pela API do Kommo em 12/11, como foram cadastrados (com os ajustes do Mateus). Calendário e regras em
+`DISPAROS-BLACK.md`. Nenhum tem assinatura da vendedora: ela se apresenta na conversa. `{{lead.cf.881487}}` = `as_nome`.
+Os `vd_*` de campanha têm o rodapé "Responda SAIR para não receber mais". As versões sem `_v2` de `vd_formacao_aluno`,
+`vd_formacao_cliente`, `vd_condicao_pagamento`, `vd_parcela_dia` e `vd_esteira` ficam no Kommo, mas nenhum fluxo usa.
+
+| Template | id | Categoria | Uso |
+|---|---|---|---|
+| `vd_formacao_aluno_v2` | 47155 | Marketing | B1 · comprou a Black 2026 sem Formação (13/11) |
+| `vd_formacao_cliente_v2` | 47157 | Marketing | B2 · comprou o Guia de 11/2025 até antes da Black 2026 sem Formação (13 a 15/11, em levas) |
+| `vd_condicao_pagamento_v2` | 47159 | Marketing | C · clicou em comprar e não fez pedido (15 min depois, das 8h às 21h) |
+| `vd_parcela_dia_v2` | 47161 | Marketing | A (só vip_cadastro) 21/11 · C 7 dias depois · pesquisa "valor" 19/11 |
+| `vd_esteira_v2` | 47163 | Marketing | A (só vip_cadastro, sem bônus) 24/11 |
+| `vd_serve_pra_mim` | 47165 | Marketing | A 18/11 · pesquisa "momento" 19/11 |
+| `vd_formacao_prova` | 47167 | Marketing | B 18/11 |
+| `vd_indicacao` | 47169 | Marketing | compradores 20/11 (quem indica e quem compra ganham +3 meses de comunidade) |
+| `vd_formacao_aula` | 47171 | Marketing | B 25/11 (a vendedora oferece no máximo R$ 222) |
+| `vd_formacao_ultimo` | 47173 | Marketing | B 30/11 (só se o desconto da Formação acabar em 30/11) |
+| `vd_retorno_condicao` | 47175 | Marketing | C 48 h depois, se não respondeu (vendedora) |
+| `as_prova_v2` | 47177 | Marketing | substitui o as_prova (prova da sequência de quem está fora do grupo) |
+| `as_boleto_vence` | 47179 | Marketing | boleto no dia do vencimento, 10h |
+| `as_pix_pendente` | 47181 | Utility | Pix da Kiwify gerado e não pago, 24 h depois |
+
+## `vd_formacao_aluno_v2` (id 47155)
+```
+Os outros 6 cursos ficaram mais baratos pra você, {{lead.cf.881487}}.
+
+Você comprou na Black e já tem o Atendimento Extraordinário, 1 dos 7 cursos da Formação Completa. Para os outros 6 (plantão, hemograma, felinos, casos clínicos, procedimentos, cálculos e muito mais), a Dra. Maria Paula liberou um desconto só para quem já é aluno.
+
+Posso te mandar?
+```
+Rodapé: Responda SAIR para não receber mais; Botões: Pode mandar · Tenho uma dúvida.
+
+## `vd_formacao_cliente_v2` (id 47157)
+```
+Você já tem o Guia, {{lead.cf.881487}}, e isso tem um valor agora.
+
+Quem já usa o Guia tem um desconto na Formação Completa da Amar que não aparece no site. A condição eu só posso passar por aqui.
+
+Quer saber?
+```
+Rodapé: Responda SAIR para não receber mais; Botões: Quero saber · Tenho uma dúvida.
+
+## `vd_condicao_pagamento_v2` (id 47159)
+```
+Separei uma condição para quem chegou até o pagamento, {{lead.cf.881487}}.
+
+Ela não está no site da Amar e eu só consigo passar por aqui. Quer que eu te mande?
+```
+Rodapé: Responda SAIR para não receber mais; Botões: Pode mandar · Tenho uma dúvida.
+
+## `vd_parcela_dia_v2` (id 47161)
+```
+Menos de R$ 1,70 por dia, {{lead.cf.881487}}.
+
+É quanto sai o Guia de Protocolos na Black: 12x de R$ 51,40, com o curso Atendimento Extraordinário e 3 meses de comunidade junto. Se o valor é o que pesa, me responde que eu te mostro uma condição que só passo por aqui.
+```
+Rodapé: Responda SAIR para não receber mais; Botões: Quero ver · Tenho uma dúvida.
+
+## `vd_esteira_v2` (id 47163)
+```
+Os 7 cursos da Amar podem ir junto com o seu Guia, {{lead.cf.881487}}.
+
+Quem fecha o Guia de Protocolos comigo nesta Black leva a Formação Completa (plantão, hemograma, felinos, casos clínicos, procedimentos, cálculos, atendimento e muito mais) por bem menos do que ela custa sozinha.
+
+Posso te contar como fica?
+```
+Rodapé: Responda SAIR para não receber mais; Botões: Pode contar · Tenho uma dúvida.
+
+## `vd_serve_pra_mim` (id 47165)
+```
+Recém-formado e com medo do plantão sozinho, {{lead.cf.881487}}?
+
+Foi para isso que a Dra. Maria Paula escreveu o Guia de Protocolos: a conduta, a dose e o cálculo do fluido na mesma página, para consultar com o paciente na mesa. Na Black ele vem com o curso Atendimento Extraordinário e 3 meses de comunidade, mas por tempo limitado.
+
+Se quiser saber se serve para o seu momento, me responde que eu te ajudo a decidir.
+```
+Rodapé: Responda SAIR para não receber mais; Botões: Quero saber · Tenho uma dúvida.
+
+## `vd_formacao_prova` (id 47167)
+```
+Uma aula da Formação mostra o carrinho de emergência montado item por item, {{lead.cf.881487}}.
+
+É do curso Entre o plantão e o medo, que também tem classificação de risco, XABCDE do trauma e fluidoterapia no paciente de risco. Ele faz parte da Formação Completa, que segue com desconto para quem já tem o Guia.
+
+Quer que eu te mande o valor?
+```
+Rodapé: Responda SAIR para não receber mais; Botões: Pode mandar · Tenho uma dúvida.
+
+## `vd_indicacao` (id 47169)
+```
+Tem um colega que vive conferindo dose no celular, {{lead.cf.881487}}?
+
+Se ele comprar o Guia de Protocolos na Black pela sua indicação, você e ele ganham mais 3 meses na Comunidade Amar Saber, além dos 3 que já tem. Ele leva o mesmo pacote que você: o Guia, o curso e a comunidade.
+
+Toca em "Quero indicar" que eu te mando o seu link. Essa oferta é por tempo limitado.
+```
+Rodapé: Responda SAIR para não receber mais; Botões: Quero indicar · Tenho uma dúvida.
+
+## `vd_formacao_aula` (id 47171)
+```
+Menos de R$ 2 por aula, {{lead.cf.881487}}.
+
+Na condição exclusiva que eu tenho pra você, é quanto sai cada aula da Formação Completa: são mais de 100 aulas de plantão, hemograma, felinos, casos clínicos, procedimentos, cálculos e muito mais, liberadas por 1 ano.
+
+Quer que eu te mande o valor?
+```
+Rodapé: Responda SAIR para não receber mais; Botões: Pode mandar · Tenho uma dúvida.
+
+## `vd_formacao_ultimo` (id 47173)
+```
+Hoje é o último dia do desconto da Formação, {{lead.cf.881487}}.
+
+À meia-noite a Formação Completa volta ao preço normal, junto com o fim da Black. Se ainda faz sentido pra você, me responde agora que eu te passo o valor e o link.
+```
+Rodapé: Responda SAIR para não receber mais; Botões: Pode mandar · Tenho uma dúvida.
+
+## `vd_retorno_condicao` (id 47175)
+```
+A condição que separei pra você continua valendo, mas por tempo limitado.
+
+Te chamei há dois dias sobre o seu Guia de Protocolos e não quis deixar passar. Se ficou alguma dúvida (parcela, entrega, se serve pra você), me responde aqui que eu resolvo.
+
+Quero muito te ver lá!
+```
+Rodapé: Responda SAIR para não receber mais; Botões: Quero a condição · Tenho uma dúvida.
+
+## `as_prova_v2` (id 47177)
+```
+Já vi e adorei o conteúdo.
+
+Foi o que uma colega mandou quando o Guia de Protocolos chegou. Já são mais de 2.000 vendidos, e o lote da Black Friday é limitado.
+
+O seu ainda está a um clique, mas por tempo limitado.
+```
+Botões: Quero o link · Tenho uma dúvida.
+
+## `as_boleto_vence` (id 47179)
+```
+Seu boleto do Guia de Protocolos vence hoje, {{lead.cf.881487}}.
+
+O pedido fica reservado até o fim do dia. Se preferir pagar no Pix ou no cartão, me responde aqui que eu te mando o link.
+```
+Botões: Quero o link · Já paguei.
+
+## `as_pix_pendente` (id 47181)
+```
+O Pix do seu pedido do Guia de Protocolos ainda está em aberto, {{lead.cf.881487}}.
+
+O pedido segue reservado, mas por pouco tempo. Se travou em alguma coisa, me responde aqui que eu resolvo com você.
+```
+Botões: Quero o link · Já paguei.
+
+## Salesbots dos templates de campanha (12/11): passo a passo
+Iguais aos bots do comercial de 10/11:
+- **sem gatilho**;
+- canal **só o WhatsApp da (31) 9 5349-5052**;
+- rodados pelo n8n (`POST /api/v2/salesbot/run`).
+
+O nome do template já traz `{{lead.cf.881487}}` (as_nome), que o n8n grava no lead antes de rodar o bot.
+
+**Ordem:** primeiro os bots de resposta (parte 1), depois os de template (parte 2), porque o passo **Iniciar Salesbot**
+só lista bots que já existem.
+
+### 1. Bots de resposta (2 novos + 1 ajuste)
+**1a · `VD · Indicar`** (novo), para o botão "Quero indicar":
+1. **Enviar mensagem**: "Que ótimo! 💗 Já te mando o seu link de indicação. Quando seu colega comprar por ele, vocês dois ganham mais 3 meses de comunidade."
+2. **Ação → Enviar webhook**: `https://n8n.automato.pro/webhook/as-black-comercial?chave=<CHAVE>&acao=indicar`
+3. **Ação → Alterar etapa do lead**: *Comercial Black* → *Respondeu*
+
+**1b · `AS · Já paguei`** (novo), para o botão "Já paguei" dos lembretes de boleto e Pix:
+1. **Enviar mensagem**: "Obrigada! 💗 Vou conferir aqui e, se aparecer alguma pendência, te aviso."
+2. **Iniciar Salesbot** → `AS · Atendimento` (para a sequência e a equipe confere o pagamento)
+
+**1c · `VD · Outra resposta`** (id 52629, ajuste para o rodapé "Responda SAIR"):
+1. Primeiro passo: **Condição** → mensagem do cliente **contém** `sair` (adicione também `Sair` e `SAIR`, caso a condição diferencie maiúsculas).
+2. **Se sim:**
+   - **Enviar mensagem**: "Combinado, não te mando mais mensagens. 💗";
+   - **Ação → Enviar webhook** `…/as-black-comercial?chave=<CHAVE>&acao=sair`;
+   - **Ação → Alterar etapa do lead** → *Comercial Black* → *Não quer*.
+3. **Se não:** o que o bot já faz hoje (webhook `acao=texto`).
+
+### 2. Bots de template (14)
+**Montagem:** monte o primeiro duplicando `VD · vd_geral` (ou `AS · as_prova`, para os `as_*`). Em cada cópia, troque o nome, o template e os ramos da tabela.
+
+**Em todo bot:**
+- passo **Enviar mensagem** → **Canais**: só a 5052;
+- marque **"Se você nunca conversou em um canal: Tente enviar uma mensagem"**. É obrigatório: os compradores antigos da base B2 nunca falaram com esse número, e sem isso o bot pula em silêncio;
+- **não** ligue **Sem resposta**;
+- **ramo de falha:**
+  - bots `VD`: **Falha ao enviar a mensagem** → **Ação → Enviar webhook** `…/as-black-comercial?chave=<CHAVE>&acao=falha`;
+  - bots `AS`: o mesmo, com o webhook da recuperação `…/as-black-kommo?chave=<CHAVE>&acao=falha`.
+
+| # | Bot | Botão positivo → | Tenho uma dúvida → | Outra resposta → |
+|---|---|---|---|---|
+| 1 | `VD · vd_formacao_aluno_v2` | Pode mandar → `VD · Explicar` | `VD · Dúvida` | `VD · Outra resposta` |
+| 2 | `VD · vd_formacao_cliente_v2` | Quero saber → `VD · Explicar` | `VD · Dúvida` | `VD · Outra resposta` |
+| 3 | `VD · vd_condicao_pagamento_v2` | Pode mandar → `VD · Pedido` | `VD · Dúvida` | `VD · Outra resposta` |
+| 4 | `VD · vd_parcela_dia_v2` | Quero ver → `VD · Explicar` | `VD · Dúvida` | `VD · Outra resposta` |
+| 5 | `VD · vd_esteira_v2` | Pode contar → `VD · Explicar` | `VD · Dúvida` | `VD · Outra resposta` |
+| 6 | `VD · vd_serve_pra_mim` | Quero saber → `VD · Explicar` | `VD · Dúvida` | `VD · Outra resposta` |
+| 7 | `VD · vd_formacao_prova` | Pode mandar → `VD · Explicar` | `VD · Dúvida` | `VD · Outra resposta` |
+| 8 | `VD · vd_indicacao` | Quero indicar → `VD · Indicar` | `VD · Dúvida` | `VD · Outra resposta` |
+| 9 | `VD · vd_formacao_aula` | Pode mandar → `VD · Explicar` | `VD · Dúvida` | `VD · Outra resposta` |
+| 10 | `VD · vd_formacao_ultimo` | Pode mandar → `VD · Explicar` | `VD · Dúvida` | `VD · Outra resposta` |
+| 11 | `VD · vd_retorno_condicao` | Quero a condição → `VD · Explicar` | `VD · Dúvida` | `VD · Outra resposta` |
+| 12 | `AS · as_prova_v2` | Quero o link → `AS · Link` | `AS · Dúvida` | `AS · Atendimento` |
+| 13 | `AS · as_boleto_vence` | Quero o link → `AS · Link` · Já paguei → `AS · Já paguei` | — | `AS · Atendimento` |
+| 14 | `AS · as_pix_pendente` | Quero o link → `AS · Link` · Já paguei → `AS · Já paguei` | — | `AS · Atendimento` |
+
+**Por que os toques caem no painel:** os bots `VD` chamam o webhook do comercial, que grava a resposta na aba Comercial · Black. Os bots `AS` passam pela recuperação, que põe a pessoa em atendimento. Nos dois casos ela aparece em 💬 no painel. O n8n também tira da fila de recuperação quem respondeu a um `VD`.
+
+**Depois de criar:** mandar os ids dos 16 bots novos (14 de template e 2 de resposta) para entrarem no "Config do Kommo" do n8n e no painel. O id aparece no endereço do bot aberto no Kommo.
