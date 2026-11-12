@@ -875,3 +875,64 @@ O Pix do seu pedido do Guia de Protocolos ainda está em aberto, {{lead.cf.88148
 O pedido segue reservado, mas por pouco tempo. Se travou em alguma coisa, me responde aqui que eu resolvo com você.
 ```
 Botões: Quero o link · Já paguei.
+
+## Salesbots dos templates de campanha (12/11): passo a passo
+Iguais aos bots do comercial de 10/11:
+- **sem gatilho**;
+- canal **só o WhatsApp da (31) 9 5349-5052**;
+- rodados pelo n8n (`POST /api/v2/salesbot/run`).
+
+O nome do template já traz `{{lead.cf.881487}}` (as_nome), que o n8n grava no lead antes de rodar o bot.
+
+**Ordem:** primeiro os bots de resposta (parte 1), depois os de template (parte 2), porque o passo **Iniciar Salesbot**
+só lista bots que já existem.
+
+### 1. Bots de resposta (2 novos + 1 ajuste)
+**1a · `VD · Indicar`** (novo), para o botão "Quero indicar":
+1. **Enviar mensagem**: "Que ótimo! 💗 Já te mando o seu link de indicação. Quando seu colega comprar por ele, vocês dois ganham mais 3 meses de comunidade."
+2. **Ação → Enviar webhook**: `https://n8n.automato.pro/webhook/as-black-comercial?chave=<CHAVE>&acao=indicar`
+3. **Ação → Alterar etapa do lead**: *Comercial Black* → *Respondeu*
+
+**1b · `AS · Já paguei`** (novo), para o botão "Já paguei" dos lembretes de boleto e Pix:
+1. **Enviar mensagem**: "Obrigada! 💗 Vou conferir aqui e, se aparecer alguma pendência, te aviso."
+2. **Iniciar Salesbot** → `AS · Atendimento` (para a sequência e a equipe confere o pagamento)
+
+**1c · `VD · Outra resposta`** (id 52629, ajuste para o rodapé "Responda SAIR"):
+1. Primeiro passo: **Condição** → mensagem do cliente **contém** `sair` (adicione também `Sair` e `SAIR`, caso a condição diferencie maiúsculas).
+2. **Se sim:**
+   - **Enviar mensagem**: "Combinado, não te mando mais mensagens. 💗";
+   - **Ação → Enviar webhook** `…/as-black-comercial?chave=<CHAVE>&acao=sair`;
+   - **Ação → Alterar etapa do lead** → *Comercial Black* → *Não quer*.
+3. **Se não:** o que o bot já faz hoje (webhook `acao=texto`).
+
+### 2. Bots de template (14)
+**Montagem:** monte o primeiro duplicando `VD · vd_geral` (ou `AS · as_prova`, para os `as_*`). Em cada cópia, troque o nome, o template e os ramos da tabela.
+
+**Em todo bot:**
+- passo **Enviar mensagem** → **Canais**: só a 5052;
+- marque **"Se você nunca conversou em um canal: Tente enviar uma mensagem"**. É obrigatório: os compradores antigos da base B2 nunca falaram com esse número, e sem isso o bot pula em silêncio;
+- **não** ligue **Sem resposta**;
+- **ramo de falha:**
+  - bots `VD`: **Falha ao enviar a mensagem** → **Ação → Enviar webhook** `…/as-black-comercial?chave=<CHAVE>&acao=falha`;
+  - bots `AS`: o mesmo, com o webhook da recuperação `…/as-black-kommo?chave=<CHAVE>&acao=falha`.
+
+| # | Bot | Botão positivo → | Tenho uma dúvida → | Outra resposta → |
+|---|---|---|---|---|
+| 1 | `VD · vd_formacao_aluno_v2` | Pode mandar → `VD · Explicar` | `VD · Dúvida` | `VD · Outra resposta` |
+| 2 | `VD · vd_formacao_cliente_v2` | Quero saber → `VD · Explicar` | `VD · Dúvida` | `VD · Outra resposta` |
+| 3 | `VD · vd_condicao_pagamento_v2` | Pode mandar → `VD · Pedido` | `VD · Dúvida` | `VD · Outra resposta` |
+| 4 | `VD · vd_parcela_dia_v2` | Quero ver → `VD · Explicar` | `VD · Dúvida` | `VD · Outra resposta` |
+| 5 | `VD · vd_esteira_v2` | Pode contar → `VD · Explicar` | `VD · Dúvida` | `VD · Outra resposta` |
+| 6 | `VD · vd_serve_pra_mim` | Quero saber → `VD · Explicar` | `VD · Dúvida` | `VD · Outra resposta` |
+| 7 | `VD · vd_formacao_prova` | Pode mandar → `VD · Explicar` | `VD · Dúvida` | `VD · Outra resposta` |
+| 8 | `VD · vd_indicacao` | Quero indicar → `VD · Indicar` | `VD · Dúvida` | `VD · Outra resposta` |
+| 9 | `VD · vd_formacao_aula` | Pode mandar → `VD · Explicar` | `VD · Dúvida` | `VD · Outra resposta` |
+| 10 | `VD · vd_formacao_ultimo` | Pode mandar → `VD · Explicar` | `VD · Dúvida` | `VD · Outra resposta` |
+| 11 | `VD · vd_retorno_condicao` | Quero a condição → `VD · Explicar` | `VD · Dúvida` | `VD · Outra resposta` |
+| 12 | `AS · as_prova_v2` | Quero o link → `AS · Link` | `AS · Dúvida` | `AS · Atendimento` |
+| 13 | `AS · as_boleto_vence` | Quero o link → `AS · Link` · Já paguei → `AS · Já paguei` | — | `AS · Atendimento` |
+| 14 | `AS · as_pix_pendente` | Quero o link → `AS · Link` · Já paguei → `AS · Já paguei` | — | `AS · Atendimento` |
+
+**Por que os toques caem no painel:** os bots `VD` chamam o webhook do comercial, que grava a resposta na aba Comercial · Black. Os bots `AS` passam pela recuperação, que põe a pessoa em atendimento. Nos dois casos ela aparece em 💬 no painel. O n8n também tira da fila de recuperação quem respondeu a um `VD`.
+
+**Depois de criar:** mandar os ids dos 16 bots novos (14 de template e 2 de resposta) para entrarem no "Config do Kommo" do n8n e no painel. O id aparece no endereço do bot aberto no Kommo.
