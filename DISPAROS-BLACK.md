@@ -93,3 +93,30 @@ Cada disparo grava a campanha no lead e na fila. Na manhã seguinte de cada disp
 - respostas;
 - bloqueios e "SAIR";
 - compras em 72 h, pelo telefone cruzado com a aba Compras.
+
+## Como funciona (n8n, 12/11)
+**Envio:** a campanha usa a mesma ação "enviar" do painel. Valem as regras do painel, a pessoa fica com uma vendedora e tudo aparece no painel.
+
+| Peça | O que faz |
+|---|---|
+| Data table **AS · Base Guia sem Formação** (`xWIsyS1KF1n7RRId`) | 749 compradores do Guia de 01/11/2025 até antes da Black 2026, sem Formação (Yampi + Kiwify, por e-mail, CPF e telefone) |
+| **AS · Comercial (lista)**: nós `Ler base do Guia` e `Ajustar lista` | Põem essa base no painel (lista "1b · Base do Guia", motivo "Comprou o Guia antes da Black, falta a Formação"). Também mostram em 💬 quem está fora do grupo e respondeu uma mensagem de venda |
+| **AS · Painel comercial (API)**, nó `Preparar envios` | Bots dos templates novos; motivo da base do Guia; até 4 mensagens para compradores sem Formação. Pedido com `campanha: true` não conta no teto de 300, não tem limite por pessoa (as 48 h valem) e não tira a pessoa da fila da recuperação. O registro grava `campanha = sim` |
+| **AS · Comercial (respostas)** | Ações `indicar` e `sair`. "Sair" marca "Não quer" e põe a fila em `saiu`; qualquer outra resposta põe a fila em `vendedora` (a automação para) |
+| **AS · Kommo enviar**, nó `Config do Kommo` | O passo `as_prova` roda o bot do `as_prova_v2` (53183, "+2.000"); bots dos lembretes de boleto (53185) e Pix (53187) |
+| **AS · Disparos de campanha** (`P6NU3k2se6OtQqG9`) | A cada 5 min, das 19h às 20h45, nos dias do calendário (nó `Campanha de hoje`). Manda até 25 pessoas por rodada pela ação "enviar" do painel e registra em **AS · Campanhas** (`e3N0w9GCu0OELYXp`) |
+
+**Quem é cada público na aba Comercial · Black:**
+| Público | Regra |
+|---|---|
+| B1 | Motivo "Comprou o Guia, falta a Formação" |
+| B2 | Motivo "Comprou o Guia antes da Black, falta a Formação". A leva (0, 1 ou 2) sai da chave |
+| A | Lista "3 · Grupo", saiu ou nunca entrou no grupo |
+| A_CAD | Só quem cadastrou e nunca entrou |
+
+Todos precisam estar com Situação 🟢 e sem "Não quer".
+
+**Pendências:**
+- **Lembretes de boleto e Pix:** os bots e templates existem, mas o gatilho na recuperação ainda não foi feito.
+- **Indicação (20/11):** fora do calendário por enquanto. Quem comprou tudo está com ✅ e o painel recusa o envio para essa Situação; precisa de regra própria.
+- **"Clicou e não comprou":** o fluxo (15 min depois do clique) ainda não foi feito.
