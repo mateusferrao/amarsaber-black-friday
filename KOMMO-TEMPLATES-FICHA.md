@@ -721,3 +721,157 @@ está no fluxo n8n "AS · Comercial (respostas)" e não fica no repositório. Es
 
 **Sem botão de recusa (decisão de 10/11):** quem pedir para sair escreve; a mensagem cai em **Outra resposta**, e a
 vendedora marca "Não quer" no painel. Com isso, essa pessoa não recebe mais template do comercial.
+
+# Templates de campanha (12/11)
+
+Textos lidos pela API do Kommo em 12/11, como foram cadastrados (com os ajustes do Mateus). Calendário e regras em
+`DISPAROS-BLACK.md`. Nenhum tem assinatura da vendedora: ela se apresenta na conversa. `{{lead.cf.881487}}` = `as_nome`.
+Os `vd_*` de campanha têm o rodapé "Responda SAIR para não receber mais". As versões sem `_v2` de `vd_formacao_aluno`,
+`vd_formacao_cliente`, `vd_condicao_pagamento`, `vd_parcela_dia` e `vd_esteira` ficam no Kommo, mas nenhum fluxo usa.
+
+| Template | id | Categoria | Uso |
+|---|---|---|---|
+| `vd_formacao_aluno_v2` | 47155 | Marketing | B1 · comprou a Black 2026 sem Formação (13/11) |
+| `vd_formacao_cliente_v2` | 47157 | Marketing | B2 · comprou o Guia de 11/2025 até antes da Black 2026 sem Formação (13 a 15/11, em levas) |
+| `vd_condicao_pagamento_v2` | 47159 | Marketing | C · clicou em comprar e não fez pedido (15 min depois, das 8h às 21h) |
+| `vd_parcela_dia_v2` | 47161 | Marketing | A (só vip_cadastro) 21/11 · C 7 dias depois · pesquisa "valor" 19/11 |
+| `vd_esteira_v2` | 47163 | Marketing | A (só vip_cadastro, sem bônus) 24/11 |
+| `vd_serve_pra_mim` | 47165 | Marketing | A 18/11 · pesquisa "momento" 19/11 |
+| `vd_formacao_prova` | 47167 | Marketing | B 18/11 |
+| `vd_indicacao` | 47169 | Marketing | compradores 20/11 (quem indica e quem compra ganham +3 meses de comunidade) |
+| `vd_formacao_aula` | 47171 | Marketing | B 25/11 (a vendedora oferece no máximo R$ 222) |
+| `vd_formacao_ultimo` | 47173 | Marketing | B 30/11 (só se o desconto da Formação acabar em 30/11) |
+| `vd_retorno_condicao` | 47175 | Marketing | C 48 h depois, se não respondeu (vendedora) |
+| `as_prova_v2` | 47177 | Marketing | substitui o as_prova (prova da sequência de quem está fora do grupo) |
+| `as_boleto_vence` | 47179 | Marketing | boleto no dia do vencimento, 10h |
+| `as_pix_pendente` | 47181 | Utility | Pix da Kiwify gerado e não pago, 24 h depois |
+
+## `vd_formacao_aluno_v2` (id 47155)
+```
+Os outros 6 cursos ficaram mais baratos pra você, {{lead.cf.881487}}.
+
+Você comprou na Black e já tem o Atendimento Extraordinário, 1 dos 7 cursos da Formação Completa. Para os outros 6 (plantão, hemograma, felinos, casos clínicos, procedimentos, cálculos e muito mais), a Dra. Maria Paula liberou um desconto só para quem já é aluno.
+
+Posso te mandar?
+```
+Rodapé: Responda SAIR para não receber mais; Botões: Pode mandar · Tenho uma dúvida.
+
+## `vd_formacao_cliente_v2` (id 47157)
+```
+Você já tem o Guia, {{lead.cf.881487}}, e isso tem um valor agora.
+
+Quem já usa o Guia tem um desconto na Formação Completa da Amar que não aparece no site. A condição eu só posso passar por aqui.
+
+Quer saber?
+```
+Rodapé: Responda SAIR para não receber mais; Botões: Quero saber · Tenho uma dúvida.
+
+## `vd_condicao_pagamento_v2` (id 47159)
+```
+Separei uma condição para quem chegou até o pagamento, {{lead.cf.881487}}.
+
+Ela não está no site da Amar e eu só consigo passar por aqui. Quer que eu te mande?
+```
+Rodapé: Responda SAIR para não receber mais; Botões: Pode mandar · Tenho uma dúvida.
+
+## `vd_parcela_dia_v2` (id 47161)
+```
+Menos de R$ 1,70 por dia, {{lead.cf.881487}}.
+
+É quanto sai o Guia de Protocolos na Black: 12x de R$ 51,40, com o curso Atendimento Extraordinário e 3 meses de comunidade junto. Se o valor é o que pesa, me responde que eu te mostro uma condição que só passo por aqui.
+```
+Rodapé: Responda SAIR para não receber mais; Botões: Quero ver · Tenho uma dúvida.
+
+## `vd_esteira_v2` (id 47163)
+```
+Os 7 cursos da Amar podem ir junto com o seu Guia, {{lead.cf.881487}}.
+
+Quem fecha o Guia de Protocolos comigo nesta Black leva a Formação Completa (plantão, hemograma, felinos, casos clínicos, procedimentos, cálculos, atendimento e muito mais) por bem menos do que ela custa sozinha.
+
+Posso te contar como fica?
+```
+Rodapé: Responda SAIR para não receber mais; Botões: Pode contar · Tenho uma dúvida.
+
+## `vd_serve_pra_mim` (id 47165)
+```
+Recém-formado e com medo do plantão sozinho, {{lead.cf.881487}}?
+
+Foi para isso que a Dra. Maria Paula escreveu o Guia de Protocolos: a conduta, a dose e o cálculo do fluido na mesma página, para consultar com o paciente na mesa. Na Black ele vem com o curso Atendimento Extraordinário e 3 meses de comunidade, mas por tempo limitado.
+
+Se quiser saber se serve para o seu momento, me responde que eu te ajudo a decidir.
+```
+Rodapé: Responda SAIR para não receber mais; Botões: Quero saber · Tenho uma dúvida.
+
+## `vd_formacao_prova` (id 47167)
+```
+Uma aula da Formação mostra o carrinho de emergência montado item por item, {{lead.cf.881487}}.
+
+É do curso Entre o plantão e o medo, que também tem classificação de risco, XABCDE do trauma e fluidoterapia no paciente de risco. Ele faz parte da Formação Completa, que segue com desconto para quem já tem o Guia.
+
+Quer que eu te mande o valor?
+```
+Rodapé: Responda SAIR para não receber mais; Botões: Pode mandar · Tenho uma dúvida.
+
+## `vd_indicacao` (id 47169)
+```
+Tem um colega que vive conferindo dose no celular, {{lead.cf.881487}}?
+
+Se ele comprar o Guia de Protocolos na Black pela sua indicação, você e ele ganham mais 3 meses na Comunidade Amar Saber, além dos 3 que já tem. Ele leva o mesmo pacote que você: o Guia, o curso e a comunidade.
+
+Toca em "Quero indicar" que eu te mando o seu link. Essa oferta é por tempo limitado.
+```
+Rodapé: Responda SAIR para não receber mais; Botões: Quero indicar · Tenho uma dúvida.
+
+## `vd_formacao_aula` (id 47171)
+```
+Menos de R$ 2 por aula, {{lead.cf.881487}}.
+
+Na condição exclusiva que eu tenho pra você, é quanto sai cada aula da Formação Completa: são mais de 100 aulas de plantão, hemograma, felinos, casos clínicos, procedimentos, cálculos e muito mais, liberadas por 1 ano.
+
+Quer que eu te mande o valor?
+```
+Rodapé: Responda SAIR para não receber mais; Botões: Pode mandar · Tenho uma dúvida.
+
+## `vd_formacao_ultimo` (id 47173)
+```
+Hoje é o último dia do desconto da Formação, {{lead.cf.881487}}.
+
+À meia-noite a Formação Completa volta ao preço normal, junto com o fim da Black. Se ainda faz sentido pra você, me responde agora que eu te passo o valor e o link.
+```
+Rodapé: Responda SAIR para não receber mais; Botões: Pode mandar · Tenho uma dúvida.
+
+## `vd_retorno_condicao` (id 47175)
+```
+A condição que separei pra você continua valendo, mas por tempo limitado.
+
+Te chamei há dois dias sobre o seu Guia de Protocolos e não quis deixar passar. Se ficou alguma dúvida (parcela, entrega, se serve pra você), me responde aqui que eu resolvo.
+
+Quero muito te ver lá!
+```
+Rodapé: Responda SAIR para não receber mais; Botões: Quero a condição · Tenho uma dúvida.
+
+## `as_prova_v2` (id 47177)
+```
+Já vi e adorei o conteúdo.
+
+Foi o que uma colega mandou quando o Guia de Protocolos chegou. Já são mais de 2.000 vendidos, e o lote da Black Friday é limitado.
+
+O seu ainda está a um clique, mas por tempo limitado.
+```
+Botões: Quero o link · Tenho uma dúvida.
+
+## `as_boleto_vence` (id 47179)
+```
+Seu boleto do Guia de Protocolos vence hoje, {{lead.cf.881487}}.
+
+O pedido fica reservado até o fim do dia. Se preferir pagar no Pix ou no cartão, me responde aqui que eu te mando o link.
+```
+Botões: Quero o link · Já paguei.
+
+## `as_pix_pendente` (id 47181)
+```
+O Pix do seu pedido do Guia de Protocolos ainda está em aberto, {{lead.cf.881487}}.
+
+O pedido segue reservado, mas por pouco tempo. Se travou em alguma coisa, me responde aqui que eu resolvo com você.
+```
+Botões: Quero o link · Já paguei.

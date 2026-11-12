@@ -1,0 +1,95 @@
+# Disparos individuais até o fim da Black (13/11 a 30/11)
+
+Decisões de 12/11, tomadas pelo Mateus numa discussão por perguntas. São templates de WhatsApp pelo Kommo (número
+5052), com duas frentes de peso igual: vender mais Guia e vender a Formação Completa. Live curta e fim do frete grátis
+entram depois, quando tiverem data.
+
+## Por que assim: o que a fila mostrou (12/11, 690 pessoas)
+| Mensagem | Receberam | Compraram | Falha de envio |
+|---|---|---|---|
+| `as_cartao_recusado` | 29 | 16 (55%) | 2 |
+| `as_pix_expirou` | 21 | 10 (48%) | 1 |
+| `as_checkout_15min` | 58 | 7 (12%) | 2 |
+| `as_vip_convite` (frio) | 143 | 7 (5%) | 28 (20%) |
+| `as_vip_lancamento` (frio) | 387 | 7 (2%) | 21 (5%) |
+
+- Mensagem colada a uma ação recente vende. Mensagem fria vende pouco:
+  - quem saiu do grupo: 1 compra em 289;
+  - quem se cadastrou e não entrou: 5 em 164.
+- Ninguém recebia mensagem individual em dois públicos:
+  - os compradores sem a Formação;
+  - quem clicou em comprar na LP e não fez pedido (94 identificados entre 10 e 12/11).
+
+## Regras
+| Tema | Regra |
+|---|---|
+| Públicos | Compradores sem Formação · Fora do grupo sem compra · Clicou e não comprou. Quem está no grupo não entra |
+| Conteúdo | Sempre oferta direta, variando o gancho: serve pra mim, parcela por dia, Formação junto, valor por aula, prova |
+| Horário | Campanha às 19h; vendedoras até 21h; automático só das 8h às 21h |
+| Botões | Positivo + "Tenho uma dúvida". Os dois levam a pessoa para a vendedora (💬 no painel) |
+| Saída | Rodapé "Responda SAIR para não receber mais" nos templates de campanha |
+| Painel | **Tudo o que for para as vendedoras aparece no painel comercial** |
+| Choque com a automática | A campanha sai; a mensagem automática da pessoa passa para o dia seguinte, no mesmo horário |
+| Limite do painel | 4 templates por pessoa, com 48 h entre eles, para compradores e quem clicou (os outros seguem com 2) |
+| Quando um disparo sai do calendário | Qualidade do número cai para média **ou** compra abaixo de 1% em 72 h |
+| Quem não recebe campanha | Quem tem `erro_envio` na fila (a Meta já recusou) |
+
+## Preço e condição (no 1:1, a vendedora decide)
+- **Pergunta primeiro:** quando a pessoa responde, a vendedora pergunta o momento e a dúvida dela antes de oferecer.
+- **Formação Completa:** piso de R$ 150. Para quem recebeu `vd_formacao_aula` ("menos de R$ 2 por aula"), no máximo
+  R$ 222, que é o que faz a frase valer para quem tem 111 aulas.
+- **Esteira (Guia + Formação):** R$ 697 (Formação a R$ 200), válida até 23h59 do dia seguinte.
+  - **Nunca vai para quem já comprou qualquer bônus** (Formação, esteira ou combo) na Yampi ou na Kiwify. A conferência
+    é por e-mail, CPF e telefone; na dúvida, não vai.
+- **Desconto no Guia:** só quando a pessoa trava no preço.
+- **Indicação:** quem indica e quem compra pela indicação ganham +3 meses de comunidade cada um.
+
+## Públicos
+| Público | Quem | Tamanho (12/11) | Quem envia |
+|---|---|---|---|
+| A | Fora do grupo, sem compra: `vip_cadastro` (cadastrou e não entrou) e `vip_saiu` (saiu do grupo) | ~336 (80 + 256) | automação, 19h |
+| B1 | Comprou a Black 2026 e não tem Formação | 101 | automação, 19h |
+| B2 | Comprou o Guia de 01/11/2025 até antes da Black 2026 e não tem Formação | 749 (628 da Black 2025) | automação, em 3 levas de ~250 |
+| C | Clicou em comprar na LP (identificado pelo WhatsApp) e não fez pedido em 15 min | contínuo | automação e vendedora |
+| Pesquisa | Respondeu a pesquisa da live e não comprou | — | vendedoras (painel) |
+
+## Calendário (individual)
+O Grupo VIP segue o calendário de `GRUPO-VIP-MENSAGENS.md`.
+
+**Contínuo:**
+- recuperação de cartão, Pix e carrinho;
+- **C:** `vd_condicao_pagamento_v2` 15 min depois do clique (só das 8h às 21h; fora disso, às 8h), depois `vd_retorno_condicao` (vendedora, 48 h) e `vd_parcela_dia_v2` (vendedora, 7 dias);
+- **lembretes:** `as_boleto_vence` às 10h do dia do vencimento e `as_pix_pendente` 24 h depois de um Pix da Kiwify não pago.
+
+| Dia | Individual |
+|---|---|
+| qui 12/11 | 19h `as_prova` → 102 fora do grupo · pesquisa da live: `vd_pesquisa` pelo painel, até 21h |
+| sex 13/11 | 10h triagem/prova (checkout e Pix) · 19h `as_prova` → 200 fora do grupo · **19h B1 `vd_formacao_aluno_v2` → 101** · **19h B2 leva 1 `vd_formacao_cliente_v2` → ~250** |
+| sáb 14/11 | 10h triagem → 9 · 19h `as_prova` → 36 · **19h B2 leva 2 → ~250** |
+| dom 15/11 | 10h triagem → ~106 · **19h B2 leva 3 → ~250** |
+| seg 16/11 | 10h triagem → ~200 |
+| ter 17/11 | 10h triagem → 36 (fim da sequência automática de quem está fora do grupo) |
+| qua 18/11 | **19h A `vd_serve_pra_mim` → todos de A** · **19h B `vd_formacao_prova`** |
+| qui 19/11 | **19h pesquisa da live, 2º toque pela objeção** (valor → `vd_parcela_dia_v2`, momento → `vd_serve_pra_mim`, edição anterior → `vd_formacao_cliente_v2`, outros → `vd_condicao_pagamento_v2`) |
+| sex 20/11 | **19h compradores `vd_indicacao`** |
+| sáb 21/11 | **19h A (só `vip_cadastro`) `vd_parcela_dia_v2`** |
+| ter 24/11 | **19h A (só `vip_cadastro`, sem bônus) `vd_esteira_v2`** |
+| qua 25/11 | **19h B `vd_formacao_aula`** |
+| sáb 28/11 | 10h reta final `as_reta_3dias` |
+| seg 30/11 | 9h `as_ultimo_dia` · 19h `as_ultimas_horas` · **19h B `vd_formacao_ultimo`** (só se o desconto da Formação acabar em 30/11) |
+
+Dias sem campanha (19 a 29/11, fora os acima) ficam livres para a live e o fim do frete grátis.
+
+## Templates (Kommo)
+Os textos estão em `KOMMO-TEMPLATES-FICHA.md`, seção "Templates de campanha (12/11)".
+- **Versões em uso:** as `_v2` (com o rodapé "SAIR"). As versões sem rodapé (`vd_formacao_aluno`, `vd_formacao_cliente`, `vd_condicao_pagamento`, `vd_parcela_dia`, `vd_esteira`) ficam no Kommo, mas nenhum fluxo usa.
+- **Fora de uso:**
+  - `vd_grupo`: a frase "acompanhando a Black" é falsa para quem está fora do grupo;
+  - `vd_retorno`: diz "está esgotando" e só pode ir se isso for verdade.
+
+## Medição
+Cada disparo grava a campanha no lead e na fila. Na manhã seguinte de cada disparo:
+- qualidade do número no WhatsApp Manager;
+- respostas;
+- bloqueios e "SAIR";
+- compras em 72 h, pelo telefone cruzado com a aba Compras.
