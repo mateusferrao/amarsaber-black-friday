@@ -250,6 +250,25 @@ Para quem está fora de todos os grupos do SendFlow e por isso não recebe nada 
   - o lançamento não tem botão de saída.
   - Check-ins de qualidade do número em 10/11 às 21h e 11/11 às 9h. Se a qualidade cair, `VIP_ATIVO = false`.
 
+## Campos do lead no Kommo: limite de 256 caracteres (desde 12/11)
+- **O que aconteceu:**
+  - o link de checkout da Kiwify vem com todas as UTMs do anúncio e passou de 256 caracteres;
+  - o Kommo recusou gravar os campos, e como a gravação é um pedido só, não gravou nenhum (nem o `as_nome`);
+  - o template saiu com "Oi, !", e o botão "Quero o link" mandou o link vazio;
+  - foram 7 leads entre 11/11 e 12/11. Os campos deles já foram corrigidos.
+- **Correção no subfluxo "AS · Kommo enviar"** (`exqe8KfQqIZGETyH`):
+  - todo campo fica com no máximo 255 caracteres;
+  - o link longo é encurtado sem quebrar, nesta ordem:
+    1. tira o fbclid (`::...`) do `utm_content`;
+    2. tira o `utm_term`;
+    3. tira o `utm_content`;
+    4. tira o `utm_medium`;
+    5. em último caso, fica o link base com `utm_source`, `utm_campaign` e `src`.
+
+    O id do anúncio continua no `utm_campaign`.
+  - **Se o Kommo recusar a gravação, o template não sai:** o subfluxo devolve `ok=false` e a recuperação marca
+    `erro_envio`, o que manda a pessoa para a vendedora.
+
 ## Ativação
 1. ~~Kommo: funil "Recuperação Black" e campos `as_*`~~ (feito pela API em 28/10).
 2. ~~Yampi: webhook para `as-black-yampi`~~ (feito pela API em 28/10).
