@@ -29,11 +29,49 @@
       botoes: ['Pode perguntar', 'Tenho uma dúvida'] },
     vd_retorno: { nome: 'Retorno', quando: 'segunda mensagem, para quem não respondeu a primeira',
       texto: 'Oi, {nome}, é a {vend} de novo Te chamei esses dias e não quis deixar passar: a condição especial que comentei está esgotando. Ainda faz sentido você aproveitar essa oportunidade?',
-      botoes: ['Faz sim', 'Tenho uma dúvida'] }
+      botoes: ['Faz sim', 'Tenho uma dúvida'] },
+    // Templates de campanha (12/11, DISPAROS-BLACK.md), com o rodapé "Responda SAIR para não receber mais"
+    vd_formacao_aluno_v2: { nome: 'Formação (aluno)', quando: 'para quem comprou a Black e ainda não tem a Formação',
+      texto: 'Os outros 6 cursos ficaram mais baratos pra você, {nome}.\n\nVocê comprou na Black e já tem o Atendimento Extraordinário, 1 dos 7 cursos da Formação Completa. Para os outros 6 (plantão, hemograma, felinos, casos clínicos, procedimentos, cálculos e muito mais), a Dra. Maria Paula liberou um desconto só para quem já é aluno.\n\nPosso te mandar?',
+      botoes: ['Pode mandar', 'Tenho uma dúvida'] },
+    vd_formacao_cliente_v2: { nome: 'Formação (base do Guia)', quando: 'para quem comprou o Guia antes da Black e não tem a Formação',
+      texto: 'Você já tem o Guia, {nome}, e isso tem um valor agora.\n\nQuem já usa o Guia tem um desconto na Formação Completa da Amar que não aparece no site. A condição eu só posso passar por aqui.\n\nQuer saber?',
+      botoes: ['Quero saber', 'Tenho uma dúvida'] },
+    vd_formacao_prova: { nome: 'Formação (aula do plantão)', quando: 'para quem tem o Guia e ainda não tem a Formação',
+      texto: 'Uma aula da Formação mostra o carrinho de emergência montado item por item, {nome}.\n\nÉ do curso Entre o plantão e o medo, que também tem classificação de risco, XABCDE do trauma e fluidoterapia no paciente de risco. Ele faz parte da Formação Completa, que segue com desconto para quem já tem o Guia.\n\nQuer que eu te mande o valor?',
+      botoes: ['Pode mandar', 'Tenho uma dúvida'] },
+    vd_formacao_aula: { nome: 'Formação (valor por aula)', quando: 'para quem tem o Guia e ainda não tem a Formação (ofereça no máximo R$ 222)',
+      texto: 'Menos de R$ 2 por aula, {nome}.\n\nNa condição exclusiva que eu tenho pra você, é quanto sai cada aula da Formação Completa: são mais de 100 aulas de plantão, hemograma, felinos, casos clínicos, procedimentos, cálculos e muito mais, liberadas por 1 ano.\n\nQuer que eu te mande o valor?',
+      botoes: ['Pode mandar', 'Tenho uma dúvida'] },
+    vd_formacao_ultimo: { nome: 'Formação (último dia)', quando: 'só em 30/11, se o desconto da Formação acabar nesse dia',
+      texto: 'Hoje é o último dia do desconto da Formação, {nome}.\n\nÀ meia-noite a Formação Completa volta ao preço normal, junto com o fim da Black. Se ainda faz sentido pra você, me responde agora que eu te passo o valor e o link.',
+      botoes: ['Pode mandar', 'Tenho uma dúvida'] },
+    vd_indicacao: { nome: 'Indicação', quando: 'para quem já comprou (quem indica e quem compra ganham +3 meses de comunidade)',
+      texto: 'Tem um colega que vive conferindo dose no celular, {nome}?\n\nSe ele comprar o Guia de Protocolos na Black pela sua indicação, você e ele ganham mais 3 meses na Comunidade Amar Saber, além dos 3 que já tem. Ele leva o mesmo pacote que você: o Guia, o curso e a comunidade.\n\nToca em "Quero indicar" que eu te mando o seu link. Essa oferta é por tempo limitado.',
+      botoes: ['Quero indicar', 'Tenho uma dúvida'] },
+    vd_condicao_pagamento_v2: { nome: 'Condição do pagamento', quando: 'para quem chegou até o pagamento e não comprou',
+      texto: 'Separei uma condição para quem chegou até o pagamento, {nome}.\n\nEla não está no site da Amar e eu só consigo passar por aqui. Quer que eu te mande?',
+      botoes: ['Pode mandar', 'Tenho uma dúvida'] },
+    vd_retorno_condicao: { nome: 'Retorno da condição', quando: 'retorno para quem chegou até o pagamento e não respondeu',
+      texto: 'A condição que separei pra você continua valendo, mas por tempo limitado.\n\nTe chamei há dois dias sobre o seu Guia de Protocolos e não quis deixar passar. Se ficou alguma dúvida (parcela, entrega, se serve pra você), me responde aqui que eu resolvo.\n\nQuero muito te ver lá!',
+      botoes: ['Quero a condição', 'Tenho uma dúvida'] },
+    vd_parcela_dia_v2: { nome: 'Parcela por dia', quando: 'para quem não comprou e trava no valor',
+      texto: 'Menos de R$ 1,70 por dia, {nome}.\n\nÉ quanto sai o Guia de Protocolos na Black: 12x de R$ 51,40, com o curso Atendimento Extraordinário e 3 meses de comunidade junto. Se o valor é o que pesa, me responde que eu te mostro uma condição que só passo por aqui.',
+      botoes: ['Quero ver', 'Tenho uma dúvida'] },
+    vd_serve_pra_mim: { nome: 'Serve pra mim', quando: 'para quem não comprou e está em dúvida se serve para o momento',
+      texto: 'Recém-formado e com medo do plantão sozinho, {nome}?\n\nFoi para isso que a Dra. Maria Paula escreveu o Guia de Protocolos: a conduta, a dose e o cálculo do fluido na mesma página, para consultar com o paciente na mesa. Na Black ele vem com o curso Atendimento Extraordinário e 3 meses de comunidade, mas por tempo limitado.\n\nSe quiser saber se serve para o seu momento, me responde que eu te ajudo a decidir.',
+      botoes: ['Quero saber', 'Tenho uma dúvida'] },
+    vd_esteira_v2: { nome: 'Formação junto', quando: 'para quem não comprou e não tem nenhum bônus (esteira com desconto)',
+      texto: 'Os 7 cursos da Amar podem ir junto com o seu Guia, {nome}.\n\nQuem fecha o Guia de Protocolos comigo nesta Black leva a Formação Completa (plantão, hemograma, felinos, casos clínicos, procedimentos, cálculos, atendimento e muito mais) por bem menos do que ela custa sozinha.\n\nPosso te contar como fica?',
+      botoes: ['Pode contar', 'Tenho uma dúvida'] }
   };
+  // Até 4 mensagens do comercial para quem comprou e ainda não tem a Formação (calendário da campanha, 12/11)
+  var MAX_POR_MOTIVO = { 'Comprou o Guia, falta a Formação': 4, 'Comprou o Guia antes da Black, falta a Formação': 4 };
+  function maxEnvios(l) { return MAX_POR_MOTIVO[l.Motivo] || 2; }
   // Mesma regra do fluxo n8n (nó "Preparar envios")
   var POR_MOTIVO = {
-    'Comprou o Guia, falta a Formação': 'vd_upsell',
+    'Comprou o Guia, falta a Formação': 'vd_formacao_aluno_v2',
+    'Comprou o Guia antes da Black, falta a Formação': 'vd_formacao_cliente_v2',
     'Comprou o downsell, falta o Guia': 'vd_falta_guia',
     'Cartão recusado': 'vd_pedido', 'Pix não pago': 'vd_pedido', 'Carrinho abandonado': 'vd_pedido',
     'Pix aguardando pagamento': 'vd_pedido', 'Boleto aguardando pagamento': 'vd_pedido', 'Tentou o downsell e não pagou': 'vd_pedido',
@@ -41,7 +79,7 @@
     'Está no grupo, não comprou': 'vd_grupo', 'Saiu do grupo, não comprou': 'vd_grupo',
     'Cadastrou e nunca entrou no grupo': 'vd_grupo', 'Mensagem automática não entregue': 'vd_grupo'
   };
-  var ORDEM_MOTIVO = ['Comprou o Guia, falta a Formação', 'Comprou o downsell, falta o Guia', 'Comprou a Formação, falta o Guia',
+  var ORDEM_MOTIVO = ['Comprou o Guia, falta a Formação', 'Comprou o Guia antes da Black, falta a Formação', 'Comprou o downsell, falta o Guia', 'Comprou a Formação, falta o Guia',
     'Cartão recusado', 'Pix não pago', 'Carrinho abandonado', 'Pix aguardando pagamento', 'Boleto aguardando pagamento',
     'Tentou o downsell e não pagou', 'Mensagem automática não entregue', 'Respondeu a mensagem automática',
     'Respondeu a pesquisa da live', 'Está no grupo, não comprou', 'Saiu do grupo, não comprou', 'Cadastrou e nunca entrou no grupo'];
@@ -215,7 +253,7 @@
     if (l['Status do contato'] === 'Não quer') return 'Marcada como "Não quer": não recebe mais mensagem.';
     if (l['Status do contato'] === 'Número inválido') return 'Número marcado como inválido.';
     if (!modoTeste) {
-      if (l.envios >= 2) return 'Já recebeu as 2 mensagens do comercial. Continue pelo Kommo se ela responder.';
+      if (l.envios >= maxEnvios(l)) return 'Já recebeu as ' + maxEnvios(l) + ' mensagens do comercial. Continue pelo Kommo se ela responder.';
       if (l.ultimo_envio) {
         var libera = new Date(new Date(l.ultimo_envio).getTime() + 48 * 3600e3);
         if (libera > new Date()) return 'Próxima mensagem liberada em ' + quando(libera.toISOString()) + ' (48 h depois da última).';
@@ -255,7 +293,7 @@
     h += '<div class="acoes">';
     var podeTemplate = s.indexOf('🟢') === 0 || s.indexOf('💬') === 0;
     if (podeTemplate && (!l.Vendedora || minha)) {
-      // A mensagem indicada fica em destaque; "Enviar outra mensagem" abre as 7 para a vendedora escolher
+      // A mensagem indicada fica em destaque; "Enviar outra mensagem" abre todas para a vendedora escolher
       if (!l.envios) h += '<button type="button" class="botao botao--rosa" data-acao="enviar" data-opcao="Enviar"' + (bloqueio ? ' disabled' : '') + '>✉️ Enviar mensagem · ' + esc(TEMPLATES[t].nome) + '</button>';
       else h += '<button type="button" class="botao botao--rosa" data-acao="enviar" data-opcao="Enviar retorno"' + (bloqueio ? ' disabled' : '') + '>↩️ Enviar retorno</button>';
       h += '<button type="button" class="botao botao--claro" data-acao="escolher"' + (bloqueio ? ' disabled' : '') + '>Enviar outra mensagem</button>';
@@ -320,9 +358,11 @@
     if (typeof m.showModal === 'function') m.showModal();
     else if (window.confirm('Enviar a mensagem "' + tp.nome + '" para ' + (l.Nome || 'a pessoa') + '?')) enviar();
   }
-  // Escolher qualquer uma das 7 mensagens (a indicada para o Motivo vem primeiro, marcada)
+  // Escolher qualquer uma das mensagens (a indicada para o Motivo vem primeiro, marcada)
   var escolhendo = null;
-  var ORDEM_TPL = ['vd_geral', 'vd_upsell', 'vd_falta_guia', 'vd_pedido', 'vd_grupo', 'vd_pesquisa', 'vd_retorno'];
+  var ORDEM_TPL = ['vd_geral', 'vd_upsell', 'vd_falta_guia', 'vd_pedido', 'vd_grupo', 'vd_pesquisa', 'vd_retorno',
+    'vd_formacao_aluno_v2', 'vd_formacao_cliente_v2', 'vd_formacao_prova', 'vd_formacao_aula', 'vd_formacao_ultimo', 'vd_indicacao',
+    'vd_condicao_pagamento_v2', 'vd_retorno_condicao', 'vd_parcela_dia_v2', 'vd_serve_pra_mim', 'vd_esteira_v2'];
   function abrirEscolha(l) {
     escolhendo = l;
     var indicada = l.envios ? 'vd_retorno' : templateDe(l, 'Enviar');
@@ -350,7 +390,7 @@
       var l = p.l, agora = new Date();
       l.envios = (l.envios || 0) + 1; l.ultimo_envio = agora.toISOString(); l.Vendedora = sessao.vendedora;
       l.lead_comercial = r.lead_id || l.lead_comercial;
-      l.Template = TEMPLATES[r.template || p.t].nome + ' · ' + quando(l.ultimo_envio) + ' · ' + sessao.vendedora + (r.teste ? ' (teste)' : '');
+      l.Template = (TEMPLATES[r.template || p.t] || { nome: r.template || p.t }).nome + ' · ' + quando(l.ultimo_envio) + ' · ' + sessao.vendedora + (r.teste ? ' (teste)' : '');
       if (!l['Status do contato']) l['Status do contato'] = 'Chamei';
       aviso('✅ Mensagem enviada! A pessoa agora é sua. Quando ela responder, a conversa aparece no Kommo.', false, 6000);
       desenhar();
