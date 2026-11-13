@@ -67,7 +67,17 @@
     // Objeção do grupo (13/11): cada botão grava a Objeção no painel e a pessoa fica com a vendedora
     vd_objecao: { nome: 'Objeção', quando: 'para quem esteve no Grupo VIP e não comprou (descobrir o que travou)',
       texto: 'O que ficou faltando para você garantir o seu Guia, {nome}?\n\nVocê acompanhou a Black do Guia de Protocolos de perto, e eu quero entender o que pesou na sua decisão. Toca numa opção ou me escreve: eu te respondo aqui, pessoalmente.',
-      botoes: ['Preço', 'Serve pra mim?', 'Outra coisa'] }
+      botoes: ['Preço', 'Serve pra mim?', 'Outra coisa'] },
+    // Horários livres (13/11): campanhas automáticas. Entram na lista de escolha quando os templates forem aprovados.
+    vd_curso_comunidade: { nome: 'Curso + comunidade', quando: 'base antiga do Guia (tem o Guia, falta o curso e a comunidade)',
+      texto: 'O que veio junto do Guia nesta Black, {nome}, agora pode ser seu separado.\n\nQuem comprou o Guia de Protocolos na Black levou também o curso Atendimento Extraordinário e 3 meses na Comunidade Amar Saber. Como você já tem o Guia, separei só essa parte pra você: R$ 187, ou 12x de R$ 19,34.\n\nQuer que eu te mande?',
+      botoes: ['Quero ver', 'Tenho uma dúvida'] },
+    vd_black_friday: { nome: 'Black Friday', quando: 'dia da Black Friday (27/11), para quem não comprou e já interagiu',
+      texto: 'Hoje é a Black Friday, {nome}, e a condição do Guia vai só até segunda.\n\nO Guia de Protocolos vem com o curso Atendimento Extraordinário e 3 meses de Comunidade, por 12x de R$ 51,40. Depois de 30/11 essa condição acaba.\n\nQuer o link?',
+      botoes: ['Quero o link', 'Tenho uma dúvida'] },
+    as_ultimas_horas: { nome: 'Últimas horas', quando: '30/11, para quem não comprou e já interagiu',
+      texto: 'Oi, {nome}, faltam 5 horas.\n\nA Black Friday do Guia de Protocolos termina hoje às 23h59, e depois disso a oferta não volta.\n\nSe ainda tem alguma dúvida, me responde agora que a equipe te ajuda até o fim.',
+      botoes: ['Quero o link', 'Tenho uma dúvida'] }
   };
   // Até 4 mensagens do comercial para quem comprou e ainda não tem a Formação (calendário da campanha, 12/11)
   var MAX_POR_MOTIVO = { 'Comprou o Guia, falta a Formação': 4, 'Comprou o Guia antes da Black, falta a Formação': 4 };
@@ -241,7 +251,8 @@
     if (opcao === 'Enviar genérico') return 'vd_geral';
     return POR_MOTIVO[l.Motivo] || 'vd_geral';
   }
-  function bloqueioEnvio(l) {
+  // tpl (13/11): 'vd_indicacao' também vale para quem comprou tudo (✅)
+  function bloqueioEnvio(l, tpl) {
     var eu = sessao.vendedora, s = l['Situação'];
     if (l.Vendedora && l.Vendedora !== eu) return 'Esta pessoa é da ' + l.Vendedora + '.';
     if (s.indexOf('💬') === 0) {
@@ -250,7 +261,7 @@
       if (!resp || isNaN(resp)) return 'A conversa está no Kommo: continue por lá.';
       var libera = new Date(resp.getTime() + 24 * 3600e3);
       if (libera > new Date()) return 'Ela respondeu há pouco: a conversa está aberta, escreva no Kommo. Mensagem pelo painel só a partir de ' + quando(libera.toISOString()) + '.';
-    } else if (s.indexOf('🟢') !== 0) {
+    } else if (s.indexOf('🟢') !== 0 && !(tpl === 'vd_indicacao' && s.indexOf('✅') === 0)) {
       if (s.indexOf('⏳') === 0) return 'Ainda na sequência automática. Liberado em ' + (l['Liberado em'] || '?') + '.';
       return 'Não chamar (' + s.replace(/^\S+\s/, '') + ').';
     }
@@ -288,7 +299,8 @@
     else if (l.Template && !/^não enviado/.test(l.Template)) h += '<p class="estado estado--ok"><b>Mensagem enviada:</b> ' + esc(l.Template) + '. Aguardando resposta.</p>';
     if (s.indexOf('💬') === 0) h += '<p class="estado estado--azul">Respondeu uma mensagem automática' + (l.respondeu_em ? ' (' + esc(quando(l.respondeu_em)) + ')' : '') + '. Continue a conversa no Kommo. Se ela parou de responder há mais de 24 h, o Kommo não deixa escrever livre: use "Enviar mensagem" (o sistema confere a última mensagem dela antes de enviar).</p>';
     else if (s.indexOf('⏳') === 0) h += '<p class="estado estado--amarelo">Recebendo mensagens automáticas. <b>Liberado em ' + esc(l['Liberado em'] || '?') + '</b>.</p>';
-    else if (s.indexOf('⛔') === 0 || s.indexOf('✅') === 0) h += '<p class="estado estado--vermelho">' + esc(s) + ': não chamar.</p>';
+    else if (s.indexOf('⛔') === 0) h += '<p class="estado estado--vermelho">' + esc(s) + ': não chamar.</p>';
+    else if (s.indexOf('✅') === 0) h += '<p class="estado estado--ok">' + esc(s) + ': só a mensagem de indicação.</p>';
     if (l.Vendedora && !minha) h += '<p class="estado estado--amarelo">Esta pessoa é da <b>' + esc(l.Vendedora) + '</b>.</p>';
     else if (!l.Vendedora && l['Link da vendedora'] && l['Link da vendedora'] !== eu) h += '<p class="info">Já usou o link da <b>' + esc(l['Link da vendedora']) + '</b>: combine com ela antes de chamar.</p>';
 
@@ -301,6 +313,12 @@
       if (!l.envios) h += '<button type="button" class="botao botao--rosa" data-acao="enviar" data-opcao="Enviar"' + (bloqueio ? ' disabled' : '') + '>✉️ Enviar mensagem · ' + esc(TEMPLATES[t].nome) + '</button>';
       else h += '<button type="button" class="botao botao--rosa" data-acao="enviar" data-opcao="Enviar retorno"' + (bloqueio ? ' disabled' : '') + '>↩️ Enviar retorno</button>';
       h += '<button type="button" class="botao botao--claro" data-acao="escolher"' + (bloqueio ? ' disabled' : '') + '>Enviar outra mensagem</button>';
+    }
+    // Indicação (13/11): quem comprou tudo também pode receber o convite para indicar um colega
+    if (s.indexOf('✅') === 0 && (!l.Vendedora || minha)) {
+      var bloqInd = bloqueioEnvio(l, 'vd_indicacao');
+      h += '<button type="button" class="botao botao--rosa" data-acao="enviar" data-opcao="Enviar:vd_indicacao"' + (bloqInd ? ' disabled' : '') + '>🤝 Enviar indicação</button>';
+      if (bloqInd) h += '<p class="bloqueio">⚠️ ' + esc(bloqInd) + '</p>';
     }
     if (kommo && (minha || (!l.Vendedora && s.indexOf('💬') === 0))) h += '<a class="botao botao--claro" href="' + esc(kommo) + '" target="_blank" rel="noopener">Abrir no Kommo</a>';
     if (minha || !l.Vendedora) h += '<button type="button" class="botao botao--claro" data-acao="copiar" data-produto="' + produtoIndicado(l['Mandar o link']) + '">🔗 Copiar meu link</button>';

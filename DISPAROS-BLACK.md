@@ -72,8 +72,9 @@ O Grupo VIP segue o calendário de `GRUPO-VIP-MENSAGENS.md`.
 | ter 17/11 | 10h triagem → 36 (fim da sequência automática de quem está fora do grupo) · **19h G → 150** |
 | qua 18/11 | **19h A → todos de A:** quem saiu do grupo recebe `vd_objecao`, quem só cadastrou recebe `vd_serve_pra_mim` · **19h G → 150** · **14h B `vd_formacao_prova`**, até 300 por dia de 18 a 21/11 |
 | qui 19/11 | **19h pesquisa da live, 2º toque pela objeção** (valor → `vd_parcela_dia_v2`, momento → `vd_serve_pra_mim`, edição anterior → `vd_formacao_cliente_v2`, outros → `vd_condicao_pagamento_v2`) |
-| sex 20/11 | **19h compradores `vd_indicacao`** (fora do fluxo por enquanto) · 19h G e B continuam |
+| sex 20/11 | 14h B e 19h G continuam |
 | sáb 21/11 | **19h A (só `vip_cadastro`) `vd_parcela_dia_v2`** |
+| sáb 22/11 | **14h indicação `vd_indicacao`** → compradores da Black (Lista "1 · Upsell" e "Comprou tudo") · 19h G |
 | ter 24/11 | **19h A (só `vip_cadastro`, sem bônus) `vd_esteira_v2`** |
 | qua 25/11 | **14h B `vd_formacao_aula`**, até 300 por dia de 25 a 28/11 |
 | sáb 28/11 | 10h reta final `as_reta_3dias` |
@@ -139,6 +140,23 @@ Todos precisam estar com Situação 🟢 e sem "Não quer".
 
 Os bots de resposta são do Kommo; o fluxo "AS · Comercial (respostas)" grava a resposta.
 
+**Horários livres, só para quem tende a converter (13/11):** a regra é mensagem colada a uma ação. Pelos números da
+fila, cartão recusado converte 55%, Pix vencido 48% e pedido de link 44%, contra 0,3% a 3% da mensagem fria.
+
+| Campanha | Público | Mensagem | Quando |
+|---|---|---|---|
+| `r-objecao` | **R**: respondeu "Preço" ou "Serve pra mim?" ao `vd_objecao` há 48 h ou mais, não comprou e não recebeu outra mensagem do comercial depois (🟢 ou 💬) | Preço → `vd_parcela_dia_v2` · Serve pra mim? → `vd_serve_pra_mim` | Contínuo, à noite, de 16 a 30/11 |
+| `p-1611` | **P**: respondeu a pesquisa da live e não comprou | Pelo que pesou na pesquisa: edição anterior → `vd_formacao_cliente_v2`; valor → `vd_parcela_dia_v2`; momento → `vd_serve_pra_mim`; resto → `vd_condicao_pagamento_v2` | Dom 16/11, 19h |
+| `c-2311` | **C**: base antiga do Guia (lista 1b) que nunca respondeu o comercial | `vd_curso_comunidade` (**template novo**), link do downsell R$ 187 da vendedora | Dom 23 e seg 24/11, 14h, até 350 por dia |
+| `e-2711` | **E**: engajado sem compra, ou seja, Lista 3, 2b ou 2c e pelo menos um sinal: respondeu o comercial, pediu o link, respondeu a pesquisa, ou Prioridade quente ou morna (🟢 ou 💬) | `vd_black_friday` (**template novo**), link da Black da vendedora | Sex 27/11, 19h |
+| `e-3011` | **E** | `as_ultimas_horas` (bot 50247) | Seg 30/11, 19h, sem trava de fadiga |
+
+- **Fadiga:** quem ignorou 3 campanhas seguidas, sem nenhuma resposta ao comercial depois delas, não recebe a próxima. A
+  exceção são as campanhas com `ignora_fadiga`.
+- **Fonte das respostas:** o nó `Ler respostas` lê a AS · Comercial envios.
+- **Antes de 23/11:** os bots de `vd_curso_comunidade` e `vd_black_friday` precisam entrar em `BOTS` do `Preparar envios`.
+  Sem isso, o painel recusa a mensagem como "desconhecida".
+
 **Pediu o link e não comprou (13/11):** quem toca "Quero o link" num template automático (bot `AS · Link`) mostrou a
 maior intenção de compra.
 - **Origem dos números:** pelo histórico da etapa "Pediu o link" no Kommo, 52 pessoas pediram o link até 13/11 e 23 compraram.
@@ -163,5 +181,16 @@ maior intenção de compra.
 
 **Pendências:**
 - **Lembretes de boleto e Pix:** os bots e templates existem, mas o gatilho na recuperação ainda não foi feito.
-- **Indicação (20/11):** fora do calendário por enquanto. Quem comprou tudo está com ✅ e o painel recusa o envio para essa Situação; precisa de regra própria.
+- **Indicação (22/11, campanha `i-2211`, 14h):** feita em 13/11.
+  - **Público:** compradores da Black, com Lista "1 · Upsell" ou "Comprou tudo".
+  - **Comprou tudo (✅):** o painel e a campanha aceitam essa Situação só para o `vd_indicacao`. No painel, aparece o botão "🤝 Enviar indicação".
+  - **Link:** no envio, o `as_link` do lead (campo 881489) recebe o link da Black com
+    `utm_source=indicacao&utm_campaign=indicacao_black&utm_content=ind_<chave de quem indica>`. O bot `VD · Indicar` manda
+    esse link quando a pessoa toca "Quero indicar".
+  - **Registro:** a venda paga na Kiwify com essa UTM entra na aba **"Indicações"** (nós `Montar indicações` e
+    `Gravar indicações` da "AS · Comercial (lista)"), com quem comprou e quem indicou. A coluna **Bônus** é da equipe, que
+    soma os +3 meses de comunidade aos dois. Reembolso e chargeback aparecem na aba; compra com o próprio link fica marcada
+    "mesma pessoa: não vale".
+  - **Cabeçalhos da aba "Indicações":** Pedido · Status · Pago em · Produto · Valor · Quem comprou · WhatsApp de quem comprou ·
+    Email de quem comprou · Indicado por · WhatsApp de quem indicou · Observação · Atualizado em · Bônus.
 - **"Clicou e não comprou":** o fluxo (15 min depois do clique) ainda não foi feito.
