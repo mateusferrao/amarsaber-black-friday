@@ -139,6 +139,21 @@ Todos precisam estar com Situação 🟢 e sem "Não quer".
 
 Os bots de resposta são do Kommo; o fluxo "AS · Comercial (respostas)" grava a resposta.
 
+**Pediu o link e não comprou (13/11):** quem toca "Quero o link" num template automático (bot `AS · Link`) mostrou a
+maior intenção de compra.
+- **Origem dos números:** pelo histórico da etapa "Pediu o link" no Kommo, 52 pessoas pediram o link até 13/11 e 23 compraram.
+  Dos 29 que não compraram, 18 ainda estavam na sequência automática e 9 já estavam com uma vendedora.
+- **Tabela AS · Pediu o link** (`o5nGz7AbqKN9WUNG`): começou com esses 18. Daqui em diante, o fluxo de campanha registra
+  sozinho quem ficou com a observação "Pediu o link" na fila (nós `Novos pedidos de link` e `Gravar pediu o link`).
+- **A pessoa sai da sequência automática no lugar da triagem.** A fila vai para `vendedora` (nós `Parar sequência` e
+  `Fila: vendedora (link)`), e ela aparece 🟢 no painel.
+- **Campanha contínua `l-link`:**
+  - manda o `vd_objecao` 24 h depois do pedido, se a pessoa não comprou;
+  - "não comprou" quer dizer Lista 3, 2b ou 2c na aba;
+  - roda das 8h às 20h45, de hora em hora e nas janelas da tarde e da noite;
+  - começou em 13/11 às 14h.
+- O cron do fluxo passou a `*/5 14-16,19-20 * * *` mais `5 8-13,17-18 * * *`.
+
 **Quem responde fica com a vendedora (13/11):**
 - **Lista:** a "AS · Comercial (lista)" lê AS · Comercial envios. Quem respondeu uma mensagem do comercial a partir de 13/11 vira 💬, com prioridade quente.
   - Conta botão ou texto, inclusive de campanha.
