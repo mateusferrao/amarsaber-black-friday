@@ -140,6 +140,23 @@ Todos precisam estar com Situação 🟢 e sem "Não quer".
 
 Os bots de resposta são do Kommo; o fluxo "AS · Comercial (respostas)" grava a resposta.
 
+**Horários livres, só para quem tende a converter (13/11):** a regra é mensagem colada a uma ação. Pelos números da
+fila, cartão recusado converte 55%, Pix vencido 48% e pedido de link 44%, contra 0,3% a 3% da mensagem fria.
+
+| Campanha | Público | Mensagem | Quando |
+|---|---|---|---|
+| `r-objecao` | **R**: respondeu "Preço" ou "Serve pra mim?" ao `vd_objecao` há 48 h ou mais, não comprou e não recebeu outra mensagem do comercial depois (🟢 ou 💬) | Preço → `vd_parcela_dia_v2` · Serve pra mim? → `vd_serve_pra_mim` | Contínuo, à noite, de 16 a 30/11 |
+| `p-1611` | **P**: respondeu a pesquisa da live e não comprou | Pelo que pesou na pesquisa: edição anterior → `vd_formacao_cliente_v2`; valor → `vd_parcela_dia_v2`; momento → `vd_serve_pra_mim`; resto → `vd_condicao_pagamento_v2` | Dom 16/11, 19h |
+| `c-2311` | **C**: base antiga do Guia (lista 1b) que nunca respondeu o comercial | `vd_curso_comunidade` (**template novo**), link do downsell R$ 187 da vendedora | Dom 23 e seg 24/11, 14h, até 350 por dia |
+| `e-2711` | **E**: engajado sem compra, ou seja, Lista 3, 2b ou 2c e pelo menos um sinal: respondeu o comercial, pediu o link, respondeu a pesquisa, ou Prioridade quente ou morna (🟢 ou 💬) | `vd_black_friday` (**template novo**), link da Black da vendedora | Sex 27/11, 19h |
+| `e-3011` | **E** | `as_ultimas_horas` (bot 50247) | Seg 30/11, 19h, sem trava de fadiga |
+
+- **Fadiga:** quem ignorou 3 campanhas seguidas, sem nenhuma resposta ao comercial depois delas, não recebe a próxima. A
+  exceção são as campanhas com `ignora_fadiga`.
+- **Fonte das respostas:** o nó `Ler respostas` lê a AS · Comercial envios.
+- **Antes de 23/11:** os bots de `vd_curso_comunidade` e `vd_black_friday` precisam entrar em `BOTS` do `Preparar envios`.
+  Sem isso, o painel recusa a mensagem como "desconhecida".
+
 **Pediu o link e não comprou (13/11):** quem toca "Quero o link" num template automático (bot `AS · Link`) mostrou a
 maior intenção de compra.
 - **Origem dos números:** pelo histórico da etapa "Pediu o link" no Kommo, 52 pessoas pediram o link até 13/11 e 23 compraram.

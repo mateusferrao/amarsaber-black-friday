@@ -973,3 +973,33 @@ O webhook é o mesmo dos outros VD (`…/as-black-comercial?chave=<CHAVE>&acao=�
   | `obj_outra` | em branco (a vendedora escolhe) |
 
 - A Resposta sempre recebe "Objeção: …".
+
+## Horários livres (13/11): templates novos
+Os dois são Marketing, pt_BR, sem cabeçalho, com rodapé "Responda SAIR para não receber mais". Os bots seguem o mesmo padrão:
+sem gatilho, só a 5052, "Tente enviar uma mensagem" marcado e falha → webhook `acao=falha`.
+
+### `vd_curso_comunidade` (base antiga, 23 e 24/11)
+```
+O que veio junto do Guia nesta Black, {{lead.cf.881487}}, agora pode ser seu separado.
+
+Quem comprou o Guia de Protocolos na Black levou também o curso Atendimento Extraordinário e 3 meses na Comunidade Amar Saber. Como você já tem o Guia, separei só essa parte pra você: R$ 187, ou 12x de R$ 19,34.
+
+Quer que eu te mande?
+```
+Botões: Quero ver → `VD · Explicar` · Tenho uma dúvida → `VD · Dúvida` · outra resposta → `VD · Outra resposta`.
+
+### `vd_black_friday` (engajados sem compra, 27/11)
+```
+Hoje é a Black Friday, {{lead.cf.881487}}, e a condição do Guia vai só até segunda.
+
+O Guia de Protocolos vem com o curso Atendimento Extraordinário e 3 meses de Comunidade, por 12x de R$ 51,40. Depois de 30/11 essa condição acaba.
+
+Quer o link?
+```
+Botões: Quero o link → `VD · Link` (novo) · Tenho uma dúvida → `VD · Dúvida` · outra resposta → `VD · Outra resposta`.
+
+### Bot novo `VD · Link`
+1. **Enviar mensagem:** "Aqui está o link com a condição da Black: {{lead.cf.881489}}
+   Se travar em alguma parte, me responde aqui."
+2. **Ação → Enviar webhook:** `…/as-black-comercial?chave=<CHAVE>&acao=quer`.
+3. **Ação → Alterar etapa do lead:** *Comercial Black* → *Link enviado*.

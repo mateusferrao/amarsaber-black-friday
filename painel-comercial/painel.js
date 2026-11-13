@@ -67,7 +67,17 @@
     // Objeção do grupo (13/11): cada botão grava a Objeção no painel e a pessoa fica com a vendedora
     vd_objecao: { nome: 'Objeção', quando: 'para quem esteve no Grupo VIP e não comprou (descobrir o que travou)',
       texto: 'O que ficou faltando para você garantir o seu Guia, {nome}?\n\nVocê acompanhou a Black do Guia de Protocolos de perto, e eu quero entender o que pesou na sua decisão. Toca numa opção ou me escreve: eu te respondo aqui, pessoalmente.',
-      botoes: ['Preço', 'Serve pra mim?', 'Outra coisa'] }
+      botoes: ['Preço', 'Serve pra mim?', 'Outra coisa'] },
+    // Horários livres (13/11): campanhas automáticas. Entram na lista de escolha quando os templates forem aprovados.
+    vd_curso_comunidade: { nome: 'Curso + comunidade', quando: 'base antiga do Guia (tem o Guia, falta o curso e a comunidade)',
+      texto: 'O que veio junto do Guia nesta Black, {nome}, agora pode ser seu separado.\n\nQuem comprou o Guia de Protocolos na Black levou também o curso Atendimento Extraordinário e 3 meses na Comunidade Amar Saber. Como você já tem o Guia, separei só essa parte pra você: R$ 187, ou 12x de R$ 19,34.\n\nQuer que eu te mande?',
+      botoes: ['Quero ver', 'Tenho uma dúvida'] },
+    vd_black_friday: { nome: 'Black Friday', quando: 'dia da Black Friday (27/11), para quem não comprou e já interagiu',
+      texto: 'Hoje é a Black Friday, {nome}, e a condição do Guia vai só até segunda.\n\nO Guia de Protocolos vem com o curso Atendimento Extraordinário e 3 meses de Comunidade, por 12x de R$ 51,40. Depois de 30/11 essa condição acaba.\n\nQuer o link?',
+      botoes: ['Quero o link', 'Tenho uma dúvida'] },
+    as_ultimas_horas: { nome: 'Últimas horas', quando: '30/11, para quem não comprou e já interagiu',
+      texto: 'Oi, {nome}, faltam 5 horas.\n\nA Black Friday do Guia de Protocolos termina hoje às 23h59, e depois disso a oferta não volta.\n\nSe ainda tem alguma dúvida, me responde agora que a equipe te ajuda até o fim.',
+      botoes: ['Quero o link', 'Tenho uma dúvida'] }
   };
   // Até 4 mensagens do comercial para quem comprou e ainda não tem a Formação (calendário da campanha, 12/11)
   var MAX_POR_MOTIVO = { 'Comprou o Guia, falta a Formação': 4, 'Comprou o Guia antes da Black, falta a Formação': 4 };
