@@ -1003,3 +1003,15 @@ Botões: Quero o link → `VD · Link` (novo) · Tenho uma dúvida → `VD · D�
    Se travar em alguma parte, me responde aqui."
 2. **Ação → Enviar webhook:** `…/as-black-comercial?chave=<CHAVE>&acao=quer`.
 3. **Ação → Alterar etapa do lead:** *Comercial Black* → *Link enviado*.
+
+### `vd_amanha_acaba` (id 47267, bot `VD · vd_amanha_acaba` 53333; engajados sem compra, 29/11)
+Marketing, pt_BR, sem cabeçalho, rodapé "Responda SAIR para não receber mais".
+```
+Amanhã a Black do Guia acaba, {{lead.cf.881487}}.
+
+Na segunda, 30/11, às 23h59, o Guia de Protocolos volta ao preço normal e o curso Atendimento Extraordinário e os 3 meses de Comunidade deixam de vir junto.
+
+Ainda dá tempo: quer o link?
+```
+Botões: Quero o link → `VD · Link` · Tenho uma dúvida → `VD · Dúvida` · outra resposta → `VD · Outra resposta`.
+Bot do template: `VD · vd_amanha_acaba` (53333), já em `BOTS` do painel (13/11).

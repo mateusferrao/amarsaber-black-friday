@@ -75,6 +75,9 @@
     vd_black_friday: { nome: 'Black Friday', quando: 'dia da Black Friday (27/11), para quem não comprou e já interagiu',
       texto: 'Hoje é a Black Friday, {nome}, e a condição do Guia vai só até segunda.\n\nO Guia de Protocolos vem com o curso Atendimento Extraordinário e 3 meses de Comunidade, por 12x de R$ 51,40. Depois de 30/11, ou se o estoque acabar, essa condição acaba.\n\nQuer o link?',
       botoes: ['Quero o link', 'Tenho uma dúvida'] },
+    vd_amanha_acaba: { nome: 'Amanhã acaba', quando: '29/11, para quem não comprou e já interagiu',
+      texto: 'Amanhã a Black do Guia acaba, {nome}.\n\nNa segunda, 30/11, às 23h59, o Guia de Protocolos volta ao preço normal e o curso Atendimento Extraordinário e os 3 meses de Comunidade deixam de vir junto.\n\nAinda dá tempo: quer o link?',
+      botoes: ['Quero o link', 'Tenho uma dúvida'] },
     as_ultimas_horas: { nome: 'Últimas horas', quando: '30/11, para quem não comprou e já interagiu',
       texto: 'Oi, {nome}, faltam 5 horas.\n\nA Black Friday do Guia de Protocolos termina hoje às 23h59, e depois disso a oferta não volta.\n\nSe ainda tem alguma dúvida, me responde agora que a equipe te ajuda até o fim.',
       botoes: ['Quero o link', 'Tenho uma dúvida'] }
@@ -384,7 +387,7 @@
   var escolhendo = null;
   var ORDEM_TPL = ['vd_geral', 'vd_upsell', 'vd_falta_guia', 'vd_pedido', 'vd_grupo', 'vd_pesquisa', 'vd_retorno',
     'vd_formacao_aluno_v2', 'vd_formacao_cliente_v2', 'vd_formacao_prova', 'vd_formacao_aula', 'vd_formacao_ultimo', 'vd_indicacao',
-    'vd_condicao_pagamento_v2', 'vd_retorno_condicao', 'vd_parcela_dia_v2', 'vd_serve_pra_mim', 'vd_esteira_v2', 'vd_objecao', 'vd_curso_comunidade_v2', 'vd_black_friday'];
+    'vd_condicao_pagamento_v2', 'vd_retorno_condicao', 'vd_parcela_dia_v2', 'vd_serve_pra_mim', 'vd_esteira_v2', 'vd_objecao', 'vd_curso_comunidade_v2', 'vd_black_friday', 'vd_amanha_acaba'];
   function abrirEscolha(l) {
     escolhendo = l;
     var indicada = l.envios ? 'vd_retorno' : templateDe(l, 'Enviar');
