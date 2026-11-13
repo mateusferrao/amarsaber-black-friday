@@ -936,3 +936,39 @@ só lista bots que já existem.
 **Por que os toques caem no painel:** os bots `VD` chamam o webhook do comercial, que grava a resposta na aba Comercial · Black. Os bots `AS` passam pela recuperação, que põe a pessoa em atendimento. Nos dois casos ela aparece em 💬 no painel. O n8n também tira da fila de recuperação quem respondeu a um `VD`.
 
 **Depois de criar:** mandar os ids dos 16 bots novos (14 de template e 2 de resposta) para entrarem no "Config do Kommo" do n8n e no painel. O id aparece no endereço do bot aberto no Kommo.
+
+## Objeção do grupo (13/11)
+Para quem esteve no Grupo VIP e não comprou (público G em `DISPAROS-BLACK.md`). Cada botão grava a Objeção no painel e a pessoa fica com a vendedora. Cadastrado e aprovado em 13/11 (conferido pela API).
+
+### `vd_objecao` (id 47209)
+Marketing, pt_BR, sem cabeçalho.
+```
+O que ficou faltando para você garantir o seu Guia, {{lead.cf.881487}}?
+
+Você acompanhou a Black do Guia de Protocolos de perto, e eu quero entender o que pesou na sua decisão. Toca numa opção ou me escreve: eu te respondo aqui, pessoalmente.
+```
+Rodapé: Responda SAIR para não receber mais; Botões: Preço · Serve pra mim? · Outra coisa.
+
+### Salesbots
+Montados como os de 12/11:
+- sem gatilho;
+- só a 5052;
+- "Tente enviar uma mensagem" marcado.
+
+| Bot | id | O que faz |
+|---|---|---|
+| `VD · vd_objecao` | 53221 | Preço → `VD · Objeção preço` · Serve pra mim? → `VD · Objeção serve` · Outra coisa → `VD · Objeção outra` · outra resposta → `VD · Outra resposta` (trata o SAIR) · falha → webhook `acao=falha` |
+| `VD · Objeção preço` | 53211 | "Entendi! 💗 Me conta: o que pesa mais, o valor total ou a parcela? Já te mostro o que dá para fazer." · webhook `acao=obj_preco` · etapa Respondeu |
+| `VD · Objeção serve` | 53215 | "Boa pergunta! 💗 Me conta: hoje você atende em clínica, em plantão ou ainda está na faculdade?" · webhook `acao=obj_serve` · etapa Respondeu |
+| `VD · Objeção outra` | 53217 | "Me conta, estou aqui! 💗" · webhook `acao=obj_outra` · etapa Respondeu |
+
+O webhook é o mesmo dos outros VD (`…/as-black-comercial?chave=<CHAVE>&acao=…`).
+- **Objeção gravada na aba:**
+
+  | Ação | Objeção |
+  |---|---|
+  | `obj_preco` | "Preço" |
+  | `obj_serve` | "Serve para mim?" |
+  | `obj_outra` | em branco (a vendedora escolhe) |
+
+- A Resposta sempre recebe "Objeção: …".
