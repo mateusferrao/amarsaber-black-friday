@@ -68,13 +68,13 @@ O Grupo VIP segue o calendário de `GRUPO-VIP-MENSAGENS.md`.
 | sex 13/11 | 10h triagem/prova (checkout e Pix) · 19h `as_prova` → 200 fora do grupo · **14h B1 `vd_formacao_aluno_v2` → 133** · **14h B2 1ª leva `vd_formacao_cliente_v2` → ~250** |
 | sáb 14/11 | 10h triagem → 9 · 19h `as_prova` → 36 · **14h B2 2ª leva → ~250** · **19h G `vd_objecao` → 150** |
 | dom 15/11 | 10h triagem → ~106 · **14h B2 3ª leva → ~250** · **19h G → 150** |
-| seg 16/11 | 10h triagem → ~200 · **19h G → 150** |
+| seg 16/11 | 10h triagem → ~200 · **19h pesquisa da live, 2º toque pela objeção marcada (`p-1611`)** · **19h G → 150** · respondeu a objeção começa (`r-objecao`) |
 | ter 17/11 | 10h triagem → 36 (fim da sequência automática de quem está fora do grupo) · **19h G → 150** |
 | qua 18/11 | **19h A → todos de A:** quem saiu do grupo recebe `vd_objecao`, quem só cadastrou recebe `vd_serve_pra_mim` · **19h G → 150** · **14h B `vd_formacao_prova`**, até 300 por dia de 18 a 21/11 |
-| qui 19/11 | **19h pesquisa da live, 2º toque pela objeção** (valor → `vd_parcela_dia_v2`, momento → `vd_serve_pra_mim`, edição anterior → `vd_formacao_cliente_v2`, outros → `vd_condicao_pagamento_v2`) |
+| qui 19/11 | 14h B e 19h G continuam |
 | sex 20/11 | 14h B e 19h G continuam |
 | sáb 21/11 | **19h A (só `vip_cadastro`) `vd_parcela_dia_v2`** |
-| sáb 22/11 | **14h indicação `vd_indicacao`** → compradores da Black (Lista "1 · Upsell" e "Comprou tudo") · 19h G |
+| dom 22/11 | **14h indicação `vd_indicacao`** → compradores da Black (Lista "1 · Upsell" e "Comprou tudo") · 19h G |
 | ter 24/11 | **19h A (só `vip_cadastro`, sem bônus) `vd_esteira_v2`** |
 | qua 25/11 | **14h B `vd_formacao_aula`**, até 300 por dia de 25 a 28/11 |
 | sáb 28/11 | 10h reta final `as_reta_3dias` |
@@ -146,8 +146,8 @@ fila, cartão recusado converte 55%, Pix vencido 48% e pedido de link 44%, contr
 | Campanha | Público | Mensagem | Quando |
 |---|---|---|---|
 | `r-objecao` | **R**: respondeu "Preço" ou "Serve pra mim?" ao `vd_objecao` há 48 h ou mais, não comprou e não recebeu outra mensagem do comercial depois (🟢 ou 💬) | Preço → `vd_parcela_dia_v2` · Serve pra mim? → `vd_serve_pra_mim` | Contínuo, à noite, de 16 a 30/11 |
-| `p-1611` | **P**: respondeu a pesquisa da live e não comprou | Pelo que pesou na pesquisa: edição anterior → `vd_formacao_cliente_v2`; valor → `vd_parcela_dia_v2`; momento → `vd_serve_pra_mim`; resto → `vd_condicao_pagamento_v2` | Dom 16/11, 19h |
-| `c-2311` | **C**: base antiga do Guia (lista 1b) que nunca respondeu o comercial | `vd_curso_comunidade_v2` (bot 53329), link do downsell da vendedora (R$ 187) | Dom 23 e seg 24/11, 14h, até 350 por dia |
+| `p-1611` | **P**: respondeu a pesquisa da live e não comprou | Pelo que pesou na pesquisa: edição anterior → `vd_formacao_cliente_v2`; valor → `vd_parcela_dia_v2`; momento → `vd_serve_pra_mim`; resto → `vd_condicao_pagamento_v2` | Seg 16/11, 19h |
+| `c-2311` | **C**: base antiga do Guia (lista 1b) que nunca respondeu o comercial | `vd_curso_comunidade_v2` (bot 53329), link do downsell da vendedora (R$ 187) | Seg 23 e ter 24/11, 14h, até 350 por dia |
 | `e-2711` | **E**: engajado sem compra, ou seja, Lista 3, 2b ou 2c e pelo menos um sinal: respondeu o comercial, pediu o link, respondeu a pesquisa, ou Prioridade quente ou morna (🟢 ou 💬) | `vd_black_friday` (bot 53305; o botão "Quero o link" chama o `VD · Link`, bot 53301), link da Black da vendedora | Sex 27/11, 19h |
 | `e-3011` | **E** | `as_ultimas_horas` (bot 50247) | Seg 30/11, 19h, sem trava de fadiga |
 
