@@ -25,7 +25,7 @@ entram depois, quando tiverem data.
 |---|---|
 | Públicos | Compradores sem Formação · Fora do grupo sem compra · Clicou e não comprou · **No grupo sem compra, só com a pergunta da objeção (13/11)** |
 | Conteúdo | Sempre oferta direta, variando o gancho: serve pra mim, parcela por dia, Formação junto, valor por aula, prova |
-| Horário | Campanha às 19h; vendedoras até 21h; automático só das 8h às 21h |
+| Horário | Campanha dos compradores às 14h (até 16h45) e de quem não comprou às 19h (até 20h45), desde 13/11; vendedoras até 21h; automático só das 8h às 21h |
 | Botões | Positivo + "Tenho uma dúvida". Os dois levam a pessoa para a vendedora (💬 no painel) |
 | Saída | Rodapé "Responda SAIR para não receber mais" nos templates de campanha |
 | Painel | **Tudo o que for para as vendedoras aparece no painel comercial** |
@@ -65,19 +65,19 @@ O Grupo VIP segue o calendário de `GRUPO-VIP-MENSAGENS.md`.
 | Dia | Individual |
 |---|---|
 | qui 12/11 | 19h `as_prova` → 102 fora do grupo · pesquisa da live: `vd_pesquisa` pelo painel, até 21h |
-| sex 13/11 | 10h triagem/prova (checkout e Pix) · 19h `as_prova` → 200 fora do grupo · **19h B1 `vd_formacao_aluno_v2` → 101** · **19h B2 leva 1 `vd_formacao_cliente_v2` → ~250** |
-| sáb 14/11 | 10h triagem → 9 · 19h `as_prova` → 36 · **19h B2 leva 2 → ~250** · **19h G `vd_objecao` → 150** |
-| dom 15/11 | 10h triagem → ~106 · **19h B2 leva 3 → ~250** · **19h G → 150** |
+| sex 13/11 | 10h triagem/prova (checkout e Pix) · 19h `as_prova` → 200 fora do grupo · **14h B1 `vd_formacao_aluno_v2` → 133** · **14h B2 1ª leva `vd_formacao_cliente_v2` → ~250** |
+| sáb 14/11 | 10h triagem → 9 · 19h `as_prova` → 36 · **14h B2 2ª leva → ~250** · **19h G `vd_objecao` → 150** |
+| dom 15/11 | 10h triagem → ~106 · **14h B2 3ª leva → ~250** · **19h G → 150** |
 | seg 16/11 | 10h triagem → ~200 · **19h G → 150** |
 | ter 17/11 | 10h triagem → 36 (fim da sequência automática de quem está fora do grupo) · **19h G → 150** |
-| qua 18/11 | **19h A → todos de A:** quem saiu do grupo recebe `vd_objecao`, quem só cadastrou recebe `vd_serve_pra_mim` · **19h G → 150** · **19h B `vd_formacao_prova`**, até 300 por noite de 18 a 21/11 (o que sobrar da noite) |
+| qua 18/11 | **19h A → todos de A:** quem saiu do grupo recebe `vd_objecao`, quem só cadastrou recebe `vd_serve_pra_mim` · **19h G → 150** · **14h B `vd_formacao_prova`**, até 300 por dia de 18 a 21/11 |
 | qui 19/11 | **19h pesquisa da live, 2º toque pela objeção** (valor → `vd_parcela_dia_v2`, momento → `vd_serve_pra_mim`, edição anterior → `vd_formacao_cliente_v2`, outros → `vd_condicao_pagamento_v2`) |
 | sex 20/11 | **19h compradores `vd_indicacao`** (fora do fluxo por enquanto) · 19h G e B continuam |
 | sáb 21/11 | **19h A (só `vip_cadastro`) `vd_parcela_dia_v2`** |
 | ter 24/11 | **19h A (só `vip_cadastro`, sem bônus) `vd_esteira_v2`** |
-| qua 25/11 | **19h B `vd_formacao_aula`**, até 300 por noite de 25 a 28/11 |
+| qua 25/11 | **14h B `vd_formacao_aula`**, até 300 por dia de 25 a 28/11 |
 | sáb 28/11 | 10h reta final `as_reta_3dias` |
-| seg 30/11 | 9h `as_ultimo_dia` · 19h `as_ultimas_horas` · **19h B `vd_formacao_ultimo`** (só se o desconto da Formação acabar em 30/11) |
+| seg 30/11 | 9h `as_ultimo_dia` · 19h `as_ultimas_horas` · **14h B `vd_formacao_ultimo`** (só se o desconto da Formação acabar em 30/11) |
 
 G segue às 19h, 150 por noite, até acabar o público (cerca de 7 noites, até ~21/11). As noites que sobram ficam livres
 para a live e o fim do frete grátis.
@@ -106,7 +106,7 @@ Cada disparo grava a campanha no lead e na fila. Na manhã seguinte de cada disp
 | **AS · Painel comercial (API)**, nó `Preparar envios` | Bots dos templates novos; motivo da base do Guia; até 4 mensagens para compradores sem Formação. Pedido com `campanha: true` não conta no teto de 300, não tem limite por pessoa (as 48 h valem) e não tira a pessoa da fila da recuperação. O registro grava `campanha = sim` |
 | **AS · Comercial (respostas)** | Ações `indicar` e `sair`. "Sair" marca "Não quer" e põe a fila em `saiu`; qualquer outra resposta põe a fila em `vendedora` (a automação para) |
 | **AS · Kommo enviar**, nó `Config do Kommo` | O passo `as_prova` roda o bot do `as_prova_v2` (53183, "+2.000"); bots dos lembretes de boleto (53185) e Pix (53187) |
-| **AS · Disparos de campanha** (`P6NU3k2se6OtQqG9`) | A cada 5 min, das 19h às 20h45, nos dias do calendário (nó `Campanha de hoje`). Manda até 25 pessoas por rodada pela ação "enviar" do painel e registra em **AS · Campanhas** (`e3N0w9GCu0OELYXp`) |
+| **AS · Disparos de campanha** (`P6NU3k2se6OtQqG9`) | A cada 5 min, das 14h às 16h45 (compradores) e das 19h às 20h45 (quem não comprou), nos dias do calendário (nó `Campanha de hoje`). Manda até 25 pessoas por rodada pela ação "enviar" do painel e registra em **AS · Campanhas** (`e3N0w9GCu0OELYXp`) |
 
 **Quem é cada público na aba Comercial · Black:**
 | Público | Regra |
@@ -121,10 +121,11 @@ Todos precisam estar com Situação 🟢 e sem "Não quer".
 
 **Campanhas de uma noite e de várias (13/11), nó `Campanha de hoje`:**
 - `dia`: uma noite só. `de`/`ate`: a campanha segue nas noites seguintes até acabar o público.
-- `max_noite`: teto por noite, que conta as tentativas da noite. Sem teto, vai todo o público.
-  - Cada rodada manda até 25 pessoas. Em 22 rodadas (19h às 20h45), cabem até 550 por noite.
+- `turno` (13/11): `tarde` (14h às 16h45, compradores) ou `noite` (19h às 20h45, quem não comprou). Cada rodada só manda as campanhas do turno da hora.
+- `max_dia`: teto por dia, que conta as tentativas do dia. Sem teto, vai todo o público.
+  - Cada rodada manda até 25 pessoas. Na tarde (34 rodadas) cabem até 850; na noite (22 rodadas), até 550.
   - A ordem da lista é a prioridade dentro da rodada.
-- **Recusa do painel** (por exemplo, menos de 48 h desde a última mensagem): a pessoa volta a ser tentada na noite seguinte, se a campanha continuar.
+- **Recusa do painel** (por exemplo, menos de 48 h desde a última mensagem): a pessoa volta a ser tentada no dia seguinte, se a campanha continuar.
 - `por_grupo`: template diferente pela coluna Grupo. No toque A de 18/11, quem saiu do grupo recebe `vd_objecao`.
 - A pessoa nunca recebe duas vezes o mesmo template de campanha.
 
