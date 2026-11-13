@@ -122,7 +122,7 @@ Todos precisam estar com Situação 🟢 e sem "Não quer".
 **Campanhas de uma noite e de várias (13/11), nó `Campanha de hoje`:**
 - `dia`: uma noite só. `de`/`ate`: a campanha segue nas noites seguintes até acabar o público.
 - `turno` (13/11): `tarde` (14h às 16h45, compradores) ou `noite` (19h às 20h45, quem não comprou). Cada rodada só manda as campanhas do turno da hora.
-- `max_dia`: teto por dia, que conta as tentativas do dia. Sem teto, vai todo o público.
+- `max_noite`: teto **por dia** (o nome ficou de antes), que conta as tentativas do dia. Sem teto, vai todo o público.
   - Cada rodada manda até 25 pessoas. Na tarde (34 rodadas) cabem até 850; na noite (22 rodadas), até 550.
   - A ordem da lista é a prioridade dentro da rodada.
 - **Recusa do painel** (por exemplo, menos de 48 h desde a última mensagem): a pessoa volta a ser tentada no dia seguinte, se a campanha continuar.
