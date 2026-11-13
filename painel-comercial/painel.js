@@ -63,7 +63,11 @@
       botoes: ['Quero saber', 'Tenho uma dúvida'] },
     vd_esteira_v2: { nome: 'Formação junto', quando: 'para quem não comprou e não tem nenhum bônus (esteira com desconto)',
       texto: 'Os 7 cursos da Amar podem ir junto com o seu Guia, {nome}.\n\nQuem fecha o Guia de Protocolos comigo nesta Black leva a Formação Completa (plantão, hemograma, felinos, casos clínicos, procedimentos, cálculos, atendimento e muito mais) por bem menos do que ela custa sozinha.\n\nPosso te contar como fica?',
-      botoes: ['Pode contar', 'Tenho uma dúvida'] }
+      botoes: ['Pode contar', 'Tenho uma dúvida'] },
+    // Objeção do grupo (13/11): cada botão grava a Objeção no painel e a pessoa fica com a vendedora
+    vd_objecao: { nome: 'Objeção', quando: 'para quem esteve no Grupo VIP e não comprou (descobrir o que travou)',
+      texto: 'O que ficou faltando para você garantir o seu Guia, {nome}?\n\nVocê acompanhou a Black do Guia de Protocolos de perto, e eu quero entender o que pesou na sua decisão. Toca numa opção ou me escreve: eu te respondo aqui, pessoalmente.',
+      botoes: ['Preço', 'Serve pra mim?', 'Outra coisa'] }
   };
   // Até 4 mensagens do comercial para quem comprou e ainda não tem a Formação (calendário da campanha, 12/11)
   var MAX_POR_MOTIVO = { 'Comprou o Guia, falta a Formação': 4, 'Comprou o Guia antes da Black, falta a Formação': 4 };
@@ -362,7 +366,7 @@
   var escolhendo = null;
   var ORDEM_TPL = ['vd_geral', 'vd_upsell', 'vd_falta_guia', 'vd_pedido', 'vd_grupo', 'vd_pesquisa', 'vd_retorno',
     'vd_formacao_aluno_v2', 'vd_formacao_cliente_v2', 'vd_formacao_prova', 'vd_formacao_aula', 'vd_formacao_ultimo', 'vd_indicacao',
-    'vd_condicao_pagamento_v2', 'vd_retorno_condicao', 'vd_parcela_dia_v2', 'vd_serve_pra_mim', 'vd_esteira_v2'];
+    'vd_condicao_pagamento_v2', 'vd_retorno_condicao', 'vd_parcela_dia_v2', 'vd_serve_pra_mim', 'vd_esteira_v2', 'vd_objecao'];
   function abrirEscolha(l) {
     escolhendo = l;
     var indicada = l.envios ? 'vd_retorno' : templateDe(l, 'Enviar');
