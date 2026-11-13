@@ -889,7 +889,8 @@ só lista bots que já existem.
 
 ### 1. Bots de resposta (2 novos + 1 ajuste)
 **1a · `VD · Indicar`** (novo), para o botão "Quero indicar":
-1. **Enviar mensagem**: "Que ótimo! 💗 Já te mando o seu link de indicação. Quando seu colega comprar por ele, vocês dois ganham mais 3 meses de comunidade."
+1. **Enviar mensagem** (texto de 13/11, com o link do lead): "Que ótimo! 💗 Aqui está o seu link de indicação: {{lead.cf.881489}}
+   Quando seu colega comprar por ele, vocês dois ganham mais 3 meses de comunidade."
 2. **Ação → Enviar webhook**: `https://n8n.automato.pro/webhook/as-black-comercial?chave=<CHAVE>&acao=indicar`
 3. **Ação → Alterar etapa do lead**: *Comercial Black* → *Respondeu*
 
