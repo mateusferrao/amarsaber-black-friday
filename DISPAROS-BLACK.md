@@ -25,7 +25,7 @@ entram depois, quando tiverem data.
 |---|---|
 | Públicos | Compradores sem Formação · Fora do grupo sem compra · Clicou e não comprou · **No grupo sem compra, só com a pergunta da objeção (13/11)** |
 | Conteúdo | Sempre oferta direta, variando o gancho: serve pra mim, parcela por dia, Formação junto, valor por aula, prova |
-| Horário | Campanha dos compradores às 14h (até 16h45) e de quem não comprou às 19h (até 20h45), desde 13/11; vendedoras até 21h; automático só das 8h às 21h |
+| Horário | Campanha dos compradores às 14h (até 16h45), de quem não comprou às 17h (até 18h45) e da reta final (27, 29 e 30/11) às 19h (até 20h45), desde 13/11; vendedoras até 21h; automático só das 8h às 21h |
 | Botões | Positivo + "Tenho uma dúvida". Os dois levam a pessoa para a vendedora (💬 no painel) |
 | Saída | Rodapé "Responda SAIR para não receber mais" nos templates de campanha |
 | Painel | **Tudo o que for para as vendedoras aparece no painel comercial** |
@@ -47,8 +47,8 @@ entram depois, quando tiverem data.
 ## Públicos
 | Público | Quem | Tamanho (12/11) | Quem envia |
 |---|---|---|---|
-| A | Fora do grupo, sem compra: `vip_cadastro` (cadastrou e não entrou) e `vip_saiu` (saiu do grupo) | ~336 (80 + 256) | automação, 19h |
-| B1 | Comprou a Black 2026 e não tem Formação | 101 | automação, 19h |
+| A | Fora do grupo, sem compra: `vip_cadastro` (cadastrou e não entrou) e `vip_saiu` (saiu do grupo) | ~336 (80 + 256) | automação, 17h |
+| B1 | Comprou a Black 2026 e não tem Formação | 101 | automação, 14h |
 | B2 | Comprou o Guia de 01/11/2025 até antes da Black 2026 e não tem Formação | 749 (628 da Black 2025) | automação, em 3 levas de ~250 |
 | C | Clicou em comprar na LP (identificado pelo WhatsApp) e não fez pedido em 15 min | contínuo | automação e vendedora |
 | Pesquisa | Respondeu a pesquisa da live e não comprou | — | vendedoras (painel) |
@@ -66,22 +66,22 @@ O Grupo VIP segue o calendário de `GRUPO-VIP-MENSAGENS.md`.
 |---|---|
 | qui 12/11 | 19h `as_prova` → 102 fora do grupo · pesquisa da live: `vd_pesquisa` pelo painel, até 21h |
 | sex 13/11 | 10h triagem/prova (checkout e Pix) · 19h `as_prova` → 200 fora do grupo · **14h B1 `vd_formacao_aluno_v2` → 133** · **14h B2 1ª leva `vd_formacao_cliente_v2` → ~250** |
-| sáb 14/11 | 10h triagem → 9 · 19h `as_prova` → 36 · **14h B2 2ª leva → ~250** · **19h G `vd_objecao` → 150** |
-| dom 15/11 | 10h triagem → ~106 · **14h B2 3ª leva → ~250** · **19h G → 150** |
-| seg 16/11 | 10h triagem → ~200 · **19h pesquisa da live, 2º toque pela objeção marcada (`p-1611`)** · **19h G → 150** · respondeu a objeção começa (`r-objecao`) |
-| ter 17/11 | 10h triagem → 36 (fim da sequência automática de quem está fora do grupo) · **19h G → 150** |
-| qua 18/11 | **19h A → todos de A:** quem saiu do grupo recebe `vd_objecao`, quem só cadastrou recebe `vd_serve_pra_mim` · **19h G → 150** · **14h B `vd_formacao_prova`**, até 300 por dia de 18 a 21/11 |
-| qui 19/11 | 14h B e 19h G continuam |
-| sex 20/11 | 14h B e 19h G continuam |
-| sáb 21/11 | **19h A (só `vip_cadastro`) `vd_parcela_dia_v2`** |
-| dom 22/11 | **14h indicação `vd_indicacao`** → compradores da Black (Lista "1 · Upsell" e "Comprou tudo") · 19h G |
-| ter 24/11 | **19h A (só `vip_cadastro`, sem bônus) `vd_esteira_v2`** |
+| sáb 14/11 | 10h triagem → 9 · 19h `as_prova` → 36 · **14h B2 2ª leva → ~250** · **17h G `vd_objecao` → 150** |
+| dom 15/11 | 10h triagem → ~106 · **14h B2 3ª leva → ~250** · **17h G → 150** |
+| seg 16/11 | 10h triagem → ~200 · **17h pesquisa da live, 2º toque pela objeção marcada (`p-1611`)** · **17h G → 150** · respondeu a objeção começa (`r-objecao`) |
+| ter 17/11 | 10h triagem → 36 (fim da sequência automática de quem está fora do grupo) · **17h G → 150** |
+| qua 18/11 | **17h A → todos de A:** quem saiu do grupo recebe `vd_objecao`, quem só cadastrou recebe `vd_serve_pra_mim` · **17h G → 150** · **14h B `vd_formacao_prova`**, até 300 por dia de 18 a 21/11 |
+| qui 19/11 | 14h B e 17h G continuam |
+| sex 20/11 | 14h B e 17h G continuam |
+| sáb 21/11 | **17h A (só `vip_cadastro`) `vd_parcela_dia_v2`** |
+| dom 22/11 | **14h indicação `vd_indicacao`** → compradores da Black (Lista "1 · Upsell" e "Comprou tudo") · 17h G |
+| ter 24/11 | **17h A (só `vip_cadastro`, sem bônus) `vd_esteira_v2`** |
 | qua 25/11 | **14h B `vd_formacao_aula`**, até 300 por dia de 25 a 28/11 |
 | sáb 28/11 | 10h reta final `as_reta_3dias` |
 | dom 29/11 | **19h engajados sem compra `vd_amanha_acaba`** (`e-2911`) |
 | seg 30/11 | 9h `as_ultimo_dia` · 19h `as_ultimas_horas` · **14h B `vd_formacao_ultimo`** (só se o desconto da Formação acabar em 30/11) |
 
-G segue às 19h, 150 por noite, até acabar o público (cerca de 7 noites, até ~21/11). As noites que sobram ficam livres
+G segue às 17h, 150 por dia, até acabar o público (cerca de 7 noites, até ~21/11). As noites que sobram ficam livres
 para a live e o fim do frete grátis.
 
 ## Templates (Kommo)
@@ -108,7 +108,7 @@ Cada disparo grava a campanha no lead e na fila. Na manhã seguinte de cada disp
 | **AS · Painel comercial (API)**, nó `Preparar envios` | Bots dos templates novos; motivo da base do Guia; até 4 mensagens para compradores sem Formação. Pedido com `campanha: true` não conta no teto de 300, não tem limite por pessoa (as 48 h valem) e não tira a pessoa da fila da recuperação. O registro grava `campanha = sim` |
 | **AS · Comercial (respostas)** | Ações `indicar` e `sair`. "Sair" marca "Não quer" e põe a fila em `saiu`; qualquer outra resposta põe a fila em `vendedora` (a automação para) |
 | **AS · Kommo enviar**, nó `Config do Kommo` | O passo `as_prova` roda o bot do `as_prova_v2` (53183, "+2.000"); bots dos lembretes de boleto (53185) e Pix (53187) |
-| **AS · Disparos de campanha** (`P6NU3k2se6OtQqG9`) | A cada 5 min, das 14h às 16h45 (compradores) e das 19h às 20h45 (quem não comprou), nos dias do calendário (nó `Campanha de hoje`). Manda até 25 pessoas por rodada pela ação "enviar" do painel e registra em **AS · Campanhas** (`e3N0w9GCu0OELYXp`) |
+| **AS · Disparos de campanha** (`P6NU3k2se6OtQqG9`) | A cada 5 min, das 14h às 16h45 (compradores), das 17h às 18h45 (quem não comprou) e das 19h às 20h45 (reta final), nos dias do calendário (nó `Campanha de hoje`). Manda até 25 pessoas por rodada pela ação "enviar" do painel e registra em **AS · Campanhas** (`e3N0w9GCu0OELYXp`) |
 
 **Quem é cada público na aba Comercial · Black:**
 | Público | Regra |
@@ -123,9 +123,9 @@ Todos precisam estar com Situação 🟢 e sem "Não quer".
 
 **Campanhas de uma noite e de várias (13/11), nó `Campanha de hoje`:**
 - `dia`: uma noite só. `de`/`ate`: a campanha segue nas noites seguintes até acabar o público.
-- `turno` (13/11): `tarde` (14h às 16h45, compradores) ou `noite` (19h às 20h45, quem não comprou). Cada rodada só manda as campanhas do turno da hora.
+- `turno` (13/11): `tarde` (14h às 16h45, compradores), `noite` (17h às 18h45, quem não comprou) ou `reta` (19h às 20h45, reta final: 27, 29 e 30/11). Cada rodada só manda as campanhas do turno da hora.
 - `max_noite`: teto **por dia** (o nome ficou de antes), que conta as tentativas do dia. Sem teto, vai todo o público.
-  - Cada rodada manda até 25 pessoas. Na tarde (34 rodadas) cabem até 850; na noite (22 rodadas), até 550.
+  - Cada rodada manda até 25 pessoas. Na tarde (34 rodadas) cabem até 850; na noite e na reta (22 rodadas cada), até 550.
   - A ordem da lista é a prioridade dentro da rodada.
 - **Recusa do painel** (por exemplo, menos de 48 h desde a última mensagem): a pessoa volta a ser tentada no dia seguinte, se a campanha continuar.
 - `por_grupo`: template diferente pela coluna Grupo. No toque A de 18/11, quem saiu do grupo recebe `vd_objecao`.
@@ -146,8 +146,8 @@ fila, cartão recusado converte 55%, Pix vencido 48% e pedido de link 44%, contr
 
 | Campanha | Público | Mensagem | Quando |
 |---|---|---|---|
-| `r-objecao` | **R**: respondeu "Preço" ou "Serve pra mim?" ao `vd_objecao` há 48 h ou mais, não comprou e não recebeu outra mensagem do comercial depois (🟢 ou 💬) | Preço → `vd_parcela_dia_v2` · Serve pra mim? → `vd_serve_pra_mim` | Contínuo, à noite, de 16 a 30/11 |
-| `p-1611` | **P**: respondeu a pesquisa da live e não comprou | Pelo que pesou na pesquisa: edição anterior → `vd_formacao_cliente_v2`; valor → `vd_parcela_dia_v2`; momento → `vd_serve_pra_mim`; resto → `vd_condicao_pagamento_v2` | Seg 16/11, 19h |
+| `r-objecao` | **R**: respondeu "Preço" ou "Serve pra mim?" ao `vd_objecao` há 48 h ou mais, não comprou e não recebeu outra mensagem do comercial depois (🟢 ou 💬) | Preço → `vd_parcela_dia_v2` · Serve pra mim? → `vd_serve_pra_mim` | Contínuo, às 17h, de 16 a 30/11 |
+| `p-1611` | **P**: respondeu a pesquisa da live e não comprou | Pelo que pesou na pesquisa: edição anterior → `vd_formacao_cliente_v2`; valor → `vd_parcela_dia_v2`; momento → `vd_serve_pra_mim`; resto → `vd_condicao_pagamento_v2` | Seg 16/11, 17h |
 | `c-2311` | **C**: base antiga do Guia (lista 1b) que nunca respondeu o comercial | `vd_curso_comunidade_v2` (bot 53329), link do downsell da vendedora (R$ 187) | Seg 23 e ter 24/11, 14h, até 350 por dia |
 | `e-2711` | **E**: engajado sem compra, ou seja, Lista 3, 2b ou 2c e pelo menos um sinal: respondeu o comercial, pediu o link, respondeu a pesquisa, ou Prioridade quente ou morna (🟢 ou 💬) | `vd_black_friday` (bot 53305; o botão "Quero o link" chama o `VD · Link`, bot 53301), link da Black da vendedora | Sex 27/11, 19h |
 | `e-2911` | **E** (mesmo público de 27/11) | `vd_amanha_acaba` (bot 53333; "Quero o link" → `VD · Link`) | Dom 29/11, 19h (penúltimo dia) |
@@ -174,7 +174,7 @@ maior intenção de compra.
   - "não comprou" quer dizer Lista 3, 2b ou 2c na aba;
   - roda das 8h às 20h45, de hora em hora e nas janelas da tarde e da noite;
   - começou em 13/11 às 14h.
-- O cron do fluxo passou a `*/5 14-16,19-20 * * *` mais `5 8-13,17-18 * * *`.
+- O cron do fluxo é `*/5 14-20 * * *` mais `5 8-13 * * *` (desde 13/11, com a noite às 17h).
 
 **Quem responde fica com a vendedora (13/11):**
 - **Lista:** a "AS · Comercial (lista)" lê AS · Comercial envios. Quem respondeu uma mensagem do comercial a partir de 13/11 vira 💬, com prioridade quente.
