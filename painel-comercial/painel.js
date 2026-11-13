@@ -387,7 +387,7 @@
   var escolhendo = null;
   var ORDEM_TPL = ['vd_geral', 'vd_upsell', 'vd_falta_guia', 'vd_pedido', 'vd_grupo', 'vd_pesquisa', 'vd_retorno',
     'vd_formacao_aluno_v2', 'vd_formacao_cliente_v2', 'vd_formacao_prova', 'vd_formacao_aula', 'vd_formacao_ultimo', 'vd_indicacao',
-    'vd_condicao_pagamento_v2', 'vd_retorno_condicao', 'vd_parcela_dia_v2', 'vd_serve_pra_mim', 'vd_esteira_v2', 'vd_objecao', 'vd_curso_comunidade_v2', 'vd_black_friday'];
+    'vd_condicao_pagamento_v2', 'vd_retorno_condicao', 'vd_parcela_dia_v2', 'vd_serve_pra_mim', 'vd_esteira_v2', 'vd_objecao', 'vd_curso_comunidade_v2', 'vd_black_friday', 'vd_amanha_acaba'];
   function abrirEscolha(l) {
     escolhendo = l;
     var indicada = l.envios ? 'vd_retorno' : templateDe(l, 'Enviar');

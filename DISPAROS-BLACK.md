@@ -150,7 +150,7 @@ fila, cartão recusado converte 55%, Pix vencido 48% e pedido de link 44%, contr
 | `p-1611` | **P**: respondeu a pesquisa da live e não comprou | Pelo que pesou na pesquisa: edição anterior → `vd_formacao_cliente_v2`; valor → `vd_parcela_dia_v2`; momento → `vd_serve_pra_mim`; resto → `vd_condicao_pagamento_v2` | Seg 16/11, 19h |
 | `c-2311` | **C**: base antiga do Guia (lista 1b) que nunca respondeu o comercial | `vd_curso_comunidade_v2` (bot 53329), link do downsell da vendedora (R$ 187) | Seg 23 e ter 24/11, 14h, até 350 por dia |
 | `e-2711` | **E**: engajado sem compra, ou seja, Lista 3, 2b ou 2c e pelo menos um sinal: respondeu o comercial, pediu o link, respondeu a pesquisa, ou Prioridade quente ou morna (🟢 ou 💬) | `vd_black_friday` (bot 53305; o botão "Quero o link" chama o `VD · Link`, bot 53301), link da Black da vendedora | Sex 27/11, 19h |
-| `e-2911` | **E** (mesmo público de 27/11) | `vd_amanha_acaba` (**template novo**; "Quero o link" → `VD · Link`) | Dom 29/11, 19h (penúltimo dia) |
+| `e-2911` | **E** (mesmo público de 27/11) | `vd_amanha_acaba` (bot 53333; "Quero o link" → `VD · Link`) | Dom 29/11, 19h (penúltimo dia) |
 | `e-3011` | **E** | `as_ultimas_horas` (bot 50247) | Seg 30/11, 19h, sem trava de fadiga |
 
 - **Reta final (29 e 30/11):** nas campanhas `vd_amanha_acaba` e `as_ultimas_horas`, o painel aceita 20 h entre mensagens
@@ -195,6 +195,7 @@ maior intenção de compra.
     `Gravar indicações` da "AS · Comercial (lista)"), com quem comprou e quem indicou. A coluna **Bônus** é da equipe, que
     soma os +3 meses de comunidade aos dois. Reembolso e chargeback aparecem na aba; compra com o próprio link fica marcada
     "mesma pessoa: não vale".
-  - **Cabeçalhos da aba "Indicações":** Pedido · Status · Pago em · Produto · Valor · Quem comprou · WhatsApp de quem comprou ·
+  - **Aba "Indicações":** criada em 13/11.
+  - **Cabeçalhos:** Pedido · Status · Pago em · Produto · Valor · Quem comprou · WhatsApp de quem comprou ·
     Email de quem comprou · Indicado por · WhatsApp de quem indicou · Observação · Atualizado em · Bônus.
 - **"Clicou e não comprou":** o fluxo (15 min depois do clique) ainda não foi feito.
