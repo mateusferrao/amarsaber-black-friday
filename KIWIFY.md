@@ -103,3 +103,36 @@ Compras ficou com 7 pedidos da Yampi em dobro, já removidos. A Yampi manda o me
 - **Aba Sala VIP:** já tem fórmula. Lista os 40 primeiros pela hora do pagamento, com Yampi e Kiwify juntas.
 - **AS · Comercial (lista):** ao religar, a atualização das 8h, 12h, 16h e 20h também deve gravar a Comercial · Black
   pela fila, ou num horário em que a fila esteja parada.
+
+## Checkout com a cara da Black (16/11)
+**Por quê.** Análise de 11 a 15/11:
+- **Conversão do clique em comprar até a venda paga:** cerca de 15% no tráfego pago (38 de 246) e cerca de 39% no WhatsApp, com o mesmo checkout.
+- **Cartão recusado não é o vazamento:** as 46 recusas do Black são de 25 pessoas, e 19 pagaram depois, 18 delas no mesmo dia. Os "37% recusados" da UTMify contam cada nova tentativa.
+- **Juros:** decidido não assumir (16/11).
+
+O checkout era branco e cinza, sem nada da Black. Os ajustes abaixo são de acabamento, não a solução do funil.
+
+**No painel** (Produto "Black Friday: Guia…" → Checkout; antes, duplicar o checkout atual para poder voltar):
+
+| Campo | Valor |
+|---|---|
+| Banner celular | `assets/img/checkout/banner-checkout-celular.png` (1080×540, 41 KB) |
+| Banner computador | `assets/img/checkout/banner-checkout-computador.png` (1280×400, 36 KB) |
+| Cores | fundo `#22001b`, destaques `#fc2494`, botão `#00a313`, texto sobre o fundo `#ffffff`. O formulário continua claro |
+| Cronômetro | "Condição de Black termina em", magenta, até 30/11 23h59 (se só aceitar minutos, 15 min) |
+| Garantia | "7 dias de garantia incondicional" |
+| Nome do produto | "Guia de Protocolos · Black Friday" |
+| Imagem do produto | `assets/img/livro-oferta.png` |
+| Texto do order bump | "Leve a Formação completa (+6 cursos, 111 aulas) por R$ 297 · só aqui" |
+| Confirmar e-mail | desligado, se o painel permitir |
+
+Endereço e CPF continuam obrigatórios, porque o Guia é impresso.
+
+**Depoimentos** (dos prints da seção de provas, só pontuação ajustada; sem foto, 5 estrelas):
+1. **Júlia K.:** "A parte dos tratamentos onde eu tinha mais dificuldade está muito bem detalhada. Vai otimizar muito o meu tempo nas receitas."
+2. **Lorenzza:** "Recebi meu Guia de Protocolos e estou apaixonada! Muito lindo e muito completo, vai me ajudar muito na rotina."
+3. Reserva, **Daniel:** "Que livro mais lindo e completo! Chegou hoje e eu amei, muito bem feito."
+
+**Página de vendas:** embaixo dos botões da LP e do /teste/, o texto passou a citar "2 cartões ou cartão + Pix".
+
+**Medição:** a compra da Kiwify aparece no PostHog como `lp_upsell_vista`, porque o comprador cai primeiro no `/upsell/`. Comparar 11–16/11 com os dias depois da troca em três medidas: clique em comprar → compra no Meta, recusas por pessoa e Pix pago/gerado.

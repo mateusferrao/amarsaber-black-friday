@@ -80,7 +80,17 @@
       botoes: ['Quero o link', 'Tenho uma dúvida'] },
     as_ultimas_horas: { nome: 'Últimas horas', quando: '30/11, para quem não comprou e já interagiu',
       texto: 'Oi, {nome}, faltam 5 horas.\n\nA Black Friday do Guia de Protocolos termina hoje às 23h59, e depois disso a oferta não volta.\n\nSe ainda tem alguma dúvida, me responde agora que a equipe te ajuda até o fim.',
-      botoes: ['Quero o link', 'Tenho uma dúvida'] }
+      botoes: ['Quero o link', 'Tenho uma dúvida'] },
+    // Vídeos da Maria (17/11): templates com vídeo, aprovados (ids 48163, 48165 e 48167)
+    vd_video_desistiu: { nome: "Vídeo · desistiu", quando: "vídeo da Maria para quem gerou Pix ou carrinho e não pagou (campanha k-desistiu)",
+      texto: "Gravei esse vídeo pra você, {nome} 💗\n\nVocê chegou bem pertinho de garantir o seu Guia de Protocolos na Black. Ele vem com o curso Atendimento Extraordinário, 3 meses de Comunidade e mais um presente exclusivo 🎁\n\nVocê pode pagar no cartão à vista ou parcelado, cartão + Pix, dois cartões ou boleto. Mas corre, a oferta vai só até 30/11 ou até o estoque acabar, com 7 dias de garantia. \n\nMe conta: o que te fez desistir?",
+      botoes: ["Achei caro", "Quero o link", "Tenho uma dúvida"] },
+    vd_video_link: { nome: "Vídeo · pediu o link", quando: "vídeo da Maria para quem pediu o link e não comprou (campanha l-link)",
+      texto: "Gravei esse vídeo pra você, {nome} 💗\n\nVocê pediu o link do Guia de Protocolos e ela quer entender o que ficou faltando. Na Black, o Guia vem com o curso Atendimento Extraordinário, 3 meses de Comunidade e um presente que só quem compra agora recebe 🎁\n\nCorre que a oferta vai só até 30/11 ou até o estoque limitadíssimo acabar!",
+      botoes: ["Achei caro", "Quero o link", "Tenho uma dúvida"] },
+    vd_video_historia: { nome: "Vídeo · história", quando: "vídeo da Maria (por que criou o Guia) para quem está no grupo e não comprou",
+      texto: "Olha esse recado pra você, {nome} 💗\n\nIsso é por que criei o Guia de Protocolos, que nasceu dentro da Amar Veterinária. Na Black, o Guia vem com o curso Atendimento Extraordinário, 3 meses de Comunidade e um presente que só quem compra agora recebe 🎁\n\nCorre que só vai até 30/11 ou até o estoque, que já está nos finalmentes, acabar. O que está faltando pra você garantir o seu?",
+      botoes: ["Achei caro", "Quero o link", "Tenho uma dúvida"] }
   };
   // Até 4 mensagens do comercial para quem comprou e ainda não tem a Formação (calendário da campanha, 12/11)
   var MAX_POR_MOTIVO = { 'Comprou o Guia, falta a Formação': 4, 'Comprou o Guia antes da Black, falta a Formação': 4 };
@@ -387,7 +397,8 @@
   var escolhendo = null;
   var ORDEM_TPL = ['vd_geral', 'vd_upsell', 'vd_falta_guia', 'vd_pedido', 'vd_grupo', 'vd_pesquisa', 'vd_retorno',
     'vd_formacao_aluno_v2', 'vd_formacao_cliente_v2', 'vd_formacao_prova', 'vd_formacao_aula', 'vd_formacao_ultimo', 'vd_indicacao',
-    'vd_condicao_pagamento_v2', 'vd_retorno_condicao', 'vd_parcela_dia_v2', 'vd_serve_pra_mim', 'vd_esteira_v2', 'vd_objecao', 'vd_curso_comunidade_v2', 'vd_black_friday', 'vd_amanha_acaba'];
+    'vd_condicao_pagamento_v2', 'vd_retorno_condicao', 'vd_parcela_dia_v2', 'vd_serve_pra_mim', 'vd_esteira_v2', 'vd_objecao', 'vd_curso_comunidade_v2', 'vd_black_friday', 'vd_amanha_acaba',
+    'vd_video_desistiu', 'vd_video_link', 'vd_video_historia'];
   function abrirEscolha(l) {
     escolhendo = l;
     var indicada = l.envios ? 'vd_retorno' : templateDe(l, 'Enviar');

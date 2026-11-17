@@ -1015,3 +1015,35 @@ Ainda dá tempo: quer o link?
 ```
 Botões: Quero o link → `VD · Link` · Tenho uma dúvida → `VD · Dúvida` · outra resposta → `VD · Outra resposta`.
 Bot do template: `VD · vd_amanha_acaba` (53333), já em `BOTS` do painel (13/11).
+
+## Vídeos da Maria (17/11): 3 templates com vídeo e 3 bots
+São vídeos da Maria para quem demonstrou interesse e não comprou: MP4 H.264/AAC 720×1280 de 8 a 11 MB, com o Guia na capa. Os textos são os aprovados no Kommo (conferidos pela API em 17/11). Não há botão "Qual é o presente?": se alguém perguntar por escrito, cai em "Outra resposta" e a vendedora explica o sistema de anamnese.
+
+| Template | id | Bot | Vídeo | Público (DISPAROS-BLACK.md) |
+|---|---|---|---|---|
+| `vd_video_desistiu` | 48163 | `VD · vd_video_desistiu` 53991 | IMG_4244, "quase adquiriu, mas desistiu" | K · não pagou carrinho/Pix (`k-desistiu`) |
+| `vd_video_link` | 48165 | `VD · vd_video_link` 53993 | IMG_4227, "por que ainda não adquiriu?" | L · pediu o link (`l-link`, no lugar do `vd_objecao`) |
+| `vd_video_historia` | 48167 | `VD · vd_video_historia` 53995 | IMG_4235, por que criou o Guia | G · grupo sem compra (`g-objecao`, A/B com `vd_objecao`) |
+
+IMG_4229 e IMG_4240 ficam de reserva.
+
+### Rodapé e botões (iguais nos três)
+| Cabeçalho | Rodapé | Botão 1 | Botão 2 | Botão 3 |
+|---|---|---|---|---|
+| Vídeo | Responda SAIR para não receber mais | Achei caro | Quero o link | Tenho uma dúvida |
+
+Marketing, pt_BR, `{{1}}` = `{{lead.cf.881487}}` (exemplo "Ana").
+
+### O que cada toque faz (ramos dos bots)
+| Toque | Bot chamado | O que grava |
+|---|---|---|
+| Achei caro | `VD · Objeção preço` (53211) | Resposta "Objeção: preço" e Objeção "Preço"; o `vd_parcela_dia_v2` sai 48 h depois (`r-objecao`) |
+| Quero o link | `VD · Link` (53301) | manda o link da Black (`as_link` = link da vendedora para o Guia) e muda a etapa para *Link enviado* |
+| Tenho uma dúvida | `VD · Dúvida` (52627) | "Pode mandar, estou aqui! 💗" e Situação 💬 para a vendedora |
+| SAIR (rodapé) | `VD · Outra resposta` (52629) | "Combinado, não te mando mais mensagens 💗" e Status do contato "Não quer" |
+| Outro texto | `VD · Outra resposta` (52629) | Resposta "Escreveu (ver no Kommo)" e Situação 💬 |
+| Falha ao enviar | webhook `…/as-black-comercial?chave=<CHAVE>&acao=falha` | "não entregue" no painel |
+
+Os bots são cópias do `VD · vd_objecao` (53221): sem gatilho, só a 5052, "Tente enviar uma mensagem" marcado e sem "Sem resposta".
+
+**Antes do 1º disparo:** definir como o comprador da Black recebe o acesso ao sistema de anamnese, inclusive quem já comprou.
