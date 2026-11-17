@@ -210,4 +210,11 @@ Três templates com vídeo, aprovados (ficha em `KOMMO-TEMPLATES-FICHA.md`), par
 | `g-objecao` (noite, até 27/11, 150 por noite) | G · grupo sem compra | **A/B por pessoa**: `vd_video_historia` × `vd_objecao` (campo `ab`/`ab_ate`) por 2 noites; depois fica o que tiver mais resposta e compra em 72 h | 2 noites a partir da troca |
 | `k-desistiu` (nova, noite) | **K** · lista "2c · Não pagou o Guia (carrinho/Pix)" | `vd_video_desistiu` | até 30/11 |
 
-O "Escolher envios" já entende o público K, o A/B e a troca de template (publicado em 17/11). Falta mudar o calendário no nó "Campanha de hoje" e pôr os 3 bots no `BOTS` do "Preparar envios" (Painel API).
+Publicado em 17/11:
+- **Escolher envios:** passou a entender o público K, o A/B e a troca de template.
+- **Calendário em "Campanha de hoje":**
+  - `l-link` troca para o vídeo em 18/11, às 8h;
+  - `g-objecao` em A/B nas noites de 18 e 19/11 e depois volta ao `vd_objecao` até a decisão;
+  - `k-desistiu` de 18 a 30/11, como a 1ª campanha da noite.
+- **Painel API:** os 3 bots em `BOTS` (`Preparar envios`), com o link da Black no `as_link`, e os nomes na aba (`Montar atualizações`).
+- **Resultado do A/B:** comparar a taxa de resposta e as compras em 72 h de `vd_video_historia` × `vd_objecao` (AS · Campanhas + aba Comercial · Black) em 20/11.
