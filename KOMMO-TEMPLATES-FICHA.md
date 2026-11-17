@@ -1016,78 +1016,34 @@ Ainda dá tempo: quer o link?
 Botões: Quero o link → `VD · Link` · Tenho uma dúvida → `VD · Dúvida` · outra resposta → `VD · Outra resposta`.
 Bot do template: `VD · vd_amanha_acaba` (53333), já em `BOTS` do painel (13/11).
 
-## Vídeos da Maria (17/11): 3 templates com vídeo + 4 bots
-São vídeos gravados pela Maria para quem demonstrou interesse e não comprou. Os vídeos são convertidos para MP4 H.264/AAC, 720×1280, com até 11 MB (o limite do WhatsApp é 16 MB). A capa é o 1º quadro, com o Guia aparecendo.
+## Vídeos da Maria (17/11): 3 templates com vídeo e 3 bots
+São vídeos da Maria para quem demonstrou interesse e não comprou: MP4 H.264/AAC 720×1280 de 8 a 11 MB, com o Guia na capa. Os textos são os aprovados no Kommo (conferidos pela API em 17/11). Não há botão "Qual é o presente?": se alguém perguntar por escrito, cai em "Outra resposta" e a vendedora explica o sistema de anamnese.
 
-| Template | Vídeo | Público (DISPAROS-BLACK.md) | No lugar de |
-|---|---|---|---|
-| `vd_video_desistiu` | IMG_4244 · "quase adquiriu, mas desistiu" (44 s) | K · não pagou carrinho/Pix | nova campanha `k-desistiu` |
-| `vd_video_link` | IMG_4227 · "por que ainda não adquiriu?" (36 s) | L · pediu o link há 24 h | `vd_objecao` na `l-link` |
-| `vd_video_historia` | IMG_4235 · por que criou o Guia (33 s) | G · grupo sem compra | 50% da `g-objecao` (teste A/B com `vd_objecao`) |
+| Template | id | Bot | Vídeo | Público (DISPAROS-BLACK.md) |
+|---|---|---|---|---|
+| `vd_video_desistiu` | 48163 | `VD · vd_video_desistiu` 53991 | IMG_4244, "quase adquiriu, mas desistiu" | K · não pagou carrinho/Pix (`k-desistiu`) |
+| `vd_video_link` | 48165 | `VD · vd_video_link` 53993 | IMG_4227, "por que ainda não adquiriu?" | L · pediu o link (`l-link`, no lugar do `vd_objecao`) |
+| `vd_video_historia` | 48167 | `VD · vd_video_historia` 53995 | IMG_4235, por que criou o Guia | G · grupo sem compra (`g-objecao`, A/B com `vd_objecao`) |
 
 IMG_4229 e IMG_4240 ficam de reserva.
 
-### Passo 1 · Templates (Automações → Modelos → Modelos de chat → + Novo modelo → Modelo de WhatsApp)
-**Em todos os três:**
-- Marketing · Personalizado · pt_BR · conta da 5052;
-- **Cabeçalho:** Vídeo (o MP4 de mesmo nome);
-- **{{1}}:** `{{lead.cf.881487}}` (as_nome), com exemplo "Ana";
-- **Rodapé:** "Responda SAIR para não receber mais";
-- **Botões (resposta rápida):** `Qual é o presente?` · `Achei caro` · `Quero o link`.
+### Rodapé e botões (iguais nos três)
+| Cabeçalho | Rodapé | Botão 1 | Botão 2 | Botão 3 |
+|---|---|---|---|---|
+| Vídeo | Responda SAIR para não receber mais | Achei caro | Quero o link | Tenho uma dúvida |
 
-**`vd_video_desistiu`**
-```
-{{1}}, a Dra. Maria Paula gravou esse vídeo pra você 💗
+Marketing, pt_BR, `{{1}}` = `{{lead.cf.881487}}` (exemplo "Ana").
 
-Você chegou bem pertinho de garantir o seu Guia de Protocolos na Black. Ele vem com o curso Atendimento Extraordinário, 3 meses de Comunidade e um presente que só quem compra na Black recebe 🎁
+### O que cada toque faz (ramos dos bots)
+| Toque | Bot chamado | O que grava |
+|---|---|---|
+| Achei caro | `VD · Objeção preço` (53211) | Resposta "Objeção: preço" e Objeção "Preço"; o `vd_parcela_dia_v2` sai 48 h depois (`r-objecao`) |
+| Quero o link | `VD · Link` (53301) | manda o link da Black (`as_link` = link da vendedora para o Guia) e muda a etapa para *Link enviado* |
+| Tenho uma dúvida | `VD · Dúvida` (52627) | "Pode mandar, estou aqui! 💗" e Situação 💬 para a vendedora |
+| SAIR (rodapé) | `VD · Outra resposta` (52629) | "Combinado, não te mando mais mensagens 💗" e Status do contato "Não quer" |
+| Outro texto | `VD · Outra resposta` (52629) | Resposta "Escreveu (ver no Kommo)" e Situação 💬 |
+| Falha ao enviar | webhook `…/as-black-comercial?chave=<CHAVE>&acao=falha` | "não entregue" no painel |
 
-R$ 497 ou 12x de R$ 51,40, até 30/11, com 7 dias de garantia. Me conta: o que te fez desistir?
-```
+Os bots são cópias do `VD · vd_objecao` (53221): sem gatilho, só a 5052, "Tente enviar uma mensagem" marcado e sem "Sem resposta".
 
-**`vd_video_link`**
-```
-{{1}}, a Dra. Maria Paula gravou esse vídeo pra você 💗
-
-Você pediu o link do Guia de Protocolos e ela quer entender o que ficou faltando. Na Black, o Guia vem com o curso Atendimento Extraordinário, 3 meses de Comunidade e um presente que só quem compra agora recebe 🎁
-
-R$ 497 ou 12x de R$ 51,40, até 30/11, com 7 dias de garantia.
-```
-
-**`vd_video_historia`**
-```
-{{1}}, um recado da Dra. Maria Paula pra você 💗
-
-Ela conta por que criou o Guia de Protocolos, que nasceu dentro da Amar Veterinária. Na Black, o Guia vem com o curso Atendimento Extraordinário, 3 meses de Comunidade e um presente que só quem compra agora recebe 🎁
-
-R$ 497 ou 12x de R$ 51,40, até 30/11, com 7 dias de garantia. O que está faltando pra você garantir o seu?
-```
-
-### Passo 2 · Bot de resposta `VD · Presente` (criar antes dos bots de template)
-Montagem: sem gatilho e só a 5052.
-1. **Enviar mensagem:** "É o acesso ao nosso sistema de anamnese 🎁 [nome do sistema e o que ele faz: a definir]. Ele vai junto para quem garante o Guia na Black, até 30/11. Quer o link?" → **+ Botão de ação** `Quero o link`.
-2. **Ação → Enviar webhook:** `https://n8n.automato.pro/webhook/as-black-comercial?chave=<CHAVE>&acao=presente`.
-3. **Ação → Alterar etapa do lead:** *Comercial Black* → *Respondeu*.
-4. **Ramos:**
-   - `Quero o link` → **Iniciar Salesbot** `VD · Link` (53301);
-   - **Outra resposta** → `VD · Outra resposta` (52629).
-
-### Passo 3 · Bots de template (depois da aprovação)
-**Montagem:**
-- **Duplicar** `VD · vd_objecao` (53221) e renomear para `VD · <nome do template>`;
-- no **Enviar mensagem**, trocar o **Modelo** e preencher `{{1}}` com `{{lead.cf.881487}}`;
-- canal só a 5052, com "Tente enviar uma mensagem" marcado;
-- sem gatilho e sem "Sem resposta".
-
-**Ramos:**
-
-| Ramo | Vai para |
-|---|---|
-| `Qual é o presente?` | `VD · Presente` |
-| `Achei caro` | `VD · Objeção preço` (53211): grava "Preço", e o `vd_parcela_dia_v2` sai 48 h depois (`r-objecao`) |
-| `Quero o link` | `VD · Link` (53301) |
-| Outra resposta | `VD · Outra resposta` (52629) |
-| Falha ao enviar | webhook `…/as-black-comercial?chave=<CHAVE>&acao=falha` |
-
-**Depois de criar:** mandar os ids dos 4 bots e dos 3 templates. Eles entram em `BOTS`/`NOMES` (Painel API) e em `TEMPLATES`/`ORDEM_TPL` (painel.js). Também entra a ação `presente` no "AS · Comercial (respostas)", e as campanhas `l-link`, `g-objecao` e `k-desistiu` mudam no "AS · Disparos de campanha".
-
-**Antes do 1º disparo:** definir como o comprador da Black recebe o acesso ao sistema de anamnese, incluindo quem já comprou.
+**Antes do 1º disparo:** definir como o comprador da Black recebe o acesso ao sistema de anamnese, inclusive quem já comprou.

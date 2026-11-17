@@ -199,3 +199,15 @@ maior intenção de compra.
   - **Cabeçalhos:** Pedido · Status · Pago em · Produto · Valor · Quem comprou · WhatsApp de quem comprou ·
     Email de quem comprou · Indicado por · WhatsApp de quem indicou · Observação · Atualizado em · Bônus.
 - **"Clicou e não comprou":** o fluxo (15 min depois do clique) ainda não foi feito.
+
+
+## Vídeos da Maria (17/11)
+Três templates com vídeo, aprovados (ficha em `KOMMO-TEMPLATES-FICHA.md`), para o público mais quente:
+
+| Campanha | Público | Template | Quando |
+|---|---|---|---|
+| `l-link` (contínua) | L · pediu o link há 24 h e não comprou | `vd_video_link` no lugar do `vd_objecao` (campo `trocar_em`/`trocar_para`) | a partir da troca no calendário |
+| `g-objecao` (noite, até 27/11, 150 por noite) | G · grupo sem compra | **A/B por pessoa**: `vd_video_historia` × `vd_objecao` (campo `ab`/`ab_ate`) por 2 noites; depois fica o que tiver mais resposta e compra em 72 h | 2 noites a partir da troca |
+| `k-desistiu` (nova, noite) | **K** · lista "2c · Não pagou o Guia (carrinho/Pix)" | `vd_video_desistiu` | até 30/11 |
+
+O "Escolher envios" já entende o público K, o A/B e a troca de template (publicado em 17/11). Falta mudar o calendário no nó "Campanha de hoje" e pôr os 3 bots no `BOTS` do "Preparar envios" (Painel API).
