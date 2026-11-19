@@ -70,16 +70,18 @@ O Grupo VIP segue o calendário de `GRUPO-VIP-MENSAGENS.md`.
 | dom 15/11 | 10h triagem → ~106 · **14h B2 3ª leva → ~250** · **17h G → 150** |
 | seg 16/11 | 10h triagem → ~200 · **17h pesquisa da live, 2º toque pela objeção marcada (`p-1611`)** · **17h G → 150** · respondeu a objeção começa (`r-objecao`) |
 | ter 17/11 | 10h triagem → 36 (fim da sequência automática de quem está fora do grupo) · **17h G → 150** |
-| qua 18/11 | **17h A → todos de A:** quem saiu do grupo recebe `vd_objecao`, quem só cadastrou recebe `vd_serve_pra_mim` · **17h G → 150** · **14h B `vd_formacao_prova`**, até 300 por dia de 18 a 21/11 |
-| qui 19/11 | 14h B e 17h G continuam |
+| qua 18/11 | **17h A → todos de A:** quem saiu do grupo recebe `vd_objecao`, quem só cadastrou recebe `vd_serve_pra_mim` · **17h G → 150** · **14h B `vd_formacao_prova`** (18 a 21/11; até 300 por dia em 18/11, sem teto desde 19/11) |
+| qui 19/11 | 14h B (sem teto: termina os ~390 restantes) e 17h G (sem teto) continuam |
 | sex 20/11 | 14h B e 17h G continuam |
-| sáb 21/11 | **17h A (só `vip_cadastro`) `vd_parcela_dia_v2`** |
+| sáb 21/11 | **17h A (só `vip_cadastro`) `vd_parcela_dia_v2`** · **17h engajados sem compra `vd_video_historia` (`e-2111`, 21 e 22/11)** |
 | dom 22/11 | **14h indicação `vd_indicacao`** → compradores da Black (Lista "1 · Upsell" e "Comprou tudo") · 17h G |
+| seg 23/11 | **14h base antiga `vd_curso_comunidade_v2` (`c-2311`), todos os 527 no dia 23** (24/11 só para recusados) |
 | ter 24/11 | **17h A (só `vip_cadastro`, sem bônus) `vd_esteira_v2`** |
 | qua 25/11 | **14h B `vd_formacao_aula`**, até 300 por dia de 25 a 28/11 |
+| sex 27/11 | **engajados sem compra `vd_black_friday` (`e-2711`) a partir das 14h**, depois do B na tarde e das campanhas da noite |
 | sáb 28/11 | 10h reta final `as_reta_3dias` |
-| dom 29/11 | **19h engajados sem compra `vd_amanha_acaba`** (`e-2911`) |
-| seg 30/11 | 9h `as_ultimo_dia` · 19h `as_ultimas_horas` · **14h B `vd_formacao_ultimo`** (só se o desconto da Formação acabar em 30/11) |
+| dom 29/11 | **engajados sem compra `vd_amanha_acaba`** (`e-2911`), a partir das 14h |
+| seg 30/11 | 9h `as_ultimo_dia` · `as_ultimas_horas` (`e-3011`) a partir das 14h · **14h B `vd_formacao_ultimo`** (só se o desconto da Formação acabar em 30/11) |
 
 G segue às 17h, 150 por dia, até acabar o público (cerca de 7 noites, até ~21/11). As noites que sobram ficam livres
 para a live e o fim do frete grátis.
@@ -218,3 +220,25 @@ Publicado em 17/11:
   - `k-desistiu` de 18 a 30/11, como a 1ª campanha da noite.
 - **Painel API:** os 3 bots em `BOTS` (`Preparar envios`), com o link da Black no `as_link`, e os nomes na aba (`Montar atualizações`).
 - **Resultado do A/B:** comparar a taxa de resposta e as compras em 72 h de `vd_video_historia` × `vd_objecao` (AS · Campanhas + aba Comercial · Black) em 20/11.
+
+## Limite de 10 mil (19/11)
+O número 5052 passou para o limite de 10 mil conversas por dia na Meta. O limite da Meta deixou de pesar; o que limita
+os disparos é a velocidade do fluxo: 25 pessoas a cada 5 min, e cada rodada leva 4–5 min (~300 por hora). Subir as 25 por
+rodada só faria as rodadas se sobreporem. A base inteira (aba Comercial · Black) tem ~2.500 pessoas, então 10 mil por dia
+nunca é o alvo: seria mandar várias mensagens por dia para a mesma pessoa.
+
+| Janela | Horário | Rodadas | Cabem por dia |
+|---|---|---|---|
+| tarde (compradores) | 14h–16h45 | 34 | ~850 |
+| noite (quem não comprou) | 17h–18h45 | 22 | ~550 |
+| reta (27, 29 e 30/11) | 19h–20h45 | 22 | ~550 |
+
+**Ajustes no nó `Campanha de hoje` (publicado em 19/11):**
+- sem teto por dia em `b-1811` (era 300), `c-2311` (era 350) e `g-objecao` (era 150);
+- nova `e-2111`: engajados sem compra, noites de 21 e 22/11, `vd_video_historia` (troca para `vd_objecao` se ele vencer o A/B de 20/11);
+- campanhas `turno: 'reta'` rodam também na tarde e na noite do seu dia, depois das campanhas do turno. O público E
+  (~1.000) não cabia numa janela de 550; com as três janelas cabem ~1.900.
+
+Ficam iguais: 25 por rodada e o cron, a regra de fadiga (3 ignoradas), as 48 h entre mensagens do painel e o teto de 300
+por dia das vendedoras (envio manual). Com mais volume, a qualidade do número passa a depender das recusas e dos
+"Não quer": acompanhar todo dia.
